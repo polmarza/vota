@@ -13,11 +13,7 @@ dice "carga `/feature`", en Claude Code se lanza con `/feature`; con otro agente
 Antes de hacer cualquier cosa, comprueba el estado del repositorio:
 
 1. Lee todos los archivos de `docs/`.
-2. **Si existe `.template/`, o si los documentos están vacíos o solo tienen comentarios**, el
-   proyecto no está inicializado. No escribas código ni rellenes nada por tu cuenta: carga
-   **`/init-proyecto`** y síguela. Si había contenido y `.template/` sigue ahí, la inicialización
-   quedó a medias: avisa al usuario y ofrécete a completarla.
-3. Mira `docs/features/`. Si hay alguna ficha en estado **En construcción**, ahí está el trabajo a
+2. Mira `docs/features/`. Si hay alguna ficha en estado **En construcción**, ahí está el trabajo a
    medias: léela antes de proponer nada nuevo.
 
 Si algo no cuadra (falta configuración, los tests no arrancan, hay fichas colgadas),
@@ -27,8 +23,11 @@ Si algo no cuadra (falta configuración, los tests no arrancan, hay fichas colga
 
 ## Documentación
 
-`docs/` tiene ocho archivos, pero **no todos los proyectos necesitan los ocho**; qué documentos
-aplican según el tamaño y en qué orden se rellenan está en **`/documentacion`**.
+Vota con Criterio es un sitio pequeño con lógica y datos, así que `docs/` tiene cinco documentos:
+`prd.md`, `design-system.md`, `architecture.md`, `data-model.md` y `testing.md`. `roadmap.md`,
+`user-flows.md` y `business.md` se borraron a propósito (no hay negocio ni flujos con estado; el
+calendario está en el PRD y en la arquitectura). Qué documentos aplican según el tamaño está en
+**`/documentacion`**.
 
 - `prd.md` y `architecture.md` no se saltan nunca.
 - Un documento que no aplique **se borra**, no se deja vacío: un archivo con solo comentarios es
@@ -38,23 +37,6 @@ aplican según el tamaño y en qué orden se rellenan está en **`/documentacion
   faltan en ese momento, no al final.
 
 `docs/features/` es aparte: no describe el proyecto, sino cada unidad de trabajo acordada.
-
----
-
-## Inicialización del proyecto (una sola vez)
-
-Esta plantilla se distribuye con documentación que habla **de la plantilla**, no del proyecto.
-En cuanto los documentos de `docs/` estén rellenos, conviértela en el repo de *este* proyecto.
-Hazlo por iniciativa propia, sin esperar a que el usuario lo pida.
-
-El proceso entero —rellenar `docs/` y después README, `AGENTS.md`, licencia, `.env.example`, MCPs,
-changelog y borrado de `.template/`— vive en la skill **`/init-proyecto`**. Cárgala y síguela
-entera; no la reconstruyas de memoria.
-
-**Regla general:** después de la inicialización, ningún archivo del repo debe describirse a sí
-mismo como plantilla ni explicar cómo usar la plantilla. Toda la documentación habla del
-producto que se está construyendo. Si más adelante encuentras un resto de la plantilla en
-cualquier archivo, corrígelo en esa misma sesión.
 
 ---
 
@@ -89,81 +71,63 @@ El procedimiento completo —comprobar lo ya configurado, elegir alcance (`user`
 
 ## Descripción del proyecto
 
-<!-- Escribe aquí 3-4 líneas que expliquen qué es este proyecto, qué problema resuelve y para quién.
-     Ejemplo:
-     "Plataforma web para que coleccionistas de vinilos cataloguen y compartan sus colecciones.
-     Usuario objetivo: adultos 25-45 con colecciones físicas que quieren digitalizar su catálogo.
-     Stack principal: Next.js + Supabase + Vercel." -->
+**Nombre:** Vota con Criterio (`vota.concriterio.blog`)
+**Descripción:** Web anónima que, a partir de tu situación personal, te dice qué partidos te han
+favorecido y cuáles te han perjudicado según lo que votaron en el Congreso (legislaturas XIV y XV),
+para las elecciones generales del 29 de noviembre de 2026.
+**Estado actual:** En desarrollo. Fecha límite: en producción antes del 13 de noviembre de 2026.
 
-**Nombre:** <!-- nombre-del-proyecto -->
-**Descripción:** <!-- una frase -->
-**Estado actual:** <!-- En desarrollo / Beta / Producción -->
+Lo firma Pol Marzà bajo Con Criterio. La neutralidad es el requisito que lo sostiene todo: Claude
+selecciona y etiqueta las votaciones, un jurado de cinco modelos de otras empresas las revisa, y
+Pol no interviene en las etiquetas.
 
 ---
 
 ## Stack tecnológico
 
-<!-- Completa esto con el stack real del proyecto.
-     Ejemplo:
-     - Framework: Next.js 14 (App Router)
-     - Base de datos: Supabase (PostgreSQL + Auth + Storage)
-     - Estilos: Tailwind CSS + shadcn/ui
-     - Despliegue: Vercel
-     - Pagos: Stripe
-     - Email: Resend -->
-
-- Framework: <!-- ... -->
-- Base de datos: <!-- ... -->
-- Estilos: <!-- ... -->
-- Despliegue: <!-- ... -->
-- Otras integraciones: <!-- ... -->
+- Framework: Astro 5 (salida estática) + TypeScript estricto, sin framework de UI
+- Base de datos: ninguna. Los datos son archivos en `data/` validados con Zod
+- Estilos: CSS propio con custom properties; Instrument Serif e Inter autoalojadas (`@fontsource`)
+- Despliegue: Vercel (integración con GitHub); DNS en Hostinger
+- Otras integraciones: datos abiertos del Congreso (pipeline local), OpenRouter para el jurado de
+  IAs (solo en local), Vercel Web Analytics (sin cookies)
+- Tests: Vitest y Playwright
 
 ---
 
 ## Estructura de carpetas
 
-<!-- Documenta aquí la estructura real del proyecto una vez inicializado.
-     Ejemplo:
-     src/
-     ├── app/          → rutas (App Router)
-     ├── components/   → componentes reutilizables
-     ├── lib/          → utilidades, clientes de servicios externos
-     ├── hooks/        → custom hooks
-     └── types/        → tipos TypeScript compartidos
-     
-     docs/             → documentación del proyecto (ver sección anterior)
-     docs/features/    → fichas de las features acordadas, con su tabla de cobertura
-     changelog/        → registro de cambios (ver protocolo más abajo)
-     mejoras/          → ideas futuras no implementadas -->
+```
+data/             → raw/ (Congreso, sin editar), partidos/, candidaturas/, catalogo/, jurado/
+docs/             → documentación del proyecto (ver "Documentación")
+docs/features/    → fichas de las features acordadas, con su tabla de cobertura
+scripts/data/     → pipeline: ingesta, votos, jurado, validación
+scripts/          → verificar-cobertura.mjs
+src/pages/        → portada, test, cómo funciona, votaciones
+src/components/   → componentes Astro
+src/lib/          → afinidad/ (cálculo puro), perfil/, compartir/
+tests/            → unit/ (Vitest), e2e/ (Playwright), fixtures/
+changelog/        → registro de cambios (ver protocolo más abajo)
+mejoras/          → ideas futuras no implementadas
+```
 
 ---
 
 ## Convenciones de código
 
-<!-- Define aquí las reglas de estilo específicas del proyecto.
-     Ejemplo:
-     - TypeScript estricto. No usar `any`.
-     - Componentes en PascalCase, archivos en kebab-case.
-     - Toda función async debe manejar errores explícitamente.
-     - No usar `console.log` en producción.
-     - Comentarios en español. -->
-
 - Gestor de paquetes: pnpm v11. No usar npm ni yarn.
-- Idioma de comentarios y variables: <!-- español / inglés -->
-- Nombrado de componentes: <!-- PascalCase -->
-- Nombrado de archivos: <!-- kebab-case -->
-- <!-- Añade más reglas según el proyecto -->
+- Idioma de comentarios, variables y textos: español (el dominio es español: votación, partido,
+  provincia). Identificadores técnicos del framework, en su idioma.
+- TypeScript estricto. No usar `any`.
+- Componentes Astro en PascalCase (`FilaPartido.astro`); el resto de archivos en kebab-case.
+- La lógica de cálculo (`src/lib/afinidad/`) es pura: sin DOM ni acceso a red, para poder
+  probarla aislada.
+- Los colores de los partidos salen de `data/partidos/`, nunca del CSS.
+- Selectores de test con `data-testid`.
 
 ---
 
 ## Qué NO hacer
-
-<!-- Lista de antipatrones específicos de este proyecto.
-     Ejemplo:
-     - No modificar el esquema de Supabase directamente desde el cliente; usar migraciones.
-     - No almacenar tokens en localStorage; usar cookies httpOnly.
-     - No crear componentes nuevos sin consultar docs/design-system.md primero.
-     - No hacer fetch directo a APIs externas desde componentes; usar server actions o route handlers. -->
 
 - No usar `npm` ni `yarn`. Siempre `pnpm` (v11).
 - No escribir claves ni tokens reales en `.mcp.json`: el archivo se commitea. Usa `${VARIABLE}` y
@@ -177,7 +141,13 @@ El procedimiento completo —comprobar lo ya configurado, elegir alcance (`user`
 - No meter procedimientos en este archivo ni crear archivos en `.claude/commands/` (formato
   heredado). Un procedimiento nuevo es una skill en `.claude/skills/<nombre>/SKILL.md`, con una
   `description` que diga qué hace y cuándo usarla: Claude la carga sola cuando toca.
-- <!-- ... -->
+- No enviar respuestas del cuestionario fuera del navegador: ni a la URL, ni a `localStorage`, ni
+  a analítica, ni a ningún servidor.
+- No escribir a mano el voto de un partido: sale siempre de los datos abiertos del Congreso.
+- No usar color en la interfaz salvo para los partidos, y nunca el morado de Con Criterio
+  (ver `docs/design-system.md`).
+- No cambiar etiquetas del catálogo sin volver a pasar el jurado: el veredicto caduca.
+- No llamar a OpenRouter desde la web ni desde los tests; el jurado solo se ejecuta en local.
 
 ---
 
@@ -239,15 +209,14 @@ poner, pregunta — no lo dejes en blanco. El formato y el detalle de qué valid
 
 Cada vez que hagas un cambio importante:
 
-1. **Entrada en `changelog/`**, con `/changelog`. Mientras exista `.template/`, los cambios sobre el
-   andamiaje van a `.template/changelog/`.
+1. **Entrada en `changelog/`**, con `/changelog`.
 2. **Actualiza en la misma sesión la documentación que el cambio deja desfasada:** `docs/` (datos,
-   diseño, arquitectura o MCP, PRD y roadmap si el alcance cambia), la ficha de la feature
+   diseño, arquitectura o MCP, PRD si el alcance cambia), la ficha de la feature
    (**Verificada** al cerrarla, y su tabla si el alcance cambia a mitad) y el `README.md` si
    cambia cómo se instala o usa el proyecto.
 3. **`/security-review`** antes de mergear a producción, o cuando el usuario lo pida.
 
-**Los PRs los crea el agente, no el usuario**: así la plantilla llega rellena. Rellena
+**Los PRs los crea el agente, no el usuario**: así la plantilla del PR llega rellena. Rellena
 `.github/pull_request_template.md` **entera**; lleva las instrucciones de cada sección. Dos reglas
 que no se negocian:
 
@@ -272,5 +241,9 @@ Si la carpeta `mejoras/` no existe, créala.
 
 ## Notas adicionales
 
-<!-- Cualquier otra instrucción específica del proyecto que no encaje en las secciones anteriores.
-     Ejemplos: credenciales de entorno necesarias, comandos de desarrollo, quirks conocidos del stack. -->
+- **Riesgo abierto:** confirmar en qué formato publica el Congreso las votaciones nominales de la
+  XIV y la XV antes de construir la ingesta (ver `docs/architecture.md`).
+- Las candidaturas proclamadas se publican en el BOE unas cuatro semanas antes del 29-N; hasta
+  entonces `data/candidaturas/2026.yaml` es provisional.
+- Del 24 al 29 de noviembre (cinco días previos a las elecciones) no se publican cambios de
+  contenido sin consultarlo con Pol.

@@ -7,10 +7,19 @@
 
 ## Filosofía
 
-<!-- Describe el enfoque de testing del proyecto.
-     Ejemplo: "Priorizamos tests de integración sobre unitarios porque nuestro valor
-     está en los flujos completos, no en funciones aisladas."
-     o: "Seguimos la pirámide clásica: muchos unitarios, integración selectiva, pocos e2e." -->
+El valor de Vota con Criterio está en que **el resultado sea correcto y verificable**: si un
+porcentaje está mal o un voto se atribuye al partido equivocado, la herramienta pierde toda su
+credibilidad. Por eso la prioridad no es la pirámide clásica, sino tres frentes:
+
+1. **Datos** — que el voto de cada partido cuadre con los recuentos oficiales y que el catálogo
+   cumpla sus reglas (esquemas, referencias, jurado). Es donde un error es más probable y más
+   caro.
+2. **Cálculo** — la lógica de afinidad es pura y determinista: se prueba a fondo con un catálogo
+   inventado y casos límite.
+3. **Flujo y privacidad** — pocos e2e que recorren el test completo en un navegador real y
+   comprueban que ninguna respuesta sale del navegador.
+
+Lo visual (tipografía, ecualizador, maquetación en móvil) se valida con revisión humana.
 
 ---
 
@@ -43,65 +52,79 @@ Reglas que se derivan de eso:
 - **Un test que falla no se arregla quitándole aserciones.** Si falla, o el código está mal o el
   criterio estaba mal escrito. Ambas cosas se corrigen donde toca; degradar el test para forzar el
   verde convierte la suite en decoración.
-- **Los datos que crea un test los borra ese test.** Prefija lo que insertes para poder
-  identificarlo y limpia al terminar, aunque el test falle a mitad.
+- **Los tests no dependen de los datos reales del catálogo**, que cambian mientras se cura. Usan
+  `tests/fixtures/` (partidos A–F, seis fichas inventadas). Los únicos tests que leen `data/` son
+  los de validación de datos, precisamente para comprobar esos datos.
 
 ---
 
 ## Stack de testing
 
-<!-- Herramientas utilizadas por tipo de test.
-     Ejemplo:
-     | Tipo | Herramienta |
-     |------|-------------|
-     | Unitario | Vitest |
-     | Integración | Vitest + Testing Library |
-     | E2E | Playwright | -->
-
 | Tipo | Herramienta |
 |------|-------------|
-| Unitario | <!-- --> |
-| Integración | <!-- --> |
-| E2E | <!-- --> |
+| Unitario (cálculo, perfil, esquemas) | Vitest |
+| Validación de datos | Vitest sobre `data/` + `pnpm data:validar` |
+| E2E | Playwright contra `pnpm preview` en `localhost` (Chromium y WebKit móvil) |
+| Accesibilidad | `@axe-core/playwright` dentro de los e2e |
 
 ---
 
 ## Qué testear
 
-<!-- Distingue explícitamente qué merece test y qué no, para no perder tiempo.
-     Ejemplo:
-     SÍ → lógica de negocio, transformaciones de datos, componentes con estado complejo
-     NO → componentes puramente visuales, integraciones con terceros (mockear en su lugar) -->
-
 ### Sí testear
-- <!-- -->
+- **Cálculo de afinidad** (`src/lib/afinidad/`): porcentajes, abstenciones, ausencias, efectos
+  contradictorios, votaciones territoriales, mínimo de 5 votaciones, podios sin partidos
+  repetidos, resultado provisional con respuestas parciales.
+- **Perfil** (`src/lib/perfil/`): que cada respuesta active las condiciones correctas y que `ns`
+  no active ninguna.
+- **Voto por partido** (`scripts/data/`): mayoría de presentes, voto dividido, herencia con
+  fechas e inclusiones/exclusiones, y que la suma de votos por diputado de cada votación coincida
+  con los totales oficiales de esa votación.
+- **Validación del catálogo**: fichas sin URL o sin justificación, preguntas sin uso, colores
+  repetidos, candidaturas de partidos sin herencia, veredictos caducados o con mayoría en contra.
+  Cada regla, con un caso que debe fallar.
+- **Flujo completo (e2e)**: portada → bloque básico → resultado provisional → bloque ampliado →
+  resultado final; provincia obligatoria; partidos filtrados por provincia; volver atrás sin
+  perder respuestas.
+- **Privacidad (e2e)**: durante todo el test, ninguna petición de red lleva respuestas; la URL
+  nunca contiene respuestas; `localStorage`, `sessionStorage` y cookies quedan vacíos de datos del
+  cuestionario.
+- **Accesibilidad (e2e)**: sin violaciones de axe de nivel serio o crítico en portada, pregunta y
+  resultado; el cuestionario se completa solo con teclado.
 
 ### No testear (o mockear)
-- <!-- -->
+- **El jurado de IAs**: no se llama a OpenRouter en los tests. Se prueba el script con respuestas
+  simuladas (formato válido, inválido, modelo caído).
+- **La descarga del Congreso**: se prueba el parser con archivos reales guardados en
+  `tests/fixtures/congreso/`, no la red.
+- **Estética**: tipografías, animación del ecualizador, imagen para compartir a nivel de píxel →
+  revisión humana.
 
 ---
 
 ## Convenciones
 
-<!-- Naming, ubicación de archivos, estructura interna de los tests.
-     Ejemplo:
-     - Archivos: `nombre.test.ts` junto al archivo que testa
-     - Describe en presente: "calcula el total con descuento"
-     - Un assert por test cuando sea posible -->
+- Unitarios en `tests/unit/`, espejo de `src/lib/` y `scripts/data/`: `afinidad.test.ts`.
+- E2E en `tests/e2e/`, uno por flujo: `cuestionario.spec.ts`, `privacidad.spec.ts`.
+- Nombre del test con el ID del requisito cuando lo valida: `M-03 · podio sin partidos repetidos`.
+- `describe` e `it` en español y en presente: "excluye la votación si el partido estuvo ausente".
+- Selectores e2e con `data-testid`; nunca por clase de estilos ni por texto de copy.
 
 ---
 
 ## Cobertura objetivo
 
-<!-- Porcentaje objetivo y cómo medirlo.
-     Ejemplo: ≥ 80% en lógica de negocio. Ignorar archivos de configuración y tipos. -->
+- `src/lib/afinidad/` y `scripts/data/votos`: 100 % de ramas. Son pocas líneas y es donde un
+  error cambia el resultado de alguien.
+- Resto de `src/lib/` y `scripts/data/`: ≥ 80 %.
+- Componentes y páginas: sin objetivo de porcentaje; los cubren los e2e y la revisión humana.
 
 ---
 
 ## Cómo correr los tests
 
 ```bash
-# Todos los tests
+# Unitarios y validación de datos
 pnpm test
 
 # Modo watch
@@ -110,8 +133,9 @@ pnpm test:watch
 # Con cobertura
 pnpm test:coverage
 
-# E2E
+# E2E (construye y levanta la web en localhost antes de empezar)
 pnpm test:e2e
-```
 
-<!-- Ajusta los comandos al stack elegido una vez relleno architecture.md. -->
+# Solo las reglas del catálogo real
+pnpm data:validar
+```

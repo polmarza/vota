@@ -21,7 +21,6 @@ Se complementan: si el problema parece del agente y no del repo, sugiere `/docto
 - ¿Existen todos los archivos de `docs/` que son obligatorios para este proyecto? (Depende del
   tamaño: mira la tabla de la skill `/documentacion`.)
 - ¿Alguno está vacío — solo comentarios `<!-- -->`, sin contenido real?
-- ¿Sigue existiendo `.template/`? Entonces la inicialización quedó a medias.
 
 ### 2. Fichas de feature
 
