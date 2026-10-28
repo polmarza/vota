@@ -1,0 +1,573 @@
+# Herencia de los partidos: qué votos de la XIV y la XV cuentan como de cada partido.
+# Formato en docs/data-model.md. Lo valida `pnpm data:partidos`.
+#
+# Códigos de grupo en las votaciones:
+#   XIV: GS, GP, GVOX, GCUP-EC-GC (Unidas Podemos), GR (ERC), GCs, GV (EAJ-PNV), GEH Bildu,
+#        GPlu (Plural), GMx (Mixto)
+#   XV:  GS, GP, GVOX, GSUMAR, GR, GJxCAT, GEH Bildu, GV (EAJ-PNV), GMx
+#
+# Colores: aproximación a los oficiales; se verifican antes del lanzamiento.
+#
+# Estado: BORRADOR para el jurado (M-10). Las asignaciones de diputados de coalición salen de la
+# biografía que publica el Congreso, del anexo de diputados de la Wikipedia y de prensa; las que
+# no están claras llevan `dudas`.
+
+alias:
+  XV:
+    "Cuesta Rodríguez, María del Socorro": "Cuesta Rodríguez, María"
+
+coaliciones:
+  XIV:
+    - UP
+    - ECP-GUANYEM EL CANVI
+    - EC-UP
+    - JxCat-JUNTS
+    - NC-CCa-PNC
+    - CCa-PNC-NC
+    - NA+
+    - PP-FORO
+    - MÁS PAÍS-EQUO
+    - ERC-S
+  XV:
+    - SUMAR
+
+sinPartido:
+  - legislatura: XIV
+    formacion: JxCat-JUNTS (PDeCAT)
+    motivo: Diputados del PDeCAT, partido que se disolvió en 2023 y no concurre el 29-N.
+
+diputadosSinPartido:
+  - legislatura: XIV
+    diputado: "Errejón Galván, Íñigo"
+    motivo: Diputado de Más País elegido en Más País-Equo; Más País no concurre el 29-N y sus votos no se atribuyen a Más Madrid.
+    fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+  - legislatura: XIV
+    diputado: "Nuet Pujals, Joan Josep"
+    motivo: Diputado de Sobiranistes elegido en la coalición ERC-Sobiranistes; Sobiranistes no concurre el 29-N.
+    fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+  - legislatura: XIV
+    diputado: "Martínez Oblanca, Isidro Manuel"
+    motivo: Diputado de Foro Asturias elegido en la lista PP-Foro; Foro no concurre por separado el 29-N.
+    fuente: https://www.congreso.es/es/opendata/diputados
+  - legislatura: XIV
+    diputado: "López de Uralde Garmendia, Juan Antonio"
+    motivo: Cofundador de Equo, elegido en la lista de Unidas Podemos; Equo no concurre por separado el 29-N.
+    fuente: https://www.congreso.es/es/opendata/diputados
+  - legislatura: XIV
+    diputado: "Sabanés Nadal, Inés"
+    motivo: Diputada de Equo elegida en la lista Más País-Equo; Equo no concurre por separado el 29-N.
+    fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+
+  - legislatura: XV
+    diputado: "Lago Peñas, Manuel"
+    motivo: >-
+      Sin consenso del jurado de IAs tras dos rondas (data/jurado/herencia.json, 27-10-2026): no consta con seguridad su partido dentro de la coalición Sumar.
+  - legislatura: XV
+    diputado: "Ogou i Corbi, Viviane"
+    motivo: >-
+      Sin consenso del jurado de IAs tras dos rondas (data/jurado/herencia.json, 27-10-2026): no consta con seguridad su partido dentro de la coalición Sumar.
+  - legislatura: XV
+    diputado: "Sierra Caballero, Francisco"
+    motivo: >-
+      Sin consenso del jurado de IAs tras dos rondas (data/jurado/herencia.json, 27-10-2026): no consta con seguridad su partido dentro de la coalición Sumar.
+  - legislatura: XV
+    diputado: "Vergara Román, Laura"
+    motivo: >-
+      Sin consenso del jurado de IAs tras dos rondas (data/jurado/herencia.json, 27-10-2026): no consta con seguridad su partido dentro de la coalición Sumar.
+
+  - legislatura: XIV
+    diputado: "Medel Pérez, Rosa María"
+    motivo: >-
+      Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): el jurado la asigna a IU al empezar la legislatura, pero no alcanza consenso sobre su partido en la última votación y no consta ningún cambio.
+  - legislatura: XIV
+    diputado: "Cortés Gómez, Ismael"
+    motivo: >-
+      Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): sin consenso del jurado sobre su partido al empezar la legislatura (en la primera deliberación salió Podemos; en la segunda, sin consenso).
+  - legislatura: XIV
+    diputado: "Pérez Merino, María Mercedes"
+    motivo: >-
+      Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): sin consenso del jurado sobre su partido dentro de Unidas Podemos.
+  - legislatura: XV
+    diputado: "Martín Urriza, Carlos"
+    motivo: >-
+      Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): sin consenso del jurado sobre su partido dentro de la coalición Sumar.
+  - legislatura: XV
+    diputado: "Cofiño Fernández, Rafael"
+    motivo: >-
+      Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): sin consenso del jurado sobre su partido dentro de la coalición Sumar.
+
+partidos:
+  - id: psoe
+    nombre: PSOE
+    siglas: PSOE
+    color: '#E30613'
+    herencia:
+      XIV:
+        - diputados: ["Fuentes Curbelo, Juan Bernardo"]
+          hasta: 2023-02-13
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): el PSOE lo suspendió de militancia el 14-02-2023 (caso Mediador), el día de su última votación.
+        - formaciones: [PSOE, PSC-PSOE, PsdeG-PSOE, PSE-EE-PSOE]
+          grupos: [GS, ""]
+          justificacion: >-
+            Diputados elegidos en las listas del PSOE y sus federaciones, mientras votan desde el
+            Grupo Socialista (o sin grupo todavía, los primeros días tras tomar posesión).
+      XV:
+        - formaciones: [PSOE, PSC-PSOE, PsdeG-PSOE, PSE-EE (PSOE), PSIB-PSOE, PSN-PSOE]
+          grupos: [GS, ""]
+          justificacion: >-
+            Diputados elegidos en las listas del PSOE y sus federaciones, mientras votan desde el
+            Grupo Socialista (o sin grupo todavía, los primeros días tras tomar posesión). Deja fuera los votos de Ábalos desde que pasó al Grupo Mixto
+            (27-02-2024), tras salir del PSOE.
+
+  - id: pp
+    nombre: Partido Popular
+    siglas: PP
+    color: '#1D84CE'
+    herencia:
+      XIV:
+        - formaciones: [PP]
+          justificacion: Diputados elegidos en las listas del PP.
+        - diputados: ["Gázquez Collado, Paloma"]
+          justificacion: Elegida en la lista PP-Foro por Asturias como diputada del PP; votó siempre desde el Grupo Popular.
+        - diputados: ["Sayas López, Sergio"]
+          desde: 2023-01-01
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): en su última votación pertenecía al PP. El PP lo presentó como incorporación en diciembre de 2022; cuenta desde el mes siguiente.
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+      XV:
+        - formaciones: [PP]
+          justificacion: Diputados elegidos en las listas del PP.
+
+  - id: vox
+    nombre: Vox
+    siglas: Vox
+    color: '#63BE21'
+    herencia:
+      XIV:
+        - formaciones: [Vox]
+          justificacion: Diputados elegidos en las listas de Vox.
+        - diputados: ["Fernández-Roca Suárez, Carlos Hugo"]
+          hasta: 2020-11-11
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): dejó Vox el 12-11-2020, el día de su última votación, tras una denuncia, y renunció al escaño.
+      XV:
+        - formaciones: [VOX]
+          justificacion: Diputados elegidos en las listas de Vox.
+        - diputados: ["Ortega Smith-Molina, Francisco Javier"]
+          grupos: [GVOX]
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de Vox al empezar la legislatura; sin consenso sobre su partido tras pasar al Grupo Mixto (23-07-2026), así que cuenta mientras vota desde el grupo de Vox.
+
+  - id: sumar
+    nombre: Sumar
+    siglas: Sumar
+    color: '#E51C55'
+    herencia:
+      XV:
+        - diputados:
+            - "Díaz Pérez, Yolanda"
+            - "Lois González, Marta"
+          justificacion: >-
+            Diputados de Movimiento Sumar elegidos en la lista de Sumar.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XV_legislatura_de_España
+        - diputados:
+            - "Guijarro García, Txema"
+            - "Martínez Hierro, Lander"
+          justificacion: >-
+            Exdirigentes de Podemos que en la XV se integraron en Sumar y no siguieron a Podemos al Grupo Mixto.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XV_legislatura_de_España
+          dudas: >-
+            Su biografía del Congreso todavía menciona Podemos (cargos anteriores).
+        - diputados: ["Martínez Barbero, Verónica"]
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de Movimiento Sumar toda la legislatura.
+        - diputados: ["Santos Maraver, Agustín"]
+          desde: 2024-04-01
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): independiente al empezar la legislatura y de Movimiento Sumar en su última votación; entró en su dirección en la asamblea de marzo de 2024 y cuenta desde el mes siguiente.
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+        - diputados: ["Gil de Reboleño Lastortres, Esther"]
+          desde: 2024-04-01
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de IU al empezar la legislatura y de Movimiento Sumar en su última votación; entró en su dirección en la asamblea de marzo de 2024 y cuenta desde el mes siguiente (el mes del cambio no cuenta para nadie).
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+        - diputados: ["Errejón Galván, Íñigo"]
+          desde: 2023-12-01
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de Más Madrid al empezar la legislatura y de Movimiento Sumar en su última votación; Más País aprobó integrarse en Sumar en noviembre de 2023 y cuenta desde el mes siguiente (el mes del cambio no cuenta para nadie).
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+
+  - id: podemos
+    nombre: Podemos
+    siglas: Podemos
+    color: '#6B2E68'
+    herencia:
+      XIV:
+        - diputados:
+            - "Belarra Urteaga, Ione"
+            - "Echenique Robba, Pablo"
+            - "Fernández Castañón, Sofía"
+            - "Franco Carmona, Isabel"
+            - "García Nieto, Ezequiel"
+            - "Garrido Gutiérrez, Pilar"
+            - "Guijarro García, Txema"
+            - "Honrubia Hurtado, Pedro Antonio"
+            - "Iglesias Turrión, Pablo"
+            - "Jover Díaz, Antonia"
+            - "Mayoral Perales, Rafael"
+            - "Montero Gil, Irene María"
+            - "Pita Cárdenes, María del Carmen"
+            - "Sánchez Serna, Javier"
+            - "Uriarte Torrealday, Roberto"
+            - "Velarde Gómez, Martina"
+            - "Gómez-Reino Varela, Antonio"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Diputados de Podemos elegidos en Unidas Podemos (Gómez-Reino, en En Común-Unidas Podemos), según su biografía del Congreso o su cargo conocido en Podemos. Cuentan mientras votan desde el grupo confederal: Pita deja de contar al pasar al Mixto (24-03-2022).
+          fuente: https://www.congreso.es/es/opendata/diputados
+        - diputados:
+            - "Elizo Serrano, María Gloria"
+            - "Muñoz Dalda, Lucía"
+            - "Rosell Aguilar, María Victoria"
+            - "Rodríguez Rodríguez, Alberto"
+            - "Illueca Ballester, Héctor"
+            - "Saavedra Muñoz, Marisa"
+            - "Vera Ruíz-Herrera, Noelia"
+            - "Delgado Ramos, Juan Antonio"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Diputados de Unidas Podemos que no constan como miembros de IU ni de Equo; se atribuyen a Podemos, el partido mayoritario de la coalición.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+          dudas: >-
+            Su biografía del Congreso no menciona partido. Alguno podría ser de IU.
+        - diputados:
+            - "López Domínguez, Laura"
+            - "García Puig, María del Mar"
+            - "Márquez Guerrero, María"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Decisión del jurado de IAs (data/jurado/herencia.json, 27-10-2026): militantes de Podemos (Podem Catalunya las dos primeras) elegidos en En Comú Podem o en Unidas Podemos.
+      XV:
+        - diputados:
+            - "Belarra Urteaga, Ione"
+            - "Sánchez Serna, Javier"
+            - "Santana Perera, Noemí"
+            - "Velarde Gómez, Martina"
+            - "Verstrynge Revuelta, Lilith"
+          justificacion: >-
+            Diputados de Podemos elegidos en la lista de Sumar. Los cinco dejaron el grupo de
+            Sumar y pasaron juntos al Grupo Mixto el 5-12-2023, como consta en sus fichas del
+            Congreso. Sus votos cuentan para Podemos toda la legislatura.
+
+  - id: iu
+    nombre: Izquierda Unida
+    siglas: IU
+    herencia:
+      XIV:
+        - diputados:
+            - "Díaz Pérez, Yolanda"
+          justificacion: >-
+            Elegida en 2019 por En Común-Unidas Podemos (Pontevedra) como dirigente de Esquerda
+            Unida, la federación gallega de IU. Sus votos de la XIV cuentan para IU; los de la XV,
+            ya como líder de Movimiento Sumar, cuentan para Sumar.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+        - diputados:
+            - "Garzón Espinosa, Alberto"
+            - "Santiago Romero, Enrique Fernando"
+            - "Maestro Moliner, Roser"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Diputados de Izquierda Unida (y PCE / Esquerra Unida del País Valencià) elegidos en Unidas Podemos, según su biografía del Congreso.
+          fuente: https://www.congreso.es/es/opendata/diputados
+        - diputados:
+            - "Bustamante Martín, Miguel Ángel"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Diputado de Unidas Podemos por Sevilla procedente de IU.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+          dudas: >-
+            No consta en su biografía del Congreso; asignación por su trayectoria conocida.
+        - diputados:
+            - "Bueno Pinto, José Luis"
+            - "Roselló Bouso, Jorge"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Decisión del jurado de IAs (data/jurado/herencia.json, 27-10-2026): militantes de IU (Bueno Pinto, concejal de IU en El Puerto de Santa María; Roselló, de Esquerra Unida de les Illes Balears) elegidos en Unidas Podemos.
+      XV:
+        - diputados:
+            - "Santiago Romero, Enrique Fernando"
+            - "Valero Morales, Juan Antonio"
+            - "Rivera Arias, Engracia"
+            - "González López, Nahuel"
+          justificacion: >-
+            Diputados de Izquierda Unida (Esquerra Unida del País Valencià en el caso de González López) elegidos en la lista de Sumar.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XV_legislatura_de_España
+        - diputados: ["Gil de Reboleño Lastortres, Esther"]
+          hasta: 2024-02-29
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de IU al empezar la legislatura; pasó a Movimiento Sumar en marzo de 2024.
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+
+
+  - id: comuns
+    nombre: Catalunya en Comú
+    siglas: Comuns
+    herencia:
+      XIV:
+        - diputados:
+            - "Asens Llodrà, Jaume"
+            - "Pisarello Prados, Gerardo"
+            - "Vidal Sáez, Aina"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Diputados de Catalunya en Comú elegidos en En Comú Podem-Guanyem el Canvi.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+        - diputados:
+            - "Mena Arca, Joan"
+          grupos: [GCUP-EC-GC, '']
+          justificacion: >-
+            Decisión del jurado de IAs (data/jurado/herencia.json, 27-10-2026): portavoz de Catalunya en Comú en el Congreso, aunque procedía de EUiA.
+      XV:
+        - diputados:
+            - "Pisarello Prados, Gerardo"
+            - "Vidal Sáez, Aina"
+            - "Badia Casas, Eloi"
+            - "Boada Danés, Júlia"
+            - "Pin Ferrando, Gala"
+            - "López Tagliafico, Candela"
+            - "Alonso Cantorné, Fèlix"
+          justificacion: >-
+            Diputados de Catalunya en Comú elegidos en Sumar-En Comú Podem (Boada consta en su biografía como miembro del Consell Nacional de Catalunya en Comú).
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XV_legislatura_de_España
+
+
+  - id: mas-madrid
+    nombre: Más Madrid
+    siglas: Más Madrid
+    herencia:
+      XV:
+        - diputados: ["Recas Martín, Alda"]
+          justificacion: >-
+            Miembro de la Mesa Regional de Más Madrid según su biografía del Congreso; sustituye a
+            Errejón en octubre de 2024.
+          fuente: https://www.congreso.es/es/opendata/diputados
+        - diputados: ["Errejón Galván, Íñigo"]
+          hasta: 2023-10-31
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): de Más Madrid al empezar la legislatura; pasó a Movimiento Sumar en noviembre de 2023.
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+        - diputados: ["Andala Ubbi, Teslem"]
+          justificacion: >-
+            Decisión del jurado de IAs (data/jurado/herencia.json, 27-10-2026): elegida en el número 3 de la lista de Sumar por Madrid en representación de Más Madrid.
+
+  - id: compromis
+    nombre: Compromís
+    siglas: Compromís
+    color: '#F28C28'
+    herencia:
+      XIV:
+        - formaciones: [MÉS COMPROMÍS]
+          justificacion: Diputados elegidos en la lista de Compromís (Baldoví y, tras su baja, Picó).
+      XV:
+        - diputados: ["Ibáñez Mezquita, Alberto"]
+          justificacion: Portavoz de Compromís e Iniciativa según su biografía del Congreso; elegido en la lista de Sumar.
+          fuente: https://www.congreso.es/es/opendata/diputados
+        - diputados: ["Micó Micó, Àgueda"]
+          justificacion: >-
+            Diputada de Compromís elegida en la lista de Sumar; pasó al Grupo Mixto el
+            3-07-2025, como consta en su ficha del Congreso.
+
+  - id: chunta
+    nombre: Chunta Aragonesista
+    siglas: CHA
+    herencia:
+      XV:
+        - diputados:
+            - "Pueyo Sanz, Jorge"
+          justificacion: >-
+            Diputado de Chunta Aragonesista elegido en la lista de Sumar por Zaragoza.
+          fuente: https://www.congreso.es/es/opendata/diputados
+
+  - id: mes
+    nombre: Més per Mallorca
+    siglas: Més
+    herencia:
+      XV:
+        - diputados:
+            - "Vidal Matas, Vicenç"
+          justificacion: >-
+            Diputado de Més per Mallorca elegido en la lista de Sumar por Baleares.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XV_legislatura_de_España
+
+  - id: erc
+    nombre: Esquerra Republicana
+    siglas: ERC
+    color: '#FFB232'
+    herencia:
+      XIV:
+        - diputados:
+            - "Álvarez i García, Gerard"
+            - "Bassa Coll, Montserrat"
+            - "Capdevila i Esteve, Joan"
+            - "Carvalho Dantas, María"
+            - "Eritja Ciuró, Francesc Xavier"
+            - "Granollers Cunillera, Inés"
+            - "Margall Sastre, Joan"
+            - "Pujol i Farré, Norma"
+            - "Rosique i Saltor, Marta"
+            - "Rufián Romero, Gabriel"
+            - "Salvador i Duch, Jordi"
+            - "Telechea i Lozano, Carolina"
+            - "Vallugera Balañà, Pilar"
+          justificacion: >-
+            Diputados de ERC elegidos en la coalición ERC-Sobiranistes.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+      XV:
+        - formaciones: [ERC]
+          justificacion: Diputados elegidos en la lista de ERC.
+
+  - id: junts
+    nombre: Junts per Catalunya
+    siglas: Junts
+    color: '#00B7A8'
+    herencia:
+      XIV:
+        - formaciones: [JxCat-JUNTS (Junts)]
+          justificacion: Diputados de Junts elegidos en la lista de JxCat-Junts, identificados así por el propio Congreso.
+        - diputados:
+            - "Borràs Castanyer, Laura"
+          justificacion: >-
+            Elegida en JxCat-Junts sin etiqueta de partido en el Congreso; Borràs fue después presidenta de Junts.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+        - diputados: ["Alonso-Cuevillas i Sayrol, Jaume"]
+          desde: 2020-08-01
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): independiente al empezar la legislatura; se afilió a Junts al constituirse como partido en julio de 2020 y cuenta desde el mes siguiente.
+          dudas: >-
+            El jurado fijó el partido, no la fecha: el mes sale de sus razones.
+      XV:
+        - formaciones: [JxCAT-JUNTS]
+          justificacion: Diputados elegidos en la lista de Junts.
+
+  - id: eh-bildu
+    nombre: EH Bildu
+    siglas: EH Bildu
+    color: '#8DC63F'
+    herencia:
+      XIV:
+        - formaciones: [EH Bildu]
+          justificacion: Diputados elegidos en la lista de EH Bildu.
+      XV:
+        - formaciones: [EH Bildu]
+          justificacion: Diputados elegidos en la lista de EH Bildu.
+
+  - id: pnv
+    nombre: EAJ-PNV
+    siglas: PNV
+    color: '#007A3D'
+    herencia:
+      XIV:
+        - formaciones: [EAJ-PNV]
+          justificacion: Diputados elegidos en la lista del PNV.
+      XV:
+        - formaciones: [EAJ-PNV]
+          justificacion: Diputados elegidos en la lista del PNV.
+
+  - id: bng
+    nombre: Bloque Nacionalista Galego
+    siglas: BNG
+    color: '#76B4E0'
+    herencia:
+      XIV:
+        - formaciones: [BNG]
+          justificacion: Diputado elegido en la lista del BNG.
+      XV:
+        - formaciones: [BNG]
+          justificacion: Diputado elegido en la lista del BNG.
+
+  - id: cc
+    nombre: Coalición Canaria
+    siglas: CC
+    color: '#F7D117'
+    herencia:
+      XIV:
+        - diputados: ["Oramas González-Moro, Ana María"]
+          justificacion: Diputada de Coalición Canaria elegida en la lista CCa-PNC-NC por Santa Cruz de Tenerife.
+        - diputados: ["Fernández Pérez, María"]
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): número dos de NC-CCa-PNC por Las Palmas en la cuota de Coalición Canaria; sustituye a Quevedo (NC) en julio de 2022 por el acuerdo de relevo.
+      XV:
+        - formaciones: [CCa]
+          justificacion: Diputada elegida en la lista de Coalición Canaria.
+
+  - id: nc
+    nombre: Nueva Canarias
+    siglas: NC
+    herencia:
+      XIV:
+        - diputados: ["Quevedo Iturbe, Pedro"]
+          justificacion: Diputado de Nueva Canarias elegido en la lista NC-CCa-PNC por Las Palmas.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+
+  - id: upn
+    nombre: Unión del Pueblo Navarro
+    siglas: UPN
+    color: '#1B3A8C'
+    herencia:
+      XIV:
+        - diputados:
+            - "Sayas López, Sergio"
+            - "García Adanero, Carlos"
+          hasta: 2022-02-02
+          justificacion: >-
+            Diputados de UPN elegidos en Navarra Suma. Cuentan para UPN hasta que rompieron la disciplina del partido al votar contra la reforma laboral (3-02-2022) y UPN los apartó.
+          fuente: https://es.wikipedia.org/wiki/Anexo:Diputados_de_la_XIV_legislatura_de_España
+          dudas: >-
+            Fecha exacta de su salida de UPN por confirmar; se usa el día de la votación de la reforma laboral.
+      XV:
+        - formaciones: [UPN]
+          justificacion: Diputado elegido en la lista de UPN.
+
+  - id: prc
+    nombre: Partido Regionalista de Cantabria
+    siglas: PRC
+    herencia:
+      XIV:
+        - formaciones: [PRC]
+          justificacion: Diputado elegido en la lista del PRC.
+
+  - id: teruel-existe
+    nombre: Teruel Existe
+    siglas: Teruel Existe
+    herencia:
+      XIV:
+        - formaciones: ["¡Teruel Existe!"]
+          justificacion: Diputado elegido en la lista de Teruel Existe.
+
+  - id: cup
+    nombre: CUP
+    siglas: CUP
+    herencia:
+      XIV:
+        - formaciones: [CUP-PR]
+          justificacion: Diputados elegidos en la lista de la CUP.
+
+  - id: cs
+    nombre: Ciudadanos
+    siglas: Cs
+    color: '#EB6109'
+    herencia:
+      XIV:
+        - formaciones: [Cs]
+          justificacion: Diputados elegidos en la lista de Ciudadanos.
+        - diputados: ["Cambronero Piqueras, Pablo"]
+          hasta: 2021-03-17
+          justificacion: >-
+            Jurado de IAs, segunda deliberación (data/jurado/herencia.json, 27-10-2026): se dio de baja de Ciudadanos el 17-03-2021 y pasó al Grupo Mixto como no adscrito.

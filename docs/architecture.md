@@ -18,7 +18,7 @@ Vota con Criterio tiene dos mitades que no se tocan en producción:
 
 | Capa | Tecnología | Justificación |
 |------|-----------|---------------|
-| Framework | Astro 5 (salida `static`) + TypeScript estricto | Web de contenido con una sola parte interactiva; HTML estático rápido y sin JS innecesario. Elegido por Pol. |
+| Framework | Astro 7 (salida `static`) + TypeScript estricto | Web de contenido con una sola parte interactiva; HTML estático rápido y sin JS innecesario. Elegido por Pol. |
 | Interactividad | TypeScript sin framework de UI (script de cliente de Astro) | El cuestionario y el resultado son pocos estados; un framework añadiría peso sin aportar. |
 | Datos | Archivos YAML/JSON en `data/` + Content Collections de Astro con esquemas Zod | El catálogo vive en el repo, es revisable en cada PR y el build falla si una votación no cumple el esquema (M-05). |
 | Base de datos | Ninguna | Nada que persistir: no hay cuentas ni respuestas guardadas (M-08). |
@@ -112,10 +112,10 @@ credenciales del proyecto son las claves de las APIs de IA del jurado, que solo 
 - **Datos abiertos del Congreso** (`congreso.es/es/opendata/votaciones` y `/diputados`): fuente
   de las votaciones nominales y de la filiación de cada diputado. Se descargan con
   `pnpm data:ingesta` y se guardan en `data/raw/` para no depender de la web del Congreso en el
-  build. **Riesgo por verificar antes que nada:** el 26-10-2026 el ZIP de la última sesión
-  (XV, sesión 203) solo contenía gráficos PNG, sin JSON ni XML. Hay que confirmar en qué formato
-  están las votaciones nominales de la XIV y la XV; si no hay formato estructurado para alguna
-  sesión, la alternativa es extraerlas del Diario de Sesiones (PDF), con más coste.
+  build. **Formato verificado el 26-10-2026:** hay un JSON por votación con el voto nominal de
+  cada diputado en la XIV y en la XV (comprobado en sesiones de 2021, 2024 y hasta junio de 2026).
+  Las sesiones más recientes (al menos la del 2-10-2026) solo publican el gráfico PNG, sin JSON.
+  Detalle en `docs/features/ingesta-congreso.md`.
 - **Correspondencia diputado → partido:** el Congreso registra el grupo parlamentario, no el
   partido. La correspondencia sale de la formación por la que se presentó cada diputado
   (datos abiertos de diputados) y se guarda en `data/partidos/`, con las excepciones (cambios de

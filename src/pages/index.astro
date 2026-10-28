@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Ecualizador from '../components/Ecualizador.astro';
+import { coloresDePartidos } from '../lib/datos.ts';
+
+const colores = coloresDePartidos();
+---
+
+<Base>
+  <section class="portada">
+    <h1>No escuches lo que <i>prometen.</i> Mira lo que han <i>votado.</i></h1>
+    <p class="entradilla">
+      Unas preguntas sobre tu vida. Las cruzamos con lo que cada partido votó en el Congreso.
+    </p>
+    <a class="boton" href="/test" data-testid="empezar">Empezar el test →</a>
+    <p class="pie">
+      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a> · <a href="/como-funciona">Cómo funciona</a>
+    </p>
+    <div class="relleno"></div>
+    <Ecualizador colores={colores} />
+  </section>
+</Base>
+
+<style>
+  .portada {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 26px var(--margen) 0;
+  }
+
+  h1 {
+    font-size: clamp(46px, 11vw, 64px);
+    line-height: 0.98;
+    margin-bottom: 16px;
+  }
+
+  .entradilla {
+    margin: 0 0 22px;
+    font-size: 15px;
+    color: #333;
+  }
+
+  .pie {
+    margin: 12px 0 0;
+    font-size: 12px;
+    color: var(--gris-texto);
+    text-align: center;
+  }
+
+  .relleno {
+    flex: 1;
+    min-height: 40px;
+  }
+</style>

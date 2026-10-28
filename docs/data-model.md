@@ -25,27 +25,45 @@ Hay tres tipos de datos:
 | nombre | texto | Nombre oficial |
 | ccaa | slug | Comunidad o ciudad autónoma a la que pertenece (19) |
 
-### Partido — `data/partidos/partidos.yaml` (curado)
-Las candidaturas que pueden aparecer en el resultado.
-| Campo | Tipo | Descripción |
-|-------|------|-------------|
-| id | slug | `psoe`, `pp`, `vox`… |
-| nombre | texto | Nombre con el que se presenta el 29-N-2026 |
-| siglas | texto | Para filas estrechas |
-| color | hex | Color oficial; único entre partidos (design-system) |
-| logo | ruta | `public/logos/<id>.svg` |
-| herencia | lista | Por legislatura, qué diputados heredan este partido (ver "Herencia") |
+### Partidos — `data/partidos/partidos.yaml` (curado)
+Las candidaturas que pueden aparecer en el resultado, a nivel de partido individual (Podemos, IU,
+Compromís…), no de coalición. Lo valida `pnpm data:partidos` (`scripts/data/partidos.ts`).
 
-### Herencia de un partido (dentro de Partido)
-Responde a "¿qué votos de la XIV y la XV cuentan como de este partido?". Hace falta porque los
-diputados se eligen en coaliciones (Unidas Podemos, Sumar) y luego hay escisiones.
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| legislatura | `XIV` \| `XV` | |
-| formaciones | lista de texto | Formaciones electorales de origen cuyos diputados cuentan |
-| incluir / excluir | lista de ids de diputado | Excepciones (p. ej. diputados de Podemos tras salir de Sumar) |
-| desde / hasta | fecha (opcional) | Si la herencia cambia a mitad de legislatura |
-| justificacion | texto | Obligatorio; se muestra en "Cómo funciona" |
+| alias | { XIV: {...}, XV: {...} } | Nombre en las votaciones → nombre en la ficha del diputado, cuando no coinciden (p. ej. "Cuesta Rodríguez, María del Socorro" → "Cuesta Rodríguez, María") |
+| coaliciones | { XIV: [...], XV: [...] } | Formaciones electorales que eran coaliciones (`UP`, `SUMAR`…): sus diputados se asignan uno a uno por nombre |
+| sinPartido | lista de { legislatura, formacion, motivo } | Formaciones cuyos votos no cuentan para nadie (p. ej. PDeCAT, disuelto) |
+| diputadosSinPartido | lista de { legislatura, diputado, motivo, fuente? } | Diputados de coalición cuyo partido no concurre (p. ej. Equo, Foro) |
+| partidos | lista de Partido | |
+
+**Partido**
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
+| id | slug | `psoe`, `pp`, `podemos`… |
+| nombre, siglas | texto | |
+| color | hex (opcional hasta la feature de la web) | Color oficial; único entre partidos (design-system) |
+| herencia | { XIV?: [Regla], XV?: [Regla] } | Qué votos de cada legislatura cuentan como de este partido |
+
+**Regla de herencia**
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
+| formaciones | lista de texto | `FORMACIONELECTORAL` del Congreso cuyos diputados cuentan |
+| diputados | lista de nombres | Diputados concretos, para los elegidos en coalición; tienen prioridad sobre las reglas por formación |
+| grupos | lista de códigos (opcional) | Solo los votos emitidos desde esos grupos (`GS`, `GSUMAR`, `GMx`…). Así, por ejemplo, los votos de Ábalos dejan de contar para el PSOE al pasar al Mixto |
+| desde / hasta | AAAA-MM-DD (opcional) | Si la regla solo vale para un periodo |
+| justificacion | texto | Obligatorio; se publicará en "Cómo funciona" |
+| fuente | URL (opcional) | De dónde sale la asignación |
+| dudas | texto (opcional) | Lo que no está claro; el jurado lo revisa con especial atención |
+
+**Regla general: cada voto cuenta para el partido al que pertenecía el diputado cuando votó.** Por
+eso un mismo diputado puede contar para partidos distintos en cada legislatura (Yolanda Díaz: IU en
+la XIV, Sumar en la XV) o dejar de contar a mitad (Ábalos al salir del PSOE). Se aplica a todos sin excepción: los votos de un
+partido que no concurre el 29-N (Más País, Equo, Foro, PDeCAT) no se atribuyen a otro parecido, y los
+de un independiente elegido en una lista no cuentan para el partido de esa lista.
+
+Un voto que encaje en reglas de dos partidos es un error. Un diputado de coalición sin asignar no
+cuenta para nadie hasta que se asigne; `pnpm data:partidos` los lista.
 
 ### Candidatura — `data/candidaturas/2026.yaml` (curado, a partir del BOE)
 | Campo | Tipo | Descripción |
@@ -58,22 +76,25 @@ diputados se eligen en coaliciones (Unidas Podemos, Sumar) y luego hay escisione
 Un partido sin candidatura en la provincia del visitante no aparece (M-02). Un partido sin
 herencia en ninguna legislatura no puede tener candidatura (partido nuevo).
 
-### Diputado — `data/partidos/diputados-<leg>.json` (derivado de los datos abiertos)
+### Diputado con partido — `data/partidos/diputados-<leg>.json` (derivado por `pnpm data:partidos`)
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| id | texto | Identificador del Congreso, o nombre normalizado si no hay id |
-| nombre | texto | Como aparece en las votaciones |
-| legislatura | `XIV` \| `XV` | |
-| formacion | texto | Formación electoral por la que fue elegido |
-| alta / baja | fecha | Periodo como diputado |
+| nombre, formacion, circunscripcion | texto | Del Congreso |
+| partido | id de Partido, varios separados por comas, `pendiente`, `sin-partido` o `null` | Partido según las reglas por nombre o formación, sin aplicar grupo ni fechas (eso se aplica voto a voto) |
 
-### Votación nominal — `data/raw/<leg>/<sesion>/<num>.json` (bruto)
+### Día de votaciones — `data/raw/<leg>/dias/<AAAAMMDD>.json` (bruto, compactado)
+Todas las votaciones de un día, sin editar pero en formato compacto (`scripts/data/congreso.ts`).
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| legislatura, sesion, numero | | Identifican la votación en el Congreso |
-| fecha | fecha | |
-| titulo, expediente | texto | Tal como los publica el Congreso |
-| votos | lista de { diputado, grupo, voto } | `Sí`, `No`, `Abstención`, `No vota` |
+| legislatura, fecha | | |
+| diputados | lista de texto | Nombres ("Apellidos, Nombre") que votaron ese día, ordenados |
+| codigosGrupo | lista de texto | Grupos parlamentarios del día (`GS`, `GP`, `GSUMAR`…; puede haber `""`) |
+| votaciones | lista | Por votación: sesion, numero, fecha, titulo, expediente, subgrupo, textoSubgrupo, conjuntas, asentimiento, secreta, totales oficiales y dos cadenas alineadas con `diputados`: `votos` (S sí, N no, A abstención, X no vota, espacio si no aparece) y `grupos` (letra "a" = primer código de grupo…) |
+| sinJson | lista de rutas | Votaciones que el Congreso publica solo como gráfico |
+
+### Diputados — `data/raw/<leg>/diputados.json` (bruto)
+Los registros del Congreso tal cual: `NOMBRE`, `CIRCUNSCRIPCION`, `FORMACIONELECTORAL`,
+`GRUPOPARLAMENTARIO`, fechas de alta y baja.
 
 ### Voto de partido — `data/votos/<leg>.json` (derivado por `pnpm data:votos`)
 Una fila por votación del catálogo y partido con herencia en esa legislatura.
@@ -139,10 +160,10 @@ El build falla si una ficha no tiene veredicto vigente o si 3 o más jueces disc
 ```mermaid
 erDiagram
   PROVINCIA }o--|| CCAA : "pertenece a"
-  PARTIDO ||--o{ HERENCIA : "hereda votos de"
+  PARTIDO ||--o{ REGLA_HERENCIA : "hereda votos de"
   PARTIDO ||--o| CANDIDATURA : "se presenta en"
   CANDIDATURA }o--o{ PROVINCIA : "provincias"
-  DIPUTADO }o--o{ HERENCIA : "cuenta para"
+  DIPUTADO }o--o{ REGLA_HERENCIA : "cuenta para"
   VOTACION_NOMINAL ||--o{ VOTO_DIPUTADO : "contiene"
   DIPUTADO ||--o{ VOTO_DIPUTADO : "emite"
   VOTACION_NOMINAL ||--o| FICHA : "curada en"

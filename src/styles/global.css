@@ -1,0 +1,106 @@
+/* Tokens de docs/design-system.md. La interfaz es blanco y negro: el color solo aparece para los
+   partidos, y llega desde data/partidos/, nunca desde aquí. */
+
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/inter';
+
+:root {
+  --tinta: #0b0b0b;
+  --blanco: #ffffff;
+  --gris-aviso: #f4f4f4;
+  --gris-texto: #555555;
+  --gris-pista: #777777;
+  --gris-borde: #d6d6d6;
+  --gris-pista-barra: #efefef;
+  --gris-inactivo: #cfcfcf;
+
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter Variable', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  --radio: 10px;
+  --margen: 22px;
+  --columna: 560px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--blanco);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  margin: 0;
+  color: var(--tinta);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--tinta);
+  outline-offset: 3px;
+}
+
+.boton {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: var(--radio);
+  background: var(--tinta);
+  color: var(--blanco);
+  font: 500 16px/1.2 var(--sans);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: #2a2a2a;
+}
+
+.boton[aria-disabled='true'] {
+  background: var(--gris-inactivo);
+  cursor: not-allowed;
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

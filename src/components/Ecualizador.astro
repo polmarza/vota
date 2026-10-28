@@ -1,0 +1,41 @@
+---
+// Barras con el color de cada partido que suben y bajan desde una línea base. Decorativo.
+interface Props {
+  colores: string[];
+}
+
+const { colores } = Astro.props;
+// Alturas iniciales fijas (sin aleatoriedad en el build) para que el HTML sea estable.
+const alturas = colores.map((_, i) => 30 + ((i * 37) % 60));
+---
+
+<div class="ecualizador" aria-hidden="true" data-ecualizador data-testid="ecualizador">
+  {colores.map((color, i) => <span style={`background:${color};height:${alturas[i]}%`} />)}
+</div>
+
+<script>
+  const ecualizador = document.querySelector<HTMLElement>('[data-ecualizador]');
+  const quieto = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (ecualizador && !quieto.matches) {
+    const barras = [...ecualizador.children] as HTMLElement[];
+    const mover = () => barras.forEach((b) => (b.style.height = `${15 + Math.random() * 85}%`));
+    mover();
+    setInterval(mover, 560);
+  }
+</script>
+
+<style>
+  .ecualizador {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 96px;
+    border-bottom: 1px solid var(--tinta);
+  }
+
+  span {
+    flex: 1;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.5s ease;
+  }
+</style>
