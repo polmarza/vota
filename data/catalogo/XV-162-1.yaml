@@ -1,0 +1,29 @@
+votacion: XV-162-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=24/02/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-113-1.PDF
+iniciativa: "Proposición de ley del Grupo Sumar"
+fecha: 2026-02-24
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Plurinacional SUMAR, para la garantía de los derechos
+  de las personas trabajadoras en procesos de deslocalización y transmisión de unidades
+  productivas.
+titulo: "Despidos por deslocalización"
+resumen: >-
+  Prohibía los despidos colectivos y otras medidas contra la plantilla a las empresas que
+  trasladaran su producción fuera de la Unión Europea, y obligaba a devolver las ayudas de ERTE o
+  mecanismo RED cobradas en los cuatro años anteriores. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja en una empresa que se traslada fuera de la Unión Europea no podría ser
+      despedido por ese traslado.
+    base: >-
+      Artículo primero de la proposición, que modifica los arts. 40, 41, 51 y 52 del Estatuto de
+      los Trabajadores.
+justificacion: >-
+  Es una propuesta de protección del empleo de un grupo distinto del Gobierno en la XV.

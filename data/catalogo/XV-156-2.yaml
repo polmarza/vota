@@ -1,0 +1,25 @@
+votacion: XV-156-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=27/01/2026"
+texto: https://www.boe.es/eli/es/rdl/2025/12/23/17
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-01-27
+titulo_oficial: >-
+  Real Decreto-ley 17/2025, de 23 de diciembre, de medidas de promoción del uso del transporte
+  público mediante la bonificación de abonos y títulos multiviaje.
+titulo: "Ayudas al transporte público de 2026"
+resumen: >-
+  Mantiene en 2026 la bonificación estatal de abonos y títulos de transporte público y crea un
+  abono único para los servicios estatales de tren y autobús, con precio reducido para jóvenes.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { transporte: [publico] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el transporte público paga menos por sus abonos en 2026.
+    base: >-
+      Arts. 1 a 6 del Real Decreto-ley 17/2025.
+justificacion: >-
+  Es la última medida de ayudas al transporte público de la XV.

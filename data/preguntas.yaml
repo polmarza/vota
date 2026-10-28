@@ -120,19 +120,10 @@
     - { id: no-aplica, texto: No trabajo por cuenta ajena }
     - { id: ns, texto: Prefiero no responder }
 
-- id: discapacidad
-  bloque: ampliado
-  orden: 3
-  enunciado: ¿Tienes reconocida alguna discapacidad?
-  tipo: opciones
-  opciones:
-    - { id: no, texto: No }
-    - { id: si, texto: Sí }
-    - { id: ns, texto: Prefiero no responder }
 
 - id: campo
   bloque: ampliado
-  orden: 4
+  orden: 3
   enunciado: ¿Vives de la agricultura, la ganadería o la pesca?
   tipo: opciones
   opciones:
@@ -140,12 +131,3 @@
     - { id: si, texto: Sí }
     - { id: ns, texto: Prefiero no responder }
 
-- id: animales
-  bloque: ampliado
-  orden: 5
-  enunciado: ¿Convives con algún perro, gato u otro animal de compañía?
-  tipo: opciones
-  opciones:
-    - { id: no, texto: No }
-    - { id: si, texto: Sí }
-    - { id: ns, texto: Prefiero no responder }

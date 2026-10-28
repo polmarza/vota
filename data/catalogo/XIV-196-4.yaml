@@ -1,0 +1,35 @@
+votacion: XIV-196-4
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/08/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/08/01/14
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-08-25
+titulo_oficial: >-
+  Real Decreto-ley 14/2022, de 1 de agosto, de medidas de sostenibilidad económica en el ámbito
+  del transporte, en materia de becas y ayudas al estudio, así como de medidas de ahorro,
+  eficiencia energética y de reducción de la dependencia energética del gas natural.
+titulo: "Abonos de tren gratis y becas (2022)"
+resumen: >-
+  Hace gratuitos de septiembre a diciembre de 2022 los abonos de Cercanías, Rodalies y media
+  distancia de Renfe, financia descuentos en el transporte urbano y añade 100 euros al mes a los
+  estudiantes con beca, además de medidas de ahorro energético.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { transporte: [publico] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el transporte público tuvo abonos gratuitos de tren y descuentos en autobús y
+      metro.
+    base: >-
+      Título I del Real Decreto-ley 14/2022 (ayudas al transporte público).
+  - cuando: { trabajo: [estudiante] }
+    el_si: favorece
+    justificacion: >-
+      Quien estudia con beca recibió una cuantía adicional de 100 euros al mes.
+    base: >-
+      Título II del Real Decreto-ley 14/2022 (becas y ayudas al estudio).
+justificacion: >-
+  Es la medida de transporte público y becas de 2022, con efecto directo en usuarios y
+  estudiantes.

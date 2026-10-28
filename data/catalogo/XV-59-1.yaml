@@ -1,0 +1,36 @@
+votacion: XV-59-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=17/09/2024"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-134-1.PDF
+iniciativa: "Proposición de ley de los grupos Sumar, Euskal Herria Bildu, Republicano y Mixto"
+fecha: 2024-09-17
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Plurinacional SUMAR, relativa a la regulación de los
+  contratos de alquiler de vivienda por temporada y alquiler de habitaciones.
+titulo: "Alquiler de temporada y de habitaciones"
+resumen: >-
+  Extendía las protecciones del alquiler de vivienda habitual de la Ley de Arrendamientos Urbanos
+  a los alquileres de habitaciones y limitaba los contratos de temporada, que se usaban para
+  esquivar la duración mínima y la contención de rentas. No se admitió a trámite (una versión
+  posterior sí se admitió en diciembre de 2024).
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler, también en una habitación o con contrato de temporada, tendría las
+      garantías de duración y de renta del alquiler de vivienda habitual.
+    base: >-
+      Modificación de los arts. 2, 3.2 y 4 y nuevo art. 9 bis de la Ley de Arrendamientos Urbanos.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda no podría usar contratos de temporada o por habitaciones para
+      quedar fuera de la duración mínima y de la contención de rentas.
+    base: >-
+      Modificación de los arts. 2, 3.2 y 4 y nuevo art. 9 bis de la Ley de Arrendamientos Urbanos.
+justificacion: >-
+  Es la propuesta de la XV sobre el alquiler de temporada y de habitaciones, una vía que la ley de
+  vivienda dejaba abierta.

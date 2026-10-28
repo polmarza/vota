@@ -1,0 +1,39 @@
+votacion: XV-15-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=10/01/2024"
+texto: https://www.boe.es/eli/es/rdl/2023/12/19/7
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-01-10
+titulo_oficial: >-
+  Real Decreto-ley 7/2023, de 19 de diciembre, por el que se adoptan medidas urgentes, para
+  completar la transposición de la Directiva (UE) 2019/1158, del Parlamento Europeo y del Consejo,
+  de 20 de junio de 2019, relativa a la conciliación de la vida familiar y la vida profesional de
+  los progenitores y los cuidadores, y por la que se deroga la Directiva 2010/18/UE del Consejo, y
+  para la simplificación y mejora del nivel asistencial de la protección por desempleo.
+titulo: "Primera reforma del subsidio por desempleo"
+resumen: >-
+  Primera versión de la reforma del subsidio de desempleo: subía la cuantía en los primeros meses,
+  ampliaba quién podía cobrarlo y lo hacía compatible con un empleo, pero rebajaba la cotización
+  por jubilación de los mayores de 52 años que lo cobran. El Congreso no lo convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [desempleo] }
+    el_si: favorece
+    justificacion: >-
+      Quien está en paro podía cobrar un subsidio más alto los primeros meses y mantener una parte
+      al encontrar trabajo.
+    base: >-
+      Art. 1, que modifica los arts. 274 a 280 de la Ley General de la Seguridad Social.
+  - cuando: { trabajo: [desempleo], edad: [45-64] }
+    el_si: perjudica
+    justificacion: >-
+      Quien está en paro a partir de los 52 años y cobra el subsidio veía rebajada la cotización
+      que le cuenta para la pensión.
+    base: >-
+      Art. 1, que modifica el art. 280 de la Ley General de la Seguridad Social (cotización
+      durante el subsidio para mayores de 52 años).
+justificacion: >-
+  Es la versión de la reforma del subsidio que el Congreso tumbó, con un efecto contrapuesto para
+  los mayores de 52 años.

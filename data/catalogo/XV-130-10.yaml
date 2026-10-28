@@ -1,0 +1,29 @@
+votacion: XV-130-10
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=10/09/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-58-1.PDF
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2025-09-10
+titulo_oficial: >-
+  Proyecto de Ley para la reducción de la duración máxima de la jornada ordinaria de trabajo y la
+  garantía del registro de jornada y el derecho a la desconexión
+titulo: "Jornada de 37,5 horas"
+resumen: >-
+  Proyecto para bajar la jornada máxima de 40 a 37,5 horas semanales de promedio anual sin reducir
+  el sueldo, con registro de jornada digital y derecho a la desconexión. El Congreso aprobó las
+  enmiendas a la totalidad y lo devolvió al Gobierno.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno sin
+  debatirlo.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: perjudica
+    justificacion: >-
+      Que saliera el sí impidió que la jornada máxima de quien trabaja por cuenta ajena bajara a
+      37,5 horas sin rebaja de sueldo.
+    base: >-
+      Art. 1 del proyecto, que modifica el art. 34.1 del Estatuto de los Trabajadores.
+justificacion: >-
+  Es la principal medida laboral de la XV y una de las pocas votaciones en las que el Congreso
+  tumbó un proyecto del Gobierno.

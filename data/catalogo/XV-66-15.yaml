@@ -1,0 +1,31 @@
+votacion: XV-66-15
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=10/10/2024"
+texto: https://www.boe.es/eli/es/l/2024/10/30/3
+iniciativa: "Proposición de ley de varios grupos"
+fecha: 2024-10-10
+titulo_oficial: >-
+  Proposición de Ley para mejorar la calidad de vida de personas con Esclerosis Lateral
+  Amiotrófica y otras enfermedades o procesos de alta complejidad y curso irreversible (antes
+  denominada Proposición de Ley para mejorar la calidad de vida de personas con Esclerosis Lateral
+  Amiotrófica y otras enfermedades o procesos neurológicos de alta complejidad y curso
+  irreversible).
+titulo: "Ley ELA"
+resumen: >-
+  Ley para las personas con ELA y otras enfermedades de alta complejidad: crea un grado III+ de
+  dependencia con atención especializada de hasta 24 horas, acelera los trámites de dependencia y
+  discapacidad y protege la cotización de los familiares que dejan de trabajar para cuidarles.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien cuida de una persona con ELA u otra enfermedad de alta complejidad recibe más apoyo
+      profesional y conserva su cotización si deja de trabajar para cuidarla.
+    base: >-
+      Arts. 3 a 6 y disposiciones finales de la Ley 3/2024 (grado III+, procedimiento urgente y
+      convenio especial de cuidadores).
+justificacion: >-
+  Es la ley de cuidados de mayor consenso de la XV; reunió proposiciones de varios grupos.

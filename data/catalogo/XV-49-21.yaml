@@ -1,0 +1,26 @@
+votacion: XV-49-21
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=20/06/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/06/04/3
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-06-20
+titulo_oficial: >-
+  Real Decreto-ley 3/2024, de 4 de junio, de medidas de promoción del uso del transporte público
+  colectivo terrestre por parte de los jóvenes para los viajes realizados en el periodo estival de
+  2024.
+titulo: "Verano Joven 2024"
+resumen: >-
+  Descuentos en autobús y tren para jóvenes de 18 a 30 años durante el verano de 2024.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { edad: [menos-30] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene menos de 30 años tuvo descuentos en los viajes de autobús y tren del verano de
+      2024.
+    base: >-
+      Arts. 1 a 4 del Real Decreto-ley 3/2024.
+justificacion: >-
+  Es la medida de transporte dirigida específicamente a los jóvenes en la XV.

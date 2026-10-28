@@ -1,0 +1,27 @@
+votacion: XV-89-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/01/2025"
+texto: https://www.boe.es/eli/es/rdl/2024/12/23/11
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2025-01-22
+titulo_oficial: >-
+  Real Decreto-ley 11/2024, de 23 de diciembre, para la mejora de la compatibilidad de la pensión
+  de jubilación con el trabajo.
+titulo: "Compatibilizar pensión y trabajo"
+resumen: >-
+  Reforma la jubilación activa para que quien ha llegado a la edad de jubilación pueda cobrar una
+  parte creciente de su pensión mientras sigue trabajando, mejora los incentivos por retrasar la
+  jubilación y flexibiliza la jubilación parcial.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { edad: [65-mas], trabajo: [asalariado, autonomo, funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien ha cumplido la edad de jubilación y sigue trabajando puede cobrar a la vez parte de su
+      pensión.
+    base: >-
+      Art. 1, que modifica los arts. 210 y 214 de la Ley General de la Seguridad Social.
+justificacion: >-
+  Afecta directamente a quien tiene edad de jubilarse y quiere seguir trabajando.

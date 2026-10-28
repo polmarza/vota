@@ -1,0 +1,29 @@
+votacion: XV-96-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=11/03/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-77-1.PDF
+iniciativa: "Proposición de ley del Senado (Grupo Popular)"
+fecha: 2025-03-11
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, para la recuperación de la
+  bonificación de las cuotas patronales de la Seguridad Social para los empresarios de las
+  ciudades de Ceuta y Melilla, cuyas actividades estén encuadradas en los sectores recogidos en la
+  presente ley, con cuentas de cotización y trabajadores asignados a dichas empresas.
+titulo: "Bonificación de cuotas en Ceuta y Melilla"
+resumen: >-
+  Recuperaba la bonificación del 50 % en las cuotas empresariales a la Seguridad Social para todas
+  las empresas y autónomos de Ceuta y Melilla, que en 2023 se había limitado a algunos sectores.
+  Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: territorio
+ambito: [ceuta, melilla]
+efectos:
+  - cuando: { ccaa: [ceuta, melilla], trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo o empresario de Ceuta o Melilla volvería a tener una bonificación del 50 % en
+      las cuotas por sus empleados, sea cual sea su sector.
+    base: >-
+      Art. 1 de la proposición, que deroga el art. 31 del Real Decreto-ley 1/2023.
+justificacion: >-
+  Es la única iniciativa del universo que afecta específicamente a Ceuta y Melilla.

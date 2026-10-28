@@ -1,0 +1,28 @@
+votacion: XIV-15-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/03/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/02/18/4
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-03-25
+titulo_oficial: >-
+  Real Decreto-ley 4/2020, de 18 de febrero, por el que se deroga el despido objetivo por faltas
+  de asistencia al trabajo establecido en el artículo 52.d) del texto refundido de la Ley del
+  Estatuto de los Trabajadores, aprobado por el Real Decreto Legislativo 2/2015, de 23 de octubre.
+titulo: "Fin del despido por bajas médicas"
+resumen: >-
+  Deroga la causa de despido objetivo por faltas de asistencia intermitentes, aunque estuvieran
+  justificadas por bajas médicas, que permitía despedir con 20 días por año a quien acumulara
+  cierto número de ausencias.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena ya no puede ser despedido por acumular faltas de asistencia
+      justificadas, como bajas médicas cortas.
+    base: >-
+      Artículo único, que deroga el art. 52.d del Estatuto de los Trabajadores.
+justificacion: >-
+  Es una protección directa para cualquier asalariado frente al despido por enfermedad.

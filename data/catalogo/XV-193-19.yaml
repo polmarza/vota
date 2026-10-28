@@ -1,0 +1,29 @@
+votacion: XV-193-19
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=23/07/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-79-1.PDF
+iniciativa: "Proyecto de ley orgánica del Gobierno"
+fecha: 2026-07-23
+titulo_oficial: >-
+  Proyecto de Ley Orgánica de medidas excepcionales de sostenibilidad financiera para las
+  comunidades autónomas de régimen común
+titulo: "Condonación de deuda autonómica"
+resumen: >-
+  El Estado asume unos 83.000 millones de euros de deuda de las comunidades de régimen común,
+  repartidos entre todas ellas, lo que les ahorra intereses. Las enmiendas a la totalidad pedían
+  devolver el proyecto al Gobierno y se rechazaron.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno sin
+  debatirlo.
+tema: territorio
+ambito: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, madrid, murcia, la-rioja]
+efectos:
+  - cuando: { ccaa: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, madrid, murcia, la-rioja] }
+    el_si: perjudica
+    justificacion: >-
+      Devolver el proyecto impedía que el Estado asumiera parte de la deuda de su comunidad, que
+      dejaría de pagar esa deuda y sus intereses.
+    base: >-
+      Arts. 1 a 4 y anexo del proyecto (importe asumido por cada comunidad).
+justificacion: >-
+  Es la votación de financiación autonómica de más alcance de la XV; afecta a las quince
+  comunidades de régimen común.

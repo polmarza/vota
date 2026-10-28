@@ -1,0 +1,38 @@
+votacion: XIV-250-20
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=30/03/2023"
+texto: https://www.boe.es/eli/es/rdl/2023/03/16/2
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2023-03-30
+titulo_oficial: >-
+  Real Decreto-ley 2/2023, de 16 de marzo, de medidas urgentes para la ampliación de derechos de
+  los pensionistas, la reducción de la brecha de género y el establecimiento de un nuevo marco de
+  sostenibilidad del sistema público de pensiones.
+titulo: "Reforma de las pensiones de 2023"
+resumen: >-
+  Sube las pensiones mínimas y no contributivas por encima de la inflación, refuerza el
+  complemento por brecha de género y, para financiarlo, sube la base máxima de cotización, crea
+  una cuota de solidaridad sobre los salarios que la superan y aumenta el mecanismo de equidad
+  intergeneracional.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión, sobre todo si es mínima o no contributiva, tiene subidas por encima
+      de la inflación hasta 2027.
+    base: >-
+      Art. único, apartados que modifican el art. 58 y la disposición adicional quincuagésima
+      tercera de la Ley General de la Seguridad Social.
+  - cuando: { trabajo: [asalariado], ingresos: [mas-60k] }
+    el_si: perjudica
+    justificacion: >-
+      Quien gana más que la base máxima de cotización paga más cotización, por la subida de esa
+      base y la nueva cuota de solidaridad.
+    base: >-
+      Art. único, que modifica los arts. 19 y 127 bis y añade la disposición transitoria trigésima
+      novena de la Ley General de la Seguridad Social.
+justificacion: >-
+  Es la segunda pata de la reforma de pensiones de la XIV y la que fija quién la paga.

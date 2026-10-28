@@ -1,0 +1,29 @@
+votacion: XV-137-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=14/10/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-243-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2025-10-14
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, de Conciliación y
+  Corresponsabilidad Familiar.
+titulo: "Ley de conciliación del PP"
+resumen: >-
+  Medidas de conciliación y apoyo a las familias: subía la deducción por maternidad en el IRPF
+  hasta 1.800 euros por hijo menor de tres años, ampliaba a 26 semanas el permiso de las familias
+  monoparentales, retribuía parte del permiso parental y permitía bonificar el IBI a familias
+  numerosas y monoparentales. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: familia
+ambito: estatal
+efectos:
+  - cuando: { hijos: [pequenos] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene hijos menores de tres años podría deducirse hasta 1.800 euros al año por cada
+      uno en el IRPF.
+    base: >-
+      Disposición final tercera (art. 81 de la Ley del IRPF) y disposición adicional séptima de la
+      proposición.
+justificacion: >-
+  Es la principal propuesta de la oposición sobre familia en la XV.

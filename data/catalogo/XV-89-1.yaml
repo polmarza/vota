@@ -1,0 +1,37 @@
+votacion: XV-89-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/01/2025"
+texto: https://www.boe.es/eli/es/rdl/2024/12/23/9
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2025-01-22
+titulo_oficial: >-
+  Real Decreto-ley 9/2024, de 23 de diciembre, por el que se adoptan medidas urgentes en materia
+  económica, tributaria, de transporte, y de Seguridad Social, y se prorrogan determinadas medidas
+  para hacer frente a situaciones de vulnerabilidad social.
+titulo: "Decreto ómnibus: pensiones y transporte (2025)"
+resumen: >-
+  Subía las pensiones un 2,8 % en 2025 y las mínimas y no contributivas más, y prorrogaba los
+  descuentos en el transporte público, entre otras medidas. El Congreso no lo convalidó; las
+  pensiones y el transporte se aprobaron después en otro decreto.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión tenía garantizada la subida de 2025 desde enero.
+    base: >-
+      Título sobre Seguridad Social del Real Decreto-ley 9/2024 (revalorización de las pensiones
+      para 2025).
+  - cuando: { transporte: [publico] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el transporte público mantenía los descuentos en abonos y títulos de Cercanías,
+      media distancia y autobús.
+    base: >-
+      Título sobre transporte del Real Decreto-ley 9/2024 (prórroga de las ayudas al transporte
+      público).
+justificacion: >-
+  Es la única vez en las dos legislaturas que el Congreso tumbó un decreto con la subida de las
+  pensiones.

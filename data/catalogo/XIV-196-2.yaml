@@ -1,0 +1,36 @@
+votacion: XIV-196-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/08/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/07/26/13
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-08-25
+titulo_oficial: >-
+  Real Decreto-ley 13/2022, de 26 de julio, por el que se establece un nuevo sistema de cotización
+  para los trabajadores por cuenta propia o autónomos y se mejora la protección por cese de
+  actividad.
+titulo: "Cotización de autónomos por ingresos reales"
+resumen: >-
+  Sustituye la base de cotización elegida libremente por tramos según los rendimientos netos
+  reales, de forma gradual entre 2023 y 2025: los autónomos con menos ingresos pagan menos y los
+  de más ingresos pagan más. Mejora también la prestación por cese de actividad.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [autonomo], ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo con ingresos bajos pasa a pagar una cuota menor que con el sistema anterior y
+      gana protección por cese de actividad.
+    base: >-
+      Art. 1, que modifica los arts. 308 y 327 a 331 de la Ley General de la Seguridad Social, y
+      disposición transitoria primera (tablas de 2023 a 2025).
+  - cuando: { trabajo: [autonomo], ingresos: [mas-60k] }
+    el_si: perjudica
+    justificacion: >-
+      Un autónomo con ingresos altos pasa a cotizar por una base mayor y paga una cuota más alta.
+    base: >-
+      Art. 1 (art. 308 de la Ley General de la Seguridad Social) y disposición transitoria
+      primera.
+justificacion: >-
+  Es el cambio más importante para los autónomos en las dos legislaturas.

@@ -1,0 +1,26 @@
+votacion: XIV-138-83
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=02/12/2021"
+texto: https://www.boe.es/eli/es/l/2021/12/28/21
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2021-12-02
+titulo_oficial: >-
+  Proyecto de Ley de garantía del poder adquisitivo de las pensiones y de otras medidas de
+  refuerzo de la sostenibilidad financiera y social del sistema público de pensiones
+titulo: "Pensiones ligadas al IPC"
+resumen: >-
+  Fija por ley que las pensiones suban cada año según la inflación media del año anterior, deroga
+  el índice de revalorización de 2013 y el factor de sostenibilidad, e incentiva retrasar la
+  jubilación.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión tiene garantizado por ley que sube cada año con la inflación media.
+    base: >-
+      Art. 1, que modifica el art. 58 de la Ley General de la Seguridad Social.
+justificacion: >-
+  Es la ley que garantiza la revalorización de las pensiones con el IPC.

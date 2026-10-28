@@ -1,0 +1,35 @@
+votacion: XIV-129-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=04/11/2021"
+texto: https://www.boe.es/eli/es/l/2021/12/28/22
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2021-11-04
+titulo_oficial: >-
+  Proyecto de Ley de Presupuestos Generales del Estado para el año 2022
+titulo: "Presupuestos de 2022"
+resumen: >-
+  Debate de totalidad de los Presupuestos Generales del Estado para 2022. Las enmiendas pedían
+  devolver el proyecto al Gobierno; se rechazaron y los presupuestos siguieron adelante. Incluían,
+  entre otras cosas, la subida de las pensiones y del sueldo del personal público.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno sin
+  debatirlo.
+tema: presupuestos
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: perjudica
+    justificacion: >-
+      Devolver los presupuestos ponía en riesgo la subida de las pensiones de 2022 (2,5 %), que se
+      fija en ellos.
+    base: >-
+      Título IV del proyecto (pensiones públicas).
+  - cuando: { trabajo: [funcionario] }
+    el_si: perjudica
+    justificacion: >-
+      Devolver los presupuestos ponía en riesgo la subida salarial del personal público de 2022 (2
+      %).
+    base: >-
+      Título III del proyecto (retribuciones del personal del sector público).
+justificacion: >-
+  Los Presupuestos fijan cada año la subida de pensiones y salarios públicos; es la votación sobre
+  el conjunto.

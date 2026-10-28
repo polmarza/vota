@@ -25,7 +25,14 @@ function cargar<T>(ruta: string, esquema: z.ZodType<T>): T | null {
     errores.push(`${ruta}: no existe`);
     return null;
   }
-  const r = esquema.safeParse(parse(readFileSync(completa, 'utf8')));
+  let contenido: unknown;
+  try {
+    contenido = parse(readFileSync(completa, 'utf8'));
+  } catch (e) {
+    errores.push(`${ruta}: el YAML no se puede leer (${(e as Error).message.split('\n')[0]})`);
+    return null;
+  }
+  const r = esquema.safeParse(contenido);
   if (r.success) return r.data;
   for (const i of r.error.issues) errores.push(`${ruta}: ${i.path.join('.') || '(raíz)'}: ${i.message}`);
   return null;

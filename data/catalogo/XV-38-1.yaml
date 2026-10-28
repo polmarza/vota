@@ -1,0 +1,29 @@
+votacion: XV-38-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=21/05/2024"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-75-1.PDF
+iniciativa: "Proposición de ley del Grupo Republicano"
+fecha: 2024-05-21
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Republicano, por la que se modifica la Ley 12/2013,
+  de 2 de agosto, de medidas para mejorar el funcionamiento de la cadena alimentaria.
+titulo: "Venta a pérdidas en la cadena alimentaria"
+resumen: >-
+  Reforma de la ley de la cadena alimentaria para hacer efectiva la prohibición de vender por
+  debajo del coste de producción, extenderla a las reventas y que el Ministerio publique
+  indicadores de costes. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo tendría más garantías de que no le compren por debajo de lo que le
+      cuesta producir.
+    base: >-
+      Artículo único de la proposición, que modifica los arts. 9 y 12 ter de la Ley 12/2013 de la
+      cadena alimentaria.
+justificacion: >-
+  Es una propuesta de un grupo distinto del Gobierno sobre la renta de agricultores y ganaderos en
+  la XV.

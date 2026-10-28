@@ -1,0 +1,34 @@
+votacion: XIV-76-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=18/02/2021"
+texto: https://www.boe.es/eli/es/rdl/2021/01/26/2
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2021-02-18
+titulo_oficial: >-
+  Real Decreto-ley 2/2021, de 26 de enero, de refuerzo y consolidación de medidas sociales en
+  defensa del empleo.
+titulo: "Prórroga de los ERTE y ayudas a autónomos (2021)"
+resumen: >-
+  Prorroga hasta mayo de 2021 los ERTE por la covid, con exoneraciones de cuotas y protección
+  frente al despido, y las prestaciones extraordinarias por cese de actividad de los autónomos.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien estaba en un ERTE seguía cobrando la prestación y conservaba la protección frente al
+      despido.
+    base: >-
+      Arts. 1 a 4 del Real Decreto-ley 2/2021.
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo afectado por la covid podía seguir cobrando la prestación extraordinaria por
+      cese de actividad.
+    base: >-
+      Arts. 5 a 7 del Real Decreto-ley 2/2021.
+justificacion: >-
+  Es la prórroga de la protección del empleo de 2021, con efecto directo en asalariados y
+  autónomos.

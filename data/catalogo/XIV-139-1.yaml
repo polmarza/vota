@@ -1,0 +1,29 @@
+votacion: XIV-139-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=14/12/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-180-1.PDF
+iniciativa: "Proposición de ley del Parlamento de Andalucía"
+fecha: 2021-12-14
+titulo_oficial: >-
+  Proposición de Ley del Parlamento de Andalucía, relativa al reconocimiento de la gratuidad y
+  universalidad del primer ciclo de la educación infantil.
+titulo: "Escuela infantil de 0 a 3 años gratuita"
+resumen: >-
+  Propuesta del Parlamento andaluz para modificar la ley de educación y garantizar que el primer
+  ciclo de educación infantil, de 0 a 3 años, sea gratuito y con plazas suficientes. Se admitió a
+  trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: familia
+ambito: estatal
+efectos:
+  - cuando: { hijos: [pequenos] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene hijos menores de tres años tendría garantizada una plaza gratuita de escuela
+      infantil.
+    base: >-
+      Artículo único de la proposición, que modifica el art. 15 de la Ley Orgánica 2/2006 de
+      Educación.
+justificacion: >-
+  Es una iniciativa de una comunidad autónoma sobre la etapa educativa que más pesa en el bolsillo
+  de las familias con bebés.

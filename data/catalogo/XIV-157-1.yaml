@@ -1,0 +1,27 @@
+votacion: XIV-157-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=08/03/2022"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-205-1.PDF
+iniciativa: "Proposición de ley del Grupo Ciudadanos"
+fecha: 2022-03-08
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Ciudadanos, para garantizar el derecho a una vida
+  digna de las personas con esclerosis lateral amiotrófica.
+titulo: "Ley ELA de Ciudadanos"
+resumen: >-
+  Primera propuesta de ley para las personas con ELA: agilizaba las ayudas de dependencia,
+  reconocía un 33 % de discapacidad desde el diagnóstico y garantizaba atención en unidades
+  multidisciplinares. Se admitió a trámite, pero no llegó a aprobarse en la XIV.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien cuida de una persona con ELA tendría ayudas de dependencia más rápidas y atención
+      especializada para ella.
+    base: >-
+      Arts. 4 a 8 de la proposición (procedimiento de dependencia y discapacidad).
+justificacion: >-
+  Es el antecedente de la ley ELA en la XIV, impulsado por un grupo de la oposición.

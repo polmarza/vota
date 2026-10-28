@@ -1,0 +1,34 @@
+votacion: XIV-83-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=16/03/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-53-1.PDF
+iniciativa: "Proposición de ley del Grupo Ciudadanos"
+fecha: 2021-03-16
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Ciudadanos, Integral de Protección y Apoyo a las
+  Familias.
+titulo: "Ley de familias de Ciudadanos"
+resumen: >-
+  Consideraba familia numerosa a toda familia con dos o más hijos, ampliaba los permisos por
+  nacimiento, creaba una bolsa de horas para conciliar y extendía la reducción de jornada a quien
+  cuida de un familiar mayor. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: familia
+ambito: estatal
+efectos:
+  - cuando: { hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Una familia con dos hijos pasaría a ser numerosa, con sus descuentos y ventajas, y los
+      permisos por nacimiento serían más largos.
+    base: >-
+      Arts. 1 y 16 de la proposición (Ley 40/2003 de familias numerosas y art. 48 del Estatuto de
+      los Trabajadores).
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien cuida de un familiar mayor podría reducir su jornada para atenderle.
+    base: >-
+      Art. 13 de la proposición (art. 37.6 del Estatuto de los Trabajadores).
+justificacion: >-
+  Es la propuesta sobre familia de la oposición en la XIV.

@@ -1,0 +1,35 @@
+votacion: XIV-149-20
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=03/02/2022"
+texto: https://www.boe.es/eli/es/rdl/2021/12/28/32
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-02-03
+titulo_oficial: >-
+  Real Decreto-ley 32/2021, de 28 de diciembre, de medidas urgentes para la reforma laboral, la
+  garantía de la estabilidad en el empleo y la transformación del mercado de trabajo.
+titulo: "Reforma laboral"
+resumen: >-
+  Limita los contratos temporales a causas concretas y convierte en indefinidos los que no las
+  cumplen, potencia el contrato fijo discontinuo, devuelve al convenio del sector la prioridad
+  sobre el de empresa en salarios y mantiene los convenios vencidos en vigor hasta que haya uno
+  nuevo. Crea además los ERTE y el mecanismo RED.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena no puede cobrar por convenio de empresa menos que lo que fija
+      el convenio de su sector, y su convenio sigue vigente aunque haya vencido.
+    base: >-
+      Art. 1, que modifica los arts. 84.2 y 86 del Estatuto de los Trabajadores.
+  - cuando: { contrato: [temporal] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene un contrato temporal solo puede tenerlo por causas tasadas y pasa a indefinido
+      si se encadenan contratos o no se cumplen esas causas.
+    base: >-
+      Art. 1, que modifica los arts. 15 y 16 del Estatuto de los Trabajadores.
+justificacion: >-
+  Es el cambio laboral más importante de las dos legislaturas.

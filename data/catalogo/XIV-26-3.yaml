@@ -1,0 +1,26 @@
+votacion: XIV-26-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=10/06/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/05/29/20
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-06-10
+titulo_oficial: >-
+  Real Decreto-ley 20/2020, de 29 de mayo, por el que se establece el ingreso mínimo vital.
+titulo: "Ingreso mínimo vital"
+resumen: >-
+  Crea el ingreso mínimo vital, una prestación de la Seguridad Social para hogares con ingresos y
+  patrimonio por debajo de un umbral, que completa sus ingresos hasta una renta garantizada según
+  el número de miembros.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos puede cobrar una prestación que completa los ingresos de su
+      hogar, si este cumple los umbrales de renta y patrimonio.
+    base: >-
+      Arts. 1 a 13 del Real Decreto-ley 20/2020 (beneficiarios, requisitos y cuantía).
+justificacion: >-
+  Es la principal prestación nueva contra la pobreza de las dos legislaturas.
