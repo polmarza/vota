@@ -14,6 +14,7 @@
     "preview": "astro preview",
     "data:ingesta": "tsx scripts/data/ingesta.ts",
     "data:partidos": "tsx scripts/data/comprobar-partidos.ts",
+    "data:votos": "tsx scripts/data/calcular-votos.ts",
     "data:jurado": "tsx scripts/data/jurado-herencia.ts",
     "test": "vitest run",
     "test:watch": "vitest",

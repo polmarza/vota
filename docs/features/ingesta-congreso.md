@@ -76,8 +76,16 @@ feature de la web, no aquí.
 - **Nombres que no casan:** en toda la XV solo uno ("Cuesta Rodríguez, María del Socorro" en las
   votaciones frente a "Cuesta Rodríguez, María" en su ficha). Se resuelve con `alias` en
   `partidos.yaml`, no tocando los datos brutos.
-- **Votos sin partido** tras asignar la herencia: 2,5 % en la XIV y 0,2 % en la XV, todos
-  intencionados (PDeCAT, Equo, Foro, Navarra Suma tras romper con UPN, Pita y Ábalos en el Mixto).
+- **Votos sin partido** tras asignar la herencia y las decisiones del jurado: 3,8 % en la XIV y 1,6 % en la XV, todos
+  intencionados (PDeCAT, Equo, Foro, Navarra Suma tras romper con UPN, Pita y Ábalos en el Mixto,
+  independientes y casos sin consenso del jurado).
+- **Voto de partido** (`pnpm data:votos`, 28-10-2026): se calcula para todas las votaciones, no
+  solo las del catálogo. Un partido sin diputados en una votación no aparece en ella (no es
+  "ausente"). Cuando las dos opciones más votadas por sus diputados empatan, el sentido es
+  `empate`: 164 en la XIV y 230 en la XV, casi todos de partidos de dos diputados (CUP, UPN, CC y,
+  en la XV, Compromís con Ibáñez y Micó en grupos distintos). Los "ausentes" de Vox y del PRC en la
+  XIV (unos 1.900 y 2.400) se concentran en las sesiones de enmiendas a los Presupuestos de 2020,
+  2021 y 2022, en las que no votaron.
 - **Errores de descarga:** hasta 3 reintentos con espera creciente. Un JSON se da por bueno si se
   puede leer y la suma de votos de sus diputados coincide con sus totales; si no, se reintenta. Lo
   que siga fallando se lista al final y la siguiente ejecución lo vuelve a intentar.

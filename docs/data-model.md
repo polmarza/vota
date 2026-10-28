@@ -97,14 +97,26 @@ Los registros del Congreso tal cual: `NOMBRE`, `CIRCUNSCRIPCION`, `FORMACIONELEC
 `GRUPOPARLAMENTARIO`, fechas de alta y baja.
 
 ### Voto de partido — `data/votos/<leg>.json` (derivado por `pnpm data:votos`)
-Una fila por votación del catálogo y partido con herencia en esa legislatura.
+Se calcula para **todas** las votaciones de la legislatura, no solo las del catálogo: así el
+catálogo puede elegir cualquiera sin volver a ejecutar nada, y el build lee solo las que usa. Una
+votación por línea (`scripts/data/votos.ts`). La cabecera lleva `sinDatos`, con las rutas de las
+votaciones que el Congreso publica sin JSON.
+
+**Votación**
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| votacion | ref | legislatura + sesión + número |
-| partido | id de Partido | |
-| sentido | `si` \| `no` \| `abstencion` \| `ausente` | Voto de la mayoría de sus diputados presentes; `ausente` si no votó ninguno |
-| dividido | booleano | Algún diputado votó distinto de la mayoría |
-| desglose | { si, no, abstencion, ausente } | Recuento de sus diputados |
+| id | texto | `<leg>-<sesion>-<numero>` (`XV-10-1`), el mismo que la referencia de las fichas |
+| fecha | AAAAMMDD | |
+| asentimiento | `true` (opcional) | Aprobada por asentimiento: no hay voto nominal ni voto de partido |
+| secreta | `true` (opcional) | Secreta: no hay voto nominal ni voto de partido |
+| partidos | { [id de Partido]: VotoPartido } | Solo los partidos con algún diputado en esa votación. Un partido sin diputados ese día (por ejemplo, antes de que llegue su único diputado) no aparece: no es lo mismo que `ausente` |
+
+**VotoPartido**
+| Campo | Tipo | Descripción |
+|-------|------|-------------|
+| sentido | `si` \| `no` \| `abstencion` \| `ausente` \| `empate` | Voto de la mayoría de sus diputados presentes (sí, no o abstención). `ausente` si no votó ninguno; `empate` si las dos opciones más votadas empatan (por ejemplo, un partido de dos diputados que votan distinto) |
+| dividido | booleano | Algún diputado presente votó distinto del sentido; siempre `true` en un empate |
+| si, no, abstencion, ausente | enteros | Recuento de sus diputados; `ausente` son los que figuran como "No vota" |
 
 ### Pregunta — `data/preguntas.yaml` (curado)
 | Campo | Tipo | Descripción |
@@ -189,7 +201,11 @@ provincia:
    lista.
 3. **Voto del partido:** con `el_si = favorece`, votar `si` es *a favor* y `no` es *en contra*; con
    `perjudica`, al revés. `abstencion` cuenta en el total pero no es ni a favor ni en contra.
-   `ausente` excluye la votación para ese partido.
+   `ausente` excluye la votación para ese partido, igual que si no tenía diputados en ella.
+   `empate` también la excluye: si sus diputados votan divididos a partes iguales, no consta una
+   posición del partido. En la lista de votaciones del resultado se indica que votó dividido.
+   (Decidido el 28-10-2026: contarlo como abstención trataría como posición deliberada lo que no
+   lo es y penalizaría sobre todo a los partidos de dos diputados.)
 4. **Porcentajes (M-03):** favorable = a favor / votaciones contadas; desfavorable = en contra /
    votaciones contadas. Podio favorable: los 3 con más porcentaje favorable; desfavorable: los 3
    con más porcentaje desfavorable, sin repetir partido (M-03).

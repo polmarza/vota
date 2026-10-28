@@ -43,6 +43,9 @@ El cálculo vive en `src/lib/afinidad/` como código puro, según `docs/data-mod
 - **Escritorio y accesibilidad:** los e2e se ejecutan en móvil (375 px) y escritorio (1280 px), y
   `tests/e2e/accesibilidad.spec.ts` pasa axe por portada, pregunta, resultado y "Cómo funciona" y
   completa el test solo con teclado.
+- **Empates** (28-10-2026): si los diputados de un partido votan divididos a partes iguales, esa
+  votación no cuenta para él, y en la lista de votaciones del resultado se indica "votó dividido"
+  (ver `docs/data-model.md` → Cálculo de afinidad).
 
 ## Cobertura
 
