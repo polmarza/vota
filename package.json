@@ -15,6 +15,8 @@
     "data:ingesta": "tsx scripts/data/ingesta.ts",
     "data:partidos": "tsx scripts/data/comprobar-partidos.ts",
     "data:votos": "tsx scripts/data/calcular-votos.ts",
+    "data:candidatas": "tsx scripts/data/generar-candidatas.ts",
+    "data:catalogo": "tsx scripts/data/comprobar-catalogo.ts",
     "data:jurado": "tsx scripts/data/jurado-herencia.ts",
     "test": "vitest run",
     "test:watch": "vitest",

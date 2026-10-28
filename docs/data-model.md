@@ -135,8 +135,10 @@ El build falla si una pregunta no la usa ninguna ficha del catálogo (salvo `pro
 ### Ficha del catálogo — `data/catalogo/<leg>-<sesion>-<num>.yaml` (curado)
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| votacion | ref | legislatura + sesión + número oficiales |
-| url | URL | Página de la votación o de la iniciativa en congreso.es (obligatoria) |
+| votacion | ref | `<leg>-<sesion>-<numero>`, el id de `data/votos/` |
+| url | URL | Página de las votaciones de ese día en congreso.es, o la de la iniciativa (obligatoria) |
+| texto | URL | Texto en que se basa la etiqueta: BOE si se aprobó, Boletín Oficial de las Cortes Generales si no (obligatorio) |
+| iniciativa | texto | Tipo y quién la propuso: "Proyecto de ley del Gobierno", "Proposición de ley del G. P. Popular". La votación tiene que estar en `data/candidatas/` y no puede haber dos fichas de la misma iniciativa |
 | fecha | fecha | |
 | titulo_oficial | texto | Literal del Congreso |
 | titulo | texto | En lenguaje claro: "Ley de vivienda" |
@@ -152,8 +154,9 @@ El build falla si una pregunta no la usa ninguna ficha del catálogo (salvo `pro
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | cuando | condición | Sobre las respuestas: `{ vivienda: [alquiler] }`, `{ ccaa: [cataluna] }`; varias claves = todas se cumplen |
-| el_si | `favorece` \| `perjudica` | Efecto de que saliera "Sí" para quien cumple la condición |
+| el_si | `favorece` \| `perjudica` | Efecto directo de que saliera "Sí" para quien cumple la condición |
 | justificacion | texto | Por qué; se muestra al visitante en M-04 (obligatoria) |
+| base | texto | Artículo o medida concreta del texto en que se basa el efecto (obligatoria) |
 
 ### Veredicto del jurado — `data/jurado/<ficha>.json` (derivado por `pnpm data:jurado`)
 | Campo | Tipo | Descripción |

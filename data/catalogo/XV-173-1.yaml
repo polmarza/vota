@@ -1,0 +1,35 @@
+votacion: XV-173-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=21/04/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-303-1.PDF
+iniciativa: Proposición de ley del Grupo Popular
+fecha: 2026-04-21
+titulo_oficial: >-
+  Proposición de Ley de medidas administrativas y procesales para la seguridad jurídica de la
+  ordenación territorial y urbanística, el impulso del desarrollo urbano y la vivienda.
+titulo: Reforma urbanística y del alquiler del PP
+resumen: >-
+  Agiliza los planes urbanísticos y las licencias de obra nueva y limita su anulación por defectos de
+  forma. Deroga de la ley de vivienda las zonas tensionadas, los índices de precios y la contención
+  de rentas, suprime las prórrogas extraordinarias del alquiler, acorta la suspensión de desahucios de
+  hogares vulnerables y deja que cualquier empresa recurra al juicio rápido contra la ocupación.
+que_significa_si: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: perjudica
+    justificacion: >-
+      Quien vive de alquiler perdería la contención de rentas de las zonas tensionadas y las prórrogas
+      extraordinarias del contrato, y en caso de desahucio por vulnerabilidad la suspensión sería más corta.
+    base: Disposición derogatoria (zonas tensionadas e índices de la Ley 12/2023; art. 10.3 LAU), art. 10.2 LAU y art. 441.6 y 7 de la Ley de Enjuiciamiento Civil (art. 4 de la proposición).
+  - cuando: { arrendador: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien alquila una vivienda podría fijar la renta del nuevo contrato sin el límite de las zonas
+      tensionadas y no tendría que aceptar prórrogas extraordinarias.
+    base: Disposición derogatoria y modificación del art. 10 de la Ley de Arrendamientos Urbanos.
+justificacion: >-
+  Es la principal propuesta de la oposición sobre vivienda en la XV y plantea revertir la ley de 2023;
+  se votó la admisión a trámite en el Pleno.
+fuentes:
+  - https://www.congreso.es/docu/tramit/LegXV/AT/ATCD_15_PL_20260421.pdf

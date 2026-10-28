@@ -1,0 +1,34 @@
+votacion: XV-175-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=28/04/2026"
+texto: https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-6545
+iniciativa: Real decreto-ley del Gobierno
+fecha: 2026-04-28
+titulo_oficial: >-
+  Real Decreto-ley 8/2026, de 20 de marzo, de medidas en el alquiler en respuesta a las consecuencias
+  económicas y sociales de la Guerra de Irán.
+titulo: Prórroga de los alquileres y tope del 2 %
+resumen: >-
+  Permitía al inquilino de vivienda habitual cuyo contrato terminara antes de finales de 2027 prorrogarlo
+  hasta dos años más con las mismas condiciones, y limitaba al 2 % la subida anual de la renta si no
+  había nuevo acuerdo. El Congreso no lo convalidó y decayó.
+que_significa_si: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler podía alargar su contrato hasta dos años con la misma renta y la subida
+      anual quedaba limitada al 2 %.
+    base: Arts. 1 y 2 del Real Decreto-ley 8/2026.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda tenía que aceptar la prórroga que pidiera el inquilino y no podía subir
+      la renta más de un 2 % al año.
+    base: Arts. 1 y 2 del Real Decreto-ley 8/2026.
+justificacion: >-
+  Es la última votación sobre el alquiler de la XV y la única en la que el Congreso tumbó una medida
+  de alquiler del Gobierno.
+fuentes:
+  - https://www.boe.es/buscar/pdf/2026/BOE-A-2026-6545-consolidado.pdf

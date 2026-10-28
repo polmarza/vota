@@ -1,0 +1,151 @@
+# Preguntas del cuestionario (M-01). Cada una existe porque alguna ficha del catálogo depende de
+# ella: pnpm data:catalogo falla si una pregunta no la usa ninguna ficha. Formato en
+# docs/data-model.md. Las opciones son ids estables: las fichas las citan en `cuando`.
+
+# ─── Bloque básico ──────────────────────────────────────────────────────────────
+
+- id: provincia
+  bloque: basico
+  orden: 1
+  enunciado: ¿En qué provincia votas?
+  subtitulo: Solo aparecen los partidos que se presentan en ella.
+  tipo: provincia
+  obligatoria: true
+
+- id: vivienda
+  bloque: basico
+  orden: 2
+  enunciado: ¿Cómo vives?
+  tipo: opciones
+  opciones:
+    - { id: alquiler, texto: De alquiler }
+    - { id: hipoteca, texto: En una vivienda propia que estoy pagando }
+    - { id: propiedad, texto: En una vivienda propia ya pagada }
+    - { id: familia, texto: Con mi familia o en una vivienda cedida }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: trabajo
+  bloque: basico
+  orden: 3
+  enunciado: ¿Cuál es tu situación laboral?
+  tipo: opciones
+  opciones:
+    - { id: asalariado, texto: Trabajo por cuenta ajena }
+    - { id: autonomo, texto: Soy autónomo }
+    - { id: funcionario, texto: Soy funcionario o personal público }
+    - { id: desempleo, texto: Estoy en paro }
+    - { id: estudiante, texto: Estudio }
+    - { id: jubilado, texto: Estoy jubilado o cobro una pensión }
+    - { id: hogar, texto: Me dedico al hogar o a cuidar }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: edad
+  bloque: basico
+  orden: 4
+  enunciado: ¿Cuántos años tienes?
+  tipo: opciones
+  opciones:
+    - { id: menos-30, texto: Menos de 30 }
+    - { id: 30-44, texto: De 30 a 44 }
+    - { id: 45-64, texto: De 45 a 64 }
+    - { id: 65-mas, texto: 65 o más }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: ingresos
+  bloque: basico
+  orden: 5
+  enunciado: ¿Cuánto ingresas al año, antes de impuestos?
+  subtitulo: Tus ingresos personales, no los de tu hogar.
+  tipo: opciones
+  opciones:
+    - { id: hasta-16k, texto: Hasta 16.000 € }
+    - { id: 16-30k, texto: De 16.000 a 30.000 € }
+    - { id: 30-60k, texto: De 30.000 a 60.000 € }
+    - { id: mas-60k, texto: Más de 60.000 € }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: hijos
+  bloque: basico
+  orden: 6
+  enunciado: ¿Tienes hijos a tu cargo?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: pequenos, texto: Sí, menores de 3 años }
+    - { id: menores, texto: Sí, de 3 a 17 años }
+    - { id: mayores, texto: Sí, mayores de edad }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: cuidados
+  bloque: basico
+  orden: 7
+  enunciado: ¿Cuidas de alguna persona dependiente o con discapacidad?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: transporte
+  bloque: basico
+  orden: 8
+  enunciado: ¿Cómo te mueves normalmente?
+  tipo: opciones
+  opciones:
+    - { id: publico, texto: En transporte público }
+    - { id: coche, texto: En coche o moto }
+    - { id: otros, texto: A pie, en bici u otros }
+    - { id: ns, texto: Prefiero no responder }
+
+# ─── Bloque ampliado ────────────────────────────────────────────────────────────
+
+- id: arrendador
+  bloque: ampliado
+  orden: 1
+  enunciado: ¿Tienes alguna vivienda alquilada a otra persona?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: contrato
+  bloque: ampliado
+  orden: 2
+  enunciado: Si trabajas por cuenta ajena, ¿qué contrato tienes?
+  tipo: opciones
+  opciones:
+    - { id: indefinido, texto: Indefinido }
+    - { id: temporal, texto: Temporal }
+    - { id: no-aplica, texto: No trabajo por cuenta ajena }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: discapacidad
+  bloque: ampliado
+  orden: 3
+  enunciado: ¿Tienes reconocida alguna discapacidad?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: campo
+  bloque: ampliado
+  orden: 4
+  enunciado: ¿Vives de la agricultura, la ganadería o la pesca?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+- id: animales
+  bloque: ampliado
+  orden: 5
+  enunciado: ¿Convives con algún perro, gato u otro animal de compañía?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }

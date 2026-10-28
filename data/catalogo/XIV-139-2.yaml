@@ -1,0 +1,39 @@
+votacion: XIV-139-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=14/12/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-192-1.PDF
+iniciativa: Proposición de ley de los grupos Republicano, Plural, Euskal Herria Bildu y Mixto
+fecha: 2021-12-14
+titulo_oficial: Proposición de Ley de garantía del derecho a la vivienda digna y adecuada.
+titulo: Ley de vivienda de los movimientos sociales
+resumen: >-
+  Propuesta de ley de vivienda impulsada por la PAH y sindicatos de inquilinas y registrada por varios
+  grupos. Alargaba los contratos de alquiler a siete años (doce si el arrendador es una empresa),
+  limitaba las rentas en zonas tensionadas, cargaba los honorarios de inmobiliaria al arrendador,
+  introducía la dación en pago y limitaba la deuda hipotecaria a la vivienda. No se admitió a trámite.
+que_significa_si: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Los contratos de alquiler durarían como mínimo siete años, la renta inicial en zonas tensionadas
+      quedaría limitada y el inquilino no pagaría honorarios de inmobiliaria.
+    base: Arts. 32, 33, 34 y 41 de la proposición (modificación de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos).
+  - cuando: { vivienda: [hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga una hipoteca sobre su vivienda podría saldar la deuda entregando la casa (dación en
+      pago) y su responsabilidad quedaría limitada a la vivienda hipotecada.
+    base: Arts. 15 y 16 de la proposición.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda tendría contratos mínimos de siete años, la renta limitada en zonas
+      tensionadas, los honorarios de inmobiliaria a su cargo y menos reducciones fiscales.
+    base: Arts. 32, 33, 34, 41 y 45 de la proposición.
+justificacion: >-
+  Fue la alternativa a la ley del Gobierno presentada por grupos parlamentarios distintos; permite
+  comparar a los partidos en un modelo de alquiler y de hipoteca más exigente que el que se aprobó.
+fuentes:
+  - https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-192-3.PDF
