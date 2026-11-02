@@ -165,6 +165,14 @@ describe('M-10 · deliberación', () => {
     expect(registros[0]!.historial).toBeUndefined();
   });
 
+  it('si responden menos de 3 jueces no guarda la ronda, deja el elemento pendiente y se para', async () => {
+    const cliente = clienteSimulado({ ...todos(['ERROR']), [JUECES[0]]: ['a'], [JUECES[1]]: ['a'] });
+    const { registros } = await deliberar(cliente, [elemento('a', 'uno'), elemento('a', 'dos')], [], opciones());
+    expect(registros.map((r) => r.resultado)).toEqual(['pendiente', 'pendiente']);
+    expect(registros[0]!.ronda1).toBeUndefined();
+    expect(registros[1]!.ronda1).toBeUndefined();
+  });
+
   it('se para al alcanzar el presupuesto y deja el resto pendiente', async () => {
     const cliente = clienteSimulado(todos(['a']), 1);
     const { registros, gastado } = await deliberar(cliente, [elemento('a', 'uno'), elemento('a', 'dos')], [], opciones({ presupuesto: 5 }));

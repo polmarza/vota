@@ -220,17 +220,27 @@ export async function deliberar(cliente: Cliente, elementos: Elemento[], previos
         op.registrar?.(`Presupuesto de ${op.presupuesto} $ alcanzado: se para aquí.`);
       } else {
         procesados++;
+        // Una ronda en la que responden menos de MAYORIA jueces no vale como veredicto: suele ser un
+        // fallo general (clave caducada, proveedor caído). No se guarda y se para la ejecución.
+        const fallida = (rs: Respuesta[]) => {
+          if (rs.filter((r) => r.estado === 'ok').length >= MAYORIA) return false;
+          parado = true;
+          op.registrar?.(`  ${e.id}: responden menos de ${MAYORIA} jueces (${rs.find((r) => r.error)?.error ?? 'sin detalle'}); se para aquí.`);
+          return true;
+        };
         if (necesitaRonda1) {
-          reg = { ...reg, ronda1: await ronda(cliente, e.sistema, e.pregunta, e.opciones) };
-          gastado += costeDe(reg.ronda1);
+          const r1 = await ronda(cliente, e.sistema, e.pregunta, e.opciones);
+          gastado += costeDe(r1);
+          if (!fallida(r1)) reg = { ...reg, ronda1: r1 };
         }
-        if (evaluar(reg).resultado === 'pendiente' && !reg.ronda2 && gastado < op.presupuesto) {
-          reg = { ...reg, ronda2: await ronda(cliente, e.sistema, preguntaSegundaRonda(e, reg.ronda1!), e.opciones) };
-          gastado += costeDe(reg.ronda2);
+        if (!parado && evaluar(reg).resultado === 'pendiente' && !reg.ronda2 && gastado < op.presupuesto) {
+          const r2 = await ronda(cliente, e.sistema, preguntaSegundaRonda(e, reg.ronda1!), e.opciones);
+          gastado += costeDe(r2);
+          if (!fallida(r2)) reg = { ...reg, ronda2: r2 };
         }
         const ev = evaluar(reg);
         reg = { ...reg, resultado: ev.resultado, decision: ev.decision };
-        op.registrar?.(`  ${e.id}: ${reg.resultado}${reg.decision && reg.decision !== e.esperado ? ` → ${reg.decision} (Claude: ${e.esperado})` : ''}`);
+        if (!parado) op.registrar?.(`  ${e.id}: ${reg.resultado}${reg.decision && reg.decision !== e.esperado ? ` → ${reg.decision} (Claude: ${e.esperado})` : ''}`);
       }
     }
     registros.push(reg);
