@@ -1,0 +1,64 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-f98855479-1280.jpg",
+   "files": [
+    "photo-f98855479-500.jpg",
+    "photo-f98855479-960.jpg",
+    "photo-f98855479-1280.jpg"
+   ],
+   "id": "f98855479",
+   "alt": "Borrasca Filomena Congreso de los Diputados frente",
+   "by": "Javier Pérez Montes",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Borrasca_Filomena_Congreso_de_los_Diputados_frente.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f139947023-960.jpg",
+   "files": [
+    "photo-f139947023-500.jpg",
+    "photo-f139947023-960.jpg"
+   ],
+   "id": "f139947023",
+   "alt": "Congreso de los Diputados - Madrid 03",
+   "by": "Javier Perez Montes",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Congreso_de_los_Diputados_-_Madrid_03.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f40410369.jpg",
+   "files": [
+    "photo-f40410369-500.jpg",
+    "photo-f40410369-960.jpg",
+    "photo-f40410369.jpg"
+   ],
+   "id": "f40410369",
+   "alt": "Urnes votació 2015 02",
+   "by": "Coentor",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Urnes_votaci%C3%B3_2015_02.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f45497079.jpg",
+   "files": [
+    "photo-f45497079-500.jpg",
+    "photo-f45497079-960.jpg",
+    "photo-f45497079.jpg"
+   ],
+   "id": "f45497079",
+   "alt": "Vestíbulo principal, vitrina, Congreso de los Diputados, Madrid, España, 2015",
+   "by": "Benjamín Núñez González",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Vest%C3%ADbulo_principal,_vitrina,_Congreso_de_los_Diputados,_Madrid,_Espa%C3%B1a,_2015.JPG",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

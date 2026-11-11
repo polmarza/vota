@@ -58,3 +58,6 @@ pnpm-debug.log*
 # Playwright
 test-results/
 playwright-report/
+
+# Perfiles de Chrome que crea taste-skill al comprobar los diseños
+propuestas-diseno/**/.taste-skill/

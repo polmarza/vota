@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vota con Criterio · Propuesta Datamática</title>
+<meta name="description" content="Propuesta de diseño para Vota con Criterio: los votos del Congreso como un campo de datos en blanco y negro puro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro: #000;
+    --blanco: #fff;
+    --fuente: 'Martian Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--blanco) var(--negro); }
+  body {
+    margin: 0;
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: var(--fuente);
+    font-size: 15px;
+    line-height: 1.6;
+    font-variation-settings: 'wdth' 75;
+    font-variant-numeric: tabular-nums;
+  }
+  ::selection { background: var(--blanco); color: var(--negro); }
+  input, button { font: inherit; font-variation-settings: inherit; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  :focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
+
+  .campo { padding: 0 16px 64px; max-width: 1280px; margin: 0 auto; }
+  .pantalla { padding-top: 16px; margin-bottom: 80px; }
+  .rotulo {
+    margin: 0 0 20px;
+    padding: 8px 0;
+    border-top: 1px solid var(--blanco);
+    border-bottom: 1px solid var(--blanco);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .barra-sup {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--blanco);
+    font-size: 12px;
+  }
+  .barra-sup .marca { white-space: nowrap; font-weight: 700; font-variation-settings: 'wdth' 100; font-size: 13px; }
+
+  /* ───────── Portada ───────── */
+  .titular {
+    margin: 30px 0 28px;
+    font-size: clamp(34px, 10.4vw, 128px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    font-variation-settings: 'wdth' 112.5;
+  }
+  .titular .vuela { display: block; font-weight: 150; }
+  .titular .queda { display: block; font-weight: 800; }
+
+  .codigo { margin: 0 0 8px; }
+  .codigo svg { display: block; width: 100%; height: 132px; }
+  .codigo .eje { position: relative; height: 26px; border-top: 1px solid var(--blanco); font-size: 12px; }
+  .codigo .eje span { position: absolute; top: 0; left: var(--x); padding: 5px 0 0 4px; border-left: 1px solid var(--blanco); line-height: 1.3; }
+  .codigo figcaption { margin-top: 8px; font-size: 12px; line-height: 1.5; max-width: 52ch; }
+
+  .entradilla { margin: 28px 0 24px; max-width: 46ch; font-size: 16px; line-height: 1.6; font-variation-settings: 'wdth' 87.5; }
+  .boton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-height: 60px;
+    padding: 14px 18px;
+    border: 1px solid var(--blanco);
+    background: var(--blanco);
+    color: var(--negro);
+    font-size: 16px;
+    font-weight: 700;
+    font-variation-settings: 'wdth' 100;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 120ms steps(1), color 120ms steps(1);
+  }
+  .boton:hover { background: var(--negro); color: var(--blanco); }
+  .pie-portada { margin: 14px 0 0; font-size: 12px; }
+
+  /* ───────── Pregunta ───────── */
+  .barra-pregunta { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .atras {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0;
+    background: none; border: 0; color: var(--blanco); cursor: pointer;
+    text-transform: uppercase; letter-spacing: 0.04em; font-size: 12px;
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;
+  }
+  .progreso { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; height: 22px; margin: 4px 0 0; }
+  .progreso span { border-left: 1px solid var(--blanco); }
+  .progreso span.on { background: var(--blanco); }
+  .enunciado {
+    margin: 36px 0 8px;
+    font-size: clamp(30px, 9vw, 64px);
+    line-height: 1.04;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    font-variation-settings: 'wdth' 112.5;
+  }
+  .instruccion { margin: 0 0 18px; font-size: 13px; }
+  .opciones { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .opciones legend { float: left; width: 100%; padding: 0; }
+  .opcion {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.5em 1fr;
+    align-items: center;
+    min-height: 58px;
+    padding: 12px 14px 12px 0;
+    border-bottom: 1px solid var(--blanco);
+    font-size: 16px;
+    font-variation-settings: 'wdth' 87.5;
+    cursor: pointer;
+  }
+  .opciones legend + .opcion { clear: both; border-top: 1px solid var(--blanco); }
+  .opcion input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .opcion .clave { font-size: 12px; text-align: center; }
+  .opcion:has(input:checked) { background: var(--blanco); color: var(--negro); font-weight: 700; }
+  .opcion:has(input:focus-visible) { outline: 2px solid var(--blanco); outline-offset: 3px; }
+  .opcion:hover:not(:has(input:checked)) { box-shadow: inset 0 -4px 0 var(--blanco); }
+
+  /* ───────── Resultado ───────── */
+  .cab-resultado { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 28px 0 10px; }
+  .titulo-resultado { margin: 0; font-size: clamp(34px, 10vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.04em; text-transform: uppercase; font-variation-settings: 'wdth' 112.5; }
+  .estado { margin: 0; padding: 4px 8px; background: var(--blanco); color: var(--negro); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .base { margin: 0 0 10px; font-size: 15px; font-variation-settings: 'wdth' 87.5; }
+  .base b { font-weight: 800; }
+  .cobertura { display: flex; gap: 3px; height: 28px; margin: 0 0 6px; align-items: flex-end; }
+  .cobertura i { flex: 1; height: 100%; background: var(--blanco); }
+  .cobertura i.fuera { height: 6px; }
+  .cobertura-eje { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 36px; }
+
+  .podios { display: grid; gap: 44px; }
+  .podio h3 { margin: 0 0 6px; font-size: 22px; line-height: 1.15; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; font-variation-settings: 'wdth' 100; }
+  .podio .explica { margin: 0 0 14px; font-size: 13px; line-height: 1.5; }
+  .filas { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--blanco); }
+  .filas li { padding: 14px 0 16px; border-bottom: 1px solid var(--blanco); }
+  .fila-cab { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 12px; }
+  .partido { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; font-variation-settings: 'wdth' 87.5; }
+  .muestra { flex: none; width: 14px; height: 14px; background: var(--c); outline: 1px solid var(--blanco); outline-offset: -1px; }
+  .cifra { font-size: 34px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; font-variation-settings: 'wdth' 100; }
+  .cuenta { display: block; margin: 4px 0 10px 24px; font-size: 12px; }
+  .tira { display: flex; gap: 2px; height: 22px; margin-left: 24px; }
+  .tira i { width: 10px; flex: none; box-shadow: inset 0 0 0 1px var(--blanco); }
+  .tira i.si { background: var(--c); }
+
+  .aviso { margin: 40px 0 0; padding: 16px; border: 1px solid var(--blanco); font-size: 13px; line-height: 1.6; max-width: 80ch; font-variation-settings: 'wdth' 87.5; }
+  .seguir { margin-top: 24px; }
+
+  .lista { margin-top: 56px; }
+  .lista h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; font-variation-settings: 'wdth' 100; }
+  .lista > .explica { margin: 0 0 14px; font-size: 13px; }
+  .votacion { padding: 18px 0 20px; border-top: 1px solid var(--blanco); }
+  .meta { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .meta .efecto { padding: 1px 6px; background: var(--blanco); color: var(--negro); font-weight: 700; }
+  .votacion h4 { margin: 10px 0 8px; font-size: 19px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; font-variation-settings: 'wdth' 87.5; }
+  .votacion p { margin: 0 0 8px; font-size: 14px; max-width: 62ch; font-variation-settings: 'wdth' 87.5; }
+  .votos { width: 100%; margin: 12px 0 10px; border-collapse: collapse; font-size: 13px; }
+  .votos th { padding: 0 0 6px; font-size: 12px; font-weight: 400; text-align: left; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--blanco); }
+  .votos td { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,1); vertical-align: top; }
+  .votos td:last-child, .votos th:last-child { text-align: right; }
+  .votos .p { display: inline-flex; align-items: center; gap: 8px; }
+  .votos .muestra { width: 10px; height: 10px; }
+  .votos b { text-transform: uppercase; }
+  .votos small { display: block; font-size: 12px; }
+  .enlace { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  @media (min-width: 860px) {
+    .campo { padding: 0 40px 96px; }
+    .pantalla { margin-bottom: 120px; }
+    .portada-cuerpo { margin-top: 36px; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: end; }
+    .codigo svg { height: 200px; }
+    .entradilla { margin-top: 0; }
+    .boton { max-width: 420px; }
+    .pregunta-cuerpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: start; }
+    .podios { grid-template-columns: 1fr 1fr; gap: 56px; }
+    .votacion { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 56px; }
+    .votacion > :not(.votos) { grid-column: 1; }
+    .votacion .votos { grid-column: 2; grid-row: 1 / span 6; margin-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .codigo line { animation: aparece 900ms cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(var(--i) * 9ms); }
+    @keyframes aparece { from { opacity: 0; transform: scaleY(0); } to { opacity: 1; transform: scaleY(1); } }
+    .codigo line { transform-origin: 50% 100%; transform-box: fill-box; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flecha" viewBox="0 0 24 24"><path d="M3 12h17M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+  <symbol id="flecha-atras" viewBox="0 0 24 24"><path d="M21 12H4M10 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+  <symbol id="externo" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></symbol>
+</svg>
+
+<main class="campo">
+
+  <!-- ═════════ Portada ═════════ -->
+  <section class="pantalla" aria-labelledby="t-portada">
+    <p class="rotulo"><span>Pantalla: portada</span><span>1/3</span></p>
+    <header class="barra-sup"><span class="marca">vota con criterio</span><span>Elecciones generales · 29 de noviembre</span></header>
+    <h1 class="titular" id="t-portada"><span class="vuela">Las promesas vuelan.</span><span class="queda">Los votos se quedan.</span></h1>
+
+    <figure class="codigo" aria-label="Las 71 votaciones del catálogo, cada una en su fecha, de 2020 a 2026">
+      <svg id="campo-votaciones" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="eje" aria-hidden="true"><span style="--x:0.00%">2020</span><span style="--x:14.29%">2021</span><span style="--x:28.57%">2022</span><span style="--x:42.86%">2023</span><span style="--x:57.14%">2024</span><span style="--x:71.43%">2025</span><span style="--x:85.71%">2026</span></div>
+      <figcaption>Cada línea es una de las 71 votaciones del Congreso que usa el test, colocada en su fecha.</figcaption>
+    </figure>
+
+    <div class="portada-cuerpo">
+      <p class="entradilla">Cruzamos tus preocupaciones con lo que cada partido votó en el Congreso desde 2019. Así sabes quién estuvo de tu lado cuando tocaba votar.</p>
+      <div>
+        <a class="boton" href="#t-pregunta">Empezar el test <svg width="24" height="24" aria-hidden="true"><use href="#flecha"/></svg></a>
+        <p class="pie-portada">Un proyecto de <a href="https://concriterio.blog">Con Criterio</a> · <a href="#">Cómo funciona</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ Pregunta ═════════ -->
+  <section class="pantalla" aria-labelledby="t-pregunta">
+    <p class="rotulo"><span>Pantalla: pregunta</span><span>2/3</span></p>
+    <form onsubmit="return false">
+      <div class="barra-pregunta">
+        <button type="button" class="atras"><svg width="18" height="18" aria-hidden="true"><use href="#flecha-atras"/></svg>Atrás</button>
+        <span>Vivienda · 2 de 8</span>
+      </div>
+      <div class="progreso" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="pregunta-cuerpo">
+        <div>
+          <h2 class="enunciado" id="t-pregunta">¿Cómo vives?</h2>
+          <p class="instruccion">Elige una respuesta.</p>
+        </div>
+        <fieldset class="opciones">
+          <legend class="sr" style="position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;overflow:hidden">¿Cómo vives?</legend>
+          <label class="opcion"><input type="radio" name="vivienda" checked><span class="clave" aria-hidden="true">A</span><span>De alquiler</span></label>
+          <label class="opcion"><input type="radio" name="vivienda"><span class="clave" aria-hidden="true">B</span><span>En una vivienda propia que estoy pagando</span></label>
+          <label class="opcion"><input type="radio" name="vivienda"><span class="clave" aria-hidden="true">C</span><span>En una vivienda propia ya pagada</span></label>
+          <label class="opcion"><input type="radio" name="vivienda"><span class="clave" aria-hidden="true">D</span><span>Con mi familia o en una vivienda cedida</span></label>
+          <label class="opcion"><input type="radio" name="vivienda"><span class="clave" aria-hidden="true">E</span><span>Prefiero no responder</span></label>
+        </fieldset>
+      </div>
+    </form>
+  </section>
+
+  <!-- ═════════ Resultado ═════════ -->
+  <section class="pantalla" aria-labelledby="t-resultado">
+    <p class="rotulo"><span>Pantalla: resultado</span><span>3/3</span></p>
+    <header class="barra-sup"><span class="marca">vota con criterio</span><span>Nada sale de este navegador</span></header>
+    <div class="cab-resultado">
+      <h2 class="titulo-resultado" id="t-resultado">Tu resultado</h2>
+      <p class="estado">Provisional</p>
+    </div>
+    <p class="base">Basado en <b>23 de las 31</b> votaciones que podrían afectarte.</p>
+    <div class="cobertura" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i><i class="fuera"></i></div>
+    <div class="cobertura-eje" aria-hidden="true"><span>23 en el cálculo</span><span>31 podrían afectarte</span></div>
+
+    <div class="podios">
+      <section class="podio" aria-labelledby="t-lado">
+        <h3 id="t-lado">Estuvieron de tu lado</h3>
+        <p class="explica">Apoyaron lo que te beneficiaba, o se opusieron a lo que te perjudicaba.</p>
+        <ul class="filas">
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span><span class="cifra">100 %</span></div><span class="cuenta">9 de 9 votaciones</span><span class="tira" style="--c:#45BB89" data-si="9" data-total="9" aria-hidden="true"></span></li>
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#E51C55"></span>Sumar</span><span class="cifra">100 %</span></div><span class="cuenta">9 de 9 votaciones</span><span class="tira" style="--c:#E51C55" data-si="9" data-total="9" aria-hidden="true"></span></li>
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#DF0022"></span>Izquierda Unida</span><span class="cifra">95 %</span></div><span class="cuenta">19 de 20 votaciones</span><span class="tira" style="--c:#DF0022" data-si="19" data-total="20" aria-hidden="true"></span></li>
+        </ul>
+      </section>
+      <section class="podio" aria-labelledby="t-contra">
+        <h3 id="t-contra">Votaron en tu contra</h3>
+        <p class="explica">Se opusieron a lo que te beneficiaba, o apoyaron lo que te perjudicaba.</p>
+        <ul class="filas">
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#63BE21"></span>Vox</span><span class="cifra">80 %</span></div><span class="cuenta">16 de 20 votaciones</span><span class="tira" style="--c:#63BE21" data-si="16" data-total="20" aria-hidden="true"></span></li>
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#1E4B8F"></span>Partido Popular</span><span class="cifra">65 %</span></div><span class="cuenta">13 de 20 votaciones</span><span class="tira" style="--c:#1E4B8F" data-si="13" data-total="20" aria-hidden="true"></span></li>
+          <li><div class="fila-cab"><span class="partido"><span class="muestra" style="--c:#EB6109"></span>Ciudadanos</span><span class="cifra">64 %</span></div><span class="cuenta">7 de 11 votaciones</span><span class="tira" style="--c:#EB6109" data-si="7" data-total="11" aria-hidden="true"></span></li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="aviso">Herramienta orientativa basada solo en votaciones del Congreso de las dos últimas legislaturas. No tiene en cuenta ideologías ni programas electorales, y no es una recomendación de voto. El porcentaje es la parte de las votaciones que te afectan en la que cada partido votó a tu favor (o en tu contra); por eso los dos podios no suman 100.</p>
+    <div class="seguir"><a class="boton" href="#t-pregunta">Seguir con más preguntas <svg width="24" height="24" aria-hidden="true"><use href="#flecha"/></svg></a></div>
+
+    <section class="lista" aria-labelledby="t-lista">
+      <h3 id="t-lista">Las votaciones que te afectan</h3>
+      <p class="explica">Cada una enlaza a su votación en el Congreso.</p>
+
+      <article class="votacion">
+        <div class="meta"><span>28.01.2021</span><span class="efecto">Te favorecía</span></div>
+        <h4>Suspensión de desahucios de hogares vulnerables</h4>
+        <p>Quien vive de alquiler y está en situación de vulnerabilidad podía pedir que se suspendiera su desahucio.</p>
+        <p>Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.</p>
+        <table class="votos">
+          <thead><tr><th scope="col">Partido</th><th scope="col">Votó</th></tr></thead>
+          <tbody>
+            <tr><td><span class="p"><span class="muestra" style="--c:#1E4B8F"></span>PP</span></td><td><b>No</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#FF0000"></span>PSOE</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#63BE21"></span>Vox</span></td><td><b>No</b><small>voto dividido (1 sí, 51 no, 0 abst.)</small></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#DF0022"></span>IU</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#9370DB"></span>Podemos</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#EB6109"></span>Cs</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#E51C55"></span>Sumar</span></td><td>Sin diputados</td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span></td><td>Sin diputados</td></tr>
+          </tbody>
+        </table>
+        <a class="enlace" href="https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;targetLegislatura=XIV&amp;targetDate=28/01/2021">Ver la votación en el Congreso <svg width="16" height="16" aria-hidden="true"><use href="#externo"/></svg></a>
+      </article>
+
+      <article class="votacion">
+        <div class="meta"><span>14.12.2021</span><span class="efecto">Te favorecía</span></div>
+        <h4>Ley de vivienda de los movimientos sociales</h4>
+        <p>Los contratos de alquiler durarían como mínimo siete años, la renta inicial en zonas tensionadas quedaría limitada y el inquilino no pagaría honorarios de inmobiliaria.</p>
+        <p>Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.</p>
+        <table class="votos">
+          <thead><tr><th scope="col">Partido</th><th scope="col">Votó</th></tr></thead>
+          <tbody>
+            <tr><td><span class="p"><span class="muestra" style="--c:#1E4B8F"></span>PP</span></td><td><b>No</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#FF0000"></span>PSOE</span></td><td><b>No</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#63BE21"></span>Vox</span></td><td><b>No</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#DF0022"></span>IU</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#9370DB"></span>Podemos</span></td><td><b>Sí</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#EB6109"></span>Cs</span></td><td><b>No</b></td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#E51C55"></span>Sumar</span></td><td>Sin diputados</td></tr>
+            <tr><td><span class="p"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span></td><td>Sin diputados</td></tr>
+          </tbody>
+        </table>
+        <a class="enlace" href="https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;targetLegislatura=XIV&amp;targetDate=14/12/2021">Ver la votación en el Congreso <svg width="16" height="16" aria-hidden="true"><use href="#externo"/></svg></a>
+      </article>
+    </section>
+  </section>
+</main>
+
+<script>
+  // Fechas reales de las 71 votaciones del catálogo (data/catalogo/*.yaml, campo fecha).
+  const fechas = '2020-02-04 2020-03-25 2020-03-25 2020-03-25 2020-04-09 2020-04-22 2020-07-15 2020-09-22 2020-11-12 2020-11-17 2021-01-28 2021-02-18 2021-03-16 2021-05-25 2021-11-04 2021-12-02 2021-12-14 2021-12-14 2022-01-25 2022-02-03 2022-03-31 2022-04-28 2022-05-24 2022-07-14 2022-08-25 2022-08-25 2022-10-27 2022-11-29 2022-12-15 2022-12-22 2023-01-24 2023-03-07 2023-03-09 2023-03-14 2023-03-30 2023-04-25 2023-04-25 2023-04-27 2024-01-10 2024-05-21 2024-06-11 2024-06-13 2024-06-20 2024-06-20 2024-07-23 2024-09-17 2024-10-08 2024-10-22 2024-10-22 2025-01-22 2025-01-22 2025-02-12 2025-03-11 2025-03-18 2025-04-08 2025-05-13 2025-09-10 2025-10-14 2025-12-09 2026-01-27 2026-01-27 2026-02-24 2026-02-26 2026-02-26 2026-03-24 2026-04-21 2026-04-28 2026-05-28 2026-06-18 2026-07-14 2026-09-16'.split(' ');
+  const ini = Date.UTC(2020, 0, 1), fin = Date.UTC(2026, 11, 31);
+  const svg = document.getElementById('campo-votaciones');
+  const ns = 'http://www.w3.org/2000/svg';
+  const vistas = {};
+  fechas.forEach((f, i) => {
+    const [a, m, d] = f.split('-').map(Number);
+    let x = ((Date.UTC(a, m - 1, d) - ini) / (fin - ini)) * 1000;
+    vistas[f] = (vistas[f] || 0) + 1;
+    x += (vistas[f] - 1) * 3.2; // mismo día: barras contiguas
+    const l = document.createElementNS(ns, 'line');
+    l.setAttribute('x1', x.toFixed(1)); l.setAttribute('x2', x.toFixed(1));
+    l.setAttribute('y1', '0'); l.setAttribute('y2', '200');
+    l.setAttribute('stroke', '#fff'); l.setAttribute('stroke-width', '2');
+    l.setAttribute('vector-effect', 'non-scaling-stroke');
+    l.style.setProperty('--i', i);
+    svg.append(l);
+  });
+  // Tiras de cada partido: una celda por votación, rellena si votó a tu favor (o en tu contra).
+  document.querySelectorAll('.tira').forEach((t) => {
+    const si = +t.dataset.si, total = +t.dataset.total;
+    for (let i = 0; i < total; i++) {
+      const c = document.createElement('i');
+      if (i < si) c.className = 'si';
+      t.append(c);
+    }
+  });
+</script>
+</body>
+</html>
