@@ -1,0 +1,57 @@
+votacion: XIV-15-9
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/03/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/03/17/8
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-03-25
+titulo_oficial: >-
+  Real Decreto-ley 8/2020, de 17 de marzo, de medidas urgentes extraordinarias para hacer frente al
+  impacto económico y social del COVID-19.
+titulo: "Moratoria hipotecaria y adaptación de jornada para cuidar (COVID-19)"
+resumen: >-
+  Primer gran paquete ante la pandemia: permite a los trabajadores adaptar o reducir su jornada
+  (hasta el 100 %) para cuidar de familiares por el COVID-19 o el cierre de colegios y centros de
+  atención, crea una moratoria de las cuotas hipotecarias de la vivienda habitual para deudores en
+  situación de vulnerabilidad, una prestación extraordinaria para los autónomos cuya actividad se
+  suspendió o cuya facturación cayó al menos un 75 %, y medidas sobre ERTE, avales y suministros.
+  Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado], cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena y cuida de un familiar podía adaptar su horario o reducir su
+      jornada, incluso al 100 %, cuando ese familiar necesitaba cuidado directo por el COVID-19 o
+      cerraba su centro de atención.
+    base: >-
+      Art. 6 del Real Decreto-ley 8/2020 (derecho de adaptación del horario y reducción de
+      jornada).
+  - cuando: { trabajo: [asalariado], hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena y tiene hijos menores podía adaptar o reducir su jornada para
+      cuidarlos durante el cierre de los centros educativos.
+    base: >-
+      Art. 6, apartados 1 a 3, del Real Decreto-ley 8/2020 (circunstancias excepcionales por cierre
+      de centros educativos).
+  - cuando: { vivienda: [hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga la hipoteca de su vivienda podía pedir que se suspendieran las cuotas, sin
+      intereses, si por la pandemia perdía el empleo o buena parte de sus ingresos y cumplía los
+      límites de renta.
+    base: >-
+      Arts. 7 a 16 del Real Decreto-ley 8/2020 (moratoria de deuda hipotecaria para la adquisición
+      de vivienda habitual; vulnerabilidad económica en el art. 9).
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      El autónomo cuya actividad quedó suspendida por el estado de alarma, o cuya facturación cayó
+      al menos un 75 %, podía cobrar una prestación del 70 % de su base reguladora.
+    base: >-
+      Art. 17 del Real Decreto-ley 8/2020 (prestación extraordinaria por cese de actividad).
+justificacion: >-
+  Es el primer decreto de respuesta a la pandemia, con efecto directo en quien cuida, en quien paga
+  una hipoteca y en los autónomos.

@@ -30,6 +30,17 @@ efectos:
     base: >-
       Art. segundo, apartados Cuatro (nuevo art. 4 bis de la Ley 39/2006) y Treinta y tres (art.
       33.3 de la Ley 39/2006, mínimo exento de copago).
+  - cuando: { discapacidad: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene una discapacidad no puede ser rechazado ni tener peores condiciones al contratar un
+      seguro por esa razón; si pide obras de accesibilidad en su edificio, la comunidad de vecinos
+      tiene que solicitar las ayudas públicas y hacerlas cuando cubran el 70 % del coste; y, si es
+      dependiente, tiene garantizado un mínimo de ingresos exento de copago.
+    base: >-
+      Disposición final segunda (disp. adicional cuarta de la Ley de Contrato de Seguro), disposición
+      final primera (art. diez.1.b de la Ley de Propiedad Horizontal) y art. segundo, apartado Treinta
+      y tres (art. 33.3 de la Ley 39/2006).
 justificacion: >-
   Es la reforma de la dependencia y la discapacidad de la XV, con medidas directas para quien
   cuida.

@@ -1,0 +1,32 @@
+votacion: XV-129-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=09/09/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-257-1.PDF
+iniciativa: "Proposición de ley del Grupo Socialista"
+fecha: 2025-09-09
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Socialista, para el impulso de la inclusión laboral de
+  las personas con discapacidad a través de la cuota de reserva de empleo en las empresas.
+titulo: "Sanciones por no cumplir la cuota de empleo para personas con discapacidad"
+resumen: >-
+  Convierte en infracción muy grave, en lugar de grave, que una empresa incumpla la obligación de
+  reservar puestos de trabajo a personas con discapacidad (o sus medidas alternativas), impide recibir
+  subvenciones a las empresas sancionadas por ello y encarga a la Inspección de Trabajo campañas
+  específicas para comprobar que la reserva se cumple. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { discapacidad: [si], trabajo: [desempleo, asalariado] }
+    el_si: favorece
+    justificacion: >-
+      La reserva de puestos para personas con discapacidad en las empresas quedaría más protegida: la
+      empresa que no la cumpla cometería una infracción muy grave, perdería el acceso a subvenciones
+      y la Inspección de Trabajo haría campañas para vigilarla.
+    base: >-
+      Artículo primero (nueva letra h del art. 16.1 de la Ley de Infracciones y Sanciones en el Orden
+      Social), artículo segundo (nueva letra k del art. 13.2 de la Ley General de Subvenciones) y
+      disposición adicional segunda (campañas de la Inspección de Trabajo).
+justificacion: >-
+  Es la iniciativa de la XV sobre el empleo de las personas con discapacidad en la empresa privada;
+  afecta directamente a quien tiene una discapacidad y trabaja o busca trabajo.

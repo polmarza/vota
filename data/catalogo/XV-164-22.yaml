@@ -34,6 +34,14 @@ efectos:
     base: >-
       Art. 1, apartado Uno, del Real Decreto-ley 2/2026 (nueva redacción del art. 1 del Real
       Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda podía ver suspendido hasta el 31-12-2026 el desahucio de un inquilino
+      vulnerable que no paga, aunque con derecho a pedir una compensación pública.
+    base: >-
+      Art. 1, apartado Uno, del Real Decreto-ley 2/2026 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
   - cuando: { trabajo: [autonomo] }
     el_si: favorece
     justificacion: >-

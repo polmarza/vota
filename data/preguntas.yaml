@@ -142,3 +142,14 @@
     - { id: si, texto: Sí }
     - { id: ns, texto: Prefiero no responder }
 
+
+- id: discapacidad
+  bloque: ampliado
+  orden: 4
+  etiqueta: Discapacidad
+  enunciado: ¿Tienes reconocida una discapacidad o una situación de dependencia?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }

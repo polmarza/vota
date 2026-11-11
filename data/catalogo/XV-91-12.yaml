@@ -1,0 +1,63 @@
+votacion: XV-91-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=12/02/2025"
+texto: https://www.boe.es/eli/es/rdl/2025/01/28/1
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2025-02-12
+titulo_oficial: >-
+  Real Decreto-ley 1/2025, de 28 de enero, por el que se aprueban medidas urgentes en materia
+  económica, de transporte, de Seguridad Social, y para hacer frente a situaciones de
+  vulnerabilidad.
+titulo: "Pensiones, transporte y bono social de 2025"
+resumen: >-
+  Aprobado tras caer el decreto ómnibus de diciembre, sube las pensiones contributivas un 2,8 % en
+  2025, mantiene los descuentos en abonos de transporte público (Cercanías, Media Distancia,
+  autobuses estatales y ayudas a los transportes autonómicos y locales), prorroga la suspensión de
+  desahucios de hogares vulnerables hasta final de 2025 y fija los descuentos del bono social
+  eléctrico y la prohibición de cortar suministros a consumidores vulnerables en 2025. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión mantenía la subida del 2,8 % de 2025 y la de las pensiones mínimas.
+    base: >-
+      Art. 65 del Real Decreto-ley 1/2025 (revalorización de pensiones y otras prestaciones
+      públicas).
+  - cuando: { transporte: [publico] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el transporte público mantenía los descuentos en abonos y títulos multiviaje, como
+      el abono mensual de Cercanías a 20 euros y la gratuidad para menores de 14 años.
+    base: >-
+      Arts. 7, 18, 20 y 63 del Real Decreto-ley 1/2025 (ayudas y descuentos en abonos y títulos
+      multiviaje durante 2025).
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos y el bono social mantenía un descuento de entre el 42,5 % y el
+      65 % en la luz y no podían cortarle la luz, el gas ni el agua durante 2025.
+    base: >-
+      Arts. 82 y 83 del Real Decreto-ley 1/2025 (descuentos del bono social en 2025 y garantía de
+      suministro a consumidores vulnerables).
+  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta
+      final de 2025 si acreditaba vulnerabilidad económica.
+    base: >-
+      Art. 72, apartado Uno, del Real Decreto-ley 1/2025 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2025).
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda podía ver suspendido hasta el 31-12-2025 el desahucio de un inquilino
+      vulnerable que no paga, aunque con derecho a pedir una compensación pública.
+    base: >-
+      Art. 72, apartado Uno, del Real Decreto-ley 1/2025 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2025).
+justificacion: >-
+  Es el decreto que finalmente subió las pensiones y mantuvo las ayudas al transporte de 2025, con
+  efecto directo en pensionistas, usuarios del transporte público y hogares vulnerables.

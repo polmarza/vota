@@ -27,6 +27,16 @@ efectos:
       ingresos.
     base: >-
       Artículo único, apartado dos, de la proposición (nuevo art. 33.3 de la Ley 39/2006).
+  - cuando: { discapacidad: [si] }
+    el_si: favorece
+    justificacion: >-
+      Si tienes reconocida una situación de dependencia y recibes servicios del sistema, pagarías
+      menos por ellos (nada si tu capacidad económica no supera 2,5 veces el IPREM, nunca más del 60 %
+      del precio) y conservarías un mínimo para tus gastos personales.
+    base: >-
+      Artículo único, apartado Dos, de la proposición (nuevo art. 33.3 de la Ley 39/2006: exención
+      por debajo de 2,5 veces el IPREM, tope del 60 % y mínimo del 40 % del IPREM para gastos
+      personales).
 justificacion: >-
   Es una iniciativa ciudadana avalada por firmas sobre el coste de la dependencia en la XV; afecta
   directamente a los hogares que cuidan de una persona dependiente.

@@ -25,3 +25,6 @@
 
 - nombre: Pequeña arrendadora jubilada en Bizkaia
   respuestas: { provincia: bizkaia, vivienda: propiedad, arrendador: si, trabajo: jubilado, edad: 65-mas, ingresos: 16-30k, hijos: mayores, transporte: coche }
+
+- nombre: Persona con discapacidad en paro que vive con su familia en Zaragoza
+  respuestas: { provincia: zaragoza, vivienda: familia, trabajo: desempleo, edad: 30-44, ingresos: hasta-16k, hijos: no, cuidados: no, transporte: publico, discapacidad: si }

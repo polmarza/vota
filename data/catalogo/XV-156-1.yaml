@@ -1,0 +1,66 @@
+votacion: XV-156-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=27/01/2026"
+texto: https://www.boe.es/eli/es/rdl/2025/12/23/16
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-01-27
+titulo_oficial: >-
+  Real Decreto-ley 16/2025, de 23 de diciembre, por el que se prorrogan determinadas medidas para
+  hacer frente a situaciones de vulnerabilidad social, y se adoptan medidas urgentes en materia
+  tributaria y de Seguridad Social.
+titulo: "Decreto ómnibus: pensiones, bono social y desahucios (2026)"
+resumen: >-
+  Subía las pensiones contributivas un 2,7 % en 2026, alargaba la suspensión de desahucios de
+  hogares vulnerables hasta final de 2026, fijaba los descuentos del bono social eléctrico (42,5 %
+  y 57,5 %) y la prohibición de cortar suministros a consumidores vulnerables, y prorrogaba los
+  límites que permiten a los autónomos tributar por módulos, entre otras medidas fiscales. El
+  Congreso no lo convalidó; después el Gobierno aprobó dos decretos separados, uno de pensiones y
+  otro de bono social, desahucios y módulos.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión tenía garantizada desde enero la subida del 2,7 % de 2026 y la de las
+      pensiones mínimas y no contributivas.
+    base: >-
+      Art. 8 del Real Decreto-ley 16/2025 (revalorización de las pensiones y de otras prestaciones
+      públicas).
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos y el bono social tenía un descuento del 42,5 % en la luz (57,5 %
+      si es vulnerable severo) y no podían cortarle la luz, el gas ni el agua en 2026.
+    base: >-
+      Arts. 5 y 6 del Real Decreto-ley 16/2025 (descuentos del bono social en 2026 y garantía de
+      suministro a consumidores vulnerables).
+  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta
+      final de 2026 si acreditaba vulnerabilidad económica.
+    base: >-
+      Art. 1, apartado Uno, del Real Decreto-ley 16/2025 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda podía ver suspendido hasta el 31-12-2026 el desahucio de un inquilino
+      vulnerable que no paga, aunque con derecho a pedir una compensación pública.
+    base: >-
+      Art. 1, apartado Uno, del Real Decreto-ley 16/2025 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      El autónomo que tributa por módulos podía seguir en ese régimen en 2026 con los límites de
+      facturación ampliados (250.000 euros en lugar de 150.000).
+    base: >-
+      Art. 14, apartado Cuatro (disposición transitoria trigésima segunda de la Ley del IRPF), y
+      art. 12 (disposición transitoria decimotercera de la Ley del IVA) del Real Decreto-ley
+      16/2025.
+justificacion: >-
+  Es el decreto de fin de 2025 con la subida de las pensiones de 2026 que el Congreso no convalidó;
+  afecta directamente a pensionistas, hogares vulnerables, inquilinos y autónomos en módulos.

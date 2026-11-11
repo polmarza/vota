@@ -28,5 +28,15 @@ efectos:
     base: >-
       Artículo único, apartado Dos, que da nueva redacción al art. 33.3 de la Ley 39/2006 (exención
       por debajo de 2,5 veces el IPREM y tope del 60 %).
+  - cuando: { discapacidad: [si] }
+    el_si: favorece
+    justificacion: >-
+      Si tienes reconocida una situación de dependencia y recibes ayuda a domicilio, centro de día o
+      residencia, pagarías menos por ella (nada si tu capacidad económica no supera 2,5 veces el
+      IPREM, nunca más del 60 % del precio) y conservarías un mínimo para tus gastos personales.
+    base: >-
+      Artículo único, apartado Dos, que da nueva redacción al art. 33.3 de la Ley 39/2006 (exención
+      por debajo de 2,5 veces el IPREM, tope del 60 % y mínimo del 40 % del IPREM para gastos
+      personales).
 justificacion: >-
   Es la iniciativa popular sobre el copago de la dependencia; se votó en las dos legislaturas.
