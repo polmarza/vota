@@ -43,7 +43,14 @@ export const esquemaCandidaturas = z.object({
   /** `true` hasta contrastarlas con las candidaturas proclamadas del BOE. */
   provisional: z.boolean(),
   fuente: z.string(),
-  candidaturas: z.array(z.object({ partido: slug, provincias: z.union([z.literal('todas'), z.array(slug).min(1)]) })),
+  candidaturas: z.array(
+    z.object({
+      partido: slug,
+      provincias: z.union([z.literal('todas'), z.array(slug).min(1)]),
+      /** Listas del BOE en las que va el partido (solo o en coalición). */
+      listas: z.array(z.string()).default([]),
+    }),
+  ),
 });
 export type Candidaturas = z.infer<typeof esquemaCandidaturas>;
 

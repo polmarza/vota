@@ -44,8 +44,18 @@ describe('M-02 · candidaturas del 29-N', () => {
     expect(validarCandidaturas(candidaturas, territorio, conHistorial)).toEqual([]);
   });
 
-  it('en cada provincia se presentan al menos seis partidos con historial', () => {
-    for (const [provincia, partidos] of partidosPorProvincia(candidaturas, territorio)) expect(partidos.length, provincia).toBeGreaterThanOrEqual(6);
+  it('son las definitivas del BOE y en cada provincia hay partidos suficientes para un podio', () => {
+    expect(candidaturas.provisional).toBe(false);
+    // Ceuta, Melilla y Teruel tienen menos de seis: los podios no repiten partido (M-03).
+    for (const [provincia, partidos] of partidosPorProvincia(candidaturas, territorio)) expect(partidos.length, provincia).toBeGreaterThanOrEqual(3);
+  });
+
+  it('CUP y PRC no se presentan al Congreso, y Ciudadanos solo en Madrid y Barcelona (dentro de D21)', () => {
+    const porProvincia = partidosPorProvincia(candidaturas, territorio);
+    const donde = (p: string) => [...porProvincia].filter(([, ps]) => ps.includes(p)).map(([prov]) => prov).sort();
+    expect(donde('cup')).toEqual([]);
+    expect(donde('prc')).toEqual([]);
+    expect(donde('cs')).toEqual(['barcelona', 'madrid']);
   });
 
   it('M-02 negativo: en Madrid no aparecen partidos que solo concurren en otras comunidades', () => {

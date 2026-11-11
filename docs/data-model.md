@@ -70,8 +70,12 @@ cuenta para nadie hasta que se asigne; `pnpm data:partidos` los lista.
 |-------|------|-------------|
 | partido | id de Partido | |
 | provincias | lista de ids de Provincia, o `todas` | Dónde se presenta |
-| fuente | URL | Publicación del BOE |
-| provisional | booleano | `true` hasta que se publiquen las candidaturas proclamadas |
+| listas | lista de texto | Listas del BOE en las que va (sola o en coalición: "Frente Amplio (FA)") |
+| fuente | URL | Publicación del BOE (a nivel de archivo) |
+| provisional | booleano | `true` hasta que se publiquen las candidaturas proclamadas (a nivel de archivo) |
+
+Un partido que concurre en coalición aparece como partido individual en cada provincia donde se
+presenta la coalición (Movimiento Sumar e IU en Frente Amplio, Ciudadanos en D21, UPN con el PP).
 
 Un partido sin candidatura en la provincia del visitante no aparece (M-02). Un partido sin
 herencia en ninguna legislatura no puede tener candidatura (partido nuevo).
