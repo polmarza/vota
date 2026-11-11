@@ -1,5 +1,6 @@
 # Perfiles de referencia del catálogo (docs/features/catalogo.md). Cada uno tiene que verse
 # afectado por al menos 5 votaciones (M-03); lo comprueba tests/unit/data/catalogo-real.test.ts.
+# La portada enseña el resultado real de uno de ellos, elegido al azar (src/pages/index.astro).
 # Las respuestas usan los ids de data/preguntas.yaml; lo que no aparece cuenta como "ns".
 
 - nombre: Estudiante de alquiler en Madrid

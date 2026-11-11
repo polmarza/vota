@@ -15,18 +15,15 @@ import {
   type Territorio,
 } from '../../scripts/data/catalogo.ts';
 import type { VotacionPartidos } from '../../scripts/data/votos.ts';
+import { partidosPorProvincia } from '../../scripts/data/catalogo.ts';
+import type { DatosResultado } from '../scripts/resultado.ts';
+import type { Respuestas } from './afinidad/calculo.ts';
 import { esquemaPartidos, type Partido } from '../../scripts/data/partidos.ts';
 
 const DATA = join(process.cwd(), 'data');
 
 export function cargarPartidos(): Partido[] {
   return esquemaPartidos.parse(parse(readFileSync(join(DATA, 'partidos', 'partidos.yaml'), 'utf8'))).partidos;
-}
-
-/** Colores de los partidos que se presentan el 29-N, en el orden del archivo, sin repetir. */
-export function coloresDePartidos(): string[] {
-  const sePresentan = new Set(cargarCandidaturas().candidaturas.map((c) => c.partido));
-  return [...new Set(cargarPartidos().flatMap((p) => (p.color && sePresentan.has(p.id) ? [p.color] : [])))];
 }
 
 export function cargarPreguntas(): Pregunta[] {
@@ -58,4 +55,34 @@ export function cargarVotos(ids: string[]): Record<string, VotacionPartidos['par
     for (const v of votaciones) if (buscadas.has(v.id)) salida[v.id] = v.partidos;
   }
   return salida;
+}
+
+/**
+ * Lo que necesita el resultado (src/scripts/resultado.ts): las fichas con los campos que se enseñan,
+ * el voto de cada partido, los partidos y quién se presenta en cada provincia. Lo usan /test (en el
+ * navegador) y la portada (el resultado de ejemplo, en el build).
+ */
+export function datosResultado(): DatosResultado {
+  const catalogo = cargarCatalogo();
+  const candidaturas = cargarCandidaturas();
+  return {
+    fichas: catalogo.map(({ votacion, ambito, efectos, titulo, fecha, url, que_significa_si, iniciativa }) => ({
+      votacion, ambito, titulo, fecha, url, que_significa_si, iniciativa,
+      efectos: efectos.map(({ cuando, el_si, justificacion }) => ({ cuando, el_si, justificacion })),
+    })),
+    votos: cargarVotos(catalogo.map((f) => f.votacion)),
+    partidos: cargarPartidos().map(({ id, nombre, siglas, color }) => ({ id, nombre, siglas, color })),
+    porProvincia: Object.fromEntries(partidosPorProvincia(candidaturas, cargarTerritorio())),
+    candidaturasProvisionales: candidaturas.provisional,
+  };
+}
+
+export interface PerfilEjemplo {
+  nombre: string;
+  respuestas: Respuestas;
+}
+
+/** Perfiles de referencia (data/perfiles-ejemplo.yaml): la portada enseña el resultado de uno. */
+export function cargarPerfilesEjemplo(): PerfilEjemplo[] {
+  return parse(readFileSync(join(DATA, 'perfiles-ejemplo.yaml'), 'utf8')) as PerfilEjemplo[];
 }

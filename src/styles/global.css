@@ -1,106 +1,129 @@
-/* Tokens de docs/design-system.md. La interfaz es blanco y negro: el color solo aparece para los
-   partidos, y llega desde data/partidos/, nunca desde aquí. */
+/* Sistema visual "Ventana" (docs/design-system.md). La base es el kit de Taste Skill de
+   propuestas-diseno/taste/1-ventana/, copiado en src/kit/ sin cambios; aquí van la paleta, las fuentes
+   y los componentes de la web (las pantallas del test), que en la maqueta estaban en su <style>.
+   El color solo aparece para los partidos, y llega desde data/partidos/ en un --c en línea, nunca
+   desde aquí. */
 
-@import '@fontsource/instrument-serif/400.css';
-@import '@fontsource/instrument-serif/400-italic.css';
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+@import '../kit/system.css';
+@import '../kit/motion.css';
+@import '../kit/layout.css';
+@import '../kit/moments/line-carries-colour/moment.css';
 
+/* ---------------------------------------------------------------- paleta y fuentes
+   La de la maqueta con un cambio: tinta, botones, foco y superficies invertidas en negro (#0a0a0a)
+   en lugar del pizarra #1f3038. */
 :root {
-  --tinta: #0b0b0b;
-  --blanco: #ffffff;
-  --gris-aviso: #f4f4f4;
-  --gris-texto: #555555;
-  --gris-pista: #777777;
-  --gris-borde: #d6d6d6;
-  --gris-pista-barra: #efefef;
-  --gris-inactivo: #cfcfcf;
-
-  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-  --sans: 'Inter Variable', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
-
-  --radio: 10px;
-  --margen: 22px;
-  --columna: 560px;
-
+  --p-bg: #f7f9fa; --p-surface: #ecf0f2; --p-ink: #0a0a0a; --p-muted: #5e6b71;
+  --p-accent: #0a0a0a; --p-accent-ink: #f7f9fa; --p-action: #0a0a0a; --p-action-ink: #f7f9fa;
+  --p-inv-bg: #0a0a0a; --p-inv-surface: #1f1f1f; --p-inv-ink: #f7f9fa; --p-inv-muted: #a3a3a3;
+  --p-inv-accent: #f7f9fa; --p-inv-accent-ink: #0a0a0a; --p-inv-action: #f7f9fa; --p-inv-action-ink: #0a0a0a;
+  --font-display: "Geist Variable", system-ui, sans-serif;
+  --font-text: "Geist Variable", system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.045em;
+  /* la tinta con transparencia, para bordes y sombras (en la maqueta, rgb(31 48 56 / …)) */
+  --tinta-rgb: 10 10 10;
   color-scheme: light;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-  min-height: 100dvh;
-  background: var(--blanco);
-  color: var(--tinta);
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  margin: 0;
-  color: var(--tinta);
-}
-
-a {
-  color: inherit;
-}
-
-:focus-visible {
-  outline: 2px solid var(--tinta);
-  outline-offset: 3px;
-}
-
-.boton {
-  display: block;
-  width: 100%;
-  padding: 14px 16px;
-  border: 0;
-  border-radius: var(--radio);
-  background: var(--tinta);
-  color: var(--blanco);
-  font: 500 16px/1.2 var(--sans);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.boton:hover {
-  background: #2a2a2a;
-}
-
-.boton[aria-disabled='true'] {
-  background: var(--gris-inactivo);
-  cursor: not-allowed;
-}
-
+/* ---------------------------------------------------------------- utilidades */
 .solo-lector {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-    animation: none !important;
-  }
-}
+/* Un color de partido que no llega a 3:1 sobre el fondo (BNG, CC, Més, PRC…) lleva un filete de
+   tinta alrededor del punto y de la barra; el nombre del partido va siempre al lado, en tinta. El
+   build marca esos colores con data-claro (src/lib/color.ts). */
+[data-claro] { --c-ring: inset 0 0 0 1px rgb(var(--tinta-rgb) / .55); }
+
+/* ---------------------------------------------------------------- la ventana del héroe
+   la primera pregunta del test, sobre el marco arena */
+.q-win { background: var(--bg); color: var(--ink); border-radius: var(--r-md); box-shadow: 0 1px 0 rgb(0 0 0 / .04), 0 24px 48px -28px rgb(var(--tinta-rgb) / .45); padding: var(--s-6); text-align: left; display: grid; gap: var(--s-4); }
+.q-win__top { display: flex; justify-content: space-between; font: 500 13px/1.4 var(--font-mono); color: var(--muted); }
+.q-win__q { font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; margin: 0; }
+.q-win__sub { margin: 0; color: var(--muted); font-size: 15px; }
+.q-win__field { display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 0 var(--s-4); border: 1px solid var(--line-strong, rgb(var(--tinta-rgb) / .25)); border-radius: var(--r-sm); font-size: 17px; }
+.q-win__bar { height: 4px; border-radius: 99px; background: var(--surface); overflow: hidden; }
+.q-win__bar i { display: block; height: 100%; width: var(--avance, 12.5%); background: var(--ink); }
+@media (max-width: 639px) { .q-win { padding: var(--s-5); gap: var(--s-3); } .q-win__q { font-size: 22px; } .q-win__sub { display: none; } }
+
+/* ---------------------------------------------------------------- ventana (una pantalla del test) */
+.screen-label { color: var(--muted); margin: 0 0 var(--s-5); }
+.screen { background: var(--p-bg); color: var(--p-ink); border-radius: var(--r-lg); border: 1px solid rgb(var(--tinta-rgb) / .14); box-shadow: 0 24px 48px -32px rgb(var(--tinta-rgb) / .35); padding: var(--s-6) var(--s-7); display: block; margin-top: var(--s-6); }
+.screen__bar { display: flex; align-items: center; gap: var(--s-2); margin: calc(-1 * var(--s-5)) 0 var(--s-6); font: 500 13px/1.4 var(--font-mono); color: var(--muted); }
+.screen__bar i { width: 8px; height: 8px; border-radius: 50%; background: rgb(var(--tinta-rgb) / .18); }
+.screen__bar span { margin-left: var(--s-3); }
+@media (max-width: 639px) { .screen { padding: var(--s-5); margin-top: var(--s-6); } .screen__bar { margin: 0 0 var(--s-4); } }
+
+/* ---------------------------------------------------------------- pregunta */
+.quiz { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: 'head opts' 'back opts'; grid-template-rows: auto 1fr; gap: var(--s-6); align-items: start; }
+.quiz__head { grid-area: head; display: grid; gap: var(--s-5); }
+.quiz .opts { grid-area: opts; }
+.quiz__back { grid-area: back; justify-self: start; }
+.quiz__count { font: 500 14px/1.4 var(--font-mono); color: var(--muted); display: flex; justify-content: space-between; gap: var(--s-4); }
+.quiz__bar { height: 4px; border-radius: 99px; background: var(--surface); overflow: hidden; }
+.quiz__bar i { display: block; height: 100%; width: var(--avance, 25%); background: var(--ink); transition: width 300ms var(--ease); }
+.quiz .opts { display: grid; gap: var(--s-2); min-width: 0; }
+.quiz__back { justify-self: start; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgb(var(--tinta-rgb) / .3); }
+button.quiz__back { padding: 0; border: 0; background: none; cursor: pointer; }
+.opt { display: flex; align-items: center; gap: var(--s-4); min-height: 52px; padding: var(--s-3) var(--s-5); border: 1px solid rgb(var(--tinta-rgb) / .18); border-radius: var(--r-md); background: var(--p-bg); font-size: 18px; }
+.opt i { width: 20px; height: 20px; flex: none; border: 1.5px solid var(--ink); border-radius: 50%; }
+.opt.is-on, .opt[aria-pressed="true"] { border-color: var(--ink); background: var(--p-surface); }
+.opt.is-on i, .opt[aria-pressed="true"] i { background: radial-gradient(var(--ink) 0 40%, transparent 45%); }
+.opt--ns { color: var(--muted); border-style: dashed; }
+button.opt { width: 100%; color: var(--ink); font: 400 18px/1.3 var(--font-text); text-align: left; cursor: pointer; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
+button.opt.opt--ns { color: var(--muted); }
+button.opt:hover { border-color: rgb(var(--tinta-rgb) / .5); }
+@media (max-width: 1023px) { .quiz { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'head' 'opts' 'back'; grid-template-rows: auto; } }
+@media (max-width: 639px) { .opt, button.opt { min-height: 50px; font-size: 16px; padding-block: var(--s-2); } .quiz .opts { gap: var(--s-2); } .quiz { gap: var(--s-5); } .quiz__head { gap: var(--s-3); } }
+
+/* ---------------------------------------------------------------- los dos podios */
+.podiums { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+.podium { background: var(--p-bg); border-radius: var(--r-lg); padding: var(--s-6); display: grid; gap: var(--s-4); align-content: start; }
+.podium h3 { margin: 0; font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; }
+.podium > p { margin: 0; font-size: 16px; }
+.podium ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); }
+.podium li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-2) var(--s-4); align-items: baseline; }
+.podium .who { display: flex; align-items: center; gap: var(--s-3); font-weight: 500; font-size: 17px; }
+.podium .who::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: var(--c-ring, none); flex: none; }
+.podium .pct { font: 500 22px/1 var(--font-mono); font-variant-numeric: tabular-nums; }
+.podium .meter { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--surface); overflow: hidden; }
+.podium .meter i { display: block; height: 100%; width: var(--w); background: var(--c); box-shadow: var(--c-ring, none); border-radius: 99px; }
+.podium .who { flex-wrap: wrap; column-gap: var(--s-3); row-gap: 0; }
+.podium .who small { font: 400 14px/1.4 var(--font-text); color: var(--muted); }
+@media (max-width: 639px) { .podium .who small { flex-basis: 100%; padding-left: 24px; } }
+.result-foot { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-6); align-items: start; margin-top: var(--s-6); }
+.result-foot p { margin: 0; font-size: 16px; max-width: 62ch; }
+.result-foot .btn-row { justify-content: flex-end; }
+@media (max-width: 1023px) { .podiums, .result-foot { grid-template-columns: minmax(0, 1fr); } .result-foot .btn-row { justify-content: flex-start; } }
+@media (max-width: 639px) { .podium { padding: var(--s-4) var(--s-5); gap: var(--s-3); } .podium ol { gap: var(--s-3); } .podium h3 { font-size: 22px; } .result-foot { gap: var(--s-4); } }
+
+/* ---------------------------------------------------------------- una votación */
+.vote { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-4) var(--s-6); }
+.vote time, .vote__meta { font: 500 14px/1.4 var(--font-mono); }
+.vote__t { margin: var(--s-2) 0 0; font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; }
+.vote__why { margin: 0; font-size: 17px; line-height: 1.6; }
+.vote__why b { font-weight: 500; }
+.tally { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-5); }
+.tally li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-1) var(--s-3); padding-block: var(--s-3); border-bottom: 1px solid var(--line); font-size: 16px; }
+.tally .p { display: flex; align-items: center; gap: var(--s-3); }
+.tally .p::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: var(--c-ring, none); flex: none; }
+.tally .v { font: 500 14px/1 var(--font-mono); padding: 6px 10px; border-radius: 99px; border: 1px solid rgb(var(--tinta-rgb) / .25); white-space: nowrap; }
+.tally .v--si { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tally .desglose { flex-basis: 100%; font-size: 13px; line-height: 1.4; color: var(--muted); }
+.vote__more { grid-column: 2; display: flex; flex-wrap: wrap; gap: var(--s-5); align-items: center; }
+.vote-next { margin-top: var(--s-6); border-top: 1px solid rgb(var(--tinta-rgb) / .14); padding-top: var(--s-4); display: flex; justify-content: space-between; gap: var(--s-5); align-items: baseline; }
+.vote-next b { color: var(--ink); font-weight: 500; }
+@media (max-width: 1023px) { .vote { grid-template-columns: minmax(0, 1fr); } .vote__more { grid-column: 1; } }
+@media (max-width: 639px) { .tally { grid-template-columns: minmax(0, 1fr); } .vote__t { font-size: 22px; } .vote__why { font-size: 16px; } }
+
+/* ---------------------------------------------------------------- páginas interiores
+   El test y "Cómo funciona" no siguen el ritmo de una sección por pantalla de la portada: su
+   contenido va en un .wrap bajo la cabecera fija. */
+.interior { padding: calc(var(--nav) + var(--s-7)) 0 calc(var(--s-9) + var(--bar)); }
+@media (max-width: 639px) { .interior { padding-top: calc(var(--nav) + var(--s-5)); padding-bottom: var(--s-8); } }

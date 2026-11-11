@@ -46,7 +46,7 @@ iniciativas que cambian algo concreto para quien responde eso.
   perfil.
 - **Tamaño:** unas 100 fichas en la primera versión (eran 40–60 hasta el 11-11-2026). Cada pregunta del cuestionario la usa al
   menos una ficha; si una pregunta se queda sin votaciones, se quita.
-- **Perfiles de referencia:** cada uno de los perfiles de `tests/fixtures/perfiles.yaml` tiene que
+- **Perfiles de referencia:** cada uno de los perfiles de `data/perfiles-ejemplo.yaml` tiene que
   verse afectado por al menos 5 votaciones (por debajo de eso no se muestra resultado, M-03).
 - **Territoriales:** las que afectan solo a unas comunidades (financiación, deuda, inversiones,
   competencias) entran con su efecto comunidad por comunidad (M-11).

@@ -10,6 +10,15 @@ const revisar = async (page: Page) => {
 test.describe('accesibilidad (WCAG 2.1 AA)', () => {
   test('portada', async ({ page }) => {
     await page.goto('/');
+    // Mientras entra el héroe, sus textos están a media opacidad: se revisa cuando ha terminado.
+    await expect(page.locator('.hero')).toHaveClass(/is-entered/);
+    await revisar(page);
+    // Y la sección del resultado de ejemplo, una vez que ha llegado su línea (momento line-carries-colour).
+    await page.locator('#votaciones').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => {
+      const c = document.querySelector('#resultado')!.classList;
+      return !c.contains('is-live') || c.contains('is-open');
+    });
     await revisar(page);
   });
 

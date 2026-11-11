@@ -23,8 +23,8 @@ Vota con Criterio tiene dos mitades que no se tocan en producción:
 | Datos | Archivos YAML/JSON en `data/` + Content Collections de Astro con esquemas Zod | El catálogo vive en el repo, es revisable en cada PR y el build falla si una votación no cumple el esquema (M-05). |
 | Base de datos | Ninguna | Nada que persistir: no hay cuentas ni respuestas guardadas (M-08). |
 | Autenticación | Ninguna | Web anónima. |
-| Estilos | CSS propio con custom properties (tokens de `design-system.md`), estilos con ámbito de Astro | Paleta en blanco y negro con pocos componentes; no compensa Tailwind. |
-| Tipografía | Instrument Serif e Inter vía `@fontsource`, autoalojadas | Sin peticiones a Google: coherente con la privacidad y más rápido. |
+| Estilos | CSS propio con custom properties (tokens de `design-system.md`) sobre el kit de Taste Skill copiado en `src/kit/` (`system.css`, `layout.css`, `motion.css` y el momento *line-carries-colour*), estilos con ámbito de Astro | Es el sistema de la propuesta Ventana elegida por Pol; copiarlo tal cual mantiene la web fiel a la maqueta. No compensa Tailwind. |
+| Tipografía | Geist y Geist Mono vía `@fontsource-variable`, autoalojadas | Sin peticiones a Google: coherente con la privacidad y más rápido. |
 | Iconos | Tabler Icons (SVG inline, solo los usados) | Coincide con las maquetas. |
 | Imagen para compartir | Canvas API del navegador | La imagen se genera en el dispositivo; el resultado nunca sale del navegador (S-02, M-08). |
 | Pipeline | Scripts Node 24 (LTS) + TypeScript ejecutados con `pnpm` (`tsx`) | Mismo lenguaje que la web; los tipos del catálogo se comparten. |
@@ -82,13 +82,17 @@ scripts/
 └── verificar-cobertura.mjs → Comprueba las fichas de docs/features/
 src/
 ├── pages/              → index (portada), test, como-funciona, votaciones
-├── components/         → Componentes Astro (Cabecera, Ecualizador, Pregunta, FilaPartido…)
+├── components/         → Componentes Astro (Cabecera, Pie, Pregunta, SelectorProvincia)
+├── kit/                → Kit de Taste Skill de la propuesta Ventana (CSS y JS del menú, la barra del
+│                         móvil, la entrada del héroe y los momentos), copiado de propuestas-diseno/
 ├── lib/
 │   ├── afinidad/       → Cálculo puro de la puntuación (sin DOM; lo prueban los tests)
 │   ├── perfil/         → Definición de preguntas y conversión de respuestas a perfiles
+│   ├── color.ts        → Contraste de los colores de partido sobre el fondo
 │   └── compartir/      → Generación de la imagen con Canvas
 ├── content.config.ts   → Colecciones y esquemas Zod del catálogo
-└── styles/             → Tokens y estilos globales
+├── scripts/            → resultado.ts: pinta el resultado en el navegador
+└── styles/             → Paleta, fuentes y componentes de la web sobre el kit
 public/
 ├── logos/              → Logos de los partidos (SVG)
 └── fonts/              → Solo si @fontsource no cubre algo

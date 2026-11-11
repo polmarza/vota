@@ -1,56 +1,276 @@
 ---
+// Portada (M-01) con la estructura de la propuesta Ventana: héroe con la primera pregunta en una
+// ventana, una pregunta de ejemplo, un resultado, una votación y el cierre.
+//
+// El resultado y la votación de ejemplo no se inventan: en el build se calcula el resultado real de
+// cada perfil de referencia (data/perfiles-ejemplo.yaml) con el mismo cálculo y los mismos datos que
+// /test, y en cada visita un script enseña uno al azar. Sin JavaScript se ve el primero.
 import Base from '../layouts/Base.astro';
-import Ecualizador from '../components/Ecualizador.astro';
-import { coloresDePartidos } from '../lib/datos.ts';
+import { cargarPerfilesEjemplo, cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.ts';
+import { calcular, conComunidad } from '../lib/afinidad/calculo.ts';
+import { progreso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+import {
+  AVISO_ALCANCE,
+  AVISO_PROVISIONAL,
+  TEXTO_DESFAVORABLE,
+  TEXTO_FAVORABLE,
+  estiloPartido,
+  etiquetaVoto,
+  fechaCorta,
+  porcentaje,
+} from '../scripts/resultado.ts';
 
-const colores = coloresDePartidos();
+// Las dos preguntas que se enseñan, tal cual están en data/preguntas.yaml.
+const preguntas = cargarPreguntas();
+const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria }));
+const provincia = preguntas.find((p) => p.id === 'provincia')!;
+const vivienda = preguntas.find((p) => p.id === 'vivienda')!;
+if (vivienda.tipo !== 'opciones') throw new Error('La pregunta de vivienda tiene que ser de opciones');
+const progProvincia = progreso(todas, 'provincia');
+const progVivienda = progreso(todas, 'vivienda');
+const pct = (f: number) => `${Math.round(f * 100)} %`;
+
+// El resultado real de cada perfil de referencia.
+const datos = datosResultado();
+const ccaaDe = new Map(cargarTerritorio().provincias.map((p) => [p.id, p.ccaa]));
+const partidos = new Map(datos.partidos.map((p) => [p.id, p]));
+const fichas = new Map(datos.fichas.map((f) => [f.votacion, f]));
+const ejemplos = cargarPerfilesEjemplo().map((perfil) => {
+  const respuestas = conComunidad(perfil.respuestas, ccaaDe);
+  const enProvincia = datos.porProvincia[respuestas.provincia ?? ''] ?? [];
+  const r = calcular(datos.fichas, datos.votos, respuestas, enProvincia);
+  if (!r.suficiente) throw new Error(`El perfil de ejemplo "${perfil.nombre}" no tiene votaciones suficientes`);
+  const cuentan = r.relevantes.filter((x) => x.sentido !== 'contrapuesta');
+  // Las dos votaciones más recientes que cuentan: la primera se enseña entera, la segunda como "la siguiente".
+  const recientes = [...cuentan].sort((a, b) => fichas.get(b.votacion)!.fecha.localeCompare(fichas.get(a.votacion)!.fecha)).slice(0, 2);
+  const votacion = (v: (typeof recientes)[number]) => {
+    const f = fichas.get(v.votacion)!;
+    const motivo = f.efectos.find((e) => Object.entries(e.cuando).every(([k, vals]) => respuestas[k] !== undefined && vals.includes(respuestas[k]!)))!;
+    return {
+      ...f,
+      motivo: motivo.justificacion,
+      votos: enProvincia.map((id) => ({ partido: partidos.get(id)!, ...etiquetaVoto(datos.votos[f.votacion]?.[id]) })),
+    };
+  };
+  const fila = (p: (typeof r.favorables)[number], clave: 'favorable' | 'desfavorable') => ({
+    ...estiloPartido(partidos.get(p.partido)!.color, p[clave]),
+    nombre: partidos.get(p.partido)!.nombre,
+    detalle: `${clave === 'favorable' ? p.aFavor : p.enContra} de ${p.contadas} votaciones`,
+    pct: porcentaje(p[clave]),
+  });
+  return {
+    nombre: perfil.nombre.charAt(0).toLowerCase() + perfil.nombre.slice(1),
+    cuentan: cuentan.length,
+    favorables: r.favorables.map((p) => fila(p, 'favorable')),
+    desfavorables: r.desfavorables.map((p) => fila(p, 'desfavorable')),
+    votacion: votacion(recientes[0]!),
+    siguiente: recientes[1] ? votacion(recientes[1]) : undefined,
+  };
+});
+const aviso = AVISO_ALCANCE + (datos.candidaturasProvisionales ? AVISO_PROVISIONAL : '');
+const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', timeZone: 'UTC' });
 ---
 
-<Base>
-  <section class="portada">
-    <h1>Las promesas <i>vuelan.</i> Los votos se <i>quedan.</i></h1>
-    <p class="entradilla">
-      Cruzamos tus preocupaciones con lo que cada partido votó en el Congreso desde 2019. Así sabes
-      quién estuvo de tu lado cuando tocaba votar.
-    </p>
-    <a class="boton" href="/test" data-testid="empezar">Empezar el test →</a>
-    <p class="pie">
-      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a> · <a href="/como-funciona">Cómo funciona</a>
-    </p>
-    <div class="relleno"></div>
-    <Ecualizador colores={colores} />
+<Base portada>
+  <section class="hero hero--centred" data-enter aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="hero__c">
+          <a class="pill" href="/test"><span>Elecciones generales</span><span class="muted">29 de noviembre</span></a>
+          <h1 id="hero-h">Las promesas vuelan. Los votos se quedan.</h1>
+          <p class="hero__lead">
+            Cruzamos tus preocupaciones con lo que cada partido votó en el Congreso desde 2019. Así sabes quién estuvo de tu lado cuando tocaba votar.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/test" data-testid="empezar">
+              Empezar el test<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"></path><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"></path></svg>
+            </a>
+            <a class="btn btn--secondary" href="/como-funciona">Cómo funciona</a>
+          </div>
+        </div>
+        <div class="hero__window" role="img" aria-label={`La primera pregunta del test: ${provincia.enunciado.toLowerCase()}, con Madrid elegida`}>
+          <div class="ly-piece q-win" aria-hidden="true">
+            <div class="q-win__top"><span>{progProvincia.texto}</span><span>Sin registro</span></div>
+            <div class="q-win__bar"><i style={`--avance:${progProvincia.fraccion * 100}%`}></i></div>
+            <p class="q-win__q">{provincia.enunciado}</p>
+            {provincia.subtitulo && <p class="q-win__sub">{provincia.subtitulo}</p>}
+            <div class="q-win__field">
+              <span>Madrid</span><svg width="14" height="14" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section class="section" id="test" aria-labelledby="test-h">
+    <div class="wrap">
+      <p class="t-label screen-label">Pantalla 2 · Una pregunta</p>
+      <div class="grid">
+        <h2 id="test-h" class="span-5">Un cuestionario sobre tu vida, no sobre tu opinión</h2>
+        <p class="t-lead span-6 start-7 head-line">
+          Ocho preguntas básicas y cuatro ampliadas: provincia, vivienda, trabajo, edad, ingresos, hijos. Cada una tiene «Prefiero no responder».
+        </p>
+      </div>
+      <div
+        class="ui ui-screen screen"
+        role="img"
+        aria-label={`La pantalla de una pregunta: ${progVivienda.texto}. ${vivienda.enunciado} ${vivienda.opciones.length} opciones, ${vivienda.opciones[0]!.texto} marcada`}
+      >
+        <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>vota.concriterio.blog/test</span></div>
+        <div class="quiz" aria-hidden="true">
+          <div class="quiz__head">
+            <div class="quiz__count"><span>{progVivienda.texto}</span><span>{pct(progVivienda.fraccion)}</span></div>
+            <div class="quiz__bar"><i style={`--avance:${progVivienda.fraccion * 100}%`}></i></div>
+            <p class="q-win__q">{vivienda.enunciado}</p>
+          </div>
+          <div class="opts">
+            {vivienda.opciones.map((o, i) => <span class:list={['opt', { 'is-on': i === 0, 'opt--ns': o.id === 'ns' }]}><i></i>{o.texto}</span>)}
+          </div>
+          <span class="quiz__back">← Atrás</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface g2m" id="resultado" aria-labelledby="res-h" data-moment="line-carries-colour" data-moment-opts='{"from": "base"}'>
+    {
+      ejemplos.map((e, i) => (
+        <div class="wrap" data-ejemplo={i} hidden={i > 0}>
+          <div class="group res-group">
+            <p class="t-label screen-label">Pantalla 3 · Tu resultado · Un ejemplo real, basado en las {e.cuentan} votaciones que afectan a este perfil</p>
+            <div class="section-head">
+              <h2 id={i === 0 ? 'res-h' : undefined}>Así le sale a: {e.nombre}</h2>
+            </div>
+            <div class="podiums">
+              <div class="podium">
+                <h3>Estuvieron de tu lado</h3>
+                <p>{TEXTO_FAVORABLE}</p>
+                <ol>
+                  {e.favorables.map((p) => (
+                    <li style={p.style} data-claro={p.claro ? '' : undefined}>
+                      <span class="who">{p.nombre} <small>{p.detalle}</small></span>
+                      <span class="pct">{p.pct}</span>
+                      <span class="meter" aria-hidden="true"><i></i></span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="group res-group">
+            <div class="podiums">
+              <div class="podium">
+                <h3>Votaron en tu contra</h3>
+                <p>{TEXTO_DESFAVORABLE}</p>
+                <ol>
+                  {e.desfavorables.map((p) => (
+                    <li style={p.style} data-claro={p.claro ? '' : undefined}>
+                      <span class="who">{p.nombre} <small>{p.detalle}</small></span>
+                      <span class="pct">{p.pct}</span>
+                      <span class="meter" aria-hidden="true"><i></i></span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <div class="result-foot">
+              <p>{aviso}</p>
+              <div class="btn-row"><a class="btn btn--secondary" href="/test">Haz el test para ver el tuyo</a></div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="section" id="votaciones" aria-labelledby="vot-h">
+    {
+      ejemplos.map((e, i) => (
+        <div class="wrap" data-ejemplo={i} hidden={i > 0}>
+          <p class="t-label screen-label">Pantalla 3 · La lista de votaciones · {e.nombre}</p>
+          <div class="section-head section-head--row">
+            <div>
+              <h2 id={i === 0 ? 'vot-h' : undefined}>Las votaciones que te afectan</h2>
+            </div>
+            <a class="link" href={e.votacion.url}>
+              Ver la votación del {FECHA_LARGA.format(new Date(e.votacion.fecha))} en el Congreso
+            </a>
+          </div>
+          <div class="ui ui-screen screen">
+            <div class="vote">
+              <div>
+                <time datetime={e.votacion.fecha}>{fechaCorta(e.votacion.fecha)} · {e.votacion.iniciativa}</time>
+                <p class="vote__t">{e.votacion.titulo}</p>
+              </div>
+              <p class="vote__why"><b>Por qué le afecta:</b> {e.votacion.motivo}</p>
+              <ul class="tally" aria-label="Qué votó cada partido">
+                {e.votacion.votos.map((v) => {
+                  const { style, claro } = estiloPartido(v.partido.color);
+                  return (
+                    <li style={style} data-claro={claro ? '' : undefined}>
+                      <span class="p">{v.partido.siglas}</span>
+                      <span class:list={['v', { 'v--si': v.si }]}>{v.pildora}</span>
+                      {v.desglose && <span class="desglose">{v.desglose}</span>}
+                    </li>
+                  );
+                })}
+              </ul>
+              <div class="vote__more">
+                <a class="quiz__back" href={e.votacion.url}>Ver la votación en el Congreso</a>
+              </div>
+            </div>
+            {e.siguiente && (
+              <div class="vote-next">
+                <span><b>{e.siguiente.titulo}</b> · {e.siguiente.motivo.charAt(0).toLowerCase() + e.siguiente.motivo.slice(1)}</span>
+                <time datetime={e.siguiente.fecha}>{fechaCorta(e.siguiente.fecha)}</time>
+              </div>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <!-- Un perfil al azar en cada visita, antes de que los momentos midan la sección. -->
+  <script is:inline define:vars={{ n: ejemplos.length }}>
+    const elegido = String(Math.floor(Math.random() * n));
+    for (const w of document.querySelectorAll('[data-ejemplo]')) w.hidden = w.dataset.ejemplo !== elegido;
+    for (const id of ['res-h', 'vot-h']) {
+      const h = document.getElementById(id);
+      const destino = document.querySelector(`[data-ejemplo="${elegido}"] h2`);
+      if (h && destino && h !== destino) { h.removeAttribute('id'); destino.id = id; }
+    }
+  </script>
 </Base>
 
-<style>
-  .portada {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 26px var(--margen) 0;
+<style is:global>
+  /* La página de la maqueta: lo que solo tiene la portada. */
+  .hero--centred .hero__c .hero__lead { color: var(--ink); }
+  /* el nombre del perfil cambia de largo: la sección crece si lo necesita en vez de pisar la siguiente */
+  main > #resultado { height: auto; min-height: 100vh; min-height: 100svh; }
+
+  @media (max-width: 639px) { .head-line { display: none; } }
+
+  /* el resultado: una pantalla desde 640 (los dos grupos se funden en una rejilla); en el móvil, dos
+     pantallas, un podio en cada una */
+  @media (min-width: 640px) {
+    #resultado > .wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
+    #resultado > .wrap[hidden] { display: none; }
+    #resultado .res-group, #resultado .podiums { display: contents; }
+    #resultado .screen-label, #resultado .section-head, #resultado .result-foot { grid-column: 1 / -1; }
+  }
+  @media (min-width: 640px) and (max-width: 1023px) { #resultado .podium { grid-column: 1 / -1; margin-bottom: var(--s-5); } }
+  @media (max-width: 639px) {
+    #resultado .res-group { display: grid; gap: var(--s-5); grid-template-rows: auto auto minmax(0, 1fr); }
+    #resultado .res-group + .res-group { grid-template-rows: minmax(0, 1fr) auto; }
+    #resultado .podiums { display: contents; }
+    .result-foot { margin-top: 0; }
+    #resultado .screen-label { margin-bottom: var(--s-3); }
+    #resultado .section-head { margin-bottom: 0; }
   }
 
-  h1 {
-    font-size: clamp(46px, 11vw, 64px);
-    line-height: 0.98;
-    margin-bottom: 16px;
-  }
-
-  .entradilla {
-    margin: 0 0 22px;
-    font-size: 15px;
-    color: #333;
-  }
-
-  .pie {
-    margin: 12px 0 0;
-    font-size: 12px;
-    color: var(--gris-texto);
-    text-align: center;
-  }
-
-  .relleno {
-    flex: 1;
-    min-height: 40px;
-  }
+  #votaciones .screen { margin-top: 0; padding: var(--s-6); }
+  #votaciones .vote-next { margin-top: var(--s-5); }
+  @media (max-width: 639px) { .vote-next, .vote__more { display: none; } #votaciones .screen { padding: var(--s-5); } }
 </style>

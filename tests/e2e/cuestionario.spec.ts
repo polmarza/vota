@@ -117,3 +117,27 @@ test.describe('M-12, M-03, M-04, M-09 · resultados', () => {
     await expect(page.getByTestId('resultado-provisional').getByText(/voto dividido \(\d+ sí, \d+ no, \d+ abst\.\)/).first()).toBeVisible();
   });
 });
+
+test.describe('portada · resultado de ejemplo', () => {
+  test('enseña el resultado real de un perfil de referencia, nombrándolo, y deja claro que es un ejemplo', async ({ page }) => {
+    await page.goto('/');
+    const ejemplo = page.locator('#resultado [data-ejemplo]:not([hidden])');
+    await expect(ejemplo).toHaveCount(1);
+    await expect(ejemplo.locator('h2')).toHaveText(/^Así le sale a: /);
+    await expect(ejemplo).toContainText('Un ejemplo real');
+    await expect(ejemplo.getByRole('link', { name: 'Haz el test para ver el tuyo' })).toHaveAttribute('href', '/test');
+    await expect(ejemplo.locator('.podium li')).toHaveCount(6);
+    // La votación de ejemplo es del mismo perfil y enlaza a su página del Congreso.
+    const indice = await ejemplo.getAttribute('data-ejemplo');
+    const votacion = page.locator(`#votaciones [data-ejemplo="${indice}"]`);
+    await expect(votacion).toBeVisible();
+    await expect(votacion.locator('.tally li').first()).toBeVisible();
+    await expect(votacion.locator('a.link')).toHaveAttribute('href', /^https:\/\/www\.congreso\.es\//);
+  });
+
+  test('desde la portada se llega a "Cómo funciona"', async ({ page }) => {
+    await page.goto('/');
+    await page.locator('.hero').getByRole('link', { name: 'Cómo funciona' }).click();
+    await expect(page.getByTestId('como-funciona')).toBeVisible();
+  });
+});

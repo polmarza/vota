@@ -5,9 +5,7 @@
 import Base from '../layouts/Base.astro';
 import Pregunta from '../components/Pregunta.astro';
 import SelectorProvincia from '../components/SelectorProvincia.astro';
-import { cargarCandidaturas, cargarCatalogo, cargarPartidos, cargarPreguntas, cargarTerritorio, cargarVotos } from '../lib/datos.ts';
-import { partidosPorProvincia } from '../../scripts/data/catalogo.ts';
-import type { DatosResultado } from '../scripts/resultado.ts';
+import { cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.ts';
 import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
 
 const preguntas = cargarPreguntas();
@@ -16,49 +14,40 @@ const pasos = recorrido(todas);
 const porId = new Map(preguntas.map((p) => [p.id, p]));
 const territorio = cargarTerritorio();
 const provincias = territorio.provincias.map(({ id, nombre, alias, ccaa }) => ({ id, nombre, alias, ccaa }));
-const catalogo = cargarCatalogo();
-const candidaturas = cargarCandidaturas();
-const resultado: DatosResultado = {
-  fichas: catalogo.map(({ votacion, ambito, efectos, titulo, fecha, url, que_significa_si }) => ({
-    votacion, ambito, titulo, fecha, url, que_significa_si,
-    efectos: efectos.map(({ cuando, el_si, justificacion }) => ({ cuando, el_si, justificacion })),
-  })),
-  votos: cargarVotos(catalogo.map((f) => f.votacion)),
-  partidos: cargarPartidos().map(({ id, nombre, siglas, color }) => ({ id, nombre, siglas, color })),
-  porProvincia: Object.fromEntries(partidosPorProvincia(candidaturas, territorio)),
-  candidaturasProvisionales: candidaturas.provisional,
-};
+const resultado = datosResultado();
 const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado });
 ---
 
-<Base titulo="El test · Vota con Criterio">
+<Base titulo="El test · Vota con Criterio" test>
   <script type="application/json" id="datos-test" set:html={datos} />
 
-  {
-    pasos.map((paso, i) =>
-      paso.tipo === 'pregunta' ? (
-        <Pregunta pregunta={porId.get(paso.pregunta)!} todas={todas} atrasA={i === 0 ? '/' : undefined}>
-          <SelectorProvincia />
-        </Pregunta>
-      ) : paso.tipo === 'provisional' ? (
-        <section class="paso fin" data-paso="provisional" data-testid="resultado-provisional" hidden>
-          <button class="atras" type="button" data-atras>← Atrás</button>
-          <p class="marca-provisional">Provisional</p>
-          <h2 tabindex="-1">Tu resultado <i>provisional</i></h2>
-          <div class="resultado" data-resultado></div>
-          <div class="acciones">
-            <button class="boton" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
-          </div>
-        </section>
-      ) : (
-        <section class="paso fin" data-paso="final" data-testid="resultado-final" hidden>
-          <button class="atras" type="button" data-atras>← Atrás</button>
-          <h2 tabindex="-1">Tu <i>resultado</i></h2>
-          <div class="resultado" data-resultado></div>
-        </section>
-      ),
-    )
-  }
+  <div class="interior">
+    <div class="wrap">
+      {
+        pasos.map((paso, i) =>
+          paso.tipo === 'pregunta' ? (
+            <Pregunta pregunta={porId.get(paso.pregunta)!} todas={todas} atrasA={i === 0 ? '/' : undefined}>
+              <SelectorProvincia />
+            </Pregunta>
+          ) : paso.tipo === 'provisional' ? (
+            <section class="paso fin" data-paso="provisional" data-testid="resultado-provisional" hidden>
+              <button class="quiz__back atras" type="button" data-atras>← Atrás</button>
+              <p class="pill marca-provisional">Provisional</p>
+              <h2 tabindex="-1">Tu resultado provisional</h2>
+              <div class="resultado" data-resultado></div>
+              <button class="btn btn--secondary" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
+            </section>
+          ) : (
+            <section class="paso fin" data-paso="final" data-testid="resultado-final" hidden>
+              <button class="quiz__back atras" type="button" data-atras>← Atrás</button>
+              <h2 tabindex="-1">Tu resultado</h2>
+              <div class="resultado" data-resultado></div>
+            </section>
+          ),
+        )
+      }
+    </div>
+  </div>
 </Base>
 
 <script>
@@ -91,6 +80,7 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
       pintarResultado(secciones[actual]!.querySelector('[data-resultado]')!, resultado, conComunidad(respuestas, ccaaDe), {
         provisional: paso.tipo === 'provisional',
         pendientes,
+        accion: secciones[actual]!.querySelector<HTMLElement>('[data-seguir]'),
       });
     }
     secciones[actual]!.hidden = false;
@@ -112,7 +102,7 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
     s.querySelector('[data-seguir]')?.addEventListener('click', siguiente);
   }
 
-  // Opciones: al marcar una, se invierte y la pregunta avanza sola.
+  // Opciones: al marcar una, se rellena su marca y la pregunta avanza sola.
   for (const boton of document.querySelectorAll<HTMLButtonElement>('.opcion')) {
     boton.addEventListener('click', () => {
       const seccion = boton.closest<HTMLElement>('[data-paso]')!;
@@ -215,189 +205,28 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
   secciones[0]!.hidden = false;
 </script>
 
-<style>
-  .fin {
-    padding: 18px var(--margen) 28px;
-  }
-
-  .fin .atras {
-    padding: 6px 0;
-    border: 0;
-    background: none;
-    color: var(--tinta);
-    font: 500 13px var(--sans);
-    cursor: pointer;
-  }
-
-  .fin h2 {
-    margin: 18px 0 12px;
-    font-size: clamp(30px, 7.5vw, 38px);
-    line-height: 1.05;
-    outline: none;
-  }
-
-  .marca-provisional {
-    display: table;
-    margin: 18px 0 0;
-    padding: 2px 8px;
-    border: 1px solid var(--tinta);
-    border-radius: 999px;
-    font-size: 12px;
-  }
-
-  .marca-provisional + h2 {
-    margin-top: 8px;
-  }
-
-  .acciones {
-    margin-top: 28px;
-  }
-</style>
-
 <style is:global>
-  .resultado .cobertura {
-    margin: 0 0 20px;
-    font-size: 12px;
-    color: var(--gris-texto);
-  }
-
-  .resultado .podio {
-    margin: 24px 0 8px;
-  }
-
-  .resultado .titular-podio {
-    font-size: 26px;
-    line-height: 1.1;
-  }
-
-  .resultado .explica {
-    margin: 4px 0 12px;
-    font-size: 12.5px;
-    color: var(--gris-texto);
-  }
-
-  .resultado .filas {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .resultado .fila-partido {
-    display: grid;
-    grid-template-columns: 26px 1fr auto;
-    grid-template-areas: 'logo nombre cifra' 'logo detalle detalle' 'barra barra barra';
-    column-gap: 10px;
-    align-items: center;
-  }
-
-  .resultado .logo-partido {
-    grid-area: logo;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-  }
-
-  .resultado .nombre-partido {
-    grid-area: nombre;
-    font-weight: 500;
-  }
-
-  .resultado .cifra {
-    grid-area: cifra;
-    font-weight: 600;
-  }
-
-  .resultado .detalle {
-    grid-area: detalle;
-    font-size: 12px;
-    color: var(--gris-texto);
-  }
-
-  .resultado .barra-partido {
-    grid-area: barra;
-    height: 10px;
-    margin-top: 6px;
-    border-radius: 5px;
-    background: var(--gris-pista-barra);
-    overflow: hidden;
-  }
-
-  .resultado .barra-partido span {
-    display: block;
-    height: 100%;
-    border-radius: 5px;
-  }
-
-  .resultado .caja-aviso {
-    margin: 22px 0 0;
-    padding: 12px 14px;
-    border-radius: var(--radio);
-    background: var(--gris-aviso);
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .resultado .titular-lista {
-    margin: 34px 0 8px;
-    font-size: 24px;
-  }
-
-  .resultado .votaciones {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .resultado .votacion {
-    padding: 16px 0;
-    border-top: 1px solid var(--gris-borde);
-  }
-
-  .resultado .votacion .meta {
-    margin: 0;
-    font-size: 12px;
-    color: var(--gris-texto);
-  }
-
-  .resultado .votacion h4 {
-    margin: 4px 0 6px;
-    font: 500 16px/1.3 var(--sans);
-  }
-
-  .resultado .motivo,
-  .resultado .que-si {
-    margin: 0 0 6px;
-    font-size: 13.5px;
-  }
-
-  .resultado .que-si {
-    color: var(--gris-texto);
-  }
-
-  .resultado .votos {
-    margin: 8px 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    font-size: 12.5px;
-  }
-
-  .resultado .voto .siglas {
-    font-weight: 600;
-  }
-
-  .resultado .fuente {
-    font-size: 12.5px;
+  /* Las pantallas de resultado (docs/design-system.md → Resultado). El DOM lo construye
+     src/scripts/resultado.ts con las clases de src/styles/global.css. */
+  .fin > .atras { display: block; margin-bottom: var(--s-5); }
+  .fin > h2 { margin: var(--s-3) 0 var(--s-4); outline: none; }
+  .marca-provisional { margin: 0; }
+  .resultado .cobertura { margin: 0 0 var(--s-6); max-width: 62ch; }
+  .resultado .resultado-fondo { background: var(--p-surface); border-radius: var(--r-lg); padding: var(--s-6); }
+  .resultado .result-foot { margin-top: var(--s-6); }
+  .resultado .sin-datos { margin: 0; padding: var(--s-5) var(--s-6); border-radius: var(--r-lg); background: var(--p-bg); font-size: var(--t-lead); max-width: none; }
+  .resultado .titular-lista { margin: var(--s-9) 0 0; font-size: var(--t-h2); line-height: 1.1; }
+  .resultado .screen--lista { padding: var(--s-6); }
+  .resultado .votaciones > li + li { margin-top: var(--s-6); padding-top: var(--s-6); border-top: 1px solid rgb(var(--tinta-rgb) / 0.14); }
+  .resultado .vote__head { display: grid; gap: var(--s-2); align-content: start; }
+  .resultado .vote__t { margin: 0; }
+  .resultado .vote__efecto { font-size: var(--t-small); color: var(--muted); }
+  .resultado .vote__cuerpo { display: grid; gap: var(--s-3); align-content: start; }
+  .resultado .que-si { font-size: var(--t-small); color: var(--muted); }
+  @media (max-width: 639px) {
+    .resultado .resultado-fondo { padding: var(--s-4); }
+    .resultado .screen--lista { padding: var(--s-5); }
+    .resultado .sin-datos { padding: var(--s-4) var(--s-5); }
+    .resultado .titular-lista { margin-top: var(--s-8); }
   }
 </style>

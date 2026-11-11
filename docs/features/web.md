@@ -7,7 +7,8 @@
 ## Qué se construye
 
 La web que ve el visitante en `vota.concriterio.blog`, en Astro estático y siguiendo
-`docs/design-system.md` (dirección editorial en blanco y negro, tercera versión de la maqueta).
+`docs/design-system.md` (dirección editorial en blanco y negro, tercera versión de la maqueta; sustituida
+después por la dirección Ventana, ver `docs/features/rediseno-ventana.md`).
 
 Empieza por la **portada**: cabecera con el logo y "vota con *criterio*", titular en Instrument
 Serif, botón "Empezar el test", enlace a "Cómo funciona" y el ecualizador animado con un color por
@@ -53,7 +54,7 @@ El cálculo vive en `src/lib/afinidad/` como código puro, según `docs/data-mod
 
 | Requisito | Se implementa en | Se valida con |
 |-----------|------------------|---------------|
-| M-01 | `src/pages/index.astro`, `src/components/Cabecera.astro`, `src/components/Ecualizador.astro`, `src/styles/`: portada | revisión humana: la portada en `pnpm dev` a 375 px y a 1280 px; cabecera, titular, botón negro siempre visible, enlace a "Cómo funciona" y ecualizador con un color por partido sin repetir, como en `docs/design-system.md` |
+| M-01 | `src/pages/index.astro`, `src/components/Cabecera.astro`, `src/styles/`: portada | revisión humana: la portada en `pnpm dev` a 375 px y a 1280 px; cabecera, titular, botón negro siempre visible y enlace a "Cómo funciona", como en `docs/design-system.md` (el ecualizador se quitó con el rediseño Ventana, `docs/features/rediseno-ventana.md`) |
 | M-01 | `src/pages/test.astro`, `src/components/Pregunta.astro`, `src/components/SelectorProvincia.astro`, `src/lib/perfil/`: cuestionario | `tests/e2e/cuestionario.spec.ts` |
 | M-12 | `src/lib/afinidad/`, resultado provisional en `src/pages/test.astro` | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |
 | M-02 | `src/lib/afinidad/`: filtro por candidaturas de la provincia | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |

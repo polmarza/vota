@@ -1,0 +1,45 @@
+---
+// Cierre y pie (docs/design-system.md → Cierre y pie): el titular con el botón ancho del test y, debajo,
+// la marca, las columnas de enlaces y la línea legal. Es el footer.closing del kit.
+interface Props {
+  /** El cierre con el botón del test (no se enseña dentro del propio test). */
+  cierre?: boolean;
+}
+
+const { cierre = true } = Astro.props;
+const REPO = 'https://github.com/polmarza/vota';
+---
+
+<footer class:list={['footer', cierre ? 'closing' : 'pie-simple']} aria-labelledby={cierre ? 'cierre-h' : undefined}>
+  <div class="wrap">
+    {
+      cierre && (
+        <div class="closing__cta close--type">
+          <div class="section-head">
+            <h2 id="cierre-h">Ocho preguntas sobre tu vida</h2>
+            <p>Sin registro y sin cookies: tus respuestas no salen de tu navegador.</p>
+          </div>
+          <a class="btn btn--primary btn--xl btn--wide" href="/test">
+            Empezar el test
+            <svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"></path><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"></path></svg>
+          </a>
+        </div>
+      )
+    }
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="/"><span class="mark" data-mark="dots" aria-hidden="true"></span>Vota con Criterio</a>
+          <p class="footer__lede">Un proyecto de <a href="https://concriterio.blog">Con Criterio</a></p>
+        </div>
+        <div class="span-2 footer__col"><h3>Portada</h3><ul><li><a href="/">Inicio</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Test</h3><ul><li><a href="/test">Empezar el test</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Método</h3><ul><li><a href="/como-funciona">Cómo funciona</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Proyecto</h3><ul><li><a href={REPO}>Código abierto</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>© 2026 Con Criterio · Código abierto · Elecciones generales del 29 de noviembre</span>
+      </div>
+    </div>
+  </div>
+</footer>

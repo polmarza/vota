@@ -33,7 +33,7 @@ const votos = new Map<string, VotacionPartidos>();
 for (const leg of ['XIV', 'XV']) {
   for (const v of (JSON.parse(readFileSync(join(DATA, 'votos', `${leg}.json`), 'utf8')) as { votaciones: VotacionPartidos[] }).votaciones) votos.set(v.id, v);
 }
-const perfiles = yaml('tests/fixtures/perfiles.yaml') as { nombre: string; respuestas: Respuestas }[];
+const perfiles = yaml('data/perfiles-ejemplo.yaml') as { nombre: string; respuestas: Respuestas }[];
 const ccaaDe = new Map(territorio.provincias.map((p) => [p.id, p.ccaa]));
 
 describe('M-02 · candidaturas del 29-N', () => {

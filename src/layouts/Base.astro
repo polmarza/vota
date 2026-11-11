@@ -1,59 +1,71 @@
 ---
+// Plantilla de todas las páginas (docs/design-system.md). Los atributos de <html> eligen las variantes
+// del kit de Taste Skill (src/kit/): página de software, radios suaves, marco arena, botones sólidos.
 import '../styles/global.css';
 import Cabecera from '../components/Cabecera.astro';
+import Pie from '../components/Pie.astro';
 
 interface Props {
   titulo?: string;
   descripcion?: string;
-  compartir?: boolean;
+  /** La portada: anclas en la cabecera y entrada animada del héroe. */
+  portada?: boolean;
+  /** Dentro del test no se repite el botón "Empezar el test" (cabecera, cierre y barra del móvil). */
+  test?: boolean;
 }
 
 const {
   titulo = 'Vota con Criterio',
   descripcion = 'Las promesas vuelan, los votos se quedan. Descubre qué partidos votaron a tu favor y cuáles en contra en el Congreso. Elecciones generales del 29 de noviembre de 2026.',
-  compartir = false,
+  portada = false,
+  test = false,
 } = Astro.props;
 const canonica = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{titulo}</title>
     <meta name="description" content={descripcion} />
     <link rel="canonical" href={canonica} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#f7f9fa" />
+    <meta name="site-kind" content="software" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={titulo} />
     <meta property="og:description" content={descripcion} />
     <meta property="og:url" content={canonica} />
     <meta property="og:locale" content="es_ES" />
+    {
+      portada && (
+        <script is:inline>
+          document.documentElement.classList.add('m-enter', 'mo-js');
+          setTimeout(() => document.documentElement.classList.add('m-enter-done'), 700);
+          setTimeout(() => document.documentElement.classList.add('mo-safe'), 2500);
+        </script>
+      )
+    }
   </head>
   <body>
-    <div class="pagina">
-      <Cabecera compartir={compartir} />
-      <main>
-        <slot />
-      </main>
-    </div>
+    <Cabecera portada={portada} accion={!test} />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Pie cierre={!test} />
+    {
+      !test && (
+        <nav class="actionbar" aria-label="Acción rápida">
+          <a class="btn btn--primary" href="/test">Empezar el test</a>
+        </nav>
+      )
+    }
+    <script>
+      // Comportamiento del kit: menú del móvil, barra de acción, momentos y entrada del héroe.
+      import '../kit/system.js';
+      import '../kit/motion.js';
+    </script>
   </body>
 </html>
-
-<style>
-  .pagina {
-    max-width: var(--columna);
-    min-height: 100dvh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-</style>
