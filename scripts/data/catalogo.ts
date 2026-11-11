@@ -183,3 +183,21 @@ export function validarCatalogo({ fichas, preguntas, territorio, votos, candidat
   for (const p of preguntas) if (p.tipo === 'opciones' && !usadas.has(p.id)) errores.push(`preguntas: "${p.id}" no la usa ninguna ficha del catálogo`);
   return errores;
 }
+
+// ─── Qué votaciones afectan a un perfil ─────────────────────────────────────────
+
+/** Respuestas del cuestionario por id de pregunta; "ns" o ausente no cumple ninguna condición. */
+export type Respuestas = Record<string, string | undefined>;
+
+/**
+ * Sentido de una ficha para un perfil: `favorece` o `perjudica` si los efectos que cumple coinciden,
+ * `contrapuesta` si se contradicen (la votación no cuenta) y null si no le afecta (docs/data-model.md).
+ */
+export function sentidoParaPerfil(f: Ficha, respuestas: Respuestas, ccaaDeProvincia: Map<string, string>): 'favorece' | 'perjudica' | 'contrapuesta' | null {
+  const r: Respuestas = { ...respuestas, [CLAVE_CCAA]: ccaaDeProvincia.get(respuestas.provincia ?? '') };
+  if (f.ambito !== 'estatal' && !f.ambito.includes(r[CLAVE_CCAA] ?? '')) return null;
+  const cumple = (e: Efecto) => Object.entries(e.cuando).every(([k, v]) => r[k] !== undefined && r[k] !== NO_RESPONDE && v.includes(r[k]!));
+  const sentidos = new Set(f.efectos.filter(cumple).map((e) => e.el_si));
+  if (sentidos.size === 0) return null;
+  return sentidos.size === 2 ? 'contrapuesta' : [...sentidos][0]!;
+}
