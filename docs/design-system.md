@@ -118,6 +118,9 @@ de Taste Skill de esa propuesta, copiado en `src/kit/`; los componentes propios 
   en escritorio. Todo se desactiva con `prefers-reduced-motion: reduce`: se ve el estado final
   directamente. Ya no se usa ningún momento del kit (el *line-carries-colour* de la sección del
   resultado se quitó el 2026-11-11); `src/kit/moments/` conserva solo el cargador.
+  El paso de la portada al test (y la vuelta) no es un salto: lo que aparece (el cuestionario, o el
+  héroe al volver) entra con un fundido de 320ms y 8px de subida, sin animación con movimiento
+  reducido. La entrada del héroe no se repite al volver.
 
 ---
 
@@ -148,6 +151,16 @@ Pastilla "Elecciones generales · 29 de noviembre", titular centrado, entradilla
 secundario ("Cómo funciona") y, debajo, la **ventana** con la primera pregunta del test sobre el
 marco arena, asomando.
 
+La ventana es **la pregunta de verdad**, no una maqueta: contador "Provincia · 1 de 8", barra,
+enunciado, subtítulo y el mismo selector de provincia que en `/test` (autocompletado, "Siguiente" y
+aviso de obligatoria). Desde 640px el campo y "Siguiente" van en una fila para que la ventana quepa
+en el primer pantallazo; en el móvil, uno debajo de otro. El fundido del marco empieza 40px (28px
+en el móvil) antes de su borde inferior, bajo el botón, y la lista de sugerencias alarga la ventana
+mientras está abierta. Al pulsar "Siguiente" con una provincia elegida, la portada se oculta (héroe,
+ejemplos, preguntas frecuentes, cierre, botón "Empezar el test" de la cabecera y barra del móvil) y
+el test sigue en la **segunda pregunta**, en el mismo documento, con la dirección `/test`. El resto
+de botones "Empezar el test" siguen llevando a `/test`.
+
 ### Ventana (`.screen`)
 Caja del fondo con borde fino, radio 20px y sombra, con una barra superior de tres puntos y un rótulo
 en mono. Contiene una pregunta, la lista de votaciones o una votación de ejemplo.
@@ -171,6 +184,10 @@ Campo de 52px con borde de tinta al 35 % y sugerencias debajo en una caja con so
 - Patrón ARIA `combobox` + `listbox`, con flechas y Enter.
 - Al elegir una, el campo muestra el nombre oficial y se activa "Siguiente" (la única pregunta que
   no avanza sola).
+- Sale dos veces en la portada (la ventana del héroe y la primera pregunta del cuestionario oculto):
+  `SelectorProvincia.astro` recibe un prefijo para sus `id` y `data-testid` (`provincia-…` en el
+  test, `portada-provincia-…` en el héroe) y el comportamiento es uno solo,
+  `src/scripts/selector-provincia.ts`, montado sobre cada copia.
 
 ### Podio (resultado)
 Tarjeta del fondo sobre la superficie, radio 20px: título ("Estuvieron de tu lado" / "Votaron en tu

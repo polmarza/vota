@@ -1,0 +1,57 @@
+votacion: XIV-22-8
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=20/05/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/05/05/17
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-05-20
+titulo_oficial: >-
+  Real Decreto-ley 17/2020, de 5 de mayo, por el que se aprueban medidas de apoyo al sector cultural
+  y de carácter tributario para hacer frente al impacto económico y social del COVID-2019.
+titulo: "Paro de los artistas en la pandemia (2020)"
+resumen: >-
+  Decreto ley de apoyo a la cultura en la pandemia. Durante 2020, los artistas en espectáculos
+  públicos que no podían trabajar por la crisis sanitaria pudieron cobrar la prestación por desempleo
+  en sus periodos sin actuaciones: se les reconocía en situación legal de desempleo y, con al menos 20
+  días trabajados el año anterior, tenían 120 días de prestación (180 con 55 días o más), calculada
+  sobre la base mínima de cotización del grupo 7 e incompatible con otros ingresos o ayudas. Crea
+  además ayudas extraordinarias en concurrencia competitiva a las artes escénicas y la música, al
+  sector del libro y al arte contemporáneo, subvenciones directas a las salas de cine y plazos más
+  flexibles para las obligaciones de las películas con ayudas públicas, e incluye medidas tributarias.
+  Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { sector: [cultura], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabajaba como artista en espectáculos públicos y no podía actuar por la pandemia pudo
+      cobrar el paro durante 2020 en los periodos sin trabajo, entre 120 y 180 días según los días
+      trabajados el año anterior.
+    base: >-
+      Art. 2 del Real Decreto-ley 17/2020 (acceso extraordinario a la prestación por desempleo de los
+      artistas en espectáculos públicos).
+justificacion: >-
+  Es la norma que estableció el acceso extraordinario al paro de los artistas durante la pandemia,
+  un efecto directo para el sector de la cultura y los espectáculos.
+extracto: >-
+  [Art. 2.1] «Con carácter excepcional y transitorio para el ejercicio 2020, durante los períodos de
+  inactividad a que se refiere el artículo 249 ter del texto refundido de la Ley General de la
+  Seguridad Social, aprobado por el Real Decreto Legislativo 8/2015, de 30 de octubre, la acción
+  protectora allí regulada comprenderá las prestaciones económicas por desempleo» [Art. 2.2] «A
+  aquellos trabajadores que, como consecuencia de la crisis sanitaria derivada del COVID-19, no
+  puedan continuar realizando la actividad laboral que dio lugar a su inclusión en el Régimen General
+  como artistas en espectáculos públicos, se les reconocerá, durante los periodos de inactividad en
+  el ejercicio 2020 que respondan a aquella circunstancia y a efectos de lo dispuesto en el artículo
+  266 del texto refundido de la Ley General de Seguridad Social, estar en situación legal de
+  desempleo» «La prestación será incompatible con cualquier percepción derivada de actividades por
+  cuenta propia o por cuenta ajena, o con cualquier otra prestación, renta mínima, renta de
+  inclusión, salario social o ayudas análogas concedidas por cualquier Administración Pública.»
+  [Art. 2.3] «La duración de la prestación por desempleo prevista en esta disposición estará en
+  función de los días de alta en seguridad social con prestación real de servicios en dicha actividad
+  en el año anterior a la situación legal de desempleo» [Art. 2.4] «La base reguladora de la
+  prestación por desempleo prevista en los apartados anteriores estará constituida por la base de
+  cotización mínima vigente en cada momento, por contingencias comunes, correspondiente al grupo 7 de
+  la escala de grupos de cotización del Régimen General.» [Art. 3.1] «Se establece un sistema de
+  ayudas extraordinarias a las artes escénicas y de la música como consecuencia del impacto negativo
+  de la crisis sanitaria del COVID-19.»

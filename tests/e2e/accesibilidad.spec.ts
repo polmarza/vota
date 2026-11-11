@@ -26,6 +26,23 @@ test.describe('accesibilidad (WCAG 2.1 AA)', () => {
     await revisar(page);
   });
 
+  test('portada con el cuestionario abierto', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.hero')).toHaveClass(/is-entered/);
+    await page.getByTestId('portada-provincia-campo').fill('madr');
+    // con la lista de sugerencias abierta en la ventana del héroe
+    const madrid = page.getByTestId('portada-provincia-lista').getByRole('option', { name: 'Madrid' });
+    await expect(madrid).toBeVisible();
+    await revisar(page);
+    await madrid.click();
+    await page.getByTestId('portada-provincia-siguiente').click();
+    await expect(page.getByTestId('pregunta-vivienda')).toBeVisible();
+    await page.waitForFunction(() => document.getAnimations().every((a) => a.playState !== 'running'));
+    await revisar(page);
+    await responderHastaResultado(page, ESTUDIANTE_MADRID);
+    await revisar(page);
+  });
+
   test('pregunta', async ({ page }) => {
     await page.goto('/test');
     await revisar(page);

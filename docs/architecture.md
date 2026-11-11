@@ -66,6 +66,17 @@ graph TD
 Las respuestas del cuestionario solo existen en memoria del navegador: no van a la URL, ni a
 `localStorage`, ni a ningún servidor.
 
+El cuestionario es un componente (`src/components/Cuestionario.astro`: el marcado y los datos que
+necesita el navegador) con su comportamiento en `src/scripts/cuestionario.ts`, y lo montan dos
+páginas: `/test` y la portada. En la portada está oculto: la ventana del héroe tiene el selector de
+provincia de verdad y, al pulsar "Siguiente", la portada se oculta, el cuestionario aparece en la
+segunda pregunta y la dirección pasa a `/test` con `history.pushState(null, '', '/test')`, sin
+ninguna respuesta. "Atrás" en la primera pregunta y el botón atrás del navegador (`popstate`)
+vuelven a la portada en el mismo documento; adelante vuelve al paso en el que se quedó; recargar en
+`/test` carga la página `/test` normal y las respuestas se pierden. Así la provincia no tiene que
+pasar de una página a otra (ni por la URL ni por el almacenamiento). El precio es el peso: la
+portada lleva los datos del cuestionario en su HTML (ver "Decisiones técnicas", 2026-11-11).
+
 ---
 
 ## Estructura de carpetas
@@ -82,8 +93,8 @@ scripts/
 └── verificar-cobertura.mjs → Comprueba las fichas de docs/features/
 src/
 ├── pages/              → index (portada), test, como-funciona, votaciones
-├── components/         → Componentes Astro (Cabecera, Pie, Pregunta, SelectorProvincia,
-│                         PreguntasFrecuentes)
+├── components/         → Componentes Astro (Cabecera, Pie, Cuestionario, Pregunta,
+│                         SelectorProvincia, PreguntasFrecuentes)
 ├── kit/                → Kit de Taste Skill de la propuesta Ventana (CSS y JS del menú, la barra del
 │                         móvil, la entrada del héroe y el cargador de momentos, hoy sin ninguno),
 │                         copiado de propuestas-diseno/
@@ -94,8 +105,10 @@ src/
 │   ├── explorador.ts   → Prepara en el build las votaciones de /votaciones (voto, efectos, jurado)
 │   └── compartir/      → Generación de la imagen con Canvas
 ├── content.config.ts   → Colecciones y esquemas Zod del catálogo
-├── scripts/            → resultado.ts: pinta el resultado en el navegador; explorador.ts: filtros
-│                         y "Ver más" de /votaciones
+├── scripts/            → cuestionario.ts: el cuestionario en el navegador (lo montan /test y la
+│                         portada); selector-provincia.ts: el autocompletado de provincia;
+│                         resultado.ts: pinta el resultado; explorador.ts: filtros y "Ver más" de
+│                         /votaciones
 └── styles/             → Paleta, fuentes y componentes de la web sobre el kit
 public/
 ├── logos/              → Logos de los partidos (SVG)
@@ -217,3 +230,22 @@ división, se marca y se muestra el desglose (M-06).
 **Decisión:** fichas YAML en `data/catalogo/`, validadas con Zod en el build.
 **Consecuencias:** cada cambio en una etiqueta queda en el historial de git, con su PR; es la
 mejor prueba de neutralidad que se puede ofrecer.
+
+### 2026-11-11 — El test empieza en la portada, en el mismo documento
+**Contexto:** Pol quiere que la ventana del héroe sea la primera pregunta de verdad y que el test
+siga sin cambiar de página. Pasar la provincia a `/test` obligaría a guardarla en la URL o en el
+almacenamiento, y M-08 lo prohíbe.
+**Decisión:** la portada incluye el cuestionario oculto (`Cuestionario.astro`) y el paso al test es
+cambiar qué se ve, más `history.pushState` a `/test` sin respuestas; `popstate` vuelve a la
+portada. El comportamiento del cuestionario y del selector de provincia se sacó a
+`src/scripts/cuestionario.ts` y `src/scripts/selector-provincia.ts` para montarlos en las dos
+páginas.
+**Coste:** con el catálogo del 11-11 (76 fichas), la portada pasa de 55,3 kB (8,8 kB con gzip) a
+296,7 kB (31,7 kB con gzip): casi todo es el JSON de datos del cuestionario (195 kB; 18,7 kB con
+gzip, sobre todo fichas y votos), que crece con el catálogo. Carga además el script
+del cuestionario (19,5 kB; 7,9 kB con gzip), que comparte con `/test` y queda en caché. No hay datos
+que se repitan: el resultado de ejemplo se pinta en el build y no lleva ese JSON.
+**Si pesa demasiado:** mover el JSON de datos a un archivo estático con hash (lo comparten `/` y
+`/test` y se cachea) cargado al cargar la página, antes de cualquier respuesta; o pintar el
+resultado de ejemplo en el navegador con ese mismo JSON en lugar de llevar los nueve perfiles en
+HTML. Ninguna de las dos se ha hecho.

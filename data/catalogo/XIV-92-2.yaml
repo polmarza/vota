@@ -1,0 +1,54 @@
+votacion: XIV-92-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=20/04/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-157-1.PDF
+iniciativa: "Proposición de ley de los grupos Socialista y Confederal de Unidas Podemos-En Comú Podem-Galicia en Común"
+fecha: 2021-04-20
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Socialista, de modificación del Código Civil, la Ley
+  Hipotecaria y la Ley de Enjuiciamiento Civil, sobre el régimen jurídico de los animales.
+titulo: "Los animales dejan de ser cosas"
+resumen: >-
+  Proponía reconocer en el Código Civil a los animales como seres vivos dotados de sensibilidad, a
+  los que solo se aplicaría el régimen de los bienes en lo que fuera compatible con su naturaleza.
+  Declaraba inembargables los animales de compañía (no las rentas que generaran), prohibía pactar
+  que una hipoteca se extendiera a ellos y daba derecho a su propietario y a quien conviviera con
+  ellos a que la indemnización por una lesión que les causara la muerte o un daño grave incluyera
+  el daño moral. En la separación o el divorcio, el convenio o el juez decidirían a cuál de los
+  cónyuges, o a los dos, se confía el animal y cómo podría tenerlo el otro, atendiendo al interés
+  de la familia y al bienestar del animal. Se admitió a trámite y acabó aprobada, con cambios, como
+  Ley 17/2021.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: animales
+ambito: estatal
+efectos:
+  - cuando: { animales: [perro, gato, perro-y-gato] }
+    el_si: favorece
+    justificacion: >-
+      El perro o el gato de quien tiene deudas no podría embargarse, y si alguien lo lesionara
+      causándole la muerte o un daño grave, la indemnización incluiría el daño moral de quien
+      convive con él.
+    base: >-
+      Artículo tercero de la proposición (nuevo numeral 1.º del art. 605 de la Ley de Enjuiciamiento
+      Civil) y artículo primero, apartado Seis (nuevo art. 333.4 del Código Civil).
+justificacion: >-
+  Es la reforma civil sobre los animales de compañía de la XIV, propuesta por grupos y no por el
+  Gobierno, con efectos directos para quien tiene perro o gato.
+fuentes:
+  - https://www.boe.es/eli/es/l/2021/12/15/17
+extracto: >-
+  [Artículo primero.Seis, art. 333 del Código Civil] «1. Los animales son seres vivos dotados de
+  sensibilidad. Solo les será aplicable el régimen jurídico de los bienes y de las cosas en la
+  medida en que sea compatible con su naturaleza y con las disposiciones destinadas a su
+  protección.» «4. En el caso de que la lesión a un animal de compañía haya provocado su muerte o un
+  menoscabo grave de su salud física o psíquica, tanto su propietario como quienes convivan con el
+  animal tienen derecho a que la indemnización comprenda la reparación del daño moral causado.»
+  [Artículo tercero, art. 605 de la Ley de Enjuiciamiento Civil] «1.° Los animales de compañía, sin
+  perjuicio de la embargabilidad de las rentas que los mismos puedan generar.» [Exposición de
+  motivos] «se modifica el artículo 605 de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil,
+  para declarar absolutamente inembargables a los animales de compañía» «se prohíbe el pacto de
+  extensión de la hipoteca a los animales de compañía.» [Artículo primero.Tres, art. 94 bis del
+  Código Civil] «La autoridad judicial confiará para su cuidado a los animales de compañía a uno o
+  ambos cónyuges, y determinará, en su caso, la forma en la que el cónyuge al que no se le hayan
+  confiado podrá tenerlos en su compañía, todo ello atendiendo al interés de los miembros de la
+  familia y al bienestar del animal, con independencia de la titularidad dominical de este.»

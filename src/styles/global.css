@@ -41,7 +41,6 @@
 .q-win__top { display: flex; justify-content: space-between; font: 500 13px/1.4 var(--font-mono); color: var(--muted); }
 .q-win__q { font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; margin: 0; }
 .q-win__sub { margin: 0; color: var(--muted); font-size: 15px; }
-.q-win__field { display: flex; align-items: center; justify-content: space-between; height: 52px; padding: 0 var(--s-4); border: 1px solid var(--line-strong, rgb(var(--tinta-rgb) / .25)); border-radius: var(--r-sm); font-size: 17px; }
 .q-win__bar { height: 4px; border-radius: 99px; background: var(--surface); overflow: hidden; }
 .q-win__bar i { display: block; height: 100%; width: var(--avance, 12.5%); background: var(--ink); }
 @media (max-width: 639px) { .q-win { padding: var(--s-5); gap: var(--s-3); } .q-win__q { font-size: 22px; } .q-win__sub { display: none; } }

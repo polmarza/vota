@@ -11,7 +11,10 @@ resumen: >-
   Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que
   quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria
   de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes
-  propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.
+  propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Crea además un
+  subsidio extraordinario para las empleadas y empleados de hogar que dejaron de trabajar, total o
+  parcialmente, o fueron despedidos por la crisis sanitaria: el 70 % de su base de cotización, con
+  el salario mínimo como tope. Se convalidó.
 que_significa_si: >-
   Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
 tema: vivienda
@@ -33,7 +36,17 @@ efectos:
       inquilino, en las mismas condiciones del contrato.
     base: >-
       Art. 2 del Real Decreto-ley 11/2020.
+  - cuando: { sector: [hogar], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabajaba como empleada o empleado de hogar y dejó de trabajar total o parcialmente por
+      la pandemia, o fue despedido por ese motivo, podía cobrar un subsidio extraordinario del 70 % de
+      su base de cotización, con el salario mínimo como tope.
+    base: >-
+      Arts. 30 a 32 del Real Decreto-ley 11/2020 (subsidio extraordinario por falta de actividad para
+      las personas integradas en el Sistema Especial de Empleados de Hogar).
 justificacion: >-
   Es la primera medida estatal de protección de los inquilinos en la pandemia y fija obligaciones
   directas para quien alquila una vivienda. La suspensión de desahucios que también recoge cuenta
   una sola vez, en el decreto de vivienda de diciembre de 2020 (Real Decreto-ley 37/2020).
+  También recoge el subsidio de las empleadas de hogar en la pandemia, que estableció este decreto.

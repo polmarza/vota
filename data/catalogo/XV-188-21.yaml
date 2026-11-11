@@ -30,6 +30,14 @@ efectos:
     base: >-
       Disposición final primera (art. 157.1.a de la Ley Orgánica de Educación), art. 2 y disposición
       final cuarta (calendario) del proyecto.
+  - cuando: { sector: [educacion], trabajo: [funcionario] }
+    el_si: perjudica
+    justificacion: >-
+      Devolver el proyecto suprimía el límite de horas lectivas semanales del profesorado de los
+      centros públicos: 23 en infantil, primaria y educación especial y 18 en el resto de enseñanzas,
+      desde el curso 2026-2027.
+    base: >-
+      Art. 1 del proyecto (artículo único de la Ley 4/2019) y disposición final cuarta.1 (calendario).
 justificacion: >-
   Es la reforma educativa de la XV con un efecto directo y medible en las familias con hijos en edad
   escolar; se votó la devolución en el Pleno.

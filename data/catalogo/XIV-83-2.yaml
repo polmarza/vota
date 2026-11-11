@@ -1,0 +1,71 @@
+votacion: XIV-83-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=16/03/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-53-1.PDF
+iniciativa: "Proposición de ley del Grupo Ciudadanos"
+fecha: 2021-03-16
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Ciudadanos, Integral de Protección y Apoyo a las
+  Familias.
+titulo: "Ley de familias de Ciudadanos"
+resumen: >-
+  Proponía considerar familia numerosa a toda familia con dos o más hijos y de categoría especial a
+  las de tres o más (hasta entonces, cinco o más), y extender los beneficios de las familias
+  numerosas a las familias monoparentales, que serían de categoría especial desde dos hijos.
+  Alargaba a 18 semanas el permiso por nacimiento de la madre biológica y el del otro progenitor
+  (36 semanas para el único progenitor de una familia monoparental) y creaba una bolsa de horas de
+  al menos el 5 % de la jornada anual para conciliar. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: familia
+ambito: estatal
+efectos:
+  - cuando: { numero-hijos: [dos], hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Una familia con dos hijos menores de edad pasaría a ser familia numerosa, con los descuentos y
+      ventajas que reconoce la ley a esas familias.
+    base: >-
+      Art. 1 de la proposición (nuevo art. 2.1 de la Ley 40/2003, de Protección a las Familias
+      Numerosas).
+  - cuando: { numero-hijos: [tres-mas], hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Una familia con tres o cuatro hijos pasaría de la categoría general a la especial de familia
+      numerosa, que da más descuentos y ventajas; hasta entonces, con carácter general, hacían falta
+      cinco.
+    base: >-
+      Art. 2 de la proposición (nuevo art. 4.1 de la Ley 40/2003, de Protección a las Familias
+      Numerosas).
+  - cuando: { monoparental: [si], hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Quien cría solo a sus hijos tendría los mismos beneficios que una familia numerosa desde el
+      primer hijo, y los de categoría especial desde el segundo.
+    base: >-
+      Arts. 3 y 4 de la proposición (nuevos arts. 2.6 y 4.2 de la Ley 40/2003, de Protección a las
+      Familias Numerosas).
+justificacion: >-
+  Es la propuesta sobre familia de la oposición en la XIV y cambia quién es familia numerosa según
+  el número de hijos y si se crían sin pareja.
+extracto: >-
+  [Exposición de motivos] «se extiende la condición de familia numerosa a todas las familias con
+  dos o más hijos, a la vez que las familias que tengan tres o más hijos, en lugar de los cinco o
+  más actuales, pasan adquirir la consideración de familias numerosas de categoría especial.» [Art.
+  1 (art. 2.1 Ley 40/2003)] «se entiende por familia numerosa la integrada por uno o dos
+  ascendientes con dos o más hijos, sean o no comunes.» [Art. 1.Tres (art. 3.1.a Ley 40/2003)] «a)
+  Ser menores de veintiún años de edad, o tener reconocida discapacidad o incapacidad para trabajar,
+  cualquiera que fuese su edad. Tal límite de edad se ampliará hasta los veintiséis años, cuando
+  cursen estudios» [Art. 2 (art. 4.1 Ley 40/2003)] «a) Especial: las de tres o más hijos» [Art. 3
+  (art. 2.6 Ley 40/2003)] «Los beneficios reconocidos en esta Ley a las familias numerosas se
+  extenderán a las familias monoparentales, A estos efectos, se entiende por familia monoparental la
+  integrada por un ascendiente con uno o más hijos, siempre que no conviva con otra persona con la
+  que constituya matrimonio o pareja de hecho» [Art. 4 (art. 4.2 Ley 40/2003)] «En el caso de las
+  familias monoparentales, se considerarán de categoría especial las de dos o más hijos» [Art. 16
+  (art. 48.4 ET)] «suspenderá el contrato de trabajo de la madre biológica durante dieciocho
+  semanas» […] «El nacimiento suspenderá el contrato de trabajo del progenitor distinto de la madre
+  biológica durante 18 semanas» [Art. 5 (art. 47.10 ET)] «En el supuesto de familia monoparental, la
+  suspensión del contrato de trabajo a que se refieren los apartados 4 y 5 del único progenitor,
+  adoptante, guardador con fines de adopción o acogedor tendrá una duración de 36 semanas» [Art. 12
+  (art. 37.5 ET)] «Las personas trabajadoras dispondrán de una bolsa de horas de, al menos, un 5 por
+  ciento de su jornada de trabajo anual para hacer efectivo el derecho a la conciliación de la vida
+  personal, familiar y laboral.»

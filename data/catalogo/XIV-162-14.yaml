@@ -1,0 +1,62 @@
+votacion: XIV-162-14
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=17/03/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/03/01/3
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-03-17
+titulo_oficial: >-
+  Real Decreto-ley 3/2022, de 1 de marzo, de medidas para la mejora de la sostenibilidad del
+  transporte de mercancías por carretera y del funcionamiento de la cadena logística, y por el que
+  se transpone la Directiva (UE) 2020/1057, de 15 de julio de 2020, por la que se fijan normas
+  específicas con respecto a la Directiva 96/71/CE y la Directiva 2014/67/UE para el desplazamiento
+  de los conductores en el sector del transporte por carretera, y de medidas excepcionales en
+  materia de revisión de precios en los contratos públicos de obras.
+titulo: "Carga y descarga y precio del gasóleo en el transporte por carretera"
+resumen: >-
+  Prohíbe que los conductores de camiones de más de 7,5 toneladas participen en la carga y descarga
+  de la mercancía, salvo en mudanzas, cisternas, paquetería y otros casos que enumera, y sanciona a
+  la empresa y al cargador si lo hacen. Las operaciones de carga y descarga corresponden al cargador
+  y al destinatario salvo pacto escrito con un suplemento en el precio. El transportista puede
+  reclamar una indemnización cuando el camión espera más de una hora a que se termine la carga o la
+  descarga, y el precio del transporte se revisa obligatoriamente cuando el combustible varía un 5 %
+  o más. Es infracción que la empresa no pague el alojamiento del conductor fuera del vehículo en sus
+  descansos semanales largos. Incorpora también las normas europeas sobre el desplazamiento de
+  conductores y una revisión excepcional de precios en los contratos públicos de obras. Se
+  convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { sector: [conduccion] }
+    el_si: favorece
+    justificacion: >-
+      Quien conduce camiones de más de 7,5 toneladas ya no puede tener que cargar y descargar la
+      mercancía, salvo excepciones, y su empresa tiene que pagarle el alojamiento en los descansos
+      semanales largos; quien transporta por su cuenta cobra por las esperas de más de una hora y
+      actualiza el precio si sube el gasóleo.
+    base: >-
+      Art. 1.Once (nueva disposición adicional decimotercera de la Ley 16/1987) y art. 1.Cinco (art.
+      141.24.6 de esa ley); art. 2, apartados Uno a Tres (arts. 20, 22 y 38 de la Ley 15/2009).
+justificacion: >-
+  Es la norma específica sobre las condiciones de trabajo de los conductores profesionales de
+  mercancías, un sector que el cuestionario identifica con la pregunta del sector.
+extracto: >-
+  [Art. 1.Once, disposición adicional decimotercera de la Ley 16/1987] «1. Los conductores de
+  vehículos de transporte de mercancías de más de 7,5 toneladas de masa máxima autorizada no podrán
+  participar en las operaciones de carga o descarga de las mercancías ni de sus soportes, envases,
+  contenedores o jaulas, salvo en los siguientes supuestos: a) Transporte de mudanzas y
+  guardamuebles. b) Transporte en vehículos cisterna.» [Art. 1.Cinco, art. 141.24.6 de la Ley
+  16/1987] «24.6 Cuando el conductor se encuentre fuera de su domicilio, no hacerse cargo el
+  empresario de todos los gastos de alojamiento realizados fuera del vehículo en los descansos
+  semanales normales y en los periodos de descanso de más 45 horas tomados como compensación.» [Art.
+  2.Uno, art. 20.1 de la Ley 15/2009] «1. Las operaciones de carga de las mercancías a bordo de los
+  vehículos, así como las de descarga de éstos, serán por cuenta, respectivamente, del cargador y del
+  destinatario, salvo que antes de la efectiva presentación del vehículo para su carga se haya
+  pactado por escrito que corresponden al porteador contra el pago de un suplemento respecto del
+  precio del transporte.» [Art. 2.Dos, art. 22.1 de la Ley 15/2009] «1. Cuando el vehículo haya de
+  esperar un plazo superior a una hora hasta que se concluya su carga o descarga, el porteador podrá
+  exigir al cargador una indemnización en concepto de paralización.» [Art. 2.Tres, art. 38 de la Ley
+  15/2009] «2. La previsión del apartado anterior estará condicionada a que el precio del
+  combustible hubiera experimentado una variación igual o superior al 5 por ciento, salvo que,
+  expresamente y por escrito, se hubiera pactado un umbral menor previa o simultáneamente a la
+  celebración del contrato.»
