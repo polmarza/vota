@@ -36,13 +36,8 @@ efectos:
     base: >-
       Art. 6, apartados 1 a 3, del Real Decreto-ley 8/2020 (circunstancias excepcionales por cierre
       de centros educativos).
-  - cuando: { trabajo: [autonomo] }
-    el_si: favorece
-    justificacion: >-
-      El autónomo cuya actividad quedó suspendida por el estado de alarma, o cuya facturación cayó
-      al menos un 75 %, podía cobrar una prestación del 70 % de su base reguladora.
-    base: >-
-      Art. 17 del Real Decreto-ley 8/2020 (prestación extraordinaria por cese de actividad).
 justificacion: >-
-  Es el primer decreto de respuesta a la pandemia, con efecto directo en quien cuida y en los
-  autónomos.
+  Es el primer decreto de respuesta a la pandemia, con efecto directo en quien trabaja por cuenta
+  ajena y cuida de un familiar o de sus hijos. La prestación extraordinaria de los autónomos cuenta
+  en el decreto específico de protección del trabajo autónomo de junio de 2020 (un mismo efecto
+  cuenta una sola vez).

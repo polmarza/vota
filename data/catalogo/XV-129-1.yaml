@@ -1,0 +1,55 @@
+votacion: XV-129-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=09/09/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-222-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2025-09-09
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la escolarización
+  del alumnado con necesidades educativas especiales (Orgánica).
+titulo: "Elegir centro para el alumnado con necesidades especiales"
+resumen: >-
+  Proponía reescribir el artículo 74 de la Ley Orgánica de Educación para que las administraciones
+  educativas garantizaran a los padres o tutores del alumnado con necesidades educativas especiales
+  el derecho a elegir el modelo educativo y el centro: ordinario, de educación especial,
+  escolarización combinada o aula específica. La escolarización en unidades o centros de educación
+  especial podría extenderse al menos hasta los 21 años, los padres serían oídos e informados
+  preceptivamente en la valoración de las necesidades de su hijo y la ratio de alumnos por profesor
+  podría ser inferior a la general. Suprimía la referencia actual a respetar la voluntad de las
+  familias que prefieren el régimen más inclusivo y derogaba la disposición adicional cuarta de la
+  LOMLOE, que encarga al Gobierno un plan para que en diez años los centros de educación especial
+  escolaricen al alumnado que requiera una atención muy especializada y sirvan de apoyo a los
+  centros ordinarios. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: educacion
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si], hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene a su cargo a un hijo menor con discapacidad o con necesidades educativas especiales
+      tendría reconocido por ley el derecho a elegir para él el modelo educativo y el centro, también
+      un centro de educación especial.
+    base: >-
+      Artículo único de la proposición (nuevo art. 74.1 de la Ley Orgánica de Educación) y su
+      disposición derogatoria única.
+justificacion: >-
+  Afecta directamente a las familias que cuidan de un hijo con discapacidad, un perfil con pocas
+  votaciones de grupos parlamentarios.
+extracto: >-
+  [Artículo único, nuevo art. 74.1 de la Ley Orgánica de Educación] «La escolarización de este
+  alumnado en unidades o centros de educación especial podrá extenderse al menos hasta los veintiún
+  años.» «Los alumnos con necesidades educativas especiales serán escolarizados en función de sus
+  necesidades, innovando, flexibilizando y diversificando la organización de los espacios, las
+  alternativas metodológicas y las modalidades de escolarización en centros ordinarios, en centros
+  de educación especial, en escolarización combinada o en aulas específicas, a fin de personalizar y
+  mejorar la atención educativa a las necesidades de cada alumno. Las Administraciones educativas
+  garantizarán el derecho de los padres o tutores a la elección del modelo educativo y del centro
+  docente para estos alumnos.» [Art. 74.2] «En este proceso serán preceptivamente oídos e informados
+  los padres, madres o tutores legales del alumnado.» [Art. 74.4] «la relación numérica entre
+  alumnos y profesor podrá ser inferior a la establecida con carácter general.» [Disposición
+  derogatoria única] «Se deroga la disposición adicional cuarta de la Ley Orgánica 3/2020, de 29 de
+  diciembre, por la que se modifica la Ley 2/2006, de 3 de mayo, de Educación.» [Exposición de motivos, sobre esa
+  disposición] «el Gobierno desarrolle un plan para que en el plazo de 10 años los centros de
+  educación especial escolaricen a alumnos que requieran una atención muy especializada y
+  desempeñen una función de centros de referencia y de apoyo a los centros ordinarios»

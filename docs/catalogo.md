@@ -50,6 +50,17 @@ iniciativas que cambian algo concreto para quien responde eso.
   verse afectado por al menos 5 votaciones (por debajo de eso no se muestra resultado, M-03).
 - **Territoriales:** las que afectan solo a unas comunidades (financiación, deuda, inversiones,
   competencias) entran con su efecto comunidad por comunidad (M-11).
+- **Un mismo efecto cuenta una sola vez** (desde el 11-11-2026). Si varias votaciones dan el mismo
+  efecto directo a la misma persona por la misma medida (la revalorización de las pensiones de un
+  mismo año en los presupuestos, en un decreto específico y en un decreto ómnibus; las prórrogas de
+  la misma suspensión de desahucios; las de los ERTE), el efecto se queda solo en la votación cuyo
+  objeto principal es esa medida: la norma específica antes que los presupuestos o un decreto
+  ómnibus y, si no hay ninguna específica (o hay varias), la primera que la estableció. De las demás
+  se quita. Medidas distintas aunque parecidas no son duplicados: la subida de las pensiones de 2021
+  y la de 2023, o la reforma de las pensiones frente a una subida anual. Dos iniciativas
+  legislativas populares o proposiciones con el mismo contenido sí lo son, y se queda la primera
+  votada. Una ficha que se queda sin efectos sale del catálogo. La regla se aplica por el contenido
+  y la fecha de cada votación, nunca por lo que votó cada partido.
 
 ## 3. El etiquetado: por lo que dice el texto
 

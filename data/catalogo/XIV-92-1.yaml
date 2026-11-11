@@ -1,0 +1,60 @@
+votacion: XIV-92-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=20/04/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-126-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2021-04-20
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, del régimen estatutario del
+  personal que integra los Cuerpos Nacionales de Instituciones Penitenciarias.
+titulo: "Estatuto de los funcionarios de prisiones"
+resumen: >-
+  Proponía un estatuto propio para los funcionarios de los Cuerpos Nacionales de Instituciones
+  Penitenciarias, con sus cuerpos, acceso, carrera, provisión de puestos, derechos y deberes. Entre
+  otras medidas, creaba para quienes han trabajado en servicio interior en contacto directo con los
+  reclusos una situación de segunda actividad, a petición propia al cumplir las edades que fijara un
+  reglamento o por pérdida de aptitudes psicofísicas, en la que cobrarían todas las retribuciones
+  básicas y el 80 % de las complementarias de carácter general; obligaba a la Administración a darles
+  defensa jurídica en los procedimientos derivados del ejercicio legítimo de sus funciones y a
+  contratar un seguro de responsabilidad civil; completaba hasta el 100 % del sueldo la baja por
+  lesión o enfermedad producida en acto de servicio, y abría en tres meses una negociación para
+  mejorar su régimen retributivo. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien es funcionario de prisiones tendría derecho a pasar a segunda actividad a partir de cierta
+      edad cobrando sus retribuciones básicas y el 80 % de las complementarias generales, y a que la
+      Administración le diera defensa jurídica y un seguro de responsabilidad civil.
+    base: >-
+      Artículos 34 y 40 y disposición transitoria tercera de la proposición.
+justificacion: >-
+  Es una propuesta de un grupo distinto del Gobierno sobre las condiciones de trabajo de una parte
+  del personal público, un perfil que solo tenía votaciones de presupuestos y decretos del Gobierno.
+extracto: >-
+  [Artículo 40.2] «Los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias que
+  hayan desempeñado el cometido y puestos de trabajo de Servicio Interior en contacto directo con la
+  población reclusa podrán pasar a la situación de segunda actividad por las siguientes causas:»
+  «b) Por petición propia, una vez cumplidas las edades que se establezcan reglamentariamente.»
+  [Artículo 40.3] «3. Los funcionarios en la situación de segunda actividad percibirán en su
+  totalidad las retribuciones básicas que correspondan a la antigüedad que se posea y al cuerpo de
+  pertenencia, así como un complemento de una cuantía igual al 80 por 100 de las retribuciones
+  complementarias de carácter general del referido cuerpo, en los términos que se establezcan
+  reglamentariamente.» [Artículo 34] «1. La Administración está obligada a proporcionar a los
+  Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias defensa y asistencia
+  jurídica en los procedimientos que se sigan ante cualquier orden jurisdiccional, como consecuencia
+  del ejercicio legítimo de sus funciones. 2. La Administración concertará un seguro de
+  responsabilidad civil, u otra garantía financiera,» [Artículo 31.1] «Cuando la baja para el
+  servicio hubiese sido motivada por lesión o patología declarada como enfermedad o accidente
+  profesional producidos en acto de servicio, previa tramitación del expediente de averiguación de
+  causas instruido al efecto, la prestación económica a percibir, computado en su caso el subsidio
+  previsto en la normativa reguladora del régimen del Mutualismo, será completada por el órgano
+  competente en materia de personal hasta alcanzar como máximo el cien por cien de las retribuciones
+  que el funcionario hubiera percibido el mes anterior al de causarse la baja.» [Disposición
+  transitoria tercera] «La Administración Penitenciaria abrirá, en el plazo de tres meses desde la
+  entrada en vigor de esta Ley, una negociación con los representantes de los Funcionarios de los
+  Cuerpos Nacionales de Instituciones Penitenciarias para alcanzar un acuerdo de actualización y
+  mejora de su régimen retributivo.»

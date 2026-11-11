@@ -1,0 +1,45 @@
+votacion: XV-99-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=18/03/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-157-1.PDF
+iniciativa: "Proposición de ley del Grupo Socialista"
+fecha: 2025-03-18
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Socialista, sobre la reducción de la tasa máxima de
+  alcohol en la conducción y la prohibición de la difusión de la ubicación de controles en redes
+  sociales.
+titulo: "Tasa de alcohol al volante de 0,2"
+resumen: >-
+  Proponía bajar la tasa máxima de alcohol para conducir: pasaría a ser infracción grave conducir
+  con más de 0,1 miligramos por litro de aire espirado (0,2 gramos por litro en sangre) y hasta
+  0,25 (0,5 en sangre), con la retirada de 2 puntos del permiso; por encima de 0,25 sería infracción
+  muy grave, con 4 puntos hasta 0,5 y 6 puntos por encima, y con multa de 1.000 euros por encima de
+  0,5 miligramos. Además, prohibía difundir por cualquier medio la ubicación de los controles de
+  alcohol y drogas o de cualquier otro control de seguridad vial, como infracción muy grave de la
+  que respondería la persona que difundiera el contenido. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { transporte: [coche] }
+    el_si: perjudica
+    justificacion: >-
+      Quien conduce tendría un límite de alcohol más bajo: con una tasa de entre 0,1 y 0,25
+      miligramos por litro de aire espirado, hoy permitida para la mayoría de conductores, cometería
+      una infracción grave y perdería 2 puntos del permiso.
+    base: >-
+      Artículo único, apartados Dos, Tres y Siete, de la proposición (nuevo art. 76.z4, art. 77.c y
+      punto 1 del anexo II del texto refundido de la Ley sobre Tráfico).
+justificacion: >-
+  Es una iniciativa de un grupo parlamentario que cambia una obligación de quien conduce, un perfil
+  que solo tenía votaciones sobre ayudas.
+extracto: >-
+  [Artículo único.Dos, nuevo art. 76.z4 de la Ley sobre Tráfico] «z4) Conducir con tasas de alcohol
+  superiores a 0,1 miligramos por litro de aire espirado o 0,2 gramos por litro en sangre, hasta 0,25
+  miligramos por litro de aire espirado o 0,5 gramos por litro en sangre.» [Artículo único.Uno,
+  nuevo art. 13.7] «7. Se prohíbe la difusión por cualquier medio, público o privado, de todo dato o
+  información relativa a la ubicación de controles policiales de alcohol y drogas, así como de
+  cualquier otro establecido por razones de seguridad vial.» [Artículo único.Cinco, art. 80.2.a]
+  «serán sancionadas con multa de 1.000 euros.» [Artículo único.Siete, punto 1 del anexo II] «por
+  litro aire espirado, superior a 0,10 hasta 0,25, o superior a 0,2 hasta 0,5 gramos por litro en
+  sangre (incluido). 2»

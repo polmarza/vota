@@ -20,31 +20,6 @@ que_significa_si: >-
 tema: pensiones
 ambito: estatal
 efectos:
-  - cuando: { trabajo: [jubilado] }
-    el_si: favorece
-    justificacion: >-
-      Quien cobra una pensión tenía garantizada desde enero la subida del 2,7 % de 2026 y la de las
-      pensiones mínimas y no contributivas.
-    base: >-
-      Art. 8 del Real Decreto-ley 16/2025 (revalorización de las pensiones y de otras prestaciones
-      públicas).
-  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta
-      final de 2026 si acreditaba vulnerabilidad económica.
-    base: >-
-      Art. 1, apartado Uno, del Real Decreto-ley 16/2025 (nueva redacción del art. 1 del Real
-      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
-  - cuando: { arrendador: [si] }
-    el_si: perjudica
-    justificacion: >-
-      Quien alquila una vivienda podía ver suspendido hasta el 31-12-2026 el desahucio de un inquilino
-      vulnerable que no paga, aunque con derecho a pedir una compensación pública.
-    base: >-
-      Art. 1, apartado Uno, del Real Decreto-ley 16/2025 (nueva redacción del art. 1 del Real
-      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026) y art. 2 (compensación
-      al arrendador, disposición adicional segunda del Real Decreto-ley 37/2020).
   - cuando: { trabajo: [autonomo] }
     el_si: favorece
     justificacion: >-
@@ -55,8 +30,10 @@ efectos:
       art. 12 (disposición transitoria decimotercera de la Ley del IVA) del Real Decreto-ley
       16/2025.
 justificacion: >-
-  Es el decreto de fin de 2025 con la subida de las pensiones de 2026 que el Congreso no convalidó;
-  afecta directamente a pensionistas, inquilinos vulnerables, arrendadores y autónomos en módulos.
+  Es el primer decreto que prorrogó a 2026 los límites de los módulos, con efecto directo en los
+  autónomos que tributan por ese régimen. La subida de las pensiones de 2026 cuenta en su decreto
+  específico (Real Decreto-ley 3/2026) y la suspensión de desahucios, en el decreto de vivienda de
+  diciembre de 2020 (Real Decreto-ley 37/2020): un mismo efecto cuenta una sola vez.
 extracto: >-
   [Art. 8.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad
   contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases Pasivas
