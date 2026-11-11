@@ -77,9 +77,9 @@ describe('M-05 · catálogo real', () => {
     expect(validarCatalogo({ fichas, preguntas, territorio, votos, candidatas })).toEqual([]);
   });
 
-  it('tiene entre 40 y 60 fichas, de las dos legislaturas', () => {
+  it('tiene entre 40 y 110 fichas (objetivo: unas 100), de las dos legislaturas', () => {
     expect(fichas.size).toBeGreaterThanOrEqual(40);
-    expect(fichas.size).toBeLessThanOrEqual(60);
+    expect(fichas.size).toBeLessThanOrEqual(110);
     expect([...fichas.keys()].some((id) => id.startsWith('XIV-'))).toBe(true);
     expect([...fichas.keys()].some((id) => id.startsWith('XV-'))).toBe(true);
   });

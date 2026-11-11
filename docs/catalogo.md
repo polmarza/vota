@@ -43,7 +43,7 @@ iniciativas que cambian algo concreto para quien responde eso.
   vivienda antes que una corrección técnica) y las que dividieron al Congreso; una votación que
   todos los partidos votaron igual no distingue a nadie, pero puede entrar si es importante para un
   perfil.
-- **Tamaño:** entre 40 y 60 fichas en la primera versión. Cada pregunta del cuestionario la usa al
+- **Tamaño:** unas 100 fichas en la primera versión (eran 40–60 hasta el 11-11-2026). Cada pregunta del cuestionario la usa al
   menos una ficha; si una pregunta se queda sin votaciones, se quita.
 - **Perfiles de referencia:** cada uno de los perfiles de `tests/fixtures/perfiles.yaml` tiene que
   verse afectado por al menos 5 votaciones (por debajo de eso no se muestra resultado, M-03).
