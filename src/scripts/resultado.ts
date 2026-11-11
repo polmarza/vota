@@ -99,8 +99,8 @@ export function pintarResultado(contenedor: HTMLElement, datos: DatosResultado, 
     );
   } else {
     hijos.push(
-      el('section', { clase: 'podio', atributos: { 'data-testid': 'podio-favorable' } }, titular('Te han ', 'favorecido'), el('p', { clase: 'explica', texto: 'Votaron a favor de lo que te beneficiaba.' }), el('ol', { clase: 'filas' }, ...r.favorables.map((p) => fila(p, 'favorable')))),
-      el('section', { clase: 'podio', atributos: { 'data-testid': 'podio-desfavorable' } }, titular('Te han ', 'perjudicado'), el('p', { clase: 'explica', texto: 'Votaron en contra de lo que te beneficiaba, o a favor de lo que te perjudicaba.' }), el('ol', { clase: 'filas' }, ...r.desfavorables.map((p) => fila(p, 'desfavorable')))),
+      el('section', { clase: 'podio', atributos: { 'data-testid': 'podio-favorable' } }, titular('Estuvieron ', 'de tu lado'), el('p', { clase: 'explica', texto: 'Apoyaron lo que te beneficiaba, o se opusieron a lo que te perjudicaba.' }), el('ol', { clase: 'filas' }, ...r.favorables.map((p) => fila(p, 'favorable')))),
+      el('section', { clase: 'podio', atributos: { 'data-testid': 'podio-desfavorable' } }, titular('Votaron ', 'en tu contra'), el('p', { clase: 'explica', texto: 'Se opusieron a lo que te beneficiaba, o apoyaron lo que te perjudicaba.' }), el('ol', { clase: 'filas' }, ...r.desfavorables.map((p) => fila(p, 'desfavorable')))),
     );
   }
 
