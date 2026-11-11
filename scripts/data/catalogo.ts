@@ -90,6 +90,8 @@ export const esquemaPregunta = z
     // strict: una coma sin comillas en YAML parte el texto y crea una clave suelta.
     opciones: z.array(z.object({ id: slug, texto: z.string().min(1) }).strict()).default([]),
     obligatoria: z.boolean().default(false),
+    /** Solo se pregunta si las respuestas anteriores cumplen esta condición ("contrato" solo a asalariados). */
+    solo_si: z.record(z.string(), z.array(z.string()).min(1)).optional(),
   })
   .superRefine((p, ctx) => {
     if (p.tipo === 'provincia') return;
@@ -228,6 +230,18 @@ export function validarCatalogo({ fichas, preguntas, territorio, votos, candidat
 
   // Cada pregunta existe porque alguna votación depende de ella (M-01).
   for (const p of preguntas) if (p.tipo === 'opciones' && !usadas.has(p.id)) errores.push(`preguntas: "${p.id}" no la usa ninguna ficha del catálogo`);
+
+  // Una pregunta condicional depende de respuestas que ya se han dado: de una pregunta anterior y de
+  // opciones que existen.
+  const posicion = (p: Pregunta) => (p.bloque === 'basico' ? 0 : 1000) + p.orden;
+  for (const p of preguntas) {
+    for (const [clave, valores] of Object.entries(p.solo_si ?? {})) {
+      const de = preguntas.find((q) => q.id === clave);
+      if (!de) errores.push(`preguntas: "${p.id}" depende de "${clave}", que no existe`);
+      else if (posicion(de) >= posicion(p)) errores.push(`preguntas: "${p.id}" depende de "${clave}", que va después`);
+      else for (const v of valores) if (!de.opciones.some((o) => o.id === v)) errores.push(`preguntas: "${p.id}" depende de la opción "${clave}: ${v}", que no existe`);
+    }
+  }
   return errores;
 }
 

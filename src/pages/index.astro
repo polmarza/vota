@@ -24,7 +24,7 @@ import {
 
 // Las dos preguntas que se enseñan, tal cual están en data/preguntas.yaml.
 const preguntas = cargarPreguntas();
-const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria }));
+const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria, solo_si }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria, ...(solo_si && { soloSi: solo_si }) }));
 const provincia = preguntas.find((p) => p.id === 'provincia')!;
 const vivienda = preguntas.find((p) => p.id === 'vivienda')!;
 if (vivienda.tipo !== 'opciones') throw new Error('La pregunta de vivienda tiene que ser de opciones');

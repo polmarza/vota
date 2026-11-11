@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
-import { progreso, puedeAvanzar, recorrido, type PreguntaTest } from '../../src/lib/perfil/cuestionario.ts';
+import { aplica, progreso, puedeAvanzar, recorrido, respuestasEfectivas, type PreguntaTest } from '../../src/lib/perfil/cuestionario.ts';
 import { buscarProvincias, normalizar, provinciaExacta, type ProvinciaBuscable } from '../../src/lib/perfil/provincias.ts';
 
 // Las provincias reales: el buscador tiene que funcionar con los nombres oficiales y sus alias.
@@ -69,5 +69,31 @@ describe('M-01 · recorrido del cuestionario', () => {
     expect(puedeAvanzar(preguntas[2]!, undefined)).toBe(false);
     expect(puedeAvanzar(preguntas[2]!, 'madrid')).toBe(true);
     expect(puedeAvanzar(preguntas[0]!, undefined)).toBe(true);
+  });
+});
+
+describe('M-01 · preguntas condicionales', () => {
+  const p = (id: string, bloque: PreguntaTest['bloque'], orden: number, soloSi?: Record<string, string[]>): PreguntaTest => ({
+    id, bloque, orden, etiqueta: id[0]!.toUpperCase() + id.slice(1), tipo: 'opciones', obligatoria: false, ...(soloSi && { soloSi }),
+  });
+  const preguntas = [p('trabajo', 'basico', 1), p('arrendador', 'ampliado', 1), p('contrato', 'ampliado', 2, { trabajo: ['asalariado'] }), p('campo', 'ampliado', 3)];
+  const contrato = preguntas[2]!;
+
+  it('el contrato solo se pregunta a quien trabaja por cuenta ajena', () => {
+    expect(aplica(contrato, { trabajo: 'asalariado' })).toBe(true);
+    expect(aplica(contrato, { trabajo: 'autonomo' })).toBe(false);
+    expect(aplica(contrato, {})).toBe(false);
+    expect(aplica(preguntas[1]!, {})).toBe(true);
+  });
+
+  it('el contador cuenta solo las preguntas que se hacen a esa persona', () => {
+    expect(progreso(preguntas, 'campo', { trabajo: 'autonomo' }).texto).toBe('Campo · 2 de 2');
+    expect(progreso(preguntas, 'campo', { trabajo: 'asalariado' }).texto).toBe('Campo · 3 de 3');
+    expect(progreso(preguntas, 'campo').texto).toBe('Campo · 3 de 3');
+  });
+
+  it('una respuesta a una pregunta que ya no aplica no cuenta (quien vuelve atrás y cambia de trabajo)', () => {
+    expect(respuestasEfectivas(preguntas, { trabajo: 'autonomo', contrato: 'temporal', campo: 'si' })).toEqual({ trabajo: 'autonomo', campo: 'si' });
+    expect(respuestasEfectivas(preguntas, { trabajo: 'asalariado', contrato: 'temporal' })).toEqual({ trabajo: 'asalariado', contrato: 'temporal' });
   });
 });

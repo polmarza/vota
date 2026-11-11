@@ -9,7 +9,7 @@ import { cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.
 import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
 
 const preguntas = cargarPreguntas();
-const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria }));
+const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria, solo_si }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria, ...(solo_si && { soloSi: solo_si }) }));
 const pasos = recorrido(todas);
 const porId = new Map(preguntas.map((p) => [p.id, p]));
 const territorio = cargarTerritorio();
@@ -51,7 +51,7 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
 </Base>
 
 <script>
-  import { puedeAvanzar, type Paso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+  import { aplica, progreso, puedeAvanzar, respuestasEfectivas, type Paso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
   import { buscarProvincias, provinciaExacta, type ProvinciaBuscable } from '../lib/perfil/provincias.ts';
   import { conComunidad } from '../lib/afinidad/calculo.ts';
   import { pintarResultado, type DatosResultado } from '../scripts/resultado.ts';
@@ -71,13 +71,26 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
   let actual = 0;
   const AVANCE_MS = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 400;
 
-  function mostrar(i: number) {
+  /** Si un paso se enseña con las respuestas actuales (las preguntas condicionales pueden saltarse). */
+  const visible = (p: Paso) => p.tipo !== 'pregunta' || aplica(preguntas.find((x) => x.id === p.pregunta)!, respuestas);
+
+  /** Va al paso i o, si es una pregunta que no aplica, al siguiente visible en la misma dirección. */
+  function mostrar(i: number, direccion: 1 | -1 = 1) {
+    while (i > 0 && i < pasos.length - 1 && !visible(pasos[i]!)) i += direccion;
     secciones[actual]!.hidden = true;
     actual = i;
     const paso = pasos[actual]!;
-    if (paso.tipo !== 'pregunta') {
-      const pendientes = new Set(preguntas.filter((p) => p.bloque === 'ampliado' && respuestas[p.id] === undefined).map((p) => p.id));
-      pintarResultado(secciones[actual]!.querySelector('[data-resultado]')!, resultado, conComunidad(respuestas, ccaaDe), {
+    if (paso.tipo === 'pregunta') {
+      // El contador cuenta solo las preguntas que se le hacen a esta persona.
+      const { texto, fraccion } = progreso(preguntas, paso.pregunta, respuestas);
+      const s = secciones[actual]!;
+      s.querySelector('[data-progreso-texto]')!.textContent = texto;
+      s.querySelector('[data-progreso-pct]')!.textContent = `${Math.round(fraccion * 100)}\u202f%`;
+      s.querySelector<HTMLElement>('[data-progreso-barra]')!.style.setProperty('--avance', `${Math.round(fraccion * 100)}%`);
+    } else {
+      const efectivas = respuestasEfectivas(preguntas, respuestas);
+      const pendientes = new Set(preguntas.filter((p) => p.bloque === 'ampliado' && aplica(p, efectivas) && efectivas[p.id] === undefined).map((p) => p.id));
+      pintarResultado(secciones[actual]!.querySelector('[data-resultado]')!, resultado, conComunidad(efectivas, ccaaDe), {
         provisional: paso.tipo === 'provisional',
         pendientes,
         accion: secciones[actual]!.querySelector<HTMLElement>('[data-seguir]'),
@@ -98,7 +111,7 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
   }
 
   for (const s of secciones) {
-    s.querySelector('[data-atras]')?.addEventListener('click', () => actual > 0 && mostrar(actual - 1));
+    s.querySelector('[data-atras]')?.addEventListener('click', () => actual > 0 && mostrar(actual - 1, -1));
     s.querySelector('[data-seguir]')?.addEventListener('click', siguiente);
   }
 

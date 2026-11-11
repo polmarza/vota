@@ -122,12 +122,13 @@
   bloque: ampliado
   orden: 2
   etiqueta: Contrato
-  enunciado: Si trabajas por cuenta ajena, ¿qué contrato tienes?
+  enunciado: ¿Qué contrato tienes?
+  # Solo se pregunta a quien trabaja por cuenta ajena.
+  solo_si: { trabajo: [asalariado] }
   tipo: opciones
   opciones:
     - { id: indefinido, texto: Indefinido }
     - { id: temporal, texto: Temporal }
-    - { id: no-aplica, texto: No trabajo por cuenta ajena }
     - { id: ns, texto: Prefiero no responder }
 
 
@@ -148,6 +149,45 @@
   orden: 4
   etiqueta: Discapacidad
   enunciado: ¿Tienes reconocida una discapacidad o una situación de dependencia?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: contrata
+  bloque: ampliado
+  orden: 5
+  etiqueta: Contratas
+  enunciado: ¿Tienes a alguien contratado?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: empresa, texto: "Sí, en mi empresa o negocio" }
+    - { id: hogar, texto: "Sí, en casa (empleada de hogar o cuidadora)" }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: patrimonio
+  bloque: ampliado
+  orden: 6
+  etiqueta: Patrimonio
+  enunciado: Sin contar tu vivienda habitual, ¿cuánto suma tu patrimonio?
+  subtitulo: Ahorros, inversiones, otros inmuebles, participaciones en empresas…
+  tipo: opciones
+  opciones:
+    - { id: menos-700k, texto: Menos de 700.000 € }
+    - { id: 700k-3m, texto: De 700.000 € a 3 millones }
+    - { id: mas-3m, texto: Más de 3 millones }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: herencia
+  bloque: ampliado
+  orden: 7
+  etiqueta: Herencias
+  enunciado: ¿Has recibido una herencia o donación en los últimos años, o esperas recibirla?
   tipo: opciones
   opciones:
     - { id: no, texto: No }

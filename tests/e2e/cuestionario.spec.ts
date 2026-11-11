@@ -51,6 +51,37 @@ test.describe('M-01 · cuestionario', () => {
   });
 });
 
+test.describe('M-01 · preguntas condicionales', () => {
+  // Visita las preguntas del bloque ampliado y devuelve sus ids en el orden en que aparecen.
+  async function ampliadas(page: import('@playwright/test').Page, trabajo: string) {
+    await page.goto('/test');
+    await elegirProvincia(page, 'madr', 'Madrid');
+    await responderHastaResultado(page, { ...ESTUDIANTE_MADRID, trabajo });
+    await page.getByTestId('seguir').click();
+    const vistas: string[] = [];
+    for (;;) {
+      const visible = page.locator('[data-paso]:not([hidden])');
+      const paso = (await visible.getAttribute('data-paso'))!;
+      if (!paso.startsWith('pregunta:')) return vistas;
+      const id = paso.replace('pregunta:', '');
+      vistas.push(id);
+      if (id === 'contrato') await expect(visible.getByText(/^Contrato · 2 de \d+$/)).toBeVisible();
+      await page.getByTestId(`opcion-${id}-ns`).click();
+      await expect(visible.first()).not.toHaveAttribute('data-paso', paso);
+    }
+  }
+
+  test('a quien trabaja por cuenta ajena se le pregunta el contrato', async ({ page }) => {
+    expect(await ampliadas(page, 'asalariado')).toContain('contrato');
+  });
+
+  test('M-01 negativo: a un autónomo no se le pregunta el contrato y el contador no lo cuenta', async ({ page }) => {
+    const vistas = await ampliadas(page, 'autonomo');
+    expect(vistas).not.toContain('contrato');
+    expect(vistas.length).toBeGreaterThan(0);
+  });
+});
+
 test.describe('M-12, M-03, M-04, M-09 · resultados', () => {
   test('tras el bloque básico se ve el resultado provisional con los dos podios, la cobertura y el aviso', async ({ page }) => {
     await page.goto('/test');

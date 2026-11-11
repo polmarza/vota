@@ -134,6 +134,7 @@ votaciones que el Congreso publica sin JSON.
 | tipo | `opciones` \| `provincia` | `provincia` usa el selector con panel |
 | opciones | lista de { id, texto } | Siempre incluye `ns` ("Prefiero no responder"), salvo en `provincia` |
 | obligatoria | booleano | Solo `provincia` |
+| solo_si | condición (opcional) | Solo se pregunta si las respuestas anteriores la cumplen, como `{ trabajo: [asalariado] }` en `contrato`. La respuesta a una pregunta que deja de aplicar (el visitante vuelve atrás y cambia) no cuenta, y el contador de progreso solo cuenta las preguntas que se le hacen |
 
 El build falla si una pregunta no la usa ninguna ficha del catálogo (salvo `provincia`).
 

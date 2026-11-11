@@ -22,8 +22,8 @@ const avance = Math.round(fraccion * 100);
     <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>Tus respuestas no salen de tu navegador</span></div>
     <div class="quiz">
       <div class="quiz__head">
-        <div class="quiz__count"><span>{texto}</span><span aria-hidden="true">{avance}&#8239;%</span></div>
-        <div class="quiz__bar" aria-hidden="true"><i style={`--avance:${avance}%`}></i></div>
+        <div class="quiz__count"><span data-progreso-texto>{texto}</span><span aria-hidden="true" data-progreso-pct>{avance}&#8239;%</span></div>
+        <div class="quiz__bar" aria-hidden="true"><i data-progreso-barra style={`--avance:${avance}%`}></i></div>
         <h2 id={idTitulo} class="quiz__q" tabindex="-1">{p.enunciado}</h2>
         {p.subtitulo && <p class="quiz__sub">{p.subtitulo}</p>}
       </div>
