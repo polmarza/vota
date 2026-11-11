@@ -213,7 +213,9 @@ provincia:
 4. **Porcentajes (M-03):** favorable = a favor / votaciones contadas; desfavorable = en contra /
    votaciones contadas. Podio favorable: los 3 con más porcentaje favorable; desfavorable: los 3
    con más porcentaje desfavorable, sin repetir partido (M-03).
-5. **Mínimo de datos:** con menos de 5 votaciones relevantes no se muestra podio (M-03).
+5. **Mínimo de datos:** con menos de 5 votaciones relevantes no se muestra podio (M-03). No hay
+   mínimo por partido: uno con pocas votaciones contadas (por ejemplo, que solo tuvo diputados en
+   la XV) compite igual, y la fila muestra "7 de 7" para que se vea (Pol, 11-11-2026).
 
 ---
 
