@@ -36,3 +36,4 @@
 Pol eligió esta dirección entre seis propuestas hechas con Impeccable y Taste Skill: más clara como
 herramienta y neutral (ningún color de interfaz se asocia a un partido). Pendiente: revisión humana
 de portada y "Cómo funciona", y Lighthouse antes del PR.
+- Las preguntas del test ya no llevan la barra de navegador simulada (tres puntos y «Tus respuestas no salen de tu navegador»): tenía sentido como maqueta en la portada, no dentro del test (pedido por Pol, 11-11-2026). La portada la conserva.

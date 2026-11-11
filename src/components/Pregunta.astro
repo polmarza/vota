@@ -19,7 +19,6 @@ const avance = Math.round(fraccion * 100);
 
 <section class="paso" data-paso={`pregunta:${p.id}`} data-testid={`pregunta-${p.id}`} hidden>
   <div class="screen screen--test">
-    <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>Tus respuestas no salen de tu navegador</span></div>
     <div class="quiz">
       <div class="quiz__head">
         <div class="quiz__count"><span data-progreso-texto>{texto}</span><span aria-hidden="true" data-progreso-pct>{avance}&#8239;%</span></div>
@@ -58,10 +57,6 @@ const avance = Math.round(fraccion * 100);
 
 <style>
   .screen--test { margin-top: 0; }
-
-  @media (max-width: 639px) {
-    .screen--test .screen__bar span { display: none; }
-  }
 
   .quiz__q {
     font: var(--display-weight) clamp(26px, 1.15vw + 21.5px, 34px) / 1.15 var(--font-display);
