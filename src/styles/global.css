@@ -121,3 +121,20 @@ button.opt:hover { border-color: rgb(var(--tinta-rgb) / .5); }
    contenido va en un .wrap bajo la cabecera fija. */
 .interior { padding: calc(var(--nav) + var(--s-7)) 0 calc(var(--s-9) + var(--bar)); }
 @media (max-width: 639px) { .interior { padding-top: calc(var(--nav) + var(--s-5)); padding-bottom: var(--s-8); } }
+
+/* ─── Cambio de página sin temblor ─────────────────────────────────────────────
+   Transición nativa entre documentos (View Transitions de navegación): el contenido se funde y
+   la cabecera, que es igual en todas las páginas, no se mueve ni se repinta. El hueco de la barra
+   de desplazamiento se reserva siempre, para que el ancho no cambie entre páginas. Con
+   "menos movimiento" no hay transición. Los navegadores que no la admiten navegan como siempre. */
+@view-transition { navigation: auto; }
+html { scrollbar-gutter: stable; }
+.nav { view-transition-name: cabecera; }
+::view-transition-group(cabecera),
+::view-transition-old(cabecera),
+::view-transition-new(cabecera) { animation: none; }
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 160ms; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

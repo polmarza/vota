@@ -29,3 +29,4 @@
 ## Por qué
 El explorador deja revisar el catálogo entero sin hacer el test; compartir es por donde llega el
 tráfico en campaña, sin que ninguna respuesta salga del navegador salvo que el visitante lo elija.
+- Cambio de página sin temblor: transición nativa entre páginas con la cabecera fija, hueco de la barra de desplazamiento reservado y fuentes precargadas (pedido por Pol tras revisar /votaciones).

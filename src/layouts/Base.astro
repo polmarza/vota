@@ -1,4 +1,6 @@
 ---
+import geist from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import geistMono from '@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url';
 // Plantilla de todas las páginas (docs/design-system.md). Los atributos de <html> eligen las variantes
 // del kit de Taste Skill (src/kit/): página de software, radios suaves, marco arena, botones sólidos.
 import '../styles/global.css';
@@ -32,6 +34,8 @@ const canonica = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={descripcion} />
     <link rel="canonical" href={canonica} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href={geist} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={geistMono} as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#f7f9fa" />
     <meta name="site-kind" content="software" />
     <meta property="og:type" content="website" />

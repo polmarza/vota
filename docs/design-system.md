@@ -272,3 +272,10 @@ dibujo está en `src/lib/compartir/dibujo.ts`, que espera a que Geist y Geist Mo
 - `propuestas-diseno/taste/3-recuento/`: origen del icono de puntos.
 - La dirección anterior (editorial en blanco y negro con Instrument Serif, octubre de 2026) queda en
   el historial de git.
+
+### Cambio de página
+Navegación con View Transitions nativas entre documentos (`@view-transition { navigation: auto }`):
+el contenido se funde en 160 ms y la cabecera (`view-transition-name: cabecera`) no se mueve. El hueco
+de la barra de desplazamiento se reserva siempre (`scrollbar-gutter: stable`) y las fuentes Geist se
+precargan, para que al cambiar de página no cambie ni el ancho ni la letra. Sin transición con
+"menos movimiento"; en navegadores sin soporte, navegación normal.
