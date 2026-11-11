@@ -51,6 +51,13 @@ function titular(antes: string, cursiva: string) {
   return h;
 }
 
+/** Texto negro o blanco según la luminosidad del color del partido, para que las siglas se lean. */
+function textoSobre(hex: string) {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  const l = 0.2126 * r! + 0.7152 * g! + 0.0722 * b!;
+  return (1.05 / (l + 0.05)) >= 4.5 ? '#ffffff' : '#0b0b0b';
+}
+
 const porcentaje = (x: number) => `${Math.round(x * 100)}%`;
 const FECHA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -63,12 +70,12 @@ export function pintarResultado(contenedor: HTMLElement, datos: DatosResultado, 
 
   const fila = (p: ResultadoPartido, clave: 'favorable' | 'desfavorable') => {
     const info = partidos.get(p.partido)!;
-    const color = info.color ?? 'var(--gris-pista)';
+    const color = info.color ?? '#555555';
     const cifra = clave === 'favorable' ? p.aFavor : p.enContra;
     return el(
       'li',
       { clase: 'fila-partido', atributos: { 'data-testid': `podio-${clave}-${p.partido}` } },
-      el('span', { clase: 'logo-partido', texto: info.siglas.slice(0, 3), atributos: { style: `background:${color}`, 'aria-hidden': 'true' } }),
+      el('span', { clase: 'logo-partido', texto: info.siglas.slice(0, 3), atributos: { style: `background:${color};color:${textoSobre(color)}`, 'aria-hidden': 'true' } }),
       el('span', { clase: 'nombre-partido', texto: info.nombre }),
       el('span', { clase: 'cifra', texto: porcentaje(p[clave]) }),
       el('span', { clase: 'detalle', texto: `${cifra} de ${p.contadas} votaciones` }),
