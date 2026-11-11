@@ -13,6 +13,7 @@ import {
   type Registro,
   type Respuesta,
 } from '../../../scripts/data/jurado.ts';
+import { CONJUNTO, bloqueosDelJurado } from '../../../scripts/data/veredictos.ts';
 
 const elemento = (esperado = 'a', id = 'x'): Elemento => ({
   id,
@@ -187,5 +188,33 @@ describe('M-10 · deliberación', () => {
     expect(guardados).toHaveLength(2);
     expect(guardados.every((g) => g.some((r) => r.id === 'ajeno'))).toBe(true);
     expect(guardados.at(-1)!.map((r) => r.id).sort()).toEqual(['ajeno', 'dos', 'uno']);
+  });
+});
+
+describe('M-10 · bloqueo de la publicación', () => {
+  const efecto = elemento('favorece', 'XV-1-1:efecto:1');
+  const fidelidad = elemento('fiel', 'XV-1-1:fidelidad');
+  const conjunto = elemento('equilibrado', CONJUNTO);
+  const reg = (e: Elemento, o: Partial<Registro>): Registro => ({ id: e.id, hash: hashElemento(e), esperado: e.esperado, resultado: 'aprobado', decision: e.esperado, prompt: { sistema: '', pregunta: '' }, ...o });
+
+  it('con todo aprobado y vigente no hay bloqueos, aunque el conjunto salga desequilibrado', () => {
+    expect(bloqueosDelJurado([efecto, fidelidad, conjunto], [reg(efecto, {}), reg(fidelidad, {}), reg(conjunto, { resultado: 'decidido', decision: 'desequilibrado' })])).toEqual([]);
+  });
+
+  it('bloquea lo que no tiene veredicto, lo pendiente y lo caducado', () => {
+    const errores = bloqueosDelJurado([efecto, fidelidad, conjunto], [reg(efecto, { hash: 'viejo' }), reg(fidelidad, { resultado: 'pendiente' })]);
+    expect(errores).toEqual([
+      expect.stringContaining('XV-1-1:efecto:1: el veredicto caducó'),
+      expect.stringContaining('XV-1-1:fidelidad: sin veredicto'),
+      expect.stringContaining('catalogo:conjunto: sin veredicto'),
+    ]);
+  });
+
+  it('M-10 negativo: si la mayoría discrepa o no hay consenso, la ficha no se publica hasta corregirla', () => {
+    const errores = bloqueosDelJurado([efecto, fidelidad], [reg(efecto, { resultado: 'decidido', decision: 'perjudica' }), reg(fidelidad, { resultado: 'sin-consenso', decision: undefined })]);
+    expect(errores).toEqual([
+      expect.stringContaining('el jurado responde "perjudica" frente a "favorece"'),
+      expect.stringContaining('sin consenso del jurado sobre el resumen'),
+    ]);
   });
 });

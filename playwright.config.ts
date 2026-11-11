@@ -10,7 +10,8 @@ export default defineConfig({
   reporter: 'list',
   use: { baseURL: `http://localhost:${PUERTO}`, trace: 'retain-on-failure' },
   webServer: {
-    command: `pnpm build && pnpm preview --port ${PUERTO} --ignore-lock`,
+    // Sin pnpm data:validar: los tests prueban la web aunque el jurado no haya terminado.
+    command: `pnpm exec astro build && pnpm preview --port ${PUERTO} --ignore-lock`,
     url: `http://localhost:${PUERTO}`,
     reuseExistingServer: false,
     timeout: 120_000,

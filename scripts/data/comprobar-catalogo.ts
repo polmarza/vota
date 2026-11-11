@@ -1,18 +1,28 @@
 // pnpm data:catalogo — valida las fichas de data/catalogo/, data/preguntas.yaml y
 // data/territorio.yaml entre sí y contra data/votos/. Falla si hay algún error.
+//
+// pnpm data:validar (--publicar) — además, las candidaturas del 29-N y que cada ficha tenga un
+// veredicto vigente y aprobado del jurado (M-10). Se ejecuta antes de cada build: lo que no pasa,
+// no se publica.
 
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
 import type { z } from 'zod';
+import type { Candidata } from './candidatas.ts';
 import {
+  esquemaCandidaturas,
   esquemaFicha,
   esquemaPreguntas,
   esquemaTerritorio,
+  validarCandidaturas,
   validarCatalogo,
   type Ficha,
 } from './catalogo.ts';
-import type { Candidata } from './candidatas.ts';
+import { construirElementos } from './elementos-catalogo.ts';
+import type { Registro } from './jurado.ts';
+import { esquemaPartidos } from './partidos.ts';
+import { bloqueosDelJurado } from './veredictos.ts';
 import type { VotacionPartidos } from './votos.ts';
 
 const DATA = join(import.meta.dirname, '..', '..', 'data');
@@ -54,6 +64,19 @@ for (const leg of ['XIV', 'XV']) {
 }
 
 if (preguntas && territorio) errores.push(...validarCatalogo({ fichas, preguntas, territorio, votos, candidatas }));
+
+const publicar = process.argv.includes('--publicar');
+if (publicar && territorio) {
+  const candidaturas = cargar('candidaturas/2026.yaml', esquemaCandidaturas);
+  const partidos = cargar('partidos/partidos.yaml', esquemaPartidos);
+  if (candidaturas && partidos) {
+    const conHistorial = new Set(partidos.partidos.filter((p) => p.herencia.XIV?.length || p.herencia.XV?.length).map((p) => p.id));
+    errores.push(...validarCandidaturas(candidaturas, territorio, conHistorial));
+  }
+  const rutaJurado = join(DATA, 'jurado', 'catalogo.json');
+  const registros: Registro[] = existsSync(rutaJurado) ? JSON.parse(readFileSync(rutaJurado, 'utf8')) : [];
+  if (!errores.length) errores.push(...bloqueosDelJurado(construirElementos(), registros));
+}
 
 const territoriales = [...fichas.values()].filter((f) => f.ambito !== 'estatal').length;
 console.log(

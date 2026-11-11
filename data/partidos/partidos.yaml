@@ -6,7 +6,9 @@
 #        GPlu (Plural), GMx (Mixto)
 #   XV:  GS, GP, GVOX, GSUMAR, GR, GJxCAT, GEH Bildu, GV (EAJ-PNV), GMx
 #
-# Colores: aproximación a los oficiales; se verifican antes del lanzamiento.
+# Colores: los de la plantilla «Color político» de la Wikipedia en español (sección España),
+# consultada el 11-11-2026: https://es.wikipedia.org/wiki/Plantilla:Color_pol%C3%ADtico
+# La CUP no tiene entrada propia y no se presenta al Congreso el 29-N: queda sin color.
 #
 # Estado: BORRADOR para el jurado (M-10). Las asignaciones de diputados de coalición salen de la
 # biografía que publica el Congreso, del anexo de diputados de la Wikipedia y de prensa; las que
@@ -100,7 +102,7 @@ partidos:
   - id: psoe
     nombre: PSOE
     siglas: PSOE
-    color: '#E30613'
+    color: '#FF0000'
     herencia:
       XIV:
         - diputados: ["Fuentes Curbelo, Juan Bernardo"]
@@ -123,7 +125,7 @@ partidos:
   - id: pp
     nombre: Partido Popular
     siglas: PP
-    color: '#1D84CE'
+    color: '#1E4B8F'
     herencia:
       XIV:
         - formaciones: [PP]
@@ -205,7 +207,7 @@ partidos:
   - id: podemos
     nombre: Podemos
     siglas: Podemos
-    color: '#6B2E68'
+    color: '#9370DB'
     herencia:
       XIV:
         - diputados:
@@ -267,6 +269,7 @@ partidos:
   - id: iu
     nombre: Izquierda Unida
     siglas: IU
+    color: '#DF0022'
     herencia:
       XIV:
         - diputados:
@@ -318,6 +321,7 @@ partidos:
   - id: comuns
     nombre: Catalunya en Comú
     siglas: Comuns
+    color: '#B5333F'
     herencia:
       XIV:
         - diputados:
@@ -350,6 +354,7 @@ partidos:
   - id: mas-madrid
     nombre: Más Madrid
     siglas: Más Madrid
+    color: '#45BB89'
     herencia:
       XV:
         - diputados: ["Recas Martín, Alda"]
@@ -370,7 +375,7 @@ partidos:
   - id: compromis
     nombre: Compromís
     siglas: Compromís
-    color: '#F28C28'
+    color: '#E65F00'
     herencia:
       XIV:
         - formaciones: [MÉS COMPROMÍS]
@@ -387,6 +392,7 @@ partidos:
   - id: chunta
     nombre: Chunta Aragonesista
     siglas: CHA
+    color: '#AD0017'
     herencia:
       XV:
         - diputados:
@@ -398,6 +404,7 @@ partidos:
   - id: mes
     nombre: Més per Mallorca
     siglas: Més
+    color: '#CBD100'
     herencia:
       XV:
         - diputados:
@@ -409,7 +416,7 @@ partidos:
   - id: erc
     nombre: Esquerra Republicana
     siglas: ERC
-    color: '#FFB232'
+    color: '#FFB32E'
     herencia:
       XIV:
         - diputados:
@@ -436,7 +443,7 @@ partidos:
   - id: junts
     nombre: Junts per Catalunya
     siglas: Junts
-    color: '#00B7A8'
+    color: '#20C0C2'
     herencia:
       XIV:
         - formaciones: [JxCat-JUNTS (Junts)]
@@ -459,7 +466,7 @@ partidos:
   - id: eh-bildu
     nombre: EH Bildu
     siglas: EH Bildu
-    color: '#8DC63F'
+    color: '#00D0B6'
     herencia:
       XIV:
         - formaciones: [EH Bildu]
@@ -471,7 +478,7 @@ partidos:
   - id: pnv
     nombre: EAJ-PNV
     siglas: PNV
-    color: '#007A3D'
+    color: '#008000'
     herencia:
       XIV:
         - formaciones: [EAJ-PNV]
@@ -483,7 +490,7 @@ partidos:
   - id: bng
     nombre: Bloque Nacionalista Galego
     siglas: BNG
-    color: '#76B4E0'
+    color: '#ADCFEF'
     herencia:
       XIV:
         - formaciones: [BNG]
@@ -495,7 +502,7 @@ partidos:
   - id: cc
     nombre: Coalición Canaria
     siglas: CC
-    color: '#F7D117'
+    color: '#FFD700'
     herencia:
       XIV:
         - diputados: ["Oramas González-Moro, Ana María"]
@@ -510,6 +517,7 @@ partidos:
   - id: nc
     nombre: Nueva Canarias
     siglas: NC
+    color: '#85BD42'
     herencia:
       XIV:
         - diputados: ["Quevedo Iturbe, Pedro"]
@@ -519,7 +527,7 @@ partidos:
   - id: upn
     nombre: Unión del Pueblo Navarro
     siglas: UPN
-    color: '#1B3A8C'
+    color: '#2A52BE'
     herencia:
       XIV:
         - diputados:
@@ -538,6 +546,7 @@ partidos:
   - id: prc
     nombre: Partido Regionalista de Cantabria
     siglas: PRC
+    color: '#C3CF04'
     herencia:
       XIV:
         - formaciones: [PRC]
@@ -546,6 +555,7 @@ partidos:
   - id: teruel-existe
     nombre: Teruel Existe
     siglas: Teruel Existe
+    color: '#007351'
     herencia:
       XIV:
         - formaciones: ["¡Teruel Existe!"]

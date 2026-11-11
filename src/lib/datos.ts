@@ -23,9 +23,10 @@ export function cargarPartidos(): Partido[] {
   return esquemaPartidos.parse(parse(readFileSync(join(DATA, 'partidos', 'partidos.yaml'), 'utf8'))).partidos;
 }
 
-/** Colores de los partidos con color definido, en el orden del archivo, sin repetir. */
+/** Colores de los partidos que se presentan el 29-N, en el orden del archivo, sin repetir. */
 export function coloresDePartidos(): string[] {
-  return [...new Set(cargarPartidos().flatMap((p) => (p.color ? [p.color] : [])))];
+  const sePresentan = new Set(cargarCandidaturas().candidaturas.map((c) => c.partido));
+  return [...new Set(cargarPartidos().flatMap((p) => (p.color && sePresentan.has(p.id) ? [p.color] : [])))];
 }
 
 export function cargarPreguntas(): Pregunta[] {

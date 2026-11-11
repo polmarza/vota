@@ -50,6 +50,14 @@ describe('M-02 · candidaturas del 29-N', () => {
     for (const [provincia, partidos] of partidosPorProvincia(candidaturas, territorio)) expect(partidos.length, provincia).toBeGreaterThanOrEqual(3);
   });
 
+  it('cada partido que se presenta tiene su color, y ningún color se repite (docs/design-system.md)', () => {
+    const partidos = esquemaPartidos.parse(yaml('data/partidos/partidos.yaml')).partidos;
+    const color = new Map(partidos.map((p) => [p.id, p.color?.toUpperCase()]));
+    for (const c of candidaturas.candidaturas) expect(color.get(c.partido), c.partido).toMatch(/^#[0-9A-F]{6}$/);
+    const colores = partidos.flatMap((p) => (p.color ? [p.color.toUpperCase()] : []));
+    expect(new Set(colores).size).toBe(colores.length);
+  });
+
   it('CUP y PRC no se presentan al Congreso, y Ciudadanos solo en Madrid y Barcelona (dentro de D21)', () => {
     const porProvincia = partidosPorProvincia(candidaturas, territorio);
     const donde = (p: string) => [...porProvincia].filter(([, ps]) => ps.includes(p)).map(([prov]) => prov).sort();
