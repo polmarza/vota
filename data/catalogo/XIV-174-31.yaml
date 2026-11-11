@@ -1,0 +1,44 @@
+votacion: XIV-174-31
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=28/04/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/03/29/6
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-04-28
+titulo_oficial: >-
+  Real Decreto-ley 6/2022, de 29 de marzo, por el que se adoptan medidas urgentes en el marco del
+  Plan Nacional de respuesta a las consecuencias económicas y sociales de la guerra en Ucrania.
+titulo: "Plan de respuesta a la guerra de Ucrania"
+resumen: >-
+  Ante la subida de precios por la guerra, crea una bonificación general de 20 céntimos por litro
+  de combustible; limita hasta el 30 de junio de 2022 la actualización anual de los alquileres al
+  índice de garantía de competitividad (en la práctica, un 2 %), salvo pacto distinto con un
+  arrendador que no sea gran tenedor; sube un 15 % el ingreso mínimo vital de abril a junio, y
+  aprueba ayudas a sectores afectados.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { transporte: [coche] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el coche pagaba 20 céntimos menos por cada litro de combustible.
+    base: >-
+      Arts. 15 a 22 del Real Decreto-ley 6/2022 (bonificación extraordinaria y temporal del precio
+      de los combustibles).
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler no podía sufrir, hasta el 30 de junio de 2022, una subida de la renta
+      superior al 2 % en la actualización anual, salvo pacto distinto con un pequeño propietario.
+    base: >-
+      Art. 46 del Real Decreto-ley 6/2022 (actualización extraordinaria de la renta).
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda no podía imponer, hasta el 30 de junio de 2022, una subida de la
+      renta superior al 2 % en la actualización anual.
+    base: >-
+      Art. 46 del Real Decreto-ley 6/2022.
+justificacion: >-
+  Es la gran medida contra la subida de precios de 2022, con efecto directo en conductores e
+  inquilinos.

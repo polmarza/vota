@@ -1,0 +1,77 @@
+# Comunidades autónomas y provincias (circunscripciones del Congreso). Lo valida pnpm data:catalogo.
+# `alias`: otros nombres que acepta el autocompletado de la provincia (docs/design-system.md).
+
+comunidades:
+  - { id: andalucia, nombre: Andalucía }
+  - { id: aragon, nombre: Aragón }
+  - { id: asturias, nombre: Principado de Asturias }
+  - { id: baleares, nombre: Illes Balears }
+  - { id: canarias, nombre: Canarias }
+  - { id: cantabria, nombre: Cantabria }
+  - { id: castilla-la-mancha, nombre: Castilla-La Mancha }
+  - { id: castilla-y-leon, nombre: Castilla y León }
+  - { id: cataluna, nombre: Cataluña }
+  - { id: comunitat-valenciana, nombre: Comunitat Valenciana }
+  - { id: extremadura, nombre: Extremadura }
+  - { id: galicia, nombre: Galicia }
+  - { id: madrid, nombre: Comunidad de Madrid }
+  - { id: murcia, nombre: Región de Murcia }
+  - { id: navarra, nombre: Comunidad Foral de Navarra }
+  - { id: pais-vasco, nombre: País Vasco }
+  - { id: la-rioja, nombre: La Rioja }
+  - { id: ceuta, nombre: Ceuta }
+  - { id: melilla, nombre: Melilla }
+
+provincias:
+  - { id: almeria, nombre: Almería, ccaa: andalucia }
+  - { id: cadiz, nombre: Cádiz, ccaa: andalucia }
+  - { id: cordoba, nombre: Córdoba, ccaa: andalucia }
+  - { id: granada, nombre: Granada, ccaa: andalucia }
+  - { id: huelva, nombre: Huelva, ccaa: andalucia }
+  - { id: jaen, nombre: Jaén, ccaa: andalucia }
+  - { id: malaga, nombre: Málaga, ccaa: andalucia }
+  - { id: sevilla, nombre: Sevilla, ccaa: andalucia }
+  - { id: huesca, nombre: Huesca, ccaa: aragon }
+  - { id: teruel, nombre: Teruel, ccaa: aragon }
+  - { id: zaragoza, nombre: Zaragoza, ccaa: aragon }
+  - { id: asturias, nombre: Asturias, ccaa: asturias, alias: [Oviedo] }
+  - { id: baleares, nombre: Illes Balears, ccaa: baleares, alias: [Baleares, Islas Baleares, Mallorca] }
+  - { id: las-palmas, nombre: Las Palmas, ccaa: canarias, alias: [Gran Canaria] }
+  - { id: santa-cruz-de-tenerife, nombre: Santa Cruz de Tenerife, ccaa: canarias, alias: [Tenerife] }
+  - { id: cantabria, nombre: Cantabria, ccaa: cantabria, alias: [Santander] }
+  - { id: albacete, nombre: Albacete, ccaa: castilla-la-mancha }
+  - { id: ciudad-real, nombre: Ciudad Real, ccaa: castilla-la-mancha }
+  - { id: cuenca, nombre: Cuenca, ccaa: castilla-la-mancha }
+  - { id: guadalajara, nombre: Guadalajara, ccaa: castilla-la-mancha }
+  - { id: toledo, nombre: Toledo, ccaa: castilla-la-mancha }
+  - { id: avila, nombre: Ávila, ccaa: castilla-y-leon }
+  - { id: burgos, nombre: Burgos, ccaa: castilla-y-leon }
+  - { id: leon, nombre: León, ccaa: castilla-y-leon }
+  - { id: palencia, nombre: Palencia, ccaa: castilla-y-leon }
+  - { id: salamanca, nombre: Salamanca, ccaa: castilla-y-leon }
+  - { id: segovia, nombre: Segovia, ccaa: castilla-y-leon }
+  - { id: soria, nombre: Soria, ccaa: castilla-y-leon }
+  - { id: valladolid, nombre: Valladolid, ccaa: castilla-y-leon }
+  - { id: zamora, nombre: Zamora, ccaa: castilla-y-leon }
+  - { id: barcelona, nombre: Barcelona, ccaa: cataluna }
+  - { id: girona, nombre: Girona, ccaa: cataluna, alias: [Gerona] }
+  - { id: lleida, nombre: Lleida, ccaa: cataluna, alias: [Lérida] }
+  - { id: tarragona, nombre: Tarragona, ccaa: cataluna }
+  - { id: alicante, nombre: Alicante, ccaa: comunitat-valenciana, alias: [Alacant] }
+  - { id: castellon, nombre: Castellón, ccaa: comunitat-valenciana, alias: [Castelló] }
+  - { id: valencia, nombre: Valencia, ccaa: comunitat-valenciana, alias: [València] }
+  - { id: badajoz, nombre: Badajoz, ccaa: extremadura }
+  - { id: caceres, nombre: Cáceres, ccaa: extremadura }
+  - { id: a-coruna, nombre: A Coruña, ccaa: galicia, alias: [La Coruña, Coruña] }
+  - { id: lugo, nombre: Lugo, ccaa: galicia }
+  - { id: ourense, nombre: Ourense, ccaa: galicia, alias: [Orense] }
+  - { id: pontevedra, nombre: Pontevedra, ccaa: galicia, alias: [Vigo] }
+  - { id: madrid, nombre: Madrid, ccaa: madrid }
+  - { id: murcia, nombre: Murcia, ccaa: murcia }
+  - { id: navarra, nombre: Navarra, ccaa: navarra, alias: [Nafarroa, Pamplona] }
+  - { id: alava, nombre: Araba/Álava, ccaa: pais-vasco, alias: [Álava, Araba, Vitoria] }
+  - { id: bizkaia, nombre: Bizkaia, ccaa: pais-vasco, alias: [Vizcaya, Bilbao] }
+  - { id: gipuzkoa, nombre: Gipuzkoa, ccaa: pais-vasco, alias: [Guipúzcoa, San Sebastián, Donostia] }
+  - { id: la-rioja, nombre: La Rioja, ccaa: la-rioja, alias: [Logroño] }
+  - { id: ceuta, nombre: Ceuta, ccaa: ceuta }
+  - { id: melilla, nombre: Melilla, ccaa: melilla }

@@ -1,0 +1,56 @@
+votacion: XV-89-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/01/2025"
+texto: https://www.boe.es/eli/es/rdl/2024/12/23/11
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2025-01-22
+titulo_oficial: >-
+  Real Decreto-ley 11/2024, de 23 de diciembre, para la mejora de la compatibilidad de la pensión
+  de jubilación con el trabajo.
+titulo: "Compatibilizar pensión y trabajo"
+resumen: >-
+  Reforma la jubilación activa: quien retrasa al menos un año el acceso a la pensión desde la edad
+  ordinaria de jubilación puede cobrar parte de ella mientras trabaja, desde el 45 % con un año de
+  demora hasta el 100 % con cinco o más, y el porcentaje sube 5 puntos por cada año que siga en
+  activo; no se aplica a puestos de trabajo ni altos cargos del sector público. Extiende la
+  compatibilidad, con el mismo año de demora, a las pensiones de Clases Pasivas. Además, a partir
+  del segundo año de demora cuenta los periodos de más de seis meses (un 2 % adicional) en el
+  incentivo por retrasar la jubilación, y permite la jubilación parcial a partir de la edad
+  ordinaria, con una reducción de jornada de entre el 25 % y el 75 %, sin contrato de relevo.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { edad: [65-mas], trabajo: [asalariado, autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Quien ha cumplido la edad de jubilación, la retrasa al menos un año y sigue trabajando puede
+      cobrar a la vez parte de su pensión.
+    base: >-
+      Art. 1, que modifica los arts. 210 y 214 de la Ley General de la Seguridad Social, y art. 3,
+      que modifica el art. 33 de la Ley de Clases Pasivas del Estado.
+justificacion: >-
+  Afecta directamente a quien tiene edad de jubilarse y quiere seguir trabajando.
+extracto: >-
+  [Art. primero.Tres (art. 214.1 LGSS)] «entre dicha fecha y la del hecho causante de la pensión de
+  jubilación haya transcurrido al menos un año, la percepción de la pensión de jubilación, en su
+  modalidad contributiva, será compatible con la realización de cualquier trabajo por cuenta ajena,
+  a tiempo completo o a tiempo parcial, o por cuenta propia del pensionista.» [Art. 214.2 LGSS] «a)
+  Si se demora un año el acceso a la pensión de jubilación de acuerdo con lo establecido en el
+  apartado 1.a), el porcentaje será del 45 por ciento de la pensión.» «e) Si se demora cinco años o
+  más el acceso a la pensión de jubilación, el porcentaje será del 100 por ciento de la pensión.»
+  «El porcentaje que resulte de la escala anterior se incrementará 5 puntos porcentuales por cada 12
+  meses ininterrumpidos que permanezca en la situación de jubilación activa» [Art. 214.9 LGSS] «Las
+  previsiones de este artículo no serán aplicables en los supuestos de desempeño de un puesto de
+  trabajo o alto cargo en el sector público» [Art. primero.Uno (art. 210.2.a LGSS)] «A partir del
+  segundo año completo de demora, para el cálculo del porcentaje se podrán computar periodos
+  superiores a 6 meses e inferiores a un año, correspondiendo a dichos periodos un 2 por ciento
+  adicional.» [Art. primero.Cuatro (art. 215.1 LGSS)] «siempre que se produzca una reducción de su
+  jornada de trabajo comprendida entre un mínimo del 25 por ciento y un máximo del 75 por ciento,
+  podrán acceder a la jubilación parcial sin necesidad de la celebración simultánea de un contrato
+  de relevo.» [Art. tercero (art. 33.2 Ley de Clases Pasivas)] «el percibo de las pensiones de
+  jubilación o retiro, en el supuesto contemplado en la letra a) del artículo 28.2 será compatible
+  con el ejercicio de una actividad, por cuenta propia o ajena, que dé lugar a la inclusión de su
+  titular en cualquier régimen público de Seguridad Social, […] siempre y cuando el acceso a la
+  pensión haya tenido lugar al menos un año después de haber cumplido la edad que en cada caso
+  resulte de aplicación»

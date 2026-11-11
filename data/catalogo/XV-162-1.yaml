@@ -1,0 +1,79 @@
+votacion: XV-162-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=24/02/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-113-1.PDF
+iniciativa: "Proposición de ley del Grupo Sumar"
+fecha: 2026-02-24
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Plurinacional SUMAR, para la garantía de los derechos
+  de las personas trabajadoras en procesos de deslocalización y transmisión de unidades
+  productivas.
+titulo: "Despidos por deslocalización y venta de empresas"
+resumen: >-
+  Proponía que las empresas que trasladaran su actividad industrial, productiva o de negocio fuera
+  de la Unión Europea y del Espacio Económico Europeo no pudieran hacer en España despidos
+  colectivos ni despidos por causas objetivas, modificar sustancialmente las condiciones de trabajo
+  ni inaplicar las del convenio colectivo; si se probaba su vínculo con el traslado, esas medidas
+  se considerarían en fraude de ley y los despidos, improcedentes o, en su caso, nulos. Las que,
+  además, se hubieran beneficiado de un ERTE o del mecanismo RED en los cuatro años anteriores
+  tendrían que abonar todo lo desembolsado en prestaciones y lo dejado de ingresar por
+  exoneraciones de cotizaciones a la Seguridad Social. En la transmisión entre particulares de la
+  titularidad de una empresa o unidad productiva de 50 o más trabajadores, obligaba a presentar
+  ante la autoridad laboral un plan de viabilidad para mantener la actividad y el empleo, elaborado
+  en un periodo de consultas de al menos 30 días en el que la empresa vendedora, la compradora y la
+  representación de la plantilla debían negociar de buena fe; si acababa sin acuerdo, los
+  trabajadores tendrían 15 días para ejercer un derecho de tanteo y retracto para adquirir la
+  empresa. Si no se hacía ese periodo de consultas, los cambios sustanciales de condiciones ligados
+  a la transmisión quedarían anulados y los despidos serían improcedentes o, en su caso, nulos. No
+  se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja en una empresa que traslada su actividad fuera de la Unión Europea y del Espacio
+      Económico Europeo no podría ser despedido por causas objetivas ni en un despido colectivo
+      vinculado a ese traslado: el despido se consideraría improcedente o, en su caso, nulo.
+    base: >-
+      Artículo único, apartado Uno, de la proposición (nueva disposición adicional vigésima octava
+      del Estatuto de los Trabajadores, que impide las medidas de sus arts. 41, 51, 52 y 82.3).
+justificacion: >-
+  Es una propuesta de protección del empleo de un grupo distinto del Gobierno en la XV.
+extracto: >-
+  [Artículo único.Uno, nueva disposición adicional vigésima octava del Estatuto de los Trabajadores]
+  «1. Las empresas que decidan el traslado de su actividad industrial, productiva o de negocio a
+  territorios que no formen parte del de los Estados miembros de la Unión Europea o del de los
+  Estados signatarios del Acuerdo sobre el Espacio Económico Europeo, no podrán adoptar las
+  siguientes medidas en relación con las condiciones de trabajo o el empleo en España: a) Despidos
+  colectivos y extinciones de contratos por las causas objetivas previstas, respectivamente, en los
+  artículos 51 y 52. b) Modificaciones sustanciales de las condiciones de trabajo de las previstas
+  en el artículo 41. c) Inaplicaciones de las condiciones de trabajo previstas en convenios
+  colectivos, según lo dispuesto en el artículo 82.3.» «De incumplirse estas limitaciones, las medidas
+  aplicadas se considerarán efectuadas en fraude de ley, sean adoptadas con carácter anterior o
+  posterior al traslado, siempre que se pruebe su vinculación directa o indirecta con este. Los
+  despidos y las extinciones de contratos serán en tal caso considerados improcedentes y, en su
+  caso, nulos.» «2. Aquellas empresas que
+  efectúen los traslados de la actividad descritos en el apartado 1 y hayan sido beneficiadas en los
+  cuatro años previos por medidas ligadas a uno o varios expedientes de regulación temporal de
+  empleo o a la aplicación del Mecanismo RED, se verán obligadas al abono de la totalidad del
+  importe desembolsado o dejado de ingresar en concepto de prestaciones y de exoneraciones en las
+  cotizaciones a la Seguridad Social.» [Artículo único.Dos, nueva disposición adicional vigésima
+  novena del Estatuto de los Trabajadores] «En los supuestos en los que se celebre entre
+  particulares una operación que tenga como objetivo la transmisión de la titularidad de una empresa
+  o unidad productiva autónoma cuya plantilla sea de cincuenta o más personas trabajadoras, deberá
+  presentarse ante la autoridad laboral un plan de viabilidad cuyo objetivo será el mantenimiento de
+  la actividad productiva y de los puestos de trabajo. Para la elaboración de dicho plan de
+  viabilidad se abrirá un periodo de consultas entre la empresa vendedora, la compradora y la
+  representación legal de las personas trabajadoras, de duración no inferior a treinta días
+  naturales, durante el cual las partes deberán negociar de buena fe con el objetivo de alcanzar un
+  acuerdo.» «las personas trabajadoras tendrán un
+  derecho de tanteo y retracto para la adquisición de la unidad productiva o empresa, que podrán
+  ejercer en el plazo de 15 días desde la finalización sin acuerdo del periodo de consultas.» «2. El
+  incumplimiento de la obligación de desarrollar un periodo de consultas en los términos descritos,
+  sin perjuicio de las sanciones que pudieran corresponder, tendrá los efectos siguientes: a) Las
+  modificaciones sustanciales de las condiciones de trabajo que hubieran podido afectar a las
+  personas trabajadoras con ocasión o como consecuencia de la transmisión quedarán anuladas. b) Los
+  despidos y las extinciones de contratos que pudieran producirse con ocasión o como consecuencia de
+  la transmisión serán considerados improcedentes y, en su caso, nulos.»

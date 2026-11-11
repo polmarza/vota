@@ -1,0 +1,319 @@
+---
+// "Cómo funciona" (M-07): el método, en lenguaje claro, a partir de docs/catalogo.md y
+// docs/data-model.md. Las cifras salen de data/ en el build.
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import Base from '../layouts/Base.astro';
+import { cargarCandidaturas, cargarCatalogo, cargarPartidos } from '../lib/datos.ts';
+
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import { REPO } from '../lib/enlaces.ts';
+const catalogo = cargarCatalogo();
+const xiv = catalogo.filter((f) => f.votacion.startsWith('XIV-')).length;
+const delGobierno = catalogo.filter((f) => /Gobierno/.test(f.iniciativa)).length;
+const territoriales = catalogo.filter((f) => f.ambito !== 'estatal').length;
+const partidos = cargarPartidos();
+const candidaturas = cargarCandidaturas();
+
+// Resumen de la revisión del jurado, si ya se ha hecho (data/jurado/catalogo.json).
+const rutaJurado = join(process.cwd(), 'data', 'jurado', 'catalogo.json');
+const registros = existsSync(rutaJurado) ? (JSON.parse(readFileSync(rutaJurado, 'utf8')) as { id: string; resultado: string; decision?: string }[]) : [];
+// Solo cuentan las fichas que están en el catálogo (el archivo guarda también las apartadas).
+const enCatalogo = new Set(catalogo.map((f) => f.votacion));
+const veredictos = registros.filter((r) => enCatalogo.has(r.id.split(':')[0]!));
+const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length;
+// La revisión del conjunto se publica tal cual, sea cual sea.
+const conjunto = registros.find((r) => r.id === 'catalogo:conjunto');
+const desequilibrado = conjunto?.decision === 'desequilibrado' || conjunto?.resultado === 'sin-consenso';
+---
+
+<Base titulo="Cómo funciona · Vota con Criterio" descripcion="Cómo se eligen y etiquetan las votaciones, cómo se calcula el resultado, quién lo revisa y qué limitaciones tiene.">
+  <div class="interior">
+  <article class="wrap metodo" data-testid="como-funciona">
+    <p class="t-label screen-label">El método</p>
+    <h1>Cómo funciona</h1>
+    <p class="entradilla">
+      No te preguntamos qué piensas, sino cómo vives. Las promesas no las miramos: buscamos las votaciones del
+      Congreso que cambiaban algo concreto para alguien como tú, y qué votó cada partido.
+    </p>
+
+    <section class="bloque">
+      <h2>Las votaciones</h2>
+      <div class="bloque__texto">
+      <p>
+        El catálogo tiene {catalogo.length} votaciones del Pleno del Congreso: {xiv} de la XIV legislatura (2019-2023) y{' '}
+        {catalogo.length - xiv} de la XV (2023-2026), {territoriales} de ellas territoriales.
+      </p>
+      <ul>
+        <li>
+          <strong>De dónde salen.</strong> De todas las iniciativas con efecto jurídico que se votaron enteras en el Pleno:
+          leyes, decretos ley, proposiciones de cualquier grupo o comunidad autónoma y presupuestos, <em>se aprobaran o no</em>.
+          Lo que importa es qué votó cada partido. Quedan fuera las proposiciones no de ley y las mociones, que no obligan a
+          nada, y las votaciones secretas o sin voto nominal publicado.
+        </li>
+        <li>
+          <strong>Cómo se eligen.</strong> Partiendo de cada situación (vivir de alquiler, cobrar una pensión, tener hijos
+          pequeños…) se buscan las votaciones que la afectan, de las dos legislaturas y de proponentes distintos. Se eligen
+          por lo que dice el texto antes de mirar quién votó qué. {delGobierno} de las {catalogo.length} son iniciativas del
+          Gobierno: son las que más cambian situaciones concretas.
+        </li>
+        <li>
+          <strong>Cómo se etiquetan.</strong> Leyendo el texto publicado en el BOE o, si no salió adelante, en el Boletín de las
+          Cortes. Solo cuenta el efecto directo que establece (un derecho, una ayuda, un impuesto, un límite, una obligación)
+          para quien está en esa situación; no los efectos indirectos o discutidos. Cada etiqueta cita el artículo en que se
+          basa y explica qué significaba votar «sí», que no siempre es apoyar la medida: en una enmienda a la totalidad, votar
+          «sí» es devolver la ley al Gobierno.
+        </li>
+        <li>
+          <strong>Cada efecto cuenta una vez.</strong> Si varias votaciones dan el mismo efecto a la misma persona por la
+          misma medida (la subida de las pensiones de un año, que aparece en un decreto propio y en unos presupuestos, o la
+          prórroga de una misma suspensión de desahucios), solo cuenta en la votación cuyo objeto principal es esa medida o,
+          si no hay ninguna específica, en la que la puso en marcha: si el Congreso tumbó un decreto y aprobó después otro
+          con la misma medida, cuenta el segundo. Se decide por el contenido y la fecha, nunca por lo que votó cada partido.
+        </li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="bloque" id="voto-partido">
+      <h2>El voto de cada partido</h2>
+      <div class="bloque__texto">
+      <p>
+        Sale del voto de cada diputado en los datos abiertos del Congreso, no del grupo parlamentario. Cuenta lo que votó la
+        mayoría de sus diputados presentes, y el voto de un diputado cuenta para el partido al que pertenecía cuando votó. Si
+        sus diputados votaron divididos, se indica con el desglose; si se dividieron a partes iguales, esa votación no cuenta
+        para ese partido.
+      </p>
+      <p>
+        Los diputados elegidos en una coalición (Sumar, Unidas Podemos…) cuentan para su partido concreto. Los de partidos
+        que no se presentan el 29 de noviembre, los independientes y los casos que no están claros no cuentan para nadie.
+      </p>
+      <p data-testid="orden-partidos">
+        En <a href="/votaciones">la lista de votaciones</a> los partidos van de izquierda a derecha según la posición
+        izquierda-derecha que les da la Chapel Hill Expert Survey 2024, una encuesta a expertos en partidos europeos, o
+        la de 2019 para los que ya no aparecen en la de 2024 (Ciudadanos); los que no están en ninguna se colocan junto
+        al partido de su grupo parlamentario o, si votaban desde el Grupo Mixto, junto al partido con el que más coincidió
+        su voto. El orden no cuenta para el resultado.
+      </p>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Tu resultado</h2>
+      <div class="bloque__texto">
+      <p>
+        Para cada partido que se presenta en tu provincia, contamos en cuántas de las votaciones que te afectan votó a tu
+        favor y en cuántas en tu contra. «Estuvieron de tu lado» muestra los tres con el porcentaje a favor más alto; «Votaron en tu
+        contra», los tres con el porcentaje en contra más alto, sin repetir partido. Las abstenciones cuentan en el
+        total, pero no suman a ningún lado; por eso los dos porcentajes no suman 100.
+      </p>
+      <p>
+        Con menos de cinco votaciones que te afecten no mostramos podio: no sería un resultado fiable. Si una votación te
+        favorece por un lado y te perjudica por otro, no cuenta.
+      </p>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Quién lo revisa</h2>
+      <div class="bloque__texto">
+      <p>
+        La selección y las etiquetas las hace una IA, Claude, y las revisa un jurado de cinco modelos de cinco empresas
+        distintas (OpenAI, Google, Mistral, DeepSeek y xAI), que no saben qué votó cada partido ni qué etiqueta se propuso.
+        Si la mayoría no está de acuerdo, la etiqueta se corrige; si no hay consenso, el efecto se quita o la votación no se
+        publica. Pol Marzà, que firma el proyecto, no interviene en qué votaciones entran ni en cómo se etiquetan.
+      </p>
+      {
+        veredictos.length > 0 && (
+          <p data-testid="resumen-jurado">
+            Revisión del catálogo: {cuenta('aprobado')} elementos aprobados, {cuenta('decidido')} corregidos según el jurado y{' '}
+            {cuenta('sin-consenso')} sin consenso. Todas las respuestas, con sus razones, están en{' '}
+            <a href={`${REPO}/tree/main/data/jurado`}>data/jurado</a>.
+          </p>
+        )
+      }
+      {
+        conjunto && (
+          <p data-testid="veredicto-conjunto">
+            <strong>Revisión del conjunto.</strong>{' '}
+            {desequilibrado
+              ? <>El jurado también juzga si la selección entera sirve para comparar partidos en igualdad de condiciones, y
+                  su veredicto es que <strong>no está equilibrada</strong>. Sus razones: unas dos de cada tres votaciones son
+                  iniciativas del Gobierno; algunas medidas parecidas se repiten en años distintos, como las subidas de las
+                  pensiones; y faltan leyes con efecto directo que el test no puede asignar a nadie, como el ingreso mínimo
+                  vital o el teletrabajo. Se corrigió lo que tenía arreglo (medidas contadas dos veces, iniciativas de la
+                  oposición que faltaban, preguntas sobre quien contrata, patrimonio y herencias); lo demás es de cómo se
+                  legisla y de lo que el test puede saber de ti, y lo publicamos tal cual para que lo tengas en cuenta al
+                  leer tu resultado.</>
+              : <>El jurado también juzga si la selección entera sirve para comparar partidos en igualdad de condiciones, y
+                  su veredicto es que está equilibrada.</>}
+          </p>
+        )
+      }
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Qué partidos aparecen</h2>
+      <div class="bloque__texto">
+      <p>
+        Solo los que se presentan en tu provincia el 29 de noviembre y tienen historial de votaciones en el Congreso en la XIV
+        o la XV ({partidos.length} partidos). Un partido nuevo, o que no tuvo diputados en estas legislaturas, no aparece:
+        no hay votaciones con las que compararlo.
+        {candidaturas.provisional && ' La lista de partidos por provincia es provisional hasta contrastarla con las candidaturas proclamadas.'}
+      </p>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Limitaciones</h2>
+      <div class="bloque__texto">
+      <ul>
+        <li>Solo mira votaciones del Congreso: no tiene en cuenta programas, promesas, gobiernos autonómicos ni el Senado.</li>
+        <li>Es una selección de {catalogo.length} votaciones entre cientos; otra selección daría otro resultado.</li>
+        <li>
+          Un partido que gobierna propone más leyes que uno en la oposición, y eso pesa en el resultado: para algunas
+          situaciones, como cobrar una pensión, casi todo lo que se votó con efecto directo lo propuso el Gobierno. Votar
+          contra un decreto entero cuenta como votar contra cada medida que lleva dentro, aunque un partido apoyara alguna
+          por separado.
+        </li>
+        <li>
+          Solo cuenta lo que el test puede saber de ti. Hay leyes importantes que no caben porque ninguna pregunta identifica
+          a quién afectan, como el ingreso mínimo vital (depende de los ingresos de todo el hogar), el teletrabajo o los
+          derechos de las empleadas de hogar.
+        </li>
+        <li>No es una recomendación de voto, ni una encuesta: es una forma de ver qué votaron los partidos sobre tu vida.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Preguntas frecuentes</h2>
+      <div class="bloque__texto">
+      <PreguntasFrecuentes />
+      </div>
+    </section>
+
+    <p class="firma">
+      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a>, firmado por Pol Marzà. Todas las votaciones, con el voto de
+      cada partido, en <a href="/votaciones">Las votaciones</a>; los datos, en{' '}
+      <a href={`${REPO}/tree/main/data/catalogo`} data-testid="enlace-catalogo">data/catalogo</a>.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="/test">Hacer el test<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"></path><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"></path></svg></a>
+    </div>
+  </article>
+</div>
+</Base>
+
+<style>
+  /* Una columna de lectura; en escritorio los títulos van a la izquierda y el texto a la derecha. */
+  .metodo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: var(--gutter);
+  }
+
+  .metodo > * {
+    grid-column: 1 / -1;
+    max-width: 68ch;
+  }
+
+  h1 {
+    margin-bottom: var(--s-5);
+  }
+
+  .entradilla {
+    font-size: var(--t-lead);
+    line-height: 1.5;
+    margin-bottom: var(--s-6);
+  }
+
+  h2 {
+    margin: var(--s-8) 0 var(--s-4);
+    padding-top: var(--s-5);
+    border-top: 1px solid var(--line);
+    font-size: var(--t-h3);
+    line-height: 1.2;
+  }
+
+  p,
+  li {
+    font-size: var(--t-body);
+    line-height: 1.6;
+  }
+
+  .bloque__texto > * + * {
+    margin-top: var(--s-4);
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(var(--tinta-rgb) / 0.35);
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  .btn {
+    text-decoration: none;
+  }
+
+  ul {
+    padding-left: 1.2em;
+    list-style: disc;
+  }
+
+  li + li {
+    margin-top: var(--s-3);
+  }
+
+  li strong {
+    font-weight: 500;
+  }
+
+  .firma {
+    margin: var(--s-8) 0 var(--s-5);
+    font-size: var(--t-small);
+    color: var(--muted);
+  }
+
+  @media (min-width: 1024px) {
+    .metodo {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+
+    .metodo > * {
+      grid-column: 5 / span 7;
+    }
+
+    .metodo > :is(.screen-label, h1, .entradilla) {
+      grid-column: 1 / span 9;
+    }
+
+    .metodo > .bloque {
+      grid-column: 1 / -1;
+      max-width: none;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: var(--gutter);
+      margin-top: var(--s-8);
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--line);
+    }
+
+    .bloque > h2 {
+      grid-column: 1 / span 4;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .bloque__texto {
+      grid-column: 5 / span 7;
+      max-width: 68ch;
+    }
+  }
+</style>

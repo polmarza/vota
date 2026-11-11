@@ -1,0 +1,31 @@
+# Perfiles de referencia del catálogo (docs/features/catalogo.md). Cada uno tiene que verse
+# afectado por al menos 5 votaciones (M-03); lo comprueba tests/unit/data/catalogo-real.test.ts.
+# La portada enseña el resultado real de uno de ellos, elegido al azar (src/pages/index.astro).
+# Las respuestas usan los ids de data/preguntas.yaml; lo que no aparece cuenta como "ns".
+
+- nombre: Estudiante de alquiler en Madrid
+  respuestas: { provincia: madrid, vivienda: alquiler, trabajo: estudiante, edad: menos-30, ingresos: hasta-16k, hijos: no, cuidados: no, transporte: publico }
+
+- nombre: Asalariada temporal con un hijo pequeño en Sevilla
+  respuestas: { provincia: sevilla, vivienda: alquiler, trabajo: asalariado, contrato: temporal, edad: 30-44, ingresos: 16-30k, hijos: pequenos, cuidados: no, transporte: coche }
+
+- nombre: Pensionista con vivienda pagada en Ourense
+  respuestas: { provincia: ourense, vivienda: propiedad, trabajo: jubilado, edad: 65-mas, ingresos: hasta-16k, hijos: mayores, cuidados: no, transporte: otros }
+
+- nombre: Autónomo con hipoteca e hijos en Valencia
+  respuestas: { provincia: valencia, vivienda: hipoteca, trabajo: autonomo, edad: 45-64, ingresos: 30-60k, hijos: menores, cuidados: no, transporte: coche }
+
+- nombre: Funcionaria que cuida de su madre en Barcelona
+  respuestas: { provincia: barcelona, vivienda: hipoteca, trabajo: funcionario, edad: 45-64, ingresos: 30-60k, hijos: mayores, cuidados: si, transporte: publico }
+
+- nombre: Parado de larga duración en Cádiz
+  respuestas: { provincia: cadiz, vivienda: familia, trabajo: desempleo, edad: 45-64, ingresos: hasta-16k, hijos: no, cuidados: no, transporte: publico }
+
+- nombre: Agricultor en Teruel
+  respuestas: { provincia: teruel, vivienda: propiedad, trabajo: autonomo, campo: si, edad: 45-64, ingresos: 16-30k, hijos: menores, transporte: coche }
+
+- nombre: Pequeña arrendadora jubilada en Bizkaia
+  respuestas: { provincia: bizkaia, vivienda: propiedad, arrendador: si, trabajo: jubilado, edad: 65-mas, ingresos: 16-30k, hijos: mayores, transporte: coche }
+
+- nombre: Persona con discapacidad en paro que vive con su familia en Zaragoza
+  respuestas: { provincia: zaragoza, vivienda: familia, trabajo: desempleo, edad: 30-44, ingresos: hasta-16k, hijos: no, cuidados: no, transporte: publico, discapacidad: si }

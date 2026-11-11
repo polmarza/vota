@@ -1,0 +1,44 @@
+{
+  "name": "vota",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vota con Criterio: qué partidos te han favorecido según lo que votaron en el Congreso",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "pnpm data:validar && astro build",
+    "preview": "astro preview",
+    "data:ingesta": "tsx scripts/data/ingesta.ts",
+    "data:partidos": "tsx scripts/data/comprobar-partidos.ts",
+    "data:votos": "tsx scripts/data/calcular-votos.ts",
+    "data:candidatas": "tsx scripts/data/generar-candidatas.ts",
+    "data:catalogo": "tsx scripts/data/comprobar-catalogo.ts",
+    "data:validar": "tsx scripts/data/comprobar-catalogo.ts --publicar",
+    "data:jurado": "tsx scripts/data/jurado-herencia.ts",
+    "data:jurado-catalogo": "tsx scripts/data/jurado-catalogo.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "astro": "^7.4.2",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  }
+}

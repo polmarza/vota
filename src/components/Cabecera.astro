@@ -1,0 +1,36 @@
+---
+// Cabecera fija (docs/design-system.md → Cabecera): la marca con el icono de puntos, la navegación
+// y el botón del test. En el móvil, los enlaces van en el menú que abre src/kit/system.js.
+interface Props {
+  /** En la portada, Test y Resultado son anclas a sus secciones; en el resto llevan a la portada. */
+  portada?: boolean;
+  /** El botón "Empezar el test" (no se enseña dentro del propio test). */
+  accion?: boolean;
+}
+
+const { portada = false, accion = true } = Astro.props;
+const ancla = (id: string) => (portada ? `#${id}` : `/#${id}`);
+---
+
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <a class="nav__logo" href="/"><span class="mark" data-mark="arc" aria-hidden="true"></span>vota con criterio</a>
+    <nav class="nav__links" aria-label="Principal">
+      <div class="nav__item"><a class="nav__link" href={ancla('test')}>Test</a></div>
+      <div class="nav__item"><a class="nav__link" href={ancla('resultado')}>Resultado</a></div>
+      <div class="nav__item"><a class="nav__link" href="/votaciones">Votaciones</a></div>
+      <div class="nav__item"><a class="nav__link" href="/como-funciona">Cómo funciona</a></div>
+    </nav>
+    {
+      accion && (
+        <div class="nav__actions">
+          <a class="btn btn--primary" href="/test">Empezar el test</a>
+        </div>
+      )
+    }
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menú">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
+</header>

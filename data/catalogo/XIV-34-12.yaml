@@ -1,0 +1,36 @@
+votacion: XIV-34-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=15/07/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/06/26/24
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-07-15
+titulo_oficial: >-
+  Real Decreto-ley 24/2020, de 26 de junio, de medidas sociales de reactivación del empleo y
+  protección del trabajo autónomo y de competitividad del sector industrial.
+titulo: "Prórroga de los ERTE y ayudas a autónomos (junio de 2020)"
+resumen: >-
+  Prorroga hasta septiembre de 2020 los ERTE por la covid con exoneraciones de cuotas y protección
+  frente al despido, y mantiene para los autónomos la exención de cuotas y la prestación
+  extraordinaria por cese de actividad.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien estaba en un ERTE seguía cobrando la prestación y la empresa no podía despedirle
+      durante el compromiso de mantenimiento del empleo.
+    base: >-
+      Arts. 1 a 6 del Real Decreto-ley 24/2020.
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo afectado por la covid podía seguir sin pagar parte de las cuotas o cobrar la
+      prestación por cese de actividad.
+    base: >-
+      Arts. 8 a 10 del Real Decreto-ley 24/2020.
+justificacion: >-
+  Es el decreto específico de los ERTE y de la protección de los autónomos por la covid, con efecto
+  directo en asalariados y autónomos. Las prórrogas posteriores de estas medidas no se cuentan otra
+  vez.

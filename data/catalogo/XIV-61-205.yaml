@@ -1,0 +1,56 @@
+votacion: XIV-61-205
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=19/11/2020"
+texto: https://www.boe.es/eli/es/lo/2020/12/29/3
+iniciativa: "Proyecto de ley orgánica del Gobierno"
+fecha: 2020-11-19
+titulo_oficial: >-
+  Proyecto de Ley Orgánica por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de
+  Educación.
+titulo: "Ley de educación (LOMLOE)"
+resumen: >-
+  Reforma la Ley Orgánica de Educación de 2006. En la ESO, la promoción de curso y la obtención del
+  título las decide de forma colegiada el equipo docente según las competencias adquiridas; se
+  promociona en todo caso con una o dos materias suspensas y repetir pasa a ser excepcional (una
+  vez por curso y dos como máximo en la enseñanza obligatoria). En bachillerato, el equipo docente
+  puede decidir, de forma excepcional, dar el título a quien ha aprobado todas las materias salvo
+  una. Los centros públicos y concertados no pueden cobrar a las familias por las enseñanzas
+  gratuitas ni imponerles servicios obligatorios de pago, y las actividades complementarias
+  estables no pueden formar parte del horario escolar. Encarga al Gobierno un plan de ocho años
+  para extender el primer ciclo de educación infantil (0 a 3 años). Se aprobó y es la Ley Orgánica
+  3/2020.
+que_significa_si: >-
+  Votar sí era aprobar la ley orgánica en la votación de conjunto del Congreso.
+tema: educacion
+ambito: estatal
+efectos:
+  - cuando: { hijos: [menores] }
+    el_si: favorece
+    justificacion: >-
+      Si tus hijos van a un colegio público o concertado, el centro no puede cobrarte por las
+      enseñanzas gratuitas ni imponerte servicios obligatorios de pago, y las actividades
+      complementarias estables no pueden formar parte del horario escolar.
+    base: >-
+      Artículo único, apartado cincuenta y cinco bis, que da nueva redacción al art. 88 de la Ley
+      Orgánica 2/2006 (garantías de gratuidad).
+justificacion: >-
+  Es la ley de educación de la XIV legislatura y afecta a las familias con hijos en edad escolar.
+extracto: >-
+  [Artículo único.Cincuenta y cinco bis (art. 88 LOE)] «1. Para garantizar la posibilidad de
+  escolarizar a todos los alumnos sin discriminación por motivos socioeconómicos, en ningún caso
+  podrán los centros públicos o privados concertados percibir cantidades de las familias por
+  recibir las enseñanzas de carácter gratuito, imponer a las familias la obligación de hacer
+  aportaciones a fundaciones o asociaciones ni establecer servicios obligatorios, asociados a las
+  enseñanzas, que requieran aportación económica por parte de las familias de los alumnos.» «Las
+  actividades complementarias que se consideren necesarias para el desarrollo del currículo deberán
+  programarse y realizarse de forma que no supongan discriminación por motivos económicos. Las
+  actividades complementarias que tengan carácter estable no podrán formar parte del horario
+  escolar del centro.» [Artículo único.Veinte (art. 28.3 y 28.5 LOE)] «En todo caso promocionarán
+  quienes hayan alcanzado los objetivos de las materias o ámbitos cursados o tengan evaluación
+  negativa en una o dos materias.» «En todo caso, el alumno o alumna podrá permanecer en el mismo
+  curso una sola vez y dos veces como máximo a lo largo de la enseñanza obligatoria.» [Artículo
+  único.Treinta y uno (art. 37.1 LOE)] «El Gobierno, previa consulta a las Comunidades Autónomas,
+  establecerá las condiciones y procedimientos para que, excepcionalmente, el equipo docente pueda
+  decidir la obtención del título de Bachiller por el alumno o alumna que haya superado todas las
+  materias salvo una» [Disposición adicional tercera] «el Gobierno, en colaboración con las
+  Administraciones educativas, elaborará un plan de ocho años de duración para la extensión del
+  primer ciclo de educación infantil»

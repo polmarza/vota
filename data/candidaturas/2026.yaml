@@ -1,0 +1,147 @@
+# Candidaturas al Congreso del 29-N por provincia (M-02), según las candidaturas proclamadas
+# publicadas en el BOE núm. 273, de 3 de noviembre de 2026 (BOE-A-2026-23103), con la corrección
+# del BOE núm. 278, de 7 de noviembre (BOE-A-2026-23383: en Navarra la lista es EH Bildu, sin ERC).
+# Solo partidos con historial en la XIV o la XV. Un partido que va en coalición se muestra como
+# partido individual en las provincias donde se presenta esa coalición; `listas` dice en cuál.
+# No se presentan al Congreso: CUP y PRC. Podemos tiene representantes en las listas de ERC en
+# Cataluña, pero no candidatura: allí no aparece. Formato en docs/data-model.md.
+
+provisional: false
+fuente: https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23103
+
+candidaturas:
+  - partido: pp
+    provincias: todas
+    listas:
+      - "PARTIDO POPULAR (PP)"
+      - "PARTIT POPULAR / PARTIDO POPULAR (PP)"
+      - "Partido Popular (PP)"
+      - "UNIÓN DEL PUEBLO NAVARRO EN COALICIÓN CON EL PARTIDO POPULAR (UPN-PP)"
+  - partido: psoe
+    provincias: todas
+    listas:
+      - "PARTIDO DOS SOCIALISTAS DE GALICIA-PSOE (PSdeG-PSOE)"
+      - "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE) PSE-EE"
+      - "PARTIDO SOCIALISTA DE EUSKADI-EUSKADIKO EZKERRA (PSOE) PSE-EE (PSOE)"
+      - "PARTIDO SOCIALISTA DE HUELVA (PSOE)"
+      - "PARTIDO SOCIALISTA DE LAS ISLAS BALEARES (PSIB-PSOE)"
+      - "PARTIDO SOCIALISTA DE NAVARRA-PSOE (PSN-PSOE)"
+      - "PARTIDO SOCIALISTA OBRERO ESPAÑOL (PSOE)"
+      - "PARTIT DELS SOCIALISTES DE CATALUNYA (PSC-PSOE) (PSC)"
+      - "Partido dos Socialistas de Galicia-PSOE (PSdeG-PSOE)"
+  - partido: vox
+    provincias: todas
+    listas:
+      - "VOX"
+      - "VOX (VOX)"
+  - partido: iu
+    provincias: [a-coruna, alava, albacete, alicante, almeria, asturias, avila, badajoz, baleares, barcelona, bizkaia, burgos, caceres, cadiz, cantabria, castellon, ciudad-real, cordoba, cuenca, gipuzkoa, girona, granada, guadalajara, huelva, huesca, jaen, la-rioja, las-palmas, leon, lleida, lugo, madrid, malaga, murcia, navarra, ourense, palencia, pontevedra, salamanca, santa-cruz-de-tenerife, segovia, sevilla, soria, tarragona, toledo, valencia, valladolid, zamora, zaragoza]
+    listas:
+      - "ARAMÉS-FRONT AMPLI (ARAMÉS-EU-MS)"
+      - "CHUNTA ARAGONESISTA-FRENTE AMPLIO ARAGÓN (CHA-IU-MS-FRENTE AMPLIO)"
+      - "COMPROMÍS: FRONT VALENCIÀ (COMPROMIS-EUPV-PODEM-ERPV)"
+      - "Chunta Aragonesista-Frente Amplio Aragón (CHA-IU-MS-FRENTE AMPLIO)"
+      - "Comuns-Front Ampli (COMUNS-FRONT AMPLI)"
+      - "FRENTE AMPLIO (FA)"
+      - "FRENTE AMPLIO ANDALUZ (FA)"
+      - "FRENTE AMPLIO-FRONTE AMPLA (FRENTE AMPLIO-FRONTE AMPLA)"
+      - "FRENTE AMPLIO-FRONTE ZABALA (FRENTE AMPLIO-FRONTE ZABALA)"
+      - "FRENTE AMPLIU POR ASTURIES (FA)"
+      - "Frente Amplio (FA)"
+      - "Frente Amplio - Fronte Ampla (FRENTE AMPLIO - FRONTE AMPLA)"
+      - "Frente Amplio Andaluz (FA)"
+      - "Frente Amplio-Fronte Ampla (FRENTE AMPLIO-FRONTE AMPLA)"
+      - "Frente Amplio-Fronte Zabala (FRENTE AMPLIO-FRONTE ZABALA)"
+      - "UNIDAD DEL PUEBLO CANARIO UPC (NC-BC, PODEMOS, IU, SUMAR)"
+  - partido: podemos
+    provincias: [a-coruna, alava, albacete, alicante, almeria, asturias, avila, badajoz, bizkaia, burgos, caceres, cadiz, cantabria, castellon, ceuta, ciudad-real, cordoba, cuenca, gipuzkoa, granada, guadalajara, huelva, huesca, jaen, la-rioja, las-palmas, leon, lugo, madrid, malaga, murcia, navarra, ourense, palencia, pontevedra, salamanca, santa-cruz-de-tenerife, segovia, sevilla, soria, teruel, toledo, valencia, valladolid, zamora, zaragoza]
+    listas:
+      - "COMPROMÍS: FRONT VALENCIÀ (COMPROMIS-EUPV-PODEM-ERPV)"
+      - "PODEMOS"
+      - "PODEMOS (PAZ,CASA Y TRABAJO)"
+      - "PODEMOS (PODEMOS)"
+      - "UNIDAD DEL PUEBLO CANARIO UPC (NC-BC, PODEMOS, IU, SUMAR)"
+  - partido: sumar
+    provincias: [a-coruna, alava, albacete, almeria, asturias, avila, badajoz, baleares, barcelona, bizkaia, burgos, caceres, cadiz, cantabria, ciudad-real, cordoba, cuenca, gipuzkoa, girona, granada, guadalajara, huelva, huesca, jaen, la-rioja, las-palmas, leon, lleida, lugo, madrid, malaga, murcia, navarra, ourense, palencia, pontevedra, salamanca, santa-cruz-de-tenerife, segovia, sevilla, soria, tarragona, toledo, valladolid, zamora, zaragoza]
+    listas:
+      - "ARAMÉS-FRONT AMPLI (ARAMÉS-EU-MS)"
+      - "CHUNTA ARAGONESISTA-FRENTE AMPLIO ARAGÓN (CHA-IU-MS-FRENTE AMPLIO)"
+      - "Chunta Aragonesista-Frente Amplio Aragón (CHA-IU-MS-FRENTE AMPLIO)"
+      - "Comuns-Front Ampli (COMUNS-FRONT AMPLI)"
+      - "FRENTE AMPLIO (FA)"
+      - "FRENTE AMPLIO ANDALUZ (FA)"
+      - "FRENTE AMPLIO-FRONTE AMPLA (FRENTE AMPLIO-FRONTE AMPLA)"
+      - "FRENTE AMPLIO-FRONTE ZABALA (FRENTE AMPLIO-FRONTE ZABALA)"
+      - "FRENTE AMPLIU POR ASTURIES (FA)"
+      - "Frente Amplio (FA)"
+      - "Frente Amplio - Fronte Ampla (FRENTE AMPLIO - FRONTE AMPLA)"
+      - "Frente Amplio Andaluz (FA)"
+      - "Frente Amplio-Fronte Ampla (FRENTE AMPLIO-FRONTE AMPLA)"
+      - "Frente Amplio-Fronte Zabala (FRENTE AMPLIO-FRONTE ZABALA)"
+      - "UNIDAD DEL PUEBLO CANARIO UPC (NC-BC, PODEMOS, IU, SUMAR)"
+  - partido: erc
+    provincias: [barcelona, girona, lleida, tarragona]
+    listas:
+      - "ESQUERRA REPUBLICANA DE CATALUNYA (ERC)"
+  - partido: bng
+    provincias: [a-coruna, lugo, ourense, pontevedra]
+    listas:
+      - "BLOQUE NACIONALISTA GALEGO (B.N.G.)"
+      - "BLOQUE NACIONALISTA GALEGO (BNG)"
+  - partido: comuns
+    provincias: [barcelona, girona, lleida, tarragona]
+    listas:
+      - "Comuns-Front Ampli (COMUNS-FRONT AMPLI)"
+  - partido: eh-bildu
+    provincias: [alava, bizkaia, gipuzkoa, navarra]
+    listas:
+      - "EUSKAL HERRIA BILDU (EH BILDU)"
+      - "EUSKAL HERRIA BILDU (EH Bildu)"
+  - partido: junts
+    provincias: [barcelona, girona, lleida, tarragona]
+    listas:
+      - "JUNTS PER CATALUNYA (JxCat)"
+  - partido: pnv
+    provincias: [alava, bizkaia, gipuzkoa, navarra]
+    listas:
+      - "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO (EAJ-PNV)"
+      - "GEROA BAI (GBAI)"
+  - partido: compromis
+    provincias: [alicante, castellon, valencia]
+    listas:
+      - "COMPROMÍS: FRONT VALENCIÀ (COMPROMIS-EUPV-PODEM-ERPV)"
+  - partido: cc
+    provincias: [las-palmas, santa-cruz-de-tenerife]
+    listas:
+      - "Coalición Canaria-Municipalistas Primero Canarias (CCa-1.ºCAN)"
+      - "MUNICIPALISTAS PRIMERO CANARIAS-COALICIÓN CANARIA (1.ºCAN-CCa)"
+  - partido: chunta
+    provincias: [huesca, zaragoza]
+    listas:
+      - "CHUNTA ARAGONESISTA-FRENTE AMPLIO ARAGÓN (CHA-IU-MS-FRENTE AMPLIO)"
+      - "Chunta Aragonesista-Frente Amplio Aragón (CHA-IU-MS-FRENTE AMPLIO)"
+  - partido: cs
+    provincias: [barcelona, madrid]
+    listas:
+      - "DEMOCRACIA PARA EL SIGLO 21 (D21)"
+      - "DEMOCRACIA para el siglo 21 (D21)"
+  - partido: nc
+    provincias: [las-palmas, santa-cruz-de-tenerife]
+    listas:
+      - "UNIDAD DEL PUEBLO CANARIO UPC (NC-BC, PODEMOS, IU, SUMAR)"
+  - partido: mas-madrid
+    provincias: [madrid]
+    listas:
+      - "Frente Amplio (FA)"
+  - partido: mes
+    provincias: [baleares]
+    listas:
+      - "ARAMÉS-FRONT AMPLI (ARAMÉS-EU-MS)"
+  - partido: teruel-existe
+    provincias: [teruel]
+    listas:
+      - "TERUEL EXISTE (TERUEL EXISTE)"
+  - partido: upn
+    provincias: [navarra]
+    listas:
+      - "UNIÓN DEL PUEBLO NAVARRO EN COALICIÓN CON EL PARTIDO POPULAR (UPN-PP)"

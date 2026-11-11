@@ -1,0 +1,38 @@
+votacion: XIV-70-7
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=28/01/2021"
+texto: https://www.boe.es/eli/es/rdl/2020/12/22/37
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2021-01-28
+titulo_oficial: >-
+  Real Decreto-ley 37/2020, de 22 de diciembre, de medidas urgentes para hacer frente a las
+  situaciones de vulnerabilidad social y económica en el ámbito de la vivienda y en materia de
+  transportes.
+titulo: "Suspensión de desahucios de hogares vulnerables"
+resumen: >-
+  Durante el estado de alarma, permite suspender los desahucios de hogares vulnerables sin
+  alternativa de vivienda, también en casos sin contrato, y prevé una compensación pública para
+  los propietarios afectados.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler y está en situación de vulnerabilidad podía pedir que se suspendiera
+      su desahucio.
+    base: >-
+      Art. 1, que modifica el art. 1 y añade el art. 1 bis del Real Decreto-ley 11/2020.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda podía ver suspendido el desahucio de un inquilino vulnerable que
+      no paga, aunque con derecho a pedir una compensación.
+    base: >-
+      Art. 1 (arts. 1 y 1 bis del Real Decreto-ley 11/2020) y disposición adicional segunda
+      (compensación a los propietarios).
+justificacion: >-
+  Es la norma de vivienda que extendió la suspensión de desahucios de hogares vulnerables, con
+  efectos opuestos para inquilinos y propietarios. Las prórrogas posteriores de esa suspensión no
+  se cuentan otra vez.

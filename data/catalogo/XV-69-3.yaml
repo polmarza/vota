@@ -1,0 +1,60 @@
+votacion: XV-69-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/10/2024"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-33-1.PDF
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2024-10-22
+titulo_oficial: >-
+  Proyecto de Ley por la que se modifican el texto refundido de la Ley del Estatuto de los
+  Trabajadores, aprobado por el Real Decreto Legislativo 2/2015, de 23 de octubre, en materia de
+  extinción del contrato de trabajo por incapacidad permanente de las personas trabajadoras, y el
+  texto refundido de la Ley General de la Seguridad Social, aprobado por el Real Decreto
+  Legislativo 8/2015, de 30 de octubre, en materia de incapacidad permanente
+titulo: "Fin del despido automático por incapacidad permanente"
+resumen: >-
+  Proyecto para que declarar a alguien en incapacidad permanente total o absoluta deje de
+  extinguir su contrato automáticamente: la empresa tiene que adaptarle el puesto o cambiarle a
+  otro, y solo puede despedirle si eso supone una carga excesiva. El Congreso rechazó las
+  enmiendas a la totalidad y el proyecto siguió adelante.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno, lo que pone fin a su
+  tramitación.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: perjudica
+    justificacion: >-
+      Que saliera el sí habría impedido que quien trabaja por cuenta ajena conservara su empleo,
+      con el puesto adaptado o en otro, si le declaran una incapacidad permanente.
+    base: >-
+      Art. 1 del proyecto, que modifica la letra e) y añade una nueva letra n) al art. 49.1 del
+      Estatuto de los Trabajadores.
+  - cuando: { contrata: [empresa] }
+    el_si: favorece
+    justificacion: >-
+      Que saliera el sí habría evitado que quien tiene personas contratadas en su empresa tuviera
+      que adaptar el puesto o cambiar de puesto a quien declaren en incapacidad permanente antes
+      de poder extinguir su contrato, salvo que eso le supusiera una carga excesiva.
+    base: >-
+      Art. 1 del proyecto, que añade una nueva letra n) al art. 49.1 del Estatuto de los
+      Trabajadores.
+justificacion: >-
+  Es el cambio que protege el empleo de quien sufre una incapacidad permanente, tras una sentencia
+  del Tribunal de Justicia de la UE.
+extracto: >-
+  [Art. primero.Uno (art. 49.1.e ET)] «e) Por muerte de la persona trabajadora.» [Art. primero.Dos
+  (nueva letra n del art. 49.1 ET)] «n) Por declaración de incapacidad permanente absoluta o total
+  de la persona trabajadora o reconocimiento del complemento de asistencia de tercera persona, sin
+  perjuicio de lo dispuesto en el artículo 48.2, cuando no sea posible realizar los ajustes
+  razonables o el cambio a un puesto de trabajo vacante y disponible, acorde con el perfil
+  profesional y compatible con la nueva situación de la persona trabajadora, por constituir una
+  carga excesiva para la empresa.» «La persona trabajadora dispondrá de un plazo de diez días
+  naturales […] para manifestar por escrito a la empresa su voluntad de mantener la relación
+  laboral.» «La empresa dispondrá de un plazo máximo de tres meses, contados desde la fecha de
+  notificación de la resolución en la que se califique la incapacidad permanente, para realizar los
+  ajustes razonables, el cambio de puesto de trabajo o, cuando ambas opciones resulten una carga
+  excesiva, para proceder a la extinción del contrato.» [Exposición de motivos] «la Sentencia del
+  Tribunal de Justicia de la Unión Europea, de 18 de enero de 2024 (asunto C-631/22)» «se elimina la
+  automaticidad de la extinción del contrato de las personas que acceden a la situación de
+  incapacidad permanente total, absoluta o gran invalidez» «la empresa únicamente podrá activar esta
+  causa de despido cuando la adopción de las anteriores medidas suponga una carga excesiva.»

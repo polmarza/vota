@@ -1,0 +1,116 @@
+{
+ "url": "http://127.0.0.1:5300/index.html",
+ "views": {
+  "desktop": {
+   "width": 1440,
+   "height": 900,
+   "navH": 72,
+   "scrollHeight": 6300,
+   "screens": 7,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "section",
+     "id": "",
+     "cls": "hero hero--film is-still is-entered",
+     "top": 0,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-01-a.jpg",
+       "scrollY": 0
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "section",
+     "id": "pasos",
+     "cls": "section is-live",
+     "top": 900,
+     "h": 1800,
+     "hScreens": 2,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-02-a.jpg",
+       "scrollY": 900
+      },
+      {
+       "file": "desktop-sec-02-b.jpg",
+       "scrollY": 1800
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "tag": "section",
+     "id": "test",
+     "cls": "section ground-inverse",
+     "top": 2700,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-03-a.jpg",
+       "scrollY": 2700
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "tag": "section",
+     "id": "resultado",
+     "cls": "section",
+     "top": 3600,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-04-a.jpg",
+       "scrollY": 3600
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "tag": "section",
+     "id": "votaciones",
+     "cls": "section",
+     "top": 4500,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-05-a.jpg",
+       "scrollY": 4500
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "tag": "footer",
+     "id": "contact",
+     "cls": "footer closing footer--dark ground-inverse",
+     "top": 5400,
+     "h": 900,
+     "hScreens": 1,
+     "offGrid": 0,
+     "tiles": [
+      {
+       "file": "desktop-sec-06-a.jpg",
+       "scrollY": 5400
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  }
+ },
+ "at": "2026-11-11T11:34:43.961Z"
+}

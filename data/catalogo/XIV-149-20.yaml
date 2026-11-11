@@ -1,0 +1,57 @@
+votacion: XIV-149-20
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=03/02/2022"
+texto: https://www.boe.es/eli/es/rdl/2021/12/28/32
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-02-03
+titulo_oficial: >-
+  Real Decreto-ley 32/2021, de 28 de diciembre, de medidas urgentes para la reforma laboral, la
+  garantía de la estabilidad en el empleo y la transformación del mercado de trabajo.
+titulo: "Reforma laboral"
+resumen: >-
+  Limita los contratos temporales a causas concretas y convierte en indefinidos los que no las
+  cumplen, potencia el contrato fijo discontinuo, devuelve al convenio del sector la prioridad
+  sobre el de empresa en salarios y mantiene los convenios vencidos en vigor hasta que haya uno
+  nuevo. Además reforma los ERTE y crea el mecanismo RED de flexibilidad y estabilización del
+  empleo.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena no puede cobrar por convenio de empresa menos que lo que fija
+      el convenio de su sector, y su convenio sigue vigente aunque haya vencido.
+    base: >-
+      Art. 1, que modifica los arts. 84.2 y 86 del Estatuto de los Trabajadores.
+  - cuando: { contrato: [temporal] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene un contrato temporal solo puede tenerlo por causas tasadas y pasa a indefinido
+      si se encadenan contratos o no se cumplen esas causas.
+    base: >-
+      Art. 1, que modifica los arts. 15 y 16 del Estatuto de los Trabajadores.
+  - cuando: { contrata: [empresa] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene personas contratadas en su empresa solo puede hacer contratos temporales por
+      circunstancias de la producción o por sustitución; si no cumple esas condiciones, la persona
+      pasa a ser fija, y cada contrato de menos de 30 días le obliga a pagar una cotización
+      adicional al terminar.
+    base: >-
+      Art. 1.Tres, que modifica el art. 15 del Estatuto de los Trabajadores, y art. 3.Uno, que
+      modifica el art. 151 de la Ley General de la Seguridad Social.
+justificacion: >-
+  Es el cambio laboral más importante de las dos legislaturas.
+extracto: >-
+  [Art. 1.Tres, art. 15 del Estatuto de los Trabajadores] «1. El contrato de trabajo se presume
+  concertado por tiempo indefinido. El contrato de trabajo de duración determinada solo podrá
+  celebrarse por circunstancias de la producción o por sustitución de persona trabajadora.» «4.
+  Las personas contratadas incumpliendo lo establecido en este artículo adquirirán la condición de
+  fijas.» [Art. 151 de la Ley General de la Seguridad Social] «1. Los contratos de duración
+  determinada inferior a 30 días tendrán una cotización adicional a cargo del empresario a la
+  finalización del mismo.» «3. Esta cotización adicional no se aplicará a los contratos a los que
+  se refiere este artículo, cuando sean celebrados con trabajadores incluidos en el Sistema
+  Especial para Trabajadores por Cuenta Ajena Agrarios, en el Sistema Especial para Empleados de
+  Hogar o en el Régimen Especial para la Minería del Carbón; ni a los contratos por sustitución.»

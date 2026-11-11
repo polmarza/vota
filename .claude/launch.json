@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "dev"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "propuestas",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "dlx",
+        "serve",
+        "-l",
+        "4330",
+        "/Volumes/GitHub/elecciones/propuestas-diseno"
+      ],
+      "port": 4330,
+      "cwd": "/Volumes/GitHub/elecciones"
+    }
+  ]
+}

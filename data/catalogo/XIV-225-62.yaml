@@ -1,0 +1,28 @@
+votacion: XIV-225-62
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=15/12/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/11/22/19
+iniciativa: Real decreto-ley del Gobierno
+fecha: 2022-12-15
+titulo_oficial: >-
+  Real Decreto-ley 19/2022, de 22 de noviembre, por el que se establece un Código de Buenas Prácticas
+  para aliviar la subida de los tipos de interés en préstamos hipotecarios sobre vivienda habitual.
+titulo: Alivio de las hipotecas por la subida de tipos
+resumen: >-
+  Ante la subida del euríbor, crea un código de buenas prácticas para que los bancos alarguen plazos o
+  rebajen temporalmente las cuotas de hipotecados de clase media en riesgo, amplía la protección de
+  deudores vulnerables y suprime durante 2023 las comisiones por amortizar o pasar a tipo fijo una
+  hipoteca variable.
+que_significa_si: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga una hipoteca variable sobre su vivienda podía amortizarla o pasarla a tipo fijo sin
+      comisiones durante 2023 y, si su esfuerzo había subido, pedir más plazo o cuotas más bajas.
+    base: Arts. 2 a 4, art. 10 (modificación del Real Decreto-ley 6/2012) y disposición adicional primera.
+justificacion: >-
+  Es la principal medida de las dos legislaturas dirigida a quienes pagan una hipoteca sobre su vivienda.
+fuentes:
+  - https://www.boe.es/buscar/act.php?id=BOE-A-2022-19403

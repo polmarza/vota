@@ -1,0 +1,43 @@
+votacion: XV-110-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=13/05/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-15-1.PDF
+iniciativa: "Proposición de ley de la Asamblea Regional de Murcia"
+fecha: 2025-05-13
+titulo_oficial: >-
+  Proposición de Ley de la Asamblea Regional de Murcia, relativa al mantenimiento del trasvase
+  Tajo-Segura (corresponde al número de expediente 125/000022/0000 de la XIV Legislatura).
+titulo: "Mantenimiento del trasvase Tajo-Segura"
+resumen: >-
+  Fijaba por ley que las reglas de explotación del trasvase Tajo-Segura y los volúmenes de
+  referencia son los del Real Decreto 773/2014, y obligaba a los planes hidrológicos a ajustarse a
+  ellos, frente al recorte del trasvase previsto en el plan del Tajo de 2023. No se admitió a
+  trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: campo
+ambito: [murcia]
+efectos:
+  - cuando: { ccaa: [murcia], campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo en la Región de Murcia mantendría el agua del trasvase para regar con las
+      reglas de 2014, sin el recorte del nuevo plan del Tajo.
+    base: >-
+      Artículo único de la proposición (validez de las reglas de explotación y valores de
+      referencia del Real Decreto 773/2014).
+justificacion: >-
+  Es la votación sobre el agua de riego con más efecto territorial de la XV, propuesta por una
+  comunidad autónoma. Solo se etiqueta Murcia, que está entera en la cuenca receptora: Alicante y
+  Almería también reciben agua del trasvase, pero el resto de la Comunitat Valenciana y de Andalucía
+  no, y el cuestionario solo distingue comunidades.
+extracto: >-
+  [Artículo único] «En lo referente a las Reglas de Explotación del Trasvase Tajo-Segura, a la
+  Predicción de aportaciones mensuales, a los Valores Mensuales de los consumos de referencia de las
+  aguas trasvasadas y a los desembalses de referencia, serán válidas las determinaciones
+  establecidas a este respecto en el Real Decreto 773/2014, de 12 de septiembre, […] a las que
+  deberán ajustarse los planes hidrológicos de las demarcaciones hidrográficas afectadas por dicho
+  trasvase.» [Exposición de motivos] «está en peligro tras la aprobación del nuevo Plan Hidrológico
+  del Tajo. Un plan que supone el recorte de más de 100 hm3 de agua al año, la eliminación de al
+  menos 15.000 hectáreas de regadío» «Real Decreto 35/2023, de 24 de enero, por el que se aprueba la
+  revisión de los planes hidrológicos de las demarcaciones hidrográficas […] Tajo, Guadiana y Ebro»
+  «La Región de Murcia le debe mucho al trasvase.»

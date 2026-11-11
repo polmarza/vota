@@ -1,0 +1,45 @@
+votacion: XV-156-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=27/01/2026"
+texto: https://www.boe.es/eli/es/rdl/2025/12/23/17
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-01-27
+titulo_oficial: >-
+  Real Decreto-ley 17/2025, de 23 de diciembre, de medidas de promoción del uso del transporte
+  público mediante la bonificación de abonos y títulos multiviaje.
+titulo: "Ayudas al transporte público de 2026"
+resumen: >-
+  Mantiene en 2026 la bonificación estatal de abonos y títulos de transporte público y crea un
+  abono de tarifa única para los servicios estatales de tren y autobús, con otro específico para
+  jóvenes y niños.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { transporte: [publico] }
+    el_si: favorece
+    justificacion: >-
+      Quien usa el transporte público paga menos por sus abonos en 2026.
+    base: >-
+      Arts. 1 y 3 (abonos de autobús estatal y Renfe) y 5 a 8 (ayudas a los abonos de comunidades
+      autónomas y entidades locales) del Real Decreto-ley 17/2025.
+justificacion: >-
+  Es la última medida de ayudas al transporte público de la XV.
+extracto: >-
+  [Art. 1.2.b) (autobuses estatales)] «para su uso en todos los origen-destino de las concesiones de
+  transporte regular de viajeros por carretera competencia de la Administración General del Estado
+  […] 1.º Un abono nominativo de tarifa única, con validez de treinta días […] 2.º Un abono
+  nominativo de tarifa única para jóvenes y niños nacidos entre el 1 de enero de 2000 y el 31 de
+  diciembre de 2026» [Art. 3.3 (Renfe)] «para su utilización indistinta en todos los trenes de Media
+  Distancia […] y en los núcleos de Cercanías y Rodalies […] a) Un abono nominativo de tarifa única,
+  con validez de treinta días desde la fecha de inicio de vigencia» [Art. 3.4] «podrán establecerse
+  también las condiciones para la utilización de los abonos definidos en el apartado 3 de este
+  artículo en los servicios regulares de transporte por carretera competencia de la Administración
+  General del Estado» [Art. 3.2.a)] «2.º Un abono mensual nominativo de tarifa única 20 euros […]
+  3.º Un abono mensual nominativo de tarifa única 10 euros, para jóvenes nacidos entre el 1 de enero
+  de 2000 y el 31 de diciembre de 2011» [Art. 5] «se establece un sistema de ayudas directas en el
+  periodo del 1 de enero al 31 de diciembre de 2026, para la concesión de apoyo financiero a las
+  comunidades autónomas y entidades locales que presten servicio de transporte terrestre colectivo
+  urbano o interurbano» [Art. 8] «a) Gratuidad en los abonos y títulos multiviaje infantiles […] b)
+  Descuento del 50 % del importe de la tarifa en títulos joven […] c) Descuento del 20 % del importe
+  de la tarifa en abonos y títulos multiviaje.»

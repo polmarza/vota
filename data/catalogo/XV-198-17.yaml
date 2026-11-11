@@ -1,0 +1,52 @@
+votacion: XV-198-17
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=16/09/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/09/01/22
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-09-16
+titulo_oficial: >-
+  Real Decreto-ley 22/2026, de 1 de septiembre, por el que se aprueban medidas urgentes de carácter
+  social y económico de apoyo a la ciudad de Ceuta.
+titulo: "Plan de apoyo a Ceuta (2026)"
+resumen: >-
+  Aprueba ayudas directas de 5.000 euros a autónomos y profesionales de Ceuta, una prestación
+  extraordinaria por cese de actividad y rebajas en el IRPF de sus actividades, y sube al 75 % la
+  bonificación en las cotizaciones de autónomos y empresas de Ceuta y Melilla en los sectores
+  bonificados. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: territorio
+ambito: [ceuta, melilla]
+efectos:
+  - cuando: { ccaa: [ceuta], trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo de Ceuta pudo cobrar una ayuda directa de 5.000 euros, una prestación si su
+      actividad cayó a la mitad y una bonificación del 75 % en su cuota.
+    base: >-
+      Arts. 1.3 (ayuda de 5.000 euros), 2 (reducciones en el IRPF), 36 (bonificación del 75 % de la
+      cuota) y 39 (prestación extraordinaria por cese de actividad) del Real Decreto-ley 22/2026.
+  - cuando: { ccaa: [melilla], trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo de Melilla en los sectores bonificados pasó a tener una bonificación del 75 % en
+      su cuota y en las de sus empleados con contrato indefinido.
+    base: >-
+      Arts. 36 (Estatuto del trabajo autónomo) y 37 (art. 31 del Real Decreto-ley 1/2023) del Real
+      Decreto-ley 22/2026.
+justificacion: >-
+  Es la principal medida de la XV dirigida a Ceuta y la única que sube las bonificaciones de
+  cotización de Ceuta y Melilla.
+extracto: >-
+  [Art. 1.3] «Los empresarios o profesionales personas físicas percibirán un importe único de 5.000
+  euros.» [Art. 2 (disposición adicional sexagésima cuarta de la Ley del IRPF)] «Reducción en 2026
+  para el cálculo del rendimiento neto de las actividades económicas desarrolladas en Ceuta. […]
+  será, durante el período impositivo 2026, del 10 por ciento.» [Art. 36 (art. 36 del Estatuto del
+  trabajo autónomo)] «que residan y ejerzan su actividad en las Ciudades de Ceuta y Melilla, tendrán
+  derecho a una bonificación del 75 por ciento de la cuota por contingencias comunes» [Art. 37 (art.
+  31 del Real Decreto-ley 1/2023)] «en las ciudades de Ceuta y Melilla, con cuentas de cotización
+  asignadas a dichas empresas en las que tengan personas trabajadoras con contratos indefinidos o de
+  sustitución por causa de incapacidad temporal que presten actividad en las referidas ciudades,
+  tendrán derecho a una bonificación del 75 por ciento en sus aportaciones a las cuotas de la
+  Seguridad Social por contingencias comunes» [Art. 39.1] «con domicilio de residencia o actividad
+  en la Ciudad Autónoma de Ceuta […] cesen total o parcialmente, por reducción de los ingresos
+  mensuales de al menos un 50 por ciento»

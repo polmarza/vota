@@ -1,0 +1,46 @@
+votacion: XV-164-23
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=26/02/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/02/03/3
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-02-26
+titulo_oficial: >-
+  Real Decreto-ley 3/2026, de 3 de febrero, para la revalorización de las pensiones públicas y
+  otras medidas urgentes en materia de Seguridad Social.
+titulo: "Subida de las pensiones de 2026"
+resumen: >-
+  Subía las pensiones contributivas un 2,7 % en 2026, actualizaba las mínimas, las no
+  contributivas y el complemento de brecha de género, y fijaba las bases de cotización del año.
+  Se aprobó después de que el Congreso tumbara el decreto anterior que incluía la subida; esta vez
+  se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión mantenía la subida del 2,7 % de 2026, y la de las pensiones mínimas
+      y no contributivas, sin tener que devolverla.
+    base: >-
+      Art. 2, apartados 1, 3 y 5 (revalorización del 2,7 %, cuantías mínimas y pensiones no
+      contributivas) y anexo I.
+justificacion: >-
+  Es la revalorización de las pensiones de 2026, votada aparte tras caer el decreto ómnibus de
+  diciembre de 2025.
+extracto: >-
+  [Exposición de motivos] «se aprobó el Real Decreto-ley 16/2025, de 23 de diciembre […] norma que
+  ante su no convalidación por el Congreso de los Diputados ha sido derogada con fecha 28 de enero
+  de 2026.» [Art. 2.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su
+  modalidad contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases
+  Pasivas del Estado se revalorizarán en 2026 con carácter general el 2,7 por ciento respecto del
+  importe que tuvieran a 31 de diciembre de 2025» [Art. 2.2] «El complemento de pensiones
+  contributivas del sistema de la Seguridad Social y de las pensiones de Clases Pasivas del Estado
+  para la reducción de brecha de género tendrá para 2026 un importe de 36,90 euros mensuales.» [Art.
+  2.3] «La cuantía mínima de las pensiones contributivas del sistema de la Seguridad Social y de las
+  pensiones de Clases Pasivas del Estado se incrementará en el año 2026 en función del tipo de
+  pensión […] con los importes que se especifican en el anexo I» [Art. 2.5] «Las pensiones no
+  contributivas del sistema de la Seguridad Social de incapacidad y jubilación tendrán un importe
+  anual de 8.803,20 euros.» [Art. 3.1] «Desde el 1 de enero de 2026 y hasta la aprobación de la
+  correspondiente Ley de Presupuestos Generales del Estado, las bases mínimas de cotización […] y el
+  tope máximo de las bases de cotización se fija en 5.101,20 euros»

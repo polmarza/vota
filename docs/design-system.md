@@ -6,9 +6,17 @@
 
 **Principio rector: la interfaz es neutral; el color solo aparece cuando habla de un partido.**
 En una herramienta electoral, cualquier color de marca se lee como un guiño político (el morado de
-Con Criterio, por ejemplo, se asocia a Podemos y Sumar). Por eso toda la web es blanco y negro y
-los colores de los partidos aparecen únicamente en el resultado y en la animación de la portada,
-todos con el mismo tratamiento.
+Con Criterio, por ejemplo, se asocia a Podemos y Sumar, y **no se usa nunca**). Por eso la web es
+negro sobre un gris azulado muy claro, con un único tono cálido (el marco arena de la portada) que
+no se asocia a ningún partido, y los colores de los partidos aparecen solo en sus puntos, sus
+barras y su fila de voto, todos con el mismo tratamiento.
+
+La dirección es **Ventana** (`propuestas-diseno/taste/1-ventana/`, elegida por Pol el 11-11-2026,
+ficha en `docs/features/rediseno-ventana.md`): una interfaz sobria, de herramienta, en la que cada
+pantalla del test se ve dentro de una "ventana" limpia con sombra. La web se construye sobre el kit
+de Taste Skill de esa propuesta, copiado en `src/kit/`; los componentes propios están en
+`src/styles/global.css`. Cambios sobre la maqueta: tinta, botones y foco en negro (no en el pizarra
+`#1f3038`) y el arco del hemiciclo de la propuesta "Fachada" como logo, con la marca en minúsculas.
 
 ---
 
@@ -16,83 +24,108 @@ todos con el mismo tratamiento.
 
 | Rol | Nombre | Hex |
 |-----|--------|-----|
-| Primary | Tinta | `#0B0B0B` |
-| Background | Blanco | `#FFFFFF` |
-| Surface | Gris aviso (cajas de aviso) | `#F4F4F4` |
-| Text primary | Tinta | `#0B0B0B` |
-| Text secondary | Gris texto | `#555555` |
-| Text muted | Gris pista (pies, ayudas) | `#777777` |
-| Border | Gris borde (opciones, campos) | `#D6D6D6` |
-| Track | Fondo de barras y progreso | `#EFEFEF` |
-| Disabled | Botón inactivo | `#CFCFCF` |
-| Error | Tinta + texto explícito | `#0B0B0B` |
+| Background | Fondo | `#F7F9FA` |
+| Surface | Superficie (sección del resultado, fondo de los podios, pistas de barras, opción marcada) | `#ECF0F2` |
+| Primary / Text primary | Tinta (texto, botones, foco, opción marcada, píldora "Sí") | `#0A0A0A` |
+| Text secondary | Gris (rótulos, ayudas, detalles, "Prefiero no responder") | `#5E6B71` |
+| Marco | Arena (solo el marco de la ventana del héroe) | `#D9CCB7` |
+| Border | Tinta al 14–25 % (ventanas, opciones, píldoras); tinta al 11 % (filetes) | — |
+| Inverse | Superficies invertidas del kit: fondo `#0A0A0A`, texto `#F7F9FA` | — |
+| Disabled | Botón inactivo: superficie y texto gris | `#ECF0F2` / `#5E6B71` |
+| Error | Tinta + texto explícito | `#0A0A0A` |
 
-- **No hay color de acento.** El estado activo se marca invirtiendo: fondo tinta, texto blanco.
+- La paleta vive en `:root` de `src/styles/global.css` como `--p-*` (las variables que lee el kit).
+- **No hay color de acento.** El acento del kit es la tinta.
 - **No hay rojo ni verde de estado.** El rojo y el verde son colores de partido. Los errores se
-  comunican con texto e icono (`ti-alert-circle`), no con color.
-- **Colores de partido:** cada partido tiene uno, su color oficial, definido en el catálogo
-  (`data-model.md`), nunca en el CSS. No se repiten dentro de una misma vista. Siempre van
-  acompañados del nombre y el logo del partido, para que nadie dependa del color (daltonismo).
-- Contraste mínimo WCAG AA: texto `#555555` sobre blanco cumple (7,5:1); `#777777` solo para
-  texto ≥ 11 px no esencial.
+  comunican con texto, no con color.
+- **Colores de partido:** cada partido tiene uno, su color oficial, en `data/partidos/partidos.yaml`
+  (`data-model.md`), **nunca en el CSS**: llega al HTML como `--c` en línea. No se repiten. Siempre
+  van con el nombre o las siglas del partido en tinta al lado, para que nadie dependa del color
+  (daltonismo).
+- **Contraste:** todo el texto cumple AA (gris `#5E6B71` sobre el fondo, 5,2:1; sobre la superficie,
+  4,8:1). Los colores de partido van **tal cual, sin filete**, aunque algunos no lleguen a 3:1 sobre
+  el fondo (Vox, Más Madrid, ERC, Junts, EH Bildu, BNG, CC, NC, Més, PRC). Hasta el 2026-11-11 esos
+  llevaban un filete de tinta alrededor del punto y la barra; Pol lo quitó porque, al tenerlo solo
+  algunos partidos, parecía un error. **Por qué cumple WCAG 2.1 AA:** el 1.4.11 (contraste de lo que
+  no es texto, 3:1) solo se exige a los elementos gráficos *necesarios para entender* el contenido.
+  El punto y la barra no lo son: el nombre o las siglas del partido y su porcentaje van siempre al
+  lado en texto con contraste AA, así que la información no se pierde aunque el color no se
+  distinga (es también lo que pide el 1.4.1, uso del color). Lo comprueba axe en
+  `tests/e2e/accesibilidad.spec.ts`.
 
 ---
 
 ## Tipografía
 
-- **Display / Headings:** Instrument Serif (Google Fonts, autoalojada), redonda y cursiva.
-- **Body / UI:** Inter (autoalojada), con la pila del sistema como respaldo
-  (`-apple-system, system-ui, "Segoe UI", Roboto, sans-serif`).
+- **Display, texto y UI:** Geist (`@fontsource-variable/geist`, autoalojada), titulares a 500 con
+  interletrado negativo (−0,035 em).
+- **Cifras y rótulos técnicos:** Geist Mono (`@fontsource-variable/geist-mono`): progreso, porcentajes,
+  fechas y tipo de cada votación, píldoras de voto.
+- Sin peticiones a Google Fonts.
 
-| Nivel | Fuente | Tamaño (móvil) | Peso | Uso |
-|-------|--------|----------------|------|-----|
-| Wordmark | Instrument Serif | 21px | 400 | "vota con *criterio*", siempre en minúsculas, *criterio* en cursiva |
-| H1 portada | Instrument Serif | 46px / 0,98 | 400 | Titular; las palabras clave en cursiva |
-| H2 pregunta | Instrument Serif | 30px / 1,05 | 400 | Enunciado de cada pregunta |
-| H2 resultado | Instrument Serif | 26px | 400 | "Te han *favorecido*", "Te han *perjudicado*" |
-| Body | Inter | 15px / 1,55 | 400 | Texto corrido |
-| Control | Inter | 16px | 400 | Opciones de respuesta, campo de provincia y sus sugerencias; todos iguales y nunca por debajo de 16px (evita el zoom automático de iOS) |
-| Subtítulo de ayuda | Inter | 12,5px / 1,45 | 400 | Aclaración bajo la pregunta |
-| Etiqueta | Inter | 12px | 400–500 | Progreso, metadatos |
-| Cifra | Inter | 15px | 600 | Porcentajes del resultado |
-| Caption | Inter | 10,5–11px | 400 | Subtítulo del wordmark, pies |
+| Nivel | Fuente | Tamaño | Peso | Uso |
+|-------|--------|--------|------|-----|
+| Marca | Geist | 20–22px | 500 | "Vota con Criterio" junto al icono de puntos |
+| H1 | Geist | 38px (390) → 72px (1440) | 500 | Titular de la portada y de "Cómo funciona" |
+| H2 | Geist | 30px → 48px | 500 | Títulos de sección, "Tu resultado" |
+| Pregunta | Geist | 26px → 34px (22px en la ventana del móvil) | 500 | Enunciado de cada pregunta |
+| H3 podio / votación | Geist | 28px (22px en móvil) | 500 | "Estuvieron de tu lado", "Votaron en tu contra", título de votación |
+| Lead | Geist | 18–20px | 400 | Entradillas, cobertura del resultado |
+| Body | Geist | 16px / 1,55 | 400 | Texto corrido |
+| Control | Geist | 16–18px | 400 | Opciones, campo de provincia: nunca por debajo de 16px (evita el zoom de iOS) |
+| Rótulo | Geist | 13px | 500 | "Pantalla 2 · Una pregunta", pies |
+| Contador | Geist Mono | 13–14px | 500 | "Vivienda · 2 de 8", "25 %", "27 ene 2026 · Real decreto-ley" |
+| Porcentaje | Geist Mono | 22px | 500 | Cifras de los podios, con cifras tabulares |
 
-- La cursiva de Instrument Serif es el recurso expresivo: se usa en una o dos palabras por
-  titular, nunca en párrafos.
-- En escritorio los tamaños de display escalan con `clamp()`; el body no pasa de 17px.
+- Los porcentajes se escriben con espacio: "95 %".
+- Sin cursivas expresivas: la voz la ponen el peso 500 y el interletrado de Geist.
 
 ---
 
 ## Espaciado y grid
 
-- Escala base de 4px: 4, 8, 12, 16, 20, 24, 32, 48, 64.
-- Márgenes laterales de 22px en móvil; en escritorio, columna central de máx. 560px (la
-  experiencia es la misma que en móvil, centrada).
-- Una sola columna en todas las pantallas. No hay grid de varias columnas.
+- Escala de 4/8px del kit: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128 (`--s-1` a `--s-10`).
+- Un `.wrap` de 1280px máximo con 80px de margen lateral en escritorio, 48 en tableta y 24 en móvil;
+  rejilla de 12 columnas.
+- **Dos columnas en escritorio** (≥ 1024px): la pregunta a la izquierda (5/12) y las opciones a la
+  derecha (7/12); los dos podios lado a lado; en cada votación, título y votos a la izquierda y "por
+  qué te afecta" a la derecha; en "Cómo funciona", títulos a la izquierda y texto a la derecha. En
+  móvil, una columna.
+- **Portada:** una sección por pantalla (ritmo del kit): cabecera fija, héroe que ocupa la primera
+  pantalla y secciones de una pantalla con su rótulo y su h2 arriba. El resultado de ejemplo crece
+  si el nombre del perfil lo pide.
+- **Test y "Cómo funciona":** una columna de contenido bajo la cabecera fija (`.interior`), sin el
+  ritmo de pantallas.
 
 ---
 
 ## Estilo de componentes
 
-- **Border radius:** 10px en botones, opciones, campos y lista de sugerencias; 8px en el logo;
-  2px en la parte superior de las barras de la portada; 5px en las
-  barras del resultado.
-- **Bordes:** 1px. Tinta para separar la cabecera y para el estado activo; `#D6D6D6` en reposo.
-- **Sombras:** ninguna. Nunca decorativas.
-- **Iconos:** Tabler Icons outline, 18–20px.
-- **Botón principal:** fondo tinta y texto blanco **siempre visibles**, no solo al pasar el ratón.
-  Inactivo: fondo `#CFCFCF`. Un único botón principal por pantalla.
-- **Movimiento:** transiciones de 150–500 ms con `ease`. Todo movimiento se desactiva con
-  `prefers-reduced-motion: reduce`.
+- **Radios:** 8px en botones y campos, 12px en opciones y ventana del héroe, 20px en ventanas,
+  podios y marco; 999px en píldoras.
+- **Sombras:** solo en las ventanas (`0 24px 48px -32px` de tinta al 35 %) y en la ventana del
+  héroe; nunca decorativas en otro sitio.
+- **Botones:** sólidos. Principal: fondo tinta, texto fondo, siempre visible. Secundario: contorno
+  fino. El grande del cierre ocupa todo el ancho. Inactivo: superficie y texto gris.
+- **Foco:** contorno de 2px en tinta.
+- **Iconos:** flecha del kit (`.m-arrow`) en los botones de avance; nada más.
+- **Movimiento** (`src/kit/motion.css`, `motion.js`): entrada del héroe (el titular línea a línea,
+  luego entradilla, botones y ventana), la flecha de los botones y las transiciones de 180ms del kit.
+  En el resultado de ejemplo de la portada, cada bloque (rótulo, nombre del perfil, podios y aviso)
+  entra con un **fundido** de 600ms la primera vez que asoma en pantalla y las **barras de los podios
+  crecen desde 0** hasta su porcentaje (900ms, escalonadas 80ms por fila); al cambiar de perfil con
+  el selector, lo mismo. Está en `src/pages/index.astro` (CSS y el script del selector), en móvil y
+  en escritorio. Todo se desactiva con `prefers-reduced-motion: reduce`: se ve el estado final
+  directamente. Ya no se usa ningún momento del kit (el *line-carries-colour* de la sección del
+  resultado se quitó el 2026-11-11); `src/kit/moments/` conserva solo el cargador.
 
 ---
 
 ## Tono visual
 
-Editorial y sobrio, como la portada de un buen periódico: blanco, negro, mucho aire y una serif
-con carácter que da personalidad sin tomar partido. Debe transmitir rigor y confianza: aquí hay
-datos, no opinión. La vida la ponen la tipografía, la cursiva y, en la portada, el ecualizador de
-colores de todos los partidos a la vez.
+Una herramienta, no un mitin: gris azulado claro, tinta negra, cifras en monoespaciada y las
+pantallas del test enseñadas dentro de ventanas limpias, como un producto que se deja mirar por
+dentro. Debe transmitir rigor y confianza: aquí hay datos, no opinión.
 
 **No debe parecer:** propaganda ni campaña (nada de mayúsculas gritonas ni colores de marca), un
 test de revista de los de "¿qué personaje eres?", ni una web institucional gris.
@@ -101,56 +134,148 @@ test de revista de los de "¿qué personaje eres?", ni una web institucional gri
 
 ## Componentes definidos
 
-### Cabecera
-Logo (cuadrado tinta de 30px, radio 8px, "v" blanca en Instrument Serif) + wordmark
-"vota con *criterio*" + subtítulo "elecciones generales · 29 de noviembre". Filete inferior de
-1px tinta. En la pantalla de resultado añade a la derecha el icono de compartir (`ti-share`).
+### Cabecera (`Cabecera.astro`)
+Fija, sobre el fondo. Marca a la izquierda: el **arco del hemiciclo** (la silueta del Pleno del
+Congreso, `.mark[data-mark="arc"]`; en `public/favicon.svg`, en blanco sobre un cuadrado negro) y
+"vota con criterio", siempre en minúsculas, donde *vota* es la marca y *con criterio* la coletilla
+que la une a la web de Con Criterio. En títulos de página y textos corridos se escribe "Vota con
+Criterio". Enlaces
+Test, Resultado, Votaciones (lleva a `/votaciones` en todas las páginas) y Cómo funciona; botón "Empezar el test" a la derecha (no dentro del
+test). En móvil, los enlaces van en un menú.
 
-### Ecualizador de partidos
-Fila de barras en la parte inferior de la portada, una por partido del catálogo con su color,
-sin repetir, ancladas a una línea base y con alturas que cambian cada ~0,5 s. Barras anchas
-(separación 4px), radio superior de 2px. Decorativo: `aria-hidden="true"`. Estático con
-`prefers-reduced-motion`.
+### Héroe de la portada
+Pastilla "Elecciones generales · 29 de noviembre", titular centrado, entradilla, botón principal y
+secundario ("Cómo funciona") y, debajo, la **ventana** con la primera pregunta del test sobre el
+marco arena, asomando.
+
+### Ventana (`.screen`)
+Caja del fondo con borde fino, radio 20px y sombra, con una barra superior de tres puntos y un rótulo
+en mono. Contiene una pregunta, la lista de votaciones o una votación de ejemplo.
+
+### Pregunta (`Pregunta.astro`)
+Dentro de una ventana: contador "Vivienda · 2 de 8" y porcentaje en mono, barra de progreso de 4px,
+enunciado y, si hace falta, subtítulo de ayuda; las opciones a la derecha en escritorio; "← Atrás"
+subrayado debajo del enunciado (después de las opciones en el orden del teclado).
 
 ### Opción de respuesta
-Bloque de ancho completo, borde `#D6D6D6`, texto tinta. Al marcarla se invierte (fondo tinta,
-texto blanco) y la pregunta avanza sola tras ~0,4 s. No usar para la provincia.
+Bloque de ancho completo con su marca de radio de 20px, borde de tinta al 18 %, radio 12px. Marcada:
+borde de tinta, fondo superficie y el radio relleno; la pregunta avanza sola tras ~0,4 s.
+"Prefiero no responder" va en gris con borde discontinuo. No se usa para la provincia.
 
 ### Selector de provincia (autocompletado)
-Campo de texto con autocompletado, sin panel ni lista desplegable completa.
-- Desde la primera letra aparecen debajo las provincias que coinciden, en orden alfabético.
-- La búsqueda ignora acentos, mayúsculas y la "ñ" frente a la "n": "a" encuentra Álava, Albacete,
-  Alicante, Almería, Asturias, Ávila y A Coruña; "bar" encuentra Barcelona.
-- Coincide con el inicio del nombre o de cualquiera de sus palabras ("coru" → A Coruña,
-  "palmas" → Las Palmas, "tenerife" → Santa Cruz de Tenerife), y con los nombres alternativos
-  habituales (Araba, Vizcaya, Guipúzcoa, Gerona, Lérida, Orense, La Coruña, Baleares).
-- Se navega con flechas y Enter, y con el patrón ARIA `combobox` + `listbox`.
+Campo de 52px con borde de tinta al 35 % y sugerencias debajo en una caja con sombra.
+- Desde la primera letra aparecen las provincias que coinciden, en orden alfabético.
+- La búsqueda ignora acentos, mayúsculas y la "ñ" frente a la "n", coincide con el inicio del nombre
+  o de cualquiera de sus palabras y con los nombres alternativos habituales (Araba, Vizcaya,
+  Guipúzcoa, Gerona, Lérida, Orense, La Coruña, Baleares).
+- Patrón ARIA `combobox` + `listbox`, con flechas y Enter.
 - Al elegir una, el campo muestra el nombre oficial y se activa "Siguiente" (la única pregunta que
-  no avanza sola). Un texto que no corresponde a ninguna provincia no permite avanzar.
-- Texto del campo a 16px como mínimo: con menos, Safari en iPhone hace zoom al enfocarlo.
+  no avanza sola).
 
-### Pregunta
-Etiqueta de progreso ("Vivienda · 2 de 10") con "← Atrás" a la izquierda, barra de progreso de
-3px, enunciado en serif y, solo cuando la pregunta puede generar dudas, un subtítulo de ayuda. No
-se muestra el número de pregunta en grande.
+### Podio (resultado)
+Tarjeta del fondo sobre la superficie, radio 20px: título ("Estuvieron de tu lado" / "Votaron en tu
+contra"), explicación y tres filas. Cada fila: punto de 12px del color del partido, nombre, "9 de 9
+votaciones" en gris, porcentaje en Geist Mono a la derecha y barra de 6px del color del partido.
 
-### Fila de partido (resultado)
-Logo del partido (26px), nombre, porcentaje a la derecha y barra de 10px en el color del partido.
-Se usa en los podios "Te han *favorecido*" y "Te han *perjudicado*", tres filas cada uno.
+### Aviso de alcance y cobertura
+El aviso (M-09) va al pie del resultado, en texto de 16px, junto al botón de seguir; la cobertura
+("Basado en 20 de las 33 votaciones que podrían afectarte") en lead encima de los podios.
 
-### Caja de aviso
-Fondo `#F4F4F4`, radio 10px, texto 11px. Para el aviso de alcance (M-09) y la explicación del
-porcentaje.
+### Votación
+Fecha y tipo de iniciativa en mono, título, "El sí te favorecía", **"Por qué te afecta:"** y qué
+significaba votar sí, el voto de cada partido en una **rejilla de píldoras** (dos columnas en
+escritorio, una en móvil: punto y siglas a la izquierda, píldora a la derecha; "Sí" relleno de
+tinta, el resto con contorno; el desglose si votó dividido) y el enlace al Congreso.
+
+### Explorador del catálogo (`/votaciones`)
+Una columna bajo la cabecera fija (`.interior`): rótulo, h1, entradilla con las cifras, una frase
+en gris con el criterio de orden de los partidos y los **filtros** (campos `.field` del kit: buscador,
+tema y legislatura; en una fila de 2/1/1 desde 768px, apilados en el móvil). Debajo, el recuento en
+Geist Mono (región `aria-live`) y la lista, separada por filetes.
+- **Acordeón** con `<details>`: plegada, cada votación enseña fecha · legislatura · tema en mono, el
+  título a 22px (26px en escritorio) y un círculo con más/menos dibujado a la derecha. Abierta, en
+  escritorio dos columnas (5/12 y 7/12): a la izquierda la iniciativa y el ámbito en gris, el resumen
+  recortado a tres líneas con "Ver más" subrayado (solo si se recorta), qué significaba votar «sí» y
+  a quién afecta, con la condición en gris ("Quien responde «De alquiler» a «¿Cómo vives?»") y el
+  efecto debajo; a la derecha la rejilla de píldoras de **Votación** (punto de color de
+  `data/partidos/`, siglas y voto escrito), en dos columnas que se leen hacia abajo para que el orden
+  de izquierda a derecha siga la columna izquierda primero; el veredicto del jurado en una caja de
+  superficie y los enlaces al Congreso y al texto oficial. En el móvil, todo en una columna.
+- **Orden de los partidos:** de izquierda a derecha según `posicion_ideologica`
+  (`data-model.md`), igual en todas las votaciones; salen todos los partidos con voto.
+- Sin JavaScript: no hay filtros ni recorte, y cada votación se abre y se cierra igual.
+- Sin resultados: "Ninguna votación coincide con esa búsqueda" y el botón secundario "Quitar los
+  filtros".
+
+### Resultado de ejemplo de la portada
+El resultado real de uno de los perfiles de `data/perfiles-ejemplo.yaml`, elegido al azar en cada
+visita y calculado en el build con el mismo cálculo que el test, nombrando el perfil ("Así le sale
+a: estudiante de alquiler en Madrid") y con el rótulo "Un ejemplo real". Nunca cifras inventadas.
+Bajo el nombre, un **selector nativo** (`<select>` con la etiqueta "Ver otro perfil", el campo
+`.field` del kit) deja elegir cualquiera de los nueve perfiles sin recargar; al cargar refleja el
+perfil que ha salido. Los nueve resultados y sus votaciones de ejemplo ya están en el HTML del
+build: el selector solo muestra uno y oculta los demás. Sin JavaScript se ve el primero y el
+selector no aparece. Se eligió el desplegable y no una fila de píldoras porque los nombres de los
+perfiles son largos (hasta 70 caracteres) y nueve píldoras ocuparían media pantalla del móvil.
+
+### Preguntas frecuentes (`PreguntasFrecuentes.astro`)
+Las mismas preguntas y respuestas en la portada (sección propia antes del cierre, con el h2 a la
+izquierda y las preguntas a la derecha en escritorio) y en "Cómo funciona". El componente es la
+única fuente del texto. Usa el patrón FAQ del kit (`.faq > .faq__item`): cada pregunta en un h3 de
+500 con su respuesta debajo, todas abiertas, separadas por una raya.
+
+### Cierre y pie (`Pie.astro`)
+"Ocho preguntas sobre tu vida", la línea de privacidad y el botón del test a todo el ancho; debajo,
+la marca, "Un proyecto de Con Criterio", cuatro columnas de enlaces (en "Método", Cómo funciona y
+Las votaciones) y la línea legal. En el móvil,
+una barra fija repite "Empezar el test" cuando el botón del héroe ha salido de la pantalla.
 
 ### Imagen para compartir
-Versión del resultado en formato vertical (1080×1350) con cabecera, los dos podios y la URL. No
-incluye ninguna respuesta del cuestionario.
+Tarjeta vertical PNG de **1080×1350** (4:5) generada en el navegador con Canvas (S-02). Los datos los
+decide `src/lib/compartir/tarjeta.ts` (código puro, probado en `tests/unit/compartir.test.ts`) y el
+dibujo está en `src/lib/compartir/dibujo.ts`, que espera a que Geist y Geist Mono estén cargadas
+(`document.fonts.load`) antes de pintar.
+
+- **Marco y fondo:** marco arena `#D9CCB7` de 32px y, dentro, la tarjeta del fondo `#F7F9FA` con
+  radio 28px, como la ventana del héroe sobre su marco.
+- **De arriba abajo:** la marca (el arco del hemiciclo de `public/favicon.svg` en blanco sobre un
+  cuadrado de tinta de 72px y "vota con criterio" en minúsculas, Geist 44px 500), con
+  "Elecciones generales · 29-N" en Geist Mono gris a la derecha; el rótulo "Lo que más me afecta"
+  (Geist Mono 24px gris) y los dos o tres temas de las votaciones que le cuentan, los más frecuentes
+  primero (Geist 50px 500, separados por "·"); la línea de perfil, si el visitante la pide (Geist
+  26px gris); un filete; "Votó más veces a tu favor" con el primer partido del podio favorable, su
+  punto de 32px y el porcentaje en Geist Mono 60px; los dos podios ("Estuvieron de tu lado" y
+  "Votaron en tu contra") uno encima del otro sobre la superficie `#ECF0F2`, radio 24px, cada fila
+  con punto de 20px, nombre en Geist 32px, porcentaje en Geist Mono 32px y barra de 8px del color
+  del partido; y al pie "No es una recomendación de voto." y `vota.concriterio.blog` en mono.
+- Los colores de los partidos salen de `data/partidos/`, como en la web. Un nombre que no cabe baja
+  de cuerpo hasta caber; con la línea de perfil, las filas de los podios se juntan lo justo.
+- **Respuestas:** por defecto, ninguna. Con la casilla "Incluir mi perfil en la imagen" (desmarcada
+  por defecto) se añade una línea con vivienda, situación laboral, edad e hijos, en minúscula y
+  abreviadas ("de alquiler · estudiante · menos de 30 años · sin hijos a cargo"); "Prefiero no
+  responder" no sale. Nunca ingresos, patrimonio, herencias, discapacidad ni provincia.
+- **En la página:** solo en el resultado final y si hay podios. Bloque bajo el aviso, separado por un
+  filete: vista previa de 216×270 (160×200 en móvil) con sombra de ventana y, al lado (debajo en
+  móvil), "Compartir el resultado", la casilla del kit (`.m-check`) con su ayuda y el botón
+  principal "Compartir". La vista previa lleva como texto alternativo todo lo que dice la imagen.
+- **Al pulsar:** si el navegador comparte archivos (`navigator.canShare({ files })`), el menú del
+  sistema con el PNG y el texto "Mira qué votaron los partidos en el Congreso sobre tu vida:
+  vota.concriterio.blog", sin nombrar partidos; si no, se descarga `vota-con-criterio.png`. Nada se
+  envía a ningún servidor.
 
 ---
 
 ## Referencias visuales
 
-- Maquetas iteradas en la sesión del 26 de octubre de 2026 (dirección "A · Editorial", tercera
-  versión). Se descartaron la dirección "papeleta" (monoespaciada) y la "grotesca" (mayúsculas
-  gruesas), por sonar más a campaña.
-- Portadas de prensa editorial: filetes finos, serif de titular, mucho blanco.
+- `propuestas-diseno/taste/1-ventana/` (`index.html`, `escritorio.png`, `movil.png`): la maqueta de
+  referencia. Su voto por partido y sus cifras eran ilustrativos; en la web todo sale de los datos.
+- `propuestas-diseno/taste/3-recuento/`: origen del icono de puntos.
+- La dirección anterior (editorial en blanco y negro con Instrument Serif, octubre de 2026) queda en
+  el historial de git.
+
+### Cambio de página
+Navegación con View Transitions nativas entre documentos (`@view-transition { navigation: auto }`):
+el contenido se funde en 160 ms y la cabecera (`view-transition-name: cabecera`) no se mueve. El hueco
+de la barra de desplazamiento se reserva siempre (`scrollbar-gutter: stable`) y las fuentes Geist se
+precargan, para que al cambiar de página no cambie ni el ancho ni la letra. Sin transición con
+"menos movimiento"; en navegadores sin soporte, navegación normal.

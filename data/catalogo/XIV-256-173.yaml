@@ -1,0 +1,36 @@
+votacion: XIV-256-173
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=27/04/2023"
+texto: https://www.boe.es/eli/es/l/2023/05/24/12
+iniciativa: Proyecto de ley del Gobierno
+fecha: 2023-04-27
+titulo_oficial: Proyecto de Ley por el derecho a la vivienda.
+titulo: Ley de vivienda
+resumen: >-
+  Primera ley estatal de vivienda. Permite a las comunidades declarar zonas de mercado tensionado
+  en las que se contienen las rentas de los nuevos contratos, obliga al arrendador a pagar los gastos
+  de inmobiliaria y de formalización del contrato y añade prórrogas extraordinarias para los
+  inquilinos. También cambia los desahucios de hogares vulnerables y las reducciones fiscales por
+  alquilar.
+que_significa_si: Votar sí era aprobar el texto de la ley que salió de la comisión.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler deja de pagar los gastos de inmobiliaria y de formalización del contrato,
+      puede pedir prórrogas extraordinarias y, en las zonas tensionadas, la renta de un nuevo contrato
+      no puede superar la del anterior.
+    base: Disposición final primera, que modifica los arts. 10.2, 10.3, 17.6, 17.7 y 20.1 de la Ley de Arrendamientos Urbanos.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda pasa a pagar los gastos de inmobiliaria y de formalización, y en zonas
+      tensionadas no puede subir la renta al cambiar de inquilino ni negarse a ciertas prórrogas. Las
+      nuevas reducciones fiscales solo compensan si baja la renta.
+    base: Disposición final primera (arts. 10, 17.6, 17.7 y 20.1 LAU) y disposición final segunda (art. 23.2 de la Ley del IRPF).
+justificacion: >-
+  Es la ley que más cambió las reglas del alquiler en las dos legislaturas y afecta directamente a
+  quienes viven de alquiler y a quienes alquilan una vivienda.
+fuentes:
+  - https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203

@@ -1,0 +1,76 @@
+votacion: XV-192-54
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=14/07/2026"
+texto: https://www.boe.es/eli/es/l/2026/10/01/4
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2026-07-14
+titulo_oficial: >-
+  Proyecto de Ley por la que se modifican el Texto Refundido de la Ley General de derechos de las
+  personas con discapacidad y de su inclusión social, aprobado por el Real Decreto Legislativo
+  1/2013, de 29 de noviembre, y la Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía
+  Personal y Atención a las personas en situación de dependencia, para la extensión y refuerzo de
+  los derechos de las personas con discapacidad a la inclusión, la autonomía y la accesibilidad
+  universal conforme al artículo 49 de la Constitución Española
+titulo: "Reforma de la discapacidad y la dependencia"
+resumen: >-
+  Reforma las leyes de discapacidad y de dependencia. Reconoce derechos a las personas cuidadoras
+  no profesionales (información y formación) y a la cuidadora principal que recibe la prestación
+  económica (prioridad en las políticas de empleo y continuidad de la atención de la persona
+  dependiente si enferma o es hospitalizada). Permite, de forma excepcional, mantener la reducción
+  de jornada más allá de los límites de edad para cuidar a un hijo con gran discapacidad o gran
+  dependencia que requiera cuidados continuos, y obliga a las comunidades autónomas a fijar un
+  mínimo exento de copago. Además, obliga a las comunidades de propietarios a pedir las ayudas para
+  las obras de accesibilidad que solicite un vecino con discapacidad o mayor de 70 años (o que viva
+  con una persona así) y a hacerlas si las ayudas cubren el 70 % del coste, y prohíbe discriminar
+  por discapacidad al contratar un seguro, salvo causas objetivas, justificadas, proporcionadas y
+  documentadas. Se aprobó y es la Ley 4/2026.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien cuida de una persona dependiente gana derechos propios (información y formación; si es
+      la cuidadora principal con prestación económica, prioridad en las políticas de empleo y que se
+      garantice la atención de la persona dependiente si enferma o es hospitalizada) y la persona a
+      la que cuida tiene garantizado un mínimo exento de copago.
+    base: >-
+      Art. segundo, apartados Cuatro (nuevo art. 4 bis de la Ley 39/2006) y Treinta y tres (art.
+      33.3 de la Ley 39/2006, mínimo exento de copago).
+  - cuando: { discapacidad: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene una discapacidad no puede ser rechazado ni tener peores condiciones al contratar un
+      seguro por esa razón, salvo causa objetiva y justificada; si pide obras de accesibilidad en su edificio, la
+      comunidad de vecinos tiene que solicitar las ayudas públicas y hacerlas cuando cubran el 70 %
+      del coste; y, si es
+      dependiente, tiene garantizado un mínimo de ingresos exento de copago.
+    base: >-
+      Disposición final segunda (disp. adicional cuarta de la Ley de Contrato de Seguro), disposición
+      final primera (art. diez.1.b de la Ley de Propiedad Horizontal) y art. segundo, apartado Treinta
+      y tres (art. 33.3 de la Ley 39/2006).
+justificacion: >-
+  Es la reforma de la dependencia y la discapacidad de la XV, con medidas directas para quien
+  cuida.
+extracto: >-
+  [Art. segundo, apartado Cuatro (art. 4 bis.2 y 3 de la Ley 39/2006)] «Recibir acompañamiento y
+  formación para el cuidado y autocuidado […] Ser colectivo de atención prioritaria para la política
+  de empleo […] Las Administraciones públicas competentes garantizarán la continuidad de la atención
+  y los cuidados de la persona en situación de dependencia cuando la persona cuidadora principal se
+  encuentre en una situación de enfermedad grave o de hospitalización» [Art. segundo, apartado
+  Treinta y tres (art. 33.3 de la Ley 39/2006)] «Las comunidades autónomas […] regularán los
+  criterios para la determinación de la participación de las personas beneficiarias en el coste de
+  los servicios, incluyendo la fijación de mínimos exentos […] a) Un mínimo de capacidad económica
+  exento, a los efectos de esta ley, de participar en el coste de los servicios» [Disposición final
+  décima (art. 37.6 del Estatuto de los Trabajadores)] «Excepcionalmente, cuando el hijo o hija se
+  encuentre en situación de gran discapacidad o gran dependencia que requiera cuidados continuos, el
+  derecho a la reducción de jornada podrá mantenerse más allá de los límites de edad previstos»
+  [Disposición final primera (art. diez.1.b de la Ley de Propiedad Horizontal)] «quedando esta
+  obligada a solicitarlas. Cuando las ayudas y subvenciones efectivamente concedidas alcancen el
+  setenta por ciento del importe de las obras y actuaciones instadas, será obligatoria su ejecución»
+  [Disposición final segunda (disposición adicional cuarta de la Ley de Contrato de Seguro)] «No se
+  podrá discriminar a las personas con discapacidad en la contratación de seguros. A tal efecto, se
+  prohíbe la denegación del acceso a la contratación […] así como la imposición de condiciones más
+  gravosas o de coberturas o prestaciones menos favorables por razón de discapacidad, salvo que
+  concurran causas objetivas, justificadas, proporcionadas y documentadas de forma previa.»

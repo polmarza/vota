@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es" data-type="software" data-radius="soft" data-buttons="arrow" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vota con Criterio: qué votó cada partido en el Congreso y a quién afectó</title>
+<meta name="description" content="Un test anónimo que cruza tu situación con las votaciones del Congreso de 2019 a 2026 y te dice qué partidos estuvieron de tu lado, para el 29 de noviembre.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vota con Criterio: qué votó cada partido en el Congreso y a quién afectó">
+<meta property="og:description" content="Las promesas vuelan. Los votos se quedan. Un test anónimo para el 29 de noviembre.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f0f0f">
+<!-- <link rel="canonical" href="https://vota.concriterio.blog/"> -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..700&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<style>
+:root {
+  --p-bg: #0f0f0f; --p-surface: #1a1a1a; --p-ink: #ffffff; --p-muted: #9a9a9a;
+  --p-accent: #ecebe6; --p-accent-ink: #0f0f0f; --p-action: #ecebe6; --p-action-ink: #0f0f0f;
+  --p-inv-bg: #ffffff; --p-inv-surface: #ececec; --p-inv-ink: #0f0f0f; --p-inv-muted: #5f5f5f;
+  --p-inv-accent: #0f0f0f; --p-inv-accent-ink: #ffffff; --p-inv-action: #0f0f0f; --p-inv-action-ink: #ffffff;
+  --font-display: "Onest", system-ui, sans-serif;
+  --font-text: "Onest", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/pinned-chapters/moment.js">
+<!-- page CSS: only what sits inside the visuals (the test's own screens) -->
+<style>
+  .screen-label { color: var(--muted); margin: 0 0 var(--s-5); }
+  /* the brief's headline is two short sentences: the film box widens so each takes one line at 1440 */
+  .hero--film .hero__over > div { max-width: 780px; }
+  .hero--film h1 { max-width: 20ch; }
+  @media (max-width: 639px) { .hero--film h1 { font-size: 34px; } main > section#pasos[data-moment]:not(.is-live) { min-height: calc(2 * 100lvh); } }
+  .mono { font-family: var(--font-mono); }
+  /* a drawn screen of the test: light, as on a phone */
+  .scr { background: #ffffff; color: #0f0f0f; border-radius: var(--r-lg); padding: var(--s-6); display: grid; gap: var(--s-4); align-content: start; }
+  .scr__top { display: flex; justify-content: space-between; font: 500 13px/1.4 var(--font-mono); color: #5f5f5f; }
+  .scr__bar { height: 4px; background: #ececec; border-radius: 99px; overflow: hidden; } .scr__bar i { display: block; height: 100%; width: var(--w, 12.5%); background: #0f0f0f; }
+  .scr__q { margin: 0; font: 400 30px/1.15 var(--font-display); letter-spacing: -0.025em; }
+  .scr__field { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--s-4); border: 1px solid #0f0f0f; border-radius: var(--r-sm); font-size: 17px; }
+  .mo-pc__visual .scr { height: 100%; }
+
+  /* screen 2 on the light band: the question, its options as big rows */
+  .quiz { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-3); }
+  .opt { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); min-height: 64px; padding: var(--s-3) var(--s-5); border-radius: var(--r-md); background: var(--p-inv-surface); color: var(--p-inv-ink); font-size: 18px; }
+  .opt::after { content: ""; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid currentColor; flex: none; }
+  .opt.is-on { background: #0f0f0f; color: #ffffff; }
+  .opt.is-on::after { background: radial-gradient(#ffffff 0 38%, transparent 43%); }
+  .opt--ns { background: transparent; box-shadow: inset 0 0 0 1px #c9c9c9; }
+  .qhead { display: grid; gap: var(--s-4); align-content: start; }
+  .qhead .scr__top { font-size: 14px; }
+  .qback { font-size: 16px; text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 639px) { .opt { min-height: 52px; font-size: 16px; } .scr { padding: var(--s-5); } .scr__q { font-size: 24px; } }
+
+  /* screen 3: the podiums as two tall columns of figures */
+  .pod { display: grid; gap: var(--s-4); align-content: start; }
+  .pod h3 { margin: 0; font: 400 32px/1.1 var(--font-display); letter-spacing: -0.025em; }
+  .pod > p { margin: 0; font-size: 16px; }
+  .pod ol { list-style: none; margin: var(--s-3) 0 0; padding: 0; }
+  .pod li { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: var(--s-4); padding-block: var(--s-3); box-shadow: inset 0 -1px 0 rgb(255 255 255 / .12); }
+  .pod .n { font: 400 15px/1 var(--font-mono); color: var(--muted); }
+  .pod .who { display: grid; gap: var(--s-1); font-size: 18px; }
+  .pod .who small { font-size: 14px; color: var(--muted); }
+  .pod .who b { font-weight: 500; display: flex; align-items: center; gap: var(--s-3); }
+  .pod .who b::before { content: ""; width: 4px; height: 22px; border-radius: 2px; background: var(--c); }
+  .pod .pct { font: 400 36px/1 var(--font-display); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .note { font-size: 16px; max-width: 62ch; margin: var(--s-6) 0 0; }
+  .res-more { margin: var(--s-4) 0 0; font-size: 17px; }
+  .close__word { font-size: min(9.2vw, 132px); line-height: 1.1; white-space: nowrap; padding-top: .04em; }
+  @media (max-width: 639px) { .pod li { grid-template-columns: minmax(0, 1fr) auto; padding-block: var(--s-3); } .pod .n { display: none; } .pod .pct { font-size: 30px; } .pod h3 { font-size: 26px; } }
+
+  /* the votes */
+  .vote { border: 1px solid rgb(255 255 255 / .16); border-radius: var(--r-lg); padding: var(--s-6); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-5) var(--s-6); }
+  .vote__date { font: 500 14px/1.4 var(--font-mono); color: #bdbdbd; }
+  .vote__t { margin: var(--s-2) 0 var(--s-4); font: 400 30px/1.15 var(--font-display); letter-spacing: -0.02em; }
+  .vote__why { margin: 0; font-size: 17px; line-height: 1.6; }
+  .tally { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-2) var(--s-4); align-content: start; }
+  .tally li { display: grid; grid-template-columns: minmax(0, 1fr) 64px; align-items: center; gap: var(--s-3); font-size: 16px; }
+  .tally .p { display: flex; align-items: center; gap: var(--s-3); height: 40px; padding: 0 var(--s-4); border-radius: var(--r-sm); background: rgb(255 255 255 / .06); }
+  .tally .p::before { content: ""; width: 4px; height: 18px; border-radius: 2px; background: var(--c); }
+  .tally .v { font: 500 14px/40px var(--font-mono); text-align: center; border-radius: var(--r-sm); background: rgb(255 255 255 / .06); }
+  .tally .v--si { background: #ecebe6; color: #0f0f0f; }
+  .vote__go { margin-top: var(--s-4); display: inline-block; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; }
+  .vote-next { margin-top: var(--s-5); display: flex; justify-content: space-between; gap: var(--s-5); font-size: 16px; }
+  .vote-next span:last-child { font-family: var(--font-mono); font-size: 14px; color: #bdbdbd; white-space: nowrap; }
+  @media (max-width: 1023px) { .vote { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 639px) { .vote { padding: var(--s-5); } .vote__t { font-size: 22px; } .vote-next { display: none; } .tally { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tally li { grid-template-columns: minmax(0, 1fr) 44px; gap: var(--s-2); } .tally .p { padding: 0 var(--s-2); } }
+</style>
+</head>
+<body>
+<!-- type: software
+     deal: hero film (a still: the Congress front as the poster, no play control, there is no film), nav centre (nav-mega dealt: no
+           feature pages to group, dealt again), close word, footer dark, rhythm dark-band (on a dark page the inverse band is light:
+           screen 2 stands on it), buttons arrow, mark arc; parts dealt a second time because the first draw repeated proposal 1's
+     palette: start.mjs brand on the dealt soot-pale-lime ground; its lime accent replaced by a warm off-white (no party colour)
+     type: onest
+     moments: pinned-chapters on #pasos (the three steps of the test held on one screen while the visitor scrolls) -->
+
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Saltar al contenido</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Vota con Criterio</a>
+    <nav class="nav__links" aria-label="Principal">
+      <div class="nav__item"><a class="nav__link" href="#pasos">Método</a></div>
+      <div class="nav__item"><a class="nav__link" href="#test">Test</a></div>
+      <div class="nav__item"><a class="nav__link" href="#resultado">Resultado</a></div>
+      <div class="nav__item"><a class="nav__link" href="#votaciones">Votaciones</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#test">Empezar el test</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menú">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--film" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div class="hero__media hero__fill">
+        <img src="assets/img/photo-f139947023-sinbandera.jpg" width="960" height="660" alt="La fachada del Congreso de los Diputados, con sus columnas y los dos leones, y la plaza vacía delante" style="--ly-pos: 50% 30%; --ly-pos-phone: 50% 40%" fetchpriority="high" data-source="stand-in" data-subject="stand-in">
+        <div class="hero__over">
+          <div>
+            <p class="hero-notice">Elecciones generales · 29 de noviembre</p>
+            <h1 id="hero-h">Las promesas vuelan. Los votos se quedan.</h1>
+            <p class="hero__lead">Cruzamos tus preocupaciones con lo que cada partido votó en el Congreso desde 2019. Así sabes quién estuvo de tu lado cuando tocaba votar.</p>
+            <div class="btn-row"><a class="btn btn--primary" href="#test">Empezar el test<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#pasos">Ver cómo funciona</a></div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="pasos" style="--h: 2; --hm: 2" data-moment="pinned-chapters" aria-labelledby="pasos-h">
+    <div class="wrap mo-pc__grid">
+      <div class="mo-pc__text">
+        <h2 id="pasos-h">Cómo funciona el test, en tres pasos</h2>
+        <ol class="mo-pc__steps">
+          <li class="mo-pc__step">
+            <h3>8 preguntas sobre tu vida</h3>
+            <p>Provincia, vivienda, trabajo, edad, ingresos, hijos. No te preguntamos qué opinas, y tus respuestas no salen del navegador.</p>
+            <figure class="mo-pc__visual"><div class="scr" role="img" aria-label="La primera pregunta del test: en qué provincia votas, con Madrid elegida">
+              <div class="scr__top" aria-hidden="true"><span>Provincia · 1 de 8</span><span>Sin registro</span></div>
+              <div class="scr__bar" aria-hidden="true"><i></i></div>
+              <span class="scr__q" style="display:block" aria-hidden="true">¿En qué provincia votas?</span>
+              <div class="scr__field" aria-hidden="true"><span>Madrid</span><span>⌄</span></div>
+            </div></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Las votaciones de 2019 a 2026</h3>
+            <p>Las votaciones de las legislaturas XIV y XV que tocan a alguien como tú, con el voto de cada partido sacado de los datos abiertos.</p>
+            <figure class="mo-pc__visual"><img src="assets/img/photo-f98855479-sinbandera.jpg" width="1280" height="703" alt="El pórtico del Congreso bajo la nieve, con dos coches cubiertos delante" loading="lazy" decoding="async" data-source="stand-in" data-subject="stand-in"></figure>
+          </li>
+          <li class="mo-pc__step">
+            <h3>Tu resultado en 2 podios</h3>
+            <p>Qué partidos estuvieron de tu lado y cuáles votaron en tu contra, con cada votación enlazada al Congreso.</p>
+            <figure class="mo-pc__visual"><img src="assets/img/photo-f40410369.jpg" srcset="assets/img/photo-f40410369-500.jpg 500w, assets/img/photo-f40410369-960.jpg 960w, assets/img/photo-f40410369.jpg 1280w" sizes="(max-width: 1023px) 100vw, 50vw" width="1280" height="962" alt="Una urna transparente con sobres de votación dentro" loading="lazy" decoding="async" data-source="stand-in" data-subject="stand-in"></figure>
+          </li>
+        </ol>
+      </div>
+      <div class="mo-pc__visuals frame"></div>
+    </div>
+  </section>
+
+  <section class="section ground-inverse" id="test" aria-labelledby="test-h">
+    <div class="wrap">
+      <p class="t-label screen-label">Pantalla 2 · Una pregunta</p>
+      <div class="grid">
+        <div class="span-5 qhead">
+          <h2 id="test-h">Un cuestionario de 8 preguntas, y 4 más si quieres</h2>
+          <p class="t-lead">Cada pregunta tiene «Prefiero no responder». Así se ve la de vivienda.</p>
+        </div>
+        <div class="span-6 start-7 scr ui ui-quiz" role="img" aria-label="La pantalla de la pregunta de vivienda, 2 de 8: ¿Cómo vives?, con De alquiler marcada y Prefiero no responder al final">
+          <div class="scr__top" aria-hidden="true"><span>Vivienda · 2 de 8</span><span class="qback">← Atrás</span></div>
+          <div class="scr__bar" style="--w: 25%" aria-hidden="true"><i></i></div>
+          <p class="scr__q" aria-hidden="true">¿Cómo vives?</p>
+          <div class="quiz" aria-hidden="true">
+            <span class="opt is-on">De alquiler</span>
+            <span class="opt">En una vivienda propia que estoy pagando</span>
+            <span class="opt">En una vivienda propia ya pagada</span>
+            <span class="opt">Con mi familia o en una vivienda cedida</span>
+            <span class="opt opt--ns">Prefiero no responder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="resultado" aria-labelledby="res-h" style="--hm: 2">
+    <div class="wrap">
+      <p class="t-label screen-label">Pantalla 3 · Tu resultado</p>
+      <div class="section-head">
+        <h2 id="res-h">Basado en 23 de las 31 votaciones que podrían afectarte.</h2>
+      </div>
+      <div class="grid">
+        <div class="pod span-6">
+          <h3>Estuvieron de tu lado</h3>
+          <p>Apoyaron lo que te beneficiaba, o se opusieron a lo que te perjudicaba.</p>
+          <ol>
+            <li style="--c:#45BB89"><span class="n">01</span><span class="who"><b>Más Madrid</b><small>9 de 9 votaciones</small></span><span class="pct">100 %</span></li>
+            <li style="--c:#E51C55"><span class="n">02</span><span class="who"><b>Sumar</b><small>9 de 9 votaciones</small></span><span class="pct">100 %</span></li>
+            <li style="--c:#DF0022"><span class="n">03</span><span class="who"><b>Izquierda Unida</b><small>19 de 20 votaciones</small></span><span class="pct">95 %</span></li>
+          </ol>
+        </div>
+        <div class="pod span-6 start-7">
+          <h3>Votaron en tu contra</h3>
+          <p>Se opusieron a lo que te beneficiaba, o apoyaron lo que te perjudicaba.</p>
+          <ol>
+            <li style="--c:#63BE21"><span class="n">01</span><span class="who"><b>Vox</b><small>16 de 20 votaciones</small></span><span class="pct">80 %</span></li>
+            <li style="--c:#1E4B8F"><span class="n">02</span><span class="who"><b>Partido Popular</b><small>13 de 20 votaciones</small></span><span class="pct">65 %</span></li>
+            <li style="--c:#EB6109"><span class="n">03</span><span class="who"><b>Ciudadanos</b><small>7 de 11 votaciones</small></span><span class="pct">64 %</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="note">Herramienta orientativa basada solo en votaciones del Congreso de las dos últimas legislaturas. No tiene en cuenta ideologías ni programas electorales, y no es una recomendación de voto. El porcentaje es la parte de las votaciones que te afectan en la que cada partido votó a tu favor (o en tu contra); por eso los dos podios no suman 100.</p>
+      <p class="res-more"><a class="link" href="#test-h">Seguir con más preguntas</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="votaciones" aria-labelledby="vot-h">
+    <div class="wrap">
+      <p class="t-label screen-label">Pantalla 3 · La lista de votaciones</p>
+      <div class="section-head">
+        <h2 id="vot-h">Las votaciones que te afectan</h2>
+      </div>
+      <div class="vote ui ui-vote" role="img" aria-label="Una votación de la lista: el decreto ómnibus del 27 de enero de 2026, por qué te afecta y qué votó cada partido">
+        <div>
+          <p class="vote__date">27 ene 2026 · Real decreto-ley</p>
+          <p class="vote__t">Decreto ómnibus: pensiones, bono social y desahucios (2026)</p>
+          <p class="vote__why"><b>Por qué te afecta.</b> Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta final de 2026 si acreditaba vulnerabilidad económica.</p>
+          <span class="vote__go">Ver la votación en el Congreso</span>
+        </div>
+        <ul class="tally">
+          <li style="--c:#FF0000"><span class="p">PSOE</span><span class="v v--si">Sí</span></li>
+          <li style="--c:#E51C55"><span class="p">Sumar</span><span class="v v--si">Sí</span></li>
+          <li style="--c:#FFB32E"><span class="p">ERC</span><span class="v v--si">Sí</span></li>
+          <li style="--c:#1E4B8F"><span class="p">PP</span><span class="v">No</span></li>
+          <li style="--c:#63BE21"><span class="p">Vox</span><span class="v">No</span></li>
+          <li style="--c:#20C0C2"><span class="p">Junts</span><span class="v">No</span></li>
+        </ul>
+      </div>
+      <p class="vote-next"><span><b>Rebaja de la factura de la luz del PP.</b> Quien paga la luz de su casa dejaría de pagar en la factura la deuda del sistema eléctrico.</span><span>25 may 2021</span></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Ocho preguntas antes del 29 de noviembre</h2><p class="t-lead">Gratis, sin registro y sin cookies.</p></div>
+        <a class="btn btn--primary" href="#test">Empezar el test<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <p class="close__word" aria-hidden="true">Vota con Criterio</p>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Con Criterio</a>
+          <p class="footer__lede">Un proyecto de Con Criterio, de código abierto.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Método</h3><ul><li><a href="#pasos">Cómo funciona</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Resultado</h3><ul><li><a href="#resultado">Los dos podios</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Votaciones</h3><ul><li><a href="#votaciones">La lista</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Portada</h3><ul><li><a href="#top">Inicio</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>© 2026 Con Criterio · Elecciones generales del 29 de noviembre</span>
+        <div class="socials"></div>
+        <a class="credits" href="credits.html">Fotografías vía Wikimedia Commons</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Acción rápida">
+  <a class="btn btn--primary" href="#test">Empezar el test</a>
+</nav>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+</body>
+</html>

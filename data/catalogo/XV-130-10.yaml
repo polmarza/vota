@@ -1,0 +1,58 @@
+votacion: XV-130-10
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=10/09/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-58-1.PDF
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2025-09-10
+titulo_oficial: >-
+  Proyecto de Ley para la reducción de la duración máxima de la jornada ordinaria de trabajo y la
+  garantía del registro de jornada y el derecho a la desconexión
+titulo: "Jornada de 37,5 horas"
+resumen: >-
+  Proyecto para bajar la jornada máxima de 40 a 37,5 horas semanales de promedio anual sin reducir
+  el sueldo, con registro de jornada digital y derecho a la desconexión. El Congreso aprobó las
+  enmiendas a la totalidad y lo devolvió al Gobierno.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno, lo que pone fin a su
+  tramitación.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: perjudica
+    justificacion: >-
+      Que saliera el sí impidió que la jornada máxima de quien trabaja por cuenta ajena bajara a
+      37,5 horas sin rebaja de sueldo.
+    base: >-
+      Artículo único, apartado Tres, del proyecto, que modifica el art. 34.1 del Estatuto de los
+      Trabajadores, y disposición adicional tercera (retribuciones).
+  - cuando: { contrata: [empresa, hogar] }
+    el_si: favorece
+    justificacion: >-
+      Que saliera el sí evitó que quien tiene a alguien contratado, en su empresa o en casa, tuviera
+      que bajar la jornada máxima a 37,5 horas semanales sin rebajar el sueldo y llevar un registro
+      diario de jornada.
+    base: >-
+      Artículo único, apartados Tres y Cinco, del proyecto (arts. 34.1 y 34 bis del Estatuto de los
+      Trabajadores), disposición adicional tercera y disposición final segunda (art. 9 del Real
+      Decreto 1620/2011, del servicio del hogar familiar).
+justificacion: >-
+  Es la principal medida laboral de la XV y una de las pocas votaciones en las que el Congreso
+  tumbó un proyecto del Gobierno.
+extracto: >-
+  [Exposición de motivos] «en junio de 1983 tuvo lugar un nuevo avance, reduciéndose la duración
+  máxima de la jornada ordinaria de trabajo a cuarenta horas semanales de trabajo efectivo.»
+  [Artículo único.Tres, art. 34.1 del Estatuto de los Trabajadores] «La duración máxima de la
+  jornada ordinaria de trabajo será de treinta y siete horas y media semanales de trabajo efectivo
+  de promedio en cómputo anual.» [Artículo único.Cinco, nuevo art. 34 bis] «1. La empresa mantendrá
+  un registro diario de jornada, realizado por medios digitales, que garantice el cumplimiento
+  efectivo de los requisitos previstos en este artículo.» [Artículo único.Dos, art. 20 bis.2] «El
+  deber empresarial de garantizar el derecho a la desconexión supone, entre otros, la ausencia de
+  toda solicitud de realizar una prestación laboral […] así como el derecho a no estar localizable
+  fuera de su horario de trabajo. El derecho a la desconexión es irrenunciable.» [Disposición
+  adicional tercera. Retribuciones] «La reducción de jornada establecida en la presente ley no podrá
+  tener como consecuencia la afectación de las retribuciones ni la compensación, absorción o
+  desaparición de cualesquiera derechos más favorables o condiciones más beneficiosas que vinieran
+  disfrutando las personas trabajadoras.» [Disposición final segunda, art. 9.1 del Real Decreto
+  1620/2011, del servicio del hogar familiar] «1. La jornada máxima semanal de carácter ordinario
+  será la prevista en el artículo 34.1 del texto refundido de la Ley del Estatuto de los
+  Trabajadores, sin perjuicio de los tiempos de presencia»

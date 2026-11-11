@@ -1,0 +1,40 @@
+---
+// Preguntas frecuentes (M-07): la única fuente de las preguntas y respuestas, que se enseñan en la
+// portada y en "Cómo funciona". Es el patrón FAQ del kit (src/kit/system.css, .faq > .faq__item):
+// todas las respuestas abiertas, cada pregunta con su h3 y una raya debajo.
+import { REPO } from '../lib/enlaces.ts';
+---
+
+<div class="faq" data-testid="preguntas-frecuentes">
+  <div class="faq__item">
+    <h3>¿Guardáis mis respuestas?</h3>
+    <p>No. El cálculo se hace en tu navegador y tus respuestas no se envían a ningún sitio. Al cerrar la página, desaparecen.</p>
+  </div>
+  <div class="faq__item">
+    <h3>¿Por qué no aparece mi partido?</h3>
+    <p>Porque no se presenta en tu provincia o porque no tuvo diputados en el Congreso en la XIV o la XV.</p>
+  </div>
+  <div class="faq__item">
+    <h3>¿Por qué no me preguntáis qué opino?</h3>
+    <p>Porque la herramienta compara lo que los partidos votaron sobre situaciones concretas, no ideas.</p>
+  </div>
+  <div class="faq__item">
+    <h3>¿Puedo comprobarlo?</h3>
+    <p>
+      Sí. Cada votación enlaza a su página en el Congreso, y el catálogo, las etiquetas, los votos y el código son públicos
+      en <a href={REPO}>GitHub</a>.
+    </p>
+  </div>
+</div>
+
+<style>
+  .faq a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(var(--tinta-rgb) / 0.35);
+  }
+
+  .faq a:hover {
+    text-decoration-color: currentColor;
+  }
+</style>

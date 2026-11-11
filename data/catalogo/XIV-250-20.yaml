@@ -1,0 +1,57 @@
+votacion: XIV-250-20
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=30/03/2023"
+texto: https://www.boe.es/eli/es/rdl/2023/03/16/2
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2023-03-30
+titulo_oficial: >-
+  Real Decreto-ley 2/2023, de 16 de marzo, de medidas urgentes para la ampliación de derechos de
+  los pensionistas, la reducción de la brecha de género y el establecimiento de un nuevo marco de
+  sostenibilidad del sistema público de pensiones.
+titulo: "Reforma de las pensiones de 2023"
+resumen: >-
+  Sube las pensiones mínimas y no contributivas por encima de la inflación, refuerza el
+  complemento por brecha de género y, para financiarlo, sube la base máxima de cotización, crea
+  una cuota de solidaridad sobre los salarios que la superan y aumenta el mecanismo de equidad
+  intergeneracional.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado], ingresos: [mas-60k] }
+    el_si: perjudica
+    justificacion: >-
+      Quien gana más que la base máxima de cotización paga más cotización, por la subida de esa
+      base y la nueva cuota de solidaridad.
+    base: >-
+      Art. único, que modifica los arts. 19 y 127 bis y añade la disposición transitoria trigésima
+      novena de la Ley General de la Seguridad Social.
+  - cuando: { contrata: [empresa, hogar] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene a alguien contratado paga más por el mecanismo de equidad intergeneracional, que
+      sube cada año de los 0,6 puntos de 2023 a 1,2 en 2029 y se mantiene hasta 2050; de cada 1,2
+      puntos, uno corresponde a quien contrata.
+    base: >-
+      Art. único, apartado Dieciséis (nuevo art. 127 bis de la Ley General de la Seguridad
+      Social), y nueva disposición transitoria cuadragésima tercera de esa ley.
+justificacion: >-
+  Es la segunda pata de la reforma de pensiones de la XIV y la que fija quién la paga.
+extracto: >-
+  [Art. único, nuevo art. 127 bis.1 de la Ley General de la Seguridad Social] «se establece un
+  Mecanismo de Equidad Intergeneracional consistente en una cotización finalista aplicable en todos
+  los regímenes y en todos los supuestos en los que se cotice por la contingencia de jubilación,
+  que no será computable a efectos de prestaciones y que nutrirá el Fondo de Reserva de la
+  Seguridad Social. La cotización será de 1,2 puntos porcentuales. En el supuesto de trabajadores
+  por cuenta ajena un punto porcentual corresponderá a la empresa y 0,2 puntos porcentuales al
+  trabajador.» [Nueva disposición transitoria cuadragésima tercera] «En el año 2023, será de 0,60
+  puntos porcentuales, de los que el 0,50 corresponderá a la empresa y el 0,10 al trabajador.»
+  «En el año 2029, será de 1,2 puntos porcentuales, de los que el 1,00 corresponderá a la empresa y
+  el 0,2 al trabajador. Desde el año 2030 hasta 2050 se mantendrá el mismo porcentaje del 1,2, con
+  igual distribución entre empresario y trabajador.» [Nuevo art. 19 bis] «El importe de las
+  retribuciones a las que se refiere el artículo 147, que supere el importe de la base máxima de
+  cotización establecida para las personas trabajadoras por cuenta ajena del sistema de la
+  Seguridad Social a los que resulte de aplicación dicho artículo, quedará sujeto, en toda
+  liquidación de cuotas, a una cotización adicional de solidaridad» «La distribución del tipo de
+  cotización por solidaridad entre empresario y trabajador mantendrá la misma proporción que la
+  distribución del tipo de cotización por contingencias comunes.»

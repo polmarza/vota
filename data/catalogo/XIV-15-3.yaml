@@ -1,0 +1,57 @@
+votacion: XIV-15-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/03/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/02/25/5
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-03-25
+titulo_oficial: >-
+  Real Decreto-ley 5/2020, de 25 de febrero, por el que se adoptan determinadas medidas urgentes en
+  materia de agricultura y alimentación.
+titulo: "Precios por encima del coste en el campo (2020)"
+resumen: >-
+  Obliga a que cada operador de la cadena alimentaria pague al anterior al menos el coste efectivo
+  de producción y a que los contratos con agricultores, ganaderos, pescadores y productores
+  forestales indiquen expresamente que el precio lo cubre, y hace infracción grave incumplirlo.
+  Además, rebaja de 35 a 20 las jornadas reales cotizadas que necesitan los eventuales agrarios de
+  Andalucía y Extremadura para cobrar el subsidio por desempleo o la renta agraria, bonifica durante
+  dos años las cuotas de las empresas que conviertan antes de 2021 los contratos temporales de sus
+  trabajadores agrarios en indefinidos y deja repartir en cuatro años, en el IRPF, las ayudas a la
+  primera instalación de jóvenes agricultores. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo tiene derecho a que su comprador le pague al menos lo que le cuesta
+      producir, y vender por debajo pasa a ser una infracción grave.
+    base: >-
+      Artículo primero del Real Decreto-ley 5/2020 (arts. 9.1.c) y j), 12 ter y 23.2 de la Ley
+      12/2013 de la cadena alimentaria).
+justificacion: >-
+  Es la respuesta del Gobierno a las protestas del campo de 2020 y la reforma que introdujo la
+  prohibición de comprar por debajo del coste de producción.
+extracto: >-
+  cada operador de la misma deberá pagar al operador inmediatamente anterior un precio igual o
+  superior al coste efectivo de producción de tal producto en que efectivamente haya incurrido o
+  asumido dicho operador. […] «j) Indicación expresa de que el precio pactado entre el productor
+  primario agrario, ganadero, pesquero o forestal o una agrupación de éstos y su primer comprador
+  cubre el coste efectivo de producción.» […] será infracción grave no formalizar por escrito los
+  contratos alimentarios a que se refiere esta ley; no incorporar en el contrato alimentario el
+  precio recogido en el artículo 9.1 c); realizar modificaciones del precio incluido en el contrato
+  que no estén expresamente pactadas por las partes; la destrucción de valor en la cadena
+  alimentaria conforme al artículo 12 ter […] podrán ser beneficiarios del subsidio por desempleo
+  que regula el Real Decreto 5/1997, de 10 de enero, o de la renta agraria, regulada por el Real
+  Decreto 426/2003, de 11 de abril, aun cuando no tengan cubierto en el citado Sistema de la
+  Seguridad Social el número mínimo de jornadas reales cotizadas establecido en el artículo 2.1.c) o
+  en el artículo 2.1.d) de los citados reales decretos, respectivamente, siempre que tengan cubierto
+  en dicho Sistema Especial un mínimo de 20 jornadas reales cotizadas en los doce meses naturales
+  inmediatamente anteriores a la situación de desempleo […] que transformen, antes del 1 de enero
+  de 2021, los contratos de trabajo de duración temporal suscritos con esos trabajadores,
+  cualquiera que sea la fecha de su celebración, en contratos de duración indefinida, incluidos los
+  contratos fijos-discontinuos, tendrán derecho a las siguientes bonificaciones en la cuota
+  empresarial por contingencias comunes a la Seguridad Social, durante los dos años siguientes a la
+  transformación del contrato […] las ayudas públicas para la primera instalación de jóvenes
+  agricultores previstas en el Marco Nacional de Desarrollo Rural de España podrán imputarse por
+  cuartas partes, en el período impositivo en el que se obtengan y en los tres siguientes.

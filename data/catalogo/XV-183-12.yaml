@@ -1,0 +1,74 @@
+votacion: XV-183-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=28/05/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/05/12/11
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-05-28
+titulo_oficial: >-
+  Real Decreto-ley 11/2026, de 12 de mayo, por el que se modifica la aportación de los usuarios y sus
+  beneficiarios en la prestación farmacéutica ambulatoria.
+titulo: "Rebaja del copago de medicamentos (2026)"
+resumen: >-
+  Reforma el copago de los medicamentos con receta. Para los trabajadores en activo, la combinación
+  de porcentajes y topes pasa de tres a seis niveles de aportación según la renta: les pone por
+  primera vez un tope mensual si su renta es inferior a 35.000 euros (8,23 euros por debajo de
+  9.000, 18,52 de 9.000 a 18.000 y 61,75 de 18.000 a 35.000) y baja al 45 % del precio (antes, el
+  50 %) lo que pagan con rentas de 18.000 a 60.000 euros. Para los pensionistas con rentas de
+  18.000 a 60.000 euros añade un tope intermedio de 13,37 euros al mes, más bajo que los 18,52 que
+  regían hasta 100.000. Además, la exención de los pensionistas pasa a ligarse a cobrar el
+  complemento a mínimos, aunque quienes ya estaban exentos por su renta lo siguen estando. Se
+  convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: sanidad
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado, autonomo], ingresos: [hasta-16k, 16-30k] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja y gana menos de 30.000 euros pasa a tener un máximo mensual en lo que paga por
+      sus medicamentos con receta, que antes no tenía.
+    base: >-
+      Artículo único del Real Decreto-ley 11/2026 (art. 102.6.b), c) y d) del texto
+      refundido de la Ley de garantías y uso racional de los medicamentos).
+  - cuando: { trabajo: [jubilado], ingresos: [30-60k] }
+    el_si: favorece
+    justificacion: >-
+      Un pensionista con una renta de 30.000 a 60.000 euros pasa a pagar como máximo 13,37 euros al
+      mes por sus medicamentos, un tope más bajo que el que tenía.
+    base: >-
+      Artículo único del Real Decreto-ley 11/2026 (art. 102.6.f) del texto refundido de la Ley de
+      garantías y uso racional de los medicamentos).
+justificacion: >-
+  Es la reforma del copago farmacéutico de la XV, con un efecto directo y medible según la renta
+  de quien trabaja o cobra una pensión.
+extracto: >-
+  [Preámbulo, IV] «La combinación de umbrales de renta y topes aplicables da como resultado pasar de
+  tres niveles de aportación a seis niveles de aportación para las personas que ostentan la
+  condición de asegurado activo y sus beneficiarios, y de tres a cuatro niveles de aportación para
+  los pensionistas de la Seguridad Social y sus beneficiarios.» «Por ello se incorporan de manera
+  progresiva topes máximos de aportación en las personas que ostentan la condición de asegurado
+  activo y sus beneficiarios de rentas por debajo de 35.000 euros. También se introduce un tope
+  intermedio para los pensionistas de la Seguridad Social y sus beneficiarios en el tramo de renta
+  entre los 18.000 y los 60.000 euros (que anteriormente era similar para todo el bloque entre los
+  18.000 y los 100.000 euros).» [Artículo único (art. 102.5 del texto refundido)] «b) Un 50 % del
+  PVP para las personas que ostenten la condición de asegurado activo y sus beneficiarios, cuya
+  renta sea igual o superior a 60.000 euros e inferior a 100.000 euros» «c) Un 45 % del PVP para
+  las personas que ostenten la condición de asegurado activo y sus beneficiarios cuya renta sea
+  igual o superior a 18.000 euros e inferior a 60.000 euros» [Art. 102.6.b)] «Para los usuarios
+  que ostenten la condición de asegurado activo y sus beneficiarios cuya renta sea inferior a 9.000
+  euros […] hasta un límite máximo de aportación mensual de 8,23 euros.» [Art. 102.6.c)] «Para las
+  personas que ostenten la condición de asegurado activo y sus beneficiarios cuya renta sea igual o
+  superior a 9.000 euros e inferior a 18.000 euros […] hasta un límite máximo de aportación mensual
+  de 18,52 euros.» [Art. 102.6.d)] «Para las personas que ostenten la condición de asegurado activo
+  y sus beneficiarios cuya renta sea igual o superior a 18.000 euros e inferior a 35.000 euros […]
+  hasta un límite máximo de aportación mensual de 61,75 euros.» [Art. 102.6.f)] «Para las personas
+  que ostenten la condición de asegurado como pensionistas de la Seguridad Social y sus
+  beneficiarios cuya renta sea igual o superior a 18.000 euros e inferior a 60.000 euros […] hasta
+  un límite máximo de aportación mensual de 13,37 euros.» [Art. 102.6.g)] «pensionistas de la
+  Seguridad Social y sus beneficiarios cuya renta sea igual o superior a 60.000 euros e inferior a
+  100.000 euros […] hasta un límite máximo de aportación mensual de 18,52 euros.» [Art. 102.8.i)]
+  «Los pensionistas de la Seguridad Social perceptores de los complementos para pensiones inferiores
+  a la mínima» [Disposición transitoria única] «Los pensionistas de la Seguridad Social que, a la
+  fecha de entrada en vigor de la redacción dada por este real decreto-ley al artículo 102.8 i) […]
+  no superaran los niveles de renta establecidos en su redacción anterior, continuarán exentos de la
+  aportación del usuario en la prestación farmacéutica ambulatoria»

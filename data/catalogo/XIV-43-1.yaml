@@ -1,0 +1,30 @@
+votacion: XIV-43-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=22/09/2020"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-85-1.PDF
+iniciativa: "Proposición de ley del Grupo Plural"
+fecha: 2020-09-22
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Plural, de modificación de la Ley 3/2004, de 29 de
+  diciembre, por la que se establecen medidas de lucha contra la morosidad en las operaciones
+  comerciales, con el fin de regular un régimen de infracciones y sanciones.
+titulo: "Multas a quien paga tarde las facturas"
+resumen: >-
+  Propuesta para sancionar con multas a las empresas que pagan sus facturas fuera del plazo legal
+  y para que quien no cobra una factura pueda recuperar el IVA que ya ha adelantado a Hacienda a
+  los 30 días de vencer el plazo de pago. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo que no cobra una factura podría recuperar el IVA adelantado a los 30 días del
+      vencimiento, y los clientes que le pagan tarde se expondrían a multas.
+    base: >-
+      Art. 1 (nuevos arts. 15 a 25 de la Ley 3/2004, régimen sancionador) y art. 4, que modifica
+      el art. 80.Cuatro de la Ley del IVA.
+justificacion: >-
+  Los retrasos en el cobro de facturas son uno de los principales problemas de los autónomos y
+  esta es la iniciativa de las dos legislaturas que los ataca con sanciones.

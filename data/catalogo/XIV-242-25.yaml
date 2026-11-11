@@ -1,0 +1,30 @@
+votacion: XIV-242-25
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=09/03/2023"
+texto: https://www.boe.es/eli/es/lo/2023/03/22/2
+iniciativa: "Proyecto de ley orgánica del Gobierno"
+fecha: 2023-03-09
+titulo_oficial: Proyecto de Ley Orgánica del Sistema Universitario
+titulo: "Ley de universidades (LOSU)"
+resumen: >-
+  Nueva ley orgánica de universidades, que sustituye a la de 2001. Reconoce a los estudiantes
+  universitarios el derecho subjetivo a las becas y ayudas al estudio cuando cumplan los requisitos y
+  obliga a fijar los precios públicos de las matrículas dentro de un marco de contención o reducción
+  progresiva. También cambia el profesorado, el gobierno de las universidades y su financiación. Se
+  aprobó y es la Ley Orgánica 2/2023.
+que_significa_si: >-
+  Votar sí era aprobar la ley orgánica en la votación de conjunto final, tras las enmiendas del
+  Senado.
+tema: educacion
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [estudiante] }
+    el_si: favorece
+    justificacion: >-
+      Quien estudia en la universidad pasa a tener reconocido por ley el derecho a la beca si cumple los
+      requisitos, y las comunidades deben fijar las matrículas públicas conteniéndolas o bajándolas.
+    base: >-
+      Art. 32.1 (derecho subjetivo a becas y ayudas al estudio) y art. 57.4.b) (precios públicos en un
+      marco de contención o reducción progresiva) de la Ley Orgánica 2/2023.
+justificacion: >-
+  Es la ley de universidades de la XIV y la que regula los derechos económicos de los estudiantes
+  universitarios (becas y matrícula).

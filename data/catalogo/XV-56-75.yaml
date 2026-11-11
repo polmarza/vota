@@ -1,0 +1,61 @@
+votacion: XV-56-75
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=23/07/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/06/26/4
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-07-23
+titulo_oficial: >-
+  Real Decreto-ley 4/2024, de 26 de junio, por el que se prorrogan determinadas medidas para
+  afrontar las consecuencias económicas y sociales derivadas de los conflictos en Ucrania y
+  Oriente Próximo y se adoptan medidas urgentes en materia fiscal, energética y social.
+titulo: "IVA de los alimentos, IRPF de sueldos bajos y bono social (2024)"
+resumen: >-
+  Prorroga hasta final de 2024 la rebaja del IVA de los alimentos básicos y del aceite, amplía la
+  reducción del IRPF para los sueldos más bajos, alarga los descuentos reforzados del bono social
+  eléctrico hasta junio de 2025 y sube un 2 % el sueldo del personal público en 2024. El Congreso
+  lo convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando: { ingresos: [hasta-16k], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra un sueldo bajo paga menos IRPF, porque la reducción por rendimientos del trabajo
+      sube a 7.302 euros y alcanza a rendimientos netos de hasta 19.747,5 euros.
+    base: >-
+      Art. 3, apartado Uno, del Real Decreto-ley 4/2024 (nueva redacción del art. 20 de la Ley
+      del IRPF).
+  - cuando: { trabajo: [funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja en el sector público tenía una subida de sueldo del 2 % en 2024, más un 0,5 %
+      adicional si la inflación superaba la subida acumulada.
+    base: >-
+      Art. 6 del Real Decreto-ley 4/2024 (incremento retributivo del personal al servicio del
+      sector público para 2024).
+justificacion: >-
+  Reúne medidas fiscales y retributivas con efecto directo en sueldos bajos y personal público.
+extracto: >-
+  [Art. 1.Uno.2] «Se aplicará el tipo del 0 por ciento del Impuesto sobre el Valor Añadido a las
+  entregas, importaciones y adquisiciones intracomunitarias de los siguientes productos: a) El pan
+  común […] e) Los huevos. f) Las frutas, verduras, hortalizas, legumbres, tubérculos y cereales
+  […] g) Los aceites de oliva.» [Art. 1.Dos] «Con efectos desde el 1 de octubre de 2024 y vigencia
+  hasta el 31 de diciembre de 2024: 1. Se aplicará el tipo del 7,5 por ciento […] a) Los aceites
+  de semillas. b) Las pastas alimenticias. […] 2. Se aplicará el tipo del 2 por ciento […]» [Art.
+  3.Uno (art. 20 Ley del IRPF)] «Los contribuyentes con rendimientos netos del trabajo inferiores
+  a 19.747,5 euros siempre que no tengan rentas, excluidas las exentas, distintas de las del
+  trabajo superiores a 6.500 euros, minorarán el rendimiento neto del trabajo en las siguientes
+  cuantías: a) Contribuyentes con rendimientos netos del trabajo iguales o inferiores a 14.852
+  euros: 7.302 euros anuales.» [Art. 6.1] «En el año 2024, las retribuciones del personal al
+  servicio del sector público podrán experimentar un incremento global máximo del 2 por ciento
+  respecto a las vigentes a 31 de diciembre de 2023 […]» [Art. 6.2] «[…] se aplicará, en su caso,
+  un incremento retributivo adicional y consolidable del 0,5 por ciento, respecto a las
+  retribuciones vigentes a 31 de diciembre de 2023, si la suma de la variación del IPCA de los
+  años 2022, 2023 y 2024 superara el incremento retributivo fijo acumulado de 2022, 2023 y 2024.»
+  [Art. 20] «Excepcionalmente, con efectos desde el 1 de julio de 2024 y vigencia hasta el 30 de
+  junio de 2025, los descuentos del bono social aplicables a los consumidores domésticos de
+  energía eléctrica […] serán los siguientes: a) Con efectos desde el 1 de julio de 2024 y hasta
+  el 30 de septiembre de 2024, el descuento correspondiente al consumidor vulnerable será del 65
+  por ciento. […] d) Con efectos desde el 1 de abril de 2025 y hasta el 30 de junio de 2025, el
+  descuento correspondiente al consumidor vulnerable será del 42,5 por ciento.»

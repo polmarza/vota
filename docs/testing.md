@@ -19,7 +19,7 @@ credibilidad. Por eso la prioridad no es la pirámide clásica, sino tres frente
 3. **Flujo y privacidad** — pocos e2e que recorren el test completo en un navegador real y
    comprueban que ninguna respuesta sale del navegador.
 
-Lo visual (tipografía, ecualizador, maquetación en móvil) se valida con revisión humana.
+Lo visual (tipografía, ventanas, animaciones, maquetación en móvil) se valida con revisión humana.
 
 ---
 
@@ -97,7 +97,7 @@ Reglas que se derivan de eso:
   simuladas (formato válido, inválido, modelo caído).
 - **La descarga del Congreso**: se prueba el parser con archivos reales guardados en
   `tests/fixtures/congreso/`, no la red.
-- **Estética**: tipografías, animación del ecualizador, imagen para compartir a nivel de píxel →
+- **Estética**: tipografías, animaciones de la portada, imagen para compartir a nivel de píxel →
   revisión humana.
 
 ---

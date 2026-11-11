@@ -1,0 +1,54 @@
+votacion: XIV-138-83
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=02/12/2021"
+texto: https://www.boe.es/eli/es/l/2021/12/28/21
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2021-12-02
+titulo_oficial: >-
+  Proyecto de Ley de garantía del poder adquisitivo de las pensiones y de otras medidas de
+  refuerzo de la sostenibilidad financiera y social del sistema público de pensiones
+titulo: "Pensiones ligadas al IPC"
+resumen: >-
+  Fija por ley que las pensiones contributivas suban cada año según la inflación media de los doce
+  meses anteriores a diciembre, sin bajar si es negativa; deroga el índice de revalorización de 2013
+  y el factor de sostenibilidad, y crea el mecanismo de equidad intergeneracional: una cotización
+  adicional de 0,6 puntos de 2023 a 2032, repartida entre empresa y trabajador como el resto de la
+  cotización. Además revisa los coeficientes que reducen la pensión por jubilación anticipada
+  voluntaria, incentiva retrasar la jubilación (un 4 % más de pensión o un pago único por cada año
+  trabajado de más) y prohíbe en los convenios la jubilación forzosa antes de los 68 años.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión tiene garantizado por ley que sube cada año con la inflación media.
+    base: >-
+      Art. 1, que modifica el art. 58 de la Ley General de la Seguridad Social.
+  - cuando: { contrata: [empresa, hogar] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene a alguien contratado paga una cotización adicional de 0,6 puntos de 2023 a 2032,
+      de la que la mayor parte corresponde a quien contrata, con el mismo reparto que el resto de
+      la cotización.
+    base: >-
+      Disposición final cuarta (mecanismo de equidad intergeneracional), letras a) y b).
+justificacion: >-
+  Es la ley que garantiza la revalorización de las pensiones con el IPC.
+extracto: >-
+  las pensiones de Seguridad Social, en su modalidad contributiva, incluido el importe de la pensión
+  mínima, se revalorizarán al comienzo de cada año en el porcentaje equivalente al valor medio de
+  las tasas de variación interanual expresadas en tanto por ciento del Índice de Precios al Consumo
+  de los doce meses previos a diciembre del año anterior. 3. Si el valor medio al que se refiere el
+  apartado anterior fuera negativo, el importe de las pensiones no variará al comienzo del año. […]
+  Quedan derogados expresamente el párrafo último del apartado 1 del artículo 210 y el artículo 211
+  del texto refundido de la Ley General de la Seguridad Social […] A partir de 2023, y a lo largo de
+  un periodo de diez años, se fijará una cotización adicional finalista que nutrirá el Fondo de
+  Reserva de la Seguridad Social en los siguientes términos: a) La cotización será de 0,6 puntos
+  porcentuales, siguiendo la estructura actual de distribución entre empresa y trabajador. b) Esta
+  cotización finalista se mantendrá hasta 2032. […] en materia de jubilación anticipada voluntaria,
+  se revisan los coeficientes reductores aplicables […] la obtención de un porcentaje adicional del 4
+  por ciento por cada año completo de trabajo efectivo que acredite con posterioridad al
+  cumplimiento de la edad de jubilación […] se contempla la prohibición de cláusulas convencionales
+  que prevean la jubilación forzosa del trabajador a una edad inferior a los sesenta y ocho años

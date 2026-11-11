@@ -75,7 +75,7 @@ El procedimiento completo —comprobar lo ya configurado, elegir alcance (`user`
 **Descripción:** Web anónima que, a partir de tu situación personal, te dice qué partidos te han
 favorecido y cuáles te han perjudicado según lo que votaron en el Congreso (legislaturas XIV y XV),
 para las elecciones generales del 29 de noviembre de 2026.
-**Estado actual:** En desarrollo. Fecha límite: en producción antes del 13 de noviembre de 2026.
+**Estado actual:** En desarrollo. Fecha límite: en producción antes del 20 de noviembre de 2026.
 
 Lo firma Pol Marzà bajo Con Criterio. La neutralidad es el requisito que lo sostiene todo: Claude
 selecciona y etiqueta las votaciones, un jurado de cinco modelos de otras empresas las revisa, y
@@ -85,7 +85,7 @@ Pol no interviene en las etiquetas.
 
 ## Stack tecnológico
 
-- Framework: Astro 5 (salida estática) + TypeScript estricto, sin framework de UI
+- Framework: Astro 7 (salida estática) + TypeScript estricto, sin framework de UI
 - Base de datos: ninguna. Los datos son archivos en `data/` validados con Zod
 - Estilos: CSS propio con custom properties; Instrument Serif e Inter autoalojadas (`@fontsource`)
 - Despliegue: Vercel (integración con GitHub); DNS en Hostinger
@@ -241,8 +241,8 @@ Si la carpeta `mejoras/` no existe, créala.
 
 ## Notas adicionales
 
-- **Riesgo abierto:** confirmar en qué formato publica el Congreso las votaciones nominales de la
-  XIV y la XV antes de construir la ingesta (ver `docs/architecture.md`).
+- **Formato del Congreso verificado:** JSON por votación en la XIV y la XV; las últimas sesiones de
+  la XV solo tienen PNG (ver `docs/features/ingesta-congreso.md`).
 - Las candidaturas proclamadas se publican en el BOE unas cuatro semanas antes del 29-N; hasta
   entonces `data/candidaturas/2026.yaml` es provisional.
 - Del 24 al 29 de noviembre (cinco días previos a las elecciones) no se publican cambios de

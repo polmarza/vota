@@ -1,0 +1,2444 @@
+[
+ {
+  "nombre": "Ábalos Meco, José Luis",
+  "formacion": "PSOE",
+  "circunscripcion": "Valencia/València",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Abascal Conde, Santiago",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Aceves Galindo, José Luis",
+  "formacion": "PSOE",
+  "circunscripcion": "Segovia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Agirretxea Urresti, Joseba Andoni",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Aizcorbe Torra, Juan José",
+  "formacion": "Vox",
+  "circunscripcion": "Barcelona",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Aizpurua Arzallus, Mertxe",
+  "formacion": "EH Bildu",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "eh-bildu"
+ },
+ {
+  "nombre": "Alcaraz Martos, Francisco José",
+  "formacion": "Vox",
+  "circunscripcion": "Jaén",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Alfonso Cendón, Javier",
+  "formacion": "PSOE",
+  "circunscripcion": "León",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Almodóbar Barceló, Agustín",
+  "formacion": "PP",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Alonso Pérez, José Ángel",
+  "formacion": "PP",
+  "circunscripcion": "Valladolid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Alonso Suárez, María Olga",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Pontevedra",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Alonso-Cuevillas i Sayrol, Jaume",
+  "formacion": "JxCat-JUNTS",
+  "circunscripcion": "Barcelona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Álvarez de Toledo Peralta-Ramos, Cayetana",
+  "formacion": "PP",
+  "circunscripcion": "Barcelona",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Álvarez Fanjul, Beatriz",
+  "formacion": "PP",
+  "circunscripcion": "Bizkaia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Álvarez i García, Gerard",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Andrés Añón, Carmen",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Andrés Barea, Josefa",
+  "formacion": "PSOE",
+  "circunscripcion": "Valencia/València",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Anguita Pérez, Omar",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Angulo Romero, María Teresa",
+  "formacion": "PP",
+  "circunscripcion": "Badajoz",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Antón Cacho, Javier",
+  "formacion": "PSOE",
+  "circunscripcion": "Soria",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Aragonés Mendiguchía, Carlos",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Aranda Vargas, Francisco",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Arangüena Fernández, Pablo",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Coruña (A)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Araujo Morales, Gemma",
+  "formacion": "PSOE",
+  "circunscripcion": "Cádiz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Arribas Maroto, Manuel",
+  "formacion": "PSOE",
+  "circunscripcion": "Ávila",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Arrimadas García, Inés",
+  "formacion": "Cs",
+  "circunscripcion": "Barcelona",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Asarta Cuevas, Alberto",
+  "formacion": "Vox",
+  "circunscripcion": "Castellón/Castelló",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Asens Llodrà, Jaume",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Barcelona",
+  "partido": "comuns"
+ },
+ {
+  "nombre": "Azorín Salar, Lázaro",
+  "formacion": "PSOE",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Bal Francés, Edmundo",
+  "formacion": "Cs",
+  "circunscripcion": "Madrid",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Baldoví Roda, Joan",
+  "formacion": "MÉS COMPROMÍS",
+  "circunscripcion": "Valencia/València",
+  "partido": "compromis"
+ },
+ {
+  "nombre": "Baños Ruiz, Carmen",
+  "formacion": "PSOE",
+  "circunscripcion": "Murcia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Barandiaran Benito, Íñigo",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Bas Corugeira, Javier",
+  "formacion": "PP",
+  "circunscripcion": "Pontevedra",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Bassa Coll, Montserrat",
+  "formacion": "ERC-S",
+  "circunscripcion": "Girona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Batet Lamaña, Meritxell",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Bel Accensi, Ferran",
+  "formacion": "JxCat-JUNTS (PDeCAT)",
+  "circunscripcion": "Tarragona",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Belarra Urteaga, Ione",
+  "formacion": "UP",
+  "circunscripcion": "Navarra",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Beltrán Villalba, Ana María",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Berja Vega, Laura",
+  "formacion": "PSOE",
+  "circunscripcion": "Jaén",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Bermúdez de Castro Fernández, José Antonio",
+  "formacion": "PP",
+  "circunscripcion": "Salamanca",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Betoret Coll, Vicente",
+  "formacion": "PP",
+  "circunscripcion": "Valencia/València",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Blanquer Alcaraz, Patricia",
+  "formacion": "PSOE",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Boadella Esteve, Genís",
+  "formacion": "JxCat-JUNTS (PDeCAT)",
+  "circunscripcion": "Barcelona",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Borràs Castanyer, Laura",
+  "formacion": "JxCat-JUNTS",
+  "circunscripcion": "Barcelona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Borrás Pabón, Mireia",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Borrego Cortés, Isabel María",
+  "formacion": "PP",
+  "circunscripcion": "Murcia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Botella Gómez, Ana María",
+  "formacion": "PSOE",
+  "circunscripcion": "Valencia/València",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Botran Pahissa, Albert",
+  "formacion": "CUP-PR",
+  "circunscripcion": "Barcelona",
+  "partido": "cup"
+ },
+ {
+  "nombre": "Bravo Barco, Eva",
+  "formacion": "PSOE",
+  "circunscripcion": "Cádiz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Bueno Campanario, Eva Patricia",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Bueno Pinto, José Luis",
+  "formacion": "UP",
+  "circunscripcion": "Cádiz",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Bustamante Martín, Miguel Ángel",
+  "formacion": "UP",
+  "circunscripcion": "Sevilla",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Caballero Gutiérrez, Helena",
+  "formacion": "PSOE",
+  "circunscripcion": "Valladolid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cabezón Casas, Tomás",
+  "formacion": "PP",
+  "circunscripcion": "Soria",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Callejas Cano, Juan Antonio",
+  "formacion": "PP",
+  "circunscripcion": "Ciudad Real",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Calvo Gómez, Pilar",
+  "formacion": "JxCat-JUNTS (Junts)",
+  "circunscripcion": "Barcelona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Calvo Liste, Pablo Juan",
+  "formacion": "Vox",
+  "circunscripcion": "León",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Calvo Poyato, Carmen",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cambronero Piqueras, Pablo",
+  "formacion": "Cs",
+  "circunscripcion": "Sevilla",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Campo Moreno, Juan Carlos",
+  "formacion": "PSOE",
+  "circunscripcion": "Cádiz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Canales Duque, Mariana de Gracia",
+  "formacion": "PSOE",
+  "circunscripcion": "Cuenca",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cancela Rodríguez, Pilar",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Coruña (A)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cantera de Castro, Zaida",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cañadell Salvia, Concep",
+  "formacion": "JxCat-JUNTS (PDeCAT)",
+  "circunscripcion": "Lleida",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Cañizares Pacheco, Inés María",
+  "formacion": "Vox",
+  "circunscripcion": "Toledo",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Capdevila i Esteve, Joan",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Carazo Hermoso, Eduardo",
+  "formacion": "PP",
+  "circunscripcion": "Valladolid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Carcedo Roces, María Luisa",
+  "formacion": "PSOE",
+  "circunscripcion": "Asturias",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Carrillo de los Reyes, Beatriz Micaela",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Carvalho Dantas, María",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Casado Blanco, Pablo",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Casares Hontañón, Pedro",
+  "formacion": "PSOE",
+  "circunscripcion": "Cantabria",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Casero Ávila, Alberto",
+  "formacion": "PP",
+  "circunscripcion": "Cáceres",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Castellón Rubio, Miguel Ángel",
+  "formacion": "PP",
+  "circunscripcion": "Almería",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Castillo López, Elena",
+  "formacion": "PP",
+  "circunscripcion": "Cantabria",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Celaá Diéguez, Isabel",
+  "formacion": "PSE-EE-PSOE",
+  "circunscripcion": "Araba/Álava",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cerdán León, Santos",
+  "formacion": "PSOE",
+  "circunscripcion": "Navarra",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cerqueiro González, Javier",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Lugo",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Chamorro Delmo, Ricardo",
+  "formacion": "Vox",
+  "circunscripcion": "Ciudad Real",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Clavell López, Óscar",
+  "formacion": "PP",
+  "circunscripcion": "Castellón/Castelló",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Constenla Carbón, Juan Manuel",
+  "formacion": "PP",
+  "circunscripcion": "Pontevedra",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Contreras Peláez, Francisco José",
+  "formacion": "Vox",
+  "circunscripcion": "Sevilla",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Corredor Sierra, María Beatriz",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cortés Carballo, Mario",
+  "formacion": "PP",
+  "circunscripcion": "Málaga",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Cortés Gómez, Ismael",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Tarragona",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Crespín Rubio, Rafaela",
+  "formacion": "PSOE",
+  "circunscripcion": "Córdoba",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Cruz-Guzmán García, María Soledad",
+  "formacion": "PP",
+  "circunscripcion": "Sevilla",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Cuatrecasas Asua, Juan",
+  "formacion": "PSOE",
+  "circunscripcion": "Rioja (La)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "De las Heras Fernández, Patricia",
+  "formacion": "Vox",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "vox"
+ },
+ {
+  "nombre": "De Luna Tobarra, Llanos",
+  "formacion": "PP",
+  "circunscripcion": "Barcelona",
+  "partido": "pp"
+ },
+ {
+  "nombre": "De Meer Méndez, Rocío",
+  "formacion": "Vox",
+  "circunscripcion": "Almería",
+  "partido": "vox"
+ },
+ {
+  "nombre": "De Quinto Romero, Marcos",
+  "formacion": "Cs",
+  "circunscripcion": "Madrid",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Del Valle de Iscar, Julio",
+  "formacion": "PSOE",
+  "circunscripcion": "Valladolid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Del Valle Rodríguez, Emilio Jesús",
+  "formacion": "Vox",
+  "circunscripcion": "Cantabria",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Delgado Arce, Celso Luis",
+  "formacion": "PP",
+  "circunscripcion": "Ourense",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Delgado García, Dolores",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Delgado Ramos, Juan Antonio",
+  "formacion": "UP",
+  "circunscripcion": "Cádiz",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Díaz Gómez, Guillermo",
+  "formacion": "Cs",
+  "circunscripcion": "Málaga",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Díaz Pérez, Yolanda",
+  "formacion": "EC-UP",
+  "circunscripcion": "Pontevedra",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Díaz Rodríguez, José Carlos",
+  "formacion": "PSOE",
+  "circunscripcion": "Albacete",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Diouf Dioh, Luc Andre",
+  "formacion": "PSOE",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Duque Duque, Pedro",
+  "formacion": "PSOE",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Duque Morán, José Francisco",
+  "formacion": "PSOE",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Durán Peralta, José Carlos",
+  "formacion": "PSOE",
+  "circunscripcion": "Málaga",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Echániz Salgado, José Ignacio",
+  "formacion": "PP",
+  "circunscripcion": "Guadalajara",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Echenique Robba, Pablo",
+  "formacion": "UP",
+  "circunscripcion": "Zaragoza",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Elizo Serrano, María Gloria",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Elorriaga Pisarik, Gabriel",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Elorza González, Odón",
+  "formacion": "PSE-EE-PSOE",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Eritja Ciuró, Francesc Xavier",
+  "formacion": "ERC-S",
+  "circunscripcion": "Lleida",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Errejón Galván, Íñigo",
+  "formacion": "MÁS PAÍS-EQUO",
+  "circunscripcion": "Madrid",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "España Reina, Carolina",
+  "formacion": "PP",
+  "circunscripcion": "Málaga",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Espejo-Saavedra Conesa, José María",
+  "formacion": "Cs",
+  "circunscripcion": "Barcelona",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Espinosa de los Monteros de Simón, Iván",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Esteban Bravo, Aitor",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Bizkaia",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Esteban Calonje, Cristina Alicia",
+  "formacion": "Vox",
+  "circunscripcion": "Valencia/València",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Fagúndez Campo, Antidio",
+  "formacion": "PSOE",
+  "circunscripcion": "Zamora",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Faneca López, María Luisa",
+  "formacion": "PSOE",
+  "circunscripcion": "Huelva",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Fernández Benéitez, Andrea",
+  "formacion": "PSOE",
+  "circunscripcion": "León",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Fernández Casero, Ana Belén",
+  "formacion": "PSOE",
+  "circunscripcion": "Cáceres",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Fernández Castañón, Sofía",
+  "formacion": "UP",
+  "circunscripcion": "Asturias",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Fernández Hernández, Pedro",
+  "formacion": "Vox",
+  "circunscripcion": "Zaragoza",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Fernández Pérez, María",
+  "formacion": "NC-CCa-PNC",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "cc"
+ },
+ {
+  "nombre": "Fernández Ríos, Tomás",
+  "formacion": "Vox",
+  "circunscripcion": "Huelva",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Fernández-Lomana Gutiérrez, Rafael",
+  "formacion": "Vox",
+  "circunscripcion": "Albacete",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Fernández-Roca Suárez, Carlos Hugo",
+  "formacion": "Vox",
+  "circunscripcion": "Almería",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Ferrer Tesoro, Sonia",
+  "formacion": "PSOE",
+  "circunscripcion": "Almería",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Figaredo Álvarez-Sala, José María",
+  "formacion": "Vox",
+  "circunscripcion": "Asturias",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Franco Carmona, Isabel",
+  "formacion": "UP",
+  "circunscripcion": "Sevilla",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Franco Pardo, José Manuel",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Fuentes Curbelo, Juan Bernardo",
+  "formacion": "PSOE",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Gago Bugarín, Diego",
+  "formacion": "PP",
+  "circunscripcion": "Pontevedra",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Gamarra Ruiz-Clavijo, Concepción",
+  "formacion": "PP",
+  "circunscripcion": "Rioja (La)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Gamazo Micó, Óscar",
+  "formacion": "PP",
+  "circunscripcion": "Valencia/València",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Garcés Sanagustín, Mario",
+  "formacion": "PP",
+  "circunscripcion": "Huesca",
+  "partido": "pp"
+ },
+ {
+  "nombre": "García Adanero, Carlos",
+  "formacion": "NA+",
+  "circunscripcion": "Navarra",
+  "partido": "upn"
+ },
+ {
+  "nombre": "García Chavarría, María Montserrat",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Coruña (A)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "García Díez, Joaquín María",
+  "formacion": "PP",
+  "circunscripcion": "Lugo",
+  "partido": "pp"
+ },
+ {
+  "nombre": "García Egea, Teodoro",
+  "formacion": "PP",
+  "circunscripcion": "Murcia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "García Gómez, Valentín",
+  "formacion": "PSOE",
+  "circunscripcion": "Badajoz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "García Gurrutxaga, María Luisa",
+  "formacion": "PSE-EE-PSOE",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "García López, Maribel",
+  "formacion": "PSOE",
+  "circunscripcion": "Badajoz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "García Morís, Roberto",
+  "formacion": "PSOE",
+  "circunscripcion": "Asturias",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "García Nieto, Ezequiel",
+  "formacion": "UP",
+  "circunscripcion": "Sevilla",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "García Puig, María del Mar",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Barcelona",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "García Rodríguez, Alicia",
+  "formacion": "PP",
+  "circunscripcion": "Ávila",
+  "partido": "pp"
+ },
+ {
+  "nombre": "García Tejerina, Isabel",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "García-Pelayo Jurado, María José",
+  "formacion": "PP",
+  "circunscripcion": "Cádiz",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Garrido Gutiérrez, Pilar",
+  "formacion": "UP",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Garriga Vaz de Concicao, Ignacio",
+  "formacion": "Vox",
+  "circunscripcion": "Barcelona",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Garzón Espinosa, Alberto",
+  "formacion": "UP",
+  "circunscripcion": "Málaga",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Gázquez Collado, Paloma",
+  "formacion": "PP-FORO",
+  "circunscripcion": "Asturias",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Gestoso de Miguel, Luis",
+  "formacion": "Vox",
+  "circunscripcion": "Murcia",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Gil Lázaro, Ignacio",
+  "formacion": "Vox",
+  "circunscripcion": "Valencia/València",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Giménez Giménez, Sara",
+  "formacion": "Cs",
+  "circunscripcion": "Madrid",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Gómez Hernández, Héctor",
+  "formacion": "PSOE",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Gómez-Reino Varela, Antonio",
+  "formacion": "EC-UP",
+  "circunscripcion": "Coruña (A)",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "González Caballero, Miguel Ángel",
+  "formacion": "PSOE",
+  "circunscripcion": "Ciudad Real",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "González Coello de Portugal, Víctor",
+  "formacion": "Vox",
+  "circunscripcion": "Salamanca",
+  "partido": "vox"
+ },
+ {
+  "nombre": "González Guinda, María del Carmen",
+  "formacion": "PP",
+  "circunscripcion": "León",
+  "partido": "pp"
+ },
+ {
+  "nombre": "González Laso, Natividad",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Coruña (A)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "González Muñoz, Ángel Luis",
+  "formacion": "PP",
+  "circunscripcion": "Málaga",
+  "partido": "pp"
+ },
+ {
+  "nombre": "González Pérez, Ariagona",
+  "formacion": "PSOE",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "González Ramos, Manuel Gabriel",
+  "formacion": "PSOE",
+  "circunscripcion": "Albacete",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "González Terol, Antonio",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "González Vázquez, Marta",
+  "formacion": "PP",
+  "circunscripcion": "Coruña (A)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Gorospe Elezcano, Josune",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Bizkaia",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Grande-Marlaska Gómez, Fernando",
+  "formacion": "PSOE",
+  "circunscripcion": "Cádiz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Granollers Cunillera, Inés",
+  "formacion": "ERC-S",
+  "circunscripcion": "Lleida",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Guaita Esteruelas, Sandra",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Tarragona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Guerra López, Sonia",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Guijarro Ceballos, María",
+  "formacion": "PSE-EE-PSOE",
+  "circunscripcion": "Bizkaia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Guijarro García, Txema",
+  "formacion": "UP",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Guinart Moreno, Lídia",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Guirao Cabrera, José",
+  "formacion": "PSOE",
+  "circunscripcion": "Almería",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Guitarte Gimeno, Tomás",
+  "formacion": "¡Teruel Existe!",
+  "circunscripcion": "Teruel",
+  "partido": "teruel-existe"
+ },
+ {
+  "nombre": "Gutiérrez Díaz de Otazu, Fernando Adolfo",
+  "formacion": "PP",
+  "circunscripcion": "Melilla",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Gutiérrez Prieto, Sergio",
+  "formacion": "PSOE",
+  "circunscripcion": "Toledo",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Gutiérrez Salinas, Indalecio",
+  "formacion": "PSOE",
+  "circunscripcion": "Almería",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Gutiérrez Vivas, Miguel Ángel",
+  "formacion": "Cs",
+  "circunscripcion": "Madrid",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Hernanz Costa, Sofía",
+  "formacion": "PSOE",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Herrero Bono, José Alberto",
+  "formacion": "PP",
+  "circunscripcion": "Teruel",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Hispán Iglesias de Ussel, Pablo",
+  "formacion": "PP",
+  "circunscripcion": "Granada",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Honrubia Hurtado, Pedro Antonio",
+  "formacion": "UP",
+  "circunscripcion": "Granada",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Hoyo Juliá, Belén",
+  "formacion": "PP",
+  "circunscripcion": "Valencia/València",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Hurtado Zurera, Antonio",
+  "formacion": "PSOE",
+  "circunscripcion": "Córdoba",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Iglesias Turrión, Pablo",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Illamola Dausà, Mariona",
+  "formacion": "JxCat-JUNTS (Junts)",
+  "circunscripcion": "Girona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Illueca Ballester, Héctor",
+  "formacion": "UP",
+  "circunscripcion": "Valencia/València",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Iñarritu García, Jon",
+  "formacion": "EH Bildu",
+  "circunscripcion": "Gipuzkoa",
+  "partido": "eh-bildu"
+ },
+ {
+  "nombre": "Izquierdo Roncero, José Javier",
+  "formacion": "PSOE",
+  "circunscripcion": "Valladolid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Jara Moreno, Mercedes",
+  "formacion": "Vox",
+  "circunscripcion": "Almería",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Jerez Juan, Miguel Ángel",
+  "formacion": "PP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Jiménez Linuesa, Beatriz",
+  "formacion": "PP",
+  "circunscripcion": "Cuenca",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Jiménez Revuelta, Rodrigo",
+  "formacion": "Vox",
+  "circunscripcion": "Segovia",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Jiménez-Becerril Barrio, María Teresa",
+  "formacion": "PP",
+  "circunscripcion": "Sevilla",
+  "partido": "pp"
+ },
+ {
+  "nombre": "José Vélez, Rafael",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Jover Díaz, Antonia",
+  "formacion": "UP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Lamuà Estañol, Marc",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Girona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Lastra Fernández, Adriana",
+  "formacion": "PSOE",
+  "circunscripcion": "Asturias",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Leal Fernández, Isaura",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ledesma Martín, Sebastián Jesús",
+  "formacion": "PP",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Legarda Uriarte, Mikel",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Araba/Álava",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Lima Cid, Fuensanta",
+  "formacion": "PSOE",
+  "circunscripcion": "Málaga",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "López Álvarez, María Teresa",
+  "formacion": "Vox",
+  "circunscripcion": "Ceuta",
+  "partido": "vox"
+ },
+ {
+  "nombre": "López Álvarez, Patxi",
+  "formacion": "PSE-EE-PSOE",
+  "circunscripcion": "Bizkaia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "López Cano, Ignacio",
+  "formacion": "PSOE",
+  "circunscripcion": "Málaga",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "López de Uralde Garmendia, Juan Antonio",
+  "formacion": "UP",
+  "circunscripcion": "Araba/Álava",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "López Domínguez, Laura",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Girona",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "López Maraver, Ángel",
+  "formacion": "Vox",
+  "circunscripcion": "Guadalajara",
+  "partido": "vox"
+ },
+ {
+  "nombre": "López Moya, Antonia",
+  "formacion": "PP",
+  "circunscripcion": "Murcia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "López Somoza, Gema",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "López Zamora, Cristina",
+  "formacion": "PSOE",
+  "circunscripcion": "Ciudad Real",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "López-Bas Valero, Juan Ignacio",
+  "formacion": "Cs",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Lorite Lorite, Andrés",
+  "formacion": "PP",
+  "circunscripcion": "Córdoba",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Losada Fernández, José",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Maestro Moliner, Roser",
+  "formacion": "UP",
+  "circunscripcion": "Valencia/València",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Manglano Albacar, Percival",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Manso Olivar, Rubén Silvano",
+  "formacion": "Vox",
+  "circunscripcion": "Málaga",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Máñez Rodríguez, Elena",
+  "formacion": "PSOE",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Marcos Domínguez, Pilar",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Marcos Moyano, María Dolores",
+  "formacion": "PP",
+  "circunscripcion": "Cáceres",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Marcos Ortega, Milagros",
+  "formacion": "PP",
+  "circunscripcion": "Palencia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Margall Sastre, Joan",
+  "formacion": "ERC-S",
+  "circunscripcion": "Girona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Marí Klose, Pau",
+  "formacion": "PSOE",
+  "circunscripcion": "Zaragoza",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Mariscal Anaya, Guillermo",
+  "formacion": "PP",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Mariscal Zabala, Manuel",
+  "formacion": "Vox",
+  "circunscripcion": "Toledo",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Maroto Illera, Reyes",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Márquez Guerrero, María",
+  "formacion": "UP",
+  "circunscripcion": "Sevilla",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Marra Domínguez, María Ángeles",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Pontevedra",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Marrodán Funes, María",
+  "formacion": "PSOE",
+  "circunscripcion": "Rioja (La)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Martín Llaguno, Marta",
+  "formacion": "Cs",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Martínez de Tejada Pérez, Carlos",
+  "formacion": "PP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Martínez Ferro, María Valentina",
+  "formacion": "PP",
+  "circunscripcion": "Coruña (A)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Martínez Granados, María Carmen",
+  "formacion": "Cs",
+  "circunscripcion": "Cádiz",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Martínez Oblanca, Isidro Manuel",
+  "formacion": "PP-FORO",
+  "circunscripcion": "Asturias",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Martínez Salmerón, Joaquín",
+  "formacion": "PSOE",
+  "circunscripcion": "Murcia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Martínez Seijo, María Luz",
+  "formacion": "PSOE",
+  "circunscripcion": "Palencia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Matarí Sáez, Juan José",
+  "formacion": "PP",
+  "circunscripcion": "Almería",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Mateu Istúriz, Jaime Miguel",
+  "formacion": "PP",
+  "circunscripcion": "Burgos",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Matute García de Jalón, Oskar",
+  "formacion": "EH Bildu",
+  "circunscripcion": "Bizkaia",
+  "partido": "eh-bildu"
+ },
+ {
+  "nombre": "Mayoral Perales, Rafael",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Mazón Ramos, José María",
+  "formacion": "PRC",
+  "circunscripcion": "Cantabria",
+  "partido": "prc"
+ },
+ {
+  "nombre": "Medel Pérez, Rosa María",
+  "formacion": "UP",
+  "circunscripcion": "Valencia/València",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Meijón Couselo, Guillermo Antonio",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Pontevedra",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Mena Arca, Joan",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Barcelona",
+  "partido": "comuns"
+ },
+ {
+  "nombre": "Méndez Monasterio, Lourdes",
+  "formacion": "Vox",
+  "circunscripcion": "Murcia",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Merino Martínez, Javier",
+  "formacion": "PP",
+  "circunscripcion": "Rioja (La)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Mestre Barea, Manuel",
+  "formacion": "Vox",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Mínguez García, Montse",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Lleida",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Miquel i Valentí, Sergi",
+  "formacion": "JxCat-JUNTS (PDeCAT)",
+  "circunscripcion": "Girona",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Miralles Martín, Onofre",
+  "formacion": "Vox",
+  "circunscripcion": "Granada",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Moneo Díez, María Sandra",
+  "formacion": "PP",
+  "circunscripcion": "Burgos",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Montero Cuadrado, María Jesús",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Montero Gil, Irene María",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Montesinos Aguayo, Pablo",
+  "formacion": "PP",
+  "circunscripcion": "Málaga",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Montesinos de Miguel, Macarena",
+  "formacion": "PP",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Montilla Martos, José Antonio",
+  "formacion": "PSOE",
+  "circunscripcion": "Granada",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Moraleja Gómez, Tristana María",
+  "formacion": "PP",
+  "circunscripcion": "Coruña (A)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Moro Almaraz, María Jesús",
+  "formacion": "PP",
+  "circunscripcion": "Salamanca",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Movellán Lombilla, Diego",
+  "formacion": "PP",
+  "circunscripcion": "Cantabria",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Muñoz Dalda, Lucía",
+  "formacion": "UP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Muñoz Vidal, María",
+  "formacion": "Cs",
+  "circunscripcion": "Valencia/València",
+  "partido": "cs"
+ },
+ {
+  "nombre": "Narváez Bandera, María Dolores",
+  "formacion": "PSOE",
+  "circunscripcion": "Málaga",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Nasarre Oliva, Begoña",
+  "formacion": "PSOE",
+  "circunscripcion": "Huesca",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Navalpotro Gómez, Julio",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Navarro Lacoba, Carmen",
+  "formacion": "PP",
+  "circunscripcion": "Albacete",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Navarro López, Pedro",
+  "formacion": "PP",
+  "circunscripcion": "Zaragoza",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Nevado del Campo, María Magdalena",
+  "formacion": "Vox",
+  "circunscripcion": "Cáceres",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Nogueras i Camero, Míriam",
+  "formacion": "JxCat-JUNTS (Junts)",
+  "circunscripcion": "Barcelona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Nuet Pujals, Joan Josep",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Olano Vela, Jaime Eduardo de",
+  "formacion": "PP",
+  "circunscripcion": "Lugo",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Olona Choclán, Macarena",
+  "formacion": "Vox",
+  "circunscripcion": "Granada",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Oramas González-Moro, Ana María",
+  "formacion": "CCa-PNC-NC",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "cc"
+ },
+ {
+  "nombre": "Oria López, María Inmaculada",
+  "formacion": "PSOE",
+  "circunscripcion": "Granada",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ortega Domínguez, José Ramón",
+  "formacion": "PSOE",
+  "circunscripcion": "Cádiz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ortega Otero, Marina",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Ourense",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ortega Smith-Molina, Francisco Javier",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Ortiz Galván, José",
+  "formacion": "PP",
+  "circunscripcion": "Cádiz",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Padilla Ruiz, Esther",
+  "formacion": "PSOE",
+  "circunscripcion": "Toledo",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Pagès i Massó, Josep",
+  "formacion": "JxCat-JUNTS (Junts)",
+  "circunscripcion": "Barcelona",
+  "partido": "junts"
+ },
+ {
+  "nombre": "Paniagua Núñez, Miguel Ángel",
+  "formacion": "PP",
+  "circunscripcion": "Palencia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pastor Julián, Ana María",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pedraja Sáinz, Raquel",
+  "formacion": "PSOE",
+  "circunscripcion": "Rioja (La)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Pedreño Molina, Juan Luis",
+  "formacion": "PP",
+  "circunscripcion": "Murcia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Peña Camarero, Esther",
+  "formacion": "PSOE",
+  "circunscripcion": "Burgos",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Perea i Conillas, María Mercè",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Pérez Abellás, Adolfo",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Ourense",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Pérez Díaz, María Auxiliadora",
+  "formacion": "PP",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pérez Merino, María Mercedes",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Pérez Recuerda, Isabel Gema",
+  "formacion": "PP",
+  "circunscripcion": "Málaga",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Picó Garcés, Maria Josep",
+  "formacion": "MÉS COMPROMÍS",
+  "circunscripcion": "Valencia/València",
+  "partido": "compromis"
+ },
+ {
+  "nombre": "Píriz Maya, Víctor Valentín",
+  "formacion": "PP",
+  "circunscripcion": "Badajoz",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pisarello Prados, Gerardo",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Barcelona",
+  "partido": "comuns"
+ },
+ {
+  "nombre": "Pita Cárdenes, María del Carmen",
+  "formacion": "UP",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Planas Puchades, Luis",
+  "formacion": "PSOE",
+  "circunscripcion": "Córdoba",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Polo Llavata, Francisco",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Pons Sampietro, Pere Joan",
+  "formacion": "PSOE",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Postigo Quintana, Jesús",
+  "formacion": "PP",
+  "circunscripcion": "Segovia",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pozueta Fernández, Isabel",
+  "formacion": "EH Bildu",
+  "circunscripcion": "Navarra",
+  "partido": "eh-bildu"
+ },
+ {
+  "nombre": "Prieto Nieto, Ana",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Lugo",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Prohens Rigo, Margarita",
+  "formacion": "PP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Pujol i Farré, Norma",
+  "formacion": "ERC-S",
+  "circunscripcion": "Tarragona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Quevedo Iturbe, Pedro",
+  "formacion": "NC-CCa-PNC",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "nc"
+ },
+ {
+  "nombre": "Quintanilla Navarro, Miguel Ángel",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Ramallo Vázquez, María Pilar",
+  "formacion": "PP",
+  "circunscripcion": "Pontevedra",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Ramírez Carner, Arnau",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ramírez del Río, José",
+  "formacion": "Vox",
+  "circunscripcion": "Córdoba",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Ramón Utrabo, Elvira",
+  "formacion": "PSOE",
+  "circunscripcion": "Granada",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ramos Esteban, César Joaquín",
+  "formacion": "PSOE",
+  "circunscripcion": "Cáceres",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ramos Rodríguez, José Luis",
+  "formacion": "PSOE",
+  "circunscripcion": "Huelva",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Raya Rodríguez, María Tamara",
+  "formacion": "PSOE",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Redondo Calvillo, María de la O",
+  "formacion": "PP",
+  "circunscripcion": "Córdoba",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Rego Candamil, Néstor",
+  "formacion": "BNG",
+  "circunscripcion": "Coruña (A)",
+  "partido": "bng"
+ },
+ {
+  "nombre": "Renau Martínez, Germán",
+  "formacion": "PSOE",
+  "circunscripcion": "Castellón/Castelló",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Requejo Novoa, Pedro Jesús",
+  "formacion": "Vox",
+  "circunscripcion": "Zamora",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Requena Ruiz, Juan Diego",
+  "formacion": "PP",
+  "circunscripcion": "Jaén",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Ribera Rodríguez, Teresa",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Riolobos Regadera, Carmen",
+  "formacion": "PP",
+  "circunscripcion": "Toledo",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Robles Fernández, Margarita",
+  "formacion": "PSOE",
+  "circunscripcion": "Ávila",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Robles López, Joaquín",
+  "formacion": "Vox",
+  "circunscripcion": "Murcia",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Rodríguez Almeida, Andrés Alberto",
+  "formacion": "Vox",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Rodríguez Gómez de Celis, Alfonso",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Rodríguez Gómez, María del Pilar",
+  "formacion": "PSOE",
+  "circunscripcion": "Huelva",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Rodríguez Herrer, María Elvira",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Rodríguez Rodríguez, Alberto",
+  "formacion": "UP",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Rodríguez Salas, José Antonio",
+  "formacion": "PSOE",
+  "circunscripcion": "Granada",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Rojas García, Carlos",
+  "formacion": "PP",
+  "circunscripcion": "Granada",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Romaní Cantera, José Ignacio",
+  "formacion": "PP",
+  "circunscripcion": "Cádiz",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Romero Hernández, Carmelo",
+  "formacion": "PP",
+  "circunscripcion": "Huelva",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Romero Sánchez, Rosa María",
+  "formacion": "PP",
+  "circunscripcion": "Ciudad Real",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Romero Vilches, María de los Reyes",
+  "formacion": "Vox",
+  "circunscripcion": "Sevilla",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Ros Martínez, Susana",
+  "formacion": "PSOE",
+  "circunscripcion": "Castellón/Castelló",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Rosell Aguilar, María Victoria",
+  "formacion": "UP",
+  "circunscripcion": "Palmas (Las)",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Roselló Bouso, Jorge",
+  "formacion": "UP",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Rosety Fernández de Castro, Agustín",
+  "formacion": "Vox",
+  "circunscripcion": "Cádiz",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Rosique i Saltor, Marta",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Rueda Perelló, Patricia",
+  "formacion": "Vox",
+  "circunscripcion": "Málaga",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Rufián Romero, Gabriel",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Ruiz de Pinedo Undiano, Iñaki",
+  "formacion": "EH Bildu",
+  "circunscripcion": "Araba/Álava",
+  "partido": "eh-bildu"
+ },
+ {
+  "nombre": "Ruiz i Carbonell, Joan",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Tarragona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ruiz López, Jesús",
+  "formacion": "PSOE",
+  "circunscripcion": "Asturias",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Ruiz Navarro, Eduardo Luis",
+  "formacion": "Vox",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Ruiz Solás, María de la Cabeza",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Saavedra Muñoz, Marisa",
+  "formacion": "UP",
+  "circunscripcion": "Castellón/Castelló",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Sabanés Nadal, Inés",
+  "formacion": "MÁS PAÍS-EQUO",
+  "circunscripcion": "Madrid",
+  "partido": "sin-partido"
+ },
+ {
+  "nombre": "Sáez Alonso-Muñumer, Pablo",
+  "formacion": "Vox",
+  "circunscripcion": "Valladolid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Sagastizabal Unzetabarrenetxea, Idoia",
+  "formacion": "EAJ-PNV",
+  "circunscripcion": "Bizkaia",
+  "partido": "pnv"
+ },
+ {
+  "nombre": "Sahuquillo García, Luis Carlos",
+  "formacion": "PSOE",
+  "circunscripcion": "Cuenca",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Salazar Rodríguez, Francisco José",
+  "formacion": "PSOE",
+  "circunscripcion": "Sevilla",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Salvá Verd, Antonio",
+  "formacion": "Vox",
+  "circunscripcion": "Balears (Illes)",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Salvador i Duch, Jordi",
+  "formacion": "ERC-S",
+  "circunscripcion": "Tarragona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Sánchez del Real, Víctor Manuel",
+  "formacion": "Vox",
+  "circunscripcion": "Badajoz",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Sánchez Escobar, Mariano",
+  "formacion": "PSOE",
+  "circunscripcion": "Badajoz",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sánchez García, José María",
+  "formacion": "Vox",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Sánchez Jódar, Marisol",
+  "formacion": "PSOE",
+  "circunscripcion": "Murcia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sánchez Pérez-Castejón, Pedro",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sánchez Pérez, César",
+  "formacion": "PP",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Sánchez Serna, Javier",
+  "formacion": "UP",
+  "circunscripcion": "Murcia",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Sancho Guardia, Alfredo",
+  "formacion": "PSOE",
+  "circunscripcion": "Huesca",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sancho Íñiguez, Herminio Rufino",
+  "formacion": "PSOE",
+  "circunscripcion": "Teruel",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Santamaría Ruiz, Luis",
+  "formacion": "PP",
+  "circunscripcion": "Valencia/València",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Santiago Romero, Enrique Fernando",
+  "formacion": "UP",
+  "circunscripcion": "Madrid",
+  "partido": "iu"
+ },
+ {
+  "nombre": "Sarrià Morell, Vicent Manuel",
+  "formacion": "PSOE",
+  "circunscripcion": "Valencia/València",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Saura García, Pedro",
+  "formacion": "PSOE",
+  "circunscripcion": "Murcia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sayas López, Sergio",
+  "formacion": "NA+",
+  "circunscripcion": "Navarra",
+  "partido": "pp,upn"
+ },
+ {
+  "nombre": "Segura Just, Juan Carlos",
+  "formacion": "Vox",
+  "circunscripcion": "Barcelona",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Senderos Oraá, Daniel",
+  "formacion": "PSOE",
+  "circunscripcion": "Araba/Álava",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Serrada Pariente, David",
+  "formacion": "PSOE",
+  "circunscripcion": "Salamanca",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Serrano Martínez, Juan Francisco",
+  "formacion": "PSOE",
+  "circunscripcion": "Jaén",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Seva Ruiz, Yolanda",
+  "formacion": "PSOE",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Sicilia Alférez, Felipe Jesús",
+  "formacion": "PSOE",
+  "circunscripcion": "Jaén",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Simancas Simancas, Rafael",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Soler Mur, Alejandro",
+  "formacion": "PSOE",
+  "circunscripcion": "Alicante/Alacant",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Soto Burillo, Juan Luis",
+  "formacion": "PSOE",
+  "circunscripcion": "Murcia",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Steegmann Olmedillas, Juan Luis",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Suárez Illana, Adolfo",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Suárez Lamata, Eloy",
+  "formacion": "PP",
+  "circunscripcion": "Zaragoza",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Sumelzo Jordán, Susana",
+  "formacion": "PSOE",
+  "circunscripcion": "Zaragoza",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Taibo Monelos, Diego",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Coruña (A)",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Tarno Blanco, Ricardo",
+  "formacion": "PP",
+  "circunscripcion": "Sevilla",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Telechea i Lozano, Carolina",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Tirado Ochoa, Vicente",
+  "formacion": "PP",
+  "circunscripcion": "Toledo",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Tizón Vázquez, Uxía",
+  "formacion": "PsdeG-PSOE",
+  "circunscripcion": "Ourense",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Toscano de Balbín, Carla",
+  "formacion": "Vox",
+  "circunscripcion": "Madrid",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Trías Gil, Georgina",
+  "formacion": "Vox",
+  "circunscripcion": "Ávila",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Uriarte Bengoechea, Edurne",
+  "formacion": "PP",
+  "circunscripcion": "Madrid",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Uriarte Torrealday, Roberto",
+  "formacion": "UP",
+  "circunscripcion": "Bizkaia",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Utrilla Cano, Julio",
+  "formacion": "Vox",
+  "circunscripcion": "Valencia/València",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Valerio Cordero, Magdalena",
+  "formacion": "PSOE",
+  "circunscripcion": "Guadalajara",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Vallugera Balañà, Pilar",
+  "formacion": "ERC-S",
+  "circunscripcion": "Barcelona",
+  "partido": "erc"
+ },
+ {
+  "nombre": "Vázquez Blanco, Ana Belén",
+  "formacion": "PP",
+  "circunscripcion": "Ourense",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Vega Arias, Rubén Darío",
+  "formacion": "Vox",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Vehí Cantenys, Mireia",
+  "formacion": "CUP-PR",
+  "circunscripcion": "Barcelona",
+  "partido": "cup"
+ },
+ {
+  "nombre": "Velarde Gómez, Martina",
+  "formacion": "UP",
+  "circunscripcion": "Córdoba",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Velasco Morillo, Elvira",
+  "formacion": "PP",
+  "circunscripcion": "Zamora",
+  "partido": "pp"
+ },
+ {
+  "nombre": "Vera Ruíz-Herrera, Noelia",
+  "formacion": "UP",
+  "circunscripcion": "Cádiz",
+  "partido": "podemos"
+ },
+ {
+  "nombre": "Vicente Viondi, Daniel",
+  "formacion": "PSOE",
+  "circunscripcion": "Madrid",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Vidal Sáez, Aina",
+  "formacion": "ECP-GUANYEM EL CANVI",
+  "circunscripcion": "Barcelona",
+  "partido": "comuns"
+ },
+ {
+  "nombre": "Vilches Ruiz, María Luisa",
+  "formacion": "PSOE",
+  "circunscripcion": "Albacete",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Villagrasa Quero, Noemí",
+  "formacion": "PSOE",
+  "circunscripcion": "Zaragoza",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Zamarrón Moreno, Agustín",
+  "formacion": "PSOE",
+  "circunscripcion": "Burgos",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Zambrano García-Raez, Carlos José",
+  "formacion": "Vox",
+  "circunscripcion": "Cádiz",
+  "partido": "vox"
+ },
+ {
+  "nombre": "Zapata Simón, Aurelio",
+  "formacion": "PSOE",
+  "circunscripcion": "Guadalajara",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Zaragoza Alonso, José",
+  "formacion": "PSC-PSOE",
+  "circunscripcion": "Barcelona",
+  "partido": "psoe"
+ },
+ {
+  "nombre": "Zurita Expósito, Ana María",
+  "formacion": "PP",
+  "circunscripcion": "S/C Tenerife",
+  "partido": "pp"
+ }
+]

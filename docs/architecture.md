@@ -18,13 +18,13 @@ Vota con Criterio tiene dos mitades que no se tocan en producción:
 
 | Capa | Tecnología | Justificación |
 |------|-----------|---------------|
-| Framework | Astro 5 (salida `static`) + TypeScript estricto | Web de contenido con una sola parte interactiva; HTML estático rápido y sin JS innecesario. Elegido por Pol. |
+| Framework | Astro 7 (salida `static`) + TypeScript estricto | Web de contenido con una sola parte interactiva; HTML estático rápido y sin JS innecesario. Elegido por Pol. |
 | Interactividad | TypeScript sin framework de UI (script de cliente de Astro) | El cuestionario y el resultado son pocos estados; un framework añadiría peso sin aportar. |
 | Datos | Archivos YAML/JSON en `data/` + Content Collections de Astro con esquemas Zod | El catálogo vive en el repo, es revisable en cada PR y el build falla si una votación no cumple el esquema (M-05). |
 | Base de datos | Ninguna | Nada que persistir: no hay cuentas ni respuestas guardadas (M-08). |
 | Autenticación | Ninguna | Web anónima. |
-| Estilos | CSS propio con custom properties (tokens de `design-system.md`), estilos con ámbito de Astro | Paleta en blanco y negro con pocos componentes; no compensa Tailwind. |
-| Tipografía | Instrument Serif e Inter vía `@fontsource`, autoalojadas | Sin peticiones a Google: coherente con la privacidad y más rápido. |
+| Estilos | CSS propio con custom properties (tokens de `design-system.md`) sobre el kit de Taste Skill copiado en `src/kit/` (`system.css`, `layout.css`, `motion.css`; ningún momento), estilos con ámbito de Astro | Es el sistema de la propuesta Ventana elegida por Pol; copiarlo tal cual mantiene la web fiel a la maqueta. No compensa Tailwind. |
+| Tipografía | Geist y Geist Mono vía `@fontsource-variable`, autoalojadas | Sin peticiones a Google: coherente con la privacidad y más rápido. |
 | Iconos | Tabler Icons (SVG inline, solo los usados) | Coincide con las maquetas. |
 | Imagen para compartir | Canvas API del navegador | La imagen se genera en el dispositivo; el resultado nunca sale del navegador (S-02, M-08). |
 | Pipeline | Scripts Node 24 (LTS) + TypeScript ejecutados con `pnpm` (`tsx`) | Mismo lenguaje que la web; los tipos del catálogo se comparten. |
@@ -82,13 +82,21 @@ scripts/
 └── verificar-cobertura.mjs → Comprueba las fichas de docs/features/
 src/
 ├── pages/              → index (portada), test, como-funciona, votaciones
-├── components/         → Componentes Astro (Cabecera, Ecualizador, Pregunta, FilaPartido…)
+├── components/         → Componentes Astro (Cabecera, Pie, Pregunta, SelectorProvincia,
+│                         PreguntasFrecuentes)
+├── kit/                → Kit de Taste Skill de la propuesta Ventana (CSS y JS del menú, la barra del
+│                         móvil, la entrada del héroe y el cargador de momentos, hoy sin ninguno),
+│                         copiado de propuestas-diseno/
 ├── lib/
 │   ├── afinidad/       → Cálculo puro de la puntuación (sin DOM; lo prueban los tests)
 │   ├── perfil/         → Definición de preguntas y conversión de respuestas a perfiles
+│   ├── enlaces.ts      → Enlaces que se repiten (el repositorio)
+│   ├── explorador.ts   → Prepara en el build las votaciones de /votaciones (voto, efectos, jurado)
 │   └── compartir/      → Generación de la imagen con Canvas
 ├── content.config.ts   → Colecciones y esquemas Zod del catálogo
-└── styles/             → Tokens y estilos globales
+├── scripts/            → resultado.ts: pinta el resultado en el navegador; explorador.ts: filtros
+│                         y "Ver más" de /votaciones
+└── styles/             → Paleta, fuentes y componentes de la web sobre el kit
 public/
 ├── logos/              → Logos de los partidos (SVG)
 └── fonts/              → Solo si @fontsource no cubre algo
@@ -112,10 +120,10 @@ credenciales del proyecto son las claves de las APIs de IA del jurado, que solo 
 - **Datos abiertos del Congreso** (`congreso.es/es/opendata/votaciones` y `/diputados`): fuente
   de las votaciones nominales y de la filiación de cada diputado. Se descargan con
   `pnpm data:ingesta` y se guardan en `data/raw/` para no depender de la web del Congreso en el
-  build. **Riesgo por verificar antes que nada:** el 26-10-2026 el ZIP de la última sesión
-  (XV, sesión 203) solo contenía gráficos PNG, sin JSON ni XML. Hay que confirmar en qué formato
-  están las votaciones nominales de la XIV y la XV; si no hay formato estructurado para alguna
-  sesión, la alternativa es extraerlas del Diario de Sesiones (PDF), con más coste.
+  build. **Formato verificado el 26-10-2026:** hay un JSON por votación con el voto nominal de
+  cada diputado en la XIV y en la XV (comprobado en sesiones de 2021, 2024 y hasta junio de 2026).
+  Las sesiones más recientes (al menos la del 2-10-2026) solo publican el gráfico PNG, sin JSON.
+  Detalle en `docs/features/ingesta-congreso.md`.
 - **Correspondencia diputado → partido:** el Congreso registra el grupo parlamentario, no el
   partido. La correspondencia sale de la formación por la que se presentó cada diputado
   (datos abiertos de diputados) y se guarda en `data/partidos/`, con las excepciones (cambios de
@@ -176,7 +184,8 @@ No hace falta ningún otro: no hay base de datos, pagos ni email.
   de Vercel con GitHub. El agente prepara el PR, pero no mergea ni lanza despliegues.
 - **Dominio:** Pol añade `vota.concriterio.blog` en el proyecto de Vercel y crea en Hostinger el
   CNAME `vota` que indique Vercel.
-- **Calendario:** en producción antes del 13 de noviembre de 2026 (inicio de campaña). Hasta el
+- **Calendario:** en producción antes del 20 de noviembre de 2026 (retrasado el 11-11 desde el 13,
+  inicio de campaña). Hasta el
   29 de noviembre solo se despliegan correcciones.
 
 ---

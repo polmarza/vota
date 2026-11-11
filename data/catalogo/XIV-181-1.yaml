@@ -1,0 +1,29 @@
+votacion: XIV-181-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=24/05/2022"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-232-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2022-05-24
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la conservación del
+  lobo en España y su cohabitación con la ganadería extensiva y la lucha contra el reto demográfico.
+titulo: "Control del lobo al norte del Duero"
+resumen: >-
+  Limitaba la protección especial del lobo a las poblaciones al sur del Duero y derogaba la orden de
+  2021 que la extendió a toda España, de modo que al norte del Duero el lobo volviera a poder ser
+  objeto de medidas de gestión. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de la ganadería en zonas con lobo al norte del Duero podría volver a pedir medidas
+      de control de la especie para proteger su ganado.
+    base: >-
+      Art. 3 (anexo del Real Decreto 139/2011: el lobo solo protegido al sur del Duero), disposición
+      transitoria única y disposición derogatoria única (Orden TED/980/2021) de la proposición.
+justificacion: >-
+  Es la votación de la XIV sobre el conflicto entre el lobo y la ganadería extensiva, propuesta por
+  un grupo de la oposición.

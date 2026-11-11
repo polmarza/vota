@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vota con Criterio · Propuesta Libreta</title>
+<meta name="description" content="Propuesta de diseño para Vota con Criterio: cada votación como un apunte de una libreta de ahorros, a tu favor o en tu contra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;700&family=Doto:wght@700;900&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #e9eae6;
+    --papel-claro: #f3f3f0;
+    --guilloche: #d3d5cf;
+    --tinta: #1a1b1d;
+    --tinta-2: #4b4d52;
+    --tinta-ligera: #5f6166;
+    --renglon: #c9cbc5;
+    --mesa: #2b2c2e;
+    --punto-vacio: #c4c6c0;
+    --mono: 'Azeret Mono', ui-monospace, monospace;
+    --matriz: 'Doto', 'Azeret Mono', monospace;
+    --sans: 'Hanken Grotesk', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--tinta-2) var(--mesa); }
+  body {
+    margin: 0;
+    background: var(--mesa);
+    color: var(--tinta);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+  ::selection { background: var(--tinta); color: var(--papel-claro); }
+  input, button { font: inherit; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+
+  .mesa { padding: 0 0 56px; }
+  .pantalla { margin: 0 auto 56px; max-width: 1240px; }
+
+  .rotulo {
+    margin: 0;
+    padding: 18px 16px 10px;
+    color: #d9dad6;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* La cartilla: páginas de papel de seguridad con guilloché */
+  .cartilla { display: grid; }
+  .pagina {
+    position: relative;
+    background-color: var(--papel);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cg fill='none' stroke='%23d3d5cf' stroke-width='0.7'%3E%3Cpath d='M0 20 C15 4 45 4 60 20 S105 36 120 20'/%3E%3Cpath d='M0 20 C15 36 45 36 60 20 S105 4 120 20'/%3E%3Cpath d='M0 10 C20 0 40 20 60 10 S100 0 120 10'/%3E%3Cpath d='M0 30 C20 40 40 20 60 30 S100 40 120 30'/%3E%3C/g%3E%3C/svg%3E");
+    padding: 22px 16px 24px 44px;
+    min-width: 0;
+  }
+  /* margen de renglones numerados */
+  .pagina::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 34px;
+    border-left: 1px solid var(--renglon);
+  }
+  .cabecera-cartilla {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tinta);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--tinta-2);
+  }
+  .cabecera-cartilla strong { color: var(--tinta); font-weight: 700; }
+  .marca { font-family: var(--sans); font-weight: 700; font-size: 16px; color: var(--tinta); }
+
+  .linea { position: relative; }
+  .linea[data-n]::before {
+    content: attr(data-n);
+    position: absolute;
+    left: -40px;
+    width: 26px;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1;
+    top: 0.55em;
+    color: var(--tinta-ligera);
+  }
+
+  /* ───────── Portada ───────── */
+  .promesa {
+    margin: 30px 0 4px;
+    font-weight: 300;
+    font-size: clamp(38px, 11.5vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--tinta-ligera);
+  }
+  .voto-impreso {
+    display: block;
+    margin: 0 0 24px;
+    font-family: var(--matriz);
+    font-weight: 900;
+    font-size: clamp(50px, 15.4vw, 86px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--tinta);
+  }
+  .entradilla { margin: 0 0 26px; max-width: 36ch; font-size: 18px; line-height: 1.45; }
+  .boton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-height: 60px;
+    padding: 14px 18px 14px 20px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--tinta);
+    color: var(--papel-claro);
+    font-family: var(--sans);
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 18px -10px rgba(0,0,0,.6);
+    transition: transform 160ms cubic-bezier(.2,.7,.2,1), box-shadow 160ms;
+  }
+  .boton:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,.3), 0 14px 22px -10px rgba(0,0,0,.6); }
+  .boton:active { transform: translateY(1px); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
+  .ranura { display: flex; align-items: center; gap: 8px; }
+  .ranura i { display: block; width: 26px; height: 2px; background: currentColor; opacity: .5; }
+  .pie-portada { margin: 14px 0 0; font-size: 14px; color: var(--tinta-2); }
+
+  .titulo-columna { margin: 0 0 10px; font-family: var(--sans); font-weight: 700; font-size: 20px; }
+  .apuntes { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--tinta); }
+  .apuntes li {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--renglon);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .apuntes time { color: var(--tinta-2); }
+  @media (max-width: 859px) { .apunte-extra { display: none; } }
+  .nota-mono { margin: 12px 0 0; font-family: var(--mono); font-size: 12px; color: var(--tinta-2); }
+
+  /* ───────── Pregunta ───────── */
+  .barra-pregunta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; font-family: var(--mono); font-size: 13px; }
+  .atras {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0;
+    background: none; border: 0; color: var(--tinta); font-family: var(--sans); font-size: 16px; font-weight: 500;
+    cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;
+  }
+  .puntos-progreso { display: flex; gap: 6px; margin: 4px 0 0; }
+  .puntos-progreso span { width: 10px; height: 10px; border-radius: 50%; background: var(--punto-vacio); }
+  .puntos-progreso span.on { background: var(--tinta); }
+  .enunciado { margin: 28px 0 6px; font-weight: 500; font-size: clamp(34px, 9.6vw, 56px); line-height: 1.02; letter-spacing: -0.025em; }
+  .instruccion { margin: 0 0 16px; font-size: 15px; color: var(--tinta-2); }
+  .opciones { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .opciones legend { float: left; width: 100%; padding: 0; }
+  .opcion {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 58px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--renglon);
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .opciones legend + .opcion { clear: both; border-top: 1px solid var(--tinta); }
+  .opcion input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .opcion .sello {
+    min-width: 92px; height: 32px; display: grid; place-items: center;
+    border: 1px dashed var(--tinta-ligera); border-radius: 3px;
+    font-family: var(--mono); font-size: 12px; color: var(--tinta-ligera);
+  }
+  .opcion .sello::after { content: "elegir"; }
+  .opcion:has(input:checked) { font-weight: 700; }
+  .opcion:has(input:checked) .sello { border: 0; background: var(--tinta); color: var(--papel-claro); font-family: var(--matriz); font-weight: 900; font-size: 18px; }
+  .opcion:has(input:checked) .sello::after { content: "MARCADO"; }
+  .opcion:has(input:focus-visible) { outline: 3px solid var(--tinta); outline-offset: 2px; }
+  .opcion:hover .sello { border-color: var(--tinta); color: var(--tinta); }
+  .opcion.no-responder { color: var(--tinta-2); }
+
+  /* ───────── Resultado ───────── */
+  .estado { display: inline-block; margin: 0; padding: 4px 10px 3px; border: 1px solid var(--tinta); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; }
+  .titulo-resultado { margin: 26px 0 10px; font-weight: 500; font-size: clamp(36px, 10vw, 60px); line-height: 1; letter-spacing: -0.03em; }
+  .base { margin: 0 0 12px; font-size: 17px; }
+  .base b { font-family: var(--mono); font-weight: 700; font-size: 16px; }
+  .podio h3 { margin: 28px 0 4px; font-weight: 700; font-size: 26px; line-height: 1.1; letter-spacing: -0.015em; }
+  .podio .explica { margin: 0 0 12px; font-size: 15px; line-height: 1.4; color: var(--tinta-2); }
+  .cabecera-columnas {
+    display: grid; grid-template-columns: 1fr auto; padding: 0 0 6px; border-bottom: 1px solid var(--tinta);
+    font-family: var(--mono); font-size: 12px; color: var(--tinta-2); letter-spacing: 0.03em;
+  }
+  .fila { padding: 12px 0 12px; border-bottom: 1px solid var(--renglon); }
+  .fila-arriba { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 12px; }
+  .partido { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; }
+  .muestra { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); }
+  .cifra { font-family: var(--matriz); font-weight: 900; font-size: 40px; line-height: 0.9; }
+  .cifra small { font-family: var(--mono); font-weight: 700; font-size: 0.42em; margin-left: 2px; }
+  .cuenta { display: block; margin: 2px 0 8px 24px; font-family: var(--mono); font-size: 12px; color: var(--tinta-2); }
+  /* barra de matriz de puntos: 20 puntos, rellenos según el porcentaje */
+  .puntos {
+    position: relative; display: block; height: 10px; width: 240px; max-width: calc(100% - 24px); margin-left: 24px;
+    background: radial-gradient(circle at 5px 5px, var(--punto-vacio) 3.5px, transparent 4px) 0 0 / 12px 10px repeat-x;
+  }
+  .puntos::after {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--n) * 12px);
+    background: radial-gradient(circle at 5px 5px, var(--c) 3.5px, transparent 4px) 0 0 / 12px 10px repeat-x;
+  }
+
+  .aviso {
+    margin: 26px 0 0; padding: 14px 14px 14px; border: 1px dashed var(--tinta-ligera);
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.55; color: var(--tinta);
+    background: rgba(243,243,240,.6);
+  }
+  .seguir { margin-top: 24px; }
+
+  .lista h3 { margin: 6px 0 4px; font-weight: 700; font-size: 26px; line-height: 1.1; letter-spacing: -0.015em; }
+  .lista > .explica { margin: 0 0 14px; font-size: 15px; color: var(--tinta-2); }
+  .apunte { padding: 16px 0 18px; border-top: 1px solid var(--tinta); }
+  .apunte-cab { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; font-family: var(--mono); font-size: 12.5px; color: var(--tinta-2); }
+  .apunte-cab .efecto { color: var(--tinta); font-weight: 700; }
+  .apunte h4 { margin: 8px 0 8px; font-size: 21px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; }
+  .apunte p { margin: 0 0 8px; max-width: 64ch; }
+  .apunte .que-era { font-size: 14px; color: var(--tinta-2); }
+  .votos { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; margin: 12px 0 10px; padding: 0; list-style: none; }
+  .votos li { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 7px 0; border-bottom: 1px dotted var(--tinta-ligera); font-family: var(--mono); font-size: 13px; }
+  .votos li .p { display: inline-flex; align-items: center; gap: 7px; }
+  .votos li .muestra { width: 9px; height: 9px; }
+  .votos li b { font-weight: 700; text-transform: uppercase; }
+  .votos li .sin { color: var(--tinta-2); font-size: 12px; }
+  .votos li.dividido { grid-column: 1 / -1; flex-wrap: wrap; }
+  .votos li.dividido small { flex-basis: 100%; text-align: right; font-size: 12px; color: var(--tinta-2); }
+  .enlace { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 700; }
+
+  @media (min-width: 860px) {
+    .mesa { padding: 0 32px 80px; }
+    .rotulo { padding: 32px 0 12px; }
+    .pantalla { margin-bottom: 72px; }
+    .cartilla { grid-template-columns: 1fr 1fr; box-shadow: 0 30px 60px -30px rgba(0,0,0,.8); border-radius: 6px; overflow: hidden; }
+    .cartilla.una { grid-template-columns: 1fr; }
+    .pagina { padding: 34px 40px 36px 72px; }
+    .pagina::before { left: 56px; }
+    .linea[data-n]::before { left: -58px; width: 30px; }
+    /* pliegue central */
+    .cartilla > .pagina:first-child:not(:only-child) { box-shadow: inset -26px 0 30px -26px rgba(0,0,0,.35); }
+    .cartilla > .pagina:last-child:not(:only-child) { box-shadow: inset 26px 0 30px -26px rgba(0,0,0,.35); }
+    .apunte { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); column-gap: 40px; }
+    .apunte > :not(.votos) { grid-column: 1; }
+    .apunte .votos { grid-column: 2; grid-row: 1 / span 5; margin-top: 0; }
+    .boton { max-width: 440px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .imprime .fila, .imprime .apunte { animation: imprimir 520ms steps(8, end) both; }
+    .imprime .fila:nth-of-type(2) { animation-delay: 120ms; }
+    .imprime .fila:nth-of-type(3) { animation-delay: 240ms; }
+    @keyframes imprimir { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flecha" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="flecha-atras" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="externo" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<main class="mesa">
+
+  <!-- ═════════ Portada ═════════ -->
+  <section class="pantalla" aria-labelledby="t-portada">
+    <p class="rotulo">Pantalla — Portada</p>
+    <div class="cartilla">
+      <div class="pagina">
+        <header class="cabecera-cartilla">
+          <span class="marca">vota con criterio</span><span>Elecciones generales</span>
+          <span>Titular: <strong>anónimo</strong></span><span><strong>29 de noviembre</strong></span>
+        </header>
+        <h1 id="t-portada"><span class="promesa linea" data-n="01" style="display:block">Las promesas vuelan.</span><span class="voto-impreso linea" data-n="02">Los votos se quedan.</span></h1>
+        <p class="entradilla linea" data-n="03">Cruzamos tus preocupaciones con lo que cada partido votó en el Congreso desde 2019. Así sabes quién estuvo de tu lado cuando tocaba votar.</p>
+        <a class="boton linea" data-n="04" href="#t-pregunta">Empezar el test <span class="ranura"><i></i><svg width="24" height="24" aria-hidden="true"><use href="#flecha"/></svg></span></a>
+        <p class="pie-portada">Un proyecto de <a href="https://concriterio.blog">Con Criterio</a> · <a href="#">Cómo funciona</a></p>
+      </div>
+      <div class="pagina">
+        <h2 class="titulo-columna linea" data-n="05">Los últimos apuntes del catálogo</h2>
+        <ol class="apuntes">
+          <li class="linea" data-n="06"><time datetime="2026-09-16">16-09-2026</time><span>Plan de apoyo a Ceuta (2026)</span></li>
+          <li class="linea" data-n="07"><time datetime="2026-07-14">14-07-2026</time><span>Reforma de la discapacidad y la dependencia</span></li>
+          <li class="linea" data-n="08"><time datetime="2026-06-18">18-06-2026</time><span>Máximo de alumnos por clase (2026)</span></li>
+          <li class="linea" data-n="09"><time datetime="2026-05-28">28-05-2026</time><span>Rebaja del copago de medicamentos (2026)</span></li>
+          <li class="linea" data-n="10"><time datetime="2026-04-28">28-04-2026</time><span>Prórroga de los alquileres y tope del 2 %</span></li>
+          <li class="linea" data-n="11"><time datetime="2026-04-21">21-04-2026</time><span>Reforma urbanística y del alquiler del PP</span></li>
+          <li class="linea apunte-extra" data-n="12"><time datetime="2026-03-24">24-03-2026</time><span>Seguros agrarios que cubran los ingresos</span></li>
+          <li class="linea apunte-extra" data-n="13"><time datetime="2026-02-26">26-02-2026</time><span>Subida de las pensiones de 2026</span></li>
+          <li class="linea apunte-extra" data-n="14"><time datetime="2026-02-26">26-02-2026</time><span>Bono social, desahucios y módulos de autónomos (2026)</span></li>
+          <li class="linea apunte-extra" data-n="15"><time datetime="2026-02-24">24-02-2026</time><span>Despidos por deslocalización y venta de empresas</span></li>
+          <li class="linea apunte-extra" data-n="16"><time datetime="2026-01-27">27-01-2026</time><span>Ayudas al transporte público de 2026</span></li>
+          <li class="linea apunte-extra" data-n="17"><time datetime="2025-10-14">14-10-2025</time><span>Jornada de 35 horas</span></li>
+        </ol>
+        <p class="nota-mono">71 votaciones del Congreso, de febrero de 2020 a septiembre de 2026. Tus respuestas no salen de este navegador.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════ Pregunta ═════════ -->
+  <section class="pantalla" aria-labelledby="t-pregunta">
+    <p class="rotulo">Pantalla — Pregunta</p>
+    <form class="cartilla" onsubmit="return false">
+      <div class="pagina">
+        <header class="cabecera-cartilla">
+          <span class="marca">vota con criterio</span><span>Titular: <strong>anónimo</strong></span>
+        </header>
+        <div class="barra-pregunta">
+          <button type="button" class="atras"><svg width="18" height="18" aria-hidden="true"><use href="#flecha-atras"/></svg>Atrás</button>
+          <span>Vivienda · 2 de 8</span>
+        </div>
+        <div class="puntos-progreso" aria-hidden="true"><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <h2 class="enunciado linea" data-n="18" id="t-pregunta">¿Cómo vives?</h2>
+        <p class="instruccion">Elige la que se parezca más a tu caso.</p>
+      </div>
+      <div class="pagina">
+        <fieldset class="opciones">
+          <legend class="titulo-columna">Vivienda</legend>
+          <label class="opcion linea" data-n="19"><input type="radio" name="vivienda" checked><span>De alquiler</span><span class="sello" aria-hidden="true"></span></label>
+          <label class="opcion linea" data-n="20"><input type="radio" name="vivienda"><span>En una vivienda propia que estoy pagando</span><span class="sello" aria-hidden="true"></span></label>
+          <label class="opcion linea" data-n="21"><input type="radio" name="vivienda"><span>En una vivienda propia ya pagada</span><span class="sello" aria-hidden="true"></span></label>
+          <label class="opcion linea" data-n="22"><input type="radio" name="vivienda"><span>Con mi familia o en una vivienda cedida</span><span class="sello" aria-hidden="true"></span></label>
+          <label class="opcion no-responder linea" data-n="23"><input type="radio" name="vivienda"><span>Prefiero no responder</span><span class="sello" aria-hidden="true"></span></label>
+        </fieldset>
+      </div>
+    </form>
+  </section>
+
+  <!-- ═════════ Resultado ═════════ -->
+  <section class="pantalla" aria-labelledby="t-resultado">
+    <p class="rotulo">Pantalla — Resultado</p>
+    <div class="cartilla imprime">
+      <div class="pagina">
+        <header class="cabecera-cartilla">
+          <span class="marca">vota con criterio</span><span>Titular: <strong>anónimo</strong></span>
+        </header>
+        <h2 class="titulo-resultado linea" data-n="24" id="t-resultado">Tu resultado</h2>
+        <p class="estado">PROVISIONAL</p>
+        <p class="base" style="margin-top:12px">Basado en <b>23 de las 31</b> votaciones que podrían afectarte.</p>
+
+        <section class="podio" aria-labelledby="t-lado">
+          <h3 class="linea" data-n="25" id="t-lado">Estuvieron de tu lado</h3>
+          <p class="explica">Apoyaron lo que te beneficiaba, o se opusieron a lo que te perjudicaba.</p>
+          <div class="cabecera-columnas"><span>Partido · votaciones</span><span>a tu favor</span></div>
+          <div class="fila linea" data-n="26"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span><span class="cifra">100<small>%</small></span></div><span class="cuenta">9 de 9 votaciones</span><span class="puntos" style="--c:#45BB89;--n:20"></span></div>
+          <div class="fila linea" data-n="27"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#E51C55"></span>Sumar</span><span class="cifra">100<small>%</small></span></div><span class="cuenta">9 de 9 votaciones</span><span class="puntos" style="--c:#E51C55;--n:20"></span></div>
+          <div class="fila linea" data-n="28"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#DF0022"></span>Izquierda Unida</span><span class="cifra">95<small>%</small></span></div><span class="cuenta">19 de 20 votaciones</span><span class="puntos" style="--c:#DF0022;--n:19"></span></div>
+        </section>
+      </div>
+      <div class="pagina">
+        <section class="podio" aria-labelledby="t-contra">
+          <h3 class="linea" data-n="29" id="t-contra" style="margin-top:0">Votaron en tu contra</h3>
+          <p class="explica">Se opusieron a lo que te beneficiaba, o apoyaron lo que te perjudicaba.</p>
+          <div class="cabecera-columnas"><span>Partido · votaciones</span><span>en tu contra</span></div>
+          <div class="fila linea" data-n="30"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#63BE21"></span>Vox</span><span class="cifra">80<small>%</small></span></div><span class="cuenta">16 de 20 votaciones</span><span class="puntos" style="--c:#63BE21;--n:16"></span></div>
+          <div class="fila linea" data-n="31"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#1E4B8F"></span>Partido Popular</span><span class="cifra">65<small>%</small></span></div><span class="cuenta">13 de 20 votaciones</span><span class="puntos" style="--c:#1E4B8F;--n:13"></span></div>
+          <div class="fila linea" data-n="32"><div class="fila-arriba"><span class="partido"><span class="muestra" style="--c:#EB6109"></span>Ciudadanos</span><span class="cifra">64<small>%</small></span></div><span class="cuenta">7 de 11 votaciones</span><span class="puntos" style="--c:#EB6109;--n:13"></span></div>
+        </section>
+        <p class="aviso">Herramienta orientativa basada solo en votaciones del Congreso de las dos últimas legislaturas. No tiene en cuenta ideologías ni programas electorales, y no es una recomendación de voto. El porcentaje es la parte de las votaciones que te afectan en la que cada partido votó a tu favor (o en tu contra); por eso los dos podios no suman 100.</p>
+        <div class="seguir"><a class="boton" href="#t-pregunta">Seguir con más preguntas <span class="ranura"><i></i><svg width="24" height="24" aria-hidden="true"><use href="#flecha"/></svg></span></a></div>
+      </div>
+    </div>
+
+    <div class="cartilla una" style="margin-top:24px">
+      <div class="pagina lista">
+        <h3 class="linea" data-n="33">Las votaciones que te afectan</h3>
+        <p class="explica">Cada apunte es una votación del Congreso, con lo que votó cada partido.</p>
+
+        <article class="apunte linea" data-n="34">
+          <div class="apunte-cab"><span>28-01-2021 · XIV legislatura</span><span class="efecto">Te favorecía</span></div>
+          <h4>Suspensión de desahucios de hogares vulnerables</h4>
+          <p>Quien vive de alquiler y está en situación de vulnerabilidad podía pedir que se suspendiera su desahucio.</p>
+          <p class="que-era">Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.</p>
+          <ul class="votos">
+            <li><span class="p"><span class="muestra" style="--c:#1E4B8F"></span>PP</span><b>no</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#FF0000"></span>PSOE</span><b>sí</b></li>
+            <li class="dividido"><span class="p"><span class="muestra" style="--c:#63BE21"></span>Vox</span><b>no</b><small>voto dividido (1 sí, 51 no, 0 abst.)</small></li>
+            <li><span class="p"><span class="muestra" style="--c:#DF0022"></span>IU</span><b>sí</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#9370DB"></span>Podemos</span><b>sí</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#EB6109"></span>Cs</span><b>sí</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#E51C55"></span>Sumar</span><span class="sin">sin diputados</span></li>
+            <li><span class="p"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span><span class="sin">sin diputados</span></li>
+          </ul>
+          <a class="enlace" href="https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;targetLegislatura=XIV&amp;targetDate=28/01/2021">Ver la votación en el Congreso <svg width="16" height="16" aria-hidden="true"><use href="#externo"/></svg></a>
+        </article>
+
+        <article class="apunte linea" data-n="35">
+          <div class="apunte-cab"><span>14-12-2021 · XIV legislatura</span><span class="efecto">Te favorecía</span></div>
+          <h4>Ley de vivienda de los movimientos sociales</h4>
+          <p>Los contratos de alquiler durarían como mínimo siete años, la renta inicial en zonas tensionadas quedaría limitada y el inquilino no pagaría honorarios de inmobiliaria.</p>
+          <p class="que-era">Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.</p>
+          <ul class="votos">
+            <li><span class="p"><span class="muestra" style="--c:#1E4B8F"></span>PP</span><b>no</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#FF0000"></span>PSOE</span><b>no</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#63BE21"></span>Vox</span><b>no</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#DF0022"></span>IU</span><b>sí</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#9370DB"></span>Podemos</span><b>sí</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#EB6109"></span>Cs</span><b>no</b></li>
+            <li><span class="p"><span class="muestra" style="--c:#E51C55"></span>Sumar</span><span class="sin">sin diputados</span></li>
+            <li><span class="p"><span class="muestra" style="--c:#45BB89"></span>Más Madrid</span><span class="sin">sin diputados</span></li>
+          </ul>
+          <a class="enlace" href="https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;targetLegislatura=XIV&amp;targetDate=14/12/2021">Ver la votación en el Congreso <svg width="16" height="16" aria-hidden="true"><use href="#externo"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

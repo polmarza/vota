@@ -1,0 +1,77 @@
+---
+// Una pregunta del cuestionario dentro de su ventana (docs/design-system.md → Pregunta y Opción de
+// respuesta). El script de src/pages/test.astro la muestra, recoge la respuesta y avanza.
+import type { Pregunta } from '../../scripts/data/catalogo.ts';
+import { progreso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+
+interface Props {
+  pregunta: Pregunta;
+  todas: PreguntaTest[];
+  /** Destino de "Atrás" en la primera pregunta (la portada); en el resto lo resuelve el script. */
+  atrasA?: string;
+}
+
+const { pregunta: p, todas, atrasA } = Astro.props;
+const { texto, fraccion } = progreso(todas, p.id);
+const idTitulo = `pregunta-${p.id}`;
+const avance = Math.round(fraccion * 100);
+---
+
+<section class="paso" data-paso={`pregunta:${p.id}`} data-testid={`pregunta-${p.id}`} hidden>
+  <div class="screen screen--test">
+    <div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>Tus respuestas no salen de tu navegador</span></div>
+    <div class="quiz">
+      <div class="quiz__head">
+        <div class="quiz__count"><span data-progreso-texto>{texto}</span><span aria-hidden="true" data-progreso-pct>{avance}&#8239;%</span></div>
+        <div class="quiz__bar" aria-hidden="true"><i data-progreso-barra style={`--avance:${avance}%`}></i></div>
+        <h2 id={idTitulo} class="quiz__q" tabindex="-1">{p.enunciado}</h2>
+        {p.subtitulo && <p class="quiz__sub">{p.subtitulo}</p>}
+      </div>
+      {
+        p.tipo === 'opciones' ? (
+          <div class="opts" role="group" aria-labelledby={idTitulo}>
+            {p.opciones.map((o) => (
+              <button class:list={['opt', 'opcion', { 'opt--ns': o.id === 'ns' }]} type="button" aria-pressed="false" data-valor={o.id} data-testid={`opcion-${p.id}-${o.id}`}>
+                <i aria-hidden="true" />
+                {o.texto}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div class="opts">
+            <slot />
+          </div>
+        )
+      }
+      {
+        atrasA ? (
+          <a class="quiz__back atras" href={atrasA}>← Atrás</a>
+        ) : (
+          <button class="quiz__back atras" type="button" data-atras>
+            ← Atrás
+          </button>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .screen--test { margin-top: 0; }
+
+  @media (max-width: 639px) {
+    .screen--test .screen__bar span { display: none; }
+  }
+
+  .quiz__q {
+    font: var(--display-weight) clamp(26px, 1.15vw + 21.5px, 34px) / 1.15 var(--font-display);
+    letter-spacing: -0.02em;
+    outline: none;
+  }
+
+  .quiz__sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+</style>

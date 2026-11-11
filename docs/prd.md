@@ -103,7 +103,10 @@ tres años. Vota, pero cada vez duda más y no se fía de lo que dicen en campa�
 - **[M-05] Catálogo de votaciones curado** — Dado el catálogo publicado, cuando se revisa cualquier
   votación, entonces tiene: identificador oficial del Congreso, legislatura, fecha, título oficial,
   resumen en lenguaje claro, perfiles a los que afecta, si les favorece o les perjudica, y una
-  justificación de esa etiqueta. Primera versión: 40–60 votaciones de las legislaturas XIV y XV.
+  justificación de esa etiqueta. Primera versión: unas 100 votaciones de las legislaturas XIV y XV (ampliado de 40–60 el
+  11-11-2026: con menos, a cada perfil le afectan pocas y una sola votación mueve demasiado el
+  resultado). Se escribieron unas 90; tras el jurado y la regla de un efecto por medida quedaron
+  63, todas con su veredicto aprobado.
   *Negativo:* dada una votación sin justificación o sin enlace oficial, cuando se genera la web,
   entonces la generación falla y la votación no se publica.
 
@@ -150,8 +153,11 @@ tres años. Vota, pero cada vez duda más y no se fía de lo que dicen en campa�
   entonces puede ver todas las votaciones con el voto de cada partido y filtrarlas por tema y por
   legislatura.
 - **[S-02] Compartir el resultado** — Dado un resultado, cuando el visitante pulsa "Compartir",
-  (icono arriba a la derecha), entonces se genera una imagen descargable con los dos podios que no
-  incluye ninguna de sus respuestas, y en móvil se abre el menú de compartir del sistema.
+  en el resultado final, entonces se genera en el navegador una tarjeta vertical con los temas que
+  más le afectan, el partido que más veces votó a su favor y los dos podios, y en móvil se abre el
+  menú de compartir del sistema. Por defecto no incluye ninguna respuesta; el visitante puede
+  añadir una línea con su perfil (vivienda, situación laboral, edad e hijos), nunca ingresos,
+  patrimonio, herencias, discapacidad ni provincia (cambio del 11-11-2026).
 - **[S-03] Dar más peso a lo que te importa** — Dado el final del cuestionario, cuando el visitante
   marca qué temas le importan más (vivienda, empleo, familia, fiscalidad…), entonces las
   votaciones de esos temas pesan el doble en su puntuación y el resultado lo indica.
@@ -202,9 +208,11 @@ ha hecho y puede recorrer el catálogo completo.
   justificación; el código y el catálogo son públicos.
 - **SEO y redes:** título, descripción e imagen Open Graph cuidados; el tráfico llega compartido.
 - **Fecha límite:** las elecciones son el 29 de noviembre de 2026. La web debe estar en
-  producción antes del inicio de la campaña (13 de noviembre). Antes del 24 de noviembre se
-  confirma que no entra en la prohibición de publicar sondeos de los cinco días previos (LOREG,
-  art. 69).
+  producción antes del 20 de noviembre (la campaña empieza el 13; el lanzamiento se retrasó el
+  11-11-2026 para terminar el catálogo y la web con sus pruebas). Pol confirmó el 11-11-2026 que la
+  web no entra en la prohibición de publicar sondeos de los cinco días previos (LOREG, art. 69): no
+  es una encuesta de intención de voto y puede seguir en línea esos días. Del 24 al 29 de noviembre
+  no se publican cambios de contenido sin consultarlo con Pol.
 
 ---
 

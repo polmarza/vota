@@ -1,0 +1,66 @@
+votacion: XIV-218-39
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=24/11/2022"
+texto: https://www.boe.es/eli/es/l/2022/12/27/38
+iniciativa: "Proposición de ley de los grupos Socialista y Confederal de Unidas Podemos-En Comú Podem-Galicia en Común"
+fecha: 2022-11-24
+titulo_oficial: >-
+  Proposición de Ley para el establecimiento de gravámenes temporales energético y de entidades de
+  crédito y establecimientos financieros de crédito y por la que se crea el impuesto temporal de
+  solidaridad de las grandes fortunas, y se modifican determinadas normas tributarias (Ley 38/2022,
+  de 27 de diciembre).
+titulo: "Gravámenes a energéticas y bancos e impuesto a las grandes fortunas"
+resumen: >-
+  Crea dos gravámenes temporales, que la ley define como prestaciones patrimoniales de carácter
+  público no tributarias: las grandes empresas energéticas (operadores principales con 1.000
+  millones o más de cifra de negocios) pagan en 2023 y 2024 el 1,2 % de su cifra de negocios en
+  España, y los bancos con 800 millones o más de ingresos por intereses y comisiones, el 4,8 % de su
+  margen de intereses y comisiones; no pueden repercutirlo a sus clientes. Además, crea el Impuesto
+  Temporal de Solidaridad de las Grandes Fortunas, estatal y no cedible a las comunidades, sobre el
+  patrimonio neto de más de 3 millones de euros de las personas físicas, en los dos primeros
+  ejercicios en que se devengue (2022 y 2023): tras un mínimo exento de 700.000 euros, la parte de
+  la base que pasa de 3 millones paga entre el 1,7 % y el 3,5 %, y se descuenta lo pagado por el
+  Impuesto sobre el Patrimonio. El impuesto de solidaridad se añadió durante la tramitación en el
+  Congreso y ya figuraba en el texto que votó el Pleno.
+que_significa_si: >-
+  Votar sí era aprobar el texto en el Congreso para enviarlo al Senado.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando:
+      patrimonio: [mas-3m]
+      ccaa: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, madrid, murcia, la-rioja, ceuta, melilla]
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene un patrimonio neto de más de 3 millones de euros queda sujeto a un impuesto nuevo
+      en 2022 y 2023: tras un mínimo exento de 700.000 euros, paga entre el 1,7 % y el 3,5 % por lo
+      que pasa de 3 millones, descontando lo que ya pague por el Impuesto sobre el Patrimonio en su
+      comunidad. En el País Vasco y Navarra su aplicación quedaba a lo que se acordara con el Estado.
+    base: >-
+      Artículo 3 de la Ley 38/2022, apartados Uno, Tres, Nueve, Once, Quince, Veinticuatro y
+      Veintiocho (objeto, hecho imponible, mínimo exento, escala, deducción de la cuota del
+      Impuesto sobre el Patrimonio, regímenes forales y vigencia).
+justificacion: >-
+  Es la norma que creó el impuesto sobre los patrimonios de más de 3 millones de euros, aplicable
+  en todas las comunidades de régimen común, incluidas las que bonifican el de Patrimonio.
+extracto: >-
+  [Artículo 3.Uno] «El Impuesto Temporal de Solidaridad de las Grandes Fortunas es un tributo de
+  carácter directo, naturaleza personal y complementario del Impuesto sobre el Patrimonio que grava
+  el patrimonio neto de las personas físicas de cuantía superior a 3.000.000 de euros, en los
+  términos previstos en este artículo.» [Dos] «2. El impuesto no podrá ser objeto de cesión a las
+  Comunidades Autónomas.» [Tres] «Constituirá el hecho imponible del impuesto la titularidad por el
+  sujeto pasivo en el momento del devengo de un patrimonio neto superior a 3.000.000 de euros.»
+  [Nueve] «En el supuesto de obligación personal, la base imponible se reducirá, en concepto de
+  mínimo exento, en 700.000 euros.» [Once: escala con cuota 0 hasta 3.000.000 euros de base
+  liquidable y tipos del 1,7 %, 2,1 % y 3,5 % por encima] [Quince] «De la cuota resultante de la
+  aplicación de los apartados anteriores el sujeto pasivo podrá deducir la cuota del Impuesto sobre
+  el Patrimonio del ejercicio efectivamente satisfecha.» [Veinticuatro] «La adaptación del
+  Concierto Económico con la Comunidad Autónoma del País Vasco y del Convenio Económico entre el
+  Estado y la Comunidad Foral de Navarra a este impuesto se acordará respectivamente en la Comisión
+  Mixta del Concierto Económico con el País Vasco y la Comisión del Convenio Económico con
+  Navarra.» [Veintiocho] «Este impuesto será aplicable en los dos primeros ejercicios en los que se
+  devengue a partir de la fecha de su entrada en vigor.» [Artículo 1] «5. El importe de la
+  prestación a satisfacer por cada obligado al pago será el resultado de aplicar el porcentaje del
+  1,2 por ciento a su importe neto de la cifra de negocios derivado de la actividad que desarrolle en
+  España» [Artículo 2] «4. El importe de la prestación a satisfacer por cada obligado al pago será el
+  resultado de aplicar el porcentaje del 4,8 por ciento a la suma del margen de intereses y de los
+  ingresos y gastos por comisiones derivados de la actividad que desarrollen en España»
