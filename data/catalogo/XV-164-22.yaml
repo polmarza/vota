@@ -18,14 +18,6 @@ que_significa_si: >-
 tema: fiscalidad
 ambito: estatal
 efectos:
-  - cuando: { ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene ingresos bajos y el bono social tenía un descuento del 42,5 % en la luz (57,5 %
-      si es vulnerable severo) y no podían cortarle la luz, el gas ni el agua.
-    base: >-
-      Arts. 5 y 6 del Real Decreto-ley 2/2026 (descuentos del bono social en 2026 y garantía de
-      suministro a consumidores vulnerables).
   - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
     el_si: favorece
     justificacion: >-
@@ -52,8 +44,9 @@ efectos:
       segunda de la Ley del IRPF) y art. 8, apartado Uno (disposición transitoria decimotercera de
       la Ley del IVA).
 justificacion: >-
-  Es la votación sobre la protección de 2026 de los consumidores vulnerables de energía, con
-  efecto directo en hogares con ingresos bajos, inquilinos vulnerables y autónomos en módulos.
+  Es la votación sobre la protección de 2026 de los consumidores vulnerables de energía y de los
+  inquilinos vulnerables, con efecto directo en inquilinos con ingresos bajos, arrendadores y
+  autónomos en módulos.
 extracto: >-
   [Art. 1, apartado Uno (art. 1.1 del Real Decreto-ley 11/2020)] «Desde la entrada en vigor del
   presente real decreto-ley y hasta el 31 de diciembre de 2026, en todos los juicios verbales que

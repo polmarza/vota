@@ -34,22 +34,6 @@ efectos:
     base: >-
       Arts. 7, 18, 20 y 63 del Real Decreto-ley 1/2025 (ayudas y descuentos en abonos y títulos
       multiviaje durante 2025).
-  - cuando: { ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene ingresos bajos y el bono social mantenía un descuento de entre el 42,5 % y el
-      65 % en la luz y no podían cortarle la luz, el gas ni el agua durante 2025.
-    base: >-
-      Arts. 82 y 83 del Real Decreto-ley 1/2025 (descuentos del bono social en 2025 y garantía de
-      suministro a consumidores vulnerables).
-  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta
-      final de 2025 si acreditaba vulnerabilidad económica.
-    base: >-
-      Art. 72, apartado Uno, del Real Decreto-ley 1/2025 (nueva redacción del art. 1 del Real
-      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2025).
   - cuando: { arrendador: [si] }
     el_si: perjudica
     justificacion: >-
@@ -60,7 +44,8 @@ efectos:
       Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2025).
 justificacion: >-
   Es el decreto que finalmente subió las pensiones y mantuvo las ayudas al transporte de 2025, con
-  efecto directo en pensionistas, usuarios del transporte público y hogares vulnerables.
+  efecto directo en pensionistas, usuarios del transporte público y
+  arrendadores.
 extracto: >-
   [Art. 65.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad
   contributiva, […] se revalorizarán en 2025 con carácter general el 2,8 por ciento respecto del

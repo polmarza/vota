@@ -12,10 +12,17 @@ titulo_oficial: >-
   universal conforme al artículo 49 de la Constitución Española
 titulo: "Reforma de la discapacidad y la dependencia"
 resumen: >-
-  Reforma las leyes de discapacidad y de dependencia: reconoce derechos a las personas cuidadoras
-  no profesionales, permite mantener la reducción de jornada sin límite de edad para cuidar a un
-  hijo con gran dependencia y obliga a las comunidades a fijar un mínimo exento de copago. Se
-  aprobó y es la Ley 4/2026.
+  Reforma las leyes de discapacidad y de dependencia. Reconoce derechos a las personas cuidadoras
+  no profesionales (información y formación) y a la cuidadora principal que recibe la prestación
+  económica (prioridad en las políticas de empleo y continuidad de la atención de la persona
+  dependiente si enferma o es hospitalizada). Permite, de forma excepcional, mantener la reducción
+  de jornada más allá de los límites de edad para cuidar a un hijo con gran discapacidad o gran
+  dependencia que requiera cuidados continuos, y obliga a las comunidades autónomas a fijar un
+  mínimo exento de copago. Además, obliga a las comunidades de propietarios a pedir las ayudas para
+  las obras de accesibilidad que solicite un vecino con discapacidad o mayor de 70 años (o que viva
+  con una persona así) y a hacerlas si las ayudas cubren el 70 % del coste, y prohíbe discriminar
+  por discapacidad al contratar un seguro, salvo causas objetivas, justificadas, proporcionadas y
+  documentadas. Se aprobó y es la Ley 4/2026.
 que_significa_si: >-
   Votar sí era aprobar el texto de la ley.
 tema: cuidados
@@ -24,9 +31,10 @@ efectos:
   - cuando: { cuidados: [si] }
     el_si: favorece
     justificacion: >-
-      Quien cuida de una persona dependiente gana derechos propios (formación, prioridad en las
-      políticas de empleo, que se garantice la atención si enferma) y la persona a la que cuida
-      tiene garantizado un mínimo exento de copago.
+      Quien cuida de una persona dependiente gana derechos propios (información y formación; si es
+      la cuidadora principal con prestación económica, prioridad en las políticas de empleo y que se
+      garantice la atención de la persona dependiente si enferma o es hospitalizada) y la persona a
+      la que cuida tiene garantizado un mínimo exento de copago.
     base: >-
       Art. segundo, apartados Cuatro (nuevo art. 4 bis de la Ley 39/2006) y Treinta y tres (art.
       33.3 de la Ley 39/2006, mínimo exento de copago).
@@ -34,8 +42,9 @@ efectos:
     el_si: favorece
     justificacion: >-
       Quien tiene una discapacidad no puede ser rechazado ni tener peores condiciones al contratar un
-      seguro por esa razón, salvo causa objetiva y justificada; si pide obras de accesibilidad en su edificio, la comunidad de vecinos
-      tiene que solicitar las ayudas públicas y hacerlas cuando cubran el 70 % del coste; y, si es
+      seguro por esa razón, salvo causa objetiva y justificada; si pide obras de accesibilidad en su edificio, la
+      comunidad de vecinos tiene que solicitar las ayudas públicas y hacerlas cuando cubran el 70 %
+      del coste; y, si es
       dependiente, tiene garantizado un mínimo de ingresos exento de copago.
     base: >-
       Disposición final segunda (disp. adicional cuarta de la Ley de Contrato de Seguro), disposición

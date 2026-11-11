@@ -26,14 +26,6 @@ efectos:
     base: >-
       Art. 3, apartado Uno, del Real Decreto-ley 4/2024 (nueva redacción del art. 20 de la Ley
       del IRPF).
-  - cuando: { ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene ingresos bajos y el bono social mantenía descuentos reforzados en la factura de
-      la luz (65 % al principio, bajando hasta el 42,5 % en junio de 2025).
-    base: >-
-      Art. 20 del Real Decreto-ley 4/2024 (extensión temporal de los descuentos del bono social
-      eléctrico).
   - cuando: { trabajo: [funcionario] }
     el_si: favorece
     justificacion: >-
@@ -43,8 +35,7 @@ efectos:
       Art. 6 del Real Decreto-ley 4/2024 (incremento retributivo del personal al servicio del
       sector público para 2024).
 justificacion: >-
-  Reúne medidas fiscales y de energía con efecto directo en sueldos bajos, hogares vulnerables y
-  personal público.
+  Reúne medidas fiscales y retributivas con efecto directo en sueldos bajos y personal público.
 extracto: >-
   [Art. 1.Uno.2] «Se aplicará el tipo del 0 por ciento del Impuesto sobre el Valor Añadido a las
   entregas, importaciones y adquisiciones intracomunitarias de los siguientes productos: a) El pan
