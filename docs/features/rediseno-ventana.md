@@ -33,6 +33,8 @@ acordados (portada, podios, avisos).
   asocia a ningún partido), sombras de las ventanas y dos columnas en escritorio.
 - **Marca:** "Vota con Criterio", donde la marca es *Vota* y *con Criterio* la coletilla que la une
   a la web de Con Criterio. El logo deja de ser la "V" y pasa a ser el icono de puntos de Recuento.
+- **Logo y marca, segundo cambio** (Pol, 2026-11-11): el logo pasa a ser el arco del hemiciclo de la
+  propuesta "Fachada" (la silueta del Pleno) y la marca se escribe "vota con criterio", en minúsculas.
 - **Se reaprovecha al máximo el kit de Taste Skill** para ser fiel a la maqueta; se puede optimizar
   lo que no cambie el aspecto (quitar componentes que no se usan, por ejemplo).
 - **Fuentes:** Geist y Geist Mono, autoalojadas con `@fontsource` (existen los paquetes).

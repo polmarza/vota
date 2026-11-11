@@ -16,7 +16,7 @@ ficha en `docs/features/rediseno-ventana.md`): una interfaz sobria, de herramien
 pantalla del test se ve dentro de una "ventana" limpia con sombra. La web se construye sobre el kit
 de Taste Skill de esa propuesta, copiado en `src/kit/`; los componentes propios están en
 `src/styles/global.css`. Cambios sobre la maqueta: tinta, botones y foco en negro (no en el pizarra
-`#1f3038`) y el icono de puntos de la propuesta "Recuento" como logo.
+`#1f3038`) y el arco del hemiciclo de la propuesta "Fachada" como logo, con la marca en minúsculas.
 
 ---
 
@@ -135,9 +135,11 @@ test de revista de los de "¿qué personaje eres?", ni una web institucional gri
 ## Componentes definidos
 
 ### Cabecera (`Cabecera.astro`)
-Fija, sobre el fondo. Marca a la izquierda: el **icono de puntos** (tres círculos y un cuadrado
-redondeado, `.mark[data-mark="dots"]`, el mismo que `public/favicon.svg`) y "Vota con Criterio",
-donde *Vota* es la marca y *con Criterio* la coletilla que la une a la web de Con Criterio. Enlaces
+Fija, sobre el fondo. Marca a la izquierda: el **arco del hemiciclo** (la silueta del Pleno del
+Congreso, `.mark[data-mark="arc"]`; en `public/favicon.svg`, en blanco sobre un cuadrado negro) y
+"vota con criterio", siempre en minúsculas, donde *vota* es la marca y *con criterio* la coletilla
+que la une a la web de Con Criterio. En títulos de página y textos corridos se escribe "Vota con
+Criterio". Enlaces
 Test, Resultado, Votaciones y Cómo funciona; botón "Empezar el test" a la derecha (no dentro del
 test). En móvil, los enlaces van en un menú.
 

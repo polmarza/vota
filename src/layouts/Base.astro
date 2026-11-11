@@ -39,6 +39,12 @@ const canonica = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={descripcion} />
     <meta property="og:url" content={canonica} />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Vota con Criterio" />
+    <meta property="og:image" content={new URL('/og.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="vota con criterio: Las promesas vuelan. Los votos se quedan. Elecciones generales del 29 de noviembre." />
+    <meta name="twitter:card" content="summary_large_image" />
     {
       portada && (
         <script is:inline>

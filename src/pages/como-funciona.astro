@@ -58,6 +58,13 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
           basa y explica qué significaba votar «sí», que no siempre es apoyar la medida: en una enmienda a la totalidad, votar
           «sí» es devolver la ley al Gobierno.
         </li>
+        <li>
+          <strong>Cada efecto cuenta una vez.</strong> Si varias votaciones dan el mismo efecto a la misma persona por la
+          misma medida (la subida de las pensiones de un año, que aparece en un decreto propio y en unos presupuestos, o la
+          prórroga de una misma suspensión de desahucios), solo cuenta en la votación cuyo objeto principal es esa medida o,
+          si no hay ninguna específica, en la primera que la estableció. Se decide por el contenido y la fecha, nunca por
+          el voto.
+        </li>
       </ul>
       </div>
     </section>
@@ -133,7 +140,17 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
       <ul>
         <li>Solo mira votaciones del Congreso: no tiene en cuenta programas, promesas, gobiernos autonómicos ni el Senado.</li>
         <li>Es una selección de {catalogo.length} votaciones entre cientos; otra selección daría otro resultado.</li>
-        <li>Un partido que gobierna propone y vota más leyes que uno en la oposición, y eso pesa en el resultado.</li>
+        <li>
+          Un partido que gobierna propone más leyes que uno en la oposición, y eso pesa en el resultado: para algunas
+          situaciones, como cobrar una pensión, casi todo lo que se votó con efecto directo lo propuso el Gobierno. Votar
+          contra un decreto entero cuenta como votar contra cada medida que lleva dentro, aunque un partido apoyara alguna
+          por separado.
+        </li>
+        <li>
+          Solo cuenta lo que el test puede saber de ti. Hay leyes importantes que no caben porque ninguna pregunta identifica
+          a quién afectan, como el ingreso mínimo vital (depende de los ingresos de todo el hogar), el teletrabajo o los
+          derechos de las empleadas de hogar.
+        </li>
         <li>No es una recomendación de voto, ni una encuesta: es una forma de ver qué votaron los partidos sobre tu vida.</li>
       </ul>
       </div>

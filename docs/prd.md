@@ -205,9 +205,10 @@ ha hecho y puede recorrer el catálogo completo.
 - **SEO y redes:** título, descripción e imagen Open Graph cuidados; el tráfico llega compartido.
 - **Fecha límite:** las elecciones son el 29 de noviembre de 2026. La web debe estar en
   producción antes del 20 de noviembre (la campaña empieza el 13; el lanzamiento se retrasó el
-  11-11-2026 para terminar el catálogo y la web con sus pruebas). Antes del 24 de noviembre se
-  confirma que no entra en la prohibición de publicar sondeos de los cinco días previos (LOREG,
-  art. 69).
+  11-11-2026 para terminar el catálogo y la web con sus pruebas). Pol confirmó el 11-11-2026 que la
+  web no entra en la prohibición de publicar sondeos de los cinco días previos (LOREG, art. 69): no
+  es una encuesta de intención de voto y puede seguir en línea esos días. Del 24 al 29 de noviembre
+  no se publican cambios de contenido sin consultarlo con Pol.
 
 ---
 
