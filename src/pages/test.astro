@@ -15,7 +15,8 @@ const porId = new Map(preguntas.map((p) => [p.id, p]));
 const territorio = cargarTerritorio();
 const provincias = territorio.provincias.map(({ id, nombre, alias, ccaa }) => ({ id, nombre, alias, ccaa }));
 const resultado = datosResultado();
-const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado });
+// "<" escapado: ningún texto de los datos puede cerrar el <script> que los contiene.
+const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado }).replace(/</g, "\\u003c");
 ---
 
 <Base titulo="El test · Vota con Criterio" test>
