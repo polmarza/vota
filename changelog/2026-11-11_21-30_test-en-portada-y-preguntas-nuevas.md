@@ -31,3 +31,4 @@ Pol pidió que el selector de la portada fuera la primera pregunta y que el test
 El test en la misma página evita guardar la provincia entre páginas (M-08). Las preguntas nuevas
 permiten contar votaciones que el jurado había apartado porque el test no sabía a quién afectaban.
 Coste del jurado en esta tanda: unos 3,80 $.
+- Pregunta frecuente nueva: por qué no hay preguntas sobre el clima, la amnistía o el modelo territorial (a raíz de la pregunta de un usuario).
