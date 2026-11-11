@@ -124,6 +124,7 @@ votaciones que el Congreso publica sin JSON.
 | id | slug | `provincia`, `vivienda`, `trabajo`… |
 | bloque | `basico` \| `ampliado` | Bloque del cuestionario (M-01) |
 | orden | entero | Posición dentro del bloque |
+| etiqueta | texto | Nombre corto para la etiqueta de progreso ("Vivienda · 2 de 8") |
 | enunciado | texto | "¿Cómo trabajas?" |
 | subtitulo | texto (opcional) | Solo si la pregunta puede generar dudas |
 | tipo | `opciones` \| `provincia` | `provincia` usa el selector con panel |

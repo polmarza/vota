@@ -1,0 +1,213 @@
+---
+// El cuestionario (M-01). Todas las preguntas se generan aquí y el script las va mostrando de una en
+// una. Las respuestas viven solo en una variable del script: no van a la URL, ni a localStorage, ni a
+// ningún servidor (M-08).
+import Base from '../layouts/Base.astro';
+import Pregunta from '../components/Pregunta.astro';
+import SelectorProvincia from '../components/SelectorProvincia.astro';
+import { cargarPreguntas, cargarTerritorio } from '../lib/datos.ts';
+import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+
+const preguntas = cargarPreguntas();
+const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria }));
+const pasos = recorrido(todas);
+const porId = new Map(preguntas.map((p) => [p.id, p]));
+const provincias = cargarTerritorio().provincias.map(({ id, nombre, alias }) => ({ id, nombre, alias }));
+const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
+---
+
+<Base titulo="El test · Vota con Criterio">
+  <script type="application/json" id="datos-test" set:html={datos} />
+
+  {
+    pasos.map((paso, i) =>
+      paso.tipo === 'pregunta' ? (
+        <Pregunta pregunta={porId.get(paso.pregunta)!} todas={todas} atrasA={i === 0 ? '/' : undefined}>
+          <SelectorProvincia />
+        </Pregunta>
+      ) : paso.tipo === 'provisional' ? (
+        <section class="paso fin" data-paso="provisional" data-testid="resultado-provisional" hidden>
+          <button class="atras" type="button" data-atras>← Atrás</button>
+          <h2 tabindex="-1">Tu resultado <i>provisional</i></h2>
+          <p class="pendiente">El cálculo del resultado está en construcción.</p>
+          <button class="boton" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
+        </section>
+      ) : (
+        <section class="paso fin" data-paso="final" data-testid="resultado-final" hidden>
+          <button class="atras" type="button" data-atras>← Atrás</button>
+          <h2 tabindex="-1">Tu <i>resultado</i></h2>
+          <p class="pendiente">El cálculo del resultado está en construcción.</p>
+        </section>
+      ),
+    )
+  }
+</Base>
+
+<script>
+  import { puedeAvanzar, type Paso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+  import { buscarProvincias, provinciaExacta, type ProvinciaBuscable } from '../lib/perfil/provincias.ts';
+
+  const { pasos, preguntas, provincias } = JSON.parse(document.getElementById('datos-test')!.textContent!) as {
+    pasos: Paso[];
+    preguntas: PreguntaTest[];
+    provincias: ProvinciaBuscable[];
+  };
+  const clave = (p: Paso) => (p.tipo === 'pregunta' ? `pregunta:${p.pregunta}` : p.tipo);
+  const secciones = pasos.map((p) => document.querySelector<HTMLElement>(`[data-paso="${clave(p)}"]`)!);
+
+  /** Las respuestas del visitante. Solo en memoria: se pierden al cerrar o recargar la página. */
+  const respuestas: Record<string, string> = {};
+  let actual = 0;
+  const AVANCE_MS = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 400;
+
+  function mostrar(i: number) {
+    secciones[actual]!.hidden = true;
+    actual = i;
+    secciones[actual]!.hidden = false;
+    secciones[actual]!.querySelector<HTMLElement>('h2')!.focus();
+    window.scrollTo(0, 0);
+  }
+
+  function siguiente() {
+    const paso = pasos[actual]!;
+    if (paso.tipo === 'pregunta') {
+      const p = preguntas.find((x) => x.id === paso.pregunta)!;
+      if (!puedeAvanzar(p, respuestas[p.id])) return;
+    }
+    if (actual < pasos.length - 1) mostrar(actual + 1);
+  }
+
+  for (const s of secciones) {
+    s.querySelector('[data-atras]')?.addEventListener('click', () => actual > 0 && mostrar(actual - 1));
+    s.querySelector('[data-seguir]')?.addEventListener('click', siguiente);
+  }
+
+  // Opciones: al marcar una, se invierte y la pregunta avanza sola.
+  for (const boton of document.querySelectorAll<HTMLButtonElement>('.opcion')) {
+    boton.addEventListener('click', () => {
+      const seccion = boton.closest<HTMLElement>('[data-paso]')!;
+      const id = seccion.dataset.paso!.replace('pregunta:', '');
+      respuestas[id] = boton.dataset.valor!;
+      for (const b of seccion.querySelectorAll('.opcion')) b.setAttribute('aria-pressed', String(b === boton));
+      setTimeout(siguiente, AVANCE_MS);
+    });
+  }
+
+  // Provincia: autocompletado con el patrón combobox + listbox.
+  const campo = document.getElementById('provincia-campo') as HTMLInputElement;
+  const lista = document.getElementById('provincia-lista') as HTMLUListElement;
+  const aviso = document.getElementById('provincia-aviso')!;
+  const botonSiguiente = document.querySelector<HTMLButtonElement>('[data-siguiente]')!;
+  let sugerencias: ProvinciaBuscable[] = [];
+  let activa = -1;
+
+  function elegir(p: ProvinciaBuscable | undefined) {
+    if (p) {
+      respuestas.provincia = p.id;
+      campo.value = p.nombre;
+      aviso.textContent = '';
+    } else {
+      delete respuestas.provincia;
+    }
+    botonSiguiente.setAttribute('aria-disabled', String(!p));
+    cerrarLista();
+  }
+
+  function cerrarLista() {
+    lista.hidden = true;
+    lista.replaceChildren();
+    campo.setAttribute('aria-expanded', 'false');
+    campo.removeAttribute('aria-activedescendant');
+    activa = -1;
+  }
+
+  function marcarActiva(i: number) {
+    activa = i;
+    lista.querySelectorAll('li').forEach((li, j) => li.setAttribute('aria-selected', String(j === i)));
+    const li = lista.children[i] as HTMLElement | undefined;
+    if (li) {
+      campo.setAttribute('aria-activedescendant', li.id);
+      li.scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  campo.addEventListener('input', () => {
+    elegir(provinciaExacta(provincias, campo.value));
+    if (respuestas.provincia) return;
+    sugerencias = buscarProvincias(provincias, campo.value);
+    if (!sugerencias.length) return cerrarLista();
+    lista.replaceChildren(
+      ...sugerencias.map((p, i) => {
+        const li = document.createElement('li');
+        li.id = `provincia-${p.id}`;
+        li.role = 'option';
+        li.textContent = p.nombre;
+        li.setAttribute('aria-selected', 'false');
+        li.addEventListener('mousedown', (e) => e.preventDefault());
+        li.addEventListener('click', () => elegir(sugerencias[i]));
+        return li;
+      }),
+    );
+    lista.hidden = false;
+    campo.setAttribute('aria-expanded', 'true');
+    activa = -1;
+  });
+
+  campo.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' && sugerencias.length && !lista.hidden) {
+      e.preventDefault();
+      marcarActiva(Math.min(activa + 1, sugerencias.length - 1));
+    } else if (e.key === 'ArrowUp' && !lista.hidden) {
+      e.preventDefault();
+      marcarActiva(Math.max(activa - 1, 0));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (!lista.hidden && activa >= 0) elegir(sugerencias[activa]);
+      else if (!lista.hidden && sugerencias.length === 1) elegir(sugerencias[0]);
+      else intentarAvanzar();
+    } else if (e.key === 'Escape') {
+      cerrarLista();
+    }
+  });
+
+  campo.addEventListener('blur', () => setTimeout(cerrarLista, 0));
+
+  function intentarAvanzar() {
+    if (!respuestas.provincia) {
+      aviso.textContent = 'Elige tu provincia de la lista para seguir: es la única pregunta obligatoria.';
+      campo.focus();
+      return;
+    }
+    siguiente();
+  }
+  botonSiguiente.addEventListener('click', intentarAvanzar);
+
+  secciones[0]!.hidden = false;
+</script>
+
+<style>
+  .fin {
+    padding: 18px var(--margen) 28px;
+  }
+
+  .fin .atras {
+    padding: 6px 0;
+    border: 0;
+    background: none;
+    color: var(--tinta);
+    font: 500 13px var(--sans);
+    cursor: pointer;
+  }
+
+  .fin h2 {
+    margin: 18px 0 12px;
+    font-size: clamp(30px, 7.5vw, 38px);
+    line-height: 1.05;
+    outline: none;
+  }
+
+  .pendiente {
+    margin: 0 0 24px;
+    color: var(--gris-texto);
+  }
+</style>

@@ -43,6 +43,8 @@ export const esquemaPregunta = z
     id: slug,
     bloque: z.enum(['basico', 'ampliado']),
     orden: z.number().int().positive(),
+    /** Nombre corto para la etiqueta de progreso ("Vivienda · 2 de 8"). */
+    etiqueta: texto(3, 'etiqueta'),
     enunciado: texto(5, 'enunciado'),
     subtitulo: z.string().optional(),
     tipo: z.enum(['opciones', 'provincia']),

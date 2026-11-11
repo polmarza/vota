@@ -26,9 +26,9 @@ const territorio: Territorio = {
 };
 
 const preguntas: Pregunta[] = esquemaPreguntas.parse([
-  { id: 'provincia', bloque: 'basico', orden: 1, enunciado: '¿Dónde votas?', tipo: 'provincia', obligatoria: true },
+  { id: 'provincia', bloque: 'basico', orden: 1, etiqueta: 'Provincia', enunciado: '¿Dónde votas?', tipo: 'provincia', obligatoria: true },
   {
-    id: 'vivienda', bloque: 'basico', orden: 2, enunciado: '¿Cómo vives?', tipo: 'opciones',
+    id: 'vivienda', bloque: 'basico', orden: 2, etiqueta: 'Vivienda', enunciado: '¿Cómo vives?', tipo: 'opciones',
     opciones: [{ id: 'alquiler', texto: 'De alquiler' }, { id: 'propiedad', texto: 'En propiedad' }, { id: 'ns', texto: 'Prefiero no responder' }],
   },
 ]);
@@ -103,14 +103,14 @@ describe('M-05 · validación de las fichas', () => {
   it('M-01: toda pregunta de opciones la usa alguna ficha', () => {
     const conPreguntaSobrante = esquemaPreguntas.parse([
       ...preguntas,
-      { id: 'edad', bloque: 'basico', orden: 3, enunciado: '¿Cuántos años tienes?', tipo: 'opciones', opciones: [{ id: 'joven', texto: 'Joven' }, { id: 'mayor', texto: 'Mayor' }, { id: 'ns', texto: 'Prefiero no responder' }] },
+      { id: 'edad', bloque: 'basico', orden: 3, etiqueta: 'Edad', enunciado: '¿Cuántos años tienes?', tipo: 'opciones', opciones: [{ id: 'joven', texto: 'Joven' }, { id: 'mayor', texto: 'Mayor' }, { id: 'ns', texto: 'Prefiero no responder' }] },
     ]);
     expect(validar({ 'XIV-1-1': ficha() }, { preguntas: conPreguntaSobrante })).toContainEqual(expect.stringContaining('"edad" no la usa ninguna ficha'));
   });
 
   it('las preguntas de opciones incluyen "Prefiero no responder" y solo la provincia es obligatoria', () => {
-    expect(() => esquemaPreguntas.parse([{ id: 'x', bloque: 'basico', orden: 1, enunciado: '¿Pregunta?', tipo: 'opciones', opciones: [{ id: 'a', texto: 'A' }, { id: 'b', texto: 'B' }, { id: 'c', texto: 'C' }] }])).toThrow();
-    expect(() => esquemaPreguntas.parse([{ id: 'x', bloque: 'basico', orden: 1, enunciado: '¿Pregunta?', tipo: 'opciones', obligatoria: true, opciones: [{ id: 'a', texto: 'A' }, { id: 'b', texto: 'B' }, { id: 'ns', texto: 'NS' }] }])).toThrow();
+    expect(() => esquemaPreguntas.parse([{ id: 'x', bloque: 'basico', orden: 1, etiqueta: 'Equis', enunciado: '¿Pregunta?', tipo: 'opciones', opciones: [{ id: 'a', texto: 'A' }, { id: 'b', texto: 'B' }, { id: 'c', texto: 'C' }] }])).toThrow();
+    expect(() => esquemaPreguntas.parse([{ id: 'x', bloque: 'basico', orden: 1, etiqueta: 'Equis', enunciado: '¿Pregunta?', tipo: 'opciones', obligatoria: true, opciones: [{ id: 'a', texto: 'A' }, { id: 'b', texto: 'B' }, { id: 'ns', texto: 'NS' }] }])).toThrow();
   });
 });
 

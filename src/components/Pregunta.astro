@@ -1,0 +1,134 @@
+---
+// Una pregunta del cuestionario (docs/design-system.md → Pregunta y Opción de respuesta). El script
+// de src/pages/test.astro la muestra, recoge la respuesta y avanza.
+import type { Pregunta } from '../../scripts/data/catalogo.ts';
+import { progreso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+
+interface Props {
+  pregunta: Pregunta;
+  todas: PreguntaTest[];
+  /** Destino de "Atrás" en la primera pregunta (la portada); en el resto lo resuelve el script. */
+  atrasA?: string;
+}
+
+const { pregunta: p, todas, atrasA } = Astro.props;
+const { texto, fraccion } = progreso(todas, p.id);
+const idTitulo = `pregunta-${p.id}`;
+---
+
+<section class="paso" data-paso={`pregunta:${p.id}`} data-testid={`pregunta-${p.id}`} hidden>
+  <div class="cabeza">
+    {
+      atrasA ? (
+        <a class="atras" href={atrasA}>← Atrás</a>
+      ) : (
+        <button class="atras" type="button" data-atras>
+          ← Atrás
+        </button>
+      )
+    }
+    <span class="etiqueta">{texto}</span>
+  </div>
+  <div class="barra" aria-hidden="true"><span style={`width: ${Math.round(fraccion * 100)}%`}></span></div>
+
+  <h2 id={idTitulo} tabindex="-1">{p.enunciado}</h2>
+  {p.subtitulo && <p class="ayuda">{p.subtitulo}</p>}
+
+  {
+    p.tipo === 'opciones' ? (
+      <div class="opciones" role="group" aria-labelledby={idTitulo}>
+        {p.opciones.map((o) => (
+          <button class="opcion" type="button" aria-pressed="false" data-valor={o.id} data-testid={`opcion-${p.id}-${o.id}`}>
+            {o.texto}
+          </button>
+        ))}
+      </div>
+    ) : (
+      <slot />
+    )
+  }
+</section>
+
+<style>
+  .paso {
+    padding: 18px var(--margen) 28px;
+  }
+
+  .cabeza {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--gris-texto);
+  }
+
+  .atras {
+    padding: 6px 0;
+    border: 0;
+    background: none;
+    color: var(--tinta);
+    font: 500 13px var(--sans);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .barra {
+    height: 3px;
+    margin: 8px 0 26px;
+    background: var(--gris-pista-barra);
+  }
+
+  .barra span {
+    display: block;
+    height: 100%;
+    background: var(--tinta);
+    transition: width 300ms ease;
+  }
+
+  h2 {
+    font-size: clamp(30px, 7.5vw, 38px);
+    line-height: 1.05;
+    outline: none;
+  }
+
+  .ayuda {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--gris-texto);
+  }
+
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .opcion {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--gris-borde);
+    border-radius: var(--radio);
+    background: var(--blanco);
+    color: var(--tinta);
+    font: 400 16px/1.3 var(--sans);
+    text-align: left;
+    cursor: pointer;
+    transition:
+      background 150ms ease,
+      color 150ms ease,
+      border-color 150ms ease;
+  }
+
+  .opcion:hover {
+    border-color: var(--tinta);
+  }
+
+  .opcion[aria-pressed='true'] {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: var(--blanco);
+  }
+</style>

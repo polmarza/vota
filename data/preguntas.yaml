@@ -7,6 +7,7 @@
 - id: provincia
   bloque: basico
   orden: 1
+  etiqueta: Provincia
   enunciado: ¿En qué provincia votas?
   subtitulo: Solo aparecen los partidos que se presentan en ella.
   tipo: provincia
@@ -15,6 +16,7 @@
 - id: vivienda
   bloque: basico
   orden: 2
+  etiqueta: Vivienda
   enunciado: ¿Cómo vives?
   tipo: opciones
   opciones:
@@ -27,6 +29,7 @@
 - id: trabajo
   bloque: basico
   orden: 3
+  etiqueta: Trabajo
   enunciado: ¿Cuál es tu situación laboral?
   tipo: opciones
   opciones:
@@ -42,6 +45,7 @@
 - id: edad
   bloque: basico
   orden: 4
+  etiqueta: Edad
   enunciado: ¿Cuántos años tienes?
   tipo: opciones
   opciones:
@@ -54,6 +58,7 @@
 - id: ingresos
   bloque: basico
   orden: 5
+  etiqueta: Ingresos
   enunciado: ¿Cuánto ingresas al año, antes de impuestos?
   subtitulo: Tus ingresos personales, no los de tu hogar.
   tipo: opciones
@@ -67,6 +72,7 @@
 - id: hijos
   bloque: basico
   orden: 6
+  etiqueta: Hijos
   enunciado: ¿Tienes hijos a tu cargo?
   tipo: opciones
   opciones:
@@ -79,6 +85,7 @@
 - id: cuidados
   bloque: basico
   orden: 7
+  etiqueta: Cuidados
   enunciado: ¿Cuidas de alguna persona dependiente o con discapacidad?
   tipo: opciones
   opciones:
@@ -89,6 +96,7 @@
 - id: transporte
   bloque: basico
   orden: 8
+  etiqueta: Transporte
   enunciado: ¿Cómo te mueves normalmente?
   tipo: opciones
   opciones:
@@ -102,6 +110,7 @@
 - id: arrendador
   bloque: ampliado
   orden: 1
+  etiqueta: Alquileres
   enunciado: ¿Tienes alguna vivienda alquilada a otra persona?
   tipo: opciones
   opciones:
@@ -112,6 +121,7 @@
 - id: contrato
   bloque: ampliado
   orden: 2
+  etiqueta: Contrato
   enunciado: Si trabajas por cuenta ajena, ¿qué contrato tienes?
   tipo: opciones
   opciones:
@@ -124,6 +134,7 @@
 - id: campo
   bloque: ampliado
   orden: 3
+  etiqueta: Campo
   enunciado: ¿Vives de la agricultura, la ganadería o la pesca?
   tipo: opciones
   opciones:
