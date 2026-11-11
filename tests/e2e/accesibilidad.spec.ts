@@ -13,12 +13,16 @@ test.describe('accesibilidad (WCAG 2.1 AA)', () => {
     // Mientras entra el héroe, sus textos están a media opacidad: se revisa cuando ha terminado.
     await expect(page.locator('.hero')).toHaveClass(/is-entered/);
     await revisar(page);
-    // Y la sección del resultado de ejemplo, una vez que ha llegado su línea (momento line-carries-colour).
-    await page.locator('#votaciones').scrollIntoViewIfNeeded();
-    await page.waitForFunction(() => {
-      const c = document.querySelector('#resultado')!.classList;
-      return !c.contains('is-live') || c.contains('is-open');
-    });
+    // Y la sección del resultado de ejemplo, con cada bloque ya entrado (fundido y barras terminados),
+    // el selector de perfil y las preguntas frecuentes.
+    const bloques = page.locator('#resultado [data-ejemplo]:not([hidden]) [data-aparece]');
+    for (const bloque of await bloques.all()) {
+      await bloque.scrollIntoViewIfNeeded();
+      await expect(bloque).toHaveClass(/is-visto/);
+    }
+    await page.waitForFunction(() => document.getAnimations().every((a) => a.playState !== 'running'));
+    await expect(page.getByTestId('perfil-ejemplo')).toBeVisible();
+    await page.locator('#preguntas').scrollIntoViewIfNeeded();
     await revisar(page);
   });
 

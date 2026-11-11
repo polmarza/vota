@@ -9,7 +9,6 @@
 @import '../kit/system.css';
 @import '../kit/motion.css';
 @import '../kit/layout.css';
-@import '../kit/moments/line-carries-colour/moment.css';
 
 /* ---------------------------------------------------------------- paleta y fuentes
    La de la maqueta con un cambio: tinta, botones, foco y superficies invertidas en negro (#0a0a0a)
@@ -35,11 +34,6 @@
   position: absolute; width: 1px; height: 1px; overflow: hidden;
   clip-path: inset(50%); white-space: nowrap;
 }
-
-/* Un color de partido que no llega a 3:1 sobre el fondo (BNG, CC, Més, PRC…) lleva un filete de
-   tinta alrededor del punto y de la barra; el nombre del partido va siempre al lado, en tinta. El
-   build marca esos colores con data-claro (src/lib/color.ts). */
-[data-claro] { --c-ring: inset 0 0 0 1px rgb(var(--tinta-rgb) / .55); }
 
 /* ---------------------------------------------------------------- la ventana del héroe
    la primera pregunta del test, sobre el marco arena */
@@ -90,10 +84,10 @@ button.opt:hover { border-color: rgb(var(--tinta-rgb) / .5); }
 .podium ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-4); }
 .podium li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-2) var(--s-4); align-items: baseline; }
 .podium .who { display: flex; align-items: center; gap: var(--s-3); font-weight: 500; font-size: 17px; }
-.podium .who::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: var(--c-ring, none); flex: none; }
+.podium .who::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
 .podium .pct { font: 500 22px/1 var(--font-mono); font-variant-numeric: tabular-nums; }
 .podium .meter { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--surface); overflow: hidden; }
-.podium .meter i { display: block; height: 100%; width: var(--w); background: var(--c); box-shadow: var(--c-ring, none); border-radius: 99px; }
+.podium .meter i { display: block; height: 100%; width: var(--w); background: var(--c); border-radius: 99px; }
 .podium .who { flex-wrap: wrap; column-gap: var(--s-3); row-gap: 0; }
 .podium .who small { font: 400 14px/1.4 var(--font-text); color: var(--muted); }
 @media (max-width: 639px) { .podium .who small { flex-basis: 100%; padding-left: 24px; } }
@@ -112,7 +106,7 @@ button.opt:hover { border-color: rgb(var(--tinta-rgb) / .5); }
 .tally { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--s-5); }
 .tally li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-1) var(--s-3); padding-block: var(--s-3); border-bottom: 1px solid var(--line); font-size: 16px; }
 .tally .p { display: flex; align-items: center; gap: var(--s-3); }
-.tally .p::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); box-shadow: var(--c-ring, none); flex: none; }
+.tally .p::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; }
 .tally .v { font: 500 14px/1 var(--font-mono); padding: 6px 10px; border-radius: 99px; border: 1px solid rgb(var(--tinta-rgb) / .25); white-space: nowrap; }
 .tally .v--si { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .tally .desglose { flex-basis: 100%; font-size: 13px; line-height: 1.4; color: var(--muted); }

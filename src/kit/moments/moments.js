@@ -29,9 +29,9 @@ import * as lib from './lib.js';
 
 // En la web los momentos se empaquetan con Vite: en lugar de enlazar <id>/moment.css e importar
 // <id>/moment.js por URL, cada momento que se usa se registra aquí (su CSS va en global.css).
-const MODULES = {
-  'line-carries-colour': () => import('./line-carries-colour/moment.js'),
-};
+// Ahora no se usa ninguno: el resultado de ejemplo de la portada dejó line-carries-colour por un
+// fundido propio (src/pages/index.astro). El cargador se queda porque system.js espera su `ready`.
+const MODULES = {};
 const html = document.documentElement;
 
 export function mount(el) {

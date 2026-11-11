@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { cierre = true } = Astro.props;
-const REPO = 'https://github.com/polmarza/vota';
+import { REPO } from '../lib/enlaces.ts';
 ---
 
 <footer class:list={['footer', cierre ? 'closing' : 'pie-simple']} aria-labelledby={cierre ? 'cierre-h' : undefined}>

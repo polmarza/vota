@@ -43,9 +43,15 @@ de Taste Skill de esa propuesta, copiado en `src/kit/`; los componentes propios 
   van con el nombre o las siglas del partido en tinta al lado, para que nadie dependa del color
   (daltonismo).
 - **Contraste:** todo el texto cumple AA (gris `#5E6B71` sobre el fondo, 5,2:1; sobre la superficie,
-  4,8:1). Un color de partido que no llega a 3:1 sobre el fondo (Vox, Más Madrid, ERC, Junts, EH Bildu, BNG, CC, NC, Més, PRC) lleva un
-  filete de tinta al 55 % alrededor de su punto y su barra, sin cambiar el color; lo decide
-  `src/lib/color.ts` (`data-claro`).
+  4,8:1). Los colores de partido van **tal cual, sin filete**, aunque algunos no lleguen a 3:1 sobre
+  el fondo (Vox, Más Madrid, ERC, Junts, EH Bildu, BNG, CC, NC, Més, PRC). Hasta el 2026-11-11 esos
+  llevaban un filete de tinta alrededor del punto y la barra; Pol lo quitó porque, al tenerlo solo
+  algunos partidos, parecía un error. **Por qué cumple WCAG 2.1 AA:** el 1.4.11 (contraste de lo que
+  no es texto, 3:1) solo se exige a los elementos gráficos *necesarios para entender* el contenido.
+  El punto y la barra no lo son: el nombre o las siglas del partido y su porcentaje van siempre al
+  lado en texto con contraste AA, así que la información no se pierde aunque el color no se
+  distinga (es también lo que pide el 1.4.1, uso del color). Lo comprueba axe en
+  `tests/e2e/accesibilidad.spec.ts`.
 
 ---
 
@@ -103,11 +109,15 @@ de Taste Skill de esa propuesta, copiado en `src/kit/`; los componentes propios 
   fino. El grande del cierre ocupa todo el ancho. Inactivo: superficie y texto gris.
 - **Foco:** contorno de 2px en tinta.
 - **Iconos:** flecha del kit (`.m-arrow`) en los botones de avance; nada más.
-- **Movimiento** (`src/kit/motion.css`, `motion.js` y `moments/`): entrada del héroe (el titular
-  línea a línea, luego entradilla, botones y ventana), el momento *line-carries-colour* en el
-  resultado de ejemplo (una línea sube por la sección y la va descubriendo), la flecha de los botones
-  y las transiciones de 180ms del kit. Todo se desactiva con `prefers-reduced-motion: reduce` (y el
-  momento no corre en móvil).
+- **Movimiento** (`src/kit/motion.css`, `motion.js`): entrada del héroe (el titular línea a línea,
+  luego entradilla, botones y ventana), la flecha de los botones y las transiciones de 180ms del kit.
+  En el resultado de ejemplo de la portada, cada bloque (rótulo, nombre del perfil, podios y aviso)
+  entra con un **fundido** de 600ms la primera vez que asoma en pantalla y las **barras de los podios
+  crecen desde 0** hasta su porcentaje (900ms, escalonadas 80ms por fila); al cambiar de perfil con
+  el selector, lo mismo. Está en `src/pages/index.astro` (CSS y el script del selector), en móvil y
+  en escritorio. Todo se desactiva con `prefers-reduced-motion: reduce`: se ve el estado final
+  directamente. Ya no se usa ningún momento del kit (el *line-carries-colour* de la sección del
+  resultado se quitó el 2026-11-11); `src/kit/moments/` conserva solo el cargador.
 
 ---
 
@@ -179,6 +189,18 @@ tinta, el resto con contorno; el desglose si votó dividido) y el enlace al Cong
 El resultado real de uno de los perfiles de `data/perfiles-ejemplo.yaml`, elegido al azar en cada
 visita y calculado en el build con el mismo cálculo que el test, nombrando el perfil ("Así le sale
 a: estudiante de alquiler en Madrid") y con el rótulo "Un ejemplo real". Nunca cifras inventadas.
+Bajo el nombre, un **selector nativo** (`<select>` con la etiqueta "Ver otro perfil", el campo
+`.field` del kit) deja elegir cualquiera de los nueve perfiles sin recargar; al cargar refleja el
+perfil que ha salido. Los nueve resultados y sus votaciones de ejemplo ya están en el HTML del
+build: el selector solo muestra uno y oculta los demás. Sin JavaScript se ve el primero y el
+selector no aparece. Se eligió el desplegable y no una fila de píldoras porque los nombres de los
+perfiles son largos (hasta 70 caracteres) y nueve píldoras ocuparían media pantalla del móvil.
+
+### Preguntas frecuentes (`PreguntasFrecuentes.astro`)
+Las mismas preguntas y respuestas en la portada (sección propia antes del cierre, con el h2 a la
+izquierda y las preguntas a la derecha en escritorio) y en "Cómo funciona". El componente es la
+única fuente del texto. Usa el patrón FAQ del kit (`.faq > .faq__item`): cada pregunta en un h3 de
+500 con su respuesta debajo, todas abiertas, separadas por una raya.
 
 ### Cierre y pie (`Pie.astro`)
 "Ocho preguntas sobre tu vida", la línea de privacidad y el botón del test a todo el ancho; debajo,

@@ -6,7 +6,8 @@ import { join } from 'node:path';
 import Base from '../layouts/Base.astro';
 import { cargarCandidaturas, cargarCatalogo, cargarPartidos } from '../lib/datos.ts';
 
-const REPO = 'https://github.com/polmarza/vota';
+import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import { REPO } from '../lib/enlaces.ts';
 const catalogo = cargarCatalogo();
 const xiv = catalogo.filter((f) => f.votacion.startsWith('XIV-')).length;
 const delGobierno = catalogo.filter((f) => /Gobierno/.test(f.iniciativa)).length;
@@ -141,19 +142,7 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
     <section class="bloque">
       <h2>Preguntas frecuentes</h2>
       <div class="bloque__texto">
-      <dl class="faq">
-        <dt>¿Guardáis mis respuestas?</dt>
-        <dd>No. El cálculo se hace en tu navegador y tus respuestas no se envían a ningún sitio. Al cerrar la página, desaparecen.</dd>
-        <dt>¿Por qué no aparece mi partido?</dt>
-        <dd>Porque no se presenta en tu provincia o porque no tuvo diputados en el Congreso en la XIV o la XV.</dd>
-        <dt>¿Por qué no me preguntáis qué opino?</dt>
-        <dd>Porque la herramienta compara lo que los partidos votaron sobre situaciones concretas, no ideas.</dd>
-        <dt>¿Puedo comprobarlo?</dt>
-        <dd>
-          Sí. Cada votación enlaza a su página en el Congreso, y el catálogo, las etiquetas, los votos y el código son públicos
-          en <a href={REPO}>GitHub</a>.
-        </dd>
-      </dl>
+      <PreguntasFrecuentes />
       </div>
     </section>
 
@@ -200,8 +189,7 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
   }
 
   p,
-  li,
-  dd {
+  li {
     font-size: var(--t-body);
     line-height: 1.6;
   }
@@ -233,17 +221,8 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
     margin-top: var(--s-3);
   }
 
-  li strong,
-  .faq dt {
+  li strong {
     font-weight: 500;
-  }
-
-  .faq dt {
-    margin-top: var(--s-5);
-  }
-
-  .faq dd {
-    margin: var(--s-1) 0 0;
   }
 
   .firma {

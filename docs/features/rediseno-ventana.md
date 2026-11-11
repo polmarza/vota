@@ -43,19 +43,34 @@ acordados (portada, podios, avisos).
   con los mismos datos y el mismo cálculo que el test, nombrando el perfil. Nada de partidos con
   porcentajes inventados: una captura sin contexto no puede atribuir a la web un dato falso.
 - **Tests:** se reescriben los que dependan de la estructura o los textos antiguos.
+- **Ajustes tras la revisión de Pol** (2026-11-11):
+  - **Preguntas frecuentes también en la portada**, en una sección antes del cierre, con el mismo
+    texto que "Cómo funciona": las dos páginas usan `src/components/PreguntasFrecuentes.astro`
+    (patrón FAQ del kit, todas las respuestas abiertas).
+  - **Fuera el filete de tinta** de los colores de partido con poco contraste (Vox, Más Madrid, ERC,
+    Junts…): solo lo tenían algunos y parecía un error. Se borran `src/lib/color.ts` y
+    `tests/unit/color.test.ts`. Cumple WCAG porque el punto y la barra no son la única forma de
+    transmitir la información (nombre y porcentaje en texto al lado); la justificación está en
+    `docs/design-system.md` → Contraste.
+  - **Selector de perfil** en el resultado de ejemplo: un `<select>` nativo ("Ver otro perfil") con
+    los nueve perfiles; al cargar sale uno al azar y el selector lo refleja; al cambiar se ven el
+    resultado y la votación de ese perfil sin recargar (todo está ya en el HTML del build).
+  - **Fuera el momento *line-carries-colour*** en la sección del resultado (y sus archivos de
+    `src/kit/moments/`, que no usaba nada más). En su lugar, fundido al entrar en pantalla y barras
+    que crecen desde 0, también al cambiar de perfil; nada con `prefers-reduced-motion`.
 
 ## Cobertura
 
 | Requisito | Se implementa en | Se valida con |
 |-----------|------------------|---------------|
 | R-1 · Sistema visual: tokens de Ventana con tinta negra, Geist y Geist Mono autoalojadas, icono de puntos en cabecera y favicon; `docs/design-system.md` reescrito | `src/styles/global.css`, `src/kit/` (kit de Taste Skill copiado de la propuesta), `src/layouts/Base.astro`, `src/components/Cabecera.astro`, `src/components/Pie.astro`, `public/favicon.svg`, `docs/design-system.md` | revisión humana: portada y test en la vista previa a 375 px y 1280 px; fondo `#f7f9fa`, botones negros, Geist en titulares y texto, cifras en Geist Mono y el icono de puntos junto a "Vota con Criterio" |
-| R-2 · Portada con la estructura de Ventana: titular centrado, botón y la primera pregunta asomando en una ventana sobre el marco arena | `src/pages/index.astro`, `data/perfiles-ejemplo.yaml` (resultado de ejemplo) | `tests/e2e/cuestionario.spec.ts` (desde la portada se llega a la primera pregunta y a "Cómo funciona"; el resultado de ejemplo nombra el perfil y es real) y revisión humana: portada a 375 px; el titular, la entradilla y el botón se ven sin desplazar y la ventana asoma debajo |
+| R-2 · Portada con la estructura de Ventana: titular centrado, botón y la primera pregunta asomando en una ventana sobre el marco arena; resultado de ejemplo con selector de perfil, y preguntas frecuentes antes del cierre | `src/pages/index.astro`, `src/components/PreguntasFrecuentes.astro`, `data/perfiles-ejemplo.yaml` (resultado de ejemplo) | `tests/e2e/cuestionario.spec.ts` (desde la portada se llega a la primera pregunta y a "Cómo funciona"; el resultado de ejemplo nombra el perfil y es real; el selector cambia de perfil sin recargar; las preguntas frecuentes son las de "Cómo funciona") y revisión humana: portada a 375 px; el titular, la entradilla y el botón se ven sin desplazar y la ventana asoma debajo |
 | R-3 · Cuestionario: cada pregunta en su ventana, opciones con su marca de selección, progreso "Vivienda · 2 de 8" | `src/components/Pregunta.astro`, `src/components/SelectorProvincia.astro`, `src/pages/test.astro` | `tests/e2e/cuestionario.spec.ts` (M-01) |
 | R-4 · Resultado provisional y final: los dos podios en tarjetas con punto de color, nombre, votaciones contadas, porcentaje en Geist Mono y barra; aviso de alcance; botón para seguir | `src/scripts/resultado.ts`, `src/pages/test.astro` | `tests/e2e/cuestionario.spec.ts` (M-12, M-03, M-09) |
 | R-5 · Lista de votaciones: fecha y tipo en mono, título, por qué te afecta, voto de cada partido en rejilla de píldoras y enlace al Congreso | `src/scripts/resultado.ts` | `tests/e2e/cuestionario.spec.ts` (M-04) |
 | R-6 · "Cómo funciona" con el nuevo sistema | `src/pages/como-funciona.astro` | revisión humana: la página a 375 px; se lee en una columna, con los mismos títulos y textos que ahora |
-| R-7 · Accesibilidad AA en todas las pantallas, incluidos los colores de partido sobre el fondo nuevo | todo lo anterior, `src/lib/color.ts` (filete en los colores de partido que no llegan a 3:1) | `tests/e2e/accesibilidad.spec.ts`, `tests/unit/color.test.ts` |
-| R-8 · Rendimiento y movimiento: portada en menos de 2 s en 4G; animaciones desactivadas con `prefers-reduced-motion` | `src/styles/global.css`, `src/kit/motion.css`, `src/kit/moments/`, `src/pages/index.astro` | no verificable por interfaz: es una medición; se comprueba con Lighthouse (móvil, 4G simulado) sobre `pnpm preview` antes del PR y con la emulación de movimiento reducido del navegador |
+| R-7 · Accesibilidad AA en todas las pantallas, incluidos los colores de partido sobre el fondo nuevo (sin filete: el nombre y el porcentaje van en texto al lado, `docs/design-system.md` → Contraste) | todo lo anterior | `tests/e2e/accesibilidad.spec.ts` |
+| R-8 · Rendimiento y movimiento: portada en menos de 2 s en 4G; animaciones desactivadas con `prefers-reduced-motion` | `src/styles/global.css`, `src/kit/motion.css`, `src/pages/index.astro` (fundido y barras del resultado de ejemplo) | no verificable por interfaz: el tiempo de carga es una medición; se comprueba con Lighthouse (móvil, 4G simulado) sobre `pnpm preview` antes del PR. El movimiento reducido del resultado de ejemplo (sin fundido ni barras creciendo) lo comprueba `tests/e2e/cuestionario.spec.ts` |
 | R-9 · Las respuestas siguen sin salir del navegador | sin cambios | `tests/e2e/privacidad.spec.ts` (M-08) |
 
 ## Fuera de esta feature

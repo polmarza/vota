@@ -135,6 +135,56 @@ test.describe('portada · resultado de ejemplo', () => {
     await expect(votacion.locator('a.link')).toHaveAttribute('href', /^https:\/\/www\.congreso\.es\//);
   });
 
+  test('el selector cambia de perfil sin recargar: cambian el nombre, los podios y la votación', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => ((window as unknown as { sinRecargar: boolean }).sinRecargar = true));
+    const selector = page.getByTestId('perfil-ejemplo');
+    const resultado = page.locator('#resultado [data-ejemplo]:not([hidden])');
+    // Al cargar sale un perfil al azar y el selector lo refleja.
+    const antes = await selector.inputValue();
+    await expect(resultado).toHaveAttribute('data-ejemplo', antes);
+    await expect(selector.locator('option')).toHaveCount(9);
+    const nombreAntes = (await resultado.locator('h2').textContent())!;
+    const podiosAntes = await resultado.locator('.podium li').allTextContents();
+
+    const otro = antes === '0' ? '1' : '0';
+    await selector.selectOption(otro);
+    const etiqueta = (await selector.locator(`option[value="${otro}"]`).textContent())!;
+    await expect(resultado).toHaveAttribute('data-ejemplo', otro);
+    await expect(resultado.locator('h2')).toHaveText(`Así le sale a: ${etiqueta.charAt(0).toLowerCase()}${etiqueta.slice(1)}`);
+    await expect(resultado.locator('h2')).not.toHaveText(nombreAntes);
+    await expect(resultado.locator('.podium li')).toHaveCount(6);
+    expect(await resultado.locator('.podium li').allTextContents()).not.toEqual(podiosAntes);
+    // La sección sigue nombrada por el h2 del perfil que se ve, y la votación de ejemplo es la suya.
+    await expect(page.locator('#res-h')).toHaveText(await resultado.locator('h2').textContent() as string);
+    await expect(page.locator('#votaciones [data-ejemplo]:not([hidden])')).toHaveAttribute('data-ejemplo', otro);
+    await expect(selector).toHaveValue(otro);
+    // Sin recargar ni cambiar de dirección.
+    expect(await page.evaluate(() => (window as unknown as { sinRecargar?: boolean }).sinRecargar)).toBe(true);
+    expect(new URL(page.url()).pathname).toBe('/');
+  });
+
+  test('con movimiento reducido el resultado de ejemplo se ve directamente, sin fundido ni barras creciendo', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    await expect(page.locator('#resultado')).not.toHaveClass(/res-anim/);
+    const resultado = page.locator('#resultado [data-ejemplo]:not([hidden])');
+    for (const bloque of await resultado.locator('[data-aparece]').all()) await expect(bloque).toHaveCSS('opacity', '1');
+    const barra = resultado.locator('.podium .meter i').first();
+    await expect(barra).toHaveCSS('animation-name', 'none');
+    expect(await barra.evaluate((b) => b.getBoundingClientRect().width)).toBeGreaterThan(0);
+  });
+
+  test('la portada enseña las mismas preguntas frecuentes que "Cómo funciona"', async ({ page }) => {
+    await page.goto('/como-funciona');
+    const preguntas = await page.getByTestId('preguntas-frecuentes').locator('h3').allTextContents();
+    expect(preguntas.length).toBeGreaterThan(0);
+    await page.goto('/');
+    const portada = page.locator('#preguntas').getByTestId('preguntas-frecuentes');
+    await expect(portada.locator('h3')).toHaveText(preguntas);
+    await expect(portada.locator('a')).toHaveAttribute('href', /github\.com/);
+  });
+
   test('desde la portada se llega a "Cómo funciona"', async ({ page }) => {
     await page.goto('/');
     await page.locator('.hero').getByRole('link', { name: 'Cómo funciona' }).click();

@@ -15,7 +15,6 @@ import {
   type VotoPartido,
   type VotosPorVotacion,
 } from '../lib/afinidad/calculo.ts';
-import { esClaro } from '../lib/color.ts';
 
 export interface FichaWeb extends FichaCalculo {
   titulo: string;
@@ -71,11 +70,13 @@ export function etiquetaVoto(v: VotoPartido | undefined): { pildora: string; si:
   return { pildora, si: v.sentido === 'si', desglose: v.dividido ? `voto dividido ${cuenta}` : undefined };
 }
 
-/** Variables de estilo de un partido: su color (de data/partidos/) y, si es claro, el filete. */
-export function estiloPartido(color: string | undefined, ancho?: number): { style: string; claro: boolean } {
-  const c = color ?? SIN_COLOR;
-  return { style: `--c:${c}${ancho === undefined ? '' : `;--w:${Math.round(ancho * 100)}%`}`, claro: esClaro(c) };
-}
+/**
+ * Variables de estilo de un partido: su color (de data/partidos/) y, en una barra, su ancho. El color
+ * va tal cual, sin filete aunque contraste poco con el fondo: el nombre y el porcentaje van al lado en
+ * texto (docs/design-system.md → Contraste).
+ */
+export const estiloPartido = (color: string | undefined, ancho?: number) =>
+  `--c:${color ?? SIN_COLOR}${ancho === undefined ? '' : `;--w:${Math.round(ancho * 100)}%`}`;
 
 /** Crea un elemento con clase, atributos y contenido. El texto va siempre como texto, nunca como HTML. */
 function el(etiqueta: string, opciones: { clase?: string; texto?: string; atributos?: Record<string, string> } = {}, ...hijos: (Node | string | null)[]) {
@@ -102,10 +103,9 @@ export function pintarResultado(
   const fila = (p: ResultadoPartido, clave: 'favorable' | 'desfavorable') => {
     const info = partidos.get(p.partido)!;
     const cifra = clave === 'favorable' ? p.aFavor : p.enContra;
-    const { style, claro } = estiloPartido(info.color, p[clave]);
     return el(
       'li',
-      { clase: 'fila-partido', atributos: { 'data-testid': `podio-${clave}-${p.partido}`, style, ...(claro ? { 'data-claro': '' } : {}) } },
+      { clase: 'fila-partido', atributos: { 'data-testid': `podio-${clave}-${p.partido}`, style: estiloPartido(info.color, p[clave]) } },
       el('span', { clase: 'who' }, info.nombre, ' ', el('small', { clase: 'detalle', texto: `${cifra} de ${p.contadas} votaciones` })),
       el('span', { clase: 'pct', texto: porcentaje(p[clave]) }),
       el('span', { clase: 'meter', atributos: { 'aria-hidden': 'true' } }, el('i')),
@@ -163,12 +163,11 @@ export function pintarResultado(
         const v = datos.votos[votacion]?.[id];
         const info = partidos.get(id)!;
         const etiqueta = etiquetaVoto(v);
-        const { style, claro } = estiloPartido(info.color);
         const p = sentido === 'contrapuesta' ? 'no-cuenta' : postura(v, sentido);
         votosPartidos.append(
           el(
             'li',
-            { clase: `voto voto-${p}`, atributos: { style, ...(claro ? { 'data-claro': '' } : {}) } },
+            { clase: `voto voto-${p}`, atributos: { style: estiloPartido(info.color) } },
             el('span', { clase: 'p siglas', texto: info.siglas }),
             el('span', { clase: etiqueta.si ? 'v v--si' : 'v', texto: etiqueta.pildora }),
             etiqueta.desglose ? el('span', { clase: 'desglose', texto: etiqueta.desglose }) : null,

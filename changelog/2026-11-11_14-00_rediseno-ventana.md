@@ -16,6 +16,11 @@
 - Geist y Geist Mono autoalojadas; kit de Taste Skill en `src/kit/` (lo que se usa).
 - Colores de partido con poco contraste sobre el fondo nuevo: filete de tinta, sin cambiar el color.
 - Fuera el ecualizador de la portada.
+- Ajustes tras la revisión de Pol: preguntas frecuentes también en la portada (componente
+  `PreguntasFrecuentes.astro`, única fuente para las dos páginas); fuera el filete de tinta de los
+  colores de partido (y `src/lib/color.ts` con su test); selector "Ver otro perfil" en el resultado
+  de ejemplo; el momento *line-carries-colour* deja paso a un fundido al entrar en pantalla y barras
+  que crecen desde 0 (también al cambiar de perfil, nada con movimiento reducido).
 
 ## Qué se modificó
 - `src/styles/global.css`, `src/kit/`, `src/layouts/Base.astro`, `src/components/` (Cabecera, Pie,
