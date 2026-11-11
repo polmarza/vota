@@ -1,0 +1,68 @@
+votacion: XIV-131-5
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=11/11/2021"
+texto: https://www.boe.es/eli/es/rdl/2021/10/05/20
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2021-11-11
+titulo_oficial: >-
+  Real Decreto-ley 20/2021, de 5 de octubre, por el que se adoptan medidas urgentes de apoyo para
+  la reparación de los daños ocasionados por las erupciones volcánicas y para la reconstrucción
+  económica y social de la isla de La Palma.
+titulo: "Ayudas por los daños del volcán de La Palma"
+resumen: >-
+  Primer paquete de medidas por la erupción del volcán de Cumbre Vieja (2021). Da ayudas por la
+  destrucción o los daños en la vivienda habitual (hasta 30.240 euros por destrucción total, sin
+  límite de ingresos) y en establecimientos industriales, mercantiles y de servicios; permite a
+  empresas y autónomos aplazar las cuotas de la Seguridad Social o pedir una moratoria de un año sin
+  intereses; suspende el pago de los préstamos con garantía hipotecaria sobre inmuebles de la zona
+  afectada y de los préstamos sin garantía hipotecaria de quienes residen en ella o tienen allí su
+  actividad económica principal; y exime del IBI de 2021 a las viviendas, establecimientos,
+  explotaciones agrarias y forestales y locales dañados cuando las personas y los bienes tuvieron que
+  ser realojados (o hubo pérdidas agrícolas o ganaderas no asegurables). Incluye también ayudas a las
+  explotaciones agrarias y pesqueras, a los ayuntamientos y a los servicios sociales de la isla.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: catastrofes
+ambito: estatal
+efectos:
+  - cuando: { catastrofe: [la-palma] }
+    el_si: favorece
+    justificacion: >-
+      Quien sufrió daños en su vivienda o en su negocio por el volcán de La Palma puede pedir ayudas
+      por esos daños, suspender el pago de su hipoteca o de otros préstamos y queda exento del IBI de
+      2021 si tuvo que ser realojado.
+    base: >-
+      Arts. 4, 5, 10, 16 y 25 del Real Decreto-ley 20/2021 (ayudas por daños en vivienda y en
+      establecimientos, moratoria de cuotas, suspensión de préstamos y beneficios fiscales).
+justificacion: >-
+  Es la norma que estableció las ayudas a los afectados por la erupción del volcán de La Palma.
+extracto: >-
+  [Art. 1.2] «Las ayudas y subvenciones de reparación adoptadas en este real decreto-ley son de
+  aplicación a las personas físicas y entidades públicas o privadas que hayan sufrido daños en sus
+  bienes o derechos radicados en el ámbito de la isla de La Palma como consecuencia directa o
+  indirecta de las erupciones volcánicas» [Art. 4.2] «c) No será de aplicación lo dispuesto en los
+  apartados 1 a 3 del artículo 16 del mencionado real decreto, referentes a los límites de los
+  ingresos anuales netos para ser beneficiario de la ayuda por la destrucción o daños en vivienda.»
+  «1.º) Por destrucción total de la vivienda habitual: 30.240 euros. 2.º) Por daños que afecten a la
+  estructura de la vivienda habitual: 20.640 euros. 3.º) Por daños que no afecten a la estructura de
+  la vivienda habitual: 10.320 euros.» [Art. 5.1] «Se concederán ayudas para paliar daños de
+  cualquier naturaleza en las edificaciones, instalaciones o bienes de equipamiento afectos a la
+  actividad empresarial» [Art. 10.2] «Alternativamente a lo dispuesto en el apartado 1, las
+  empresas y los trabajadores por cuenta propia a que el mismo se refiere, podrán solicitar y obtener una moratoria de hasta un año sin interés en el pago
+  de las cotizaciones a la Seguridad Social» [Art. 16.1] «Podrán ser beneficiarios de la suspensión
+  de las obligaciones de pago de intereses y principal de préstamos y créditos cuya garantía
+  hipotecaria se haya constituido sobre inmuebles situados en la zona afectada por los movimientos
+  sísmicos y las erupciones volcánicas, las personas físicas o jurídicas prestatarias o acreditadas
+  de dichos préstamos y créditos.» [Art. 16.2] «Asimismo, podrán ser beneficiarios de la
+  suspensión de las obligaciones de pago de intereses y principal de préstamos y créditos sin
+  garantía hipotecaria concedidos con anterioridad a la publicación de este real decreto-ley: a) Las
+  personas físicas residentes en la zona a la
+  que se refiere el apartado anterior. b) Las personas físicas o jurídicas cuya actividad económica
+  principal se encuentre situada en dicha zona» [Art. 25.1] «Se concede la exención de las cuotas
+  del Impuesto sobre Bienes Inmuebles correspondientes al ejercicio 2021 que afecten a viviendas,
+  establecimientos industriales, turísticos, mercantiles, marítimo-pesqueros y profesionales,
+  explotaciones agrarias y forestales, locales de trabajo y similares, dañados como consecuencia
+  directa de los siniestros a que se refiere el artículo 1 de este real decreto-ley, cuando se
+  acredite que tanto las personas como los bienes en ellos ubicados hayan tenido que ser objeto de
+  realojamiento total o parcial en otras viviendas o locales diferentes hasta la reparación de los
+  daños sufridos, o pérdidas en las producciones agrícolas y ganaderas que constituyan siniestros
+  cuya cobertura no resulte posible mediante formula alguna de aseguramiento público o privado.»

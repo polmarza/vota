@@ -32,3 +32,7 @@ El test en la misma página evita guardar la provincia entre páginas (M-08). La
 permiten contar votaciones que el jurado había apartado porque el test no sabía a quién afectaban.
 Coste del jurado en esta tanda: unos 3,80 $.
 - Pregunta frecuente nueva: por qué no hay preguntas sobre el clima, la amnistía o el modelo territorial (a raíz de la pregunta de un usuario).
+- Pregunta nueva de catástrofes (DANA de 2024, volcán de La Palma, otro temporal o incendio) con seis
+  votaciones de ayudas a quien sufrió daños, aprobadas por el jurado; el catálogo queda en 80
+  votaciones. La pregunta frecuente sobre el clima aclara que las grandes leyes no se asignan a nadie
+  pero las ayudas concretas sí cuentan (a raíz de una observación de Pol, 11-11-2026).

@@ -1,0 +1,79 @@
+votacion: XV-79-60
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=21/11/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/11/05/6
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-11-21
+titulo_oficial: >-
+  Real Decreto-ley 6/2024, de 5 de noviembre, por el que se adoptan medidas urgentes de respuesta
+  ante los daños causados por la Depresión Aislada en Niveles Altos (DANA) en diferentes municipios
+  entre el 28 de octubre y el 4 de noviembre de 2024.
+titulo: "Primeras ayudas por la DANA de 2024"
+resumen: >-
+  Primer paquete de medidas por la DANA de octubre y noviembre de 2024, para los municipios de su
+  anexo. Da ayudas por la destrucción o los daños en la vivienda habitual (hasta 60.480 euros por
+  destrucción total) y en los enseres (hasta 10.320 euros), sin límite de ingresos, y por daños en
+  establecimientos industriales, mercantiles y de servicios; un pago único de 5.000 euros a los
+  autónomos y de 10.000 a 150.000 euros a las empresas con domicilio fiscal en la zona; la exención
+  del IBI de 2024 de los inmuebles dañados cuando sus ocupantes y bienes tuvieron que ser
+  realojados hasta la reparación (o hubo pérdidas agrícolas o ganaderas no asegurables); la
+  suspensión del pago de hipotecas y de otros préstamos sin garantía hipotecaria; el aplazamiento o la moratoria de las cuotas
+  de la Seguridad Social; y la prestación por cese de actividad para los autónomos que tuvieron que
+  cerrar. Incluye también ayudas a los ayuntamientos, una línea de avales y subidas extraordinarias
+  del ingreso mínimo vital y de las pensiones no contributivas en la zona.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: catastrofes
+ambito: estatal
+efectos:
+  - cuando: { catastrofe: [dana-2024] }
+    el_si: favorece
+    justificacion: >-
+      Quien sufrió daños en su vivienda o en su negocio por la DANA puede pedir ayudas por esos daños
+      sin límite de ingresos, suspender el pago de su hipoteca y otros préstamos y queda exento del
+      IBI de 2024 si tuvo que ser realojado.
+    base: >-
+      Arts. 3, 12 y 32 del Real Decreto-ley 6/2024 (ayudas por daños en vivienda, enseres y
+      establecimientos, beneficios fiscales y suspensión de préstamos).
+  - cuando: { catastrofe: [dana-2024], trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo de la zona de la DANA recibe un pago único de 5.000 euros y, si tuvo que cerrar,
+      puede cobrar la prestación por cese de actividad sin acreditar la fuerza mayor.
+    base: >-
+      Arts. 11 (línea de ayudas directas a empresas y profesionales) y 24 (medidas para los
+      trabajadores por cuenta propia) del Real Decreto-ley 6/2024.
+justificacion: >-
+  Es la norma que estableció las ayudas a los afectados por la DANA de 2024.
+extracto: >-
+  [Art. 3.2] «c) No será de aplicación lo dispuesto en los apartados 1 a 3 del artículo 16 del
+  mencionado Real Decreto, referentes a los límites de los ingresos anuales netos para ser
+  beneficiario de la ayuda por la destrucción o daños en vivienda.» «1.º) Por destrucción total de
+  la vivienda habitual: 60.480 euros.» «4.º) Por destrucción o daños en los enseres domésticos de
+  primera necesidad de la vivienda habitual: 10.320 euros.» [Art. 11.1] «Se establece un sistema de
+  ayudas directas, correspondiente al ejercicio 2024, para los obligados tributarios, empresarios o
+  profesionales, que a 28 de octubre de 2024 tuvieran declarado su domicilio fiscal en cualquiera de
+  los municipios, o áreas de los mismos, comprendidos en la» [Art. 11.3] «Los empresarios o
+  profesionales personas físicas percibirán un importe único de 5.000 euros.» [Art. 12.1] «Se
+  concede la exención de las cuotas del Impuesto sobre Bienes Inmuebles correspondientes al
+  ejercicio 2024 referidas a los bienes inmuebles urbanos, rústicos y de características especiales
+  situados en los municipios citados en el anexo de este real decreto-ley, y que hayan resultado
+  dañados como consecuencia directa de la Depresión Aislada en Niveles Altos (DANA) a que se refiere
+  el artículo 1 de este real decreto-ley, cuando se acredite que tanto las personas como los bienes
+  en ellos ubicados hayan tenido que ser objeto de realojamiento total o parcial en otras viviendas o
+  locales diferentes hasta la reparación de los daños sufridos, o pérdidas en las producciones
+  agrícolas y ganaderas que constituyan siniestros cuya cobertura no resulte posible mediante
+  formula alguna de aseguramiento público o privado.» [Art. 24.1]
+  «que cesen totalmente, de forma definitiva o temporal, en su actividad como consecuencia directa e
+  inmediata de los siniestros descritos en el artículo 1, producidos en alguna de las localidades
+  del anexo de este real decreto-ley, podrán solicitar la prestación de cese de actividad prevista
+  en el artículo 331.1.b) del texto refundido de la Ley General de la Seguridad Social, sin que sea
+  necesaria la aportación de documentos que acrediten la existencia de fuerza mayor.» [Art. 32.1]
+  «Podrán ser beneficiarios de la suspensión de las obligaciones de pago de intereses y principal
+  de préstamos y créditos concedidos con anterioridad a la publicación de este real decreto-ley,
+  cuya garantía hipotecaria se haya constituido sobre inmuebles situados en alguna de las
+  localidades del anexo de este real decreto-ley, las personas físicas y las personas jurídicas con
+  un volumen de facturación inferior a 6 millones de euros en el último ejercicio cerrado.» [Art. 32.2]
+  «Asimismo, podrán ser beneficiarios de la suspensión de las obligaciones de pago de intereses y
+  principal de préstamos y créditos sin garantía hipotecaria concedidos con anterioridad a la
+  publicación de este real decreto-ley: a) Las personas físicas residentes en la zona a la que se
+  refiere el apartado anterior.»

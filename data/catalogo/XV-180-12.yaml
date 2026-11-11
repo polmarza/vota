@@ -1,0 +1,81 @@
+votacion: XV-180-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=20/05/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/04/28/10
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-05-20
+titulo_oficial: >-
+  Real Decreto-ley 10/2026, de 28 de abril, por el que se aprueban medidas tributarias urgentes y
+  otras medidas de apoyo en respuesta a los daños causados a las víctimas de siniestros de la DANA
+  y otras situaciones de emergencia.
+titulo: "Impuestos de las ayudas por la DANA de 2024"
+resumen: >-
+  Deja exentas del IRPF las cantidades que las entidades sin ánimo de lucro pagaron hasta el 31 de
+  diciembre de 2025 a los afectados por la DANA de 2024 para compensar daños personales y en sus
+  viviendas, enseres y vehículos, con el límite del daño sufrido; excluye de la base imponible del
+  IRPF y del Impuesto sobre Sociedades las ayudas urgentes de la Generalitat Valenciana a las
+  empresas y a los autónomos afectados por la DANA; exime del IRPF las ayudas por daños personales
+  de los incendios y otras emergencias del verano de 2025 y las cantidades que la Iglesia católica
+  pague a las víctimas de abusos sexuales en sus instituciones. Incluye también medidas sobre el
+  endeudamiento de las comunidades autónomas y sobre cómo se computa, a efectos de las reglas
+  fiscales, el gasto extraordinario de los ayuntamientos afectados por la DANA; trata como
+  accidente de trabajo, a efectos de la prestación por incapacidad temporal, las bajas de los
+  trabajadores víctimas de los accidentes ferroviarios de Adamuz y Gelida de enero de 2026; y
+  precisa la redacción de la devolución por el gasóleo profesional y del IVA reducido de la
+  energía del decreto de respuesta a la crisis de Oriente Medio.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: catastrofes
+ambito: estatal
+efectos:
+  - cuando: { catastrofe: [dana-2024] }
+    el_si: favorece
+    justificacion: >-
+      Quien recibió dinero de una entidad sin ánimo de lucro por los daños de la DANA en su vivienda,
+      sus enseres o su vehículo no tributa por esa cantidad en el IRPF, hasta el importe del daño
+      sufrido.
+    base: >-
+      Art. 3 del Real Decreto-ley 10/2026 (exención en el IRPF de las ayudas de entidades sin ánimo
+      de lucro a los afectados por la DANA).
+  - cuando: { catastrofe: [dana-2024], trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      Un autónomo que recibió las ayudas urgentes de la Generalitat Valenciana por la DANA no las
+      suma a su base imponible del IRPF, así que no paga impuestos por ellas.
+    base: >-
+      Art. 1 del Real Decreto-ley 10/2026 (no integración en la base imponible de determinadas
+      ayudas concedidas por la Comunitat Valenciana).
+justificacion: >-
+  Recoge medidas fiscales para los afectados por la DANA de 2024 distintas de las de los decretos
+  de 2024: el tratamiento de las donaciones de entidades privadas y de las ayudas autonómicas.
+extracto: >-
+  [Art. 1] «Con efectos desde el día 29 de octubre de 2024 resultará de aplicación lo dispuesto en
+  la disposición adicional quinta de la Ley 35/2006, de 28 de noviembre, del Impuesto sobre la
+  Renta de las Personas Físicas» «y en la disposición adicional tercera de la Ley 27/2014, de 27
+  de noviembre, del Impuesto sobre Sociedades a las ayudas concedidas en virtud de lo dispuesto en
+  el Decreto 172/2024, de 26 de noviembre, del Consell, por el que se aprueban las bases
+  reguladoras y el procedimiento de concesión directa de ayudas urgentes dirigidas a facilitar el
+  mantenimiento del empleo y la reactivación económica de las empresas» «y en el Decreto 176/2024,
+  de 3 de diciembre, del Consell, por el que se aprueban las bases reguladoras de las ayudas
+  urgentes dirigidas a las personas trabajadoras autónomas de las zonas de la Comunitat Valenciana
+  afectadas por la Depresión Aislada en Niveles Altos (DANA)» [Art. 2] «Desde el 26 de agosto de
+  2025 estarán exentas del Impuesto sobre la Renta de las Personas Físicas las ayudas por daños
+  personales» «como consecuencia de los incendios forestales y otras emergencias de protección
+  civil acaecidas entre el 23 de junio y el 25 de agosto de 2025.» [Art. 3] «estarán exentas del
+  Impuesto sobre la Renta de las Personas Físicas las cantidades satisfechas entre el 29 de
+  octubre de 2024 y el 31 de diciembre de 2025 por las entidades privadas sin ánimo de lucro»
+  «destinadas a compensar los daños personales y materiales en las viviendas, enseres y vehículos
+  de las personas físicas afectadas por la Depresión Aislada en Niveles Altos (DANA)» «La cuantía
+  exenta tendrá como límite el importe del daño material sufrido o del coste de la reparación o
+  reposición del elemento patrimonial dañado.» [Art. 4.1] «La adhesión de las comunidades
+  autónomas al Fondo de Financiación a Comunidades Autónomas se efectuará en el compartimento
+  Facilidad Financiera» [Art. 5.1] «A efectos de la valoración del cumplimiento de las reglas
+  fiscales» «se considerarán de forma diferenciada los gastos excepcionales que realicen las
+  entidades locales incluidas en el ámbito de aplicación del Real Decreto-ley 6/2024, de 5 de
+  noviembre» [Disp. adic. 1.ª] «tendrán la consideración, con carácter excepcional, de situación
+  asimilada a accidente de trabajo, exclusivamente a efectos de la prestación económica de
+  incapacidad temporal del sistema de Seguridad Social.» [Disp. final 1.ª] «Estarán exentas de
+  este Impuesto las cantidades satisfechas por la Iglesia católica a las víctimas de abusos
+  sexuales sufridos dentro de las instituciones eclesiásticas» [Disp. final 2.ª] «Artículo 39.
+  Devolución parcial por el gasóleo de uso profesional.» «Artículo 42. Tipo impositivo aplicable
+  del Impuesto sobre el Valor Añadido a determinadas entregas, importaciones y adquisiciones
+  intracomunitarias de productos energéticos.»
