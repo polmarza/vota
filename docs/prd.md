@@ -152,8 +152,11 @@ tres años. Vota, pero cada vez duda más y no se fía de lo que dicen en campa�
   entonces puede ver todas las votaciones con el voto de cada partido y filtrarlas por tema y por
   legislatura.
 - **[S-02] Compartir el resultado** — Dado un resultado, cuando el visitante pulsa "Compartir",
-  (icono arriba a la derecha), entonces se genera una imagen descargable con los dos podios que no
-  incluye ninguna de sus respuestas, y en móvil se abre el menú de compartir del sistema.
+  en el resultado final, entonces se genera en el navegador una tarjeta vertical con los temas que
+  más le afectan, el partido que más veces votó a su favor y los dos podios, y en móvil se abre el
+  menú de compartir del sistema. Por defecto no incluye ninguna respuesta; el visitante puede
+  añadir una línea con su perfil (vivienda, situación laboral, edad e hijos), nunca ingresos,
+  patrimonio, herencias, discapacidad ni provincia (cambio del 11-11-2026).
 - **[S-03] Dar más peso a lo que te importa** — Dado el final del cuestionario, cuando el visitante
   marca qué temas le importan más (vivienda, empleo, familia, fiscalidad…), entonces las
   votaciones de esos temas pesan el doble en su puntuación y el resultado lo indica.
