@@ -1,8 +1,12 @@
 # Jurado de IAs
 
-**Estado:** En construcción
+**Estado:** Verificada
 **Requisitos que cierra:** M-10
 **Fecha de acuerdo:** 2026-10-27
+
+Verificada el 11-11-2026: `tests/unit/data/jurado.test.ts` pasa, y las deliberaciones sobre la herencia
+(`data/jurado/herencia.json`) y el catálogo (`data/jurado/catalogo.json`) están guardadas con sus
+rondas y su historial.
 
 ## Qué se construye
 

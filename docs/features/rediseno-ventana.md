@@ -1,9 +1,13 @@
 # Rediseño visual: dirección "Ventana"
 
-**Estado:** En construcción
+**Estado:** Verificada
 **Requisitos que cierra:** M-01, M-03, M-04, M-07, M-08, M-09, M-12 (los rehace con el nuevo diseño;
 mantiene los requisitos no funcionales: móvil primero, WCAG 2.1 AA y portada en menos de 2 s en 4G)
 **Fecha de acuerdo:** 2026-11-11
+
+Verificada el 11-11-2026: 71 tests de navegador pasan en los tres proyectos; Lighthouse (móvil, 4G
+simulado, sobre el build) da 100 en rendimiento, accesibilidad, buenas prácticas y SEO, con LCP de
+1,5 s; Pol revisó la portada, el test y "Cómo funciona" el 11-11-2026.
 
 ## Qué se construye
 

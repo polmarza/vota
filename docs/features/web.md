@@ -1,8 +1,12 @@
 # Web: portada, cuestionario y resultado
 
-**Estado:** En construcción
+**Estado:** Verificada
 **Requisitos que cierra:** M-01, M-02, M-03, M-04, M-07, M-08, M-09, M-12
 **Fecha de acuerdo:** 2026-10-27
+
+Verificada el 11-11-2026: 130 tests unitarios y 71 de navegador pasan en Chromium móvil, escritorio y WebKit
+móvil (1 omitido, el de teclado en WebKit). Pol revisó la portada y "Cómo funciona" en la vista previa
+el 11-11-2026, ya con el diseño de `rediseno-ventana.md`.
 
 ## Qué se construye
 
@@ -58,9 +62,9 @@ El cálculo vive en `src/lib/afinidad/` como código puro, según `docs/data-mod
 | M-01 | `src/pages/test.astro`, `src/components/Pregunta.astro`, `src/components/SelectorProvincia.astro`, `src/lib/perfil/`: cuestionario | `tests/e2e/cuestionario.spec.ts` |
 | M-12 | `src/lib/afinidad/`, resultado provisional en `src/pages/test.astro` | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |
 | M-02 | `src/lib/afinidad/`: filtro por candidaturas de la provincia | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |
-| M-03 | `src/lib/afinidad/`, `src/components/Podio.astro`, `src/components/FilaPartido.astro` | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |
-| M-04 | `src/components/ListaVotaciones.astro` | `tests/e2e/cuestionario.spec.ts` |
-| M-09 | `src/components/AvisoAlcance.astro` en ambos resultados | `tests/e2e/cuestionario.spec.ts` |
+| M-03 | `src/lib/afinidad/`, `src/scripts/resultado.ts` (podios y filas de partido) | `tests/unit/afinidad.test.ts`, `tests/e2e/cuestionario.spec.ts` |
+| M-04 | `src/scripts/resultado.ts` (lista de votaciones) | `tests/e2e/cuestionario.spec.ts` |
+| M-09 | `src/scripts/resultado.ts` (aviso de alcance en ambos resultados) | `tests/e2e/cuestionario.spec.ts` |
 | M-07 | `src/pages/como-funciona.astro` | revisión humana: "Cómo funciona" en `pnpm dev`; explica selección y etiquetado de votaciones, cálculo del porcentaje, jurado de IAs, partidos nuevos o sin historial, limitaciones y firma, y enlaza al catálogo |
 | M-08 | Todo el cuestionario y el resultado en el cliente, sin red | `tests/e2e/privacidad.spec.ts` |
 | M-01 | Accesibilidad de portada, cuestionario, resultado y "Cómo funciona" | `tests/e2e/accesibilidad.spec.ts` |
