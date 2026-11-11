@@ -9,7 +9,10 @@ titulo: "Presupuestos de 2021"
 resumen: >-
   Debate de totalidad de los Presupuestos Generales del Estado para 2021. Las enmiendas pedían
   devolver el proyecto al Gobierno; se rechazaron y los presupuestos siguieron adelante. Incluían,
-  entre otras cosas, la subida de las pensiones y del sueldo del personal público.
+  entre otras cosas, la subida de las pensiones y del sueldo del personal público y el
+  mantenimiento del Impuesto sobre el Patrimonio con carácter indefinido, sin la bonificación general
+  del 100 % que se iba a aplicar desde 2021, con un tipo del 3,5 % en el último tramo de la escala
+  estatal.
 que_significa_si: >-
   Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno, lo que pone fin a su
   tramitación.
@@ -30,6 +33,35 @@ efectos:
       (0,9 %).
     base: >-
       Título III del proyecto (retribuciones del personal del sector público).
+  - cuando:
+      patrimonio: [700k-3m, mas-3m]
+      ccaa: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, murcia, la-rioja, ceuta, melilla]
+    el_si: favorece
+    justificacion: >-
+      Devolver los presupuestos dejaba sin aprobar el mantenimiento indefinido del Impuesto sobre el
+      Patrimonio: sin él, desde 2021 se aplicaba la bonificación general del 100 % de la cuota. No
+      cuenta para la Comunidad de Madrid, que ya lo bonificaba por completo, ni para el País Vasco y
+      Navarra, con su propio impuesto foral.
+    base: >-
+      Disposición derogatoria primera del proyecto (deroga el apartado segundo del artículo único
+      del Real Decreto-ley 13/2011, que fijaba la bonificación del 100 % desde 2021) y artículo 66
+      (escala estatal del impuesto, con vigencia indefinida).
 justificacion: >-
-  Los Presupuestos fijan cada año la subida de pensiones y salarios públicos; es la votación sobre
-  el conjunto.
+  Los Presupuestos fijan cada año la subida de pensiones y salarios públicos, y los de 2021
+  mantuvieron sin fecha de fin el Impuesto sobre el Patrimonio; es la votación sobre el conjunto.
+extracto: >-
+  [Artículo 18.Dos] «En el año 2021, las retribuciones del personal al servicio del sector público
+  no podrán experimentar un incremento global superior al 0,9 por ciento respecto a las vigentes a
+  31 de diciembre de 2020,» [Artículo 39] «Uno. Las pensiones abonadas por el sistema de la Seguridad
+  Social, en su modalidad contributiva, así como las pensiones de Clases Pasivas del Estado,
+  experimentarán en el año 2021 un incremento del 0,9 por ciento,» [Exposición de motivos] «En el
+  Impuesto sobre el Patrimonio son dos las medidas que se introducen, la elevación del tipo de
+  gravamen aplicable al último tramo de la tarifa y el mantenimiento con carácter indefinido de su
+  gravamen, ambas para contribuir a la consolidación de las finanzas públicas.» [Artículo 66] «Con
+  efectos desde la entrada en vigor de esta Ley y vigencia indefinida, se modifica el artículo 30 de
+  la Ley 19/1991, de 6 de junio, del Impuesto sobre el Patrimonio,» «2. Si la Comunidad Autónoma no
+  hubiese aprobado la escala a que se refiere el apartado anterior, la base liquidable del Impuesto
+  será gravada a los tipos de la siguiente escala:» [último tramo: desde 10.695.996,06 euros, 3,5 %]
+  [Disposición derogatoria primera] «Se deroga el apartado segundo del artículo único del Real
+  Decreto-ley 13/2011, de 16 de septiembre, por el que se restablece el Impuesto sobre el
+  Patrimonio, con carácter temporal.»

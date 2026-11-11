@@ -26,6 +26,14 @@ efectos:
       Quien cobra una pensión tiene garantizado por ley que sube cada año con la inflación media.
     base: >-
       Art. 1, que modifica el art. 58 de la Ley General de la Seguridad Social.
+  - cuando: { contrata: [empresa, hogar] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene a alguien contratado paga una cotización adicional de 0,6 puntos de 2023 a 2032,
+      de la que la mayor parte corresponde a quien contrata, con el mismo reparto que el resto de
+      la cotización.
+    base: >-
+      Disposición final cuarta (mecanismo de equidad intergeneracional), letras a) y b).
 justificacion: >-
   Es la ley que garantiza la revalorización de las pensiones con el IPC.
 extracto: >-

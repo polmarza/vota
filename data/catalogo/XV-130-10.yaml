@@ -25,6 +25,16 @@ efectos:
     base: >-
       Artículo único, apartado Tres, del proyecto, que modifica el art. 34.1 del Estatuto de los
       Trabajadores, y disposición adicional tercera (retribuciones).
+  - cuando: { contrata: [empresa, hogar] }
+    el_si: favorece
+    justificacion: >-
+      Que saliera el sí evitó que quien tiene a alguien contratado, en su empresa o en casa, tuviera
+      que bajar la jornada máxima a 37,5 horas semanales sin rebajar el sueldo y llevar un registro
+      diario de jornada.
+    base: >-
+      Artículo único, apartados Tres y Cinco, del proyecto (arts. 34.1 y 34 bis del Estatuto de los
+      Trabajadores), disposición adicional tercera y disposición final segunda (art. 9 del Real
+      Decreto 1620/2011, del servicio del hogar familiar).
 justificacion: >-
   Es la principal medida laboral de la XV y una de las pocas votaciones en las que el Congreso
   tumbó un proyecto del Gobierno.
@@ -42,4 +52,7 @@ extracto: >-
   adicional tercera. Retribuciones] «La reducción de jornada establecida en la presente ley no podrá
   tener como consecuencia la afectación de las retribuciones ni la compensación, absorción o
   desaparición de cualesquiera derechos más favorables o condiciones más beneficiosas que vinieran
-  disfrutando las personas trabajadoras.»
+  disfrutando las personas trabajadoras.» [Disposición final segunda, art. 9.1 del Real Decreto
+  1620/2011, del servicio del hogar familiar] «1. La jornada máxima semanal de carácter ordinario
+  será la prevista en el artículo 34.1 del texto refundido de la Ley del Estatuto de los
+  Trabajadores, sin perjuicio de los tiempos de presencia»

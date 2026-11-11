@@ -14632,106 +14632,216 @@
  },
  {
   "id": "XIV-16-14:efecto:1",
-  "hash": "7f1234e4efaf93ad",
+  "hash": "b0b16b73a3a2961b",
   "esperado": "favorece",
   "resultado": "aprobado",
   "prompt": {
    "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
-   "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Arts. 1 (suspensión de desahucios), 2 (prórroga extraordinaria) y 4 (moratoria de la renta con grandes tenedores) del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Cómo vives?\" responde: De alquiler.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+   "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Arts. 2 (prórroga extraordinaria) y 4 (moratoria de la renta con grandes tenedores) del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Cómo vives?\" responde: De alquiler.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
   },
+  "historial": [
+   {
+    "id": "XIV-16-14:efecto:1",
+    "hash": "7f1234e4efaf93ad",
+    "esperado": "favorece",
+    "resultado": "aprobado",
+    "prompt": {
+     "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+     "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Arts. 1 (suspensión de desahucios), 2 (prórroga extraordinaria) y 4 (moratoria de la renta con grandes tenedores) del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Cómo vives?\" responde: De alquiler.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+    },
+    "ronda1": [
+     {
+      "modelo": "openai/gpt-6.1-sol",
+      "fecha": "2026-11-11T04:30:47.802Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El artículo 2 permitía al inquilino solicitar una prórroga extraordinaria de hasta seis meses si su contrato vencía en el periodo previsto, que el arrendador debía aceptar salvo acuerdo distinto. Además, los artículos 1 y 4 ofrecían protección frente al desahucio y medidas sobre la renta a los inquilinos que cumplieran los requisitos de vulnerabilidad y demás condiciones.",
+      "coste": 0.003084
+     },
+     {
+      "modelo": "google/gemini-4-argon",
+      "fecha": "2026-11-11T04:31:01.345Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El Real Decreto-ley 11/2020 otorgaba derechos directos a los inquilinos de vivienda habitual, como la posibilidad de solicitar una prórroga extraordinaria del contrato de alquiler por seis meses en las mismas condiciones (art. 2), además de la suspensión de desahucios (art. 1) y moratorias o quitas en la renta en caso de vulnerabilidad (art. 4).",
+      "coste": 0.005354
+     },
+     {
+      "modelo": "mistralai/mistral-large-4-0",
+      "fecha": "2026-11-11T04:30:48.274Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El RDL 11/2020, al ser convalidado con el voto Sí, mantuvo en vigor derechos directos a favor del inquilino: suspensión de los desahucios por vulnerabilidad COVID (art. 1), derecho a prórroga extraordinaria obligatoria de 6 meses del contrato de alquiler (art. 2) y obligación de los grandes tenedores de rebajar a la mitad o aplazar la renta (art. 4). Son protecciones subjetivas que benefician directamente a quien vive de alquiler y cumple la condición de vulnerabilidad.",
+      "coste": 0.002016
+     },
+     {
+      "modelo": "deepseek/deepseek-v4-pro-0813",
+      "fecha": "2026-11-11T04:30:46.953Z",
+      "estado": "ok",
+      "respuesta": "no_lo_se",
+      "razones": "La persona vive de alquiler, pero el decreto solo establecía efectos directos para inquilinos en situación de vulnerabilidad por COVID-19, con prórroga extraordinaria o moratoria frente a grandes tenedores. No se indica que esta persona estuviera en situación de vulnerabilidad ni que su arrendador fuera gran tenedor, por lo que no se puede determinar con seguridad si le afectaba directamente.",
+      "coste": 0.0015774
+     },
+     {
+      "modelo": "x-ai/grok-4.7",
+      "fecha": "2026-11-11T04:31:01.567Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El RDL 11/2020, convalidado, establece derechos directos para quien vive de alquiler: suspensión de desahucios de inquilinos vulnerables (art. 1), derecho a una prórroga extraordinaria de hasta seis meses del contrato de vivienda habitual que el arrendador debe aceptar (art. 2) y moratoria o reducción de renta frente a grandes tenedores (art. 4). Son protecciones y derechos del inquilino, no cargas.",
+      "coste": 0.00914
+     }
+    ],
+    "decision": "favorece"
+   }
+  ],
   "ronda1": [
    {
     "modelo": "openai/gpt-6.1-sol",
-    "fecha": "2026-11-11T04:30:47.802Z",
+    "fecha": "2026-11-11T14:30:00.038Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El artículo 2 permitía al inquilino solicitar una prórroga extraordinaria de hasta seis meses si su contrato vencía en el periodo previsto, que el arrendador debía aceptar salvo acuerdo distinto. Además, los artículos 1 y 4 ofrecían protección frente al desahucio y medidas sobre la renta a los inquilinos que cumplieran los requisitos de vulnerabilidad y demás condiciones.",
-    "coste": 0.003084
+    "razones": "El artículo 2 permitía solicitar una prórroga extraordinaria de hasta seis meses si el contrato de alquiler de vivienda habitual vencía en el periodo previsto, que el arrendador debía aceptar. Además, si cumplía los requisitos de vulnerabilidad y alquilaba a un gran tenedor, podía acceder a una reducción o aplazamiento de la renta.",
+    "coste": 0.00312
    },
    {
     "modelo": "google/gemini-4-argon",
-    "fecha": "2026-11-11T04:31:01.345Z",
+    "fecha": "2026-11-11T14:29:59.749Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El Real Decreto-ley 11/2020 otorgaba derechos directos a los inquilinos de vivienda habitual, como la posibilidad de solicitar una prórroga extraordinaria del contrato de alquiler por seis meses en las mismas condiciones (art. 2), además de la suspensión de desahucios (art. 1) y moratorias o quitas en la renta en caso de vulnerabilidad (art. 4).",
-    "coste": 0.005354
+    "razones": "El Real Decreto-ley 11/2020 establecía derechos directos de protección para las personas que viven de alquiler: permitía a cualquier inquilino solicitar una prórroga extraordinaria del contrato de hasta seis meses manteniendo las mismas condiciones (art. 2), y para inquilinos en situación de vulnerabilidad sobrevenida por el COVID-19 establecía la suspensión de desahucios, ayudas directas, microcréditos sin intereses y quitas del 50% o moratorias si el propietario era gran tenedor (arts. 1 y 4 a 10).",
+    "coste": 0.003744
    },
    {
     "modelo": "mistralai/mistral-large-4-0",
-    "fecha": "2026-11-11T04:30:48.274Z",
+    "fecha": "2026-11-11T14:30:04.617Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El RDL 11/2020, al ser convalidado con el voto Sí, mantuvo en vigor derechos directos a favor del inquilino: suspensión de los desahucios por vulnerabilidad COVID (art. 1), derecho a prórroga extraordinaria obligatoria de 6 meses del contrato de alquiler (art. 2) y obligación de los grandes tenedores de rebajar a la mitad o aplazar la renta (art. 4). Son protecciones subjetivas que benefician directamente a quien vive de alquiler y cumple la condición de vulnerabilidad.",
-    "coste": 0.002016
+    "razones": "El Real Decreto-ley 11/2020, al convalidarse (voto Sí), mantuvo en vigor derechos directos para los inquilinos: el art. 2 otorga la prórroga extraordinaria obligatoria de seis meses del contrato de alquiler de vivienda habitual que el arrendador debe aceptar, y el art. 4 impone a los grandes tenedores la obligación de aplicar una moratoria o rebaja de la renta a inquilinos en situación de vulnerabilidad económica por el COVID-19. Además, suspende los desahucios de inquilinos vulnerables. Todas estas medidas otorgan protección y derechos al arrendatario, por lo que mantener el decreto en vigor le favorecía directamente frente a la alternativa de que quedara derogado.",
+    "coste": 0.00320243
    },
    {
     "modelo": "deepseek/deepseek-v4-pro-0813",
-    "fecha": "2026-11-11T04:30:46.953Z",
+    "fecha": "2026-11-11T14:30:06.608Z",
     "estado": "ok",
-    "respuesta": "no_lo_se",
-    "razones": "La persona vive de alquiler, pero el decreto solo establecía efectos directos para inquilinos en situación de vulnerabilidad por COVID-19, con prórroga extraordinaria o moratoria frente a grandes tenedores. No se indica que esta persona estuviera en situación de vulnerabilidad ni que su arrendador fuera gran tenedor, por lo que no se puede determinar con seguridad si le afectaba directamente.",
-    "coste": 0.0015774
+    "respuesta": "favorece",
+    "razones": "El Real Decreto-ley 11/2020, al convalidarse, mantuvo medidas que otorgan derechos directos a quienes viven de alquiler: la prórroga extraordinaria de seis meses del contrato que el arrendador debe aceptar (art. 2) y, para inquilinos vulnerables con grandes tenedores, la reducción o aplazamiento de la renta (art. 4). Por tanto, para una persona que vive de alquiler, el Sí le favorecía directamente.",
+    "coste": 0.0019727466
    },
    {
     "modelo": "x-ai/grok-4.7",
-    "fecha": "2026-11-11T04:31:01.567Z",
+    "fecha": "2026-11-11T14:30:16.975Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El RDL 11/2020, convalidado, establece derechos directos para quien vive de alquiler: suspensión de desahucios de inquilinos vulnerables (art. 1), derecho a una prórroga extraordinaria de hasta seis meses del contrato de vivienda habitual que el arrendador debe aceptar (art. 2) y moratoria o reducción de renta frente a grandes tenedores (art. 4). Son protecciones y derechos del inquilino, no cargas.",
-    "coste": 0.00914
+    "razones": "Quien vive de alquiler es arrendatario. El Sí convalidó el RDL 11/2020 y mantuvo en vigor derechos directos del inquilino: la prórroga extraordinaria de hasta seis meses que el arrendador debe aceptar (art. 2) y, si es vulnerable y el casero es gran tenedor, la moratoria o reducción de la renta (art. 4), además de la suspensión de desahucios por vulnerabilidad COVID.",
+    "coste": 0.011356
    }
   ],
   "decision": "favorece"
  },
  {
   "id": "XIV-16-14:efecto:2",
-  "hash": "9b2b42760a4aa99c",
+  "hash": "500f0fcb97a6ce10",
   "esperado": "perjudica",
   "resultado": "aprobado",
   "prompt": {
    "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
-   "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Arts. 1 y 2 del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Tienes alguna vivienda alquilada a otra persona?\" responde: Sí.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+   "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Art. 2 del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Tienes alguna vivienda alquilada a otra persona?\" responde: Sí.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
   },
+  "historial": [
+   {
+    "id": "XIV-16-14:efecto:2",
+    "hash": "9b2b42760a4aa99c",
+    "esperado": "perjudica",
+    "resultado": "aprobado",
+    "prompt": {
+     "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+     "pregunta": "XIV legislatura, votación del 09/04/2020 en el Pleno.\nIniciativa: Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes complementarias en el ámbito social y económico para hacer frente al COVID-19.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 2 en contra y 174 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2020/03/31/11\nResumen: Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.\nMedida en que se apoya: Arts. 1 y 2 del Real Decreto-ley 11/2020.\n\nPersona: quien a la pregunta \"¿Tienes alguna vivienda alquilada a otra persona?\" responde: Sí.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+    },
+    "ronda1": [
+     {
+      "modelo": "openai/gpt-6.1-sol",
+      "fecha": "2026-11-11T04:31:07.164Z",
+      "estado": "ok",
+      "respuesta": "perjudica",
+      "razones": "Como arrendador, el decreto limitaba su capacidad de recuperar la vivienda: debía aceptar la prórroga extraordinaria de hasta seis meses si el inquilino la solicitaba en los supuestos previstos, salvo acuerdo distinto. Además, podía suspenderse el desahucio si el inquilino acreditaba la vulnerabilidad exigida.",
+      "coste": 0.002946
+     },
+     {
+      "modelo": "google/gemini-4-argon",
+      "fecha": "2026-11-11T04:31:06.478Z",
+      "estado": "ok",
+      "respuesta": "perjudica",
+      "razones": "El Real Decreto-ley 11/2020 (artículos 1 y 2) imponía obligaciones y limitaciones directas a los propietarios de viviendas en alquiler (arrendadores), tales como la aceptación forzosa de una prórroga extraordinaria de seis meses del contrato a petición del inquilino sin variar las condiciones y la suspensión extraordinaria de los desahucios por impago para inquilinos en situación de vulnerabilidad.",
+      "coste": 0.003388
+     },
+     {
+      "modelo": "mistralai/mistral-large-4-0",
+      "fecha": "2026-11-11T04:31:11.780Z",
+      "estado": "ok",
+      "respuesta": "perjudica",
+      "razones": "El Real Decreto-ley 11/2020 (arts. 1 y 2) impuso al arrendador la obligación de aceptar una prórroga extraordinaria de hasta seis meses del contrato de alquiler si el inquilino en situación de vulnerabilidad económica por el COVID-19 la solicitaba, y suspendió los procedimientos de desahucio durante el estado de alarma. Al convalidarse el decreto (voto Sí), se mantuvieron en vigor estas limitaciones directas sobre el derecho del propietario a recuperar la vivienda y a pactar libremente la duración del contrato, lo que perjudica directamente a quien tiene una vivienda alquilada.",
+      "coste": 0.00299152
+     },
+     {
+      "modelo": "deepseek/deepseek-v4-pro-0813",
+      "fecha": "2026-11-11T04:31:10.896Z",
+      "estado": "ok",
+      "respuesta": "perjudica",
+      "razones": "La convalidación del Real Decreto-ley 11/2020 (arts. 1 y 2) suspendía desahucios de inquilinos vulnerables y obligaba al arrendador a aceptar una prórroga extraordinaria de seis meses. Para quien tiene una vivienda alquilada a otra persona, imponía directamente limitaciones y obligaciones como arrendador.",
+      "coste": 0.00659736
+     },
+     {
+      "modelo": "x-ai/grok-4.7",
+      "fecha": "2026-11-11T04:31:36.220Z",
+      "estado": "ok",
+      "respuesta": "perjudica",
+      "razones": "Quien tiene una vivienda alquilada a otra persona es arrendador. Los arts. 1 y 2 del RDL 11/2020, mantenidos al convalidarse, le imponen un límite (suspensión del desahucio de inquilinos vulnerables) y una obligación (aceptar la prórroga extraordinaria de hasta seis meses si el inquilino la pide). No le reconocen ningún derecho o ayuda.",
+      "coste": 0.013554
+     }
+    ],
+    "decision": "perjudica"
+   }
+  ],
   "ronda1": [
    {
     "modelo": "openai/gpt-6.1-sol",
-    "fecha": "2026-11-11T04:31:07.164Z",
+    "fecha": "2026-11-11T14:30:22.719Z",
     "estado": "ok",
     "respuesta": "perjudica",
-    "razones": "Como arrendador, el decreto limitaba su capacidad de recuperar la vivienda: debía aceptar la prórroga extraordinaria de hasta seis meses si el inquilino la solicitaba en los supuestos previstos, salvo acuerdo distinto. Además, podía suspenderse el desahucio si el inquilino acreditaba la vulnerabilidad exigida.",
-    "coste": 0.002946
+    "razones": "El artículo 2 obliga al arrendador a aceptar, si el inquilino la solicita y el contrato vence dentro del periodo previsto, una prórroga extraordinaria de hasta seis meses manteniendo sus condiciones, salvo que acuerden otras. Esto limita directamente la posibilidad de recuperar la vivienda al vencimiento del contrato, sin exigir que el propietario sea un gran tenedor.",
+    "coste": 0.00347
    },
    {
     "modelo": "google/gemini-4-argon",
-    "fecha": "2026-11-11T04:31:06.478Z",
+    "fecha": "2026-11-11T14:30:26.758Z",
     "estado": "ok",
     "respuesta": "perjudica",
-    "razones": "El Real Decreto-ley 11/2020 (artículos 1 y 2) imponía obligaciones y limitaciones directas a los propietarios de viviendas en alquiler (arrendadores), tales como la aceptación forzosa de una prórroga extraordinaria de seis meses del contrato a petición del inquilino sin variar las condiciones y la suspensión extraordinaria de los desahucios por impago para inquilinos en situación de vulnerabilidad.",
-    "coste": 0.003388
+    "razones": "El artículo 2 del Real Decreto-ley 11/2020 impone a todos los arrendadores la obligación de aceptar una prórroga extraordinaria del contrato de alquiler de hasta seis meses si el inquilino lo solicita, manteniendo los mismos términos y condiciones, lo que limita su capacidad de disponer de la vivienda o actualizar las condiciones al vencimiento del contrato. Además, el artículo 1 suspende los procedimientos de desahucio y lanzamientos.",
+    "coste": 0.003422
    },
    {
     "modelo": "mistralai/mistral-large-4-0",
-    "fecha": "2026-11-11T04:31:11.780Z",
+    "fecha": "2026-11-11T14:31:00.525Z",
     "estado": "ok",
     "respuesta": "perjudica",
-    "razones": "El Real Decreto-ley 11/2020 (arts. 1 y 2) impuso al arrendador la obligación de aceptar una prórroga extraordinaria de hasta seis meses del contrato de alquiler si el inquilino en situación de vulnerabilidad económica por el COVID-19 la solicitaba, y suspendió los procedimientos de desahucio durante el estado de alarma. Al convalidarse el decreto (voto Sí), se mantuvieron en vigor estas limitaciones directas sobre el derecho del propietario a recuperar la vivienda y a pactar libremente la duración del contrato, lo que perjudica directamente a quien tiene una vivienda alquilada.",
-    "coste": 0.00299152
+    "razones": "Según el resumen del Art. 2 del RDL 11/2020, se suspende el desahucio de inquilinos vulnerables y se obliga al arrendador a aceptar una prórroga extraordinaria de 6 meses del contrato. Para quien tiene una vivienda alquilada, esto le impide recuperar la vivienda (tanto por vía judicial durante la suspensión como al vencimiento del contrato mediante la prórroga obligatoria), lo que constituye un efecto directo negativo sobre sus derechos como propietario.",
+    "coste": 0.007587272
    },
    {
     "modelo": "deepseek/deepseek-v4-pro-0813",
-    "fecha": "2026-11-11T04:31:10.896Z",
+    "fecha": "2026-11-11T14:30:35.998Z",
     "estado": "ok",
-    "respuesta": "perjudica",
-    "razones": "La convalidación del Real Decreto-ley 11/2020 (arts. 1 y 2) suspendía desahucios de inquilinos vulnerables y obligaba al arrendador a aceptar una prórroga extraordinaria de seis meses. Para quien tiene una vivienda alquilada a otra persona, imponía directamente limitaciones y obligaciones como arrendador.",
-    "coste": 0.00659736
+    "respuesta": "no_le_afecta",
+    "razones": "El Real Decreto-ley 11/2020 suspendía desahucios de inquilinos vulnerables y establecía una prórroga extraordinaria de seis meses del contrato de alquiler que el arrendador debía aceptar. Para una persona con vivienda alquilada a otra persona, convalidar esa norma limitaba directamente sus derechos como arrendador, por lo que le perjudicaba.",
+    "coste": 0.0093456
    },
    {
     "modelo": "x-ai/grok-4.7",
-    "fecha": "2026-11-11T04:31:36.220Z",
+    "fecha": "2026-11-11T14:30:52.609Z",
     "estado": "ok",
     "respuesta": "perjudica",
-    "razones": "Quien tiene una vivienda alquilada a otra persona es arrendador. Los arts. 1 y 2 del RDL 11/2020, mantenidos al convalidarse, le imponen un límite (suspensión del desahucio de inquilinos vulnerables) y una obligación (aceptar la prórroga extraordinaria de hasta seis meses si el inquilino la pide). No le reconocen ningún derecho o ayuda.",
-    "coste": 0.013554
+    "razones": "El art. 2 obliga al arrendador a aceptar, si el inquilino lo solicita, una prórroga extraordinaria de hasta seis meses del contrato de vivienda habitual en las mismas condiciones. Quien tiene una vivienda alquilada queda sujeto a esa obligación y a ese límite para recuperar o renegociar el inmueble. Convalidar el decreto mantuvo esa carga.",
+    "coste": 0.0171
    }
   ],
   "decision": "perjudica"
@@ -19149,53 +19259,108 @@
  },
  {
   "id": "XV-156-1:efecto:1",
-  "hash": "ab92ebb55f0c6189",
+  "hash": "af6c10ba11c3443b",
   "esperado": "favorece",
   "resultado": "aprobado",
   "prompt": {
    "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
-   "pregunta": "XV legislatura, votación del 27/01/2026 en el Pleno.\nIniciativa: Real Decreto-ley 16/2025, de 23 de diciembre, por el que se prorrogan determinadas medidas para hacer frente a situaciones de vulnerabilidad social, y se adoptan medidas urgentes en materia tributaria y de Seguridad Social.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 178 en contra y 0 abstenciones: no salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2025/12/23/16\nExtracto literal del texto oficial:\n«[Art. 8.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases Pasivas del Estado se revalorizarán en 2026 con carácter general el 2,7 por ciento» [Art. 8.3] «La cuantía mínima de las pensiones contributivas del sistema de la Seguridad Social y de las pensiones de Clases Pasivas del Estado se incrementará en el año 2026» [Art. 8.5] «Las pensiones no contributivas del sistema de la Seguridad Social de incapacidad y jubilación tendrán un importe anual de 8.803,20 euros.» [Art. 5.1] «El descuento correspondiente al consumidor vulnerable será del 42,5 por ciento. En el caso del consumidor vulnerable severo, el descuento será del 57,5 por ciento.» [Art. 6] «La garantía de suministro de agua y energía a consumidores vulnerables establecida en el artículo 4 del Real Decreto-ley 8/2021 […] se aplicará desde 1 de enero de 2025 hasta el 31 de diciembre de 2026» [Art. 1.Uno, art. 1.1 del Real Decreto-ley 11/2020] «Desde la entrada en vigor del presente real decreto-ley y hasta el 31 de diciembre de 2026, en todos los juicios verbales que versen sobre reclamaciones de renta o cantidades debidas por el arrendatario […] la persona arrendataria podrá instar […] un incidente de suspensión extraordinaria del desahucio o lanzamiento ante el Juzgado por encontrarse en una situación de vulnerabilidad económica que le imposibilite encontrar una alternativa habitacional» [Art. 2, disposición adicional segunda.2 del Real Decreto-ley 37/2020] «La compensación consistirá en el valor medio que correspondería a un alquiler de vivienda en el entorno en que se encuentre el inmueble […] más los gastos corrientes de la vivienda que acredite haber asumido el arrendador» [Art. 14.Cuatro, disposición transitoria trigésima segunda de la Ley del IRPF] «Para los ejercicios 2016 a 2026, ambos inclusive, las magnitudes de 150.000 y 75.000 euros a que se refiere el apartado a’) de la letra b) de la norma 3.ª del apartado 1 del artículo 31 de esta Ley, quedan fijadas en 250.000 y 125.000 euros, respectivamente.» [Art. 12, disposición transitoria decimotercera de la Ley del IVA] «Para los ejercicios 2016 a 2026, ambos inclusive, la magnitud de 150.000 euros […] queda fijada en 250.000 euros.»»\nResumen: Subía las pensiones contributivas un 2,7 % en 2026, alargaba la suspensión de desahucios de hogares vulnerables hasta final de 2026, fijaba los descuentos del bono social eléctrico (42,5 % y 57,5 %) y la prohibición de cortar suministros a consumidores vulnerables, y prorrogaba los límites que permiten a los autónomos tributar por módulos, entre otras medidas fiscales. El Congreso no lo convalidó; después el Gobierno aprobó dos decretos separados, uno de pensiones y otro de bono social, desahucios y módulos.\nMedida en que se apoya: Art. 8 del Real Decreto-ley 16/2025 (revalorización de las pensiones y de otras prestaciones públicas).\n\nPersona: quien a la pregunta \"¿Cuál es tu situación laboral?\" responde: Estoy jubilado o cobro una pensión.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+   "pregunta": "XV legislatura, votación del 27/01/2026 en el Pleno.\nIniciativa: Real Decreto-ley 16/2025, de 23 de diciembre, por el que se prorrogan determinadas medidas para hacer frente a situaciones de vulnerabilidad social, y se adoptan medidas urgentes en materia tributaria y de Seguridad Social.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 178 en contra y 0 abstenciones: no salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2025/12/23/16\nExtracto literal del texto oficial:\n«[Art. 8.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases Pasivas del Estado se revalorizarán en 2026 con carácter general el 2,7 por ciento» [Art. 8.3] «La cuantía mínima de las pensiones contributivas del sistema de la Seguridad Social y de las pensiones de Clases Pasivas del Estado se incrementará en el año 2026» [Art. 8.5] «Las pensiones no contributivas del sistema de la Seguridad Social de incapacidad y jubilación tendrán un importe anual de 8.803,20 euros.» [Art. 5.1] «El descuento correspondiente al consumidor vulnerable será del 42,5 por ciento. En el caso del consumidor vulnerable severo, el descuento será del 57,5 por ciento.» [Art. 6] «La garantía de suministro de agua y energía a consumidores vulnerables establecida en el artículo 4 del Real Decreto-ley 8/2021 […] se aplicará desde 1 de enero de 2025 hasta el 31 de diciembre de 2026» [Art. 1.Uno, art. 1.1 del Real Decreto-ley 11/2020] «Desde la entrada en vigor del presente real decreto-ley y hasta el 31 de diciembre de 2026, en todos los juicios verbales que versen sobre reclamaciones de renta o cantidades debidas por el arrendatario […] la persona arrendataria podrá instar […] un incidente de suspensión extraordinaria del desahucio o lanzamiento ante el Juzgado por encontrarse en una situación de vulnerabilidad económica que le imposibilite encontrar una alternativa habitacional» [Art. 2, disposición adicional segunda.2 del Real Decreto-ley 37/2020] «La compensación consistirá en el valor medio que correspondería a un alquiler de vivienda en el entorno en que se encuentre el inmueble […] más los gastos corrientes de la vivienda que acredite haber asumido el arrendador» [Art. 14.Cuatro, disposición transitoria trigésima segunda de la Ley del IRPF] «Para los ejercicios 2016 a 2026, ambos inclusive, las magnitudes de 150.000 y 75.000 euros a que se refiere el apartado a’) de la letra b) de la norma 3.ª del apartado 1 del artículo 31 de esta Ley, quedan fijadas en 250.000 y 125.000 euros, respectivamente.» [Art. 12, disposición transitoria decimotercera de la Ley del IVA] «Para los ejercicios 2016 a 2026, ambos inclusive, la magnitud de 150.000 euros […] queda fijada en 250.000 euros.»»\nResumen: Subía las pensiones contributivas un 2,7 % en 2026, alargaba la suspensión de desahucios de hogares vulnerables hasta final de 2026, fijaba los descuentos del bono social eléctrico (42,5 % y 57,5 %) y la prohibición de cortar suministros a consumidores vulnerables, y prorrogaba los límites que permiten a los autónomos tributar por módulos, entre otras medidas fiscales. El Congreso no lo convalidó; después el Gobierno aprobó dos decretos separados, uno de pensiones y otro de bono social, desahucios y módulos.\nMedida en que se apoya: Art. 14, apartado Cuatro (disposición transitoria trigésima segunda de la Ley del IRPF), y art. 12 (disposición transitoria decimotercera de la Ley del IVA) del Real Decreto-ley 16/2025.\n\nPersona: quien a la pregunta \"¿Cuál es tu situación laboral?\" responde: Soy autónomo.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
   },
+  "historial": [
+   {
+    "id": "XV-156-1:efecto:1",
+    "hash": "ab92ebb55f0c6189",
+    "esperado": "favorece",
+    "resultado": "aprobado",
+    "prompt": {
+     "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+     "pregunta": "XV legislatura, votación del 27/01/2026 en el Pleno.\nIniciativa: Real Decreto-ley 16/2025, de 23 de diciembre, por el que se prorrogan determinadas medidas para hacer frente a situaciones de vulnerabilidad social, y se adoptan medidas urgentes en materia tributaria y de Seguridad Social.\nTipo: Real decreto-ley del Gobierno\nQué significaba votar Sí: Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.\nResultado oficial (datos abiertos del Congreso): 171 votos a favor, 178 en contra y 0 abstenciones: no salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/rdl/2025/12/23/16\nExtracto literal del texto oficial:\n«[Art. 8.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases Pasivas del Estado se revalorizarán en 2026 con carácter general el 2,7 por ciento» [Art. 8.3] «La cuantía mínima de las pensiones contributivas del sistema de la Seguridad Social y de las pensiones de Clases Pasivas del Estado se incrementará en el año 2026» [Art. 8.5] «Las pensiones no contributivas del sistema de la Seguridad Social de incapacidad y jubilación tendrán un importe anual de 8.803,20 euros.» [Art. 5.1] «El descuento correspondiente al consumidor vulnerable será del 42,5 por ciento. En el caso del consumidor vulnerable severo, el descuento será del 57,5 por ciento.» [Art. 6] «La garantía de suministro de agua y energía a consumidores vulnerables establecida en el artículo 4 del Real Decreto-ley 8/2021 […] se aplicará desde 1 de enero de 2025 hasta el 31 de diciembre de 2026» [Art. 1.Uno, art. 1.1 del Real Decreto-ley 11/2020] «Desde la entrada en vigor del presente real decreto-ley y hasta el 31 de diciembre de 2026, en todos los juicios verbales que versen sobre reclamaciones de renta o cantidades debidas por el arrendatario […] la persona arrendataria podrá instar […] un incidente de suspensión extraordinaria del desahucio o lanzamiento ante el Juzgado por encontrarse en una situación de vulnerabilidad económica que le imposibilite encontrar una alternativa habitacional» [Art. 2, disposición adicional segunda.2 del Real Decreto-ley 37/2020] «La compensación consistirá en el valor medio que correspondería a un alquiler de vivienda en el entorno en que se encuentre el inmueble […] más los gastos corrientes de la vivienda que acredite haber asumido el arrendador» [Art. 14.Cuatro, disposición transitoria trigésima segunda de la Ley del IRPF] «Para los ejercicios 2016 a 2026, ambos inclusive, las magnitudes de 150.000 y 75.000 euros a que se refiere el apartado a’) de la letra b) de la norma 3.ª del apartado 1 del artículo 31 de esta Ley, quedan fijadas en 250.000 y 125.000 euros, respectivamente.» [Art. 12, disposición transitoria decimotercera de la Ley del IVA] «Para los ejercicios 2016 a 2026, ambos inclusive, la magnitud de 150.000 euros […] queda fijada en 250.000 euros.»»\nResumen: Subía las pensiones contributivas un 2,7 % en 2026, alargaba la suspensión de desahucios de hogares vulnerables hasta final de 2026, fijaba los descuentos del bono social eléctrico (42,5 % y 57,5 %) y la prohibición de cortar suministros a consumidores vulnerables, y prorrogaba los límites que permiten a los autónomos tributar por módulos, entre otras medidas fiscales. El Congreso no lo convalidó; después el Gobierno aprobó dos decretos separados, uno de pensiones y otro de bono social, desahucios y módulos.\nMedida en que se apoya: Art. 8 del Real Decreto-ley 16/2025 (revalorización de las pensiones y de otras prestaciones públicas).\n\nPersona: quien a la pregunta \"¿Cuál es tu situación laboral?\" responde: Estoy jubilado o cobro una pensión.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+    },
+    "ronda1": [
+     {
+      "modelo": "openai/gpt-6.1-sol",
+      "fecha": "2026-11-11T07:51:44.388Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "Convalidar el decreto mantenía la subida general del 2,7 % de las pensiones contributivas y de Clases Pasivas en 2026. También incrementaba las pensiones mínimas y fijaba las no contributivas de jubilación e incapacidad en 8.803,20 euros anuales, beneficiando directamente a quienes las cobran.",
+      "coste": 0.004711
+     },
+     {
+      "modelo": "google/gemini-4-argon",
+      "fecha": "2026-11-11T07:51:47.562Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El artículo 8 del Real Decreto-ley 16/2025 establecía para 2026 una revalorización general del 2,7 % para las pensiones contributivas y de Clases Pasivas, así como incrementos en las cuantías mínimas y en las pensiones no contributivas. Que saliera el Sí habría mantenido en vigor esta subida de su pensión.",
+      "coste": 0.00478
+     },
+     {
+      "modelo": "mistralai/mistral-large-4-0",
+      "fecha": "2026-11-11T07:51:50.093Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El art. 8.1 del RDL 16/2025 establecía literalmente que las pensiones contributivas de la Seguridad Social y las de Clases Pasivas se revalorizarían en 2026 un 2,7 %, el art. 8.3 incrementaba las cuantías mínimas y el art. 8.5 fijaba en 8.803,20 € anuales las pensiones no contributivas de jubilación. Al convalidarse el decreto (voto Sí), estas medidas entraban en vigor y suponían un aumento directo de la prestación para la persona jubilada o pensionista.",
+      "coste": 0.0042889
+     },
+     {
+      "modelo": "deepseek/deepseek-v4-pro-0813",
+      "fecha": "2026-11-11T07:51:46.425Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El Real Decreto-ley 16/2025 revalorizaba en 2026 las pensiones contributivas de la Seguridad Social y de Clases Pasivas un 2,7 % (art. 8.1), incrementaba las cuantías mínimas (art. 8.3) y fijaba el importe anual de las pensiones no contributivas de incapacidad y jubilación en 8.803,20 euros (art. 8.5). Para una persona jubilada o que cobra una pensión, convalidar el decreto suponía mantener esas subidas y mejoras directas de su prestación.",
+      "coste": 0.00406296
+     },
+     {
+      "modelo": "x-ai/grok-4.7",
+      "fecha": "2026-11-11T07:51:52.958Z",
+      "estado": "ok",
+      "respuesta": "favorece",
+      "razones": "El art. 8 del RDL 16/2025 revalorizaba en 2026 un 2,7 % las pensiones contributivas y de Clases Pasivas, subía las mínimas y fijaba las no contributivas en 8.803,20 € anuales. Convalidarlo mantenía ese incremento directo para quien está jubilado o cobra pensión.",
+      "coste": 0.008124
+     }
+    ],
+    "decision": "favorece"
+   }
+  ],
   "ronda1": [
    {
     "modelo": "openai/gpt-6.1-sol",
-    "fecha": "2026-11-11T07:51:44.388Z",
+    "fecha": "2026-11-11T14:45:11.222Z",
     "estado": "ok",
-    "respuesta": "favorece",
-    "razones": "Convalidar el decreto mantenía la subida general del 2,7 % de las pensiones contributivas y de Clases Pasivas en 2026. También incrementaba las pensiones mínimas y fijaba las no contributivas de jubilación e incapacidad en 8.803,20 euros anuales, beneficiando directamente a quienes las cobran.",
-    "coste": 0.004711
+    "respuesta": "no_lo_se",
+    "razones": "El Sí mantenía en 2026 los límites ampliados para tributar por módulos en IRPF y aplicar el régimen simplificado del IVA. Esto podía favorecer a autónomos que cumplieran sus requisitos, pero ser autónomo no basta para saberlo: faltan su actividad, régimen fiscal y volumen de ingresos.",
+    "coste": 0.0053035
    },
    {
     "modelo": "google/gemini-4-argon",
-    "fecha": "2026-11-11T07:51:47.562Z",
+    "fecha": "2026-11-11T14:45:13.046Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El artículo 8 del Real Decreto-ley 16/2025 establecía para 2026 una revalorización general del 2,7 % para las pensiones contributivas y de Clases Pasivas, así como incrementos en las cuantías mínimas y en las pensiones no contributivas. Que saliera el Sí habría mantenido en vigor esta subida de su pensión.",
-    "coste": 0.00478
+    "razones": "El Real Decreto-ley prorrogaba para el ejercicio 2026 los límites de facturación ampliados (en 250.000 y 125.000 euros en lugar de 150.000 y 75.000 euros) que permiten a los trabajadores autónomos seguir tributando por el método de estimación objetiva (módulos) en el IRPF y el régimen simplificado del IVA.",
+    "coste": 0.004906
    },
    {
     "modelo": "mistralai/mistral-large-4-0",
-    "fecha": "2026-11-11T07:51:50.093Z",
+    "fecha": "2026-11-11T14:45:22.931Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El art. 8.1 del RDL 16/2025 establecía literalmente que las pensiones contributivas de la Seguridad Social y las de Clases Pasivas se revalorizarían en 2026 un 2,7 %, el art. 8.3 incrementaba las cuantías mínimas y el art. 8.5 fijaba en 8.803,20 € anuales las pensiones no contributivas de jubilación. Al convalidarse el decreto (voto Sí), estas medidas entraban en vigor y suponían un aumento directo de la prestación para la persona jubilada o pensionista.",
-    "coste": 0.0042889
+    "razones": "El art. 14.Cuatro (disposición transitoria 32.ª de la Ley del IRPF) y el art. 12 (disposición transitoria 13.ª de la Ley del IVA) del RDL 16/2025 prorrogaban hasta 2026 los límites de ingresos que permiten a los autónomos tributar por el método de estimación objetiva (módulos): 250.000 € y 125.000 € en el IRPF (en lugar de 150.000 € y 75.000 €) y 250.000 € en el IVA (en lugar de 150.000 €). Convalidar el decreto (votar Sí) mantenía estos umbrales elevados, lo que favorecía directamente al autónomo al permitirle seguir acogido al régimen de módulos con sus ventajas fiscales y de simplificación administrativa.",
+    "coste": 0.0031514
    },
    {
     "modelo": "deepseek/deepseek-v4-pro-0813",
-    "fecha": "2026-11-11T07:51:46.425Z",
+    "fecha": "2026-11-11T14:45:28.030Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El Real Decreto-ley 16/2025 revalorizaba en 2026 las pensiones contributivas de la Seguridad Social y de Clases Pasivas un 2,7 % (art. 8.1), incrementaba las cuantías mínimas (art. 8.3) y fijaba el importe anual de las pensiones no contributivas de incapacidad y jubilación en 8.803,20 euros (art. 8.5). Para una persona jubilada o que cobra una pensión, convalidar el decreto suponía mantener esas subidas y mejoras directas de su prestación.",
-    "coste": 0.00406296
+    "razones": "El Real Decreto-ley prorrogaba hasta 2026 los límites de facturación para tributar por módulos, fijándolos en 250.000 y 125.000 euros, en lugar de los 150.000 y 75.000 ordinarios. Para un autónomo, convalidar el decreto mantenía vigente esa prórroga, lo que le permitía seguir acogido o acogerse al régimen de módulos con límites más altos.",
+    "coste": 0.00985644
    },
    {
     "modelo": "x-ai/grok-4.7",
-    "fecha": "2026-11-11T07:51:52.958Z",
+    "fecha": "2026-11-11T14:46:07.225Z",
     "estado": "ok",
     "respuesta": "favorece",
-    "razones": "El art. 8 del RDL 16/2025 revalorizaba en 2026 un 2,7 % las pensiones contributivas y de Clases Pasivas, subía las mínimas y fijaba las no contributivas en 8.803,20 € anuales. Convalidarlo mantenía ese incremento directo para quien está jubilado o cobra pensión.",
-    "coste": 0.008124
+    "razones": "El Sí convalidaba el RDL y mantenía en 2026 los umbrales más altos de exclusión del régimen de módulos (250.000 y 125.000 euros en IRPF, y 250.000 en IVA, en lugar de 150.000 y 75.000). Eso conserva directamente la posibilidad de tributar por estimación objetiva y régimen simplificado, una opción fiscal más favorable para quien es autónomo.",
+    "coste": 0.02469
    }
   ],
   "decision": "favorece"
@@ -23443,6 +23608,703 @@
     "respuesta": "no_fiel",
     "razones": "El Sí como admisión a trámite y que se admitió (300-44) son correctos. También lo es dejar fuera de la suspensión del art. 1 bis del RDL 11/2020 las demandas del art. 250.1.4.º LEC: la exposición de motivos manda eliminar esa referencia y el nuevo art. 1 bis solo cita los apartados 2.º y 7.º. Hay errores de hecho: la medida se adopta «previa solicitud de parte», no a petición del propietario, y afecta al bien inmueble (allanamiento de morada o usurpación del art. 245.2), no solo a una vivienda. Solo el delito leve de usurpación pasa al «juicio inmediato por delito leve» del art. 962 LECrim; «lleva estos casos al juicio rápido» confunde ese trámite con el juicio rápido y lo extiende al allanamiento.",
     "coste": 0.037662
+   }
+  ],
+  "decision": "no_fiel"
+ },
+ {
+  "id": "XIV-25-3:efecto:1",
+  "hash": "2b2d1fddd0219169",
+  "esperado": "favorece",
+  "resultado": "decidido",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 04/06/2020 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario VOX, relativa a la efectiva igualdad y equiparación salarial de las Fuerzas y Cuerpos de Seguridad del Estado respecto de las Policías autonómicas.\nTipo: Proposición de ley del Grupo VOX\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 152 votos a favor, 192 en contra y 1 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-72-1.PDF\nExtracto literal del texto oficial:\n«[Artículo segundo] «Esta norma se aplicará a los funcionarios de carrera de la Policía Nacional definidos en la Ley Orgánica 9/2015, de 28 de julio, de Régimen de Personal de la Policía Nacional, y de la Guardia Civil, definidos en la Ley 29/2014, de 28 de noviembre, de Régimen del Personal de la Guardia Civil.» [Artículo tercero] «1. El componente general del complemento específico que se percibe en función del correspondiente empleo o categoría que se tenga, definido en el artículo 4.B.b).1.º del Real Decreto 950/2005, de 29 de julio, de retribuciones de las Fuerzas y Cuerpos de Seguridad del Estado, aplicable al Cuerpo de la Guardia Civil y al Cuerpo Nacional de Policía, no podrá ser inferior al complemento específico que perciban las Policías Autonómicas. El de mayor cuantía, en caso de percibirse retribuciones diversas por parte de los funcionarios policiales autonómicos.» [Disposición adicional segunda] «El Gobierno, en el plazo de tres meses, procederá a modificar los complementos de territorialidad, turnicidad, así como los conceptos de dietas y asistencias a juicios a la realidad social y geográfica donde tengan impacto.» [Disposición adicional tercera] «Los Policías Nacionales y Guardias Civiles que estuvieren en segunda actividad o reserva percibirán la retribución correspondiente a la equiparación salarial abonada a los Policías Nacionales y Guardias Civiles en servicio activo en la proporción equivalente al 80 %.»»\nResumen: Proponía que el componente general del complemento específico de los funcionarios de carrera de la Policía Nacional y de la Guardia Civil no pudiera ser inferior al complemento específico que cobraran las policías autonómicas (el de mayor cuantía, si había varios), con la obligación de las comunidades de informar al Estado de lo que pagan a sus policías. Los policías y guardias civiles en segunda actividad o en reserva cobrarían el 80 % de esa equiparación. El Gobierno tendría tres meses para adaptar los complementos de destino a las titulaciones exigidas y revisar los de territorialidad y turnicidad, las dietas y las asistencias a juicios. No se admitió a trámite.\nMedida en que se apoya: Artículos segundo y tercero y disposición adicional tercera de la proposición.\n\nPersona: quien a la pregunta \"¿Cuál es tu situación laboral?\" responde: Soy funcionario o personal público.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:31:06.439Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "Ser funcionario o personal público no permite saber si pertenece a la Policía Nacional o a la Guardia Civil, los colectivos beneficiarios. Si perteneciera a ellos, la equiparación salarial le favorecería; para otros empleados públicos no se establece un efecto directo.",
+    "coste": 0.0048435
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:31:10.284Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición de ley establecía mejoras retributivas y de equiparación salarial exclusivamente para los funcionarios de carrera de la Policía Nacional y de la Guardia Civil (según su artículo segundo), por lo que no afectaba con carácter general al resto de funcionarios o empleados públicos.",
+    "coste": 0.00607
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:31:11.222Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El texto de la proposición limita su ámbito de aplicación exclusivamente a los funcionarios de carrera de la Policía Nacional (Ley Orgánica 9/2015) y de la Guardia Civil (Ley 29/2014), así como a estos mismos en segunda actividad o reserva (art. 2º y disposición adicional 3ª), estableciendo una equiparación salarial a su favor. La persona se identifica únicamente como 'funcionario o personal público' genérico, sin especificar pertenecer a dichos cuerpos de seguridad, por lo que la norma no le otorga ningún derecho, ayuda ni obligación directa.",
+    "coste": 0.0034902
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:31:02.655Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La iniciativa se aplica específicamente a funcionarios de carrera de la Policía Nacional y de la Guardia Civil, no al conjunto de funcionarios o personal público. La persona solo se identifica como 'funcionario o personal público', sin precisar si pertenece a esos cuerpos. Por tanto, no se puede determinar con seguridad si le afectaba directamente.",
+    "coste": 0.00210817
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:31:26.044Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El texto (arts. segundo y tercero y DA tercera) solo fija un suelo retributivo del complemento específico para funcionarios de carrera de la Policía Nacional y de la Guardia Civil, y el 80 % de esa equiparación en segunda actividad o reserva. Ser funcionario o personal público, sin pertenecer a esos cuerpos, no es la condición que activa ese derecho; no hay efecto directo sobre el resto del empleo público.",
+    "coste": 0.012022
+   }
+  ],
+  "ronda2": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:31:29.629Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "El artículo segundo limita la medida a funcionarios de carrera de la Policía Nacional y la Guardia Civil; también contempla la equiparación al 80 % en segunda actividad o reserva. Saber únicamente que la persona es funcionario o personal público no permite determinar si pertenece a esos cuerpos. Si perteneciera, le favorecería; para el resto del personal público no se establece un efecto directo.",
+    "coste": 0.0053185
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:31:44.155Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El artículo segundo de la proposición de ley restringe su ámbito de aplicación exclusivamente a los funcionarios de carrera de la Policía Nacional y de la Guardia Civil (y aquellos en segunda actividad o reserva según la disposición adicional tercera). La condición general de ser 'funcionario o personal público' no otorga el derecho a esta equiparación salarial, por lo que la iniciativa no afecta al conjunto de los empleados públicos.",
+    "coste": 0.005192
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:31:58.619Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El artículo segundo del texto limita expresamente la aplicación de la norma a los funcionarios de carrera de la Policía Nacional (Ley Orgánica 9/2015) y de la Guardia Civil (Ley 29/2014), así como a estos mismos en segunda actividad o reserva (disposición adicional tercera). La persona se identifica únicamente como 'funcionario o personal público' en sentido genérico, sin acreditar pertenecer a dichos cuerpos de seguridad del Estado, por lo que no reúne la condición específica para beneficiarse de la equiparación salarial prevista. No existe en el texto ningún otro derecho, ayuda, impuesto u obligación dirigida al conjunto general del empleo público.",
+    "coste": 0.00723184
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:32:07.990Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición limitaba su aplicación a los funcionarios de carrera de la Policía Nacional y de la Guardia Civil, según sus artículos segundo y tercero y la disposición adicional tercera. La persona solo se identifica como 'funcionario o personal público' sin especificar pertenencia a esos cuerpos, por lo que no cumple la condición necesaria para recibir los derechos retributivos que se establecían.",
+    "coste": 0.02008776
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:31:53.222Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "El texto (art. segundo y tercero y DA tercera) solo crea un derecho retributivo para funcionarios de carrera de la Policía Nacional y de la Guardia Civil, y el 80 % de esa equiparación en segunda actividad o reserva. «Funcionario o personal público» incluye a esos cuerpos y también al resto del empleo público, y con solo esa respuesta no se puede saber si la persona cumple la condición que activa el derecho.",
+    "coste": 0.014264
+   }
+  ],
+  "decision": "no_le_afecta"
+ },
+ {
+  "id": "XIV-25-3:fidelidad",
+  "hash": "d0086c97becd4b17",
+  "esperado": "fiel",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 04/06/2020 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario VOX, relativa a la efectiva igualdad y equiparación salarial de las Fuerzas y Cuerpos de Seguridad del Estado respecto de las Policías autonómicas.\nTipo: Proposición de ley del Grupo VOX\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 152 votos a favor, 192 en contra y 1 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-72-1.PDF\nExtracto literal del texto oficial:\n«[Artículo segundo] «Esta norma se aplicará a los funcionarios de carrera de la Policía Nacional definidos en la Ley Orgánica 9/2015, de 28 de julio, de Régimen de Personal de la Policía Nacional, y de la Guardia Civil, definidos en la Ley 29/2014, de 28 de noviembre, de Régimen del Personal de la Guardia Civil.» [Artículo tercero] «1. El componente general del complemento específico que se percibe en función del correspondiente empleo o categoría que se tenga, definido en el artículo 4.B.b).1.º del Real Decreto 950/2005, de 29 de julio, de retribuciones de las Fuerzas y Cuerpos de Seguridad del Estado, aplicable al Cuerpo de la Guardia Civil y al Cuerpo Nacional de Policía, no podrá ser inferior al complemento específico que perciban las Policías Autonómicas. El de mayor cuantía, en caso de percibirse retribuciones diversas por parte de los funcionarios policiales autonómicos.» [Disposición adicional segunda] «El Gobierno, en el plazo de tres meses, procederá a modificar los complementos de territorialidad, turnicidad, así como los conceptos de dietas y asistencias a juicios a la realidad social y geográfica donde tengan impacto.» [Disposición adicional tercera] «Los Policías Nacionales y Guardias Civiles que estuvieren en segunda actividad o reserva percibirán la retribución correspondiente a la equiparación salarial abonada a los Policías Nacionales y Guardias Civiles en servicio activo en la proporción equivalente al 80 %.»»\n\nResumen que se mostrará al público: Proponía que el componente general del complemento específico de los funcionarios de carrera de la Policía Nacional y de la Guardia Civil no pudiera ser inferior al complemento específico que cobraran las policías autonómicas (el de mayor cuantía, si había varios), con la obligación de las comunidades de informar al Estado de lo que pagan a sus policías. Los policías y guardias civiles en segunda actividad o en reserva cobrarían el 80 % de esa equiparación. El Gobierno tendría tres meses para adaptar los complementos de destino a las titulaciones exigidas y revisar los de territorialidad y turnicidad, las dietas y las asistencias a juicios. No se admitió a trámite.\n\nPregunta: ¿el resumen y la explicación de qué significaba votar Sí describen de forma fiel y neutral\nesta iniciativa? Responde \"no_fiel\" si hay un error de hecho, una omisión importante o un sesgo, y\nexplica cuál en las razones."
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:32:14.841Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja el ámbito personal, el mínimo del complemento específico ligado al autonómico de mayor cuantía, el 80 % para segunda actividad o reserva y la revisión de los conceptos retributivos indicados. No presenta la equiparación como aprobada: votar Sí significaba admitir la proposición a trámite, y los 192 votos en contra frente a 152 a favor impidieron esa admisión. No se aprecia sesgo ni contradicción con el extracto.",
+    "coste": 0.0051835
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:32:23.282Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen y la explicación del voto describen con exactitud y neutralidad el contenido de la proposición de ley (equiparación del componente general del complemento específico de Policía Nacional y Guardia Civil con el mayor de las policías autonómicas, cobro del 80 % en segunda actividad o reserva y plazo de tres meses para revisar otros complementos y dietas), así como el significado procedimental de la toma en consideración y su rechazo.",
+    "coste": 0.007446
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:32:51.905Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El resumen altera el contenido de la Disposición adicional segunda del texto oficial: según el extracto literal, el Gobierno debía modificar 'los complementos de territorialidad, turnicidad, así como los conceptos de dietas y asistencias a juicios a la realidad social y geográfica donde tengan impacto', mientras que el resumen afirma que debía 'adaptar los complementos de destino a las titulaciones exigidas', concepto que no aparece en el extracto y que cambia sustancialmente el objeto de la norma (complemento de destino ≠ complemento de territorialidad; titulaciones exigidas ≠ realidad social y geográfica). Además, omite el criterio rector de la 'realidad social y geográfica donde tengan impacto'.",
+    "coste": 0.0087927
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:33:29.828Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja correctamente el ámbito de aplicación (funcionarios de carrera de Policía Nacional y Guardia Civil), la equiparación retributiva del componente general del complemento específico respecto al de las policías autonómicas, el 80 % en segunda actividad o reserva y los mandatos al Gobierno. La explicación del voto a favor como admisión a trámite y el resultado negativo son coherentes con la votación oficial.",
+    "coste": 0.02029797
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:32:42.137Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El Sí era solo la toma en consideración y el resultado (no admitida) es correcto, pero el resumen yerra en la obligación de tres meses: la DA 2.ª manda modificar territorialidad, turnicidad, dietas y asistencias a juicios, no «adaptar los complementos de destino a las titulaciones exigidas». Además atribuye a las comunidades una obligación de informar al Estado que no figura en el extracto.",
+    "coste": 0.01832
+   }
+  ],
+  "decision": "fiel"
+ },
+ {
+  "id": "XIV-61-205:efecto:1",
+  "hash": "7fd9741622d51424",
+  "esperado": "favorece",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 19/11/2020 en el Pleno.\nIniciativa: Proyecto de Ley Orgánica por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación.\nTipo: Proyecto de ley orgánica del Gobierno\nQué significaba votar Sí: Votar sí era aprobar la ley orgánica en la votación de conjunto del Congreso.\nResultado oficial (datos abiertos del Congreso): 177 votos a favor, 148 en contra y 17 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/lo/2020/12/29/3\nExtracto literal del texto oficial:\n«[Artículo único.Cincuenta y cinco bis (art. 88 LOE)] «1. Para garantizar la posibilidad de escolarizar a todos los alumnos sin discriminación por motivos socioeconómicos, en ningún caso podrán los centros públicos o privados concertados percibir cantidades de las familias por recibir las enseñanzas de carácter gratuito, imponer a las familias la obligación de hacer aportaciones a fundaciones o asociaciones ni establecer servicios obligatorios, asociados a las enseñanzas, que requieran aportación económica por parte de las familias de los alumnos.» «Las actividades complementarias que se consideren necesarias para el desarrollo del currículo deberán programarse y realizarse de forma que no supongan discriminación por motivos económicos. Las actividades complementarias que tengan carácter estable no podrán formar parte del horario escolar del centro.» [Artículo único.Veinte (art. 28.3 y 28.5 LOE)] «En todo caso promocionarán quienes hayan alcanzado los objetivos de las materias o ámbitos cursados o tengan evaluación negativa en una o dos materias.» «En todo caso, el alumno o alumna podrá permanecer en el mismo curso una sola vez y dos veces como máximo a lo largo de la enseñanza obligatoria.» [Artículo único.Treinta y uno (art. 37.1 LOE)] «El Gobierno, previa consulta a las Comunidades Autónomas, establecerá las condiciones y procedimientos para que, excepcionalmente, el equipo docente pueda decidir la obtención del título de Bachiller por el alumno o alumna que haya superado todas las materias salvo una» [Disposición adicional tercera] «el Gobierno, en colaboración con las Administraciones educativas, elaborará un plan de ocho años de duración para la extensión del primer ciclo de educación infantil»»\nResumen: Reforma la Ley Orgánica de Educación de 2006. En la ESO, la promoción de curso y la obtención del título las decide de forma colegiada el equipo docente según las competencias adquiridas; se promociona en todo caso con una o dos materias suspensas y repetir pasa a ser excepcional (una vez por curso y dos como máximo en la enseñanza obligatoria). En bachillerato, el equipo docente puede decidir, de forma excepcional, dar el título a quien ha aprobado todas las materias salvo una. Los centros públicos y concertados no pueden cobrar a las familias por las enseñanzas gratuitas ni imponerles servicios obligatorios de pago, y las actividades complementarias estables no pueden formar parte del horario escolar. Encarga al Gobierno un plan de ocho años para extender el primer ciclo de educación infantil (0 a 3 años). Se aprobó y es la Ley Orgánica 3/2020.\nMedida en que se apoya: Artículo único, apartado cincuenta y cinco bis, que da nueva redacción al art. 88 de la Ley Orgánica 2/2006 (garantías de gratuidad).\n\nPersona: quien a la pregunta \"¿Tienes hijos a tu cargo?\" responde: Sí, de 3 a 17 años.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:33:33.813Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La ley refuerza las garantías de gratuidad para sus hijos escolarizados en centros públicos o concertados: prohíbe cobrar por enseñanzas gratuitas, exigir aportaciones a fundaciones o asociaciones e imponer servicios obligatorios de pago. Esto protege directamente a las familias frente a esos cobros; no se aplica a centros privados no concertados.",
+    "coste": 0.004406
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:33:39.710Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La ley refuerza las garantías de gratuidad para las familias con hijos en edad escolar (de 3 a 17 años), prohibiendo expresamente que los centros públicos o concertados cobren cantidades por enseñanzas gratuitas, impongan aportaciones a fundaciones o asociaciones, o establezcan servicios obligatorios de pago asociados a la enseñanza, además de flexibilizar los criterios de promoción y titulación en ESO y Bachillerato.",
+    "coste": 0.005302
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:33:45.655Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La persona tiene hijos de 3 a 17 años, en edad escolar. El texto aprobado (art. 88 LOE modificado por el apartado cincuenta y cinco bis) establece que los centros públicos y privados concertados no pueden percibir cantidades de las familias por enseñanzas gratuitas ni imponer servicios obligatorios de pago, lo que supone una garantía directa de gratuidad para sus hijos. Asimismo, las normas sobre promoción en ESO (promocionar con una o dos materias suspensas y repetir solo excepcionalmente) y la posibilidad de obtener el título de Bachillerato con una materia suspensa (art. 37.1) facilitan directamente la trayectoria educativa de sus hijos en esas etapas.",
+    "coste": 0.00364518
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:33:34.936Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La ley aprobada refuerza la gratuidad de la enseñanza en centros públicos y concertados: prohíbe cobrar a las familias por enseñanzas gratuitas, imponer aportaciones a fundaciones o asociaciones y establecer servicios obligatorios de pago asociados a las enseñanzas. Para una persona con hijos de 3 a 17 años, esto supone una protección directa frente a pagos obligatorios en la escolarización.",
+    "coste": 0.00451559
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:33:49.372Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "El apartado que da nueva redacción al art. 88 LOE prohíbe a los centros públicos y concertados cobrar a las familias por las enseñanzas gratuitas, imponerles aportaciones o servicios obligatorios de pago, y evita que las actividades complementarias discriminen por motivos económicos. Quien tiene hijos de 3 a 17 años está en la edad de esas enseñanzas, así que la garantía de gratuidad le protege de forma directa frente a esos cobros.",
+    "coste": 0.009414
+   }
+  ],
+  "decision": "favorece"
+ },
+ {
+  "id": "XIV-61-205:fidelidad",
+  "hash": "8d8301fcc19e5c08",
+  "esperado": "fiel",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 19/11/2020 en el Pleno.\nIniciativa: Proyecto de Ley Orgánica por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación.\nTipo: Proyecto de ley orgánica del Gobierno\nQué significaba votar Sí: Votar sí era aprobar la ley orgánica en la votación de conjunto del Congreso.\nResultado oficial (datos abiertos del Congreso): 177 votos a favor, 148 en contra y 17 abstenciones: salió el Sí.\nTexto oficial: https://www.boe.es/eli/es/lo/2020/12/29/3\nExtracto literal del texto oficial:\n«[Artículo único.Cincuenta y cinco bis (art. 88 LOE)] «1. Para garantizar la posibilidad de escolarizar a todos los alumnos sin discriminación por motivos socioeconómicos, en ningún caso podrán los centros públicos o privados concertados percibir cantidades de las familias por recibir las enseñanzas de carácter gratuito, imponer a las familias la obligación de hacer aportaciones a fundaciones o asociaciones ni establecer servicios obligatorios, asociados a las enseñanzas, que requieran aportación económica por parte de las familias de los alumnos.» «Las actividades complementarias que se consideren necesarias para el desarrollo del currículo deberán programarse y realizarse de forma que no supongan discriminación por motivos económicos. Las actividades complementarias que tengan carácter estable no podrán formar parte del horario escolar del centro.» [Artículo único.Veinte (art. 28.3 y 28.5 LOE)] «En todo caso promocionarán quienes hayan alcanzado los objetivos de las materias o ámbitos cursados o tengan evaluación negativa en una o dos materias.» «En todo caso, el alumno o alumna podrá permanecer en el mismo curso una sola vez y dos veces como máximo a lo largo de la enseñanza obligatoria.» [Artículo único.Treinta y uno (art. 37.1 LOE)] «El Gobierno, previa consulta a las Comunidades Autónomas, establecerá las condiciones y procedimientos para que, excepcionalmente, el equipo docente pueda decidir la obtención del título de Bachiller por el alumno o alumna que haya superado todas las materias salvo una» [Disposición adicional tercera] «el Gobierno, en colaboración con las Administraciones educativas, elaborará un plan de ocho años de duración para la extensión del primer ciclo de educación infantil»»\n\nResumen que se mostrará al público: Reforma la Ley Orgánica de Educación de 2006. En la ESO, la promoción de curso y la obtención del título las decide de forma colegiada el equipo docente según las competencias adquiridas; se promociona en todo caso con una o dos materias suspensas y repetir pasa a ser excepcional (una vez por curso y dos como máximo en la enseñanza obligatoria). En bachillerato, el equipo docente puede decidir, de forma excepcional, dar el título a quien ha aprobado todas las materias salvo una. Los centros públicos y concertados no pueden cobrar a las familias por las enseñanzas gratuitas ni imponerles servicios obligatorios de pago, y las actividades complementarias estables no pueden formar parte del horario escolar. Encarga al Gobierno un plan de ocho años para extender el primer ciclo de educación infantil (0 a 3 años). Se aprobó y es la Ley Orgánica 3/2020.\n\nPregunta: ¿el resumen y la explicación de qué significaba votar Sí describen de forma fiel y neutral\nesta iniciativa? Responde \"no_fiel\" si hay un error de hecho, una omisión importante o un sesgo, y\nexplica cuál en las razones."
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:33:56.232Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja las reglas de promoción y repetición, la titulación excepcional en bachillerato con una materia pendiente, las garantías de gratuidad y el plan de extensión de la educación infantil recogidos en la ley. La decisión colegiada sobre promoción y titulación en ESO también corresponde a su contenido. Votar Sí significaba aprobar el proyecto en la votación de conjunto del Congreso, sin que ello implicara por sí solo completar toda la tramitación. No se aprecian errores relevantes ni valoraciones ideológicas.",
+    "coste": 0.005001
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:33:53.813Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen y el significado del voto reflejan de forma neutral y exacta el contenido de la Ley Orgánica 3/2020 (LOMLOE) y los extractos literales aportados sobre gratuidad y cobros en centros públicos y concertados, criterios de promoción y titulación en ESO y Bachillerato, y el plan para el primer ciclo de educación infantil.",
+    "coste": 0.004424
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:34:14.338Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen recoge con exactitud los efectos directos del extracto literal: en ESO se promociona con una o dos materias suspensas y la repetición queda limitada a una vez por curso y dos en toda la etapa (art. 28.3 y 28.5 LOE); en Bachillerato el equipo docente puede decidir excepcionalmente la titulación con una materia no superada (art. 37.1 LOE); se prohíbe a centros públicos y concertados percibir cantidades por enseñanzas gratuitas o imponer servicios obligatorios de pago, y se impide que las actividades complementarias estables formen parte del horario escolar (art. 88 LOE); y se encarga un plan de ocho años para extender el primer ciclo de educación infantil (Disposición adicional tercera). La descripción de que votar Sí equivalía a aprobar la ley orgánica en la votación de conjunto es correcta para un proyecto de ley orgánica, y el resultado oficial (177-148-17) confirma que salió adelante como Ley Orgánica 3/2020.",
+    "coste": 0.00753291
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:33:52.314Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja correctamente los efectos principales del texto oficial: promoción en ESO con una o dos suspensas, repetición limitada a una vez por curso y dos como máximo en la enseñanza obligatoria, título de Bachiller excepcional con una materia suspensa, prohibición de cobros a familias en centros públicos y concertados, actividades complementarias estables fuera del horario escolar, y plan de ocho años para extender el primer ciclo de educación infantil. La explicación de qué significaba votar Sí es correcta: era la votación de conjunto del proyecto de ley orgánica, y el resultado oficial indica que salió el Sí. No se detectan errores de hecho, omisiones importantes ni sesgo.",
+    "coste": 0.002211
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:35:09.241Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El Sí en la votación de conjunto del 19/11/2020 (177-148-17) aprobó el proyecto, luego Ley Orgánica 3/2020, que modifica la LOE. El resumen coincide con el texto: promoción automática en ESO con una o dos materias no superadas; permanencia máxima una vez por curso y dos en la enseñanza obligatoria; título de Bachillerato excepcional con una materia pendiente; prohibición de cobros y de servicios obligatorios de pago en centros públicos y concertados; actividades complementarias estables fuera del horario escolar; y plan de ocho años para el primer ciclo de infantil (0-3). La decisión colegiada del equipo docente según competencias es el régimen de la norma. No hay error de hecho, omisión relevante ni sesgo.",
+    "coste": 0.035768
+   }
+  ],
+  "decision": "fiel"
+ },
+ {
+  "id": "XIV-92-1:efecto:1",
+  "hash": "f945ba94f8abd759",
+  "esperado": "favorece",
+  "resultado": "decidido",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 20/04/2021 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Popular en el Congreso, del régimen estatutario del personal que integra los Cuerpos Nacionales de Instituciones Penitenciarias.\nTipo: Proposición de ley del Grupo Popular\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 157 votos a favor, 191 en contra y 1 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-126-1.PDF\nExtracto literal del texto oficial:\n«[Artículo 40.2] «Los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias que hayan desempeñado el cometido y puestos de trabajo de Servicio Interior en contacto directo con la población reclusa podrán pasar a la situación de segunda actividad por las siguientes causas:» «b) Por petición propia, una vez cumplidas las edades que se establezcan reglamentariamente.» [Artículo 40.3] «3. Los funcionarios en la situación de segunda actividad percibirán en su totalidad las retribuciones básicas que correspondan a la antigüedad que se posea y al cuerpo de pertenencia, así como un complemento de una cuantía igual al 80 por 100 de las retribuciones complementarias de carácter general del referido cuerpo, en los términos que se establezcan reglamentariamente.» [Artículo 34] «1. La Administración está obligada a proporcionar a los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias defensa y asistencia jurídica en los procedimientos que se sigan ante cualquier orden jurisdiccional, como consecuencia del ejercicio legítimo de sus funciones. 2. La Administración concertará un seguro de responsabilidad civil, u otra garantía financiera,» [Artículo 31.1] «Cuando la baja para el servicio hubiese sido motivada por lesión o patología declarada como enfermedad o accidente profesional producidos en acto de servicio, previa tramitación del expediente de averiguación de causas instruido al efecto, la prestación económica a percibir, computado en su caso el subsidio previsto en la normativa reguladora del régimen del Mutualismo, será completada por el órgano competente en materia de personal hasta alcanzar como máximo el cien por cien de las retribuciones que el funcionario hubiera percibido el mes anterior al de causarse la baja.» [Disposición transitoria tercera] «La Administración Penitenciaria abrirá, en el plazo de tres meses desde la entrada en vigor de esta Ley, una negociación con los representantes de los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias para alcanzar un acuerdo de actualización y mejora de su régimen retributivo.»»\nResumen: Proponía un estatuto propio para los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias, con sus cuerpos, acceso, carrera, provisión de puestos, derechos y deberes. Entre otras medidas, creaba para quienes han trabajado en servicio interior en contacto directo con los reclusos una situación de segunda actividad, a petición propia al cumplir las edades que fijara un reglamento o por pérdida de aptitudes psicofísicas, en la que cobrarían todas las retribuciones básicas y el 80 % de las complementarias de carácter general; obligaba a la Administración a darles defensa jurídica en los procedimientos derivados del ejercicio legítimo de sus funciones y a contratar un seguro de responsabilidad civil; completaba hasta el 100 % del sueldo la baja por lesión o enfermedad producida en acto de servicio, y abría en tres meses una negociación para mejorar su régimen retributivo. No se admitió a trámite.\nMedida en que se apoya: Artículos 34 y 40 y disposición transitoria tercera de la proposición.\n\nPersona: quien a la pregunta \"¿Cuál es tu situación laboral?\" responde: Soy funcionario o personal público.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:35:15.218Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La propuesta beneficiaba específicamente a los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias, con defensa jurídica, seguro de responsabilidad civil y, bajo ciertos requisitos, segunda actividad. Saber solo que la persona es funcionaria o personal público no permite determinar si pertenece a esos cuerpos y le afectaba directamente.",
+    "coste": 0.004986
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:35:19.137Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición de ley regula exclusivamente el régimen estatutario, retributivo y de segunda actividad de los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias, por lo que no tiene un efecto directo general sobre el conjunto de los funcionarios o empleados públicos de otras administraciones, cuerpos o sectores.",
+    "coste": 0.006478
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:35:30.041Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La iniciativa regula exclusivamente el régimen estatutario de los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias (personal penitenciario). Todos los preceptos citados (artículos 31, 34, 40 y disposición transitoria tercera) establecen derechos, obligaciones y prestaciones únicamente para dicho colectivo específico, sin afectar al resto de funcionarios o personal público en general. Por tanto, para una persona que solo indica ser 'funcionario o personal público' sin pertenecer a dichos cuerpos, la medida no tiene efecto directo.",
+    "coste": 0.00329791
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:35:15.505Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La iniciativa regulaba únicamente a los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias. La persona solo se identifica como funcionario o personal público en general, sin indicar que pertenezca a esos cuerpos. Por tanto, las medidas (segunda actividad, defensa jurídica, bajas, negociación retributiva) no le afectaban directamente a ella como funcionario público genérico.",
+    "coste": 0.0044088
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:35:20.675Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición solo crea derechos (segunda actividad, defensa jurídica, seguro, complemento de baja y negociación retributiva) para los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias. Ser funcionario o personal público en general no cumple esa condición, así que admitirla a trámite no le afectaba directamente.",
+    "coste": 0.00853
+   }
+  ],
+  "ronda2": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:35:34.679Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La propuesta establecía derechos específicos para los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias, como defensa jurídica y seguro de responsabilidad civil. Saber únicamente que la persona es funcionaria o personal público no permite determinar si pertenece a esos cuerpos: no puede afirmarse ni que le favorecía ni que no le afectaba directamente.",
+    "coste": 0.006021
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:35:50.917Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición de ley regulaba exclusivamente el régimen estatutario, retributivo, de defensa jurídica y de segunda actividad de los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias. Para el colectivo general de funcionarios o personal público, el mero hecho de tener esa condición no le otorga los derechos previstos en esta norma específica, por lo que no le afecta directamente.",
+    "coste": 0.005478
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:35:57.810Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición de ley regula exclusivamente el régimen estatutario de los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias (personal penitenciario). Los preceptos citados (art. 31.1, 34, 40.2, 40.3 y disposición transitoria tercera) establecen derechos y obligaciones —segunda actividad, defensa jurídica, seguro de responsabilidad civil, complemento de bajas por enfermedad profesional y negociación retributiva— únicamente para ese colectivo específico. Al tratarse de una norma sectorial y no de una disposición general sobre el empleo público, no produce efectos directos sobre una persona que solo se identifica como 'funcionario o personal público' sin pertenecer a dichos cuerpos.",
+    "coste": 0.00554785
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:35:32.921Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición regulaba exclusivamente el régimen estatutario, retributivo y de segunda actividad de los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias. La persona solo se identifica como 'funcionario o personal público' en general, sin indicar pertenencia a esos cuerpos específicos, por lo que las medidas citadas no le afectaban directamente.",
+    "coste": 0.001347762
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:35:48.364Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La proposición solo crea derechos (segunda actividad, defensa jurídica, seguro, complemento de baja y negociación retributiva) para los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias. Ser funcionario o personal público en general no cumple esa condición, así que admitirla a trámite no le afectaba directamente.",
+    "coste": 0.010698
+   }
+  ],
+  "decision": "no_le_afecta"
+ },
+ {
+  "id": "XIV-92-1:fidelidad",
+  "hash": "b7d407125b0339c4",
+  "esperado": "fiel",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XIV legislatura, votación del 20/04/2021 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Popular en el Congreso, del régimen estatutario del personal que integra los Cuerpos Nacionales de Instituciones Penitenciarias.\nTipo: Proposición de ley del Grupo Popular\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 157 votos a favor, 191 en contra y 1 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-126-1.PDF\nExtracto literal del texto oficial:\n«[Artículo 40.2] «Los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias que hayan desempeñado el cometido y puestos de trabajo de Servicio Interior en contacto directo con la población reclusa podrán pasar a la situación de segunda actividad por las siguientes causas:» «b) Por petición propia, una vez cumplidas las edades que se establezcan reglamentariamente.» [Artículo 40.3] «3. Los funcionarios en la situación de segunda actividad percibirán en su totalidad las retribuciones básicas que correspondan a la antigüedad que se posea y al cuerpo de pertenencia, así como un complemento de una cuantía igual al 80 por 100 de las retribuciones complementarias de carácter general del referido cuerpo, en los términos que se establezcan reglamentariamente.» [Artículo 34] «1. La Administración está obligada a proporcionar a los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias defensa y asistencia jurídica en los procedimientos que se sigan ante cualquier orden jurisdiccional, como consecuencia del ejercicio legítimo de sus funciones. 2. La Administración concertará un seguro de responsabilidad civil, u otra garantía financiera,» [Artículo 31.1] «Cuando la baja para el servicio hubiese sido motivada por lesión o patología declarada como enfermedad o accidente profesional producidos en acto de servicio, previa tramitación del expediente de averiguación de causas instruido al efecto, la prestación económica a percibir, computado en su caso el subsidio previsto en la normativa reguladora del régimen del Mutualismo, será completada por el órgano competente en materia de personal hasta alcanzar como máximo el cien por cien de las retribuciones que el funcionario hubiera percibido el mes anterior al de causarse la baja.» [Disposición transitoria tercera] «La Administración Penitenciaria abrirá, en el plazo de tres meses desde la entrada en vigor de esta Ley, una negociación con los representantes de los Funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias para alcanzar un acuerdo de actualización y mejora de su régimen retributivo.»»\n\nResumen que se mostrará al público: Proponía un estatuto propio para los funcionarios de los Cuerpos Nacionales de Instituciones Penitenciarias, con sus cuerpos, acceso, carrera, provisión de puestos, derechos y deberes. Entre otras medidas, creaba para quienes han trabajado en servicio interior en contacto directo con los reclusos una situación de segunda actividad, a petición propia al cumplir las edades que fijara un reglamento o por pérdida de aptitudes psicofísicas, en la que cobrarían todas las retribuciones básicas y el 80 % de las complementarias de carácter general; obligaba a la Administración a darles defensa jurídica en los procedimientos derivados del ejercicio legítimo de sus funciones y a contratar un seguro de responsabilidad civil; completaba hasta el 100 % del sueldo la baja por lesión o enfermedad producida en acto de servicio, y abría en tres meses una negociación para mejorar su régimen retributivo. No se admitió a trámite.\n\nPregunta: ¿el resumen y la explicación de qué significaba votar Sí describen de forma fiel y neutral\nesta iniciativa? Responde \"no_fiel\" si hay un error de hecho, una omisión importante o un sesgo, y\nexplica cuál en las razones."
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:36:04.218Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen recoge las medidas del extracto: segunda actividad con retribuciones básicas íntegras y el 80 % de las complementarias generales, defensa jurídica y seguro, complemento de la prestación por baja profesional hasta el 100 % y apertura de una negociación retributiva en tres meses. No presenta esa negociación como una subida salarial garantizada. Explica correctamente que el Sí suponía admitir la propuesta a trámite, no aprobarla definitivamente, y que fue rechazada.",
+    "coste": 0.0050785
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:36:18.523Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen y la explicación del voto describen de forma precisa, neutral y sin sesgos el contenido de la proposición de ley (segunda actividad con el 100 % de retribuciones básicas y 80 % de complementarias generales, defensa jurídica y seguro de responsabilidad civil, complemento al 100 % en bajas por acto de servicio y apertura de negociación retributiva en tres meses) así como el efecto de su toma en consideración.",
+    "coste": 0.006814
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:36:19.764Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen recoge con exactitud las medidas del extracto oficial: la segunda actividad para personal de servicio interior (Art. 40.2 y 40.3, con retribuciones básicas completas y 80 % de las complementarias), la defensa jurídica y el seguro de responsabilidad civil (Art. 34), el complemento hasta el 100 % en bajas por enfermedad profesional (Art. 31.1) y la negociación retributiva en tres meses (Disposición transitoria tercera). Describe correctamente que votar Sí en una toma en consideración equivalía a admitir la proposición a trámite, y refleja fielmente el resultado oficial (157 a favor frente a 191 en contra: no se admitió). No se aprecian errores de hecho, omisiones sustanciales ni sesgo en el lenguaje.",
+    "coste": 0.005236
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:36:22.712Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen recoge las medidas principales del extracto literal sin contradicciones: segunda actividad con retribuciones básicas completas y 80 % de complementarias de carácter general, defensa jurídica y seguro de responsabilidad civil, baja en acto de servicio completada hasta el 100 % y negociación en tres meses. La explicación de que votar Sí equivalía a admitirla a trámite es correcta y neutral para una proposición de ley. El resultado oficial (191 en contra, 157 a favor, 1 abstención) justifica que no se admitió a trámite.",
+    "coste": 0.01348248
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:38:10.568Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen coincide con el extracto: segunda actividad para quien estuvo en servicio interior en contacto con reclusos, por petición propia a la edad reglamentaria (y, de forma coherente con las «siguientes causas» del art. 40.2, por pérdida de aptitudes psicofísicas), con retribuciones básicas íntegras y el 80 % de las complementarias de carácter general; defensa jurídica y seguro de responsabilidad civil; complemento de la baja en acto de servicio hasta el 100 %; y negociación retributiva en tres meses. El encuadre como estatuto (cuerpos, acceso, carrera, derechos y deberes) se ajusta al objeto de la proposición. «No se admitió a trámite» concuerda con el resultado (157-191-1) y con el sentido del sí en la toma en consideración. No hay sesgo ni efectos indirectos.",
+    "coste": 0.063278
+   }
+  ],
+  "decision": "fiel"
+ },
+ {
+  "id": "XV-129-1:efecto:1",
+  "hash": "1fd83b8afcf9fa3a",
+  "esperado": "favorece",
+  "resultado": "sin-consenso",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XV legislatura, votación del 09/09/2025 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la escolarización del alumnado con necesidades educativas especiales (Orgánica).\nTipo: Proposición de ley del Grupo Popular\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 170 votos a favor, 177 en contra y 0 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-222-1.PDF\nExtracto literal del texto oficial:\n«[Artículo único, nuevo art. 74.1 de la Ley Orgánica de Educación] «La escolarización de este alumnado en unidades o centros de educación especial podrá extenderse al menos hasta los veintiún años.» «Los alumnos con necesidades educativas especiales serán escolarizados en función de sus necesidades, innovando, flexibilizando y diversificando la organización de los espacios, las alternativas metodológicas y las modalidades de escolarización en centros ordinarios, en centros de educación especial, en escolarización combinada o en aulas específicas, a fin de personalizar y mejorar la atención educativa a las necesidades de cada alumno. Las Administraciones educativas garantizarán el derecho de los padres o tutores a la elección del modelo educativo y del centro docente para estos alumnos.» [Art. 74.2] «En este proceso serán preceptivamente oídos e informados los padres, madres o tutores legales del alumnado.» [Art. 74.4] «la relación numérica entre alumnos y profesor podrá ser inferior a la establecida con carácter general.» [Disposición derogatoria única] «Se deroga la disposición adicional cuarta de la Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley 2/2006, de 3 de mayo, de Educación.» [Exposición de motivos, sobre esa disposición] «el Gobierno desarrolle un plan para que en el plazo de 10 años los centros de educación especial escolaricen a alumnos que requieran una atención muy especializada y desempeñen una función de centros de referencia y de apoyo a los centros ordinarios»»\nResumen: Proponía reescribir el artículo 74 de la Ley Orgánica de Educación para que las administraciones educativas garantizaran a los padres o tutores del alumnado con necesidades educativas especiales el derecho a elegir el modelo educativo y el centro: ordinario, de educación especial, escolarización combinada o aula específica. La escolarización en unidades o centros de educación especial podría extenderse al menos hasta los 21 años, los padres serían oídos e informados preceptivamente en la valoración de las necesidades de su hijo y la ratio de alumnos por profesor podría ser inferior a la general. Suprimía la referencia actual a respetar la voluntad de las familias que prefieren el régimen más inclusivo y derogaba la disposición adicional cuarta de la LOMLOE, que encarga al Gobierno un plan para que en diez años los centros de educación especial escolaricen al alumnado que requiera una atención muy especializada y sirvan de apoyo a los centros ordinarios. No se admitió a trámite.\nMedida en que se apoya: Artículo único de la proposición (nuevo art. 74.1 de la Ley Orgánica de Educación) y su disposición derogatoria única.\n\nPersona: quien a la pregunta \"¿Cuidas de alguna persona dependiente o con discapacidad?\" responde: Sí; y a la pregunta \"¿Tienes hijos a tu cargo?\" responde: Sí, menores de 3 años o Sí, de 3 a 17 años.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:38:16.256Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "La propuesta otorgaba derechos de elección de modelo y centro a las familias de alumnado con necesidades educativas especiales. Tener hijos menores y cuidar de una persona dependiente o con discapacidad no implica que esos hijos tengan dichas necesidades: la persona cuidada podría ser otra. Con los datos indicados no se establece una afectación directa.",
+    "coste": 0.0050835
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:38:23.411Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La proposición de ley establecía directamente el derecho garantizado de los padres o tutores de alumnos con necesidades educativas especiales a elegir el modelo educativo y el centro docente (ordinario, de educación especial, escolarización combinada o aula específica), además de asegurar que fueran preceptivamente oídos e informados en el proceso y contemplar ratios inferiores de alumnos por profesor.",
+    "coste": 0.006906
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:38:40.245Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "El texto de la proposición otorgaba derechos directos a los padres o tutores de alumnos con necesidades educativas especiales: derecho a elegir el modelo educativo y el centro (ordinario, especial, combinado o aula específica), extensión de la escolarización en centros de educación especial al menos hasta los 21 años, audiencia preceptiva de los padres en el proceso (art. 74.2) y posibilidad de ratio inferior a la general (art. 74.4). Al cuidar de una persona con discapacidad y tener hijos a su cargo, esta persona se beneficiaría directamente de dichas garantías si la iniciativa hubiera salido adelante.",
+    "coste": 0.005327
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:38:12.298Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La iniciativa afecta directamente a la escolarización del alumnado con necesidades educativas especiales y a los derechos de sus padres o tutores. La persona cuida de alguien dependiente o con discapacidad y tiene hijos a su cargo, pero no se indica que alguno de esos hijos sea alumnado con necesidades educativas especiales ni que la persona cuidada esté en edad escolar. Sin ese dato, no puede determinarse si le favorecía, le perjudicaba o no le afectaba directamente.",
+    "coste": 0.00232848
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:38:50.583Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El art. 74.1 propuesto reconoce un derecho de elección de modelo y centro solo a padres o tutores de alumnado con necesidades educativas especiales, y alarga la escolarización en centros de educación especial. Cuidar de una persona dependiente o con discapacidad y tener hijos menores no equivale a ser padre o tutor de un alumno con NEE: ni el texto ni el perfil identifican al cuidado como estudiante con esas necesidades. No hay derecho, ayuda, impuesto, límite u obligación directa para esa persona.",
+    "coste": 0.016974
+   }
+  ],
+  "ronda2": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:38:54.829Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La propuesta garantizaba la elección de modelo y centro a padres o tutores de alumnado con necesidades educativas especiales. El perfil no indica que los hijos tengan esas necesidades ni que la persona dependiente o con discapacidad cuidada sea uno de ellos. Falta ese dato para determinar si existía un beneficio directo; tampoco puede asegurarse que no le afectara.",
+    "coste": 0.0060035
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:38:58.432Z",
+    "estado": "ok",
+    "respuesta": "favorece",
+    "razones": "La proposición de ley garantizaba directamente a los padres o tutores de alumnado con necesidades educativas especiales el derecho a elegir el modelo educativo y el centro docente (ordinario, de educación especial, escolarización combinada o aula específica), aseguraba que fueran preceptivamente oídos e informados en el proceso, permitía extender la escolarización en educación especial al menos hasta los 21 años y contemplaba ratios inferiores de alumnos por profesor. Para el perfil de persona con hijos menores a cargo y que cuida de una persona con discapacidad, esto supone un reconocimiento directo de derechos de elección y garantías educativas.",
+    "coste": 0.005906
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:39:50.661Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "El texto propuesto otorgaba derechos directos únicamente a los padres o tutores legales de alumnado con necesidades educativas especiales (NEE): derecho a elegir modelo y centro (art. 74.1), audiencia preceptiva (art. 74.2) y ratio reducida (art. 74.4). El perfil indica que la persona cuida de alguien con discapacidad y tiene hijos a su cargo, pero no especifica que alguno de esos hijos (o la persona cuidada) sea un alumno con NEE en edad escolar. Sin ese dato no se puede determinar si cumple la condición para beneficiarse directamente de la norma, por lo que no es posible afirmar con seguridad si le favorecía o no.",
+    "coste": 0.01055362
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:38:52.475Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "La iniciativa afecta directamente a padres o tutores de alumnado con necesidades educativas especiales. La persona cuida de alguien dependiente o con discapacidad y tiene hijos a su cargo, pero no se indica que alguno de esos hijos sea alumnado con necesidades educativas especiales ni que la persona cuidada esté en edad escolar. Sin ese dato, no puede determinarse si le favorecía, le perjudicaba o no le afectaba directamente.",
+    "coste": 0.0031878
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:39:21.277Z",
+    "estado": "ok",
+    "respuesta": "no_le_afecta",
+    "razones": "El art. 74 propuesto solo reconoce derechos (elección de modelo y centro, audiencia preceptiva, posible extensión hasta los 21 años y ratio inferior) a padres o tutores de alumnado con necesidades educativas especiales. Cuidar de una persona dependiente o con discapacidad y tener hijos menores no identifica a esa persona como padre o tutor de un alumno con NEE: el cuidado y los hijos pueden ser personas distintas, y la discapacidad no equivale por sí sola a NEE escolar. No hay derecho, ayuda, impuesto, límite u obligación directa para quien solo cumple ese perfil.",
+    "coste": 0.01541
+   }
+  ]
+ },
+ {
+  "id": "XV-129-1:fidelidad",
+  "hash": "0143252048fa38de",
+  "esperado": "fiel",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XV legislatura, votación del 09/09/2025 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la escolarización del alumnado con necesidades educativas especiales (Orgánica).\nTipo: Proposición de ley del Grupo Popular\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 170 votos a favor, 177 en contra y 0 abstenciones: no salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-222-1.PDF\nExtracto literal del texto oficial:\n«[Artículo único, nuevo art. 74.1 de la Ley Orgánica de Educación] «La escolarización de este alumnado en unidades o centros de educación especial podrá extenderse al menos hasta los veintiún años.» «Los alumnos con necesidades educativas especiales serán escolarizados en función de sus necesidades, innovando, flexibilizando y diversificando la organización de los espacios, las alternativas metodológicas y las modalidades de escolarización en centros ordinarios, en centros de educación especial, en escolarización combinada o en aulas específicas, a fin de personalizar y mejorar la atención educativa a las necesidades de cada alumno. Las Administraciones educativas garantizarán el derecho de los padres o tutores a la elección del modelo educativo y del centro docente para estos alumnos.» [Art. 74.2] «En este proceso serán preceptivamente oídos e informados los padres, madres o tutores legales del alumnado.» [Art. 74.4] «la relación numérica entre alumnos y profesor podrá ser inferior a la establecida con carácter general.» [Disposición derogatoria única] «Se deroga la disposición adicional cuarta de la Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley 2/2006, de 3 de mayo, de Educación.» [Exposición de motivos, sobre esa disposición] «el Gobierno desarrolle un plan para que en el plazo de 10 años los centros de educación especial escolaricen a alumnos que requieran una atención muy especializada y desempeñen una función de centros de referencia y de apoyo a los centros ordinarios»»\n\nResumen que se mostrará al público: Proponía reescribir el artículo 74 de la Ley Orgánica de Educación para que las administraciones educativas garantizaran a los padres o tutores del alumnado con necesidades educativas especiales el derecho a elegir el modelo educativo y el centro: ordinario, de educación especial, escolarización combinada o aula específica. La escolarización en unidades o centros de educación especial podría extenderse al menos hasta los 21 años, los padres serían oídos e informados preceptivamente en la valoración de las necesidades de su hijo y la ratio de alumnos por profesor podría ser inferior a la general. Suprimía la referencia actual a respetar la voluntad de las familias que prefieren el régimen más inclusivo y derogaba la disposición adicional cuarta de la LOMLOE, que encarga al Gobierno un plan para que en diez años los centros de educación especial escolaricen al alumnado que requiera una atención muy especializada y sirvan de apoyo a los centros ordinarios. No se admitió a trámite.\n\nPregunta: ¿el resumen y la explicación de qué significaba votar Sí describen de forma fiel y neutral\nesta iniciativa? Responde \"no_fiel\" si hay un error de hecho, una omisión importante o un sesgo, y\nexplica cuál en las razones."
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:39:56.594Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen recoge las medidas del texto: garantía de elección del modelo y centro, escolarización especial al menos hasta los 21 años, audiencia preceptiva de las familias y posibilidad de ratios inferiores. También explica la supresión de la referencia a la preferencia familiar por el régimen más inclusivo y la derogación de la disposición adicional cuarta de la LOMLOE. Votar Sí significaba admitir la propuesta a trámite, no aprobarla definitivamente; el resultado oficial confirma que no fue admitida.",
+    "coste": 0.0048285
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:39:58.896Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen y la explicación del voto describen de forma exacta, completa y neutral el contenido de la proposición de ley (la modificación del artículo 74 de la LOE sobre modalidades de escolarización, derecho de elección de las familias, límite de edad de al menos 21 años y ratios, así como la derogación de la disposición adicional cuarta de la LOMLOE) y el sentido de la votación de toma en consideración.",
+    "coste": 0.004444
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:41:06.223Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja fielmente el extracto: la nueva redacción del art. 74 garantiza a los padres el derecho a elegir el modelo y centro (ordinario, especial, combinada o aula específica), amplía la escolarización en centros de educación especial hasta al menos los 21 años, establece la audiencia preceptiva de los padres y permite reducir la ratio alumno-profesor. Es correcto que se suprime la referencia al 'régimen más inclusivo' del art. 74.1 vigente de la LOMLOE, al proponerse un texto nuevo que no la contiene, y que se deroga la disposición adicional cuarta de la LOMLOE (plan de 10 años para centros de referencia y apoyo). La afirmación de que no se admitió a trámite coincide con el resultado oficial (170 a favor, 177 en contra).",
+    "coste": 0.010780462
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:40:19.425Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El extracto literal confirma los elementos centrales del resumen: se garantizaba a los padres o tutores la elección del modelo educativo y del centro; la escolarización en educación especial podía extenderse al menos hasta los 21 años; los padres serían oídos e informados preceptivamente; la ratio podía ser inferior; y se derogaba la disposición adicional cuarta de la LOMLOE. También es correcto que se suprimía la referencia a respetar la voluntad de las familias que prefieren el régimen más inclusivo, de modo compatible con la reescritura propuesta. La explicación de votar sí como admitir a trámite es adecuada para una proposición de ley.",
+    "coste": 0.01815264
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:45:05.901Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "La DA 4.ª de la LOMLOE no encarga al Gobierno un plan de diez años para que los centros de educación especial escolaricen al alumnado de atención muy especializada: ese plan es para que los centros ordinarios tengan recursos para atender al alumnado con discapacidad; el papel de los centros especiales como referencia y apoyo es un mandato distinto a las administraciones. El resumen presenta esa caracterización inexacta —coincidente con la exposición de motivos citada— como contenido de la norma derogada y omite el plan de recursos de la escuela ordinaria. Además, la referencia vigente no es a «respetar» la voluntad de las familias que prefieren el régimen más inclusivo, sino a tenerla en cuenta, junto con el interés superior del menor, al resolver discrepancias.",
+    "coste": 0.056164
+   }
+  ],
+  "decision": "fiel"
+ },
+ {
+  "id": "XV-99-2:efecto:1",
+  "hash": "cf465a65de25e99b",
+  "esperado": "perjudica",
+  "resultado": "aprobado",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XV legislatura, votación del 18/03/2025 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Socialista, sobre la reducción de la tasa máxima de alcohol en la conducción y la prohibición de la difusión de la ubicación de controles en redes sociales.\nTipo: Proposición de ley del Grupo Socialista\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 177 votos a favor, 32 en contra y 135 abstenciones: salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-157-1.PDF\nExtracto literal del texto oficial:\n«[Artículo único.Dos, nuevo art. 76.z4 de la Ley sobre Tráfico] «z4) Conducir con tasas de alcohol superiores a 0,1 miligramos por litro de aire espirado o 0,2 gramos por litro en sangre, hasta 0,25 miligramos por litro de aire espirado o 0,5 gramos por litro en sangre.» [Artículo único.Uno, nuevo art. 13.7] «7. Se prohíbe la difusión por cualquier medio, público o privado, de todo dato o información relativa a la ubicación de controles policiales de alcohol y drogas, así como de cualquier otro establecido por razones de seguridad vial.» [Artículo único.Cinco, art. 80.2.a] «serán sancionadas con multa de 1.000 euros.» [Artículo único.Siete, punto 1 del anexo II] «por litro aire espirado, superior a 0,10 hasta 0,25, o superior a 0,2 hasta 0,5 gramos por litro en sangre (incluido). 2»»\nResumen: Proponía bajar la tasa máxima de alcohol para conducir: pasaría a ser infracción grave conducir con más de 0,1 miligramos por litro de aire espirado (0,2 gramos por litro en sangre) y hasta 0,25 (0,5 en sangre), con la retirada de 2 puntos del permiso; por encima de 0,25 sería infracción muy grave, con 4 puntos hasta 0,5 y 6 puntos por encima, y con multa de 1.000 euros por encima de 0,5 miligramos. Además, prohibía difundir por cualquier medio la ubicación de los controles de alcohol y drogas o de cualquier otro control de seguridad vial, como infracción muy grave de la que respondería la persona que difundiera el contenido. Se admitió a trámite.\nMedida en que se apoya: Artículo único, apartados Dos, Tres y Siete, de la proposición (nuevo art. 76.z4, art. 77.c y punto 1 del anexo II del texto refundido de la Ley sobre Tráfico).\n\nPersona: quien a la pregunta \"¿Cómo te mueves normalmente?\" responde: En coche o moto.\n\nPregunta: para esa persona, ¿que saliera el Sí en esta votación le favorecía, le perjudicaba o no le\nafectaba directamente?"
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:46:13.547Z",
+    "estado": "ok",
+    "respuesta": "perjudica",
+    "razones": "La propuesta imponía a quienes conducen coche o moto un límite de alcohol más estricto: superar 0,1 mg/l de aire espirado, hasta 0,25 mg/l, pasaría a ser infracción grave con retirada de 2 puntos. Es una nueva restricción directa para esta persona como conductora. El Sí admitía la propuesta a trámite; no hacía entrar en vigor estas medidas.",
+    "coste": 0.004366
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:46:18.202Z",
+    "estado": "ok",
+    "respuesta": "perjudica",
+    "razones": "La proposición endurece los límites y sanciones aplicables a quienes conducen vehículos, al rebajar la tasa máxima permitida de alcohol a 0,1 mg/l en aire espirado (0,2 g/l en sangre) con pérdida de puntos, y al prohibir bajo sanción difundir la ubicación de controles de tráfico.",
+    "coste": 0.006062
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:46:24.420Z",
+    "estado": "ok",
+    "respuesta": "perjudica",
+    "razones": "La proposición admitida a trámite endurece directamente el límite de alcohol permitido para quien conduce coche o moto: pasa a ser infracción grave conducir con tasas superiores a 0,1 mg/l en aire espirado (0,2 g/l en sangre) hasta 0,25 mg/l (0,5 g/l), con retirada de 2 puntos del permiso y, por encima de 0,5 g/l, multa de 1.000 euros. Esto restringe la conducción tras consumir alcohol y aumenta el riesgo de sanción directa. Además, prohíbe difundir la ubicación de controles policiales, lo que impone una obligación directa (con sanción) a quien comparta esa información.",
+    "coste": 0.00426426
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:46:44.372Z",
+    "estado": "ok",
+    "respuesta": "perjudica",
+    "razones": "La persona se mueve en coche o moto y la proposición endurecía directamente los límites y sanciones por alcohol al volante: convertía en infracción grave conducir con más de 0,1 mg/l de aire espirado (0,2 g/l en sangre) y además prohibía difundir la ubicación de controles como infracción muy grave. Por tanto, admitirla a trámite suponía avanzar una norma más restrictiva para quien conduce.",
+    "coste": 0.01208988
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:46:35.190Z",
+    "estado": "ok",
+    "respuesta": "perjudica",
+    "razones": "Quien se desplaza en coche o moto queda sujeto al límite de alcohol al volante. La proposición, admitida a trámite, baja ese límite: pasar de 0,10 mg/l en aire espirado (0,2 g/l en sangre) hasta 0,25 (0,5 en sangre) pasa a ser infracción grave con retirada de 2 puntos, y por encima, infracción muy grave. Es un límite más estricto que le obliga directamente; los posibles efectos de seguridad vial sobre terceros no cuentan.",
+    "coste": 0.013038
+   }
+  ],
+  "decision": "perjudica"
+ },
+ {
+  "id": "XV-99-2:fidelidad",
+  "hash": "b927ad8c51d631c2",
+  "esperado": "fiel",
+  "resultado": "decidido",
+  "prompt": {
+   "sistema": "Formas parte de un jurado independiente que revisa los datos de un proyecto de información\nelectoral neutral sobre el Congreso de los Diputados de España. El proyecto explica a cada persona\nqué votaciones del Congreso de las legislaturas XIV (2019-2023) y XV (2023-2026) le afectaban por\nsu situación personal (vivienda, trabajo, edad, hijos…), sin valorar ideologías.\n\nCriterios del proyecto:\n- Solo cuenta el efecto directo que establece el texto de la iniciativa (un derecho, una ayuda, un\n  impuesto, un límite, una obligación) para la persona que cumple la condición. No cuentan los\n  efectos indirectos, macroeconómicos o discutidos (por ejemplo, \"subirá los precios a largo plazo\").\n- \"Que saliera el Sí\" significa lo que se indica en cada caso: en un decreto ley, convalidarlo; en\n  una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);\n  en una enmienda a la totalidad, devolver el proyecto al Gobierno.\n- No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.\n- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si\n  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu\n  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.\n- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para\n  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu\n  conocimiento de la norma.\n- Si no conoces la iniciativa lo bastante para responder con seguridad, responde \"no_lo_se\". Es\n  preferible a adivinar.\n\nResponde solo con el JSON pedido: la respuesta y unas razones breves con los datos en que te basas.",
+   "pregunta": "XV legislatura, votación del 18/03/2025 en el Pleno.\nIniciativa: Proposición de Ley del Grupo Parlamentario Socialista, sobre la reducción de la tasa máxima de alcohol en la conducción y la prohibición de la difusión de la ubicación de controles en redes sociales.\nTipo: Proposición de ley del Grupo Socialista\nQué significaba votar Sí: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.\nResultado oficial (datos abiertos del Congreso): 177 votos a favor, 32 en contra y 135 abstenciones: salió el Sí.\nTexto oficial: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-157-1.PDF\nExtracto literal del texto oficial:\n«[Artículo único.Dos, nuevo art. 76.z4 de la Ley sobre Tráfico] «z4) Conducir con tasas de alcohol superiores a 0,1 miligramos por litro de aire espirado o 0,2 gramos por litro en sangre, hasta 0,25 miligramos por litro de aire espirado o 0,5 gramos por litro en sangre.» [Artículo único.Uno, nuevo art. 13.7] «7. Se prohíbe la difusión por cualquier medio, público o privado, de todo dato o información relativa a la ubicación de controles policiales de alcohol y drogas, así como de cualquier otro establecido por razones de seguridad vial.» [Artículo único.Cinco, art. 80.2.a] «serán sancionadas con multa de 1.000 euros.» [Artículo único.Siete, punto 1 del anexo II] «por litro aire espirado, superior a 0,10 hasta 0,25, o superior a 0,2 hasta 0,5 gramos por litro en sangre (incluido). 2»»\n\nResumen que se mostrará al público: Proponía bajar la tasa máxima de alcohol para conducir: pasaría a ser infracción grave conducir con más de 0,1 miligramos por litro de aire espirado (0,2 gramos por litro en sangre) y hasta 0,25 (0,5 en sangre), con la retirada de 2 puntos del permiso; por encima de 0,25 sería infracción muy grave, con 4 puntos hasta 0,5 y 6 puntos por encima, y con multa de 1.000 euros por encima de 0,5 miligramos. Además, prohibía difundir por cualquier medio la ubicación de los controles de alcohol y drogas o de cualquier otro control de seguridad vial, como infracción muy grave de la que respondería la persona que difundiera el contenido. Se admitió a trámite.\n\nPregunta: ¿el resumen y la explicación de qué significaba votar Sí describen de forma fiel y neutral\nesta iniciativa? Responde \"no_fiel\" si hay un error de hecho, una omisión importante o un sesgo, y\nexplica cuál en las razones."
+  },
+  "ronda1": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:47:05.779Z",
+    "estado": "ok",
+    "respuesta": "no_lo_se",
+    "razones": "El extracto confirma los nuevos umbrales, la retirada de 2 puntos en el tramo inferior y la prohibición de difundir controles por cualquier medio. Pero no reproduce los apartados completos necesarios para verificar los demás tramos de puntos, cuándo corresponde la multa de 1.000 euros y la responsabilidad por la difusión. No conozco suficientemente esta propuesta para confirmar esos extremos. La explicación del Sí como admisión a trámite es correcta.",
+    "coste": 0.0115485
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:46:49.840Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen y la explicación del voto describen de forma exacta, neutral y sin sesgos el contenido de la proposición de ley (reducción de la tasa de alcohol permitida a 0,1 mg/l en aire o 0,2 g/l en sangre, pérdida de puntos, multas y prohibición de difundir la ubicación de controles viales) así como el efecto procedimental de su toma en consideración.",
+    "coste": 0.004864
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:47:41.503Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El extracto vincula la multa de 1.000 € (art. 80.2.a) a la sanción de la prohibición de difundir la ubicación de controles (art. 13.7), no a la conducción con alcohol; el resumen la atribuye erróneamente a 'por encima de 0,5 miligramos' de alcohol. Además, el resumen afirma que por encima de 0,25 mg/l habría 4 puntos hasta 0,5 y 6 por encima, dato que no consta en el extracto (solo se recoge el rango 0,1–0,25 mg/l con 2 puntos en el anexo II) y que no se corresponde con la estructura de la norma vigente, donde por encima de 0,25 mg/l la infracción ya es muy grave. Estas incorrecciones distorsionan los efectos directos de la iniciativa.",
+    "coste": 0.01198274
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:48:31.179Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen refleja los umbrales y efectos que se desprenden del texto oficial citado: el nuevo art. 76.z4 tipifica conducir con más de 0,1 mg/L en aire (0,2 g/L en sangre) hasta 0,25 mg/L (0,5 g/L en sangre), el anexo II asocia 2 puntos a esa franja, y el art. 13.7 prohíbe difundir la ubicación de controles. La explicación de votar sí como admitir a trámite una proposición de ley es correcta. No se aprecia error de hecho ni sesgo.",
+    "coste": 0.013480077816
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:55:33.353Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El extracto sí confirma la nueva infracción grave entre más de 0,1 y 0,25 mg/l de aire (0,2-0,5 g/l en sangre) con 2 puntos (art. 76.z4 y anexo II), la prohibición de difundir por cualquier medio la ubicación de controles de alcohol, drogas u otros de seguridad vial (art. 13.7) y que el Sí era admitirla a trámite, como ocurrió (177 a favor). Pero es incorrecto decir que por encima de 0,25 mg/l «sería infracción muy grave, con 4 puntos hasta 0,5 y 6 por encima, y 1.000 euros por encima de 0,5»: en la Ley de Tráfico la franja de más de 0,25 hasta 0,50 mg/l es grave (4 puntos y 500 euros) y solo por encima de 0,50 es muy grave (6 puntos y 1.000 euros). El extracto no reclasifica esa franja. Tampoco consta en él que difundir controles sea infracción muy grave ni que responda en concreto quien difunde el contenido.",
+    "coste": 0.079758
+   }
+  ],
+  "ronda2": [
+   {
+    "modelo": "openai/gpt-6.1-sol",
+    "fecha": "2026-11-11T14:55:45.848Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen coincide con los umbrales y los 2 puntos del nuevo tramo grave y con la prohibición de difundir controles. La Ley de Tráfico ya clasifica como muy grave conducir por encima de la tasa reglamentaria: no es correcto afirmar que el tramo de más de 0,25 a 0,5 mg/l sea grave. Los 4 y 6 puntos y la multa de 1.000 euros por encima de 0,5 mg/l son coherentes con ese régimen. El fragmento aislado del artículo 80 no demuestra una atribución errónea de la multa. Votar Sí significaba admitir la propuesta a trámite, no aprobarla definitivamente, y así se explica.",
+    "coste": 0.009586
+   },
+   {
+    "modelo": "google/gemini-4-argon",
+    "fecha": "2026-11-11T14:55:43.973Z",
+    "estado": "ok",
+    "respuesta": "fiel",
+    "razones": "El resumen es completamente exacto respecto al texto íntegro del BOCG-15-B-157-1 y a la Ley de Tráfico vigente: 1) El nuevo art. 76.z4 tipifica como infracción grave el tramo de más de 0,10 a 0,25 mg/l en aire (0,2 a 0,5 g/l en sangre), con pérdida de 2 puntos (Anexo II). 2) En la Ley de Tráfico (art. 77.c), superar la tasa reglamentaria (que pasa a ser 0,25 mg/l al acotarse el 76.z4) ya es infracción muy grave, manteniéndose los tramos del Anexo II de 4 puntos (de >0,25 a 0,50 mg/l) y 6 puntos (>0,50 mg/l), y fijándose en el art. 80.2.a la multa de 1.000 euros para cuando se superen los 0,50 mg/l en aire (o 1 g/l en sangre) o en caso de reincidencia. 3) La prohibición de difundir controles (art. 13.7) se tipifica como muy grave (art. 77.z4) e imputa la responsabilidad al autor de la difusión (art. 82.h). La explicación de la admisión a trámite también es fiel y neutral.",
+    "coste": 0.008162
+   },
+   {
+    "modelo": "mistralai/mistral-large-4-0",
+    "fecha": "2026-11-11T14:57:55.667Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "Votar Sí como admisión a trámite es correcto (177-32-135, salió el Sí). Pero el resumen contiene un error de hecho en alcohol: el extracto solo añade el art. 76.z4 como infracción grave para más de 0,10 hasta 0,25 mg/l de aire (0,2–0,5 g/l en sangre), con 2 puntos según el anexo II; no dice que por encima de 0,25 sea 'muy grave'. Conforme a la Ley de Tráfico, de 0,25 a 0,50 mg/l sigue siendo grave (4 puntos, 500 €) y solo por encima de 0,50 mg/l es muy grave (6 puntos, 1.000 €). Además, la multa de 1.000 € citada en el extracto (art. 80.2.a) va ligada a la prohibición de difundir la ubicación de controles (art. 13.7), no a la conducción con alcohol, y el extracto no califica esa difusión como 'muy grave' ni concreta que responda quien difunde el contenido.",
+    "coste": 0.02525754
+   },
+   {
+    "modelo": "deepseek/deepseek-v4-pro-0813",
+    "fecha": "2026-11-11T14:58:37.227Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El resumen atribuye la multa de 1.000 euros a conducir con más de 0,5 mg/L de alcohol, pero el extracto oficial vincula esa multa del art. 80.2.a a la prohibición de difundir la ubicación de controles del art. 13.7, no a la conducción con alcohol. Además, el resumen afirma que por encima de 0,25 mg/L habría 4 puntos hasta 0,5 y 6 por encima, extremos que no constan en el extracto y que no se corresponden con la estructura de la Ley de Tráfico vigente, donde la franja de más de 0,25 hasta 0,50 mg/L es infracción grave con 4 puntos y 500 euros, y solo por encima de 0,50 mg/L es muy grave con 6 puntos y 1.000 euros. También se afirma que difundir controles sería infracción muy grave y que respondería la persona que difundiera, lo cual no se desprende del extracto citado. La explicación de votar Sí como admisión a trámite es correcta, pero los errores sobre puntos, multas y calificación de infracciones hacen que el resumen no sea fiel.",
+    "coste": 0.0036369
+   },
+   {
+    "modelo": "x-ai/grok-4.7",
+    "fecha": "2026-11-11T14:58:19.403Z",
+    "estado": "ok",
+    "respuesta": "no_fiel",
+    "razones": "El extracto sí confirma la infracción grave entre más de 0,1 y 0,25 mg/l de aire (0,2-0,5 g/l en sangre) con 2 puntos (art. 76.z4 y anexo II), la prohibición de difundir por cualquier medio la ubicación de controles (art. 13.7) y que el Sí era admitirla a trámite. Es incorrecto decir que por encima de 0,25 «sería infracción muy grave, con 4 puntos hasta 0,5 y 6 por encima, y 1.000 euros por encima de 0,5»: en la Ley de Tráfico más de 0,25 hasta 0,50 mg/l es grave (4 puntos y 500 euros) y solo por encima de 0,50 es muy grave (6 puntos y 1.000 euros); el extracto no reclasifica esa franja. Tampoco consta que difundir controles sea infracción muy grave ni que responda quien difunde el contenido.",
+    "coste": 0.073734
    }
   ],
   "decision": "no_fiel"

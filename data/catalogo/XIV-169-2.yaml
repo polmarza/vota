@@ -1,0 +1,50 @@
+votacion: XIV-169-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=05/04/2022"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-178-1.PDF
+iniciativa: "Proposición de ley del Grupo VOX"
+fecha: 2022-04-05
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario VOX, relativa a la supresión del Impuesto sobre
+  Sucesiones y Donaciones.
+titulo: "Supresión del impuesto de Sucesiones y Donaciones"
+resumen: >-
+  Proponía derogar la Ley del Impuesto sobre Sucesiones y Donaciones, de modo que lo que se recibe
+  por herencia, legado o donación, y las cantidades que cobran los beneficiarios de un seguro de vida
+  contratado por otra persona, dejaran de pagar ese impuesto sin pasar a tributar en el IRPF; lo que
+  recibieran por esas vías las personas jurídicas tributaría en el Impuesto sobre Sociedades. Las
+  comunidades autónomas, que gestionan el impuesto y cobran lo que recauda, recibirían del Estado
+  como compensación lo recaudado el año anterior. Entraría en vigor el 1 de enero de 2022. No se
+  admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando:
+      herencia: [si]
+      ccaa: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, madrid, murcia, la-rioja, ceuta, melilla]
+    el_si: favorece
+    justificacion: >-
+      Quien recibe una herencia o una donación dejaría de pagar el impuesto de Sucesiones y Donaciones
+      por ella, sin que pasara a tributar en el IRPF. No se aplica en el País Vasco ni en Navarra, que
+      tienen su propio impuesto foral.
+    base: >-
+      Artículo 1 de la proposición (derogación de la Ley 29/1987) y artículo 2 (nuevo art. 6.4 de la
+      Ley del IRPF, que deja no sujetas las herencias y donaciones).
+justificacion: >-
+  Es la única votación de las dos legislaturas sobre el impuesto que pagan herencias y donaciones,
+  y la propuso un grupo de la oposición.
+extracto: >-
+  [Artículo 1] «Queda derogada la Ley 29/1987, de 18 de diciembre, del Impuesto sobre Sucesiones y
+  Donaciones, quedando suprimido el presente Impuesto del sistema tributario español.» [Artículo 2,
+  art. 6.4 de la Ley del IRPF] «4. No estará sujeto a este impuesto el incremento patrimonial
+  obtenido a través de los siguientes medios: a) La adquisición de bienes y derechos por herencia,
+  legado o cualquier otro título sucesorio. b) La adquisición de bienes y derechos por donación o
+  cualquier otro negocio jurídico a título gratuito,» […] «c) La percepción de cantidades por los
+  beneficiarios de contratos de seguros sobre la vida, cuando el contratante sea persona distinta
+  del beneficiario,» [Art. 6.4 bis] «Los incrementos de patrimonio obtenidos por personas jurídicas a
+  través de los medios mencionados en el apartado anterior estarán sujetos al Impuesto sobre
+  Sociedades.» [Disposición transitoria única] «estas recibirán, en concepto de compensación estatal
+  por la supresión del gravamen del Impuesto sobre Sucesiones y Donaciones, el importe recaudado por
+  cada una de ellas en el ejercicio fiscal inmediatamente anterior a la entrada en vigor de esta
+  Ley.» [Disposición final segunda] «La presente Ley entrará en vigor el 1 de enero de 2022,»

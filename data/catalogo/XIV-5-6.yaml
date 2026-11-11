@@ -1,0 +1,50 @@
+votacion: XIV-5-6
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=04/02/2020"
+texto: https://www.boe.es/eli/es/rdl/2019/12/27/18
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-02-04
+titulo_oficial: >-
+  Real Decreto-ley 18/2019, de 27 de diciembre, por el que se adoptan determinadas medidas en
+  materia tributaria, catastral y de seguridad social.
+titulo: "Impuesto sobre el Patrimonio en 2020"
+resumen: >-
+  Mantiene el Impuesto sobre el Patrimonio en 2020: retrasa a 2021 la bonificación general del 100 %
+  de la cuota, con la que el impuesto dejaría de pagarse, prevista en la norma que lo restableció de
+  forma temporal en 2011. Además, mantiene para 2020 los límites para tributar por módulos en el IRPF
+  y en el IVA (250.000 euros), fija las actividades prioritarias de mecenazgo y los coeficientes de
+  actualización de los valores catastrales de 2020 y, hasta que haya presupuestos o una norma nueva,
+  mantiene provisionalmente las pensiones en su importe de 2019 (la subida que se fije después se
+  aplicará desde el 1 de enero de 2020), las bases y tipos de cotización y el salario mínimo de 2019.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando:
+      patrimonio: [700k-3m, mas-3m]
+      ccaa: [andalucia, aragon, asturias, baleares, canarias, cantabria, castilla-la-mancha, castilla-y-leon, cataluna, comunitat-valenciana, extremadura, galicia, murcia, la-rioja, ceuta, melilla]
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene un patrimonio por encima del mínimo exento sigue pagando el Impuesto sobre el
+      Patrimonio por 2020, en lugar de quedar bonificado al 100 %. No cuenta para la Comunidad de
+      Madrid, que ya lo bonificaba por completo, ni para el País Vasco y Navarra, con su propio
+      impuesto foral.
+    base: >-
+      Artículo 3 del decreto ley, que modifica el apartado segundo del artículo único del Real
+      Decreto-ley 13/2011 para que la bonificación general del 100 % del art. 33 de la Ley 19/1991 se
+      aplique desde el 1 de enero de 2021.
+justificacion: >-
+  Es la norma que prorrogó el Impuesto sobre el Patrimonio para 2020; el mínimo exento general es
+  de 700.000 euros, más 300.000 de vivienda habitual.
+extracto: >-
+  [Exposición de motivos] «En segundo término, se extiende el mantenimiento del gravamen del
+  Impuesto sobre el Patrimonio al ejercicio 2020.» «El Real Decreto-ley 13/2011, de 16 de
+  septiembre, por el que se restablece el Impuesto sobre el Patrimonio, con carácter temporal,
+  recuperó el gravamen de dicho impuesto de forma transitoria, solo para los años 2011 y 2012.»
+  [Artículo 3] «Con efectos desde 1 de enero de 2020, se modifica el apartado segundo del artículo
+  único del Real Decreto-ley 13/2011, de 16 de septiembre, por el que se restablece el Impuesto
+  sobre el Patrimonio, con carácter temporal, que queda redactado de la siguiente forma:» «Con
+  efectos desde 1 de enero de 2021, se introducen las siguientes modificaciones en la Ley 19/1991,
+  de 6 de junio, del Impuesto sobre el Patrimonio:» […] «Artículo 33. Bonificación general de la
+  cuota íntegra. Sobre la cuota íntegra del impuesto se aplicará una bonificación del 100 por ciento
+  a los sujetos pasivos por obligación personal o real de contribuir.»

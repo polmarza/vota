@@ -31,6 +31,15 @@ efectos:
     base: >-
       Art. 1, apartados Seis y Ocho, que modifican los arts. 51 y 56 del Estatuto de los
       Trabajadores.
+  - cuando: { contrata: [empresa] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene personas contratadas en su empresa tendría que pagar 45 días por año trabajado y
+      los salarios de tramitación si un despido se declara improcedente, y pedir autorización a la
+      autoridad laboral para un despido colectivo.
+    base: >-
+      Art. 1, apartados Seis y Ocho, que modifican los arts. 51 y 56 del Estatuto de los
+      Trabajadores.
 justificacion: >-
   Es la propuesta de la oposición de izquierdas para revertir el abaratamiento del despido de 2012,
   que la reforma laboral de 2021 no tocó.

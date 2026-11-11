@@ -24,6 +24,15 @@ efectos:
     base: >-
       Art. 1, que modifica el art. 34.1 del Estatuto de los Trabajadores, y disposiciones
       adicional primera y transitoria primera.
+  - cuando: { contrata: [empresa] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene personas contratadas en su empresa o negocio tendría que bajarles la jornada
+      máxima a 35 horas semanales sin rebajarles el sueldo y llevar un registro diario digital de
+      su jornada.
+    base: >-
+      Art. 1, apartados Tres y Cuatro, que modifican el art. 34.1 y el art. 34 bis del Estatuto de
+      los Trabajadores, y disposición adicional primera.
 justificacion: >-
   Es la propuesta de reducción de jornada más ambiciosa que votó el Congreso en la XV, distinta
   del proyecto de 37,5 horas del Gobierno.

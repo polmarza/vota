@@ -24,5 +24,21 @@ efectos:
       justificadas, como bajas médicas cortas.
     base: >-
       Artículo único, que deroga el art. 52.d del Estatuto de los Trabajadores.
+  - cuando: { contrata: [empresa] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene personas contratadas en su empresa ya no puede despedirlas por causas objetivas,
+      con una indemnización reducida, por acumular faltas de asistencia, incluidas las justificadas
+      por bajas médicas cortas.
+    base: >-
+      Artículo único, que deroga el art. 52.d del Estatuto de los Trabajadores.
 justificacion: >-
   Es una protección directa para cualquier asalariado frente al despido por enfermedad.
+extracto: >-
+  [Artículo único] «Queda derogado el apartado d) del artículo 52 del texto refundido de la Ley del
+  Estatuto de los Trabajadores, aprobado por el Real Decreto Legislativo 2/2015, de 23 de octubre.»
+  [Exposición de motivos] «la fórmula del despido por faltas de asistencia al trabajo establecido
+  en el art. 52.d) del Estatuto de los Trabajadores actualmente vigente es un mecanismo que
+  legitima la extinción contractual con derecho a una indemnización reducida en el caso de que
+  existan tanto inasistencias injustificadas como bajas médicas por contingencias comunes de
+  duración inferior a veinte días»

@@ -29,6 +29,15 @@ efectos:
     base: >-
       Art. 1 del proyecto, que modifica la letra e) y añade una nueva letra n) al art. 49.1 del
       Estatuto de los Trabajadores.
+  - cuando: { contrata: [empresa] }
+    el_si: favorece
+    justificacion: >-
+      Que saliera el sí habría evitado que quien tiene personas contratadas en su empresa tuviera
+      que adaptar el puesto o cambiar de puesto a quien declaren en incapacidad permanente antes
+      de poder extinguir su contrato, salvo que eso le supusiera una carga excesiva.
+    base: >-
+      Art. 1 del proyecto, que añade una nueva letra n) al art. 49.1 del Estatuto de los
+      Trabajadores.
 justificacion: >-
   Es el cambio que protege el empleo de quien sufre una incapacidad permanente, tras una sentencia
   del Tribunal de Justicia de la UE.
