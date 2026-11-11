@@ -38,3 +38,4 @@ herramienta y neutral (ningún color de interfaz se asocia a un partido). Pendie
 de portada y "Cómo funciona", y Lighthouse antes del PR.
 - Las preguntas del test ya no llevan la barra de navegador simulada (tres puntos y «Tus respuestas no salen de tu navegador»): tenía sentido como maqueta en la portada, no dentro del test (pedido por Pol, 11-11-2026). La portada la conserva.
 - El pie queda siempre al fondo de la ventana en páginas cortas, como el test (pedido por Pol, 11-11-2026).
+- Portada: secciones a la medida de su contenido (fuera la regla del kit de una sección por pantalla), marco arena ceñido a la ventana, sin los rótulos «Pantalla N» y con una explicación de por qué se pregunta por tu vida y no por tu opinión (pedido por Pol, 11-11-2026).

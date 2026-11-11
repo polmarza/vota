@@ -108,11 +108,13 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
 
   <section class="section" id="test" aria-labelledby="test-h">
     <div class="wrap">
-      <p class="t-label screen-label">Pantalla 2 · Una pregunta</p>
+      <p class="t-label screen-label">El test</p>
       <div class="grid">
         <h2 id="test-h" class="span-5">Un cuestionario sobre tu vida, no sobre tu opinión</h2>
-        <p class="t-lead span-6 start-7 head-line">
-          Ocho preguntas básicas y cuatro ampliadas: provincia, vivienda, trabajo, edad, ingresos, hijos. Cada una tiene «Prefiero no responder».
+        <p class="t-lead span-6 start-7">
+          Tu opinión cuenta, pero en las urnas. Aquí no buscamos con quién coincides en ideas, sino qué votaron los
+          partidos sobre situaciones como la tuya: vivir de alquiler, cobrar una pensión, tener hijos. Así el resultado
+          depende de lo que hicieron, no de lo que dicen.
         </p>
       </div>
       <div
@@ -141,7 +143,7 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
       ejemplos.map((e, i) => (
         <div class="wrap" data-ejemplo={i} hidden={i > 0}>
           <div class="group res-group">
-            <p class="t-label screen-label" data-aparece>Pantalla 3 · Tu resultado · Un ejemplo real, basado en las {e.cuentan} votaciones que afectan a este perfil</p>
+            <p class="t-label screen-label" data-aparece>Tu resultado · Un ejemplo real, basado en las {e.cuentan} votaciones que afectan a este perfil</p>
             <div class="section-head">
               <h2 id={i === 0 ? 'res-h' : undefined} data-aparece>Así le sale a: {e.nombre}</h2>
               {
@@ -205,7 +207,7 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
     {
       ejemplos.map((e, i) => (
         <div class="wrap" data-ejemplo={i} hidden={i > 0}>
-          <p class="t-label screen-label">Pantalla 3 · La lista de votaciones · {e.nombre}</p>
+          <p class="t-label screen-label">Las votaciones · {e.nombre}</p>
           <div class="section-head section-head--row">
             <div>
               <h2 id={i === 0 ? 'vot-h' : undefined}>Las votaciones que te afectan</h2>
@@ -306,8 +308,6 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
 <style is:global>
   /* La página de la maqueta: lo que solo tiene la portada. */
   .hero--centred .hero__c .hero__lead { color: var(--ink); }
-  /* el nombre del perfil cambia de largo: la sección crece si lo necesita en vez de pisar la siguiente */
-  main > :is(#resultado, #preguntas) { height: auto; min-height: 100vh; min-height: 100svh; }
 
   @media (max-width: 639px) { .head-line { display: none; } }
 
