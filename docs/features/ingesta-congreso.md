@@ -1,6 +1,9 @@
 # Ingesta de datos del Congreso
 
-**Estado:** Verificada (28-10-2026). Queda volver a comprobar antes del lanzamiento si el Congreso ha publicado el JSON de las 14 votaciones de la XV que solo tienen gráfico.
+**Estado:** Verificada
+
+Verificada el 28-10-2026. Queda volver a comprobar antes del lanzamiento si el Congreso ha publicado
+el JSON de las 14 votaciones de la XV que solo tienen gráfico.
 **Requisitos que cierra:** M-06
 **Fecha de acuerdo:** 2026-10-26
 

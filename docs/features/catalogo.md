@@ -1,7 +1,7 @@
 # Catálogo de votaciones
 
 **Estado:** En construcción
-**Requisitos que cierra:** M-05, M-11, M-10 (revisión de las fichas y bloqueo de publicación), M-01 (preguntas)
+**Requisitos que cierra:** M-05, M-11, M-10, M-01 (M-10: revisión de las fichas y bloqueo de publicación; M-01: las preguntas)
 **Fecha de acuerdo:** 2026-10-28
 
 ## Qué se construye
@@ -74,9 +74,11 @@ discrepa de ella.
 |-----------|------------------|---------------|
 | M-05 | `scripts/data/catalogo.ts`: esquema Zod de ficha, pregunta y territorio, y validación cruzada (la votación existe en `data/votos` con voto nominal, URL oficial, justificaciones, preguntas y opciones existentes, comunidades válidas, cada pregunta usada por alguna ficha) | `tests/unit/data/catalogo.test.ts` |
 | M-05 | `scripts/data/candidatas.ts` (`pnpm data:candidatas`): universo de votaciones candidatas sacado de los datos brutos con un criterio mecánico, y criterios de selección y etiquetado escritos en `docs/catalogo.md` | `tests/unit/data/catalogo.test.ts` |
-| M-05, M-11, M-01 | `data/catalogo/*.yaml`, `data/preguntas.yaml`, `data/territorio.yaml`, `data/perfiles-ejemplo.yaml`: las fichas, las preguntas y las provincias | `tests/unit/data/catalogo-real.test.ts` (entre 40 y 60 fichas válidas, toda pregunta usada, cada perfil de referencia con 5 votaciones o más, alguna territorial) |
+| M-05 | `data/catalogo/*.yaml`: las fichas, con su extracto literal del texto oficial | `tests/unit/data/catalogo-real.test.ts` |
+| M-11 | `data/territorio.yaml` y las fichas territoriales (condición `ccaa`): una votación territorial solo cuenta en sus comunidades | `tests/unit/afinidad.test.ts` |
+| M-01 | `data/preguntas.yaml` (con preguntas condicionales `solo_si`) y `data/perfiles-ejemplo.yaml`: toda pregunta usada por alguna ficha y cada perfil de referencia con 5 votaciones o más | `tests/unit/data/catalogo-real.test.ts` |
 | M-10 | `scripts/data/jurado-catalogo.ts` (`pnpm data:jurado-catalogo`), `data/jurado/catalogo.json`: deliberación sobre cada ficha | revisión humana: el resumen de la ejecución y `data/jurado/catalogo.json`; cada efecto y cada resumen tienen cinco respuestas con razones, la revisión del conjunto está guardada, y todo lo no aprobado en la primera ronda tiene su segunda ronda, con la ficha corregida según el jurado, descartada o marcada "sin consenso" |
-| M-05, M-10 | `src/content.config.ts`, `src/lib/datos.ts`: la web carga el catálogo real y el build falla con una ficha inválida, sin veredicto vigente o con discrepancia del jurado | `tests/unit/data/catalogo.test.ts` |
+| M-10 | `src/content.config.ts`, `src/lib/datos.ts`: la web carga el catálogo real y el build falla con una ficha inválida, sin veredicto vigente o con discrepancia del jurado | `tests/unit/data/catalogo.test.ts` |
 
 ## Fuera de esta feature
 
