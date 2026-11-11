@@ -138,3 +138,45 @@ html { scrollbar-gutter: stable; }
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }
+
+/* ─── Pie siempre abajo ────────────────────────────────────────────────────────
+   En páginas cortas (el test, sobre todo) el contenido ocupa el alto que falta y el pie queda
+   pegado al fondo de la ventana. */
+body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+#contenido { flex: 1 0 auto; }
+body > .footer, body > .actionbar { flex-shrink: 0; }
+
+/* ─── Ritmo vertical (Pol, 11-11-2026) ────────────────────────────────────────
+   El kit hace que cada sección mida exactamente una pantalla ("one section per screen") y el marco
+   de la portada ocupe lo que sobra del primer pantallazo. Con nuestro contenido eso deja mucho
+   hueco, así que cada sección mide lo que su contenido más un margen fijo. */
+main > :is(section, .section):not(.hero, .section--hero),
+footer.closing {
+  height: auto; min-height: 0;
+  padding: 96px 0 calc(80px + var(--bar));
+}
+main > :is(section, .section) > :is(.wrap, .container),
+footer.closing > .wrap { height: auto; }
+main > :is(section, .section):is(.g2, .g2m) > :is(.wrap, .container),
+footer.closing:is(.g2, .g2m) > .wrap { grid-template-rows: auto; row-gap: 56px; }
+@media (max-width: 1023px) {
+  main > :is(section, .section):not(.hero, .section--hero), footer.closing { padding: 72px 0 calc(64px + var(--bar)); }
+}
+@media (max-width: 639px) {
+  main > :is(section, .section):not(.hero, .section--hero), footer.closing {
+    display: block; padding: 56px 0 calc(48px + var(--bar));
+  }
+  main > :is(section, .section):is(.g2, .g2m) > :is(.wrap, .container) { display: flex; flex-direction: column; row-gap: 40px; }
+}
+
+/* La portada: el primer pantallazo mide lo que el titular y la ventana, no la pantalla entera, y el
+   marco arena rodea la ventana con un margen fijo en lugar de llenar el hueco. */
+main > :is(.hero, .section--hero) { height: auto; min-height: 0; padding-bottom: 32px; }
+:is(.hero, .section--hero) > .wrap { height: auto; }
+.hero > .wrap > .hero-text { height: auto; }
+.hero--centred .hero__window { flex: none; min-height: 0; padding: var(--s-6) var(--s-6) 56px; }
+.hero--centred .hero__window > .ly-piece { position: relative; left: auto; top: auto; transform: none; margin-inline: auto; }
+@media (max-width: 639px) {
+  .hero--centred .hero__window { padding: var(--s-4) var(--s-4) 40px; }
+  .hero--centred .hero__window > .ly-piece { width: 100%; }
+}
