@@ -1,0 +1,37 @@
+votacion: XIV-240-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=07/03/2023"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-285-1.PDF
+iniciativa: "Proposición de ley del Parlamento de las Illes Balears"
+fecha: 2023-03-07
+titulo_oficial: >-
+  Proposición de Ley del Parlamento de las Illes Balears, de modificación de la Ley 29/1994, de 24
+  de noviembre, de Arrendamientos Urbanos.
+titulo: "Prórroga del alquiler en zonas tensionadas (Baleares)"
+resumen: >-
+  Propuesta del Parlamento balear para reformar la ley estatal de alquileres. Permite al inquilino
+  de una zona de mercado tensionado pedir que su contrato se prorrogue hasta tres años más en las
+  mismas condiciones, prórroga que el arrendador tendría que aceptar salvo excepciones, y habilita a
+  las comunidades a contener las rentas en esas zonas. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler en una zona tensionada podría prorrogar su contrato hasta tres años más
+      con la misma renta y condiciones cuando terminara.
+    base: >-
+      Artículo único, apartado 1, que da nueva redacción al art. 10.2 de la Ley de Arrendamientos
+      Urbanos.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquila una vivienda en una zona tensionada tendría que aceptar esa prórroga de hasta tres
+      años sin cambiar la renta, salvo que la necesitara para vivir él o su familia.
+    base: >-
+      Artículo único, apartado 1 (art. 10.2 de la Ley de Arrendamientos Urbanos).
+justificacion: >-
+  Es la iniciativa de una comunidad autónoma sobre el alquiler que llegó al Pleno en la XIV, antes de
+  la ley de vivienda, y fija un derecho y una obligación directos para inquilinos y arrendadores.

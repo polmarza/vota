@@ -1,0 +1,33 @@
+votacion: XV-188-21
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=18/06/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-93-1.PDF
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2026-06-18
+titulo_oficial: >-
+  Proyecto de Ley por la que se modifican la Ley Orgánica 2/2006, de 3 de mayo, de Educación, y la
+  Ley 4/2019, de 7 de marzo, de mejora de las condiciones para el desempeño de la docencia y la
+  enseñanza en el ámbito de la educación no universitaria, y se adoptan otras medidas para la mejora
+  del sistema educativo
+titulo: "Máximo de alumnos por clase (2026)"
+resumen: >-
+  Debate de totalidad del proyecto que fija un máximo de 22 alumnos por aula en primaria y 25 en
+  la ESO, de forma progresiva desde el curso 2027-2028, y limita las horas de clase del profesorado
+  de la pública a 23 en infantil y primaria y 18 en el resto. Las enmiendas pedían devolverlo al Gobierno; se rechazaron y el proyecto siguió su
+  tramitación.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno, lo que pone fin a su
+  tramitación.
+tema: educacion
+ambito: estatal
+efectos:
+  - cuando: { hijos: [menores] }
+    el_si: perjudica
+    justificacion: >-
+      Devolver el proyecto suprimía el nuevo máximo de alumnos por aula (22 en primaria y 25 en la ESO)
+      en las clases de los hijos en edad escolar.
+    base: >-
+      Disposición final primera (art. 157.1.a de la Ley Orgánica de Educación), art. 2 y disposición
+      final cuarta (calendario) del proyecto.
+justificacion: >-
+  Es la reforma educativa de la XV con un efecto directo y medible en las familias con hijos en edad
+  escolar; se votó la devolución en el Pleno.

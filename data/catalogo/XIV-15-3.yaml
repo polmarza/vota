@@ -1,0 +1,32 @@
+votacion: XIV-15-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/03/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/02/25/5
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-03-25
+titulo_oficial: >-
+  Real Decreto-ley 5/2020, de 25 de febrero, por el que se adoptan determinadas medidas urgentes en
+  materia de agricultura y alimentación.
+titulo: "Precios por encima del coste en el campo (2020)"
+resumen: >-
+  Obliga a que cada operador de la cadena alimentaria pague al anterior al menos el coste efectivo de
+  producción y a que los contratos con agricultores, ganaderos y pescadores lo indiquen
+  expresamente; además, deja cobrar el subsidio a los eventuales agrarios de Andalucía y
+  Extremadura aunque no tengan las jornadas mínimas y bonifica convertir sus contratos en
+  indefinidos. Se
+  convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo tiene derecho a que su comprador le pague al menos lo que le cuesta
+      producir, y vender por debajo pasa a ser una infracción grave.
+    base: >-
+      Artículo primero del Real Decreto-ley 5/2020 (arts. 9.1.c) y j), 12 ter y 23.2 de la Ley
+      12/2013 de la cadena alimentaria).
+justificacion: >-
+  Es la respuesta del Gobierno a las protestas del campo de 2020 y la reforma que introdujo la
+  prohibición de comprar por debajo del coste de producción.

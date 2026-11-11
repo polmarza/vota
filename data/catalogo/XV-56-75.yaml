@@ -1,0 +1,47 @@
+votacion: XV-56-75
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=23/07/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/06/26/4
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-07-23
+titulo_oficial: >-
+  Real Decreto-ley 4/2024, de 26 de junio, por el que se prorrogan determinadas medidas para
+  afrontar las consecuencias económicas y sociales derivadas de los conflictos en Ucrania y
+  Oriente Próximo y se adoptan medidas urgentes en materia fiscal, energética y social.
+titulo: "IVA de los alimentos, IRPF de sueldos bajos y bono social (2024)"
+resumen: >-
+  Prorroga hasta final de 2024 la rebaja del IVA de los alimentos básicos y del aceite, amplía la
+  reducción del IRPF para los sueldos más bajos, alarga los descuentos reforzados del bono social
+  eléctrico hasta junio de 2025 y sube un 2 % el sueldo del personal público en 2024. El Congreso
+  lo convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando: { ingresos: [hasta-16k], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra un sueldo bajo paga menos IRPF, porque la reducción por rendimientos del trabajo
+      sube a 7.302 euros y alcanza a rendimientos netos de hasta 19.747,5 euros.
+    base: >-
+      Art. 3, apartado Uno, del Real Decreto-ley 4/2024 (nueva redacción del art. 20 de la Ley
+      del IRPF).
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos y el bono social mantenía descuentos reforzados en la factura de
+      la luz (65 % al principio, bajando hasta el 42,5 % en junio de 2025).
+    base: >-
+      Art. 20 del Real Decreto-ley 4/2024 (extensión temporal de los descuentos del bono social
+      eléctrico).
+  - cuando: { trabajo: [funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja en el sector público tenía una subida de sueldo del 2 % en 2024, más un 0,5 %
+      adicional si la inflación superaba la subida acumulada.
+    base: >-
+      Art. 6 del Real Decreto-ley 4/2024 (incremento retributivo del personal al servicio del
+      sector público para 2024).
+justificacion: >-
+  Reúne medidas fiscales y de energía con efecto directo en sueldos bajos, hogares vulnerables y
+  personal público.

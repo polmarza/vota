@@ -1,0 +1,28 @@
+votacion: XIV-5-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=04/02/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/01/14/1
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-02-04
+titulo_oficial: >-
+  Real Decreto-ley 1/2020, de 14 de enero, por el que se establece la revalorización y
+  mantenimiento de las pensiones y prestaciones públicas del sistema de Seguridad Social.
+titulo: "Subida de las pensiones de 2020"
+resumen: >-
+  Subía un 0,9 % en 2020 las pensiones contributivas, las mínimas y las no contributivas, y
+  garantizaba una paga única en 2021 si la inflación media del año superaba ese 0,9 %. El
+  Congreso lo convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión mantenía la subida del 0,9 % desde enero y, si los precios subían
+      más, cobraba la diferencia en un pago único.
+    base: >-
+      Art. 1, apartados 2 y 3 (subida del 0,9 % de las pensiones contributivas, mínimas y no
+      contributivas), y art. 2 (pago por la desviación del IPC).
+justificacion: >-
+  Es la primera revalorización de las pensiones de la XIV, antes de la ley que las ligó al IPC.

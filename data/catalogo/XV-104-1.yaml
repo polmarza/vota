@@ -1,0 +1,28 @@
+votacion: XV-104-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=08/04/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-164-1.PDF
+iniciativa: "Proposición de ley del Parlamento de Andalucía"
+fecha: 2025-04-08
+titulo_oficial: >-
+  Proposición de Ley del Parlamento de Andalucía, relativa a la gratuidad de los productos ópticos y
+  de salud visual.
+titulo: "Gafas y lentillas gratis para menores"
+resumen: >-
+  Incluía las gafas, lentillas y demás productos ópticos en la cartera de la sanidad pública, gratis
+  para los menores de edad y con un máximo de aportación según la renta para los adultos, financiado
+  por el Estado. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: sanidad
+ambito: estatal
+efectos:
+  - cuando: { hijos: [pequenos, menores] }
+    el_si: favorece
+    justificacion: >-
+      Las gafas y lentillas de sus hijos menores pasarían a ser gratuitas en la sanidad pública.
+    base: >-
+      Artículo único, apartado 1, de la proposición (art. 8 ter.6 de la Ley 16/2003 de cohesión y
+      calidad del Sistema Nacional de Salud).
+justificacion: >-
+  Es una propuesta de una comunidad autónoma con un efecto directo y reconocible sobre las familias
+  con hijos menores en la XV.

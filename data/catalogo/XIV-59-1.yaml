@@ -1,0 +1,32 @@
+votacion: XIV-59-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=17/11/2020"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-3-1.PDF
+iniciativa: "Proposición de ley de iniciativa legislativa popular"
+fecha: 2020-11-17
+titulo_oficial: >-
+  Proposición de Ley de modificación de la Ley 39/2006, de 14 de diciembre, de Promoción de la
+  Autonomía Personal y Atención a las personas en situación de dependencia, en materia de
+  participación en el coste de las prestaciones y servicios de las personas beneficiarias
+  (corresponde a los números de expediente 120/000031/0000 de la X Legislatura, 120/000001/0000
+  de la XI Legislatura, 120/000001/0000 de la XII Legislatura y 120/000001/0000 de la XIII
+  Legislatura).
+titulo: "Límite al copago de la dependencia (2020)"
+resumen: >-
+  Iniciativa popular que limitaba lo que paga cada persona dependiente por sus servicios: nada si
+  su capacidad económica no supera 2,5 veces el IPREM, nunca más del 60 % del coste de referencia
+  y siempre con un mínimo para gastos personales. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      La persona dependiente a la que cuidas pagaría menos, o nada si tiene pocos ingresos, por la
+      ayuda a domicilio, el centro de día o la residencia.
+    base: >-
+      Artículo único, apartado Dos, que da nueva redacción al art. 33.3 de la Ley 39/2006 (exención
+      por debajo de 2,5 veces el IPREM y tope del 60 %).
+justificacion: >-
+  Es la iniciativa popular sobre el copago de la dependencia; se votó en las dos legislaturas.

@@ -1,0 +1,46 @@
+votacion: XIV-230-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=24/01/2023"
+texto: https://www.boe.es/eli/es/rdl/2022/12/27/20
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2023-01-24
+titulo_oficial: >-
+  Real Decreto-ley 20/2022, de 27 de diciembre, de medidas de respuesta a las consecuencias
+  económicas y sociales de la Guerra de Ucrania y de apoyo a la reconstrucción de la isla de La
+  Palma y a otras situaciones de vulnerabilidad.
+titulo: "Rebaja del IVA de los alimentos y cheque de 200 euros (2023)"
+resumen: >-
+  Baja el IVA del pan, la leche, los huevos, la fruta y la verdura al 0 % y el del aceite y la
+  pasta al 5 %, crea un pago único de 200 euros para trabajadores y parados con ingresos por
+  debajo de 27.000 euros, sube el ingreso mínimo vital y da una ayuda por el gasóleo agrícola. El
+  Congreso lo convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando: { ingresos: [hasta-16k, 16-30k], trabajo: [asalariado, autonomo, desempleo] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja o está en paro con ingresos bajos o medios podía cobrar un pago único de 200
+      euros si los ingresos de su hogar no superaban los 27.000 euros y su patrimonio los 75.000.
+    base: >-
+      Art. 74 del Real Decreto-ley 20/2022 (nueva línea directa de ayuda a personas físicas de
+      bajo nivel de ingresos y patrimonio).
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos y cobra el ingreso mínimo vital recibía un 15 % más en 2023.
+    base: >-
+      Art. 79 del Real Decreto-ley 20/2022 (incremento extraordinario del ingreso mínimo vital
+      para 2023).
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de la agricultura o la ganadería recibía una ayuda por el gasóleo agrícola que
+      consumió.
+    base: >-
+      Art. 24 del Real Decreto-ley 20/2022 (ayuda extraordinaria para sufragar el precio del
+      gasóleo consumido por los productores agrarios).
+justificacion: >-
+  Es el paquete contra la subida de precios de 2023, con la rebaja del IVA de los alimentos y una
+  ayuda directa para trabajadores con ingresos bajos y medios.

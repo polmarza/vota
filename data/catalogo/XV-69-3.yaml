@@ -1,0 +1,34 @@
+votacion: XV-69-3
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/10/2024"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-33-1.PDF
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2024-10-22
+titulo_oficial: >-
+  Proyecto de Ley por la que se modifican el texto refundido de la Ley del Estatuto de los
+  Trabajadores, aprobado por el Real Decreto Legislativo 2/2015, de 23 de octubre, en materia de
+  extinción del contrato de trabajo por incapacidad permanente de las personas trabajadoras, y el
+  texto refundido de la Ley General de la Seguridad Social, aprobado por el Real Decreto
+  Legislativo 8/2015, de 30 de octubre, en materia de incapacidad permanente
+titulo: "Fin del despido automático por incapacidad permanente"
+resumen: >-
+  Proyecto para que declarar a alguien en incapacidad permanente total o absoluta deje de
+  extinguir su contrato automáticamente: la empresa tiene que adaptarle el puesto o cambiarle a
+  otro, y solo puede despedirle si eso supone una carga excesiva. El Congreso rechazó las
+  enmiendas a la totalidad y el proyecto siguió adelante.
+que_significa_si: >-
+  Votar sí era apoyar la enmienda a la totalidad, es decir, devolver el proyecto al Gobierno, lo que pone fin a su
+  tramitación.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: perjudica
+    justificacion: >-
+      Que saliera el sí habría impedido que quien trabaja por cuenta ajena conservara su empleo,
+      con el puesto adaptado o en otro, si le declaran una incapacidad permanente.
+    base: >-
+      Art. 1 del proyecto, que modifica el art. 49.1 del Estatuto de los Trabajadores (nuevas
+      letras e y n).
+justificacion: >-
+  Es el cambio que protege el empleo de quien sufre una incapacidad permanente, tras una sentencia
+  del Tribunal de Justicia de la UE.

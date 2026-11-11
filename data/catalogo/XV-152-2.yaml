@@ -1,0 +1,29 @@
+votacion: XV-152-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=09/12/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-244-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2025-12-09
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, en apoyo del sistema alimentario
+  español como sector estratégico esencial de la economía.
+titulo: "Ayudas e IVA mínimo al campo en crisis"
+resumen: >-
+  Declaraba la alimentación sector estratégico y obligaba al Gobierno a convocar cada año ayudas para
+  las explotaciones de sectores en crisis por costes altos o precios bajos, y a aplicar el IVA mínimo
+  a la energía y los insumos agrarios mientras dure la crisis. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo, en un sector en crisis, tendría ayudas anuales y pagaría el IVA más bajo
+      posible por la energía, los piensos, los fertilizantes y otros insumos.
+    base: >-
+      Arts. 3 (ayudas a explotaciones en situación de crisis) y 4 (tipo mínimo de IVA para la
+      energía y los insumos agrarios) de la proposición.
+justificacion: >-
+  Es la propuesta más amplia de la oposición sobre la renta del campo en la XV, con ayudas y rebajas
+  fiscales concretas para los productores.

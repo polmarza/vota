@@ -1,0 +1,29 @@
+votacion: XV-137-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=14/10/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-182-1.PDF
+iniciativa: "Proposición de ley del Grupo Mixto"
+fecha: 2025-10-14
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Mixto, para la reducción de la duración máxima de la
+  jornada ordinaria de trabajo a 35 horas semanales.
+titulo: "Jornada de 35 horas"
+resumen: >-
+  Propuesta para bajar la jornada máxima de 40 a 35 horas semanales de trabajo efectivo sin
+  rebajar el sueldo, con seis meses para adaptar los convenios, y para reforzar el registro de
+  jornada. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena tendría una jornada máxima de 35 horas semanales sin que le
+      pudieran bajar el sueldo por ello.
+    base: >-
+      Art. 1, que modifica el art. 34.1 del Estatuto de los Trabajadores, y disposiciones
+      adicional primera y transitoria primera.
+justificacion: >-
+  Es la propuesta de reducción de jornada más ambiciosa que votó el Congreso en la XV, distinta
+  del proyecto de 37,5 horas del Gobierno.

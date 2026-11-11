@@ -1,0 +1,38 @@
+votacion: XV-183-12
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=28/05/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/05/12/11
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-05-28
+titulo_oficial: >-
+  Real Decreto-ley 11/2026, de 12 de mayo, por el que se modifica la aportación de los usuarios y sus
+  beneficiarios en la prestación farmacéutica ambulatoria.
+titulo: "Rebaja del copago de medicamentos (2026)"
+resumen: >-
+  Reforma el copago de los medicamentos con receta: pasa de tres a seis tramos de renta para los
+  trabajadores, les pone por primera vez un tope mensual si su renta es inferior a 35.000 euros y
+  añade un tope intermedio, más bajo, para los pensionistas con rentas de 18.000 a 60.000 euros.
+  Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: sanidad
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado, autonomo], ingresos: [hasta-16k, 16-30k] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja y gana menos de 30.000 euros pasa a tener un máximo mensual en lo que paga por
+      sus medicamentos con receta, que antes no tenía.
+    base: >-
+      Artículo único del Real Decreto-ley 11/2026 (art. 102.6.b), c) y d) del texto
+      refundido de la Ley de garantías y uso racional de los medicamentos).
+  - cuando: { trabajo: [jubilado], ingresos: [30-60k] }
+    el_si: favorece
+    justificacion: >-
+      Un pensionista con una renta de 30.000 a 60.000 euros pasa a pagar como máximo 13,37 euros al
+      mes por sus medicamentos, un tope más bajo que el que tenía.
+    base: >-
+      Artículo único del Real Decreto-ley 11/2026 (art. 102.6.f) del texto refundido de la Ley de
+      garantías y uso racional de los medicamentos).
+justificacion: >-
+  Es la reforma del copago farmacéutico de la XV, con un efecto directo y medible según la renta
+  de quien trabaja o cobra una pensión.

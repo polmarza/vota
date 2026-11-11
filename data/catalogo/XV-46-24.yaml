@@ -1,0 +1,29 @@
+votacion: XV-46-24
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=13/06/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/05/14/1
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-06-13
+titulo_oficial: >-
+  Real Decreto-ley 1/2024, de 14 de mayo, por el que se prorrogan las medidas de suspensión de
+  lanzamientos sobre la vivienda habitual para la protección de los colectivos vulnerables.
+titulo: "Prórroga de la suspensión de desahucios hipotecarios"
+resumen: >-
+  Amplía hasta quince años desde 2013 el plazo en que no se puede desalojar de su vivienda habitual a
+  las familias especialmente vulnerables que la han perdido en una ejecución hipotecaria. Se
+  convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga una hipoteca y, en situación de especial vulnerabilidad, perdiera la vivienda por no
+      poder pagarla, no podría ser desalojado de ella durante más tiempo.
+    base: >-
+      Artículo único, que modifica el art. 1.1 de la Ley 1/2013, de medidas para reforzar la protección
+      a los deudores hipotecarios.
+justificacion: >-
+  Es la medida de la XV que protege directamente a los deudores hipotecarios vulnerables frente al
+  desalojo; las demás fichas de desahucios se refieren a inquilinos.

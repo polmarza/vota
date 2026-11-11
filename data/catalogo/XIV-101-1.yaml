@@ -1,0 +1,32 @@
+votacion: XIV-101-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/05/2021"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-145-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2021-05-25
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la modificación de
+  la Ley 15/2012, de 27 de diciembre, de medidas fiscales para la sostenibilidad energética y de la
+  Ley 24/2013, de 26 de diciembre, del Sector Eléctrico, para la reducción de la factura eléctrica.
+titulo: "Rebaja de la factura de la luz del PP"
+resumen: >-
+  Proponía dejar en el 0 % el impuesto sobre el valor de la producción eléctrica y pagar con los
+  Presupuestos, y no con la factura de la luz, la deuda del sistema eléctrico y los sobrecostes
+  de la electricidad en las islas. El Congreso no la admitió a trámite.
+que_significa_si: >-
+  Votar sí era tomarla en consideración, es decir, admitirla a trámite para debatirla y
+  enmendarla.
+tema: energia
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler, hipoteca, propiedad] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga la luz de su casa dejaría de pagar en la factura la deuda del sistema eléctrico,
+      que pasaría a financiarse con los Presupuestos.
+    base: >-
+      Art. segundo, apartados Uno y Cuatro, de la proposición (se suprime el art. 13.3.c de la Ley
+      del Sector Eléctrico y nueva disposición adicional vigésima cuarta: deuda del sistema con
+      cargo a los Presupuestos).
+justificacion: >-
+  Es la principal propuesta de la oposición para abaratar la factura eléctrica de todos los
+  consumidores en la XIV legislatura.

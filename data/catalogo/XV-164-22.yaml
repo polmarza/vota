@@ -1,0 +1,48 @@
+votacion: XV-164-22
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=26/02/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/02/03/2
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-02-26
+titulo_oficial: >-
+  Real Decreto-ley 2/2026, de 3 de febrero, por el que se adoptan medidas urgentes para hacer
+  frente a situaciones de vulnerabilidad social, en materia tributaria y relativas a los recursos
+  de los sistemas de financiación territorial.
+titulo: "Bono social, desahucios y módulos de autónomos (2026)"
+resumen: >-
+  Fija para 2026 los descuentos del bono social eléctrico (42,5 % y 57,5 %), mantiene la
+  prohibición de cortar la luz, el gas y el agua a los hogares vulnerables, alarga la suspensión
+  de desahucios de inquilinos vulnerables hasta final de 2026 y prorroga los límites que permiten
+  a los autónomos seguir tributando por módulos. El Congreso no lo convalidó y quedó derogado.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: fiscalidad
+ambito: estatal
+efectos:
+  - cuando: { ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene ingresos bajos y el bono social tenía un descuento del 42,5 % en la luz (57,5 %
+      si es vulnerable severo) y no podían cortarle la luz, el gas ni el agua.
+    base: >-
+      Arts. 5 y 6 del Real Decreto-ley 2/2026 (descuentos del bono social en 2026 y garantía de
+      suministro a consumidores vulnerables).
+  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive de alquiler con ingresos bajos podía pedir que se suspendiera su desahucio hasta
+      final de 2026 si acreditaba vulnerabilidad económica.
+    base: >-
+      Art. 1, apartado Uno, del Real Decreto-ley 2/2026 (nueva redacción del art. 1 del Real
+      Decreto-ley 11/2020: suspensión de desahucios hasta el 31-12-2026).
+  - cuando: { trabajo: [autonomo] }
+    el_si: favorece
+    justificacion: >-
+      El autónomo que tributa por módulos podía seguir en ese régimen en 2026 con los límites de
+      facturación ampliados (250.000 euros en lugar de 150.000).
+    base: >-
+      Art. 10, apartado Cuatro, del Real Decreto-ley 2/2026 (disposición transitoria trigésima
+      segunda de la Ley del IRPF) y art. 8, apartado Uno (disposición transitoria decimotercera de
+      la Ley del IVA).
+justificacion: >-
+  Es la votación sobre la protección de 2026 de los consumidores vulnerables de energía, con
+  efecto directo en hogares con ingresos bajos, inquilinos vulnerables y autónomos en módulos.

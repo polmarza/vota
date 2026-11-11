@@ -79,6 +79,8 @@ export function candidatas(leg: Legislatura, dias: DiaCompacto[]): Candidata[] {
   for (const dia of [...dias].sort((a, b) => a.fecha.localeCompare(b.fecha))) {
     for (const v of dia.votaciones) {
       if (v.secreta || v.asentimiento) continue;
+      // Un empate se repite (art. 88 del Reglamento del Congreso): nunca es la votación que decide.
+      if (v.totales.si === v.totales.no) continue;
       const tipo = clasificar(v.titulo, v.subgrupo, v.textoSubgrupo, v.expediente);
       if (!tipo) continue;
       const clave = claveIniciativa(v.expediente);

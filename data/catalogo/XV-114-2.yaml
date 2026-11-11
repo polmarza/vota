@@ -1,0 +1,30 @@
+votacion: XV-114-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=27/05/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-219-1.PDF
+iniciativa: "Proposición de ley del Grupo Socialista"
+fecha: 2025-05-27
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Socialista, Orgánica por la que se modifica la Ley
+  Orgánica 2/2023, de 22 de marzo, del Sistema Universitario.
+titulo: "Prácticas universitarias garantizadas"
+resumen: >-
+  Obliga a las universidades, públicas y privadas, a cerrar acuerdos con empresas y entidades que
+  aseguren a todos sus estudiantes de grado y máster el acceso efectivo a las prácticas externas, y
+  prohíbe que la universidad pague o haga donaciones a cambio de las prácticas que forman parte del
+  plan de estudios. También regula los espacios de experimentación en investigación. Se admitió a
+  trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: educacion
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [estudiante] }
+    el_si: favorece
+    justificacion: >-
+      Quien estudia un grado o un máster tendría garantizado que su universidad le asegure un sitio
+      donde hacer las prácticas externas.
+    base: >-
+      Artículo único, que modifica el art. 9.5 de la Ley Orgánica 2/2023, del Sistema Universitario.
+justificacion: >-
+  Es la única iniciativa de la XV con un efecto directo para los estudiantes universitarios y viene de
+  un grupo parlamentario.

@@ -1,0 +1,46 @@
+votacion: XIV-254-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=25/04/2023"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-258-1.PDF
+iniciativa: "Proposición de ley del Grupo VOX"
+fecha: 2023-04-25
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario VOX, Orgánica dirigida a combatir el fenómeno de la
+  ocupación.
+titulo: "Ley contra la ocupación de VOX"
+resumen: >-
+  Endurece las penas por ocupar una vivienda, obliga al juez a ordenar el desalojo en 48 horas si los
+  ocupantes no muestran un título y amplía a cualquier propietario el juicio rápido para recuperar
+  la vivienda. También limita la posibilidad del inquilino de parar un desahucio por impago pagando
+  lo que debe cuando el arrendador le reclamó el pago con diez días de antelación. No se admitió a
+  trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [propiedad, hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene una vivienda en propiedad podría recuperarla en 48 horas por la vía penal, o por el
+      juicio rápido civil, si se la ocuparan sin título.
+    base: >-
+      Art. segundo, dos (nuevo art. 544 sexies de la Ley de Enjuiciamiento Criminal) y art. tercero, dos
+      (art. 250.1.4.º de la Ley de Enjuiciamiento Civil).
+  - cuando: { arrendador: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien alquila una vivienda podría recuperarla más deprisa si se la ocuparan y le resultaría más
+      fácil que un inquilino moroso no pudiera parar el desahucio pagando al final.
+    base: >-
+      Art. segundo, dos (art. 544 sexies LECrim) y art. tercero, uno y dos (arts. 22.4 y 250.1.4.º de la
+      Ley de Enjuiciamiento Civil).
+  - cuando: { vivienda: [alquiler] }
+    el_si: perjudica
+    justificacion: >-
+      Quien vive de alquiler perdería la posibilidad de parar un desahucio por impago pagando la deuda
+      si su casero le había reclamado el pago al menos diez días antes de la demanda.
+    base: >-
+      Art. tercero, uno, que da nueva redacción al art. 22.4 de la Ley de Enjuiciamiento Civil.
+justificacion: >-
+  Es la propuesta de VOX contra la ocupación en la XIV; además de proteger a los propietarios, cambia
+  una regla del desahucio por impago que afecta a los inquilinos.

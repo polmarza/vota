@@ -1,0 +1,31 @@
+votacion: XV-144-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=11/11/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-263-1.PDF
+iniciativa: "Proposición de ley del Grupo Republicano"
+fecha: 2025-11-11
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Republicano, de medidas fiscales para combatir la
+  especulación inmobiliaria.
+titulo: "Impuesto a la compra de la tercera vivienda"
+resumen: >-
+  Proponía un impuesto adicional del 4 % al 12 % (y más) a la compra de vivienda por quien ya
+  tiene dos o más, cobrar IVA a los alquileres turísticos de hasta 30 noches, endurecer los
+  requisitos de las SOCIMI y permitir a los ayuntamientos un recargo del IBI a grandes tenedores.
+  El Congreso no la admitió a trámite.
+que_significa_si: >-
+  Votar sí era tomarla en consideración, es decir, admitirla a trámite para debatirla y
+  enmendarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene viviendas en alquiler pagaría un impuesto adicional del 4 % al 12 % si compra
+      otra teniendo ya dos, y si alquila por días tendría que cobrar IVA.
+    base: >-
+      Art. segundo de la proposición (art. 20.Uno.23.º e') de la Ley del IVA y nueva disposición
+      adicional novena: impuesto a la acumulación de bienes inmobiliarios de uso residencial).
+justificacion: >-
+  Es una propuesta fiscal sobre la vivienda de un grupo parlamentario, con efecto directo en
+  quienes tienen varias viviendas o las alquilan.

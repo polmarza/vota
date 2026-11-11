@@ -1,0 +1,31 @@
+votacion: XIV-243-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=14/03/2023"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-247-1.PDF
+iniciativa: "Proposición de ley de los Grupos Republicano y Euskal Herria Bildu"
+fecha: 2023-03-14
+titulo_oficial: >-
+  Proposición de Ley de los Grupos Parlamentarios Republicano y Euskal Herria Bildu, para la
+  recuperación y ampliación de los derechos laborales.
+titulo: "Despido de 45 días y salarios de tramitación"
+resumen: >-
+  Propuesta para encarecer y limitar el despido: subía la indemnización por despido improcedente a
+  45 días por año trabajado con un máximo de 42 mensualidades, recuperaba los salarios de
+  tramitación y volvía a exigir autorización de la autoridad laboral para los despidos colectivos.
+  No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja por cuenta ajena cobraría 45 días por año trabajado y los salarios de
+      tramitación si le despiden de forma improcedente, y un despido colectivo necesitaría
+      autorización de la autoridad laboral.
+    base: >-
+      Art. 1, apartados Seis y Ocho, que modifican los arts. 51 y 56 del Estatuto de los
+      Trabajadores.
+justificacion: >-
+  Es la propuesta de la oposición de izquierdas para revertir el abaratamiento del despido de 2012,
+  que la reforma laboral de 2021 no tocó.

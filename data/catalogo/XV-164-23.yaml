@@ -1,0 +1,30 @@
+votacion: XV-164-23
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=26/02/2026"
+texto: https://www.boe.es/eli/es/rdl/2026/02/03/3
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2026-02-26
+titulo_oficial: >-
+  Real Decreto-ley 3/2026, de 3 de febrero, para la revalorización de las pensiones públicas y
+  otras medidas urgentes en materia de Seguridad Social.
+titulo: "Subida de las pensiones de 2026"
+resumen: >-
+  Subía las pensiones contributivas un 2,7 % en 2026, actualizaba las mínimas, las no
+  contributivas y el complemento de brecha de género, y fijaba las bases de cotización del año.
+  Se aprobó después de que el Congreso tumbara el decreto anterior que incluía la subida; esta vez
+  se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: pensiones
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [jubilado] }
+    el_si: favorece
+    justificacion: >-
+      Quien cobra una pensión mantenía la subida del 2,7 % de 2026, y la de las pensiones mínimas
+      y no contributivas, sin tener que devolverla.
+    base: >-
+      Art. 2, apartados 1, 3 y 5 (revalorización del 2,7 %, cuantías mínimas y pensiones no
+      contributivas) y anexo I.
+justificacion: >-
+  Es la revalorización de las pensiones de 2026, votada aparte tras caer el decreto ómnibus de
+  diciembre de 2025.

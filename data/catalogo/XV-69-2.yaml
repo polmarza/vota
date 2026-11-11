@@ -1,0 +1,31 @@
+votacion: XV-69-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=22/10/2024"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-139-1.PDF
+iniciativa: "Proposición de ley del Grupo Plurinacional SUMAR"
+fecha: 2024-10-22
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Plurinacional SUMAR, relativa a la regulación de las
+  cláusulas Redito Ad Libitum en la contratación de préstamos y créditos hipotecarios.
+titulo: "Reclamar cláusulas abusivas de amortización de la hipoteca"
+resumen: >-
+  Obliga a los bancos a abrir un sistema de reclamación para las hipotecas con cláusulas de
+  amortización que no permiten calcular las cuotas, tienen errores en sus fórmulas o no explican cómo
+  evolucionará la cuota. El cliente podría pedir la nulidad de la cláusula o un sistema de pago más
+  favorable, y el banco no podría demandarle por impago mientras tanto. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien paga una hipoteca con cláusulas de amortización opacas o con errores de cálculo podría
+      reclamar al banco su sustitución por un sistema más favorable o su nulidad, sin que el banco
+      pudiera demandarle mientras tanto.
+    base: >-
+      Arts. 2 (cláusulas afectadas), 3 (procedimiento de sustitución) y 5 (aceptación si el banco no
+      responde en tres meses) y disposición adicional (suspensión de los procedimientos judiciales).
+justificacion: >-
+  Es la iniciativa de la XV que da un derecho directo de reclamación a quien paga una hipoteca; viene
+  de un grupo parlamentario, no del Gobierno.

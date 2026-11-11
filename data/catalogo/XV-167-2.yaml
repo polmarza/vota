@@ -1,0 +1,30 @@
+votacion: XV-167-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=24/03/2026"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-299-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2026-03-24
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la modificación de la
+  Ley 87/1978, de 28 de diciembre, de Seguros Agrarios Combinados, para establecer seguros sobre los
+  ingresos y las rentas, y reforzar la sostenibilidad de las producciones agrarias.
+titulo: "Seguros agrarios que cubran los ingresos"
+resumen: >-
+  Amplía los seguros agrarios combinados, que hoy cubren daños por pedrisco, sequía, heladas y otros
+  fenómenos naturales, para que también cubran la caída de ingresos por bajadas de precios, cambios
+  en la demanda o problemas de acceso a los mercados. Se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { campo: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien vive del campo podría asegurar no solo la cosecha o el ganado, sino también sus ingresos
+      cuando caen los precios o se cierran mercados.
+    base: >-
+      Artículo primero (nuevo art. 3.2 de la Ley 87/1978) y artículo segundo (nuevo art. 6.2 del
+      Reglamento de Seguros Agrarios Combinados) de la proposición.
+justificacion: >-
+  Es una propuesta de un grupo de la oposición sobre la renta de agricultores y ganaderos en la XV,
+  con un efecto concreto: un tipo de seguro que hoy no existe.

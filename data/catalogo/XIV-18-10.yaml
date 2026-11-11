@@ -1,0 +1,29 @@
+votacion: XIV-18-10
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=22/04/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/04/07/13
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-04-22
+titulo_oficial: >-
+  Real Decreto-ley 13/2020, de 7 de abril, por el que se adoptan determinadas medidas urgentes en
+  materia de empleo agrario.
+titulo: "Trabajar en el campo sin perder el paro (2020)"
+resumen: >-
+  Durante el estado de alarma, y hasta el 30 de junio de 2020, permitió a las personas en paro
+  trabajar en campañas agrarias cerca de su domicilio sin perder la prestación o el subsidio por
+  desempleo, para cubrir la falta de temporeros. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: campo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [desempleo] }
+    el_si: favorece
+    justificacion: >-
+      Quien estaba en paro pudo cobrar un sueldo en las campañas agrícolas sin dejar de cobrar su
+      prestación o subsidio.
+    base: >-
+      Arts. 2.1.a) y 3 del Real Decreto-ley 13/2020 (compatibilidad del salario agrario con las
+      prestaciones por desempleo).
+justificacion: >-
+  Es la medida del Gobierno sobre el empleo agrario en el inicio de la pandemia, con un efecto
+  directo sobre las personas en paro.

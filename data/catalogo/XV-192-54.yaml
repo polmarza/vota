@@ -1,0 +1,35 @@
+votacion: XV-192-54
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=14/07/2026"
+texto: https://www.boe.es/eli/es/l/2026/10/01/4
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2026-07-14
+titulo_oficial: >-
+  Proyecto de Ley por la que se modifican el Texto Refundido de la Ley General de derechos de las
+  personas con discapacidad y de su inclusión social, aprobado por el Real Decreto Legislativo
+  1/2013, de 29 de noviembre, y la Ley 39/2006, de 14 de diciembre, de Promoción de la Autonomía
+  Personal y Atención a las personas en situación de dependencia, para la extensión y refuerzo de
+  los derechos de las personas con discapacidad a la inclusión, la autonomía y la accesibilidad
+  universal conforme al artículo 49 de la Constitución Española
+titulo: "Reforma de la discapacidad y la dependencia"
+resumen: >-
+  Reforma las leyes de discapacidad y de dependencia: reconoce derechos a las personas cuidadoras
+  no profesionales, permite mantener la reducción de jornada sin límite de edad para cuidar a un
+  hijo con gran dependencia y obliga a las comunidades a fijar un mínimo exento de copago. Se
+  aprobó y es la Ley 4/2026.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: cuidados
+ambito: estatal
+efectos:
+  - cuando: { cuidados: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien cuida de una persona dependiente gana derechos propios (formación, prioridad en las
+      políticas de empleo, que se garantice la atención si enferma) y la persona a la que cuida
+      tiene garantizado un mínimo exento de copago.
+    base: >-
+      Art. segundo, apartados Cuatro (nuevo art. 4 bis de la Ley 39/2006) y Treinta y tres (art.
+      33.3 de la Ley 39/2006, mínimo exento de copago).
+justificacion: >-
+  Es la reforma de la dependencia y la discapacidad de la XV, con medidas directas para quien
+  cuida.

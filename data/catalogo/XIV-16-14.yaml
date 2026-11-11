@@ -1,0 +1,39 @@
+votacion: XIV-16-14
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=09/04/2020"
+texto: https://www.boe.es/eli/es/rdl/2020/03/31/11
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2020-04-09
+titulo_oficial: >-
+  Real Decreto-ley 11/2020, de 31 de marzo, por el que se adoptan medidas urgentes
+  complementarias en el ámbito social y económico para hacer frente al COVID-19.
+titulo: "Escudo del alquiler en la pandemia (2020)"
+resumen: >-
+  Decreto ley de los primeros meses de la pandemia. Suspende los desahucios de inquilinos que
+  quedaron en situación de vulnerabilidad por el COVID-19, permite pedir una prórroga extraordinaria
+  de seis meses del contrato de alquiler que el arrendador debe aceptar y obliga a los grandes
+  propietarios a rebajar a la mitad o aplazar la renta de los inquilinos vulnerables. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [alquiler] }
+    el_si: favorece
+    justificacion: >-
+      Quien vivía de alquiler podía pedir una prórroga de seis meses de su contrato en las mismas
+      condiciones y, si quedaba en situación vulnerable por la pandemia, la suspensión de su desahucio
+      y una rebaja o aplazamiento de la renta si su casero era un gran propietario.
+    base: >-
+      Arts. 1 (suspensión de desahucios), 2 (prórroga extraordinaria) y 4 (moratoria de la renta con
+      grandes tenedores) del Real Decreto-ley 11/2020.
+  - cuando: { arrendador: [si] }
+    el_si: perjudica
+    justificacion: >-
+      Quien alquilaba una vivienda tenía que aceptar la prórroga de seis meses que pidiera el inquilino
+      y podía ver suspendido el desahucio de un inquilino vulnerable que no pagaba.
+    base: >-
+      Arts. 1 y 2 del Real Decreto-ley 11/2020.
+justificacion: >-
+  Es la primera medida estatal de protección de los inquilinos en la pandemia y fija obligaciones
+  directas para quien alquila una vivienda; complementa la prórroga del escudo social de diciembre
+  de 2020, que ya está en el catálogo.

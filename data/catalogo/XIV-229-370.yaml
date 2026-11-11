@@ -1,0 +1,28 @@
+votacion: XIV-229-370
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=22/12/2022"
+texto: https://www.boe.es/eli/es/l/2023/02/28/3
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2022-12-22
+titulo_oficial: Proyecto de Ley de Empleo.
+titulo: "Ley de Empleo"
+resumen: >-
+  Sustituye la ley de empleo de 2015, crea la Agencia Española de Empleo y fija un catálogo de
+  servicios que los servicios públicos de empleo tienen que garantizar a quien busca trabajo: un
+  perfil individual, un tutor y un itinerario personalizado en el plazo de un mes. Se aprobó y es
+  la Ley 3/2023.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { trabajo: [desempleo] }
+    el_si: favorece
+    justificacion: >-
+      Quien está en paro tiene derecho a que el servicio de empleo le haga un perfil, le asigne un
+      tutor y le dé un itinerario personalizado de formación y búsqueda de empleo en un mes.
+    base: >-
+      Arts. 55 y 56 de la Ley 3/2023, de Empleo (servicios garantizados a las personas
+      demandantes de empleo).
+justificacion: >-
+  Es la ley que regula los servicios públicos de empleo y lo que deben ofrecer a las personas en
+  paro.

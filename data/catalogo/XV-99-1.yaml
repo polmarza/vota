@@ -1,0 +1,39 @@
+votacion: XV-99-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=18/03/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-173-1.PDF
+iniciativa: "Proposición de ley del Grupo Junts per Catalunya"
+fecha: 2025-03-18
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Junts per Catalunya, de medidas urgentes para hacer
+  frente a la ocupación ilegal de inmuebles (Orgánica).
+titulo: "Ley contra la ocupación de Junts"
+resumen: >-
+  Obliga al juez, a petición del propietario, a acordar como medida cautelar el desalojo de una
+  vivienda ocupada si los ocupantes no acreditan en 48 horas un título, permite a la policía desalojar
+  en caso de delito flagrante y lleva estos casos al juicio rápido. También limita la suspensión de
+  desalojos de ocupantes vulnerables a viviendas de empresas o de dueños de más de diez viviendas. Se
+  admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: vivienda
+ambito: estatal
+efectos:
+  - cuando: { vivienda: [propiedad, hipoteca] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene una vivienda en propiedad podría recuperarla en 48 horas, como medida cautelar, si se
+      la ocuparan sin título.
+    base: >-
+      Art. uno, tres (nuevo art. 544 sexies de la Ley de Enjuiciamiento Criminal) y art. uno, dos (art.
+      282 LECrim).
+  - cuando: { arrendador: [si] }
+    el_si: favorece
+    justificacion: >-
+      Quien tiene viviendas que alquila podría recuperarlas en 48 horas si se las ocuparan, y la
+      suspensión del desalojo por vulnerabilidad dejaría de aplicarse a los particulares con diez
+      viviendas o menos.
+    base: >-
+      Art. uno, tres (art. 544 sexies LECrim) y art. dos (art. 1 bis.2 del Real Decreto-ley 11/2020).
+justificacion: >-
+  Es la propuesta contra la ocupación de la XV que se admitió a trámite, de un grupo distinto de los
+  que la habían planteado en la XIV.

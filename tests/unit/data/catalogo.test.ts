@@ -179,4 +179,13 @@ describe('M-05 · universo de candidatas', () => {
     expect(lista[0]).toMatchObject({ votacion: 'XV-5-2', todas: ['XV-5-1', 'XV-5-2'], proponente: 'Gobierno', ganoSi: true });
     expect(JSON.stringify(lista[0])).not.toContain('partidos');
   });
+
+  it('una votación empatada no es la decisiva: el Reglamento obliga a repetirla', () => {
+    const v = (numero: number, si: number, no: number): Votacion => ({
+      sesion: 15, numero, fecha: '', titulo: 'Convalidación o derogación de Reales Decretos-leyes.', expediente: 'Real Decreto-ley 8/2023, de 27 de diciembre',
+      subgrupo: '', textoSubgrupo: '', conjuntas: [], asentimiento: false, secreta: false, totales: { si, no, abstencion: 0, noVota: 0 }, votos: [{ diputado: 'A', grupo: 'G', voto: 'S' }],
+    });
+    expect(candidatas('XV', [compactarDia('XV', '20240110', [v(4, 171, 171)], [])])).toEqual([]);
+    expect(candidatas('XV', [compactarDia('XV', '20240110', [v(4, 171, 171), v(8, 172, 171)], [])])[0]).toMatchObject({ votacion: 'XV-15-8', todas: ['XV-15-8'] });
+  });
 });

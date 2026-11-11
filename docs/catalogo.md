@@ -22,7 +22,8 @@ Congreso con un criterio mecánico, sin intervención de nadie:
   la votación final (de conjunto, del dictamen o de las enmiendas del Senado si es la última); si
   se devolvió al Gobierno, la de totalidad; si no se admitió a trámite, la toma en consideración;
   en un decreto ley, la convalidación (no la de tramitarlo además como proyecto de ley). En los
-  Presupuestos, que se votan título a título, la de totalidad. Las enmiendas sueltas no cuentan.
+  Presupuestos, que se votan título a título, la de totalidad. Las enmiendas sueltas no cuentan, ni las votaciones empatadas, que el
+  Reglamento obliga a repetir (si la repetición no tiene datos publicados, la iniciativa no entra).
 
 La lista **no incluye el voto de los partidos** a propósito: las votaciones se eligen por lo que
 dicen y a quién afectan, antes de mirar quién votó qué.
