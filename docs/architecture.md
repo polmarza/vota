@@ -176,7 +176,8 @@ No hace falta ningún otro: no hay base de datos, pagos ni email.
   de Vercel con GitHub. El agente prepara el PR, pero no mergea ni lanza despliegues.
 - **Dominio:** Pol añade `vota.concriterio.blog` en el proyecto de Vercel y crea en Hostinger el
   CNAME `vota` que indique Vercel.
-- **Calendario:** en producción antes del 13 de noviembre de 2026 (inicio de campaña). Hasta el
+- **Calendario:** en producción antes del 20 de noviembre de 2026 (retrasado el 11-11 desde el 13,
+  inicio de campaña). Hasta el
   29 de noviembre solo se despliegan correcciones.
 
 ---

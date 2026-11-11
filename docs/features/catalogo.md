@@ -55,8 +55,8 @@ discrepa de ella.
 - **Perfiles de referencia:** unos 8 perfiles habituales en `tests/fixtures/perfiles.yaml`
   (estudiante de alquiler, pensionista con vivienda propia, autónomo con hijos…); cada uno tiene
   que llegar a 5 votaciones (M-03).
-- **Plazo y coste:** catálogo completo y aprobado por el jurado el 6-11-2026, para dejar una semana
-  a la web. Como mucho 15 $ de OpenRouter; se avisa a Pol antes de superarlo.
+- **Plazo y coste:** catálogo completo y aprobado por el jurado el 13-11-2026 (era el 6-11; el
+  lanzamiento pasó al 20-11). Como mucho 15 $ de OpenRouter; se avisa a Pol antes de superarlo.
 - **Formato de ficha, efecto y pregunta:** el de `docs/data-model.md` (`cuando`, `el_si`,
   `justificacion`, `ambito`, `que_significa_si`…). El voto de cada partido no se escribe en la ficha:
   sale de `data/votos/` por el id `<leg>-<sesion>-<numero>`.

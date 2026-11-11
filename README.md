@@ -80,7 +80,7 @@ flowchart LR
 
 ## Estado
 
-**En desarrollo.** Objetivo: en producción antes del inicio de la campaña, el 13 de noviembre de 2026.
+**En desarrollo.** Objetivo: en producción antes del 20 de noviembre de 2026, en plena campaña.
 
 - [x] Producto, diseño, arquitectura y modelo de datos definidos (`docs/`)
 - [ ] Ingesta de datos del Congreso — *en construcción* ([ficha](docs/features/ingesta-congreso.md))

@@ -75,7 +75,7 @@ El procedimiento completo —comprobar lo ya configurado, elegir alcance (`user`
 **Descripción:** Web anónima que, a partir de tu situación personal, te dice qué partidos te han
 favorecido y cuáles te han perjudicado según lo que votaron en el Congreso (legislaturas XIV y XV),
 para las elecciones generales del 29 de noviembre de 2026.
-**Estado actual:** En desarrollo. Fecha límite: en producción antes del 13 de noviembre de 2026.
+**Estado actual:** En desarrollo. Fecha límite: en producción antes del 20 de noviembre de 2026.
 
 Lo firma Pol Marzà bajo Con Criterio. La neutralidad es el requisito que lo sostiene todo: Claude
 selecciona y etiqueta las votaciones, un jurado de cinco modelos de otras empresas las revisa, y
