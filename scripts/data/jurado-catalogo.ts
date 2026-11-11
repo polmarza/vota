@@ -18,6 +18,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { parse } from 'yaml';
+import type { DiaCompacto } from './congreso.ts';
 import { CLAVE_CCAA, esquemaFicha, esquemaPreguntas, esquemaTerritorio, type Ficha } from './catalogo.ts';
 import { clienteOpenRouter, deliberar, evaluar, type Elemento, type Registro } from './jurado.ts';
 
@@ -38,6 +39,9 @@ Criterios del proyecto:
   una toma en consideración, admitir a trámite la propuesta (se valora el contenido de la propuesta);
   en una enmienda a la totalidad, devolver el proyecto al Gobierno.
 - No importa quién propuso la iniciativa ni qué votó cada partido; no se te dice a propósito.
+- El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si
+  contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu
+  fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.
 - Si no conoces la iniciativa lo bastante para responder con seguridad, responde "no_lo_se". Es
   preferible a adivinar.
 
@@ -57,6 +61,20 @@ function construirElementos(): Elemento[] {
     .sort()
     .map((f) => cargarYaml(`catalogo/${f}`, esquemaFicha));
 
+  // Resultado oficial de cada votación (totales, no el voto de los partidos): los jueces no conocen
+  // lo que pasó después de su fecha de corte y así pueden comprobar el resumen.
+  const totales = new Map<string, DiaCompacto['votaciones'][number]['totales']>();
+  for (const leg of ['XIV', 'XV']) {
+    const dir = join(DATA, 'raw', leg, 'dias');
+    for (const f of readdirSync(dir)) {
+      const dia = JSON.parse(readFileSync(join(dir, f), 'utf8')) as DiaCompacto;
+      for (const v of dia.votaciones) totales.set(`${leg}-${v.sesion}-${v.numero}`, v.totales);
+    }
+  }
+  const resultado = (id: string) => {
+    const t = totales.get(id)!;
+    return `${t.si} votos a favor, ${t.no} en contra y ${t.abstencion} abstenciones: ${t.si > t.no ? 'salió el Sí' : 'no salió el Sí'}`;
+  };
   const porPregunta = new Map(preguntas.map((p) => [p.id, p]));
   const ccaa = new Map(territorio.comunidades.map((c) => [c.id, c.nombre]));
   /** La condición de un efecto en lenguaje claro, con el texto de las preguntas y opciones. */
@@ -74,6 +92,7 @@ function construirElementos(): Elemento[] {
 Iniciativa: ${f.titulo_oficial}
 Tipo: ${f.iniciativa}
 Qué significaba votar Sí: ${f.que_significa_si}
+Resultado oficial (datos abiertos del Congreso): ${resultado(f.votacion)}.
 Texto oficial: ${f.texto}`;
 
   const elementos: Elemento[] = [];
