@@ -1,15 +1,15 @@
 votacion: XIV-139-2
 url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=14/12/2021"
 texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-192-1.PDF
-iniciativa: Proposición de ley de los grupos Republicano, Plural, Euskal Herria Bildu y Mixto
+iniciativa: Proposición de ley de los grupos Republicano, Plural, Euskal Herria Bildu, Mixto y Unidas Podemos
 fecha: 2021-12-14
 titulo_oficial: Proposición de Ley de garantía del derecho a la vivienda digna y adecuada.
 titulo: Ley de vivienda de los movimientos sociales
 resumen: >-
-  Propuesta de ley de vivienda impulsada por la PAH y sindicatos de inquilinas y registrada por varios
-  grupos. Alargaba los contratos de alquiler a siete años (doce si el arrendador es una empresa),
-  limitaba las rentas en zonas tensionadas, cargaba los honorarios de inmobiliaria al arrendador,
-  introducía la dación en pago y limitaba la deuda hipotecaria a la vivienda. No se admitió a trámite.
+  Propuesta de ley de vivienda registrada por varios grupos parlamentarios. Alargaba los contratos
+  de alquiler a siete años (doce si el arrendador es una empresa), limitaba las rentas en zonas
+  tensionadas, cargaba los honorarios de inmobiliaria al arrendador, introducía la dación en pago
+  y limitaba la deuda hipotecaria a la vivienda. No se admitió a trámite.
 que_significa_si: Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
 tema: vivienda
 ambito: estatal
@@ -19,7 +19,7 @@ efectos:
     justificacion: >-
       Los contratos de alquiler durarían como mínimo siete años, la renta inicial en zonas tensionadas
       quedaría limitada y el inquilino no pagaría honorarios de inmobiliaria.
-    base: Arts. 32, 33, 34 y 41 de la proposición (modificación de los arts. 9 y 10 de la Ley de Arrendamientos Urbanos).
+    base: Arts. 32, 33, 34 y 41 de la proposición (modificación de los arts. 9, 10 y 17 de la Ley de Arrendamientos Urbanos, renta inicial en zonas tensionadas y honorarios de inmobiliaria).
   - cuando: { vivienda: [hipoteca] }
     el_si: favorece
     justificacion: >-
@@ -37,3 +37,24 @@ justificacion: >-
   comparar a los partidos en un modelo de alquiler y de hipoteca más exigente que el que se aprobó.
 fuentes:
   - https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-192-3.PDF
+extracto: >-
+  [Art. 15 (art. 693.4 LEC)] «Si el bien ejecutado fuese la vivienda habitual, el deudor podrá
+  comparecer con anterioridad a la celebración de la subasta solicitando la entrega del bien
+  hipotecado en pago de la deuda garantizada.» [Art. 16 (art. 105 de la Ley Hipotecaria)] «En el
+  supuesto de recaer sobre la vivienda habitual del deudor, y en todos aquellos casos en que se
+  pacte expresamente, su responsabilidad quedará limitada exclusivamente al bien hipotecado.» [Art.
+  32 (art. 9.1 LAU)] «Si esta fuera inferior a siete años, o inferior a doce años si el arrendador
+  fuese persona jurídica, llegado el día del vencimiento del contrato, este se prorrogará
+  obligatoriamente por plazos anuales hasta que el arrendamiento alcance una duración mínima de
+  siete años, o de doce años si el arrendador fuese persona jurídica.» [Art. 33 (art. 10.1 LAU)] «el
+  contrato de arrendamiento se prorrogará automáticamente por plazo de siete años, o doce años si el
+  arrendador fuese persona jurídica» [Art. 34.1] «En los contratos de alquiler de vivienda situada
+  en un área declarada de mercado tensionado, la renta pactada al inicio del contrato, no podrá
+  superar ninguno de los dos valores: […] a) El índice oficial de referencia para el alquiler de una
+  vivienda de características análogas en el mismo entorno urbano.» [Art. 41] «Los honorarios
+  correspondientes a las gestiones realizadas por agentes inmobiliarios o intermediarios, bien en
+  operaciones de compra venta como en alquiler de inmuebles serán satisfechos por el vendedor o
+  arrendador, respectivamente.» [Art. 45] «El tramo estatal de desgravación o reducción fiscal al
+  arrendador de vivienda solo será de aplicación: […] Cuando se trate de arrendamiento de vivienda
+  habitual del arrendatario cuya renta sea inferior, en al menos un 15 %, a la del índice estatal de
+  precios de mercado»

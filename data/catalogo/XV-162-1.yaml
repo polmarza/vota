@@ -10,7 +10,7 @@ titulo_oficial: >-
 titulo: "Despidos por deslocalización"
 resumen: >-
   Prohibía los despidos colectivos y otras medidas contra la plantilla a las empresas que
-  trasladaran su producción fuera de la Unión Europea, y obligaba a devolver las ayudas de ERTE o
+  trasladaran su producción fuera de la Unión Europea y del Espacio Económico Europeo, y obligaba a devolver las ayudas de ERTE o
   mecanismo RED cobradas en los cuatro años anteriores. No se admitió a trámite.
 que_significa_si: >-
   Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
@@ -20,10 +20,26 @@ efectos:
   - cuando: { trabajo: [asalariado] }
     el_si: favorece
     justificacion: >-
-      Quien trabaja en una empresa que se traslada fuera de la Unión Europea no podría ser
-      despedido por ese traslado.
+      Quien trabaja en una empresa que se traslada fuera de la Unión Europea y del Espacio
+      Económico Europeo no podría ser despedido por ese traslado.
     base: >-
-      Artículo primero de la proposición, que modifica los arts. 40, 41, 51 y 52 del Estatuto de
-      los Trabajadores.
+      Artículo único, apartado Uno, de la proposición (nueva disposición adicional vigésima octava
+      del Estatuto de los Trabajadores, que impide las medidas de sus arts. 41, 51, 52 y 82.3).
 justificacion: >-
   Es una propuesta de protección del empleo de un grupo distinto del Gobierno en la XV.
+extracto: >-
+  [Artículo único.Uno, nueva disposición adicional vigésima octava del Estatuto de los Trabajadores]
+  «1. Las empresas que decidan el traslado de su actividad industrial, productiva o de negocio a
+  territorios que no formen parte del de los Estados miembros de la Unión Europea o del de los
+  Estados signatarios del Acuerdo sobre el Espacio Económico Europeo, no podrán adoptar las
+  siguientes medidas en relación con las condiciones de trabajo o el empleo en España: a) Despidos
+  colectivos y extinciones de contratos por las causas objetivas previstas, respectivamente, en los
+  artículos 51 y 52. b) Modificaciones sustanciales de las condiciones de trabajo de las previstas
+  en el artículo 41. c) Inaplicaciones de las condiciones de trabajo previstas en convenios
+  colectivos, según lo dispuesto en el artículo 82.3.» «Los despidos y las extinciones de contratos
+  serán en tal caso considerados improcedentes y, en su caso, nulos.» «2. Aquellas empresas que
+  efectúen los traslados de la actividad descritos en el apartado 1 y hayan sido beneficiadas en los
+  cuatro años previos por medidas ligadas a uno o varios expedientes de regulación temporal de
+  empleo o a la aplicación del Mecanismo RED, se verán obligadas al abono de la totalidad del
+  importe desembolsado o dejado de ingresar en concepto de prestaciones y de exoneraciones en las
+  cotizaciones a la Seguridad Social.»

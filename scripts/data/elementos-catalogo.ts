@@ -26,6 +26,9 @@ Criterios del proyecto:
 - El resultado oficial de cada votación sale de los datos abiertos del Congreso y es correcto; si
   contradice lo que recuerdas, prevalece el dato oficial. Puede tratarse de hechos posteriores a tu
   fecha de corte: en ese caso valora con la información que se te da y tu conocimiento de la norma.
+- Cuando se incluye un extracto literal del texto oficial, es copia exacta de él: úsalo para
+  comprobar el resumen y los efectos. Lo que no esté en el extracto puedes valorarlo con tu
+  conocimiento de la norma.
 - Si no conoces la iniciativa lo bastante para responder con seguridad, responde "no_lo_se". Es
   preferible a adivinar.
 
@@ -78,7 +81,9 @@ Iniciativa: ${f.titulo_oficial}
 Tipo: ${f.iniciativa}
 Qué significaba votar Sí: ${f.que_significa_si}
 Resultado oficial (datos abiertos del Congreso): ${resultado(f.votacion)}.
-Texto oficial: ${f.texto}`;
+Texto oficial: ${f.texto}${f.extracto ? `
+Extracto literal del texto oficial:
+«${f.extracto.replace(/\s+/g, ' ')}»` : ''}`;
 
   const elementos: Elemento[] = [];
   for (const f of fichas) {

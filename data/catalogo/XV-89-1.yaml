@@ -22,16 +22,35 @@ efectos:
     justificacion: >-
       Quien cobra una pensión tenía garantizada la subida de 2025 desde enero.
     base: >-
-      Título sobre Seguridad Social del Real Decreto-ley 9/2024 (revalorización de las pensiones
-      para 2025).
+      Art. 79 del Real Decreto-ley 9/2024, en su título IV (revalorización de las pensiones y otras
+      prestaciones públicas para 2025).
   - cuando: { transporte: [publico] }
     el_si: favorece
     justificacion: >-
       Quien usa el transporte público mantenía los descuentos en abonos y títulos de Cercanías,
       media distancia y autobús.
     base: >-
-      Título sobre transporte del Real Decreto-ley 9/2024 (prórroga de las ayudas al transporte
-      público).
+      Título III del Real Decreto-ley 9/2024: art. 77 (prórroga hasta el 30-6-2025 de las ayudas del
+      Real Decreto-ley 8/2023) y arts. 21, 32 y 34 (descuentos del 1-7 al 31-12-2025).
 justificacion: >-
   Es uno de los decretos con la subida de las pensiones que el Congreso no convalidó; afecta
   directamente a pensionistas y a usuarios del transporte público.
+extracto: >-
+  [Art. 79.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad
+  contributiva, […] se revalorizarán en 2025 con carácter general el 2,8 por ciento respecto del
+  importe que tuvieran a 31 de diciembre de 2024» [Art. 79.3] «La cuantía mínima de las pensiones
+  contributivas del sistema de la Seguridad Social y Clases Pasivas se incrementará en el año 2025
+  en función del tipo de pensión» [Art. 79.5] «Las pensiones no contributivas del sistema de la
+  Seguridad Social de invalidez y jubilación tendrán un importe anual de 7.905,80 euros.»
+  [Exposición de motivos] «deriva de la necesidad de prolongar la aplicación de los descuentos a
+  partir del 1 de enero de 2025, sin solución de continuidad con las medidas actualmente en vigor»
+  [Art. 77.1] «Se prorroga hasta el 30 de junio de 2025, la vigencia de las ayudas previstas en los
+  artículos 64 al 70 el Real Decreto-ley 8/2023, de 27 de diciembre.» [Art. 77.3] «Se prorroga hasta
+  el 30 de junio de 2025, la vigencia de las ayudas previstas en el artículo 73 del Real Decreto-ley
+  8/2023, de 27 de diciembre» [Art. 21.2] «a) Gratuidad a población infantil hasta los catorce
+  años.» [Art. 32.1] «Entre el 1 de julio de 2025 y hasta el 31 de diciembre de 2025 los usuarios
+  recurrentes para un trayecto con origen-destino determinado de un servicio público de transporte
+  por carretera de competencia de la Administración General del Estado tendrán derecho a las
+  bonificaciones del precio del billete» [Art. 32.2.b] «Un abono mensual nominativo con descuento
+  del 50 % calculado sobre la tarifa máxima admisible» [Art. 34.2.b] «Un abono mensual nominativo de
+  tarifa única 20 euros»

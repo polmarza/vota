@@ -154,6 +154,7 @@ El build falla si una pregunta no la usa ninguna ficha del catálogo (salvo `pro
 | efectos | lista de Efecto | A qué perfiles afecta y cómo (ver abajo) |
 | justificacion | texto | Por qué se ha elegido esta votación (obligatoria) |
 | fuentes | lista de URL | BOE, Diario de Sesiones, nota oficial |
+| extracto | texto (opcional, hasta 3.500 caracteres) | Citas literales del texto oficial que sostienen el resumen y los efectos; se dan al jurado, que no navega y no conoce lo posterior a su fecha de corte |
 
 ### Efecto (dentro de la Ficha)
 | Campo | Tipo | Descripción |

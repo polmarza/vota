@@ -8,8 +8,9 @@ titulo_oficial: >-
   sector agrario por causa de la sequía.
 titulo: "Ayudas al campo por la sequía (2022)"
 resumen: >-
-  Ayudas a agricultores y ganaderos afectados por la sequía: exenciones en el canon del agua,
-  préstamos con aval público, rebajas fiscales y ayudas directas a la ganadería.
+  Medidas para agricultores y ganaderos afectados por la sequía: exención del canon de regulación
+  y de la tarifa de utilización del agua, reducción de los módulos del IRPF, aplazamiento de
+  cuotas a la Seguridad Social y financiación con aval público (SAECA).
 que_significa_si: >-
   Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
 tema: campo
@@ -18,8 +19,8 @@ efectos:
   - cuando: { campo: [si] }
     el_si: favorece
     justificacion: >-
-      Quien vive del campo pudo pedir ayudas, préstamos avalados y rebajas en el agua y en los
-      impuestos por la sequía.
+      Quien vive del campo pudo aplazar cuotas, pedir préstamos con aval público y pagar menos por
+      el agua y en el IRPF por la sequía.
     base: >-
       Arts. 1 a 13 del Real Decreto-ley 4/2022.
 justificacion: >-

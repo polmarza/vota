@@ -17,7 +17,7 @@ que_significa_si: >-
 tema: vivienda
 ambito: estatal
 efectos:
-  - cuando: { vivienda: [alquiler] }
+  - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
     el_si: favorece
     justificacion: >-
       Quien vive de alquiler y está en situación de vulnerabilidad podía pedir que se suspendiera

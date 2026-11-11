@@ -73,6 +73,10 @@ describe('M-02 · candidaturas del 29-N', () => {
 });
 
 describe('M-05 · catálogo real', () => {
+  it('ninguna pregunta tiene dos opciones con el mismo texto', () => {
+    for (const p of preguntas) expect(new Set(p.opciones.map((o) => o.texto)).size, p.id).toBe(p.opciones.length);
+  });
+
   it('las fichas, las preguntas y el territorio no tienen errores', () => {
     expect(validarCatalogo({ fichas, preguntas, territorio, votos, candidatas })).toEqual([]);
   });

@@ -24,11 +24,31 @@ efectos:
   - cuando: { arrendador: [si] }
     el_si: perjudica
     justificacion: >-
-      Quien alquila una vivienda tenía que aceptar la prórroga que pidiera el inquilino y no podía subir
-      la renta más de un 2 % al año.
+      Quien alquila una vivienda tenía que aceptar la prórroga que pidiera el inquilino, salvo que
+      necesitara la vivienda para sí, y sin nuevo acuerdo no podía subir la renta más de un 2 % al año
+      (ni siquiera con acuerdo si es gran tenedor).
     base: Arts. 1 y 2 del Real Decreto-ley 8/2026.
 justificacion: >-
   Es la última votación sobre el alquiler de la XV y la única en la que el Congreso tumbó una medida
   de alquiler del Gobierno.
 fuentes:
   - https://www.boe.es/buscar/pdf/2026/BOE-A-2026-6545-consolidado.pdf
+extracto: >-
+  [Art. 1.1] «En los contratos de arrendamiento de vivienda habitual sujetos a la Ley 29/1994, de 24
+  de noviembre, de Arrendamientos Urbanos, vigentes en la fecha de entrada en vigor de este real
+  decreto-ley, en los que el periodo de prórroga obligatoria previsto en el artículo 9.1 finalice
+  antes del 31 de diciembre de 2027 […] se aplicará, previa solicitud del arrendatario, una prórroga
+  extraordinaria por plazos anuales y hasta un máximo de dos años adicionales. Durante esta prórroga
+  se mantendrán los términos y condiciones del contrato en vigor. La solicitud deberá ser aceptada
+  obligatoriamente por el arrendador, salvo que se hayan fijado otros términos o condiciones por
+  acuerdo entre las partes, o que se haya suscrito un nuevo contrato de arrendamiento, o que el
+  arrendador haya comunicado, en los plazos y condiciones del artículo 9.3, la necesidad de ocupar
+  la vivienda.» [Art. 2] «cuya renta deba ser actualizada porque se cumpla la correspondiente
+  anualidad de vigencia dentro del periodo comprendido entre la entrada en vigor de este real
+  decreto-ley y el 31 de diciembre de 2027» [Art. 2.a)] «En el caso de que el arrendador sea un gran
+  tenedor […] el incremento de la renta será el que resulte del nuevo pacto entre las partes, sin
+  que la variación anual de la renta pueda exceder del dos por ciento. En ausencia de este nuevo
+  pacto entre las partes, el incremento de la renta quedará sujeto a esta misma limitación.» [Art.
+  2.b)] «En el caso de que el arrendador no sea un gran tenedor, el incremento de la renta será el
+  que resulte del nuevo pacto entre las partes. En ausencia de este nuevo pacto entre las partes, el
+  incremento de la renta a aplicar no podrá ser superior al dos por ciento.»

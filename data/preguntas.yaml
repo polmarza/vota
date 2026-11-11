@@ -77,9 +77,9 @@
   tipo: opciones
   opciones:
     - { id: no, texto: No }
-    - { id: pequenos, texto: Sí, menores de 3 años }
-    - { id: menores, texto: Sí, de 3 a 17 años }
-    - { id: mayores, texto: Sí, mayores de edad }
+    - { id: pequenos, texto: "Sí, menores de 3 años" }
+    - { id: menores, texto: "Sí, de 3 a 17 años" }
+    - { id: mayores, texto: "Sí, mayores de edad" }
     - { id: ns, texto: Prefiero no responder }
 
 - id: cuidados
@@ -102,7 +102,7 @@
   opciones:
     - { id: publico, texto: En transporte público }
     - { id: coche, texto: En coche o moto }
-    - { id: otros, texto: A pie, en bici u otros }
+    - { id: otros, texto: "A pie, en bici u otros" }
     - { id: ns, texto: Prefiero no responder }
 
 # ─── Bloque ampliado ────────────────────────────────────────────────────────────

@@ -24,11 +24,5 @@ efectos:
     base: >-
       Arts. 1 y 16 de la proposición (Ley 40/2003 de familias numerosas y art. 48 del Estatuto de
       los Trabajadores).
-  - cuando: { cuidados: [si] }
-    el_si: favorece
-    justificacion: >-
-      Quien cuida de un familiar mayor podría reducir su jornada para atenderle.
-    base: >-
-      Art. 13 de la proposición (art. 37.6 del Estatuto de los Trabajadores).
 justificacion: >-
   Es la propuesta sobre familia de la oposición en la XIV.

@@ -87,7 +87,8 @@ export const esquemaPregunta = z
     enunciado: texto(5, 'enunciado'),
     subtitulo: z.string().optional(),
     tipo: z.enum(['opciones', 'provincia']),
-    opciones: z.array(z.object({ id: slug, texto: z.string().min(1) })).default([]),
+    // strict: una coma sin comillas en YAML parte el texto y crea una clave suelta.
+    opciones: z.array(z.object({ id: slug, texto: z.string().min(1) }).strict()).default([]),
     obligatoria: z.boolean().default(false),
   })
   .superRefine((p, ctx) => {
@@ -127,6 +128,11 @@ export const esquemaFicha = z.object({
   efectos: z.array(esquemaEfecto).min(1),
   justificacion: texto(40, 'justificación de la selección'),
   fuentes: z.array(z.string().url()).default([]),
+  /**
+   * Citas literales del texto oficial que sostienen el resumen y los efectos. Se le dan al jurado,
+   * que no navega y no conoce lo posterior a su fecha de corte.
+   */
+  extracto: z.string().trim().min(100).max(3500).optional(),
 });
 export type Ficha = z.infer<typeof esquemaFicha>;
 

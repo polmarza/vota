@@ -24,12 +24,6 @@ efectos:
       metro.
     base: >-
       Título I del Real Decreto-ley 14/2022 (ayudas al transporte público).
-  - cuando: { trabajo: [estudiante] }
-    el_si: favorece
-    justificacion: >-
-      Quien estudia con beca recibió una cuantía adicional de 100 euros al mes.
-    base: >-
-      Título II del Real Decreto-ley 14/2022 (becas y ayudas al estudio).
 justificacion: >-
   Es la medida de transporte público y becas de 2022, con efecto directo en usuarios y
   estudiantes.

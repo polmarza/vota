@@ -16,12 +16,36 @@ que_significa_si: >-
 tema: pensiones
 ambito: estatal
 efectos:
-  - cuando: { edad: [65-mas], trabajo: [asalariado, autonomo, funcionario] }
+  - cuando: { edad: [65-mas], trabajo: [asalariado, autonomo] }
     el_si: favorece
     justificacion: >-
-      Quien ha cumplido la edad de jubilación y sigue trabajando puede cobrar a la vez parte de su
-      pensión.
+      Quien ha cumplido la edad de jubilación, la retrasa al menos un año y sigue trabajando puede
+      cobrar a la vez parte de su pensión.
     base: >-
-      Art. 1, que modifica los arts. 210 y 214 de la Ley General de la Seguridad Social.
+      Art. 1, que modifica los arts. 210 y 214 de la Ley General de la Seguridad Social, y art. 3,
+      que modifica el art. 33 de la Ley de Clases Pasivas del Estado.
 justificacion: >-
   Afecta directamente a quien tiene edad de jubilarse y quiere seguir trabajando.
+extracto: >-
+  [Art. primero.Tres (art. 214.1 LGSS)] «entre dicha fecha y la del hecho causante de la pensión de
+  jubilación haya transcurrido al menos un año, la percepción de la pensión de jubilación, en su
+  modalidad contributiva, será compatible con la realización de cualquier trabajo por cuenta ajena,
+  a tiempo completo o a tiempo parcial, o por cuenta propia del pensionista.» [Art. 214.2 LGSS] «a)
+  Si se demora un año el acceso a la pensión de jubilación de acuerdo con lo establecido en el
+  apartado 1.a), el porcentaje será del 45 por ciento de la pensión.» «e) Si se demora cinco años o
+  más el acceso a la pensión de jubilación, el porcentaje será del 100 por ciento de la pensión.»
+  «El porcentaje que resulte de la escala anterior se incrementará 5 puntos porcentuales por cada 12
+  meses ininterrumpidos que permanezca en la situación de jubilación activa» [Art. 214.9 LGSS] «Las
+  previsiones de este artículo no serán aplicables en los supuestos de desempeño de un puesto de
+  trabajo o alto cargo en el sector público» [Art. primero.Uno (art. 210.2.a LGSS)] «A partir del
+  segundo año completo de demora, para el cálculo del porcentaje se podrán computar periodos
+  superiores a 6 meses e inferiores a un año, correspondiendo a dichos periodos un 2 por ciento
+  adicional.» [Art. primero.Cuatro (art. 215.1 LGSS)] «siempre que se produzca una reducción de su
+  jornada de trabajo comprendida entre un mínimo del 25 por ciento y un máximo del 75 por ciento,
+  podrán acceder a la jubilación parcial sin necesidad de la celebración simultánea de un contrato
+  de relevo.» [Art. tercero (art. 33.2 Ley de Clases Pasivas)] «el percibo de las pensiones de
+  jubilación o retiro, en el supuesto contemplado en la letra a) del artículo 28.2 será compatible
+  con el ejercicio de una actividad, por cuenta propia o ajena, que dé lugar a la inclusión de su
+  titular en cualquier régimen público de Seguridad Social, […] siempre y cuando el acceso a la
+  pensión haya tenido lugar al menos un año después de haber cumplido la edad que en cada caso
+  resulte de aplicación»

@@ -1,7 +1,7 @@
 votacion: XV-96-2
 url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=11/03/2025"
-texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-77-1.PDF
-iniciativa: "Proposición de ley del Senado (Grupo Popular)"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-152-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
 fecha: 2025-03-11
 titulo_oficial: >-
   Proposición de Ley del Grupo Parlamentario Popular en el Congreso, para la recuperación de la
@@ -10,9 +10,9 @@ titulo_oficial: >-
   presente ley, con cuentas de cotización y trabajadores asignados a dichas empresas.
 titulo: "Bonificación de cuotas en Ceuta y Melilla"
 resumen: >-
-  Recuperaba la bonificación del 50 % en las cuotas empresariales a la Seguridad Social para todas
-  las empresas y autónomos de Ceuta y Melilla, que en 2023 se había limitado a algunos sectores.
-  Se admitió a trámite.
+  Recuperaba la bonificación del 50 % en las cuotas empresariales a la Seguridad Social para los
+  empresarios de Ceuta y Melilla con trabajadores en los sectores que fijaba la propia ley; en
+  2023 ese sistema se había sustituido por otro más limitado. Se admitió a trámite.
 que_significa_si: >-
   Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
 tema: territorio
@@ -21,9 +21,30 @@ efectos:
   - cuando: { ccaa: [ceuta, melilla], trabajo: [autonomo] }
     el_si: favorece
     justificacion: >-
-      Un autónomo o empresario de Ceuta o Melilla volvería a tener una bonificación del 50 % en
-      las cuotas por sus empleados, sea cual sea su sector.
+      Un autónomo o empresario de Ceuta o Melilla con trabajadores en los sectores que fija la
+      propuesta volvería a tener una bonificación del 50 % en las cuotas por sus empleados.
     base: >-
-      Art. 1 de la proposición, que deroga el art. 31 del Real Decreto-ley 1/2023.
+      Art. 1 de la proposición, que limita la derogación de la disposición adicional vigésima
+      tercera de la Ley General de la Seguridad Social a su apartado 1, y disposición derogatoria
+      única, letra a), que deroga el art. 31 del Real Decreto-ley 1/2023.
 justificacion: >-
   Es la única iniciativa del universo que afecta específicamente a Ceuta y Melilla.
+extracto: >-
+  [Artículo 1 (letra i de la disposición derogatoria única del Real Decreto-ley 1/2023)] «i) La
+  disposición adicional vigésima tercera, apartado 1, del texto refundido de la Ley General de la
+  Seguridad Social.» [Disposición derogatoria única] «a) Queda derogado el artículo 31 del Real
+  Decreto-ley 1/2023.» [Disposición adicional] «Las bonificaciones establecidas en la disposición
+  adicional vigésimo tercera del TRLGSS serán aplicables, desde la entrada en vigor de esta norma, a
+  todos los contratos celebrados desde el 1 de septiembre de 2023» [Exposición de motivos, que
+  reproduce la disposición adicional vigésima tercera, apartado dos, de la LGSS] «Los empresarios,
+  excluida la Administración Pública y las entidades, organismos y empresas del sector público,
+  dedicados a actividades encuadradas en los Sectores de Agricultura, Pesca y Acuicultura;
+  Industria, excepto Energía y Agua; Comercio; Turismo; Hostelería y restos de servicios, […] en las
+  ciudades de Ceuta y Melilla, con cuentas de cotización asignadas a dichas empresas en las que
+  tengan trabajadores que presten actividad en las referidas ciudades, tendrán derecho a una
+  bonificación del 50 por ciento en sus aportaciones a las cuotas de la Seguridad Social por
+  contingencias comunes» [Exposición de motivos, sobre el art. 31 del Real Decreto-ley 1/2023]
+  «tendrán derecho a una bonificación en la cotización, en los términos establecidos en el artículo
+  10, de 262 euros/mes durante la vigencia de los contratos» [Exposición de motivos] «la
+  bonificación del 50 % a las cuotas patronales de la seguridad social para ser sustituida por un
+  nuevo sistema de cotización»

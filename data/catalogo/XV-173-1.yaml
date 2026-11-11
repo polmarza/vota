@@ -21,15 +21,37 @@ efectos:
     justificacion: >-
       Quien vive de alquiler perdería la contención de rentas de las zonas tensionadas y las prórrogas
       extraordinarias del contrato, y en caso de desahucio por vulnerabilidad la suspensión sería más corta.
-    base: Disposición derogatoria (zonas tensionadas e índices de la Ley 12/2023; art. 10.3 LAU), art. 10.2 LAU y art. 441.6 y 7 de la Ley de Enjuiciamiento Civil (art. 4 de la proposición).
+    base: Disposición derogatoria (arts. 18 y 19 de la Ley 12/2023 y art. 17.6 y 7 LAU), art. 6 (nueva redacción del art. 10 LAU, sin las prórrogas extraordinarias) y art. 4 (art. 441.6 y 7 de la Ley de Enjuiciamiento Civil) de la proposición.
   - cuando: { arrendador: [si] }
     el_si: favorece
     justificacion: >-
       Quien alquila una vivienda podría fijar la renta del nuevo contrato sin el límite de las zonas
       tensionadas y no tendría que aceptar prórrogas extraordinarias.
-    base: Disposición derogatoria y modificación del art. 10 de la Ley de Arrendamientos Urbanos.
+    base: Disposición derogatoria (art. 17.6 y 7 de la Ley de Arrendamientos Urbanos) y art. 6 de la proposición (nueva redacción del art. 10 de esa ley).
 justificacion: >-
   Es la principal propuesta de la oposición sobre vivienda en la XV y plantea revertir la ley de 2023;
   se votó la admisión a trámite en el Pleno.
 fuentes:
   - https://www.congreso.es/docu/tramit/LegXV/AT/ATCD_15_PL_20260421.pdf
+extracto: >-
+  [Art. 1, apartado Tres (art. 11.4 de la Ley de Suelo)] «El régimen de silencio administrativo será
+  negativo en los supuestos descritos en las letras a) y b); y positivo en el supuesto recogido en
+  la letra c) sobre las obras de edificación de nueva construcción» [Art. 1 (art. 55.2 de la Ley de
+  Suelo)] «La nulidad por vicios formales o de procedimiento de los instrumentos de ordenación
+  territorial y urbanística solo podrá declararse cuando concurra alguno de los siguientes
+  supuestos» [Art. 4, apartado Uno (art. 250.1.4.º LEC)] «Podrán pedir la inmediata recuperación de
+  la plena posesión de una vivienda o parte de ella, siempre que se hayan visto privados de ella sin
+  su consentimiento […] las personas físicas o jurídicas que sean propietarias o poseedoras
+  legítimas por otro título.» [Art. 4, apartado Dos (art. 441.6 LEC)] «si suspende el proceso para
+  que se adopten las medidas propuestas por las Administraciones públicas, durante un plazo máximo
+  de suspensión de un mes si el demandante es una persona física o de tres meses si se trata de una
+  persona jurídica.» [Art. 6 (art. 10 LAU)] «el contrato se prorrogará obligatoriamente por plazos
+  anuales hasta un máximo de tres años más […] 2. Al contrato prorrogado, le seguirá siendo de
+  aplicación el régimen legal y convencional al que estuviera sometido.» [Exposición de motivos] «la
+  prórroga extraordinaria que se impone al arrendador en el apartado 2.º de dicho precepto, que se
+  elimina. […] se propone la derogación de las medidas intervencionistas en el mercado de alquiler
+  como las zonas de mercado tensionado, los índices de precios de los alquileres, el control de los
+  precios» [Disposición derogatoria única.1] «los artículos 18 y 19 […] y las Disposiciones
+  transitorias segunda y tercera de la Ley 12/2023, de 24 de mayo, por el derecho a la vivienda. […]
+  b) Los apartados 6 y 7 del artículo 17, la disposición adicional undécima y la disposición
+  transitoria séptima de la Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos.»

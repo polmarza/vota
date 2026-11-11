@@ -17,13 +17,6 @@ que_significa_si: >-
 tema: vivienda
 ambito: estatal
 efectos:
-  - cuando: { vivienda: [alquiler] }
-    el_si: favorece
-    justificacion: >-
-      Quien vive de alquiler, también en una habitación o con contrato de temporada, tendría las
-      garantías de duración y de renta del alquiler de vivienda habitual.
-    base: >-
-      Modificación de los arts. 2, 3.2 y 4 y nuevo art. 9 bis de la Ley de Arrendamientos Urbanos.
   - cuando: { arrendador: [si] }
     el_si: perjudica
     justificacion: >-
@@ -34,3 +27,21 @@ efectos:
 justificacion: >-
   Es la propuesta de la XV sobre el alquiler de temporada y de habitaciones, una vía que la ley de
   vivienda dejaba abierta.
+extracto: >-
+  [Exposición de motivos] «En el caso de los territorios con la aplicación de las zonas
+  tensionadas, el arrendador puede elegir entre realizar contratos largos a precio regulado o
+  realizar contratos cortos sin ningún tope de precios, sin que ello tenga ninguna repercusión.»
+  [Art. 2.1 LAU] «Se considera arrendamiento de vivienda aquel arrendamiento que recae sobre una
+  edificación habitable cuyo destino primordial sea satisfacer la necesidad permanente de vivienda
+  habitual del arrendatario, incluido el arrendamiento de una habitación o estancia de la
+  vivienda.» [Art. 2.3 LAU] «Asimismo, tendrán esta consideración los arrendamientos de fincas
+  urbanas destinados a la vivienda por motivos temporales, tales como actividades profesionales,
+  estudios, atención o asistencia médica u otros análogos; así como aquellos celebrados por
+  temporada […]. En caso de no quedar debidamente acreditadas, se presumirá que dicho contrato es
+  de vivienda habitual.» [Art. 9 bis.1 LAU] «[…] la duración del arrendamiento será libremente
+  pactada por las partes, no pudiendo exceder de seis meses, en atención a las causas que lo
+  motiven.» [Art. 9 bis.2 LAU] «No obstante lo anterior, siempre que su duración exceda de seis
+  meses o se encadenen más de dos contratos consecutivos, el primero se entenderá celebrado como
+  un contrato de arrendamiento de vivienda habitual, y le serán de aplicación todos los preceptos
+  previstos para dichos contratos, incluido el plazo mínimo y las prórrogas previstas en los
+  artículos 9 y 10.»
