@@ -53,10 +53,11 @@ Compartir (Pol, 2026-11-11):
 
 | Requisito | Se implementa en | Se valida con |
 |-----------|------------------|---------------|
-| S-01 | `src/pages/votaciones.astro`: todas las fichas con el voto de cada partido, filtros por tema y legislatura | `tests/e2e/explorador.spec.ts` |
+| S-01 | `src/pages/votaciones.astro`, `src/lib/explorador.ts` y `src/scripts/explorador.ts`: todas las fichas con el voto de cada partido en orden ideológico (`posicion_ideologica` en `data/partidos/partidos.yaml`), filtros por texto, tema y legislatura | `tests/e2e/explorador.spec.ts` |
 | S-01 | Aspecto del explorador a 375 px y 1280 px | revisión humana: `/votaciones` en la vista previa a 375 px y 1280 px; se lee sin desplazar en horizontal y el voto de cada partido se distingue sin depender del color |
-| S-02 | `src/lib/compartir/`, botón en `src/scripts/resultado.ts`: imagen 1080×1350 con los dos podios, Web Share API con archivo y descarga como alternativa | `tests/e2e/compartir.spec.ts` |
-| S-02 | La imagen no lleva respuestas salvo que el visitante marque su perfil (y nunca las sensibles), y no sale nada del navegador al generarla | `tests/e2e/compartir.spec.ts` |
+| S-02 | `src/lib/compartir/` (`tarjeta.ts`, datos; `dibujo.ts`, Canvas), botón en `src/scripts/resultado.ts`: imagen 1080×1350 con los dos podios, Web Share API con archivo y descarga como alternativa | `tests/e2e/compartir.spec.ts` |
+| S-02 | La imagen no lleva respuestas salvo que el visitante marque su perfil (y nunca las sensibles), y no sale nada del navegador al generarla | `tests/unit/compartir.test.ts` |
+| S-02 | Lo mismo, en el navegador: casilla desmarcada por defecto, línea de perfil sin datos sensibles y ninguna petición de red al generar | `tests/e2e/compartir.spec.ts` |
 | S-02 | Aspecto de la imagen | revisión humana: la imagen descargada en móvil y en escritorio; marca, dos podios con color y porcentaje, aviso y dirección legibles en una miniatura de chat |
 
 ## Fuera de esta feature

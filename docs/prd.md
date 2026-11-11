@@ -105,7 +105,8 @@ tres años. Vota, pero cada vez duda más y no se fía de lo que dicen en campa�
   resumen en lenguaje claro, perfiles a los que afecta, si les favorece o les perjudica, y una
   justificación de esa etiqueta. Primera versión: unas 100 votaciones de las legislaturas XIV y XV (ampliado de 40–60 el
   11-11-2026: con menos, a cada perfil le afectan pocas y una sola votación mueve demasiado el
-  resultado).
+  resultado). Se escribieron unas 90; tras el jurado y la regla de un efecto por medida quedaron
+  63, todas con su veredicto aprobado.
   *Negativo:* dada una votación sin justificación o sin enlace oficial, cuando se genera la web,
   entonces la generación falla y la votación no se publica.
 

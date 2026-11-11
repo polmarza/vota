@@ -1,0 +1,385 @@
+---
+// Explorador del catálogo (S-01): todas las votaciones con el voto de cada partido, para revisar qué
+// se eligió sin hacer el test. Todo se pinta en el build; src/scripts/explorador.ts solo filtra y
+// recorta el resumen. Sin JavaScript se ve la lista entera, con cada votación plegable (<details>).
+import Base from '../layouts/Base.astro';
+import { votacionesExplorador, nombreTema } from '../lib/explorador.ts';
+
+const votaciones = votacionesExplorador();
+const temas = [...new Set(votaciones.map((v) => v.tema))].sort((a, b) => nombreTema(a).localeCompare(nombreTema(b), 'es'));
+const xiv = votaciones.filter((v) => v.legislatura === 'XIV').length;
+---
+
+<Base titulo="Las votaciones · Vota con Criterio" descripcion="Todas las votaciones del Congreso que usa el test, con qué significaba votar sí, a quién afectaba y qué votó cada partido.">
+  <div class="interior">
+    <div class="wrap explorador" data-testid="explorador">
+      <p class="t-label screen-label">El catálogo</p>
+      <h1>Las votaciones</h1>
+      <p class="entradilla">
+        Las {votaciones.length} votaciones del Pleno del Congreso que usa el test: {xiv} de la XIV legislatura (2019-2023) y{' '}
+        {votaciones.length - xiv} de la XV (2023-2026). Para cada una, qué significaba votar «sí», a quién afectaba y qué votó
+        cada partido, aunque no se presente el 29 de noviembre.
+      </p>
+      <p class="criterio" data-testid="criterio-orden">
+        Los partidos van de izquierda a derecha según la Chapel Hill Expert Survey 2024, una encuesta a expertos en
+        política europea (o la de 2019, para los que ya no salen en la de 2024); los que no aparecen en ninguna van junto
+        al partido de su grupo parlamentario o, si no lo hay, junto al partido con el que más coincidió su voto. <a href="/como-funciona#voto-partido">Cómo se calcula el voto de cada partido</a>.
+      </p>
+
+      <form class="filtros" data-filtros hidden role="search" aria-label="Filtrar las votaciones">
+        <div class="field filtros__texto">
+          <label for="filtro-texto">Buscar</label>
+          <input id="filtro-texto" type="search" autocomplete="off" placeholder="Alquiler, pensiones, autónomos…" data-testid="filtro-texto" />
+        </div>
+        <div class="field">
+          <label for="filtro-tema">Tema</label>
+          <select id="filtro-tema" data-testid="filtro-tema">
+            <option value="">Todos</option>
+            {temas.map((t) => <option value={t}>{nombreTema(t)}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="filtro-legislatura">Legislatura</label>
+          <select id="filtro-legislatura" data-testid="filtro-legislatura">
+            <option value="">Las dos</option>
+            <option value="XV">XV (2023-2026)</option>
+            <option value="XIV">XIV (2019-2023)</option>
+          </select>
+        </div>
+      </form>
+      <h2 class="solo-lector">Lista de votaciones</h2>
+      <p class="recuento" aria-live="polite" data-testid="recuento" data-recuento>{votaciones.length} votaciones</p>
+
+      <ol class="lista" data-lista>
+        {
+          votaciones.map((v) => (
+            <li data-testid={`votacion-${v.id}`} data-votacion={v.id} data-tema={v.tema} data-legislatura={v.legislatura}>
+              <details class="vot">
+                <summary class="vot__cabecera" data-testid="votacion-cabecera">
+                  <span class="vot__meta">
+                    <time datetime={v.fecha}>{v.fechaTexto}</time> · {v.legislatura} legislatura · {v.temaNombre}
+                  </span>
+                  <span class="vot__titulo" data-buscable>{v.titulo}</span>
+                  <span class="vot__icono" aria-hidden="true"></span>
+                </summary>
+                <div class="vot__cuerpo">
+                  <div class="vot__texto">
+                    <p class="vot__iniciativa">{v.iniciativa} · {v.ambito}</p>
+                    <div class="resumen">
+                      <p class="resumen__texto" id={`resumen-${v.id}`} data-resumen data-buscable data-testid="votacion-resumen">{v.resumen}</p>
+                      <button class="resumen__mas" type="button" aria-expanded="false" aria-controls={`resumen-${v.id}`} data-ver-mas hidden data-testid="ver-mas">Ver más</button>
+                    </div>
+                    <h3>Qué significaba votar «sí»</h3>
+                    <p>{v.queSignificaSi}</p>
+                    <h3>A quién afecta y cómo</h3>
+                    <ul class="efectos">
+                      {v.efectos.map((e) => (
+                        <li>
+                          <p class="efecto__quien">{e.condicion}</p>
+                          <p><b>{e.sentido}:</b> {e.justificacion}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="vot__votos">
+                    <h3>Qué votó cada partido</h3>
+                    <ul class="tally" style={`--filas:${Math.ceil(v.votos.length / 2)}`} aria-label="Qué votó cada partido, de izquierda a derecha" data-testid="votos-partidos">
+                      {v.votos.map((p) => (
+                        <li style={p.estilo} data-testid={`voto-${p.partido}`} data-partido={p.partido}>
+                          <span class="p"><abbr title={p.nombre}>{p.siglas}</abbr></span>
+                          <span class:list={['v', { 'v--si': p.si }]}>{p.pildora}</span>
+                          {p.desglose && <span class="desglose">{p.desglose}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                    <div class="jurado" data-testid="veredicto-jurado" data-estado={v.jurado.estado}>
+                      <p class="jurado__titulo">{v.jurado.texto}</p>
+                      <p class="jurado__detalle">{v.jurado.detalle.join(' · ')}</p>
+                    </div>
+                    <p class="enlaces">
+                      <a class="link" href={v.url} data-testid="enlace-congreso">La votación en el Congreso</a>
+                      <a class="link" href={v.texto} data-testid="enlace-texto">El texto oficial</a>
+                    </p>
+                  </div>
+                </div>
+              </details>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="vacio" data-vacio hidden data-testid="sin-resultados">
+        <p>Ninguna votación coincide con esa búsqueda.</p>
+        <button class="btn btn--secondary" type="button" data-limpiar>Quitar los filtros</button>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import { iniciarExplorador } from '../scripts/explorador.ts';
+  iniciarExplorador();
+</script>
+
+<style>
+  .explorador > :is(.screen-label, h1, .entradilla, .criterio) {
+    max-width: 68ch;
+  }
+
+  h1 {
+    margin-bottom: var(--s-5);
+  }
+
+  .entradilla {
+    font-size: var(--t-lead);
+    line-height: 1.5;
+    margin-bottom: var(--s-4);
+  }
+
+  .criterio {
+    color: var(--muted);
+    font-size: var(--t-body);
+    line-height: 1.6;
+  }
+
+  a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgb(var(--tinta-rgb) / 0.35);
+  }
+
+  a:not(.btn):hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* ---------------------------------------------------------------- filtros */
+  .filtros {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-4);
+    margin-top: var(--s-7);
+  }
+
+  .filtros[hidden] {
+    display: none;
+  }
+
+  /* El texto de los controles, a 16px como mínimo (evita el zoom de iOS). */
+  .filtros :is(input, select) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .filtros {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+
+  .recuento {
+    margin: var(--s-5) 0 var(--s-3);
+    font: 500 14px/1.4 var(--font-mono);
+    color: var(--muted);
+  }
+
+  /* ---------------------------------------------------------------- lista y acordeón */
+  .lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .lista > li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .lista > li[hidden] {
+    display: none;
+  }
+
+  .vot__cabecera {
+    list-style: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-2) var(--s-4);
+    padding: var(--s-5) 0;
+    cursor: pointer;
+  }
+
+  .vot__cabecera::-webkit-details-marker {
+    display: none;
+  }
+
+  .vot__cabecera:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  .vot__meta {
+    grid-column: 1;
+    font: 500 13px/1.4 var(--font-mono);
+    color: var(--muted);
+  }
+
+  .vot__titulo {
+    grid-column: 1;
+    font: var(--display-weight) 22px/1.2 var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  /* Más y menos, dibujados: el estado lo dice también el lector de pantalla (summary de <details>). */
+  .vot__icono {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgb(var(--tinta-rgb) / 0.25);
+    border-radius: 50%;
+  }
+
+  .vot__icono::before,
+  .vot__icono::after {
+    content: '';
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 12px;
+    height: 1.5px;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+  }
+
+  .vot__icono::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .vot[open] .vot__icono::after {
+    display: none;
+  }
+
+  .vot__cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-6);
+    padding-bottom: var(--s-7);
+  }
+
+  @media (min-width: 1024px) {
+    .vot__cuerpo {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: var(--s-7);
+    }
+
+    .vot__titulo {
+      font-size: 26px;
+    }
+  }
+
+  .vot__cuerpo h3 {
+    margin: var(--s-5) 0 var(--s-2);
+    font: 500 var(--t-body) / 1.4 var(--font-text);
+  }
+
+  .vot__votos h3 {
+    margin-top: 0;
+  }
+
+  .vot__cuerpo p {
+    margin: 0;
+    font-size: var(--t-body);
+    line-height: 1.6;
+  }
+
+  .vot__iniciativa {
+    color: var(--muted);
+    margin-bottom: var(--s-3) !important;
+  }
+
+  /* El resumen se recorta a tres líneas solo cuando hay JavaScript para el "Ver más". */
+  .js-resumen .resumen__texto:not(.is-entero) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .resumen__mas {
+    margin-top: var(--s-2);
+    padding: var(--s-2) 0;
+    min-height: 44px;
+    background: none;
+    border: 0;
+    font: 500 var(--t-body) / 1.4 var(--font-text);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .resumen__mas[hidden] {
+    display: none;
+  }
+
+  .efectos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--s-4);
+  }
+
+  .efecto__quien {
+    color: var(--muted);
+  }
+
+  .efectos b {
+    font-weight: 500;
+  }
+
+  /* En dos columnas, el orden de izquierda a derecha se lee hacia abajo: primero la columna izquierda. */
+  @media (min-width: 640px) {
+    .vot__votos .tally {
+      grid-template-rows: repeat(var(--filas), auto);
+      grid-auto-flow: column;
+    }
+  }
+
+  .tally abbr {
+    text-decoration: none;
+  }
+
+  .jurado {
+    margin-top: var(--s-5);
+    padding: var(--s-4) var(--s-5);
+    background: var(--surface);
+    border-radius: var(--r-sm);
+  }
+
+  .jurado__titulo {
+    font-weight: 500;
+  }
+
+  .jurado__detalle {
+    font-size: 14px !important;
+    color: var(--muted);
+  }
+
+  .enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-6);
+    margin-top: var(--s-4) !important;
+  }
+
+  .vacio {
+    padding: var(--s-7) 0;
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+  }
+
+  .vacio[hidden] {
+    display: none;
+  }
+</style>

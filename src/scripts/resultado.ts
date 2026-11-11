@@ -15,6 +15,8 @@ import {
   type VotoPartido,
   type VotosPorVotacion,
 } from '../lib/afinidad/calculo.ts';
+import { aPng, dibujarTarjeta } from '../lib/compartir/dibujo.ts';
+import { NOMBRE_ARCHIVO, TEXTO_COMPARTIR, datosTarjeta, textoAlternativo, type TextosPerfil } from '../lib/compartir/tarjeta.ts';
 
 export interface FichaWeb extends FichaCalculo {
   titulo: string;
@@ -23,6 +25,8 @@ export interface FichaWeb extends FichaCalculo {
   que_significa_si: string;
   /** Tipo de iniciativa y quién la propuso: "Proyecto de ley del Gobierno". */
   iniciativa: string;
+  /** Tema de la ficha (slug): sale en la imagen para compartir. */
+  tema: string;
 }
 
 export interface PartidoWeb {
@@ -92,7 +96,7 @@ export function pintarResultado(
   contenedor: HTMLElement,
   datos: DatosResultado,
   respuestas: Respuestas,
-  opciones: { provisional: boolean; pendientes: Set<string>; accion?: HTMLElement | null },
+  opciones: { provisional: boolean; pendientes: Set<string>; accion?: HTMLElement | null; textosPerfil?: TextosPerfil },
 ) {
   const partidos = new Map(datos.partidos.map((p) => [p.id, p]));
   const enProvincia = datos.porProvincia[respuestas.provincia ?? ''] ?? [];
@@ -147,6 +151,14 @@ export function pintarResultado(
       opciones.accion ? el('div', { clase: 'btn-row' }, opciones.accion) : null,
     ),
   );
+  // Compartir (S-02): solo en el resultado final y si hay podios que enseñar.
+  if (!opciones.provisional && r.suficiente) {
+    fondo.append(
+      bloqueCompartir((incluirPerfil) =>
+        datosTarjeta({ resultado: r, fichas: datos.fichas, partidos: datos.partidos, respuestas, incluirPerfil, textosPerfil: opciones.textosPerfil, sinColor: SIN_COLOR }),
+      ),
+    );
+  }
   hijos.push(fondo);
 
   // Votaciones que explican el resultado (M-04), de la más antigua a la más reciente.
@@ -200,4 +212,85 @@ export function pintarResultado(
   }
 
   contenedor.replaceChildren(...hijos);
+}
+
+/**
+ * El bloque "Compartir" del resultado final (S-02): la vista previa de la imagen, la casilla del
+ * perfil (desmarcada por defecto) y el botón. La imagen se genera en el navegador con Canvas y nada
+ * se envía a ningún servidor (M-08): se comparte con el menú del sistema o se descarga.
+ */
+function bloqueCompartir(tarjeta: (incluirPerfil: boolean) => ReturnType<typeof datosTarjeta>) {
+  const casilla = el('input', { clase: 'm-check', atributos: { type: 'checkbox', id: 'compartir-perfil', 'data-testid': 'compartir-perfil', 'aria-describedby': 'compartir-perfil-ayuda' } }) as HTMLInputElement;
+  const vista = el('img', { clase: 'compartir__vista', atributos: { 'data-testid': 'compartir-vista-previa', width: '216', height: '270', alt: '' } }) as HTMLImageElement;
+  const boton = el('button', { clase: 'btn btn--primary', texto: 'Compartir', atributos: { type: 'button', 'data-testid': 'compartir-boton', 'aria-disabled': 'true' } }) as HTMLButtonElement;
+  const estado = el('p', { clase: 'compartir__estado', atributos: { 'aria-live': 'polite', 'data-testid': 'compartir-estado' } });
+
+  // El archivo se prepara antes de pulsar: Safari solo abre el menú de compartir si navigator.share
+  // se llama justo en el clic, sin esperas por medio.
+  let archivo: File | null = null;
+  let url = '';
+  let version = 0;
+  async function preparar() {
+    const v = ++version;
+    archivo = null;
+    boton.setAttribute('aria-disabled', 'true');
+    const d = tarjeta(casilla.checked);
+    const png = await aPng(await dibujarTarjeta(d));
+    if (v !== version) return;
+    archivo = new File([png], NOMBRE_ARCHIVO, { type: 'image/png' });
+    if (url) URL.revokeObjectURL(url);
+    url = URL.createObjectURL(png);
+    vista.src = url;
+    vista.alt = textoAlternativo(d);
+    vista.dataset.perfil = String(d.perfil !== null);
+    boton.setAttribute('aria-disabled', 'false');
+  }
+
+  function descargar(f: File) {
+    const a = el('a', { atributos: { href: url, download: f.name } });
+    document.body.append(a);
+    a.click();
+    a.remove();
+    estado.textContent = 'Imagen descargada.';
+  }
+
+  boton.addEventListener('click', async () => {
+    const f = archivo;
+    if (!f) return;
+    estado.textContent = '';
+    if (typeof navigator.canShare === 'function' && navigator.canShare({ files: [f] })) {
+      try {
+        await navigator.share({ files: [f], text: TEXTO_COMPARTIR });
+      } catch (e) {
+        // Cerrar el menú sin compartir no es un error; si el sistema no deja compartir, se descarga.
+        if (!(e instanceof DOMException && e.name === 'AbortError')) descargar(f);
+      }
+    } else {
+      descargar(f);
+    }
+  });
+  const intentar = () => preparar().catch(() => (estado.textContent = 'No se ha podido generar la imagen en este navegador.'));
+  casilla.addEventListener('change', () => void intentar());
+  void intentar();
+
+  return el(
+    'section',
+    { clase: 'compartir', atributos: { 'data-testid': 'compartir', 'aria-labelledby': 'compartir-titulo' } },
+    vista,
+    el(
+      'div',
+      { clase: 'compartir__texto' },
+      el('h3', { texto: 'Compartir el resultado', atributos: { id: 'compartir-titulo' } }),
+      el('p', { texto: 'La imagen se crea en tu dispositivo con tus podios. Por defecto no lleva ninguna de tus respuestas.' }),
+      el(
+        'div',
+        { clase: 'compartir__perfil' },
+        casilla,
+        el('label', { texto: 'Incluir mi perfil en la imagen', atributos: { for: 'compartir-perfil' } }),
+      ),
+      el('p', { clase: 'compartir__ayuda', texto: 'Añade una línea con tu vivienda, situación laboral, edad e hijos. Nunca tus ingresos, tu patrimonio, herencias, discapacidad ni tu provincia.', atributos: { id: 'compartir-perfil-ayuda' } }),
+      el('div', { clase: 'btn-row' }, boton),
+      estado,
+    ),
+  );
 }

@@ -66,8 +66,8 @@ export function datosResultado(): DatosResultado {
   const catalogo = cargarCatalogo();
   const candidaturas = cargarCandidaturas();
   return {
-    fichas: catalogo.map(({ votacion, ambito, efectos, titulo, fecha, url, que_significa_si, iniciativa }) => ({
-      votacion, ambito, titulo, fecha, url, que_significa_si, iniciativa,
+    fichas: catalogo.map(({ votacion, ambito, efectos, titulo, fecha, url, que_significa_si, iniciativa, tema }) => ({
+      votacion, ambito, titulo, fecha, url, que_significa_si, iniciativa, tema,
       efectos: efectos.map(({ cuando, el_si, justificacion }) => ({ cuando, el_si, justificacion })),
     })),
     votos: cargarVotos(catalogo.map((f) => f.votacion)),

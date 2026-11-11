@@ -17,8 +17,14 @@ const candidaturas = cargarCandidaturas();
 
 // Resumen de la revisión del jurado, si ya se ha hecho (data/jurado/catalogo.json).
 const rutaJurado = join(process.cwd(), 'data', 'jurado', 'catalogo.json');
-const veredictos = existsSync(rutaJurado) ? (JSON.parse(readFileSync(rutaJurado, 'utf8')) as { resultado: string }[]) : [];
+const registros = existsSync(rutaJurado) ? (JSON.parse(readFileSync(rutaJurado, 'utf8')) as { id: string; resultado: string; decision?: string }[]) : [];
+// Solo cuentan las fichas que están en el catálogo (el archivo guarda también las apartadas).
+const enCatalogo = new Set(catalogo.map((f) => f.votacion));
+const veredictos = registros.filter((r) => enCatalogo.has(r.id.split(':')[0]!));
 const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length;
+// La revisión del conjunto se publica tal cual, sea cual sea.
+const conjunto = registros.find((r) => r.id === 'catalogo:conjunto');
+const desequilibrado = conjunto?.decision === 'desequilibrado' || conjunto?.resultado === 'sin-consenso';
 ---
 
 <Base titulo="Cómo funciona · Vota con Criterio" descripcion="Cómo se eligen y etiquetan las votaciones, cómo se calcula el resultado, quién lo revisa y qué limitaciones tiene.">
@@ -62,14 +68,14 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
           <strong>Cada efecto cuenta una vez.</strong> Si varias votaciones dan el mismo efecto a la misma persona por la
           misma medida (la subida de las pensiones de un año, que aparece en un decreto propio y en unos presupuestos, o la
           prórroga de una misma suspensión de desahucios), solo cuenta en la votación cuyo objeto principal es esa medida o,
-          si no hay ninguna específica, en la primera que la estableció. Se decide por el contenido y la fecha, nunca por
-          el voto.
+          si no hay ninguna específica, en la que la puso en marcha: si el Congreso tumbó un decreto y aprobó después otro
+          con la misma medida, cuenta el segundo. Se decide por el contenido y la fecha, nunca por lo que votó cada partido.
         </li>
       </ul>
       </div>
     </section>
 
-    <section class="bloque">
+    <section class="bloque" id="voto-partido">
       <h2>El voto de cada partido</h2>
       <div class="bloque__texto">
       <p>
@@ -81,6 +87,13 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
       <p>
         Los diputados elegidos en una coalición (Sumar, Unidas Podemos…) cuentan para su partido concreto. Los de partidos
         que no se presentan el 29 de noviembre, los independientes y los casos que no están claros no cuentan para nadie.
+      </p>
+      <p data-testid="orden-partidos">
+        En <a href="/votaciones">la lista de votaciones</a> los partidos van de izquierda a derecha según la posición
+        izquierda-derecha que les da la Chapel Hill Expert Survey 2024, una encuesta a expertos en partidos europeos, o
+        la de 2019 para los que ya no aparecen en la de 2024 (Ciudadanos); los que no están en ninguna se colocan junto
+        al partido de su grupo parlamentario o, si votaban desde el Grupo Mixto, junto al partido con el que más coincidió
+        su voto. El orden no cuenta para el resultado.
       </p>
       </div>
     </section>
@@ -116,6 +129,24 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
             Revisión del catálogo: {cuenta('aprobado')} elementos aprobados, {cuenta('decidido')} corregidos según el jurado y{' '}
             {cuenta('sin-consenso')} sin consenso. Todas las respuestas, con sus razones, están en{' '}
             <a href={`${REPO}/tree/main/data/jurado`}>data/jurado</a>.
+          </p>
+        )
+      }
+      {
+        conjunto && (
+          <p data-testid="veredicto-conjunto">
+            <strong>Revisión del conjunto.</strong>{' '}
+            {desequilibrado
+              ? <>El jurado también juzga si la selección entera sirve para comparar partidos en igualdad de condiciones, y
+                  su veredicto es que <strong>no está equilibrada</strong>. Sus razones: unas dos de cada tres votaciones son
+                  iniciativas del Gobierno; algunas medidas parecidas se repiten en años distintos, como las subidas de las
+                  pensiones; y faltan leyes con efecto directo que el test no puede asignar a nadie, como el ingreso mínimo
+                  vital o el teletrabajo. Se corrigió lo que tenía arreglo (medidas contadas dos veces, iniciativas de la
+                  oposición que faltaban, preguntas sobre quien contrata, patrimonio y herencias); lo demás es de cómo se
+                  legisla y de lo que el test puede saber de ti, y lo publicamos tal cual para que lo tengas en cuenta al
+                  leer tu resultado.</>
+              : <>El jurado también juzga si la selección entera sirve para comparar partidos en igualdad de condiciones, y
+                  su veredicto es que está equilibrada.</>}
           </p>
         )
       }
@@ -164,7 +195,8 @@ const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length
     </section>
 
     <p class="firma">
-      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a>, firmado por Pol Marzà. Catálogo completo en{' '}
+      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a>, firmado por Pol Marzà. Todas las votaciones, con el voto de
+      cada partido, en <a href="/votaciones">Las votaciones</a>; los datos, en{' '}
       <a href={`${REPO}/tree/main/data/catalogo`} data-testid="enlace-catalogo">data/catalogo</a>.
     </p>
     <div class="btn-row">

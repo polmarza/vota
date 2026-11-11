@@ -157,7 +157,15 @@ test.describe('portada · resultado de ejemplo', () => {
     await expect(ejemplo.locator('h2')).toHaveText(/^Así le sale a: /);
     await expect(ejemplo).toContainText('Un ejemplo real');
     await expect(ejemplo.getByRole('link', { name: 'Haz el test para ver el tuyo' })).toHaveAttribute('href', '/test');
-    await expect(ejemplo.locator('.podium li')).toHaveCount(6);
+    // Dos podios con entre 1 y 3 partidos cada uno: un podio no repite partido, así que en una
+    // provincia con pocos partidos (Teruel) el segundo puede quedarse con menos de 3.
+    const podios = ejemplo.locator('.podium');
+    await expect(podios).toHaveCount(2);
+    for (const podio of await podios.all()) {
+      const filas = await podio.locator('li').count();
+      expect(filas).toBeGreaterThanOrEqual(1);
+      expect(filas).toBeLessThanOrEqual(3);
+    }
     // La votación de ejemplo es del mismo perfil y enlaza a su página del Congreso.
     const indice = await ejemplo.getAttribute('data-ejemplo');
     const votacion = page.locator(`#votaciones [data-ejemplo="${indice}"]`);

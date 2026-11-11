@@ -34,6 +34,18 @@ const esquemaPartido = z.object({
   siglas: z.string(),
   /** Color oficial; se fija y se comprueba en la feature de la web. */
   color: z.string().regex(/^#[0-9A-Fa-f]{6}$/).optional(),
+  /**
+   * Posición de izquierda (0) a derecha (10): `lrgen` de la Chapel Hill Expert Survey 2024 (o 2019 si
+   * no está en la de 2024). Un partido que no está en ninguna lleva `junto_a` (el partido de la CHES con el que se coloca) y su mismo valor.
+   * Ordena los partidos en /votaciones.
+   */
+  posicion_ideologica: z
+    .object({
+      valor: z.number().min(0).max(10),
+      junto_a: z.string().regex(/^[a-z0-9-]+$/).optional(),
+      fuente: z.string().min(10, 'La posición tiene que citar su fuente'),
+    })
+    .optional(),
   herencia: z.object({ XIV: z.array(esquemaRegla).optional(), XV: z.array(esquemaRegla).optional() }),
 });
 
@@ -78,6 +90,15 @@ export function validarPartidos(datos: Partidos, diputados: Record<Legislatura, 
   for (const p of datos.partidos) {
     if (ids.has(p.id)) errores.push(`Partido repetido: ${p.id}`);
     ids.add(p.id);
+  }
+  const porId = new Map(datos.partidos.map((p) => [p.id, p]));
+  for (const p of datos.partidos) {
+    const junto = p.posicion_ideologica?.junto_a;
+    if (!junto) continue;
+    const socio = porId.get(junto)?.posicion_ideologica;
+    if (!socio) errores.push(`${p.id}: posicion_ideologica.junto_a apunta a "${junto}", que no tiene posición`);
+    else if (socio.junto_a) errores.push(`${p.id}: posicion_ideologica.junto_a apunta a "${junto}", que tampoco está en la CHES`);
+    else if (socio.valor !== p.posicion_ideologica!.valor) errores.push(`${p.id}: su posición tiene que ser la de "${junto}" (${socio.valor})`);
   }
   for (const leg of ['XIV', 'XV'] as const) {
     const nombres = new Set(diputados[leg].map((d) => d.NOMBRE));
@@ -197,4 +218,17 @@ export function formacionesSinCubrir(datos: Partidos, diputados: Record<Legislat
     for (const [formacion, n] of cuenta) salida.push({ legislatura: leg, formacion, diputados: n });
   }
   return salida;
+}
+
+/**
+ * Partidos de izquierda a derecha (posicion_ideologica). Los que van "junto a" otro se colocan justo
+ * después de él, en el orden del archivo; los que no tienen posición, al final.
+ */
+export function ordenIdeologico<T extends Pick<Partido, 'id' | 'posicion_ideologica'>>(partidos: T[]): T[] {
+  const indice = new Map(partidos.map((p, i) => [p.id, i]));
+  const clave = (p: T) => [p.posicion_ideologica?.valor ?? Infinity, p.posicion_ideologica?.junto_a ? 1 : 0, indice.get(p.id)!] as const;
+  return [...partidos].sort((a, b) => {
+    const [x, y] = [clave(a), clave(b)];
+    return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
+  });
 }

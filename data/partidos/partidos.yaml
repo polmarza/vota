@@ -10,6 +10,16 @@
 # consultada el 11-11-2026: https://es.wikipedia.org/wiki/Plantilla:Color_pol%C3%ADtico
 # La CUP no tiene entrada propia y no se presenta al Congreso el 29-N: queda sin color.
 #
+# Posición ideológica (orden de izquierda a derecha en /votaciones): `lrgen` de la Chapel Hill
+# Expert Survey 2024 (0 = extrema izquierda, 10 = extrema derecha), redondeada a dos decimales,
+# del archivo CHES_2024_final_v2.csv publicado en https://www.chesdata.eu/ches-europe (descargado
+# el 11-11-2026). Decisión de Pol (11-11-2026): un partido que no está en la CHES 2024 pero sí en
+# la CHES 2019 (CHES2019V3.csv, misma página) lleva su `lrgen` de 2019 (solo Cs). Los que no están
+# en ninguna de las dos llevan `junto_a`: van justo después del partido de la CHES de su grupo
+# parlamentario (Sumar) o, si votaban desde el Grupo Mixto, del partido de la CHES con el que más
+# coincidió su voto en data/votos; su `valor` es el de ese partido. Más País sí está en la CHES 2019,
+# pero no es Más Madrid (sus votos no se atribuyen a Más Madrid, ver diputadosSinPartido).
+#
 # Estado: BORRADOR para el jurado (M-10). Las asignaciones de diputados de coalición salen de la
 # biografía que publica el Congreso, del anexo de diputados de la Wikipedia y de prensa; las que
 # no están claras llevan `dudas`.
@@ -103,6 +113,9 @@ partidos:
     nombre: PSOE
     siglas: PSOE
     color: '#FF0000'
+    posicion_ideologica:
+      valor: 3.81
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (PSOE, party_id 501): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados: ["Fuentes Curbelo, Juan Bernardo"]
@@ -126,6 +139,9 @@ partidos:
     nombre: Partido Popular
     siglas: PP
     color: '#1E4B8F'
+    posicion_ideologica:
+      valor: 7.19
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (PP, party_id 502): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [PP]
@@ -146,6 +162,9 @@ partidos:
     nombre: Vox
     siglas: Vox
     color: '#63BE21'
+    posicion_ideologica:
+      valor: 9.38
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (Vox, party_id 527): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [Vox]
@@ -166,6 +185,9 @@ partidos:
     nombre: Sumar
     siglas: Sumar
     color: '#E51C55'
+    posicion_ideologica:
+      valor: 2.31
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (Sumar, party_id 551): https://www.chesdata.eu/ches-europe"
     herencia:
       XV:
         - diputados:
@@ -208,6 +230,9 @@ partidos:
     nombre: Podemos
     siglas: Podemos
     color: '#9370DB'
+    posicion_ideologica:
+      valor: 1.56
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (Podemos, party_id 525): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados:
@@ -270,6 +295,9 @@ partidos:
     nombre: Izquierda Unida
     siglas: IU
     color: '#DF0022'
+    posicion_ideologica:
+      valor: 1.73
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (IU, party_id 504): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados:
@@ -322,6 +350,10 @@ partidos:
     nombre: Catalunya en Comú
     siglas: Comuns
     color: '#B5333F'
+    posicion_ideologica:
+      valor: 2.31
+      junto_a: sumar
+      fuente: "junto a Sumar: no está en la CHES 2024 ni en la 2019; votó desde el grupo de Sumar en la XV (en la XIV, desde Unidas Podemos)"
     herencia:
       XIV:
         - diputados:
@@ -355,6 +387,10 @@ partidos:
     nombre: Más Madrid
     siglas: Más Madrid
     color: '#45BB89'
+    posicion_ideologica:
+      valor: 2.31
+      junto_a: sumar
+      fuente: "junto a Sumar: no está en la CHES 2024 ni en la 2019; votó desde el grupo de Sumar en la XV"
     herencia:
       XV:
         - diputados: ["Recas Martín, Alda"]
@@ -376,6 +412,10 @@ partidos:
     nombre: Compromís
     siglas: Compromís
     color: '#E65F00'
+    posicion_ideologica:
+      valor: 2.31
+      junto_a: sumar
+      fuente: "junto a Sumar: no está en la CHES 2024 ni en la 2019; votó desde el grupo de Sumar en la XV (en la XIV, desde el Grupo Mixto)"
     herencia:
       XIV:
         - formaciones: [MÉS COMPROMÍS]
@@ -393,6 +433,10 @@ partidos:
     nombre: Chunta Aragonesista
     siglas: CHA
     color: '#AD0017'
+    posicion_ideologica:
+      valor: 2.31
+      junto_a: sumar
+      fuente: "junto a Sumar: no está en la CHES 2024 ni en la 2019; votó desde el grupo de Sumar en la XV"
     herencia:
       XV:
         - diputados:
@@ -405,6 +449,10 @@ partidos:
     nombre: Més per Mallorca
     siglas: Més
     color: '#CBD100'
+    posicion_ideologica:
+      valor: 2.31
+      junto_a: sumar
+      fuente: "junto a Sumar: no está en la CHES 2024 ni en la 2019; votó desde el grupo de Sumar en la XV"
     herencia:
       XV:
         - diputados:
@@ -417,6 +465,9 @@ partidos:
     nombre: Esquerra Republicana
     siglas: ERC
     color: '#FFB32E'
+    posicion_ideologica:
+      valor: 3.40
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (ERC, party_id 511): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados:
@@ -444,6 +495,9 @@ partidos:
     nombre: Junts per Catalunya
     siglas: Junts
     color: '#20C0C2'
+    posicion_ideologica:
+      valor: 6.60
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (Junts, party_id 550): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [JxCat-JUNTS (Junts)]
@@ -467,6 +521,9 @@ partidos:
     nombre: EH Bildu
     siglas: EH Bildu
     color: '#00D0B6'
+    posicion_ideologica:
+      valor: 2.38
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (EH Bildu, party_id 524): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [EH Bildu]
@@ -479,6 +536,9 @@ partidos:
     nombre: EAJ-PNV
     siglas: PNV
     color: '#008000'
+    posicion_ideologica:
+      valor: 6.13
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (EAJ/PNV, party_id 506): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [EAJ-PNV]
@@ -491,6 +551,9 @@ partidos:
     nombre: Bloque Nacionalista Galego
     siglas: BNG
     color: '#ADCFEF'
+    posicion_ideologica:
+      valor: 2.69
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (BNG, party_id 513): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [BNG]
@@ -503,6 +566,9 @@ partidos:
     nombre: Coalición Canaria
     siglas: CC
     color: '#FFD700'
+    posicion_ideologica:
+      valor: 6.00
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (Cca, party_id 517): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados: ["Oramas González-Moro, Ana María"]
@@ -518,6 +584,10 @@ partidos:
     nombre: Nueva Canarias
     siglas: NC
     color: '#85BD42'
+    posicion_ideologica:
+      valor: 3.81
+      junto_a: psoe
+      fuente: "junto a PSOE: no está en la CHES 2024 ni en la 2019; en el Grupo Mixto, el partido de la CHES con el que más coincidió su voto (79 % de 3.436 votaciones, data/votos)"
     herencia:
       XIV:
         - diputados: ["Quevedo Iturbe, Pedro"]
@@ -528,6 +598,9 @@ partidos:
     nombre: Unión del Pueblo Navarro
     siglas: UPN
     color: '#2A52BE'
+    posicion_ideologica:
+      valor: 7.63
+      fuente: "Chapel Hill Expert Survey 2024, lrgen (UPN, party_id 553): https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - diputados:
@@ -547,6 +620,10 @@ partidos:
     nombre: Partido Regionalista de Cantabria
     siglas: PRC
     color: '#C3CF04'
+    posicion_ideologica:
+      valor: 3.81
+      junto_a: psoe
+      fuente: "junto a PSOE: no está en la CHES 2024 ni en la 2019; en el Grupo Mixto, el partido de la CHES con el que más coincidió su voto (48 % de 4.163 votaciones, data/votos)"
     herencia:
       XIV:
         - formaciones: [PRC]
@@ -556,6 +633,10 @@ partidos:
     nombre: Teruel Existe
     siglas: Teruel Existe
     color: '#007351'
+    posicion_ideologica:
+      valor: 2.69
+      junto_a: bng
+      fuente: "junto a BNG: no está en la CHES 2024 ni en la 2019; en el Grupo Mixto, el partido de la CHES con el que más coincidió su voto (40 % de 6.022 votaciones, data/votos)"
     herencia:
       XIV:
         - formaciones: ["¡Teruel Existe!"]
@@ -564,6 +645,10 @@ partidos:
   - id: cup
     nombre: CUP
     siglas: CUP
+    posicion_ideologica:
+      valor: 2.38
+      junto_a: eh-bildu
+      fuente: "junto a EH Bildu: no está en la CHES 2024 ni en la 2019; en el Grupo Mixto, el partido de la CHES con el que más coincidió su voto (77 % de 5.587 votaciones, data/votos)"
     herencia:
       XIV:
         - formaciones: [CUP-PR]
@@ -573,6 +658,9 @@ partidos:
     nombre: Ciudadanos
     siglas: Cs
     color: '#EB6109'
+    posicion_ideologica:
+      valor: 7.20
+      fuente: "CHES 2019, lrgen (Cs, party_id 526; no está en la CHES 2024): CHES2019V3.csv en https://www.chesdata.eu/ches-europe"
     herencia:
       XIV:
         - formaciones: [Cs]

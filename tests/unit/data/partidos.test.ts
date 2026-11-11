@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   crearAsignador,
   esquemaPartidos,
+  ordenIdeologico,
   pendientesDeAsignar,
   validarPartidos,
   type DiputadoOficial,
@@ -125,5 +126,30 @@ describe('M-06 · validación de partidos.yaml', () => {
 
   it('exige justificación en cada regla', () => {
     expect(() => base({ partidos: [{ id: 'x', nombre: 'X', siglas: 'X', herencia: { XIV: [{ formaciones: ['PA'], justificacion: 'corta' }] } }] })).toThrow();
+  });
+});
+
+describe('S-01 · orden ideológico de los partidos', () => {
+  const pos = (valor: number, junto_a?: string) => ({ valor, fuente: 'Fuente de prueba', ...(junto_a ? { junto_a } : {}) });
+
+  it('ordena de izquierda a derecha y coloca justo después a los que van "junto a" otro, en el orden del archivo', () => {
+    const partidos = [
+      { id: 'derecha', posicion_ideologica: pos(8) },
+      { id: 'aliado-2', posicion_ideologica: pos(2, 'izquierda') },
+      { id: 'sin-dato' },
+      { id: 'izquierda', posicion_ideologica: pos(2) },
+      { id: 'aliado-1', posicion_ideologica: pos(2, 'izquierda') },
+      { id: 'centro', posicion_ideologica: pos(5) },
+    ];
+    expect(ordenIdeologico(partidos).map((p) => p.id)).toEqual(['izquierda', 'aliado-2', 'aliado-1', 'centro', 'derecha', 'sin-dato']);
+  });
+
+  it('valida que "junto_a" apunte a un partido con posición propia y lleve su mismo valor', () => {
+    const d = base();
+    d.partidos[0]!.posicion_ideologica = pos(3);
+    d.partidos[1]!.posicion_ideologica = pos(4, d.partidos[0]!.id);
+    expect(validarPartidos(d, diputados)).toContainEqual(expect.stringContaining('tiene que ser la de'));
+    d.partidos[1]!.posicion_ideologica = pos(3, 'inventado');
+    expect(validarPartidos(d, diputados)).toContainEqual(expect.stringContaining('que no tiene posición'));
   });
 });

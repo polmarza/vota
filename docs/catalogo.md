@@ -55,8 +55,10 @@ iniciativas que cambian algo concreto para quien responde eso.
   mismo año en los presupuestos, en un decreto específico y en un decreto ómnibus; las prórrogas de
   la misma suspensión de desahucios; las de los ERTE), el efecto se queda solo en la votación cuyo
   objeto principal es esa medida: la norma específica antes que los presupuestos o un decreto
-  ómnibus y, si no hay ninguna específica (o hay varias), la primera que la estableció. De las demás
-  se quita. Medidas distintas aunque parecidas no son duplicados: la subida de las pensiones de 2021
+  ómnibus y, si no hay ninguna específica (o hay varias), la que la estableció: la primera que salió
+  adelante. Un decreto que el Congreso tumbó no estableció nada, así que si otro posterior recoge la
+  misma medida y se convalida, cuenta ese (corregido el 11-11-2026 tras la revisión del conjunto por
+  el jurado: el subsidio de 2023 y las pensiones de 2025). De las demás se quita. Medidas distintas aunque parecidas no son duplicados: la subida de las pensiones de 2021
   y la de 2023, o la reforma de las pensiones frente a una subida anual. Dos iniciativas
   legislativas populares o proposiciones con el mismo contenido sí lo son, y se queda la primera
   votada. Una ficha que se queda sin efectos sale del catálogo. La regla se aplica por el contenido

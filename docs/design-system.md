@@ -140,7 +140,7 @@ Congreso, `.mark[data-mark="arc"]`; en `public/favicon.svg`, en blanco sobre un 
 "vota con criterio", siempre en minúsculas, donde *vota* es la marca y *con criterio* la coletilla
 que la une a la web de Con Criterio. En títulos de página y textos corridos se escribe "Vota con
 Criterio". Enlaces
-Test, Resultado, Votaciones y Cómo funciona; botón "Empezar el test" a la derecha (no dentro del
+Test, Resultado, Votaciones (lleva a `/votaciones` en todas las páginas) y Cómo funciona; botón "Empezar el test" a la derecha (no dentro del
 test). En móvil, los enlaces van en un menú.
 
 ### Héroe de la portada
@@ -187,6 +187,26 @@ significaba votar sí, el voto de cada partido en una **rejilla de píldoras** (
 escritorio, una en móvil: punto y siglas a la izquierda, píldora a la derecha; "Sí" relleno de
 tinta, el resto con contorno; el desglose si votó dividido) y el enlace al Congreso.
 
+### Explorador del catálogo (`/votaciones`)
+Una columna bajo la cabecera fija (`.interior`): rótulo, h1, entradilla con las cifras, una frase
+en gris con el criterio de orden de los partidos y los **filtros** (campos `.field` del kit: buscador,
+tema y legislatura; en una fila de 2/1/1 desde 768px, apilados en el móvil). Debajo, el recuento en
+Geist Mono (región `aria-live`) y la lista, separada por filetes.
+- **Acordeón** con `<details>`: plegada, cada votación enseña fecha · legislatura · tema en mono, el
+  título a 22px (26px en escritorio) y un círculo con más/menos dibujado a la derecha. Abierta, en
+  escritorio dos columnas (5/12 y 7/12): a la izquierda la iniciativa y el ámbito en gris, el resumen
+  recortado a tres líneas con "Ver más" subrayado (solo si se recorta), qué significaba votar «sí» y
+  a quién afecta, con la condición en gris ("Quien responde «De alquiler» a «¿Cómo vives?»") y el
+  efecto debajo; a la derecha la rejilla de píldoras de **Votación** (punto de color de
+  `data/partidos/`, siglas y voto escrito), en dos columnas que se leen hacia abajo para que el orden
+  de izquierda a derecha siga la columna izquierda primero; el veredicto del jurado en una caja de
+  superficie y los enlaces al Congreso y al texto oficial. En el móvil, todo en una columna.
+- **Orden de los partidos:** de izquierda a derecha según `posicion_ideologica`
+  (`data-model.md`), igual en todas las votaciones; salen todos los partidos con voto.
+- Sin JavaScript: no hay filtros ni recorte, y cada votación se abre y se cierra igual.
+- Sin resultados: "Ninguna votación coincide con esa búsqueda" y el botón secundario "Quitar los
+  filtros".
+
 ### Resultado de ejemplo de la portada
 El resultado real de uno de los perfiles de `data/perfiles-ejemplo.yaml`, elegido al azar en cada
 visita y calculado en el build con el mismo cálculo que el test, nombrando el perfil ("Así le sale
@@ -206,12 +226,42 @@ izquierda y las preguntas a la derecha en escritorio) y en "Cómo funciona". El 
 
 ### Cierre y pie (`Pie.astro`)
 "Ocho preguntas sobre tu vida", la línea de privacidad y el botón del test a todo el ancho; debajo,
-la marca, "Un proyecto de Con Criterio", cuatro columnas de enlaces y la línea legal. En el móvil,
+la marca, "Un proyecto de Con Criterio", cuatro columnas de enlaces (en "Método", Cómo funciona y
+Las votaciones) y la línea legal. En el móvil,
 una barra fija repite "Empezar el test" cuando el botón del héroe ha salido de la pantalla.
 
 ### Imagen para compartir
-Pendiente (S-02): versión vertical del resultado (1080×1350) con la marca, los dos podios y la URL.
-No incluye ninguna respuesta del cuestionario.
+Tarjeta vertical PNG de **1080×1350** (4:5) generada en el navegador con Canvas (S-02). Los datos los
+decide `src/lib/compartir/tarjeta.ts` (código puro, probado en `tests/unit/compartir.test.ts`) y el
+dibujo está en `src/lib/compartir/dibujo.ts`, que espera a que Geist y Geist Mono estén cargadas
+(`document.fonts.load`) antes de pintar.
+
+- **Marco y fondo:** marco arena `#D9CCB7` de 32px y, dentro, la tarjeta del fondo `#F7F9FA` con
+  radio 28px, como la ventana del héroe sobre su marco.
+- **De arriba abajo:** la marca (el arco del hemiciclo de `public/favicon.svg` en blanco sobre un
+  cuadrado de tinta de 72px y "vota con criterio" en minúsculas, Geist 44px 500), con
+  "Elecciones generales · 29-N" en Geist Mono gris a la derecha; el rótulo "Lo que más me afecta"
+  (Geist Mono 24px gris) y los dos o tres temas de las votaciones que le cuentan, los más frecuentes
+  primero (Geist 50px 500, separados por "·"); la línea de perfil, si el visitante la pide (Geist
+  26px gris); un filete; "Votó más veces a tu favor" con el primer partido del podio favorable, su
+  punto de 32px y el porcentaje en Geist Mono 60px; los dos podios ("Estuvieron de tu lado" y
+  "Votaron en tu contra") uno encima del otro sobre la superficie `#ECF0F2`, radio 24px, cada fila
+  con punto de 20px, nombre en Geist 32px, porcentaje en Geist Mono 32px y barra de 8px del color
+  del partido; y al pie "No es una recomendación de voto." y `vota.concriterio.blog` en mono.
+- Los colores de los partidos salen de `data/partidos/`, como en la web. Un nombre que no cabe baja
+  de cuerpo hasta caber; con la línea de perfil, las filas de los podios se juntan lo justo.
+- **Respuestas:** por defecto, ninguna. Con la casilla "Incluir mi perfil en la imagen" (desmarcada
+  por defecto) se añade una línea con vivienda, situación laboral, edad e hijos, en minúscula y
+  abreviadas ("de alquiler · estudiante · menos de 30 años · sin hijos a cargo"); "Prefiero no
+  responder" no sale. Nunca ingresos, patrimonio, herencias, discapacidad ni provincia.
+- **En la página:** solo en el resultado final y si hay podios. Bloque bajo el aviso, separado por un
+  filete: vista previa de 216×270 (160×200 en móvil) con sombra de ventana y, al lado (debajo en
+  móvil), "Compartir el resultado", la casilla del kit (`.m-check`) con su ayuda y el botón
+  principal "Compartir". La vista previa lleva como texto alternativo todo lo que dice la imagen.
+- **Al pulsar:** si el navegador comparte archivos (`navigator.canShare({ files })`), el menú del
+  sistema con el PNG y el texto "Mira qué votaron los partidos en el Congreso sobre tu vida:
+  vota.concriterio.blog", sin nombrar partidos; si no, se descarga `vota-con-criterio.png`. Nada se
+  envía a ningún servidor.
 
 ---
 

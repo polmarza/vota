@@ -43,6 +43,7 @@ Compromís…), no de coalición. Lo valida `pnpm data:partidos` (`scripts/data/
 | id | slug | `psoe`, `pp`, `podemos`… |
 | nombre, siglas | texto | |
 | color | hex (opcional hasta la feature de la web) | Color oficial; único entre partidos (design-system) |
+| posicion_ideologica | { valor: 0–10, fuente: texto, junto_a?: id } (opcional) | Orden de izquierda a derecha en `/votaciones` (S-01): `lrgen` de la Chapel Hill Expert Survey 2024, con dos decimales, o de la CHES 2019 si no está en la de 2024 (Cs). Un partido que no está en ninguna lleva `junto_a` (el partido de su grupo parlamentario que sí está o, si votaba desde el Mixto, el de la CHES con el que más coincidió su voto) y el mismo `valor`; se coloca justo después de él. No interviene en el cálculo |
 | herencia | { XIV?: [Regla], XV?: [Regla] } | Qué votos de cada legislatura cuentan como de este partido |
 
 **Regla de herencia**

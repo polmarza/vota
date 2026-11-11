@@ -91,9 +91,11 @@ src/
 │   ├── afinidad/       → Cálculo puro de la puntuación (sin DOM; lo prueban los tests)
 │   ├── perfil/         → Definición de preguntas y conversión de respuestas a perfiles
 │   ├── enlaces.ts      → Enlaces que se repiten (el repositorio)
+│   ├── explorador.ts   → Prepara en el build las votaciones de /votaciones (voto, efectos, jurado)
 │   └── compartir/      → Generación de la imagen con Canvas
 ├── content.config.ts   → Colecciones y esquemas Zod del catálogo
-├── scripts/            → resultado.ts: pinta el resultado en el navegador
+├── scripts/            → resultado.ts: pinta el resultado en el navegador; explorador.ts: filtros
+│                         y "Ver más" de /votaciones
 └── styles/             → Paleta, fuentes y componentes de la web sobre el kit
 public/
 ├── logos/              → Logos de los partidos (SVG)

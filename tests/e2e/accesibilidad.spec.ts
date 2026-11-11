@@ -45,6 +45,15 @@ test.describe('accesibilidad (WCAG 2.1 AA)', () => {
     await revisar(page);
   });
 
+  test('votaciones (explorador del catálogo)', async ({ page }) => {
+    await page.goto('/votaciones');
+    await expect(page.getByTestId('filtro-texto')).toBeVisible();
+    await revisar(page);
+    // Con una votación abierta: voto de cada partido, jurado y enlaces.
+    await page.getByTestId('votacion-cabecera').first().click();
+    await revisar(page);
+  });
+
   test('el test se completa solo con teclado hasta el resultado provisional', async ({ page, browserName }) => {
     test.skip(browserName === 'webkit', 'WebKit en móvil no reproduce la navegación con Tab de un teclado físico');
     await page.goto('/test');

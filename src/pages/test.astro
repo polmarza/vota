@@ -7,6 +7,7 @@ import Pregunta from '../components/Pregunta.astro';
 import SelectorProvincia from '../components/SelectorProvincia.astro';
 import { cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.ts';
 import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+import { CAMPOS_PERFIL, type TextosPerfil } from '../lib/compartir/tarjeta.ts';
 
 const preguntas = cargarPreguntas();
 const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria, solo_si }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria, ...(solo_si && { soloSi: solo_si }) }));
@@ -15,8 +16,12 @@ const porId = new Map(preguntas.map((p) => [p.id, p]));
 const territorio = cargarTerritorio();
 const provincias = territorio.provincias.map(({ id, nombre, alias, ccaa }) => ({ id, nombre, alias, ccaa }));
 const resultado = datosResultado();
+// Textos de las opciones de las cuatro preguntas que puede llevar la imagen para compartir (S-02).
+const textosPerfil: TextosPerfil = Object.fromEntries(
+  CAMPOS_PERFIL.map((id) => [id, Object.fromEntries((porId.get(id)?.opciones ?? []).map((o) => [o.id, o.texto]))]),
+);
 // "<" escapado: ningún texto de los datos puede cerrar el <script> que los contiene.
-const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado }).replace(/</g, "\\u003c");
+const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado, textosPerfil }).replace(/</g, "\\u003c");
 ---
 
 <Base titulo="El test · Vota con Criterio" test>
@@ -56,12 +61,14 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
   import { buscarProvincias, provinciaExacta, type ProvinciaBuscable } from '../lib/perfil/provincias.ts';
   import { conComunidad } from '../lib/afinidad/calculo.ts';
   import { pintarResultado, type DatosResultado } from '../scripts/resultado.ts';
+  import type { TextosPerfil } from '../lib/compartir/tarjeta.ts';
 
-  const { pasos, preguntas, provincias, resultado } = JSON.parse(document.getElementById('datos-test')!.textContent!) as {
+  const { pasos, preguntas, provincias, resultado, textosPerfil } = JSON.parse(document.getElementById('datos-test')!.textContent!) as {
     pasos: Paso[];
     preguntas: PreguntaTest[];
     provincias: (ProvinciaBuscable & { ccaa: string })[];
     resultado: DatosResultado;
+    textosPerfil: TextosPerfil;
   };
   const ccaaDe = new Map(provincias.map((p) => [p.id, p.ccaa]));
   const clave = (p: Paso) => (p.tipo === 'pregunta' ? `pregunta:${p.pregunta}` : p.tipo);
@@ -95,6 +102,7 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
         provisional: paso.tipo === 'provisional',
         pendientes,
         accion: secciones[actual]!.querySelector<HTMLElement>('[data-seguir]'),
+        textosPerfil,
       });
     }
     secciones[actual]!.hidden = false;
@@ -237,6 +245,22 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado })
   .resultado .vote__efecto { font-size: var(--t-small); color: var(--muted); }
   .resultado .vote__cuerpo { display: grid; gap: var(--s-3); align-content: start; }
   .resultado .que-si { font-size: var(--t-small); color: var(--muted); }
+  /* Compartir (S-02): vista previa de la imagen a la izquierda y el texto, la casilla y el botón. */
+  .resultado .compartir { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-6); align-items: start; margin-top: var(--s-6); padding-top: var(--s-6); border-top: 1px solid rgb(var(--tinta-rgb) / 0.14); }
+  .resultado .compartir__vista { display: block; width: 216px; height: 270px; border-radius: var(--r-md, 8px); background: var(--p-bg); box-shadow: 0 24px 48px -32px rgb(var(--tinta-rgb) / 0.35); }
+  .resultado .compartir__vista:not([src]) { visibility: hidden; }
+  .resultado .compartir__texto { display: grid; gap: var(--s-3); align-content: start; }
+  .resultado .compartir h3 { margin: 0; font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; }
+  .resultado .compartir p { margin: 0; font-size: 16px; max-width: 62ch; }
+  .resultado .compartir__perfil { display: flex; align-items: center; gap: var(--s-3); margin-top: var(--s-2); }
+  .resultado .compartir__perfil label { font-size: 17px; font-weight: 500; cursor: pointer; }
+  .resultado .compartir .compartir__ayuda { font-size: var(--t-small); color: var(--muted); padding-left: calc(20px + var(--s-3)); }
+  .resultado .compartir .btn-row { margin-top: var(--s-3); }
+  .resultado .compartir__estado:empty { display: none; }
+  @media (max-width: 639px) {
+    .resultado .compartir { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+    .resultado .compartir__vista { width: 160px; height: 200px; }
+  }
   @media (max-width: 639px) {
     .resultado .resultado-fondo { padding: var(--s-4); }
     .resultado .screen--lista { padding: var(--s-5); }

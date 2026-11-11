@@ -2,7 +2,7 @@
 // Cabecera fija (docs/design-system.md → Cabecera): la marca con el icono de puntos, la navegación
 // y el botón del test. En el móvil, los enlaces van en el menú que abre src/kit/system.js.
 interface Props {
-  /** En la portada los enlaces son anclas a sus secciones; en el resto llevan a la portada. */
+  /** En la portada, Test y Resultado son anclas a sus secciones; en el resto llevan a la portada. */
   portada?: boolean;
   /** El botón "Empezar el test" (no se enseña dentro del propio test). */
   accion?: boolean;
@@ -19,7 +19,7 @@ const ancla = (id: string) => (portada ? `#${id}` : `/#${id}`);
     <nav class="nav__links" aria-label="Principal">
       <div class="nav__item"><a class="nav__link" href={ancla('test')}>Test</a></div>
       <div class="nav__item"><a class="nav__link" href={ancla('resultado')}>Resultado</a></div>
-      <div class="nav__item"><a class="nav__link" href={ancla('votaciones')}>Votaciones</a></div>
+      <div class="nav__item"><a class="nav__link" href="/votaciones">Votaciones</a></div>
       <div class="nav__item"><a class="nav__link" href="/como-funciona">Cómo funciona</a></div>
     </nav>
     {

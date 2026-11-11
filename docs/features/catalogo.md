@@ -1,8 +1,12 @@
 # Catálogo de votaciones
 
-**Estado:** En construcción
+**Estado:** Verificada
 **Requisitos que cierra:** M-05, M-11, M-10, M-01 (M-10: revisión de las fichas y bloqueo de publicación; M-01: las preguntas)
 **Fecha de acuerdo:** 2026-10-28
+
+Verificada el 11-11-2026: 63 fichas con todos sus elementos aprobados por el jurado, `pnpm build`
+(con `pnpm data:validar`) pasa y los tests de datos están en verde. El jurado juzga el conjunto
+\"desequilibrado\"; se publica tal cual en \"Cómo funciona\" con su explicación.
 
 ## Qué se construye
 
