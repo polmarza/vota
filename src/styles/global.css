@@ -138,3 +138,10 @@ html { scrollbar-gutter: stable; }
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }
+
+/* ─── Pie siempre abajo ────────────────────────────────────────────────────────
+   En páginas cortas (el test, sobre todo) el contenido ocupa el alto que falta y el pie queda
+   pegado al fondo de la ventana. */
+body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+#contenido { flex: 1 0 auto; }
+body > .footer, body > .actionbar { flex-shrink: 0; }
