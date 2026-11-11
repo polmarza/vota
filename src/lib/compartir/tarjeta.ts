@@ -52,6 +52,7 @@ export const ABREVIADOS: Record<CampoPerfil, Record<string, string>> = {
 /** Nombre legible de cada tema del catálogo (el campo `tema` de las fichas). */
 export const NOMBRES_TEMAS: Record<string, string> = {
   campo: 'Campo',
+  catastrofes: 'Catástrofes',
   cuidados: 'Cuidados',
   educacion: 'Educación',
   empleo: 'Empleo',

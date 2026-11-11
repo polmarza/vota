@@ -1,0 +1,69 @@
+votacion: XV-85-10
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=12/12/2024"
+texto: https://www.boe.es/eli/es/rdl/2024/11/11/7
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2024-12-12
+titulo_oficial: >-
+  Real Decreto-ley 7/2024, de 11 de noviembre, por el que se adoptan medidas urgentes para el
+  impulso del Plan de respuesta inmediata, reconstrucción y relanzamiento frente a los daños
+  causados por la Depresión Aislada en Niveles Altos (DANA) en diferentes municipios entre el 28 de
+  octubre y el 4 de noviembre de 2024.
+titulo: "Alojamiento, permisos y otras medidas por la DANA de 2024"
+resumen: >-
+  Segundo paquete de medidas por la DANA de 2024, para quienes sufrieron daños en los municipios
+  afectados. Financia la compra de viviendas por la entidad pública SEPES para alquilarlas, con
+  periodos de carencia en la renta, a las familias que perdieron su vivienda habitual o no pueden
+  vivir en ella; reconoce a los trabajadores el derecho a ausentarse con sueldo para limpiar o
+  acondicionar su casa, por la imposibilidad de llegar al trabajo o por la desaparición o el
+  fallecimiento de familiares; prohíbe despedir por la DANA a las empresas que reciban ayudas o
+  hagan ERTE; permite aplazar las facturas de luz y gas; y rebaja un 25 % el rendimiento de módulos
+  y el IVA simplificado de 2024 de los negocios de la zona. Incluye también ayudas a las
+  explotaciones agrarias, al sector cultural y a los servicios sociales.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: catastrofes
+ambito: estatal
+efectos:
+  - cuando: { catastrofe: [dana-2024] }
+    el_si: favorece
+    justificacion: >-
+      Quien perdió su vivienda habitual por la DANA o no puede vivir en ella puede acceder a una de
+      las viviendas que compra la entidad pública SEPES para alquilarlas a los damnificados, con
+      periodos de carencia en el pago de la renta.
+    base: >-
+      Arts. 31, 35 y 36 del Real Decreto-ley 7/2024 (subvención a SEPES para adquirir viviendas,
+      destino de las viviendas y requisitos de los damnificados).
+  - cuando: { catastrofe: [dana-2024], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Un trabajador afectado por la DANA puede ausentarse del trabajo sin perder el sueldo para
+      limpiar o acondicionar su vivienda, recuperar sus enseres o hacer trámites, mientras no tenga
+      una solución de vivienda estable.
+    base: >-
+      Art. 42.1 del Real Decreto-ley 7/2024 (ausencias justificadas).
+justificacion: >-
+  Añade a las ayudas de la DANA de 2024 medidas distintas de las del primer decreto: alojamiento
+  para quien perdió su casa y permisos retribuidos para los trabajadores afectados.
+extracto: >-
+  [Art. 1.2] «las medidas de esta norma serán de aplicación exclusivamente a las personas físicas y
+  entidades públicas o privadas que hayan sufrido daños en sus bienes o derechos como consecuencia
+  directa o indirecta de la DANA» [Art. 31.1] «se aprueba la concesión directa a SEPES Entidad
+  Pública Empresarial de Suelo de una subvención para financiar la adquisición de viviendas para
+  destinarlas al alojamiento, con carácter temporal, de familias afectadas con la pérdida o daño de
+  su vivienda habitual como consecuencia de la DANA.» [Art. 35.2] «Las viviendas serán arrendadas
+  por SEPES, considerando periodos suficientes de carencia en el pago inicial de las rentas, dadas
+  las circunstancias, en las condiciones que estipule, a las familias que hayan perdido o hayan
+  sufrido daños graves en su vivienda, cuando esta fuera su domicilio que constituya su vivienda
+  habitual, con independencia de que su ocupación fuera en régimen de propiedad, usufructo o
+  arrendamiento.» [Art. 42.1] «Las personas trabajadoras podrán ausentarse del trabajo, con derecho
+  a remuneración, por alguna de las causas relacionadas con la DANA siguientes y mientras duren las
+  mismas:» «b) Labores de traslado, limpieza o acondicionamiento del domicilio habitual, y de
+  recuperación de enseres y otros efectos personales, hasta que se disponga de una solución
+  habitacional estable y adecuada, así como la realización de los trámites para la obtención de
+  documentos oficiales o públicos que solo puedan llevarse a cabo de manera presencial por parte de
+  la persona trabajadora.» [Art. 46.1] «Las empresas beneficiarias de las ayudas directas previstas
+  con ocasión de la DANA, así como aquellas que se acojan a las medidas contempladas en el artículo
+  44 del presente real decreto-ley, no podrán despedir por causa de fuerza mayor y por causas
+  económicas, técnicas, organizativas y de producción derivadas del mencionado fenómeno
+  atmosférico.» [Art. 11.1] «podrán reducir el rendimiento neto de módulos de 2024 correspondiente a
+  tales actividades en un 25 por ciento.»

@@ -167,8 +167,10 @@ credenciales del proyecto son las claves de las APIs de IA del jurado, que solo 
   catálogo.
 - **Vercel:** alojamiento estático y previews por rama. Sin funciones ni variables de entorno en
   producción.
-- **Vercel Web Analytics:** cuenta visitas y cuántas personas llegan al resultado provisional y al
-  final, sin cookies. Los resultados se marcan como rutas virtuales (`/test/provisional`,
+- **Vercel Web Analytics** (activa desde el 11-11-2026 con el adaptador `@astrojs/vercel` y
+  `webAnalytics: { enabled: true }` en `astro.config.mjs`; la salida sigue siendo estática): cuenta
+  visitas por página, sin cookies. Previsto y aún sin hacer: contar cuántas personas llegan al
+  resultado provisional y al final. Los resultados se marcan como rutas virtuales (`/test/provisional`,
   `/test/resultado`, mediante `history.pushState`) para que cuenten como páginas vistas; esas
   rutas no llevan ninguna respuesta. No se envían eventos con datos del cuestionario.
 

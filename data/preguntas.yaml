@@ -271,3 +271,18 @@
     - { id: mujer, texto: Mujer }
     - { id: hombre, texto: Hombre }
     - { id: ns, texto: Prefiero no responder }
+
+
+- id: catastrofe
+  bloque: ampliado
+  orden: 13
+  etiqueta: Catástrofes
+  enunciado: ¿Tu vivienda o tu negocio sufrió daños por una catástrofe?
+  subtitulo: Hay votaciones con ayudas para quien la sufrió.
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: dana-2024, texto: La DANA de 2024 }
+    - { id: la-palma, texto: El volcán de La Palma }
+    - { id: otra, texto: Otro temporal o incendio }
+    - { id: ns, texto: Prefiero no responder }

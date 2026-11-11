@@ -12,6 +12,7 @@ import { estiloPartido, etiquetaVoto, fechaCorta } from '../scripts/resultado.ts
 /** Nombre de cada tema del catálogo (el campo `tema` de las fichas). */
 const TEMAS: Record<string, string> = {
   campo: 'Campo',
+  catastrofes: 'Catástrofes',
   cuidados: 'Cuidados',
   educacion: 'Educación',
   empleo: 'Empleo',

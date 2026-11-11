@@ -1,0 +1,61 @@
+votacion: XIV-106-16
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=10/06/2021"
+texto: https://www.boe.es/eli/es/rdl/2021/05/18/10
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2021-06-10
+titulo_oficial: >-
+  Real Decreto-ley 10/2021, de 18 de mayo, por el que se adoptan medidas urgentes para paliar los
+  daños causados por la borrasca «Filomena».
+titulo: "Ayudas por los daños de la borrasca Filomena"
+resumen: >-
+  Amplía a Canarias, Cantabria, Cataluña, Murcia y la Comunidad Valenciana la declaración de zona
+  afectada gravemente por la borrasca Filomena y permite aplicar sus medidas, por acuerdo del
+  Consejo de Ministros, a otras lluvias torrenciales, nevadas, inundaciones, incendios forestales u
+  otros hechos catastróficos ocurridos entre el 1 de abril de 2020 y el 30 de junio de 2021. Da
+  ayudas por daños en la vivienda y los enseres y en establecimientos industriales, mercantiles y de
+  servicios, exime del IBI de 2020 o 2021 a las viviendas y locales dañados cuyos ocupantes tuvieron
+  que ser realojados, reduce el IAE de los negocios dañados y facilita la prestación por cese de
+  actividad a los autónomos afectados. Incluye también ayudas a las explotaciones agrarias y a los
+  ayuntamientos.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: catastrofes
+ambito: estatal
+efectos:
+  - cuando: { catastrofe: [otra] }
+    el_si: favorece
+    justificacion: >-
+      Quien sufrió daños en su vivienda o en su negocio por la borrasca Filomena, o por otro temporal
+      o incendio de abril de 2020 a junio de 2021 al que el Gobierno extienda las medidas, puede pedir
+      ayudas por esos daños y queda exento del IBI de ese año si tuvo que ser realojado.
+    base: >-
+      Arts. 1, 2 y 4 del Real Decreto-ley 10/2021 (ámbito, ayudas por daños en vivienda, enseres y
+      establecimientos, y exención del IBI y reducción del IAE).
+justificacion: >-
+  Es la norma de ayudas a los afectados por la borrasca Filomena de enero de 2021 y por otros
+  temporales e incendios de esos meses.
+extracto: >-
+  [Art. 1.1] «ampliándose dicha declaración y la aplicación de las mencionadas medidas a las
+  Comunidades Autónomas de Canarias, Cantabria, Cataluña, Región de Murcia y Comunidad Valenciana.»
+  [Art. 1.2] «podrá acordarse, con delimitación de las zonas afectadas, la aplicación de las medidas
+  necesarias previstas en este real decreto-ley a sucesos causados por lluvias torrenciales, nieve,
+  granizo, pedrisco, viento, inundaciones, desbordamientos de ríos y torrentes, fenómenos costeros,
+  incendios forestales u otros hechos catastróficos acaecidos desde el 1 de abril de 2020 hasta el
+  30 de junio de 2021.» [Art. 2.2] «La destrucción o daños en enseres y los daños en vivienda serán
+  objeto de ayudas según lo establecido en el Real Decreto 307/2005, de 18 de marzo.» [Art. 2.3] «En
+  el caso de daños a establecimientos industriales, mercantiles, marítimo-pesqueros, turísticos y de
+  otros servicios, cuando la persona interesada hubiese sido indemnizada por el Consorcio de
+  Compensación de Seguros con aplicación de la franquicia […] se podrá conceder una subvención de
+  hasta el 7 % de la cuantía de los daños indemnizables producidos por el siniestro, hasta el importe
+  máximo de 9.224 euros» [Art. 4.1] «Se concede la exención de las cuotas del Impuesto sobre Bienes
+  Inmuebles correspondientes al ejercicio 2020 para los siniestros que hayan tenido lugar en 2020, y
+  al ejercicio 2021 para los siniestros que ocurran en 2021, según lo recogido en el artículo 1, que
+  afecten a viviendas, establecimientos industriales, turísticos, mercantiles, marítimo-pesqueros y
+  profesionales, explotaciones agrarias y forestales, locales de trabajo y similares, dañados como
+  consecuencia directa de los siniestros a que se refiere el citado artículo, cuando se acredite que
+  tanto las personas como los bienes en ellos ubicados hayan tenido que ser objeto de realojamiento
+  total o parcial en otras viviendas o locales diferentes hasta la reparación de los daños sufridos»
+  [Art. 5.2] «A los trabajadores autónomos que perciban prestaciones por cese de actividad […] que
+  traigan su causa inmediata de los sucesos incluidos en el ámbito de aplicación de este real
+  decreto-ley, no se les computará, a los efectos de consumir los períodos máximos de percepción
+  establecidos, los cuatro primeros meses de percepción de la prestación.»
