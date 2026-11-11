@@ -7,11 +7,19 @@ titulo_oficial: >-
   Proposición de Ley del Grupo Parlamentario Plurinacional SUMAR, para la garantía de los derechos
   de las personas trabajadoras en procesos de deslocalización y transmisión de unidades
   productivas.
-titulo: "Despidos por deslocalización"
+titulo: "Despidos por deslocalización y venta de empresas"
 resumen: >-
-  Prohibía los despidos colectivos y otras medidas contra la plantilla a las empresas que
-  trasladaran su producción fuera de la Unión Europea y del Espacio Económico Europeo, y obligaba a devolver las ayudas de ERTE o
-  mecanismo RED cobradas en los cuatro años anteriores. No se admitió a trámite.
+  Proponía que las empresas que trasladaran su actividad industrial, productiva o de negocio fuera
+  de la Unión Europea y del Espacio Económico Europeo no pudieran hacer en España despidos
+  colectivos ni despidos por causas objetivas, modificar sustancialmente las condiciones de trabajo
+  ni inaplicar las del convenio colectivo; si se probaba su vínculo con el traslado, esas medidas
+  se considerarían en fraude de ley y los despidos, improcedentes o, en su caso, nulos. Esas
+  empresas tendrían que abonar todo lo desembolsado en prestaciones y lo dejado de ingresar por
+  exoneraciones de cotizaciones a la Seguridad Social en los ERTE o el mecanismo RED de los cuatro
+  años anteriores. Además, en la venta de una empresa o unidad productiva de 50 o más trabajadores,
+  obligaba a negociar con la representación de la plantilla un plan de viabilidad para mantener la
+  actividad y el empleo, y daba a los trabajadores un derecho de tanteo y retracto para comprarla si
+  la negociación acababa sin acuerdo. No se admitió a trámite.
 que_significa_si: >-
   Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
 tema: empleo
@@ -20,8 +28,9 @@ efectos:
   - cuando: { trabajo: [asalariado] }
     el_si: favorece
     justificacion: >-
-      Quien trabaja en una empresa que se traslada fuera de la Unión Europea y del Espacio
-      Económico Europeo no podría ser despedido por ese traslado.
+      Quien trabaja en una empresa que traslada su actividad fuera de la Unión Europea y del Espacio
+      Económico Europeo no podría ser despedido por causas objetivas ni en un despido colectivo
+      vinculado a ese traslado: el despido se consideraría improcedente o, en su caso, nulo.
     base: >-
       Artículo único, apartado Uno, de la proposición (nueva disposición adicional vigésima octava
       del Estatuto de los Trabajadores, que impide las medidas de sus arts. 41, 51, 52 y 82.3).
@@ -36,10 +45,20 @@ extracto: >-
   colectivos y extinciones de contratos por las causas objetivas previstas, respectivamente, en los
   artículos 51 y 52. b) Modificaciones sustanciales de las condiciones de trabajo de las previstas
   en el artículo 41. c) Inaplicaciones de las condiciones de trabajo previstas en convenios
-  colectivos, según lo dispuesto en el artículo 82.3.» «Los despidos y las extinciones de contratos
-  serán en tal caso considerados improcedentes y, en su caso, nulos.» «2. Aquellas empresas que
+  colectivos, según lo dispuesto en el artículo 82.3.» «De incumplirse estas limitaciones, las medidas
+  aplicadas se considerarán efectuadas en fraude de ley, sean adoptadas con carácter anterior o
+  posterior al traslado, siempre que se pruebe su vinculación directa o indirecta con este. Los
+  despidos y las extinciones de contratos serán en tal caso considerados improcedentes y, en su
+  caso, nulos.» «2. Aquellas empresas que
   efectúen los traslados de la actividad descritos en el apartado 1 y hayan sido beneficiadas en los
   cuatro años previos por medidas ligadas a uno o varios expedientes de regulación temporal de
   empleo o a la aplicación del Mecanismo RED, se verán obligadas al abono de la totalidad del
   importe desembolsado o dejado de ingresar en concepto de prestaciones y de exoneraciones en las
-  cotizaciones a la Seguridad Social.»
+  cotizaciones a la Seguridad Social.» [Artículo único.Dos, nueva disposición adicional vigésima
+  novena del Estatuto de los Trabajadores] «En los supuestos en los que se celebre entre
+  particulares una operación que tenga como objetivo la transmisión de la titularidad de una empresa
+  o unidad productiva autónoma cuya plantilla sea de cincuenta o más personas trabajadoras, deberá
+  presentarse ante la autoridad laboral un plan de viabilidad cuyo objetivo será el mantenimiento de
+  la actividad productiva y de los puestos de trabajo.» «las personas trabajadoras tendrán un
+  derecho de tanteo y retracto para la adquisición de la unidad productiva o empresa, que podrán
+  ejercer en el plazo de 15 días desde la finalización sin acuerdo del periodo de consultas.»

@@ -36,15 +36,6 @@ efectos:
     base: >-
       Art. 6, apartados 1 a 3, del Real Decreto-ley 8/2020 (circunstancias excepcionales por cierre
       de centros educativos).
-  - cuando: { vivienda: [hipoteca] }
-    el_si: favorece
-    justificacion: >-
-      Quien paga la hipoteca de su vivienda podía pedir que se suspendieran las cuotas, sin
-      intereses, si por la pandemia perdía el empleo o buena parte de sus ingresos y cumplía los
-      límites de renta.
-    base: >-
-      Arts. 7 a 16 del Real Decreto-ley 8/2020 (moratoria de deuda hipotecaria para la adquisición
-      de vivienda habitual; vulnerabilidad económica en el art. 9).
   - cuando: { trabajo: [autonomo] }
     el_si: favorece
     justificacion: >-
@@ -53,5 +44,5 @@ efectos:
     base: >-
       Art. 17 del Real Decreto-ley 8/2020 (prestación extraordinaria por cese de actividad).
 justificacion: >-
-  Es el primer decreto de respuesta a la pandemia, con efecto directo en quien cuida, en quien paga
-  una hipoteca y en los autónomos.
+  Es el primer decreto de respuesta a la pandemia, con efecto directo en quien cuida y en los
+  autónomos.

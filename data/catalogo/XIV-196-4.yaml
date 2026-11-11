@@ -9,9 +9,14 @@ titulo_oficial: >-
   eficiencia energética y de reducción de la dependencia energética del gas natural.
 titulo: "Abonos de tren gratis y becas (2022)"
 resumen: >-
-  Hace gratuitos de septiembre a diciembre de 2022 los abonos de Cercanías, Rodalies y media
-  distancia de Renfe, financia descuentos en el transporte urbano y añade 100 euros al mes a los
-  estudiantes con beca, además de medidas de ahorro energético.
+  De septiembre a diciembre de 2022 hace gratuitos los abonos multiviaje de Cercanías, Rodalies y
+  media distancia convencional de Renfe de servicio público, con las condiciones de uso recurrente
+  que fije el Ministerio, y rebaja un 50 % los de Avant y los de autobuses de líneas estatales.
+  Añade 100 euros al mes, solo de septiembre a diciembre de 2022, a quienes tengan la beca general
+  del Estado para estudios postobligatorios o la ayuda para alumnado con necesidad específica de
+  apoyo educativo del curso 2022-2023. Fija además medidas de ahorro energético, como limitar la
+  calefacción a 19 °C y el aire acondicionado a 27 °C en determinados edificios, y ayudas a las
+  empresas de transporte por la subida de los carburantes.
 que_significa_si: >-
   Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
 tema: transporte
@@ -20,10 +25,27 @@ efectos:
   - cuando: { transporte: [publico] }
     el_si: favorece
     justificacion: >-
-      Quien usa el transporte público tuvo abonos gratuitos de tren y descuentos en autobús y
-      metro.
+      Quien usa el transporte público tuvo de septiembre a diciembre de 2022 abonos gratuitos de
+      Cercanías, Rodalies y media distancia convencional de Renfe, con condiciones de uso
+      recurrente, y un 50 % de descuento en los abonos de Avant y de autobuses de líneas estatales.
     base: >-
-      Título I del Real Decreto-ley 14/2022 (ayudas al transporte público).
+      Art. 7 del Real Decreto-ley 14/2022 (nueva redacción de los arts. 10 y 11.1 del Real
+      Decreto-ley 11/2022).
 justificacion: >-
-  Es la medida de transporte público y becas de 2022, con efecto directo en usuarios y
-  estudiantes.
+  Es la medida de transporte público y becas de 2022, con efecto directo en quien usa el
+  transporte público.
+extracto: >-
+  Renfe Viajeros SME SA creará un título multiviaje para los servicios de cada uno de los núcleos
+  de Cercanías y Rodalies de la red ferroviaria de ancho convencional y de la red de ancho métrico,
+  con vigencia en el periodo desde el 1 de septiembre de 2022 al 31 de diciembre de 2022, y que será
+  gratuito para los usuarios […] Todos los títulos multiviaje de los servicios ferroviarios de AVANT,
+  declarados como obligación de servicio público podrán beneficiarse de la aplicación de un
+  descuento del 50 % […] para establecer la operativa necesaria para vincular la aplicación de la
+  gratuidad y los descuentos a unas condiciones de recurrencia mínima en el viaje. […] deberán
+  reducir al 50 % los títulos multiviaje de más de dos viajes […] Las personas beneficiarias de las
+  becas concedidas al amparo de la Convocatoria de becas de carácter general para el curso académico
+  2022-2023, para estudiantes que cursen estudios postobligatorios, tendrán derecho a una cuantía
+  complementaria por importe de cien euros al mes para el periodo de cuatro meses comprendido entre
+  septiembre y diciembre de 2022. […] a) La temperatura del aire en los recintos calefactados no
+  será superior a 19 ºC. b) La temperatura del aire en los recintos refrigerados no será inferior a
+  27 ºC.

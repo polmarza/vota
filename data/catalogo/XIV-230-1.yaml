@@ -18,21 +18,6 @@ que_significa_si: >-
 tema: fiscalidad
 ambito: estatal
 efectos:
-  - cuando: { ingresos: [hasta-16k, 16-30k], trabajo: [asalariado, autonomo, desempleo] }
-    el_si: favorece
-    justificacion: >-
-      Quien trabaja o está en paro con ingresos bajos o medios podía cobrar un pago único de 200
-      euros si los ingresos de su hogar no superaban los 27.000 euros y su patrimonio los 75.000.
-    base: >-
-      Art. 74 del Real Decreto-ley 20/2022 (nueva línea directa de ayuda a personas físicas de
-      bajo nivel de ingresos y patrimonio).
-  - cuando: { ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene ingresos bajos y cobra el ingreso mínimo vital recibía un 15 % más en 2023.
-    base: >-
-      Art. 79 del Real Decreto-ley 20/2022 (incremento extraordinario del ingreso mínimo vital
-      para 2023).
   - cuando: { campo: [si] }
     el_si: favorece
     justificacion: >-
@@ -42,5 +27,5 @@ efectos:
       Art. 24 del Real Decreto-ley 20/2022 (ayuda extraordinaria para sufragar el precio del
       gasóleo consumido por los productores agrarios).
 justificacion: >-
-  Es el paquete contra la subida de precios de 2023, con la rebaja del IVA de los alimentos y una
-  ayuda directa para trabajadores con ingresos bajos y medios.
+  Es el paquete contra la subida de precios de 2023, con la rebaja del IVA de los alimentos y
+  ayudas directas como la del gasóleo agrícola.

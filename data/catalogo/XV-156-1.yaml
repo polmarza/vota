@@ -28,14 +28,6 @@ efectos:
     base: >-
       Art. 8 del Real Decreto-ley 16/2025 (revalorización de las pensiones y de otras prestaciones
       públicas).
-  - cuando: { ingresos: [hasta-16k] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene ingresos bajos y el bono social tenía un descuento del 42,5 % en la luz (57,5 %
-      si es vulnerable severo) y no podían cortarle la luz, el gas ni el agua en 2026.
-    base: >-
-      Arts. 5 y 6 del Real Decreto-ley 16/2025 (descuentos del bono social en 2026 y garantía de
-      suministro a consumidores vulnerables).
   - cuando: { vivienda: [alquiler], ingresos: [hasta-16k] }
     el_si: favorece
     justificacion: >-
@@ -64,7 +56,7 @@ efectos:
       16/2025.
 justificacion: >-
   Es el decreto de fin de 2025 con la subida de las pensiones de 2026 que el Congreso no convalidó;
-  afecta directamente a pensionistas, hogares vulnerables, inquilinos y autónomos en módulos.
+  afecta directamente a pensionistas, inquilinos vulnerables, arrendadores y autónomos en módulos.
 extracto: >-
   [Art. 8.1] «Las pensiones abonadas por el sistema de la Seguridad Social, en su modalidad
   contributiva, así como las pensiones ordinarias y extraordinarias del Régimen de Clases Pasivas

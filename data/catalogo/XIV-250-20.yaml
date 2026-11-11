@@ -18,14 +18,6 @@ que_significa_si: >-
 tema: pensiones
 ambito: estatal
 efectos:
-  - cuando: { trabajo: [jubilado] }
-    el_si: favorece
-    justificacion: >-
-      Quien cobra una pensión, sobre todo si es mínima o no contributiva, tiene subidas por encima
-      de la inflación hasta 2027.
-    base: >-
-      Art. único, apartados que modifican el art. 58 y la disposición adicional quincuagésima
-      tercera de la Ley General de la Seguridad Social.
   - cuando: { trabajo: [asalariado], ingresos: [mas-60k] }
     el_si: perjudica
     justificacion: >-

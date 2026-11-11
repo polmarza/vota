@@ -25,13 +25,6 @@ efectos:
       autoridad, si se la ocuparan sin título.
     base: >-
       Art. 3 (desalojo en 24 horas) y art. 5, dos (art. 250.1.4.º de la Ley de Enjuiciamiento Civil).
-  - cuando: { arrendador: [si] }
-    el_si: favorece
-    justificacion: >-
-      Quien tiene viviendas que alquila podría recuperarlas en 24 horas si se las ocuparan sin título,
-      también cuando están vacías entre un inquilino y otro.
-    base: >-
-      Art. 3 y art. 5, dos (art. 250.1.4.º de la Ley de Enjuiciamiento Civil).
 justificacion: >-
   Es la propuesta del PP contra la ocupación que se votó en la XIV; fija un procedimiento directo para
   que los propietarios recuperen sus viviendas.
