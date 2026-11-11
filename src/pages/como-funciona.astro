@@ -1,0 +1,188 @@
+---
+// "Cómo funciona" (M-07): el método, en lenguaje claro, a partir de docs/catalogo.md y
+// docs/data-model.md. Las cifras salen de data/ en el build.
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import Base from '../layouts/Base.astro';
+import { cargarCandidaturas, cargarCatalogo, cargarPartidos } from '../lib/datos.ts';
+
+const REPO = 'https://github.com/polmarza/vota';
+const catalogo = cargarCatalogo();
+const xiv = catalogo.filter((f) => f.votacion.startsWith('XIV-')).length;
+const delGobierno = catalogo.filter((f) => /Gobierno/.test(f.iniciativa)).length;
+const territoriales = catalogo.filter((f) => f.ambito !== 'estatal').length;
+const partidos = cargarPartidos();
+const candidaturas = cargarCandidaturas();
+
+// Resumen de la revisión del jurado, si ya se ha hecho (data/jurado/catalogo.json).
+const rutaJurado = join(process.cwd(), 'data', 'jurado', 'catalogo.json');
+const veredictos = existsSync(rutaJurado) ? (JSON.parse(readFileSync(rutaJurado, 'utf8')) as { resultado: string }[]) : [];
+const cuenta = (r: string) => veredictos.filter((v) => v.resultado === r).length;
+---
+
+<Base titulo="Cómo funciona · Vota con Criterio" descripcion="Cómo se eligen y etiquetan las votaciones, cómo se calcula el resultado, quién lo revisa y qué limitaciones tiene.">
+  <article class="metodo" data-testid="como-funciona">
+    <h1>Cómo <i>funciona</i></h1>
+    <p class="entradilla">
+      No te preguntamos qué piensas, sino cómo vives. Con tus respuestas buscamos las votaciones del Congreso que
+      cambiaban algo concreto para alguien como tú, y miramos qué votó cada partido.
+    </p>
+
+    <h2>Las votaciones</h2>
+    <p>
+      El catálogo tiene {catalogo.length} votaciones del Pleno del Congreso: {xiv} de la XIV legislatura (2019-2023) y{' '}
+      {catalogo.length - xiv} de la XV (2023-2026), {territoriales} de ellas territoriales.
+    </p>
+    <ul>
+      <li>
+        <strong>De dónde salen.</strong> De todas las iniciativas con efecto jurídico que se votaron enteras en el Pleno:
+        leyes, decretos ley, proposiciones de cualquier grupo o comunidad autónoma y presupuestos, <em>se aprobaran o no</em>.
+        Lo que importa es qué votó cada partido. Quedan fuera las proposiciones no de ley y las mociones, que no obligan a
+        nada, y las votaciones secretas o sin voto nominal publicado.
+      </li>
+      <li>
+        <strong>Cómo se eligen.</strong> Partiendo de cada situación (vivir de alquiler, cobrar una pensión, tener hijos
+        pequeños…) se buscan las votaciones que la afectan, de las dos legislaturas y de proponentes distintos. Se eligen
+        por lo que dice el texto antes de mirar quién votó qué. {delGobierno} de las {catalogo.length} son iniciativas del
+        Gobierno: son las que más cambian situaciones concretas.
+      </li>
+      <li>
+        <strong>Cómo se etiquetan.</strong> Leyendo el texto publicado en el BOE o, si no salió adelante, en el Boletín de las
+        Cortes. Solo cuenta el efecto directo que establece (un derecho, una ayuda, un impuesto, un límite, una obligación)
+        para quien está en esa situación; no los efectos indirectos o discutidos. Cada etiqueta cita el artículo en que se
+        basa y explica qué significaba votar «sí», que no siempre es apoyar la medida: en una enmienda a la totalidad, votar
+        «sí» es devolver la ley al Gobierno.
+      </li>
+    </ul>
+
+    <h2>El voto de cada partido</h2>
+    <p>
+      Sale del voto de cada diputado en los datos abiertos del Congreso, no del grupo parlamentario. Cuenta lo que votó la
+      mayoría de sus diputados presentes, y el voto de un diputado cuenta para el partido al que pertenecía cuando votó. Si
+      sus diputados votaron divididos, se indica con el desglose; si se dividieron a partes iguales, esa votación no cuenta
+      para ese partido.
+    </p>
+    <p>
+      Los diputados elegidos en una coalición (Sumar, Unidas Podemos…) cuentan para su partido concreto. Los de partidos
+      que no se presentan el 29 de noviembre, los independientes y los casos que no están claros no cuentan para nadie.
+    </p>
+
+    <h2>Tu resultado</h2>
+    <p>
+      Para cada partido que se presenta en tu provincia, contamos en cuántas de las votaciones que te afectan votó a tu
+      favor y en cuántas en tu contra. «Te han favorecido» muestra los tres con el porcentaje a favor más alto; «Te han
+      perjudicado», los tres con el porcentaje en contra más alto, sin repetir partido. Las abstenciones cuentan en el
+      total, pero no suman a ningún lado; por eso los dos porcentajes no suman 100.
+    </p>
+    <p>
+      Con menos de cinco votaciones que te afecten no mostramos podio: no sería un resultado fiable. Si una votación te
+      favorece por un lado y te perjudica por otro, no cuenta.
+    </p>
+
+    <h2>Quién lo revisa</h2>
+    <p>
+      La selección y las etiquetas las hace una IA, Claude, y las revisa un jurado de cinco modelos de cinco empresas
+      distintas (OpenAI, Google, Mistral, DeepSeek y xAI), que no saben qué votó cada partido ni qué etiqueta se propuso.
+      Si la mayoría no está de acuerdo, la etiqueta se corrige; si no hay consenso, el efecto se quita o la votación no se
+      publica. Pol Marzà, que firma el proyecto, no interviene en qué votaciones entran ni en cómo se etiquetan.
+    </p>
+    {
+      veredictos.length > 0 && (
+        <p data-testid="resumen-jurado">
+          Revisión del catálogo: {cuenta('aprobado')} elementos aprobados, {cuenta('decidido')} corregidos según el jurado y{' '}
+          {cuenta('sin-consenso')} sin consenso. Todas las respuestas, con sus razones, están en{' '}
+          <a href={`${REPO}/tree/main/data/jurado`}>data/jurado</a>.
+        </p>
+      )
+    }
+
+    <h2>Qué partidos aparecen</h2>
+    <p>
+      Solo los que se presentan en tu provincia el 29 de noviembre y tienen historial de votaciones en el Congreso en la XIV
+      o la XV ({partidos.length} partidos). Un partido nuevo, o que no tuvo diputados en estas legislaturas, no aparece:
+      no hay votaciones con las que compararlo.
+      {candidaturas.provisional && ' La lista de partidos por provincia es provisional hasta contrastarla con las candidaturas proclamadas.'}
+    </p>
+
+    <h2>Limitaciones</h2>
+    <ul>
+      <li>Solo mira votaciones del Congreso: no tiene en cuenta programas, promesas, gobiernos autonómicos ni el Senado.</li>
+      <li>Es una selección de {catalogo.length} votaciones entre cientos; otra selección daría otro resultado.</li>
+      <li>Un partido que gobierna propone y vota más leyes que uno en la oposición, y eso pesa en el resultado.</li>
+      <li>No es una recomendación de voto, ni una encuesta: es una forma de ver qué votaron los partidos sobre tu vida.</li>
+    </ul>
+
+    <h2>Preguntas frecuentes</h2>
+    <dl class="faq">
+      <dt>¿Guardáis mis respuestas?</dt>
+      <dd>No. El cálculo se hace en tu navegador y tus respuestas no se envían a ningún sitio. Al cerrar la página, desaparecen.</dd>
+      <dt>¿Por qué no aparece mi partido?</dt>
+      <dd>Porque no se presenta en tu provincia o porque no tuvo diputados en el Congreso en la XIV o la XV.</dd>
+      <dt>¿Por qué no me preguntáis qué opino?</dt>
+      <dd>Porque la herramienta compara lo que los partidos votaron sobre situaciones concretas, no ideas.</dd>
+      <dt>¿Puedo comprobarlo?</dt>
+      <dd>
+        Sí. Cada votación enlaza a su página en el Congreso, y el catálogo, las etiquetas, los votos y el código son públicos
+        en <a href={REPO}>GitHub</a>.
+      </dd>
+    </dl>
+
+    <p class="firma">
+      Un proyecto de <a href="https://concriterio.blog">Con Criterio</a>, firmado por Pol Marzà. Catálogo completo en{' '}
+      <a href={`${REPO}/tree/main/data/catalogo`} data-testid="enlace-catalogo">data/catalogo</a>.
+    </p>
+    <a class="boton" href="/test">Hacer el test →</a>
+  </article>
+</Base>
+
+<style>
+  .metodo {
+    padding: 22px var(--margen) 40px;
+  }
+
+  h1 {
+    font-size: clamp(40px, 10vw, 54px);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    margin: 30px 0 8px;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .entradilla {
+    font-size: 16px;
+    color: #333;
+  }
+
+  p,
+  li,
+  dd {
+    font-size: 15px;
+  }
+
+  ul {
+    padding-left: 18px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  .faq dt {
+    margin-top: 14px;
+    font-weight: 600;
+  }
+
+  .faq dd {
+    margin: 4px 0 0;
+  }
+
+  .firma {
+    margin: 32px 0 18px;
+    font-size: 13px;
+    color: var(--gris-texto);
+  }
+</style>
