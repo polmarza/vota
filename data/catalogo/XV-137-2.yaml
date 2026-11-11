@@ -1,0 +1,73 @@
+votacion: XV-137-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=14/10/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-243-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2025-10-14
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, de Conciliación y
+  Corresponsabilidad Familiar.
+titulo: "Ley de conciliación del PP"
+resumen: >-
+  Medidas de conciliación y apoyo a las familias. Subía de 1.200 a 1.800 euros al año por hijo
+  menor de tres años la deducción por maternidad del IRPF, que mantiene sus requisitos: es para las
+  madres con derecho al mínimo por descendientes que trabajan dadas de alta (con al menos 30 días
+  cotizados si el alta es posterior al nacimiento) o que cobraban el paro al nacer el hijo. Subía de
+  1.200 a 1.440 euros la deducción por familia numerosa de quien trabaja dado de alta (el doble en la
+  categoría especial) y de 600 a 720 la de cada hijo por encima del mínimo, y hacía de categoría
+  especial a las familias numerosas de cuatro o más hijos y a las de tres cuyos ingresos por miembro
+  no superen el 75 % del salario mínimo. Fijaba
+  en 26 semanas el permiso por nacimiento de las familias monoparentales (el Real Decreto-ley
+  9/2025 lo había fijado poco antes en 32), pedía al Gobierno retribuir parte del permiso parental
+  y permitía a los ayuntamientos bonificar el IBI a familias numerosas y monoparentales. No se
+  admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: familia
+ambito: estatal
+efectos:
+  - cuando: { sexo: [mujer], hijos: [pequenos], trabajo: [asalariado, autonomo, funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Una madre que trabaja y tiene hijos menores de tres años podría deducirse en el IRPF hasta
+      1.800 euros al año por cada uno, 600 más que con la deducción vigente.
+    base: >-
+      Disposición final tercera, apartado Uno, de la proposición (art. 81.1 de la Ley del IRPF,
+      deducción por maternidad).
+  - cuando: { numero-hijos: [tres-mas], hijos: [pequenos, menores], trabajo: [asalariado, autonomo, funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja y forma parte de una familia numerosa podría deducirse en el IRPF hasta 1.440
+      euros al año, en vez de 1.200, y 720 euros más por cada hijo por encima del mínimo.
+    base: >-
+      Disposición final tercera, apartado Dos, de la proposición (art. 81 bis.1.c de la Ley del
+      IRPF, deducción por familia numerosa).
+justificacion: >-
+  Es la principal propuesta de la oposición sobre familia en la XV, con medidas para madres con
+  hijos pequeños y familias numerosas.
+extracto: >-
+  [Disposición final tercera.Uno, art. 81.1 de la Ley del IRPF] «Las mujeres con hijos menores de
+  tres años con derecho a la aplicación del mínimo por descendientes previsto en el artículo 58 de
+  esta ley, que en el momento del nacimiento del menor perciban prestaciones contributivas o
+  asistenciales del sistema de protección de desempleo, o que en dicho momento o en cualquier
+  momento posterior estén dadas de alta en el régimen correspondiente de la Seguridad Social o
+  mutualidad con un período mínimo, en este último caso, de 30 días cotizados, podrán minorar la
+  cuota diferencial de este Impuesto hasta en 1.800 euros anuales por cada hijo menor de tres años
+  hasta que el menor alcance los tres años de edad.» [Disposición final tercera.Dos, art. 81 bis.1
+  de la Ley del IRPF] «1. Los contribuyentes que realicen una actividad por cuenta propia o ajena
+  por la cual estén dados de alta en el régimen correspondiente de la Seguridad Social o mutualidad
+  podrán minorar la cuota diferencial del impuesto en las siguientes deducciones:» «c) Por ser un
+  ascendiente, o un hermano huérfano de padre y madre, que forme parte de una familia numerosa
+  conforme a la Ley 40/2003, de 18 de noviembre, de Protección a las Familias Numerosas,» […]
+  «hasta 1.440 euros anuales.» «La cuantía de la deducción a que se refiere el párrafo anterior se
+  incrementará hasta en 720 euros anuales por cada uno de los hijos que formen parte de la familia
+  numerosa que exceda del número mínimo de hijos exigido» [Disposición final segunda.Tres, art. 4.1
+  de la Ley 40/2003] «a) Especial: las de cuatro o más hijos.» «2. No obstante, las unidades familiares con tres hijos se
+  clasificarán en la categoría especial cuando los ingresos anuales de las mismas, divididos por el
+  número de miembros que las componen, no superen en cómputo anual el 75 % del salario mínimo
+  interprofesional vigente, incluidas las pagas extraordinarias.» [Disposición final primera.Uno, art.
+  48.10 del Estatuto de los Trabajadores] «tendrá una duración de veintiséis semanas para los
+  padres o madres de familias monoparentales» [Disposición final cuarta, art. 74.4 de la Ley
+  Reguladora de las Haciendas Locales] «las ordenanzas fiscales podrán regular una bonificación de
+  hasta el 90 por ciento de la cuota íntegra del Impuesto a favor de aquellos sujetos pasivos que
+  ostenten la condición de titulares de familia numerosa o de familia monoparental.» [Art. 81 bis.1 de la Ley del IRPF] «En caso de familias numerosas de categoría especial, esta
+  deducción se incrementará en un 100 por ciento.»

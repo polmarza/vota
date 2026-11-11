@@ -2,12 +2,21 @@
 // Portada (M-01) con la estructura de la propuesta Ventana: héroe con la primera pregunta en una
 // ventana, una pregunta de ejemplo, un resultado, una votación y el cierre.
 //
+// La ventana del héroe es la primera pregunta de verdad: se escribe la provincia y "Siguiente" sigue el
+// test en la segunda pregunta sin cambiar de documento. El cuestionario entero está en la página,
+// oculto (src/components/Cuestionario.astro); al seguir, la portada se oculta, el cuestionario se
+// enseña y la dirección pasa a /test con history.pushState, sin ninguna respuesta. "Atrás" en la
+// primera pregunta, o el botón atrás del navegador, vuelve a la portada con la provincia puesta. Así
+// la provincia no tiene que guardarse en ningún sitio para pasar de una página a otra (M-08).
+//
 // El resultado y la votación de ejemplo no se inventan: en el build se calcula el resultado real de
 // cada perfil de referencia (data/perfiles-ejemplo.yaml) con el mismo cálculo y los mismos datos que
 // /test. En cada visita un script enseña uno al azar y un selector deja cambiar de perfil: los nueve
 // están ya en el HTML y solo se muestran u ocultan. Sin JavaScript se ve el primero, sin selector.
 import Base from '../layouts/Base.astro';
 import PreguntasFrecuentes from '../components/PreguntasFrecuentes.astro';
+import Cuestionario from '../components/Cuestionario.astro';
+import SelectorProvincia from '../components/SelectorProvincia.astro';
 import { cargarPerfilesEjemplo, cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.ts';
 import { calcular, conComunidad } from '../lib/afinidad/calculo.ts';
 import { progreso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
@@ -91,15 +100,13 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
             <a class="btn btn--secondary" href="/como-funciona">Cómo funciona</a>
           </div>
         </div>
-        <div class="hero__window" role="img" aria-label={`La primera pregunta del test: ${provincia.enunciado.toLowerCase()}, con Madrid elegida`}>
-          <div class="ly-piece q-win" aria-hidden="true">
+        <div class="hero__window">
+          <div class="ly-piece q-win" data-ventana-provincia data-testid="portada-ventana">
             <div class="q-win__top"><span>{progProvincia.texto}</span><span>Sin registro</span></div>
-            <div class="q-win__bar"><i style={`--avance:${progProvincia.fraccion * 100}%`}></i></div>
-            <p class="q-win__q">{provincia.enunciado}</p>
+            <div class="q-win__bar" aria-hidden="true"><i style={`--avance:${progProvincia.fraccion * 100}%`}></i></div>
+            <p class="q-win__q" id="portada-pregunta">{provincia.enunciado}</p>
             {provincia.subtitulo && <p class="q-win__sub">{provincia.subtitulo}</p>}
-            <div class="q-win__field">
-              <span>Madrid</span><svg width="14" height="14" viewBox="0 0 12 12"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </div>
+            <SelectorProvincia prefijo="portada-provincia" />
           </div>
         </div>
       </div>
@@ -258,6 +265,8 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
     </div>
   </section>
 
+  <Cuestionario oculto />
+
   <!--
     El resultado de ejemplo: un perfil al azar en cada visita y el selector para cambiarlo. Va en línea
     para que el perfil elegido esté puesto antes de pintar. Con movimiento, cada bloque marcado con
@@ -305,9 +314,112 @@ const FECHA_LARGA = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long
   </script>
 </Base>
 
+<script>
+  // La ventana del héroe y el paso de la portada al cuestionario (y vuelta) en el mismo documento.
+  import { montarCuestionario, type ProvinciaTest } from '../scripts/cuestionario.ts';
+  import { montarSelectorProvincia } from '../scripts/selector-provincia.ts';
+
+  const html = document.documentElement;
+  const raiz = document.querySelector<HTMLElement>('[data-cuestionario]')!;
+  const pie = document.querySelector<HTMLElement>('body > footer')!;
+  const cierre = pie.querySelector<HTMLElement>('.closing__cta');
+  const anclas = [...document.querySelectorAll<HTMLAnchorElement>('.nav__links a[href^="#"]')];
+  const titulo = document.title;
+  const conMovimiento = () => matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  // /test y lo que cuelgue de ella (rutas virtuales de los resultados, si algún día las hay)
+  const enTestUrl = () => /^\/test(\/|$)/.test(location.pathname);
+  let enTest = false;
+
+  const cuestionario = montarCuestionario(raiz, {
+    // la entrada de /test la puso esta página: volver atrás en el historial es volver a la portada
+    alVolver: () => (enTestUrl() ? history.back() : cerrar()),
+  });
+  const selector = montarSelectorProvincia<ProvinciaTest>(document.querySelector<HTMLElement>('[data-ventana-provincia] [data-selector-provincia]')!, cuestionario.provincias, {
+    alAvanzar(p) {
+      abrir();
+      cuestionario.empezarCon(p);
+      history.pushState(null, '', '/test');
+    },
+  });
+
+  /** Un fundido corto de lo que aparece, para que el cambio no sea un salto (nada con movimiento reducido). */
+  const fundido = (el: Element) => {
+    if (conMovimiento()) el.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: 'cubic-bezier(.22, 1, .36, 1)' });
+  };
+
+  /** La página pasa a ser la del test: sin las secciones de la portada ni los botones "Empezar el test". */
+  function abrir() {
+    if (enTest) return;
+    enTest = true;
+    html.classList.add('en-test');
+    raiz.hidden = false;
+    if (cierre) cierre.hidden = true;
+    pie.classList.replace('closing', 'pie-simple');
+    // las anclas de la cabecera apuntan a secciones que ya no se ven: llevan a la portada, como en /test
+    for (const a of anclas) a.setAttribute('href', `/${a.getAttribute('href')}`);
+    document.title = 'El test · Vota con Criterio';
+    fundido(raiz);
+  }
+
+  /** Vuelta a la portada, con la provincia que se había respondido en la ventana del héroe. */
+  function cerrar() {
+    if (!enTest) return;
+    enTest = false;
+    html.classList.remove('en-test');
+    raiz.hidden = true;
+    if (cierre) cierre.hidden = false;
+    pie.classList.replace('pie-simple', 'closing');
+    for (const a of anclas) a.setAttribute('href', a.getAttribute('href')!.slice(1));
+    document.title = titulo;
+    selector.fijar(cuestionario.provincia());
+    window.scrollTo(0, 0);
+    selector.boton.focus({ preventScroll: true });
+    fundido(document.querySelector('main > .hero')!);
+  }
+
+  // Atrás y adelante del navegador: /test es el cuestionario donde se quedó; cualquier otra entrada de
+  // esta página (la portada, sus anclas) es la portada.
+  window.addEventListener('popstate', () => {
+    if (enTestUrl()) {
+      abrir();
+      cuestionario.retomar();
+    } else {
+      cerrar();
+    }
+  });
+</script>
+
 <style is:global>
   /* La página de la maqueta: lo que solo tiene la portada. */
   .hero--centred .hero__c .hero__lead { color: var(--ink); }
+
+  /* El cuestionario abierto en la portada (html.en-test, lo pone el script de arriba): se ve como /test,
+     sin las secciones de la portada ni los botones "Empezar el test" de la cabecera y del móvil. */
+  html.en-test main > :not([data-cuestionario]) { display: none !important; }
+  html.en-test .nav__actions, html.en-test body > .actionbar { display: none !important; }
+  :root.en-test:has(> body > nav.actionbar) { --bar: 0px; }
+
+  /* La ventana del héroe tiene el selector de verdad: el fundido del marco empieza bajo el botón
+     "Siguiente" (y bajo la lista de sugerencias, que la alarga mientras está abierta). */
+  .hero--centred .hero__window {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 40px), transparent);
+  }
+  @media (max-width: 639px) {
+    .hero--centred .hero__window {
+      -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+      mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+    }
+  }
+  /* Desde 640px, el campo y "Siguiente" en una fila, para que la ventana quepa en el primer
+     pantallazo; debajo, las sugerencias y el aviso de obligatoria. En el móvil, uno debajo de otro. */
+  @media (min-width: 640px) {
+    .q-win .selector { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--s-3); }
+    .q-win .selector .campo { grid-area: 1 / 1; }
+    .q-win .selector .siguiente { grid-area: 1 / 2; height: 52px; }
+    .q-win .selector .lista { grid-area: 2 / 1 / 3 / -1; }
+    .q-win .selector .aviso { grid-area: 3 / 1 / 4 / -1; margin-bottom: 0; }
+  }
 
   @media (max-width: 639px) { .head-line { display: none; } }
 

@@ -1,0 +1,56 @@
+votacion: XIV-227-2
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=20/12/2022"
+texto: https://www.congreso.es/public_oficiales/L14/CONG/BOCG/B/BOCG-14-B-233-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2022-12-20
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a la violencia en el
+  ámbito sanitario.
+titulo: "Protección frente a las agresiones a los sanitarios"
+resumen: >-
+  Proponía obligar a todo empleador, público o privado, de personal sanitario (fijo o temporal) a
+  evaluar el riesgo de que sufra agresiones, amenazas, coacciones o insultos de pacientes, familiares
+  o público, aprobar un plan de prevención y designar un delegado de prevención. Las agresiones con
+  consecuencias para la salud del trabajador se considerarían accidente laboral; su versión de los
+  hechos se presumiría veraz cuando la agresión ocurriera sin testigos o en un espacio reservado; el
+  empleador le daría apoyo psicológico y tendría que contratar un seguro que le cubriera la defensa
+  jurídica y la indemnización de los daños, y la víctima podría pedir el traslado a otro centro o
+  servicio sin perder retribución. El personal sanitario tendría que notificar cada agresión en 24
+  horas, y el Ministerio de Sanidad crearía un registro nacional de agresiones. No se admitió a
+  trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: sanidad
+ambito: estatal
+efectos:
+  - cuando: { sector: [sanidad], trabajo: [asalariado, funcionario] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja en la sanidad tendría por ley un plan de prevención de agresiones en su centro y,
+      si sufriera una, se consideraría accidente laboral, su empleador tendría que cubrirle la defensa
+      jurídica y la indemnización con un seguro y podría pedir el traslado sin perder sueldo.
+    base: >-
+      Artículos 3, 4, 7, 10, 13, 14 y 15 de la proposición.
+justificacion: >-
+  Es una propuesta de un grupo distinto del Gobierno sobre las condiciones de trabajo del personal
+  sanitario, que el cuestionario identifica con la pregunta del sector. El Grupo Popular la volvió a
+  presentar en la XV legislatura con el mismo título; cuenta la primera votada.
+extracto: >-
+  [Artículo 1.1] «Es objeto de la presente ley regular las medidas mínimas y básicas a implantar por
+  el empleador, público o privado en los centros de trabajo, a fin de garantizar la seguridad y salud
+  del personal sanitario a su servicio, a fin de prevenir y evitar el riesgo de sufrir daños por actos
+  de violencia infligido por terceras personas.» [Artículo 2.a] «Personal sanitario: aquel que, en
+  virtud de un nombramiento público o un contrato de trabajo, desarrolla con carácter fijo o temporal
+  funciones de carácter sanitario.» [Artículo 7] «e) Gozar de la presunción de veracidad cuando el
+  acto de violencia en el ámbito sanitario que denuncie se haya cometido en un espacio reservado o sin
+  testigos.» [Artículo 10] «Se considerarán como accidente laboral aquellos actos violentos en el
+  ámbito sanitario que conlleven consecuencias para la vida o para la salud física o psíquica del
+  personal sanitario, sean de carácter permanente o transitorio.» [Artículo 11.1] «la personal víctima
+  de un daño deberá poner los hechos en conocimiento del empleador de forma inmediata y, a más
+  tardar, dentro de las 24 horas siguientes.» [Artículo 14] «El empleador tendrá suscrito un seguro
+  que garantice al personal víctima de un acto de violencia en el ámbito sanitario la gratuidad de los
+  servicios jurídicos que precise para su defensa y reparación del daño causado, así como el
+  resarcimiento económico de los perjuicios físicos o psíquicos derivados del acto de violencia.»
+  [Artículo 15] «El personal sanitario víctima de un acto probado de violencia sanitaria, podrá
+  solicitar el traslado a una plaza o puesto de trabajo en distinto centro de trabajo o, en su caso,
+  servicio o unidad.»

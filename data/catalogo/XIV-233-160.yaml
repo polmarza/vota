@@ -1,0 +1,69 @@
+votacion: XIV-233-160
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=09/02/2023"
+texto: https://www.boe.es/eli/es/l/2023/03/28/7
+iniciativa: "Proyecto de ley del Gobierno"
+fecha: 2023-02-09
+titulo_oficial: >-
+  Proyecto de Ley de protección de los derechos y el bienestar de los animales (antes denominado
+  Proyecto de Ley de protección, derechos y bienestar de los animales).
+titulo: "Ley de bienestar animal"
+resumen: >-
+  Regula la protección de los animales de compañía y las obligaciones de quienes los tienen.
+  Obliga a identificar con microchip y esterilizar a todos los gatos antes de los seis meses, salvo
+  los inscritos como reproductores de un criador registrado; a quien tiene perro, a contratar y
+  mantener durante toda la vida del animal un seguro de responsabilidad civil por daños a terceros,
+  y a quien quiera tener uno, a hacer antes un curso de formación gratuito. Prohíbe dejar sin
+  supervisión a un animal de compañía más de tres días seguidos (a un perro, más de veinticuatro
+  horas), sacrificarlos salvo por motivos de seguridad o de salud pública justificados, y vender
+  perros, gatos y hurones en tiendas: solo podrán venderlos criadores registrados. Deja fuera de la
+  ley a los perros de caza, los pastores y los de guarda del ganado, entre otros. Es la Ley 7/2023.
+que_significa_si: >-
+  Votar sí era aprobar el texto de la ley que salía de la comisión.
+tema: animales
+ambito: estatal
+efectos:
+  - cuando: { animales: [perro, perro-y-gato] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene perro tiene que contratar y pagar un seguro de responsabilidad civil por daños a
+      terceros y mantenerlo durante toda la vida del animal, y no puede dejarlo sin supervisión más
+      de veinticuatro horas seguidas.
+    base: >-
+      Art. 30.3 (seguro de responsabilidad civil obligatorio para quien tiene perro) y art. 27 i)
+      de la Ley 7/2023.
+  - cuando: { animales: [gato, perro-y-gato] }
+    el_si: perjudica
+    justificacion: >-
+      Quien tiene gato está obligado a identificarlo con microchip y a esterilizarlo antes de los
+      seis meses, salvo que esté inscrito como reproductor a nombre de un criador registrado.
+    base: >-
+      Art. 26 i) de la Ley 7/2023.
+justificacion: >-
+  Es la ley de la XIV que fija obligaciones directas para todas las personas que tienen perro o
+  gato.
+fuentes:
+  - https://www.boe.es/eli/es/l/2023/03/28/7
+extracto: >-
+  [Artículo 26] «Los titulares o personas que convivan con animales de compañía tienen el deber de
+  protegerlos, así como la obligación de cumplir lo previsto en la presente ley y en la normativa
+  que la desarrolle, y en particular:» «i) Identificar mediante microchip y proceder a la
+  esterilización quirúrgica de todos los gatos antes de los seis meses de edad salvo aquellos
+  inscritos en el registro de identificación como reproductores y a nombre de un criador registrado
+  en el Registro de Criadores de Animales de Compañía.» [Artículo 27] «quedan expresamente
+  prohibidas las siguientes actividades sobre los animales de compañía: a) Su sacrificio, salvo por
+  motivos de seguridad de las personas o animales o de existencia de riesgo para la salud pública
+  debidamente justificado por la autoridad competente.» «i) Dejar sin supervisión a cualquier animal
+  de compañía durante más de tres días consecutivos; en el caso de la especie canina, este plazo no
+  podrá ser superior a veinticuatro horas consecutivas.» «l) La comercialización de perros, gatos y
+  hurones en tiendas de animales, así como su exhibición y exposición al público con fines
+  comerciales. Perros, gatos y hurones solo podrán venderse desde criadores registrados.»
+  [Artículo 30] «1. Las personas que opten a ser titulares de perros deberán acreditar la
+  realización un curso de formación para la tenencia de perros que tendrá una validez indefinida. 2.
+  Dicho curso de formación será gratuito y su contenido se determinará reglamentariamente. 3. En el
+  caso de la tenencia de perros y durante toda la vida del animal, la persona titular deberá
+  contratar y mantener en vigor un seguro de responsabilidad civil por daños a terceros, que incluya
+  en su cobertura a las personas responsables del animal, por un importe de cuantía suficiente para
+  sufragar los posibles gastos derivados, que se establecerá reglamentariamente.» [Artículo 1.3]
+  «e) Los animales utilizados en actividades específicas (las deportivas reconocidas por el Consejo
+  Superior de Deportes, las aves de cetrería, los perros pastores y de guarda del ganado)» […]
+  «Igualmente quedarán excluidos los perros de caza, rehalas y animales auxiliares de caza.»

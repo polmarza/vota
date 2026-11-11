@@ -18,6 +18,7 @@ const TEMAS: Record<string, string> = {
   energia: 'Energía',
   familia: 'Familia',
   fiscalidad: 'Impuestos',
+  animales: 'Animales',
   pensiones: 'Pensiones',
   presupuestos: 'Presupuestos',
   sanidad: 'Sanidad',

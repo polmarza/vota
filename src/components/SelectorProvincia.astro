@@ -1,28 +1,37 @@
 ---
 // Selector de provincia con autocompletado (docs/design-system.md): patrón ARIA combobox + listbox.
-// La búsqueda la hace src/lib/perfil/provincias.ts desde el script de src/pages/test.astro.
+// El comportamiento lo pone src/scripts/selector-provincia.ts, que se monta sobre esta raíz. Los id y
+// los data-testid llevan el prefijo para que la portada pueda tener dos copias (la de la ventana del
+// héroe y la de la primera pregunta del cuestionario) sin repetirlos; en /test el prefijo es el de
+// siempre, "provincia".
+interface Props {
+  prefijo?: string;
+}
+
+const { prefijo = 'provincia' } = Astro.props;
+const id = (parte: string) => `${prefijo}-${parte}`;
 ---
 
-<div class="selector" data-selector-provincia>
-  <label class="solo-lector" for="provincia-campo">Provincia</label>
+<div class="selector" data-selector-provincia data-prefijo={prefijo}>
+  <label class="solo-lector" for={id('campo')}>Provincia</label>
   <input
-    id="provincia-campo"
+    id={id('campo')}
     class="campo"
     type="text"
     role="combobox"
     aria-autocomplete="list"
     aria-expanded="false"
-    aria-controls="provincia-lista"
-    aria-describedby="provincia-aviso"
+    aria-controls={id('lista')}
+    aria-describedby={id('aviso')}
     autocomplete="off"
     autocapitalize="words"
     spellcheck="false"
     placeholder="Escribe tu provincia"
-    data-testid="provincia-campo"
+    data-testid={id('campo')}
   />
-  <ul id="provincia-lista" class="lista" role="listbox" aria-label="Provincias" hidden data-testid="provincia-lista"></ul>
-  <p id="provincia-aviso" class="aviso" aria-live="polite" data-testid="provincia-aviso"></p>
-  <button class="btn btn--primary siguiente" type="button" aria-disabled="true" data-siguiente data-testid="provincia-siguiente">Siguiente</button>
+  <ul id={id('lista')} class="lista" role="listbox" aria-label="Provincias" hidden data-testid={id('lista')}></ul>
+  <p id={id('aviso')} class="aviso" aria-live="polite" data-aviso data-testid={id('aviso')}></p>
+  <button class="btn btn--primary siguiente" type="button" aria-disabled="true" data-siguiente data-testid={id('siguiente')}>Siguiente</button>
 </div>
 
 <style>

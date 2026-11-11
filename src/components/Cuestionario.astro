@@ -1,0 +1,103 @@
+---
+// El cuestionario (M-01): todas las preguntas y las pantallas de resultado, con los datos que necesita
+// el navegador. El comportamiento está en src/scripts/cuestionario.ts, que monta cada página que lo
+// usa: /test (src/pages/test.astro) y la portada, donde está oculto hasta que se elige la provincia en
+// la ventana del héroe. Las respuestas viven solo en memoria (M-08).
+import Pregunta from './Pregunta.astro';
+import SelectorProvincia from './SelectorProvincia.astro';
+import { cargarPreguntas, cargarTerritorio, datosResultado } from '../lib/datos.ts';
+import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
+import { CAMPOS_PERFIL, type TextosPerfil } from '../lib/compartir/tarjeta.ts';
+
+const preguntas = cargarPreguntas();
+const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria, solo_si }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria, ...(solo_si && { soloSi: solo_si }) }));
+const pasos = recorrido(todas);
+const porId = new Map(preguntas.map((p) => [p.id, p]));
+const territorio = cargarTerritorio();
+const provincias = territorio.provincias.map(({ id, nombre, alias, ccaa }) => ({ id, nombre, alias, ccaa }));
+const resultado = datosResultado();
+// Textos de las opciones de las cuatro preguntas que puede llevar la imagen para compartir (S-02).
+const textosPerfil: TextosPerfil = Object.fromEntries(
+  CAMPOS_PERFIL.map((id) => [id, Object.fromEntries((porId.get(id)?.opciones ?? []).map((o) => [o.id, o.texto]))]),
+);
+interface Props {
+  /** Oculto al cargar (la portada lo enseña al elegir la provincia en el héroe). */
+  oculto?: boolean;
+}
+
+const { oculto = false } = Astro.props;
+// "<" escapado: ningún texto de los datos puede cerrar el <script> que los contiene.
+const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado, textosPerfil }).replace(/</g, "\\u003c");
+---
+
+<div class="interior cuestionario" data-cuestionario hidden={oculto} data-testid="cuestionario">
+  <script type="application/json" id="datos-test" data-datos-test set:html={datos} />
+
+  <div class="wrap">
+    {
+      pasos.map((paso, i) =>
+        paso.tipo === 'pregunta' ? (
+          <Pregunta pregunta={porId.get(paso.pregunta)!} todas={todas} atrasA={i === 0 ? '/' : undefined}>
+            <SelectorProvincia />
+          </Pregunta>
+        ) : paso.tipo === 'provisional' ? (
+          <section class="paso fin" data-paso="provisional" data-testid="resultado-provisional" hidden>
+            <button class="quiz__back atras" type="button" data-atras>← Atrás</button>
+            <p class="pill marca-provisional">Provisional</p>
+            <h2 tabindex="-1">Tu resultado provisional</h2>
+            <div class="resultado" data-resultado></div>
+            <button class="btn btn--secondary" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
+          </section>
+        ) : (
+          <section class="paso fin" data-paso="final" data-testid="resultado-final" hidden>
+            <button class="quiz__back atras" type="button" data-atras>← Atrás</button>
+            <h2 tabindex="-1">Tu resultado</h2>
+            <div class="resultado" data-resultado></div>
+          </section>
+        ),
+      )
+    }
+  </div>
+</div>
+
+<style is:global>
+  /* Las pantallas de resultado (docs/design-system.md → Resultado). El DOM lo construye
+     src/scripts/resultado.ts con las clases de src/styles/global.css. */
+  .fin > .atras { display: block; margin-bottom: var(--s-5); }
+  .fin > h2 { margin: var(--s-3) 0 var(--s-4); outline: none; }
+  .marca-provisional { margin: 0; }
+  .resultado .cobertura { margin: 0 0 var(--s-6); max-width: 62ch; }
+  .resultado .resultado-fondo { background: var(--p-surface); border-radius: var(--r-lg); padding: var(--s-6); }
+  .resultado .result-foot { margin-top: var(--s-6); }
+  .resultado .sin-datos { margin: 0; padding: var(--s-5) var(--s-6); border-radius: var(--r-lg); background: var(--p-bg); font-size: var(--t-lead); max-width: none; }
+  .resultado .titular-lista { margin: var(--s-9) 0 0; font-size: var(--t-h2); line-height: 1.1; }
+  .resultado .screen--lista { padding: var(--s-6); }
+  .resultado .votaciones > li + li { margin-top: var(--s-6); padding-top: var(--s-6); border-top: 1px solid rgb(var(--tinta-rgb) / 0.14); }
+  .resultado .vote__head { display: grid; gap: var(--s-2); align-content: start; }
+  .resultado .vote__t { margin: 0; }
+  .resultado .vote__efecto { font-size: var(--t-small); color: var(--muted); }
+  .resultado .vote__cuerpo { display: grid; gap: var(--s-3); align-content: start; }
+  .resultado .que-si { font-size: var(--t-small); color: var(--muted); }
+  /* Compartir (S-02): vista previa de la imagen a la izquierda y el texto, la casilla y el botón. */
+  .resultado .compartir { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-6); align-items: start; margin-top: var(--s-6); padding-top: var(--s-6); border-top: 1px solid rgb(var(--tinta-rgb) / 0.14); }
+  .resultado .compartir__vista { display: block; width: 216px; height: 270px; border-radius: var(--r-md, 8px); background: var(--p-bg); box-shadow: 0 24px 48px -32px rgb(var(--tinta-rgb) / 0.35); }
+  .resultado .compartir__vista:not([src]) { visibility: hidden; }
+  .resultado .compartir__texto { display: grid; gap: var(--s-3); align-content: start; }
+  .resultado .compartir h3 { margin: 0; font: var(--display-weight) 28px/1.15 var(--font-display); letter-spacing: -0.02em; }
+  .resultado .compartir p { margin: 0; font-size: 16px; max-width: 62ch; }
+  .resultado .compartir__perfil { display: flex; align-items: center; gap: var(--s-3); margin-top: var(--s-2); }
+  .resultado .compartir__perfil label { font-size: 17px; font-weight: 500; cursor: pointer; }
+  .resultado .compartir .compartir__ayuda { font-size: var(--t-small); color: var(--muted); padding-left: calc(20px + var(--s-3)); }
+  .resultado .compartir .btn-row { margin-top: var(--s-3); }
+  .resultado .compartir__estado:empty { display: none; }
+  @media (max-width: 639px) {
+    .resultado .compartir { grid-template-columns: minmax(0, 1fr); gap: var(--s-4); }
+    .resultado .compartir__vista { width: 160px; height: 200px; }
+  }
+  @media (max-width: 639px) {
+    .resultado .resultado-fondo { padding: var(--s-4); }
+    .resultado .screen--lista { padding: var(--s-5); }
+    .resultado .sin-datos { padding: var(--s-4) var(--s-5); }
+    .resultado .titular-lista { margin-top: var(--s-8); }
+  }
+</style>

@@ -9,6 +9,73 @@ test.describe('M-01 · cuestionario', () => {
     await expect(page.getByText('Provincia · 1 de 8')).toBeVisible();
   });
 
+  test('en la ventana de la portada se elige la provincia y se sigue en la segunda pregunta sin recargar; "Atrás" vuelve a la portada', async ({ page }) => {
+    await page.goto('/');
+    // Una variable en window sobrevive solo si no hay navegación de documento.
+    await page.evaluate(() => ((window as unknown as { sinRecargar: boolean }).sinRecargar = true));
+    const sinRecargar = () => page.evaluate(() => (window as unknown as { sinRecargar?: boolean }).sinRecargar);
+    await expect(page.getByTestId('cuestionario')).toBeHidden();
+    const campo = page.getByTestId('portada-provincia-campo');
+    await campo.fill('madr');
+    await page.getByTestId('portada-provincia-lista').getByRole('option', { name: 'Madrid' }).click();
+    await expect(campo).toHaveValue('Madrid');
+    await page.getByTestId('portada-provincia-siguiente').click();
+
+    // La segunda pregunta, con el foco en su enunciado, y la portada oculta.
+    const vivienda = page.getByTestId('pregunta-vivienda');
+    await expect(vivienda).toBeVisible();
+    await expect(vivienda.getByRole('heading', { level: 2 })).toBeFocused();
+    await expect(page.locator('.hero')).toBeHidden();
+    await expect(page.locator('#resultado')).toBeHidden();
+    // La dirección es /test, sin ninguna respuesta; no hubo navegación de documento.
+    const url = new URL(page.url());
+    expect([url.pathname, url.search, url.hash]).toEqual(['/test', '', '']);
+    expect(await sinRecargar()).toBe(true);
+
+    // "Atrás" lleva a la primera pregunta del cuestionario, con la provincia ya puesta…
+    await vivienda.getByRole('button', { name: '← Atrás' }).click();
+    await expect(page.getByTestId('pregunta-provincia')).toBeVisible();
+    await expect(page.getByTestId('provincia-campo')).toHaveValue('Madrid');
+    // …y otra vez "Atrás", a la portada, con la provincia que había.
+    await page.getByTestId('pregunta-provincia').getByRole('link', { name: '← Atrás' }).click();
+    await expect(page.locator('.hero')).toBeVisible();
+    await expect(page.getByTestId('cuestionario')).toBeHidden();
+    await expect(campo).toHaveValue('Madrid');
+    expect(new URL(page.url()).pathname).toBe('/');
+    expect(await sinRecargar()).toBe(true);
+  });
+
+  test('desde la portada, el botón atrás del navegador vuelve a la portada y adelante al mismo paso; recargar en /test carga el test', async ({ page }) => {
+    await page.goto('/');
+    await page.evaluate(() => ((window as unknown as { sinRecargar: boolean }).sinRecargar = true));
+    const sinRecargar = () => page.evaluate(() => (window as unknown as { sinRecargar?: boolean }).sinRecargar);
+    const campo = page.getByTestId('portada-provincia-campo');
+    // Sin provincia, la ventana avisa y no sigue.
+    await page.getByTestId('portada-provincia-siguiente').click({ force: true });
+    await expect(page.getByTestId('portada-provincia-aviso')).toContainText('obligatoria');
+    await expect(page.getByTestId('cuestionario')).toBeHidden();
+
+    await campo.fill('sevilla');
+    await page.getByTestId('portada-provincia-siguiente').click();
+    await page.getByTestId('opcion-vivienda-alquiler').click();
+    await expect(page.getByTestId('pregunta-trabajo')).toBeVisible();
+
+    await page.goBack();
+    await expect(page.locator('.hero')).toBeVisible();
+    await expect(campo).toHaveValue('Sevilla');
+    expect(new URL(page.url()).pathname).toBe('/');
+    await page.goForward();
+    await expect(page.getByTestId('pregunta-trabajo')).toBeVisible();
+    expect(new URL(page.url()).pathname).toBe('/test');
+    expect(await sinRecargar()).toBe(true);
+
+    // Recargar es cargar /test: las respuestas se pierden, como siempre.
+    await page.reload();
+    expect(await sinRecargar()).toBeUndefined();
+    await expect(page.getByTestId('pregunta-provincia')).toBeVisible();
+    await expect(page.getByTestId('provincia-campo')).toHaveValue('');
+  });
+
   test('M-01 negativo: sin provincia no se avanza y se avisa de que es obligatoria', async ({ page }) => {
     await page.goto('/test');
     await page.getByTestId('provincia-campo').fill('Atlantis');

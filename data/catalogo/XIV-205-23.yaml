@@ -36,6 +36,16 @@ efectos:
       Art. 5.Tres, que da nueva redacción al art. 11 del Real Decreto 1620/2011 (extinción del
       contrato); art. 4 (cotización al Fondo de Garantía Salarial); disposición adicional primera
       y disposición transitoria segunda (cotización por desempleo y bonificaciones).
+  - cuando: { sector: [hogar], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja como empleada o empleado de hogar pasa a cotizar por desempleo y a tener derecho
+      al paro y a la protección del Fondo de Garantía Salarial, y ya no puede ser despedido sin causa:
+      el despido tiene que justificarse, comunicarse por escrito y llevar indemnización.
+    base: >-
+      Art. 3.Uno (supresión del art. 251.d de la Ley General de la Seguridad Social, que excluía el
+      desempleo); disposición transitoria segunda (cotización por desempleo y al Fondo de Garantía
+      Salarial); art. 5.Tres (art. 11 del Real Decreto 1620/2011).
 justificacion: >-
   Es la norma que dio a las empleadas de hogar el derecho al paro y suprimió el despido sin causa
   en ese trabajo, uno de los efectos directos que faltaban en el catálogo.

@@ -1,0 +1,59 @@
+votacion: XIV-171-5
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XIV&targetDate=07/04/2022"
+texto: https://www.boe.es/eli/es/rdl/2022/03/22/5
+iniciativa: "Real decreto-ley del Gobierno"
+fecha: 2022-04-07
+titulo_oficial: >-
+  Real Decreto-ley 5/2022, de 22 de marzo, por el que se adapta el régimen de la relación laboral de
+  carácter especial de las personas dedicadas a las actividades artísticas, así como a las
+  actividades técnicas y auxiliares necesarias para su desarrollo, y se mejoran las condiciones
+  laborales del sector.
+titulo: "Contratos de los artistas y técnicos del espectáculo"
+resumen: >-
+  Cambia la relación laboral especial de los artistas de las artes escénicas, el audiovisual y la
+  música y la extiende al personal técnico y auxiliar. El contrato artístico de duración determinada
+  solo puede usarse para necesidades temporales de la empresa, especificando por escrito la causa;
+  quien se contrate incumpliéndolo, o encadene contratos temporales, pasa a ser fijo. Al terminar un
+  contrato temporal, la persona cobra una indemnización de 12 días de salario por año trabajado (20
+  si el contrato ha durado más de 18 meses), y la empresa tiene que avisar del fin con antelación. Los
+  contratos de menos de 30 días de este sector dejan de pagar la cotización adicional que se aplica a
+  los contratos cortos. Prevé además una cotización reducida para los artistas autónomos con
+  ingresos inferiores a 3.000 euros al año. Se convalidó.
+que_significa_si: >-
+  Votar sí era convalidar el decreto ley, es decir, mantenerlo en vigor.
+tema: empleo
+ambito: estatal
+efectos:
+  - cuando: { sector: [cultura], trabajo: [asalariado] }
+    el_si: favorece
+    justificacion: >-
+      Quien trabaja con contrato como artista o técnico de espectáculos solo puede ser contratado
+      de forma temporal si la necesidad es temporal (si no, es fijo) y, al acabar el contrato, cobra
+      una indemnización de 12 días por año trabajado, o de 20 si ha durado más de 18 meses.
+    base: >-
+      Artículo segundo, apartados Cuatro y Cinco, que dan nueva redacción a los arts. 5 y 10 del Real Decreto
+      1435/1985 (modalidades del contrato e indemnización por su extinción).
+justificacion: >-
+  Es la norma específica sobre las condiciones laborales de quienes trabajan en la cultura y los
+  espectáculos, un sector que el cuestionario identifica con la pregunta del sector.
+extracto: >-
+  [Art. 5 del Real Decreto 1435/1985] «Dos. El contrato laboral artístico de duración determinada,
+  que solo se celebrará para cubrir necesidades temporales de la empresa, podrá ser para una o varias
+  actuaciones, por un tiempo cierto, por una temporada o por el tiempo que una obra permanezca en
+  cartel, o por el tiempo que duren las distintas fases de la producción.» «Cuatro. Las personas
+  contratadas incumpliendo lo establecido en este artículo adquirirán la condición de fijas.
+  Igualmente adquirirán la condición de fijas las personas trabajadoras que no hubiesen sido dadas de
+  alta en la Seguridad Social o en los supuestos de encadenamiento de contratos de duración
+  determinada» [Art. 10 del Real Decreto 1435/1985] «Dos. A la finalización del contrato artístico
+  previsto en el artículo 5, la persona trabajadora tendrá derecho a recibir una indemnización de
+  cuantía equivalente a la parte proporcional de la cantidad que resultaría de abonar doce días de
+  salario por cada año de servicio, o la superior fijada en convenio colectivo o contrato
+  individual.» «Cuando la duración del contrato, incluida, en su caso, las prórrogas, sea superior a
+  dieciocho meses, la indemnización a abonar será, como mínimo, de una cuantía equivalente a la parte
+  proporcional de la cantidad que resultaría de abonar veinte días de salario por cada año de
+  servicio.» «En defecto de pacto, la empresa deberá preavisar la extinción del contrato a la persona
+  afectada con diez días de antelación, si su duración ha sido superior a tres meses» [Disposición
+  adicional primera] «Se aplicará una cotización reducida en los términos que se fijen en la norma
+  correspondiente, y de acuerdo con la disposición adicional segunda de este real decreto-ley, a los
+  artistas con rendimientos anuales inferiores a 3.000 euros que se encuentren dados de alta en el
+  Régimen Especial de Trabajadores por Cuenta Propia o Autónomos.»

@@ -1,0 +1,58 @@
+votacion: XV-114-1
+url: "https://www.congreso.es/es/opendata/votaciones?p_p_id=votaciones&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&targetLegislatura=XV&targetDate=27/05/2025"
+texto: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-202-1.PDF
+iniciativa: "Proposición de ley del Grupo Popular"
+fecha: 2025-05-27
+titulo_oficial: >-
+  Proposición de Ley del Grupo Parlamentario Popular en el Congreso, relativa a incrementar las
+  medidas de prevención en el consumo de alcohol y drogas por los conductores, en especial por
+  conductores profesionales de vehículos de transporte de pasajeros y mercancías.
+titulo: "Control de alcohol y drogas a los conductores profesionales"
+resumen: >-
+  Proponía que la vigencia y la renovación del permiso de conducir de los conductores profesionales
+  exigieran un reconocimiento médico anual, en el que, si se acordaba en la negociación colectiva, se
+  harían pruebas para detectar el consumo de alcohol y drogas. Las empresas de transporte de
+  mercancías o viajeros podrían hacer a sus conductores reconocimientos aleatorios de alcohol y
+  drogas. El conductor profesional que perdiera todos los puntos
+  por conducir con alcohol o drogas tendría que presentar un reconocimiento médico sin rastro de esas
+  sustancias para recuperar el permiso. Añadía campañas de concienciación de la Dirección General de
+  Tráfico y programas públicos de rehabilitación para los conductores profesionales que perdieran el
+  permiso por ese motivo. No se admitió a trámite.
+que_significa_si: >-
+  Votar sí era admitirla a trámite para que el Congreso la debatiera y pudiera aprobarla.
+tema: transporte
+ambito: estatal
+efectos:
+  - cuando: { sector: [conduccion] }
+    el_si: perjudica
+    justificacion: >-
+      Quien conduce profesionalmente tendría que pasar cada año un reconocimiento médico para
+      mantener el permiso, con pruebas de alcohol y drogas si lo fija el convenio, y su empresa de
+      transporte podría hacerle controles aleatorios de esas sustancias.
+    base: >-
+      Art. 1.Uno (nuevo art. 61.4 de la Ley sobre Tráfico), art. 2 (art. 22.1 de la Ley de Prevención
+      de Riesgos Laborales) y disposición final primera de la proposición.
+justificacion: >-
+  Es una propuesta de un grupo distinto del Gobierno que impone obligaciones directas a los
+  conductores profesionales, un sector que el cuestionario identifica con la pregunta del sector.
+extracto: >-
+  [Art. 1.Uno, art. 61.4 de la Ley sobre Tráfico] «4. La vigencia del permiso de conducción para los
+  conductores profesionales y, en su caso, las renovaciones del mismo implicarán la realización de un
+  reconocimiento médico, con carácter anual, mediante el cual, con el acuerdo en el ámbito de la
+  negociación colectiva, se podrán realizar pruebas clínicas específicas para detectar el consumo de
+  alcohol y drogas.» [Art. 1.Dos, art. 71.1 de la Ley sobre Tráfico] «En el caso de que la pérdida
+  total de puntos esté motivada por la infracción a que se refiere el párrafo c) del artículo 77 y
+  afecte a un conductor profesional en activo, para la obtención de un nuevo permiso de conducción,
+  tal conductor profesional deberá presentar ante el órgano correspondiente un reconocimiento médico
+  en el que se incluyan pruebas clínicas específicas que indiquen la ausencia de consumo de alcohol y
+  drogas en el organismo.» [Art. 2, art. 22.1 de la Ley de Prevención de Riesgos Laborales] «En el
+  caso de las empresas de transporte de mercancías o pasajeros, la empresa, complementariamente a los
+  controles que llevan a cabo los Cuerpos y Fuerzas de Seguridad del Estado, tendrá reconocida su
+  capacidad para llevar a cabo reconocimientos médicos aleatorios relacionados con el consumo de
+  alcohol y drogas, para aquellos empleados incluidos en la categoría de conductores profesionales de
+  vehículos de transporte de mercancía y pasajeros» [Art. 1.Cinco, disposición adicional
+  decimoséptima de la Ley sobre Tráfico] «Las Administraciones públicas, en el ámbito de sus
+  competencias, llevarán a cabo programas de rehabilitación para aquellos conductores profesionales a
+  los que se les haya suspendido la vigencia o se les haya retirado el permiso o licencia de
+  conducción como consecuencia del consumo de alcohol y drogas, con la finalidad de hacer posible su
+  reinserción laboral.»

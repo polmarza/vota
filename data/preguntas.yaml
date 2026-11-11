@@ -193,3 +193,81 @@
     - { id: no, texto: No }
     - { id: si, texto: Sí }
     - { id: ns, texto: Prefiero no responder }
+
+
+- id: sector
+  bloque: ampliado
+  orden: 8
+  etiqueta: Sector
+  enunciado: ¿En qué sector trabajas?
+  subtitulo: Algunas votaciones afectan solo a una profesión concreta.
+  # Solo a quien trabaja: por cuenta ajena, como autónomo o en el sector público.
+  solo_si: { trabajo: [asalariado, autonomo, funcionario] }
+  tipo: opciones
+  opciones:
+    - { id: sanidad, texto: Sanidad }
+    - { id: educacion, texto: "Educación (docente)" }
+    - { id: policia, texto: Policía Nacional o Guardia Civil }
+    - { id: ejercito, texto: Fuerzas Armadas }
+    - { id: prisiones, texto: Instituciones Penitenciarias }
+    - { id: cultura, texto: Cultura o espectáculos }
+    - { id: conduccion, texto: Conducción profesional }
+    - { id: hogar, texto: Empleo de hogar o cuidados en domicilios }
+    - { id: investigacion, texto: Investigación }
+    - { id: otro, texto: Otro }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: numero-hijos
+  bloque: ampliado
+  orden: 9
+  etiqueta: Hijos
+  enunciado: ¿Cuántos hijos tienes a tu cargo?
+  solo_si: { hijos: [pequenos, menores, mayores] }
+  tipo: opciones
+  opciones:
+    - { id: uno, texto: Uno }
+    - { id: dos, texto: Dos }
+    - { id: tres-mas, texto: Tres o más }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: monoparental
+  bloque: ampliado
+  orden: 10
+  etiqueta: Familia
+  enunciado: ¿Los crías sin pareja?
+  subtitulo: Familia monoparental.
+  solo_si: { hijos: [pequenos, menores, mayores] }
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: si, texto: Sí }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: animales
+  bloque: ampliado
+  orden: 11
+  etiqueta: Animales
+  enunciado: ¿Tienes perro o gato?
+  tipo: opciones
+  opciones:
+    - { id: no, texto: No }
+    - { id: perro, texto: Perro }
+    - { id: gato, texto: Gato }
+    - { id: perro-y-gato, texto: Perro y gato }
+    - { id: ns, texto: Prefiero no responder }
+
+
+- id: sexo
+  bloque: ampliado
+  orden: 12
+  etiqueta: Sexo
+  enunciado: ¿Cuál es tu sexo?
+  subtitulo: Solo lo usan las votaciones con medidas para mujeres o para hombres.
+  tipo: opciones
+  opciones:
+    - { id: mujer, texto: Mujer }
+    - { id: hombre, texto: Hombre }
+    - { id: ns, texto: Prefiero no responder }
