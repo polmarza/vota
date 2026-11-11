@@ -6,8 +6,12 @@ import { join } from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import type { Candidata } from '../../../scripts/data/candidatas.ts';
+import { esquemaPartidos } from '../../../scripts/data/partidos.ts';
 import {
+  esquemaCandidaturas,
   esquemaFicha,
+  partidosPorProvincia,
+  validarCandidaturas,
   esquemaPreguntas,
   esquemaTerritorio,
   sentidoParaPerfil,
@@ -31,6 +35,24 @@ for (const leg of ['XIV', 'XV']) {
 }
 const perfiles = yaml('tests/fixtures/perfiles.yaml') as { nombre: string; respuestas: Respuestas }[];
 const ccaaDe = new Map(territorio.provincias.map((p) => [p.id, p.ccaa]));
+
+describe('M-02 · candidaturas del 29-N', () => {
+  const candidaturas = esquemaCandidaturas.parse(yaml('data/candidaturas/2026.yaml'));
+  const conHistorial = new Set(esquemaPartidos.parse(yaml('data/partidos/partidos.yaml')).partidos.filter((p) => p.herencia.XIV?.length || p.herencia.XV?.length).map((p) => p.id));
+
+  it('solo incluyen partidos con historial y provincias que existen', () => {
+    expect(validarCandidaturas(candidaturas, territorio, conHistorial)).toEqual([]);
+  });
+
+  it('en cada provincia se presentan al menos seis partidos con historial', () => {
+    for (const [provincia, partidos] of partidosPorProvincia(candidaturas, territorio)) expect(partidos.length, provincia).toBeGreaterThanOrEqual(6);
+  });
+
+  it('M-02 negativo: en Madrid no aparecen partidos que solo concurren en otras comunidades', () => {
+    const madrid = partidosPorProvincia(candidaturas, territorio).get('madrid')!;
+    for (const p of ['pnv', 'bng', 'cc', 'erc', 'eh-bildu']) expect(madrid).not.toContain(p);
+  });
+});
 
 describe('M-05 · catálogo real', () => {
   it('las fichas, las preguntas y el territorio no tienen errores', () => {

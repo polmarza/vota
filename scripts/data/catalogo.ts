@@ -3,6 +3,7 @@
 // de partido (data/votos/). El formato está en docs/data-model.md.
 
 import { z } from 'zod';
+import { CLAVE_CCAA, NO_RESPONDE, conComunidad, sentidoParaPerfil as sentidoComun, type Respuestas } from '../../src/lib/afinidad/calculo.ts';
 import type { Candidata } from './candidatas.ts';
 import type { VotacionPartidos } from './votos.ts';
 
@@ -14,9 +15,9 @@ const urlDe = (dominios: string[], que: string) =>
     .url()
     .refine((u) => dominios.some((d) => new URL(u).hostname === d || new URL(u).hostname.endsWith(`.${d}`)), `${que} tiene que estar en ${dominios.join(' o ')}`);
 
-/** Clave especial de las condiciones: la comunidad autónoma, que sale de la provincia. */
-export const CLAVE_CCAA = 'ccaa';
-export const NO_RESPONDE = 'ns';
+// La clave especial de las condiciones (la comunidad, que sale de la provincia) y la respuesta
+// "Prefiero no responder" se definen junto al cálculo de la web.
+export { CLAVE_CCAA, NO_RESPONDE } from '../../src/lib/afinidad/calculo.ts';
 
 // ─── Territorio ─────────────────────────────────────────────────────────────────
 
@@ -35,6 +36,37 @@ export const esquemaTerritorio = z.object({
     .length(52),
 });
 export type Territorio = z.infer<typeof esquemaTerritorio>;
+
+// ─── Candidaturas del 29-N (M-02) ───────────────────────────────────────────────
+
+export const esquemaCandidaturas = z.object({
+  /** `true` hasta contrastarlas con las candidaturas proclamadas del BOE. */
+  provisional: z.boolean(),
+  fuente: z.string(),
+  candidaturas: z.array(z.object({ partido: slug, provincias: z.union([z.literal('todas'), z.array(slug).min(1)]) })),
+});
+export type Candidaturas = z.infer<typeof esquemaCandidaturas>;
+
+/** Partidos que se presentan en cada provincia. */
+export function partidosPorProvincia(c: Candidaturas, territorio: Territorio): Map<string, string[]> {
+  return new Map(
+    territorio.provincias.map((p) => [p.id, c.candidaturas.filter((x) => x.provincias === 'todas' || x.provincias.includes(p.id)).map((x) => x.partido)]),
+  );
+}
+
+/** Errores de las candidaturas: partidos sin historial (M-02), provincias inexistentes, duplicados. */
+export function validarCandidaturas(c: Candidaturas, territorio: Territorio, partidosConHistorial: Set<string>): string[] {
+  const errores: string[] = [];
+  const provincias = new Set(territorio.provincias.map((p) => p.id));
+  const vistos = new Set<string>();
+  for (const x of c.candidaturas) {
+    if (!partidosConHistorial.has(x.partido)) errores.push(`candidaturas: "${x.partido}" no tiene historial en la XIV ni en la XV (o no existe)`);
+    if (vistos.has(x.partido)) errores.push(`candidaturas: "${x.partido}" aparece dos veces`);
+    vistos.add(x.partido);
+    if (x.provincias !== 'todas') for (const p of x.provincias) if (!provincias.has(p)) errores.push(`candidaturas: la provincia "${p}" no existe`);
+  }
+  return errores;
+}
 
 // ─── Preguntas ──────────────────────────────────────────────────────────────────
 
@@ -188,18 +220,9 @@ export function validarCatalogo({ fichas, preguntas, territorio, votos, candidat
 
 // ─── Qué votaciones afectan a un perfil ─────────────────────────────────────────
 
-/** Respuestas del cuestionario por id de pregunta; "ns" o ausente no cumple ninguna condición. */
-export type Respuestas = Record<string, string | undefined>;
+export type { Respuestas } from '../../src/lib/afinidad/calculo.ts';
 
-/**
- * Sentido de una ficha para un perfil: `favorece` o `perjudica` si los efectos que cumple coinciden,
- * `contrapuesta` si se contradicen (la votación no cuenta) y null si no le afecta (docs/data-model.md).
- */
-export function sentidoParaPerfil(f: Ficha, respuestas: Respuestas, ccaaDeProvincia: Map<string, string>): 'favorece' | 'perjudica' | 'contrapuesta' | null {
-  const r: Respuestas = { ...respuestas, [CLAVE_CCAA]: ccaaDeProvincia.get(respuestas.provincia ?? '') };
-  if (f.ambito !== 'estatal' && !f.ambito.includes(r[CLAVE_CCAA] ?? '')) return null;
-  const cumple = (e: Efecto) => Object.entries(e.cuando).every(([k, v]) => r[k] !== undefined && r[k] !== NO_RESPONDE && v.includes(r[k]!));
-  const sentidos = new Set(f.efectos.filter(cumple).map((e) => e.el_si));
-  if (sentidos.size === 0) return null;
-  return sentidos.size === 2 ? 'contrapuesta' : [...sentidos][0]!;
+/** Cómo afecta una ficha a un perfil (la lógica vive en src/lib/afinidad, la que usa la web). */
+export function sentidoParaPerfil(f: Ficha, respuestas: Respuestas, ccaaDeProvincia: Map<string, string>) {
+  return sentidoComun(f, conComunidad(respuestas, ccaaDeProvincia));
 }

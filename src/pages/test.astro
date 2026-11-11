@@ -5,15 +5,30 @@
 import Base from '../layouts/Base.astro';
 import Pregunta from '../components/Pregunta.astro';
 import SelectorProvincia from '../components/SelectorProvincia.astro';
-import { cargarPreguntas, cargarTerritorio } from '../lib/datos.ts';
+import { cargarCandidaturas, cargarCatalogo, cargarPartidos, cargarPreguntas, cargarTerritorio, cargarVotos } from '../lib/datos.ts';
+import { partidosPorProvincia } from '../../scripts/data/catalogo.ts';
+import type { DatosResultado } from '../scripts/resultado.ts';
 import { recorrido, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
 
 const preguntas = cargarPreguntas();
 const todas: PreguntaTest[] = preguntas.map(({ id, bloque, orden, etiqueta, tipo, obligatoria }) => ({ id, bloque, orden, etiqueta, tipo, obligatoria }));
 const pasos = recorrido(todas);
 const porId = new Map(preguntas.map((p) => [p.id, p]));
-const provincias = cargarTerritorio().provincias.map(({ id, nombre, alias }) => ({ id, nombre, alias }));
-const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
+const territorio = cargarTerritorio();
+const provincias = territorio.provincias.map(({ id, nombre, alias, ccaa }) => ({ id, nombre, alias, ccaa }));
+const catalogo = cargarCatalogo();
+const candidaturas = cargarCandidaturas();
+const resultado: DatosResultado = {
+  fichas: catalogo.map(({ votacion, ambito, efectos, titulo, fecha, url, que_significa_si }) => ({
+    votacion, ambito, titulo, fecha, url, que_significa_si,
+    efectos: efectos.map(({ cuando, el_si, justificacion }) => ({ cuando, el_si, justificacion })),
+  })),
+  votos: cargarVotos(catalogo.map((f) => f.votacion)),
+  partidos: cargarPartidos().map(({ id, nombre, siglas, color }) => ({ id, nombre, siglas, color })),
+  porProvincia: Object.fromEntries(partidosPorProvincia(candidaturas, territorio)),
+  candidaturasProvisionales: candidaturas.provisional,
+};
+const datos = JSON.stringify({ pasos, preguntas: todas, provincias, resultado });
 ---
 
 <Base titulo="El test · Vota con Criterio">
@@ -28,15 +43,18 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
       ) : paso.tipo === 'provisional' ? (
         <section class="paso fin" data-paso="provisional" data-testid="resultado-provisional" hidden>
           <button class="atras" type="button" data-atras>← Atrás</button>
+          <p class="marca-provisional">Provisional</p>
           <h2 tabindex="-1">Tu resultado <i>provisional</i></h2>
-          <p class="pendiente">El cálculo del resultado está en construcción.</p>
-          <button class="boton" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
+          <div class="resultado" data-resultado></div>
+          <div class="acciones">
+            <button class="boton" type="button" data-seguir data-testid="seguir">Seguir con más preguntas</button>
+          </div>
         </section>
       ) : (
         <section class="paso fin" data-paso="final" data-testid="resultado-final" hidden>
           <button class="atras" type="button" data-atras>← Atrás</button>
           <h2 tabindex="-1">Tu <i>resultado</i></h2>
-          <p class="pendiente">El cálculo del resultado está en construcción.</p>
+          <div class="resultado" data-resultado></div>
         </section>
       ),
     )
@@ -46,12 +64,16 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
 <script>
   import { puedeAvanzar, type Paso, type PreguntaTest } from '../lib/perfil/cuestionario.ts';
   import { buscarProvincias, provinciaExacta, type ProvinciaBuscable } from '../lib/perfil/provincias.ts';
+  import { conComunidad } from '../lib/afinidad/calculo.ts';
+  import { pintarResultado, type DatosResultado } from '../scripts/resultado.ts';
 
-  const { pasos, preguntas, provincias } = JSON.parse(document.getElementById('datos-test')!.textContent!) as {
+  const { pasos, preguntas, provincias, resultado } = JSON.parse(document.getElementById('datos-test')!.textContent!) as {
     pasos: Paso[];
     preguntas: PreguntaTest[];
-    provincias: ProvinciaBuscable[];
+    provincias: (ProvinciaBuscable & { ccaa: string })[];
+    resultado: DatosResultado;
   };
+  const ccaaDe = new Map(provincias.map((p) => [p.id, p.ccaa]));
   const clave = (p: Paso) => (p.tipo === 'pregunta' ? `pregunta:${p.pregunta}` : p.tipo);
   const secciones = pasos.map((p) => document.querySelector<HTMLElement>(`[data-paso="${clave(p)}"]`)!);
 
@@ -63,6 +85,14 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
   function mostrar(i: number) {
     secciones[actual]!.hidden = true;
     actual = i;
+    const paso = pasos[actual]!;
+    if (paso.tipo !== 'pregunta') {
+      const pendientes = new Set(preguntas.filter((p) => p.bloque === 'ampliado' && respuestas[p.id] === undefined).map((p) => p.id));
+      pintarResultado(secciones[actual]!.querySelector('[data-resultado]')!, resultado, conComunidad(respuestas, ccaaDe), {
+        provisional: paso.tipo === 'provisional',
+        pendientes,
+      });
+    }
     secciones[actual]!.hidden = false;
     secciones[actual]!.querySelector<HTMLElement>('h2')!.focus();
     window.scrollTo(0, 0);
@@ -206,8 +236,168 @@ const datos = JSON.stringify({ pasos, preguntas: todas, provincias });
     outline: none;
   }
 
-  .pendiente {
-    margin: 0 0 24px;
+  .marca-provisional {
+    display: table;
+    margin: 18px 0 0;
+    padding: 2px 8px;
+    border: 1px solid var(--tinta);
+    border-radius: 999px;
+    font-size: 12px;
+  }
+
+  .marca-provisional + h2 {
+    margin-top: 8px;
+  }
+
+  .acciones {
+    margin-top: 28px;
+  }
+</style>
+
+<style is:global>
+  .resultado .cobertura {
+    margin: 0 0 20px;
+    font-size: 12px;
     color: var(--gris-texto);
+  }
+
+  .resultado .podio {
+    margin: 24px 0 8px;
+  }
+
+  .resultado .titular-podio {
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  .resultado .explica {
+    margin: 4px 0 12px;
+    font-size: 12.5px;
+    color: var(--gris-texto);
+  }
+
+  .resultado .filas {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .resultado .fila-partido {
+    display: grid;
+    grid-template-columns: 26px 1fr auto;
+    grid-template-areas: 'logo nombre cifra' 'logo detalle detalle' 'barra barra barra';
+    column-gap: 10px;
+    align-items: center;
+  }
+
+  .resultado .logo-partido {
+    grid-area: logo;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .resultado .nombre-partido {
+    grid-area: nombre;
+    font-weight: 500;
+  }
+
+  .resultado .cifra {
+    grid-area: cifra;
+    font-weight: 600;
+  }
+
+  .resultado .detalle {
+    grid-area: detalle;
+    font-size: 12px;
+    color: var(--gris-texto);
+  }
+
+  .resultado .barra-partido {
+    grid-area: barra;
+    height: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    background: var(--gris-pista-barra);
+    overflow: hidden;
+  }
+
+  .resultado .barra-partido span {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .resultado .caja-aviso {
+    margin: 22px 0 0;
+    padding: 12px 14px;
+    border-radius: var(--radio);
+    background: var(--gris-aviso);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .resultado .titular-lista {
+    margin: 34px 0 8px;
+    font-size: 24px;
+  }
+
+  .resultado .votaciones {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .resultado .votacion {
+    padding: 16px 0;
+    border-top: 1px solid var(--gris-borde);
+  }
+
+  .resultado .votacion .meta {
+    margin: 0;
+    font-size: 12px;
+    color: var(--gris-texto);
+  }
+
+  .resultado .votacion h4 {
+    margin: 4px 0 6px;
+    font: 500 16px/1.3 var(--sans);
+  }
+
+  .resultado .motivo,
+  .resultado .que-si {
+    margin: 0 0 6px;
+    font-size: 13.5px;
+  }
+
+  .resultado .que-si {
+    color: var(--gris-texto);
+  }
+
+  .resultado .votos {
+    margin: 8px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    font-size: 12.5px;
+  }
+
+  .resultado .voto .siglas {
+    font-weight: 600;
+  }
+
+  .resultado .fuente {
+    font-size: 12.5px;
   }
 </style>

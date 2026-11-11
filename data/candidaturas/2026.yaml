@@ -1,0 +1,32 @@
+# Candidaturas del 29-N por provincia (M-02). Solo partidos con historial en la XIV o la XV.
+# PROVISIONAL: lista hecha con el ámbito habitual de cada partido, pendiente de contrastar con las
+# candidaturas proclamadas que publica el BOE. Un partido que concurre en coalición en una provincia
+# se sigue mostrando como partido individual. Formato en docs/data-model.md.
+
+provisional: true
+fuente: pendiente de las candidaturas proclamadas (BOE)
+
+candidaturas:
+  - { partido: psoe, provincias: todas }
+  - { partido: pp, provincias: todas }
+  - { partido: vox, provincias: todas }
+  - { partido: sumar, provincias: todas }
+  - { partido: podemos, provincias: todas }
+  - { partido: iu, provincias: todas }
+  - { partido: cs, provincias: todas }
+  - { partido: comuns, provincias: [barcelona, girona, lleida, tarragona] }
+  - { partido: erc, provincias: [barcelona, girona, lleida, tarragona] }
+  - { partido: junts, provincias: [barcelona, girona, lleida, tarragona] }
+  - { partido: cup, provincias: [barcelona, girona, lleida, tarragona] }
+  - { partido: mas-madrid, provincias: [madrid] }
+  - { partido: compromis, provincias: [alicante, castellon, valencia] }
+  - { partido: chunta, provincias: [huesca, teruel, zaragoza] }
+  - { partido: teruel-existe, provincias: [teruel] }
+  - { partido: mes, provincias: [baleares] }
+  - { partido: eh-bildu, provincias: [alava, bizkaia, gipuzkoa, navarra] }
+  - { partido: pnv, provincias: [alava, bizkaia, gipuzkoa] }
+  - { partido: upn, provincias: [navarra] }
+  - { partido: bng, provincias: [a-coruna, lugo, ourense, pontevedra] }
+  - { partido: cc, provincias: [las-palmas, santa-cruz-de-tenerife] }
+  - { partido: nc, provincias: [las-palmas, santa-cruz-de-tenerife] }
+  - { partido: prc, provincias: [cantabria] }
